@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<title>互動式 3D 狀態圖檢視器</title>
+<style>
+    body { 
+        display: flex; 
+        margin: 0; 
+        height: 100vh; 
+        font-family: Arial, sans-serif;
+        overflow: hidden;
+    }
+    #info-panel { 
+        flex: 1;
+        min-width: 250px;
+        background: #f4f4f4; 
+        padding: 20px; 
+        border-right: 2px solid #ccc;
+        box-sizing: border-box;
+        overflow-y: auto;
+    }
+    #info-panel h2 {
+        margin-top: 0;
+    }
+    #info-panel img {
+        max-width: 100%;
+        margin-top: 15px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+    #plot-container { 
+        flex: 3; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ffffff;
+    }
+    #plot {
+        width: 100%;
+        height: 100%;
+    }
+    .loader {
+        font-size: 1.5em;
+        color: #888;
+    }
+</style>
+</head>
+<body>
+
+<div id="info-panel">
+    <h2>狀態資訊</h2>
+    <div id="info-text">請點擊右方圖形中的節點</div>
+    <img id="info-image" src="" alt="" style="display:none;">
+</div>
+
+<div id="plot-container">
+    <div class="loader">正在載入圖形數據...</div>
+    <div id="plot" style="visibility: hidden;"></div>
+</div>
+
+<script>
+    // 獲取 DOM 元素
+    const plotContainer = document.getElementById('plot-container');
+    const graphDiv = document.getElementById('plot');
+    const infoTextDiv = document.getElementById('info-text');
+    const infoImage = document.getElementById('info-image');
+    const loader = document.querySelector('.loader');
+
+    // 使用 fetch 異步加載數據
+    fetch('graph_data.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            // 數據加載成功，隱藏加載提示，顯示繪圖區
+            loader.style.display = 'none';
+            graphDiv.style.visibility = 'visible';
+            
+            const nodes = data.nodes;
+            const edges = data.edges;
+
+            // 1. 準備邊的軌跡 (Trace for Edges)
+            const edge_x = [], edge_y = [], edge_z = [];
+            edges.forEach(([i, j]) => {
+                edge_x.push(nodes[i].x, nodes[j].x, null);
+                edge_y.push(nodes[i].y, nodes[j].y, null);
+                edge_z.push(nodes[i].z, nodes[j].z, null);
+            });
+
+            const traceEdges = {
+                x: edge_x, y: edge_y, z: edge_z,
+                mode: 'lines', line: { color: 'gray', width: 1.5 },
+                type: 'scatter3d', hoverinfo: 'none'
+            };
+
+            // 2. 準備所有節點的軌跡 (Trace for All Nodes)
+            const traceNodes = {
+                x: nodes.map(n => n.x),
+                y: nodes.map(n => n.y),
+                z: nodes.map(n => n.z),
+                mode: 'markers',
+                marker: { size: 5, color: 'lightblue' },
+                type: 'scatter3d',
+                hoverinfo: 'text',
+                text: nodes.map(n => `狀態 ${n.id}`)
+            };
+
+            // 3. 準備高亮紅點的軌跡 (Trace for Highlighted Node)
+            const traceHighlight = {
+                x: [nodes[0].x], y: [nodes[0].y], z: [nodes[0].z],
+                mode: 'markers',
+                marker: { size: 8, color: 'red', symbol: 'diamond' },
+                type: 'scatter3d',
+                hoverinfo: 'none'
+            };
+
+            // 設定佈局和配置
+            const layout = {
+                title: '3D 狀態圖',
+                margin: { l: 0, r: 0, b: 0, t: 40 },
+                showlegend: false,
+                scene: { 
+                    xaxis: { visible: false }, 
+                    yaxis: { visible: false }, 
+                    zaxis: { visible: false }
+                }
+            };
+            const config = { responsive: true, scrollZoom: true };
+
+            // 繪製圖表
+            Plotly.newPlot(graphDiv, [traceEdges, traceNodes, traceHighlight], layout, config);
+            
+            // 初始顯示第一個節點的資訊
+            updateInfoPanel(0);
+
+            // 綁定點擊事件
+            graphDiv.on('plotly_click', function(dataClick) {
+                // 確保點擊的是藍色節點 (curveNumber 1)
+                if (dataClick.points.length > 0 && dataClick.points[0].curveNumber === 1) {
+                    const pointIndex = dataClick.points[0].pointNumber;
+                    
+                    // 更新左側資訊
+                    updateInfoPanel(pointIndex);
+
+                    // 使用 restyle 更新紅點位置 (高效、穩定)
+                    const node = nodes[pointIndex];
+                    Plotly.restyle(graphDiv, {
+                        x: [[node.x]], 
+                        y: [[node.y]], 
+                        z: [[node.z]]
+                    }, [2]); // [2] 指的是只更新第三個 trace，即紅點
+                }
+            });
+
+            // 更新左側資訊面板的輔助函數
+            function updateInfoPanel(index) {
+                const node = nodes[index];
+                infoTextDiv.innerText = node.info_text + `\n棋盤狀態: ${node.board_state}`;
+                infoImage.src = node.image_url;
+                infoImage.alt = `Image for state ${node.id}`;
+                infoImage.style.display = 'block';
+            }
+
+        })
+        .catch(error => {
+            // 如果加載失敗，顯示錯誤訊息
+            loader.innerText = `無法載入圖形數據: ${error}\n請確保 graph_data.json 檔案存在且格式正確。`;
+            console.error('Error fetching graph data:', error);
+        });
+</script>
+
+</body>
+</html>
