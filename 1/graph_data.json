@@ -1,1 +1,221 @@
-{"nodes": [{"id": 0, "x": 0.615696659985644, "y": -0.5209812816922667, "z": 0.5443272475828399, "info_text": "\u9019\u662f\u7b2c 0 \u500b\u9ede", "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Bundesstra%C3%9Fe_115_number.svg/2560px-Bundesstra%C3%9Fe_115_number.svg.png", "board_state": "((0, 0, 2, 1), (3, 0, 2, 1))"}, {"id": 1, "x": 0.6241630660932246, "y": -0.2613723339128878, "z": 0.3773837790605361, "info_text": "\u9019\u662f\u7b2c 1 \u500b\u9ede", "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Bundesstra%C3%9Fe_115_number.svg/2560px-Bundesstra%C3%9Fe_115_number.svg.png", "board_state": "((1, 0, 2, 1), (3, 0, 2, 1))"}, {"id": 2, "x": 0.39888474261694407, "y": -0.4487116259525743, "z": 0.18984125189967252, "info_text": "\u9019\u662f\u7b2c 2 \u500b\u9ede", "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Bundesstra%C3%9Fe_115_number.svg/2560px-Bundesstra%C3%9Fe_115_number.svg.png", "board_state": "((0, 0, 2, 1), (4, 0, 2, 1))"}, {"id": 3, "x": 0.7078457393008768, "y": -0.6250595188956599, "z": 0.8806327499251757, "info_text": "\u9019\u662f\u7b2c 3 \u500b\u9ede", "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Bundesstra%C3%9Fe_115_number.svg/2560px-Bundesstra%C3%9Fe_115_number.svg.png", "board_state": "((0, 0, 2, 1), (2, 0, 2, 1))"}, {"id": 4, "x": 0.35964745466107906, "y": -0.111833347657632, "z": 0.10935568042750958, "info_text": "\u9019\u662f\u7b2c 4 \u500b\u9ede", "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Bundesstra%C3%9Fe_115_number.svg/2560px-Bundesstra%C3%9Fe_115_number.svg.png", "board_state": "((1, 0, 2, 1), (4, 0, 2, 1))"}, {"id": 5, "x": 0.13110978585346247, "y": -0.414997956281328, "z": -0.13646670334435876, "info_text": "\u9019\u662f\u7b2c 5 \u500b\u9ede", "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Bundesstra%C3%9Fe_115_number.svg/2560px-Bundesstra%C3%9Fe_115_number.svg.png", "board_state": "((0, 0, 2, 1), (5, 0, 2, 1))"}, {"id": 6, "x": 0.21131922541262463, "y": 0.23227774165868548, "z": -0.0009648897477956223, "info_text": "\u9019\u662f\u7b2c 6 \u500b\u9ede", "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Bundesstra%C3%9Fe_115_number.svg/2560px-Bundesstra%C3%9Fe_115_number.svg.png", "board_state": "((2, 0, 2, 1), (4, 0, 2, 1))"}, {"id": 7, "x": 0.03615577275167569, "y": -0.061629844435667915, "z": -0.15574133965223877, "info_text": "\u9019\u662f\u7b2c 7 \u500b\u9ede", "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Bundesstra%C3%9Fe_115_number.svg/2560px-Bundesstra%C3%9Fe_115_number.svg.png", "board_state": "((1, 0, 2, 1), (5, 0, 2, 1))"}, {"id": 8, "x": -0.12523744783086072, "y": -0.40034296938355457, "z": -0.3955863774783983, "info_text": "\u9019\u662f\u7b2c 8 \u500b\u9ede", "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Bundesstra%C3%9Fe_115_number.svg/2560px-Bundesstra%C3%9Fe_115_number.svg.png", "board_state": "((0, 0, 2, 1), (6, 0, 2, 1))"}, {"id": 9, "x": -0.13517240979500214, "y": 0.32074291786751363, "z": -0.16727904192427762, "info_text": "\u9019\u662f\u7b2c 9 \u500b\u9ede", "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Bundesstra%C3%9Fe_115_number.svg/2560px-Bundesstra%C3%9Fe_115_number.svg.png", "board_state": "((2, 0, 2, 1), (5, 0, 2, 1))"}, {"id": 10, "x": -0.26005290719550583, "y": -0.06558405220613372, "z": -0.3714059161508837, "info_text": "\u9019\u662f\u7b2c 10 \u500b\u9ede", "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Bundesstra%C3%9Fe_115_number.svg/2560px-Bundesstra%C3%9Fe_115_number.svg.png", "board_state": "((1, 0, 2, 1), (6, 0, 2, 1))"}, {"id": 11, "x": -0.3985245488646538, "y": 0.625111099617864, "z": -0.19535697769695645, "info_text": "\u9019\u662f\u7b2c 11 \u500b\u9ede", "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Bundesstra%C3%9Fe_115_number.svg/2560px-Bundesstra%C3%9Fe_115_number.svg.png", "board_state": "((3, 0, 2, 1), (5, 0, 2, 1))"}, {"id": 12, "x": -0.456401219857495, "y": 0.3025528879238149, "z": -0.3153415930956436, "info_text": "\u9019\u662f\u7b2c 12 \u500b\u9ede", "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Bundesstra%C3%9Fe_115_number.svg/2560px-Bundesstra%C3%9Fe_115_number.svg.png", "board_state": "((2, 0, 2, 1), (6, 0, 2, 1))"}, {"id": 13, "x": -0.7094339131320136, "y": 0.622935603830405, "z": -0.23446696304849846, "info_text": "\u9019\u662f\u7b2c 13 \u500b\u9ede", "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Bundesstra%C3%9Fe_115_number.svg/2560px-Bundesstra%C3%9Fe_115_number.svg.png", "board_state": "((3, 0, 2, 1), (6, 0, 2, 1))"}, {"id": 14, "x": -1.0, "y": 0.8068926795194226, "z": -0.12893090675668248, "info_text": "\u9019\u662f\u7b2c 14 \u500b\u9ede", "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Bundesstra%C3%9Fe_115_number.svg/2560px-Bundesstra%C3%9Fe_115_number.svg.png", "board_state": "((4, 0, 2, 1), (6, 0, 2, 1))"}], "edges": [[0, 1], [0, 2], [0, 3], [1, 4], [2, 4], [2, 5], [4, 6], [4, 7], [5, 7], [5, 8], [6, 9], [7, 9], [7, 10], [8, 10], [9, 11], [9, 12], [10, 12], [11, 13], [12, 13], [13, 14]]}
+{
+  "nodes": [
+    {
+      "id": 0,
+      "x": 0.615696659985644,
+      "y": -0.5209812816922667,
+      "z": 0.5443272475828399,
+      "info_text": "這是第 0 個點",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Bundesstra%C3%9Fe_115_number.svg/2560px-Bundesstra%C3%9Fe_115_number.svg.png",
+      "board_state": "((0, 0, 2, 1), (3, 0, 2, 1))"
+    },
+    {
+      "id": 1,
+      "x": 0.6241630660932246,
+      "y": -0.2613723339128878,
+      "z": 0.3773837790605361,
+      "info_text": "這是第 1 個點",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Bundesstra%C3%9Fe_115_number.svg/2560px-Bundesstra%C3%9Fe_115_number.svg.png",
+      "board_state": "((1, 0, 2, 1), (3, 0, 2, 1))"
+    },
+    {
+      "id": 2,
+      "x": 0.39888474261694407,
+      "y": -0.4487116259525743,
+      "z": 0.18984125189967252,
+      "info_text": "這是第 2 個點",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Bundesstra%C3%9Fe_115_number.svg/2560px-Bundesstra%C3%9Fe_115_number.svg.png",
+      "board_state": "((0, 0, 2, 1), (4, 0, 2, 1))"
+    },
+    {
+      "id": 3,
+      "x": 0.7078457393008768,
+      "y": -0.6250595188956599,
+      "z": 0.8806327499251757,
+      "info_text": "這是第 3 個點",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Bundesstra%C3%9Fe_115_number.svg/2560px-Bundesstra%C3%9Fe_115_number.svg.png",
+      "board_state": "((0, 0, 2, 1), (2, 0, 2, 1))"
+    },
+    {
+      "id": 4,
+      "x": 0.35964745466107906,
+      "y": -0.111833347657632,
+      "z": 0.10935568042750958,
+      "info_text": "這是第 4 個點",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Bundesstra%C3%9Fe_115_number.svg/2560px-Bundesstra%C3%9Fe_115_number.svg.png",
+      "board_state": "((1, 0, 2, 1), (4, 0, 2, 1))"
+    },
+    {
+      "id": 5,
+      "x": 0.13110978585346247,
+      "y": -0.414997956281328,
+      "z": -0.13646670334435876,
+      "info_text": "這是第 5 個點",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Bundesstra%C3%9Fe_115_number.svg/2560px-Bundesstra%C3%9Fe_115_number.svg.png",
+      "board_state": "((0, 0, 2, 1), (5, 0, 2, 1))"
+    },
+    {
+      "id": 6,
+      "x": 0.21131922541262463,
+      "y": 0.23227774165868548,
+      "z": -0.0009648897477956223,
+      "info_text": "這是第 6 個點",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Bundesstra%C3%9Fe_115_number.svg/2560px-Bundesstra%C3%9Fe_115_number.svg.png",
+      "board_state": "((2, 0, 2, 1), (4, 0, 2, 1))"
+    },
+    {
+      "id": 7,
+      "x": 0.03615577275167569,
+      "y": -0.061629844435667915,
+      "z": -0.15574133965223877,
+      "info_text": "這是第 7 個點",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Bundesstra%C3%9Fe_115_number.svg/2560px-Bundesstra%C3%9Fe_115_number.svg.png",
+      "board_state": "((1, 0, 2, 1), (5, 0, 2, 1))"
+    },
+    {
+      "id": 8,
+      "x": -0.12523744783086072,
+      "y": -0.40034296938355457,
+      "z": -0.3955863774783983,
+      "info_text": "這是第 8 個點",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Bundesstra%C3%9Fe_115_number.svg/2560px-Bundesstra%C3%9Fe_115_number.svg.png",
+      "board_state": "((0, 0, 2, 1), (6, 0, 2, 1))"
+    },
+    {
+      "id": 9,
+      "x": -0.13517240979500214,
+      "y": 0.32074291786751363,
+      "z": -0.16727904192427762,
+      "info_text": "這是第 9 個點",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Bundesstra%C3%9Fe_115_number.svg/2560px-Bundesstra%C3%9Fe_115_number.svg.png",
+      "board_state": "((2, 0, 2, 1), (5, 0, 2, 1))"
+    },
+    {
+      "id": 10,
+      "x": -0.26005290719550583,
+      "y": -0.06558405220613372,
+      "z": -0.3714059161508837,
+      "info_text": "這是第 10 個點",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Bundesstra%C3%9Fe_115_number.svg/2560px-Bundesstra%C3%9Fe_115_number.svg.png",
+      "board_state": "((1, 0, 2, 1), (6, 0, 2, 1))"
+    },
+    {
+      "id": 11,
+      "x": -0.3985245488646538,
+      "y": 0.625111099617864,
+      "z": -0.19535697769695645,
+      "info_text": "這是第 11 個點",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Bundesstra%C3%9Fe_115_number.svg/2560px-Bundesstra%C3%9Fe_115_number.svg.png",
+      "board_state": "((3, 0, 2, 1), (5, 0, 2, 1))"
+    },
+    {
+      "id": 12,
+      "x": -0.456401219857495,
+      "y": 0.3025528879238149,
+      "z": -0.3153415930956436,
+      "info_text": "這是第 12 個點",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Bundesstra%C3%9Fe_115_number.svg/2560px-Bundesstra%C3%9Fe_115_number.svg.png",
+      "board_state": "((2, 0, 2, 1), (6, 0, 2, 1))"
+    },
+    {
+      "id": 13,
+      "x": -0.7094339131320136,
+      "y": 0.622935603830405,
+      "z": -0.23446696304849846,
+      "info_text": "這是第 13 個點",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Bundesstra%C3%9Fe_115_number.svg/2560px-Bundesstra%C3%9Fe_115_number.svg.png",
+      "board_state": "((3, 0, 2, 1), (6, 0, 2, 1))"
+    },
+    {
+      "id": 14,
+      "x": -1.0,
+      "y": 0.8068926795194226,
+      "z": -0.12893090675668248,
+      "info_text": "這是第 14 個點",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Bundesstra%C3%9Fe_115_number.svg/2560px-Bundesstra%C3%9Fe_115_number.svg.png",
+      "board_state": "((4, 0, 2, 1), (6, 0, 2, 1))"
+    }
+  ],
+  "edges": [
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      0,
+      3
+    ],
+    [
+      1,
+      4
+    ],
+    [
+      2,
+      4
+    ],
+    [
+      2,
+      5
+    ],
+    [
+      4,
+      6
+    ],
+    [
+      4,
+      7
+    ],
+    [
+      5,
+      7
+    ],
+    [
+      5,
+      8
+    ],
+    [
+      6,
+      9
+    ],
+    [
+      7,
+      9
+    ],
+    [
+      7,
+      10
+    ],
+    [
+      8,
+      10
+    ],
+    [
+      9,
+      11
+    ],
+    [
+      9,
+      12
+    ],
+    [
+      10,
+      12
+    ],
+    [
+      11,
+      13
+    ],
+    [
+      12,
+      13
+    ],
+    [
+      13,
+      14
+    ]
+  ]
+}

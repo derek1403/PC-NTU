@@ -16,7 +16,7 @@
 
   <script type="module">
   async function loadData() {
-    const response = await fetch('test.json');
+    const response = await fetch('graph_data.json');
     const graphData = await response.json();
     console.log(graphData);
     return graphData;
