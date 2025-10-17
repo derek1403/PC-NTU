@@ -23,6 +23,7 @@
   }
   const data = await loadData();  // ✅ 這裡可以使用 await
   console.log(data);
+  /*
   // ✅ 內嵌 graph_data.json
   const graphData = {
       "nodes": [
@@ -32,7 +33,7 @@
       ],
       "edges": [[0,1],[1,2],[2,0]]
   };
-
+  */
   const nodes = graphData.nodes;
   const edges = graphData.edges;
 
