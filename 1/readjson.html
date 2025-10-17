@@ -17,16 +17,15 @@
   <script type="module">
   async function loadData() {
     const response = await fetch('graph_data.json');
-    const graphData = await response.json();
-    console.log(graphData);
-    return graphData;
+    const data = await response.json();
+    console.log(data);
+    return data;
   }
-  const data = await loadData();  // ✅ 這裡可以使用 await
+  const graphData = await loadData();  // ✅ 這裡可以使用 await
 
   console.log(123)
   console.log(graphData)
   console.log(456)
-  console.log(data);
   
   /*
   // ✅ 內嵌 graph_data.json
@@ -40,8 +39,7 @@
       "edges": [[0,1],[1,2],[2,0],[3,1]]
   };
   */
-  console.log(789)
-  console.log(graphData)
+
   const nodes = graphData.nodes;
   const edges = graphData.edges;
 
