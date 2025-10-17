@@ -22,21 +22,24 @@
     return graphData;
   }
   const data = await loadData();  // ✅ 這裡可以使用 await
-  const graphData = data;  // 使用載入的資料
+
+  console.log(123)
   console.log(graphData)
+  console.log(456)
   console.log(data);
-  /*
+  
   // ✅ 內嵌 graph_data.json
   const graphData = {
       "nodes": [
         {"id":0,"x":0.6157,"y":-0.5209,"z":0.5443,"info_text":"這是第 0 個點","image_url":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Bundesstra%C3%9Fe_115_number.svg/2560px-Bundesstra%C3%9Fe_115_number.svg.png","board_state":"((0, 0, 2, 1), (3, 0, 2, 1))"},
         {"id":1,"x":0.6241,"y":-0.2613,"z":0.3773,"info_text":"這是第 1 個點","image_url":"https://static.vecteezy.com/system/resources/thumbnails/041/880/991/small_2x/ai-generated-pic-artistic-depiction-of-sunflowers-under-a-vast-cloudy-sky-photo.jpg","board_state":"((1, 0, 2, 1), (3, 0, 2, 1))"},
-        {"id":2,"x":-0.1,"y":0.8,"z":0.1,"info_text":"額外新增的點","image_url":"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Circle_graphic.svg/1024px-Circle_graphic.svg.png","board_state":"((2, 0, 2, 1), (3, 0, 2, 1))"}
+        {"id":2,"x":-0.1,"y":0.8,"z":0.1,"info_text":"額外新增的點","image_url":"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Circle_graphic.svg/1024px-Circle_graphic.svg.png","board_state":"((2, 0, 2, 1), (3, 0, 2, 1))"},
         {"id":3,"x":0.2157,"y":-0.1209,"z":0.1443,"info_text":"這是第 3 個點","image_url":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Bundesstra%C3%9Fe_115_number.svg/2560px-Bundesstra%C3%9Fe_115_number.svg.png","board_state":"((0, 0, 2, 1), (3, 0, 2, 1))"},
       ],
       "edges": [[0,1],[1,2],[2,0],[3,1]]
   };
-  */
+  console.log(789)
+  console.log(graphData)
   const nodes = graphData.nodes;
   const edges = graphData.edges;
 
