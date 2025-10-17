@@ -22,6 +22,7 @@
     return graphData;
   }
   const data = await loadData();  // ✅ 這裡可以使用 await
+  const graphData = data;  // 使用載入的資料
   console.log(graphData)
   console.log(data);
   /*
