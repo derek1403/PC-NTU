@@ -16,7 +16,7 @@
 
   <script type="module">
   async function loadData() {
-    const response = await fetch('graph_data_Dsat_round5.json');
+    const response = await fetch('graph_data.json'); //graph_data_Dsat_round5.json
     const data = await response.json();
     console.log(data);
     return data;
@@ -31,16 +31,17 @@
   const edges = graphData.edges;
 
   // --- 畫邊 ---
-  const edgeTraces = edges.map(([u, v]) => ({
-      x: [nodes[u].x, nodes[v].x, null],
-      y: [nodes[u].y, nodes[v].y, null],
-      z: [nodes[u].z, nodes[v].z, null],
+  // 1. 減少邊線的細節（合併相鄰的 null）
+  const edgeTrace = {
+      x: edges.flatMap(([u, v]) => [nodes[u].x, nodes[v].x, null]),
+      y: edges.flatMap(([u, v]) => [nodes[u].y, nodes[v].y, null]),
+      z: edges.flatMap(([u, v]) => [nodes[u].z, nodes[v].z, null]),
       mode: 'lines',
       type: 'scatter3d',
-      line: { color: 'gray', width: 3 },
-      opacity: 0.5,
-      hoverinfo: 'none'
-  }));
+      line: { color: 'gray', width: 2 }, // 減少寬度
+      opacity: 0.3, // 降低透明度
+      hoverinfo: 'skip' // 完全跳過 hover
+  };
 
   // 取得點 trace 的索引，它是所有邊線 trace 的數量
   const nodeTraceIndex = edgeTraces.length;
@@ -63,10 +64,22 @@
       hoverinfo: 'text'
   };
 
+
+  // 2. 只用一個 trace 畫所有邊（而不是每條邊一個 trace）
   const layout = {
       margin: { l:0, r:0, t:0, b:0 },
-      scene: { xaxis:{title:'X'}, yaxis:{title:'Y'}, zaxis:{title:'Z'} }
+      scene: { 
+          xaxis:{title:'X'}, 
+          yaxis:{title:'Y'}, 
+          zaxis:{title:'Z'},
+          camera: { projection: { type: 'orthographic' } } // 正交投影更快
+      }
   };
+
+
+
+
+
 
   Plotly.newPlot('plot', [...edgeTraces, nodeTrace], layout);
 
