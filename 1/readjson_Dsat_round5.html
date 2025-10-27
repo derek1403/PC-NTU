@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>3D 狀態圖</title>
+  <script src="https://cdn.plot.ly/plotly-2.30.0.min.js"></script>
+  <style>
+    body { display: flex; height: 100vh; margin: 0; font-family: sans-serif; }
+    #plot { flex: 3; }
+    #node-info { flex: 1; padding: 10px; border-left: 2px solid #ccc; overflow: auto; }
+  </style>
+</head>
+<body>
+  <div id="plot"></div>
+  <div id="node-info"><i>請點擊一個節點查看詳細資訊</i></div>
+
+  <script type="module">
+  async function loadData() {
+    const response = await fetch('graph_data_Dsat_round5.json');
+    const data = await response.json();
+    console.log(data);
+    return data;
+  }
+  const graphData = await loadData();  // ✅ 這裡可以使用 await
+
+  console.log(123)
+  console.log(graphData)
+  console.log(456)
+  
+  const nodes = graphData.nodes;
+  const edges = graphData.edges;
+
+  // --- 畫邊 ---
+  const edgeTraces = edges.map(([u, v]) => ({
+      x: [nodes[u].x, nodes[v].x, null],
+      y: [nodes[u].y, nodes[v].y, null],
+      z: [nodes[u].z, nodes[v].z, null],
+      mode: 'lines',
+      type: 'scatter3d',
+      line: { color: 'gray', width: 3 },
+      opacity: 0.5,
+      hoverinfo: 'none'
+  }));
+
+  // 取得點 trace 的索引，它是所有邊線 trace 的數量
+  const nodeTraceIndex = edgeTraces.length;
+
+  // --- 畫點 ---
+  const nodeColors = Array(nodes.length).fill('lightblue');
+  const nodeTrace = {
+      x: nodes.map(n => n.x),
+      y: nodes.map(n => n.y),
+      z: nodes.map(n => n.z),
+      mode: 'markers',
+      type: 'scatter3d',
+      marker: {
+          size: 10,
+          color: nodeColors,
+          opacity: 0.9,
+          line: { width: 1, color: 'darkblue' }
+      },
+      hovertext: nodes.map(n => n.info_text),
+      hoverinfo: 'text'
+  };
+
+  const layout = {
+      margin: { l:0, r:0, t:0, b:0 },
+      scene: { xaxis:{title:'X'}, yaxis:{title:'Y'}, zaxis:{title:'Z'} }
+  };
+
+  Plotly.newPlot('plot', [...edgeTraces, nodeTrace], layout);
+
+  // --- 點擊事件 ---
+  const plotDiv = document.getElementById('plot');
+  plotDiv.on('plotly_click', function(eventData) {
+      
+      const point = eventData.points[0];
+
+      // 1. 關鍵修正：檢查點擊的 trace 是否是 'nodeTrace' (點)
+      // 如果點擊到邊線 trace (curveNumber < nodeTraceIndex)，則忽略。
+      if (!point || point.curveNumber !== nodeTraceIndex) {
+          // console.log("點擊的不是節點 trace, 忽略.");
+          return;
+      }
+      
+      // 2. 獲取被點擊點的索引 (在 nodes 陣列中的位置)
+      const nodeIndex = point.pointNumber;
+      const node = nodes[nodeIndex];
+
+      // 如果因某種原因索引無效，則停止
+      if (!node) return;
+
+      // 3. 更新節點顏色：選取的紅色，其餘恢復藍色
+      const newColors = Array(nodes.length).fill('lightblue');
+      newColors[nodeIndex] = 'red';
+      // 測試
+      document.getElementById('node-info').innerHTML = `
+          <h3>節點 ID: ${ point.pointIndex}</h3>
+          <p><b>描述:</b> ${ point.curveNumber}</p>
+          <p><b>座標:</b> ${point.data.mode}$</p>
+          <p><b>Board State:</b> ${point.pointNumber}$</p>
+          <p><b>Board State:</b> ${node.id}$ ${node.info_text} (X:${node.x}, Y:${node.y}, Z:${node.z}) ${node.board_state}</p>
+          <img src="https://media.istockphoto.com/id/1503385646/zh/%E7%85%A7%E7%89%87/portrait-funny-and-happy-shiba-inu-puppy-dog-peeking-out-from-behind-a-blue-banner-isolated-on.jpg?s=612x612&w=0&k=20&c=j6W1QMERTVgCfKQq7aWLv4m4vUmzHEaC8Iul9883-iE=" style="max-width:100%;border-radius:8px;">
+          <img src="${node.image_url}" style="max-width:100%;border-radius:8px;">
+      `;      
+      // ⚠️ Plotly.restyle 的第三個參數指定要更新哪個 trace
+      // 3. 關鍵修正：使用 setTimeout 延遲 restyle
+      // 延遲 0 毫秒 (或 10 毫秒) 即可將 restyle 放入事件隊列，
+      // 讓當前的 plotly_click 處理程序先完成。
+      setTimeout(() => {
+          try {
+              Plotly.restyle('plot', { 'marker.color': [newColors] }, [nodeTraceIndex]);
+          } catch (e) {
+              console.error("Plotly restyle error:", e);
+          }
+      }, 0); 
+      // 4. 更新右側資訊區塊
+      //document.getElementById('node-info').innerHTML = `
+      //    <h3>節點 ID: ${node.id}</h3>
+      //    <p><b>描述:</b> ${node.info_text}</p>
+      //    <p><b>座標:</b> (X:${node.x}, Y:${node.y}, Z:${node.z})</p>
+      //    <p><b>Board State:</b> ${node.board_state}</p>
+      //   <img src="${node.image_url}" style="max-width:100%;border-radius:8px;">
+      //`;
+  });
+  </script>
+</body>
+</html>
