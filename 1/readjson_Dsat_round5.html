@@ -27,8 +27,8 @@
   console.log(graphData)
   console.log(456)
   
-  const nodes = graphData.nodes.slice(0, 100); // 測試只取前 100 個點
-  const edges = graphData.edges.filter(([u, v]) => u < 100 && v < 100); // 只取前 100 個點的邊
+  const nodes = graphData.nodes.slice(0, 7); // 測試只取前 100 個點
+  const edges = graphData.edges.filter(([u, v]) => u < 7 && v < 7); // 只取前 100 個點的邊
 
   // --- 畫邊 ---
   const edgeTraces = edges.map(([u, v]) => ({
