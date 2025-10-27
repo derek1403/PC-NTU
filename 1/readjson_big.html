@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>颱風 3D 狀態圖 (優化版)</title>
+  <script src="https://cdn.plot.ly/plotly-2.30.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      display: flex; 
+      height: 100vh; 
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f5f5f5;
+    }
+    #plot { 
+      flex: 3; 
+      background: white;
+    }
+    #node-info { 
+      flex: 1; 
+      padding: 20px; 
+      background: white;
+      border-left: 3px solid #4a90e2;
+      overflow: auto;
+      box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+    }
+    #node-info h3 {
+      color: #2c3e50;
+      margin-bottom: 15px;
+      font-size: 1.2em;
+    }
+    #node-info p {
+      margin: 10px 0;
+      color: #555;
+      line-height: 1.6;
+    }
+    #node-info b {
+      color: #2c3e50;
+    }
+    #node-info img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-top: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    #loading {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      font-size: 1.2em;
+      color: #4a90e2;
+    }
+    .spinner {
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #4a90e2;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 15px;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .hint {
+      color: #888;
+      font-style: italic;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <div id="plot"></div>
+  <div id="node-info">
+    <div class="hint">
+      <p>💡 提示：點擊圖中的節點查看詳細資訊</p>
+      <p>🖱️ 可以拖動旋轉視角、滾輪縮放</p>
+    </div>
+  </div>
+  <div id="loading">
+    <div class="spinner"></div>
+    <div>載入資料中...</div>
+  </div>
+
+  <script type="module">
+  // ==============================================================================
+  // 載入資料 (支援 .json 和 .json.gz)
+  // ==============================================================================
+  async function loadData(filename) {
+    try {
+      const response = await fetch(filename);
+      
+      // 檢查是否是 gzip 壓縮檔案
+      if (filename.endsWith('.gz')) {
+        const buffer = await response.arrayBuffer();
+        const decompressed = pako.inflate(new Uint8Array(buffer), { to: 'string' });
+        return JSON.parse(decompressed);
+      } else {
+        return await response.json();
+      }
+    } catch (error) {
+      console.error('載入資料失敗:', error);
+      document.getElementById('loading').innerHTML = `
+        <div style="color: red;">❌ 載入失敗</div>
+        <div style="font-size: 0.9em; margin-top: 10px;">請確認檔案存在: ${filename}</div>
+      `;
+      throw error;
+    }
+  }
+
+  // ==============================================================================
+  // 主程式
+  // ==============================================================================
+  (async () => {
+    // 🔧 修改這裡來載入不同的檔案
+    // 選項 1: 完整版 (所有邊)
+    const graphData = await loadData('graph_data_full.json.gz');
+    
+    // 選項 2: 輕量版 (20% 邊，載入更快)
+    // const graphData = await loadData('graph_data_light.json.gz');
+    
+    // 選項 3: 未壓縮版本
+    // const graphData = await loadData('graph_data.json');
+
+    console.log('📊 資料載入成功:', graphData.metadata);
+    document.getElementById('loading').style.display = 'none';
+
+    const nodes = graphData.nodes;
+    const edges = graphData.edges;
+
+    // ==============================================================================
+    // 🚀 關鍵優化: 所有邊用一個 trace (不是 85805 個!)
+    // ==============================================================================
+    const edgeTrace = {
+      x: edges.x,
+      y: edges.y,
+      z: edges.z,
+      mode: 'lines',
+      type: 'scatter3d',
+      line: { 
+        color: 'rgba(150, 150, 150, 0.3)',  // 半透明灰色
+        width: 1 
+      },
+      hoverinfo: 'skip',
+      name: '時間演化'
+    };
+
+    // ==============================================================================
+    // 繪製節點
+    // ==============================================================================
+    const nodeColors = Array(nodes.length).fill('#4a90e2');
+    const nodeTrace = {
+      x: nodes.map(n => n.x),
+      y: nodes.map(n => n.y),
+      z: nodes.map(n => n.z),
+      mode: 'markers',
+      type: 'scatter3d',
+      marker: {
+        size: 5,
+        color: nodeColors,
+        opacity: 0.8,
+        line: { width: 0.5, color: 'white' }
+      },
+      hovertext: nodes.map(n => n.info_text),
+      hoverinfo: 'text',
+      name: '颱風狀態'
+    };
+
+    // ==============================================================================
+    // 配置圖表
+    // ==============================================================================
+    const layout = {
+      margin: { l: 0, r: 0, t: 0, b: 0 },
+      scene: { 
+        xaxis: { title: 'Layout X', showgrid: true },
+        yaxis: { title: 'Layout Y', showgrid: true },
+        zaxis: { title: 'Layout Z', showgrid: true },
+        camera: {
+          eye: { x: 1.5, y: 1.5, z: 1.5 }
+        },
+        bgcolor: '#f8f9fa'
+      },
+      hovermode: 'closest',
+      showlegend: true,
+      legend: {
+        x: 0.02,
+        y: 0.98,
+        bgcolor: 'rgba(255,255,255,0.8)'
+      }
+    };
+
+    const config = {
+      responsive: true,
+      displayModeBar: true,
+      displaylogo: false
+    };
+
+    // 繪製圖表: [邊的 trace, 節點的 trace]
+    Plotly.newPlot('plot', [edgeTrace, nodeTrace], layout, config);
+
+    // ==============================================================================
+    // 點擊事件
+    // ==============================================================================
+    const plotDiv = document.getElementById('plot');
+    const nodeTraceIndex = 1; // 節點是第二個 trace (索引 1)
+
+    plotDiv.on('plotly_click', function(eventData) {
+      const point = eventData.points[0];
+
+      // 確保點擊的是節點 trace
+      if (!point || point.curveNumber !== nodeTraceIndex) {
+        return;
+      }
+
+      const nodeIndex = point.pointNumber;
+      const node = nodes[nodeIndex];
+
+      if (!node) return;
+
+      // 更新節點顏色
+      const newColors = Array(nodes.length).fill('#4a90e2');
+      newColors[nodeIndex] = '#e74c3c'; // 選中的節點變紅色
+
+      setTimeout(() => {
+        try {
+          Plotly.restyle('plot', { 'marker.color': [newColors] }, [nodeTraceIndex]);
+        } catch (e) {
+          console.error("Plotly restyle error:", e);
+        }
+      }, 0);
+
+      // 更新右側資訊
+      document.getElementById('node-info').innerHTML = `
+        <h3>🌀 颱風狀態</h3>
+        <p><b>節點 ID:</b> ${node.id}</p>
+        <p><b>狀態參數:</b> ${node.info_text}</p>
+        <p><b>座標:</b> (${node.x.toFixed(3)}, ${node.y.toFixed(3)}, ${node.z.toFixed(3)})</p>
+        <p><b>原始狀態:</b> ${node.board_state}</p>
+        <hr style="margin: 15px 0; border: none; border-top: 1px solid #ddd;">
+        <img src="${node.image_url}" alt="颱風圖片" onerror="this.style.display='none'">
+      `;
+    });
+
+    // 顯示資料統計
+    console.log(`
+    📊 圖表統計:
+    - 總節點數: ${graphData.metadata.total_nodes}
+    - 原始邊數: ${graphData.metadata.total_edges}
+    - 顯示邊數: ${graphData.metadata.sampled_edges}
+    - 取樣率: ${(graphData.metadata.sample_rate * 100).toFixed(1)}%
+    `);
+  })();
+  </script>
+</body>
+</html>
