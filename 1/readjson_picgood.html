@@ -246,7 +246,7 @@
         
         const caption = document.createElement('div');
         caption.className = 'image-caption';
-        caption.textContent = `颱風 ${tcIds[index]} - ${times[index]}`;
+        caption.textContent = `颱風: ${tcIds[index]} - ${times[index]}`;
         wrapper.appendChild(caption);
         
         container.appendChild(wrapper);
@@ -464,7 +464,7 @@
         if (tcIds.length > 0) {
           infoHTML += `<hr style="margin: 15px 0; border: none; border-top: 1px solid #ddd;">`;
           infoHTML += `<p><b>颱風編號:</b> ${tcIds.join(', ')}</p>`;
-          infoHTML += `<p><b>時間:</b> ${times[0] || 'N/A'}</p>`;
+          infoHTML += `<p><b>時間:</b> ${times.join(', ')}</p>`;
           infoHTML += `<p><b>順序:</b> ${orders.join(', ')}</p>`;
         }
 
