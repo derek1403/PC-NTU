@@ -220,7 +220,7 @@
     const imagePromises = [];
 
     for (let i = 0; i < maxImages; i++) {
-      imagePromises.push(loadTyphoonImage(tcIds[i], times[i], orders[i]));
+      imagePromises.push(loadTyphoonImage(String(tcIds[i]), String(times[i]), orders[i]));
     }
 
     // 等待所有圖片載入完成
