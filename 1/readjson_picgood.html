@@ -163,8 +163,8 @@
       // 🔧 定義圖片來源優先順序 (從高到低嘗試)
       const candidates = [
         `https://agora.ex.nii.ac.jp/digital-typhoon/wnp/by-name/${tcId.slice(0, 6)}/1/512x512/GMS4${time.slice(2)}.${tcId.slice(0, 6)}.jpg`,
-        `https://agora.ex.nii.ac.jp/digital-typhoon/wsp/by-name/${tcId.slice(0, 6)}/4/512x512/HMW8${time.slice(2)}.${tcId.slice(0, 6)}.jpg`,
-        `https://agora.ex.nii.ac.jp/digital-typhoon/wsp/by-name/${tcId.slice(0, 6)}/4/512x512/HMW9${time.slice(2)}.${tcId.slice(0, 6)}.jpg`,
+        `https://agora.ex.nii.ac.jp/digital-typhoon/wnp/by-name/${tcId.slice(0, 6)}/4/512x512/HMW8${time.slice(2)}.${tcId.slice(0, 6)}.jpg`,
+        `https://agora.ex.nii.ac.jp/digital-typhoon/wnp/by-name/${tcId.slice(0, 6)}/4/512x512/HMW9${time.slice(2)}.${tcId.slice(0, 6)}.jpg`,
         `https://media.istockphoto.com/id/1503385646/zh/%E7%85%A7%E7%89%87/portrait-funny-and-happy-shiba-inu-puppy-dog-peeking-out-from-behind-a-blue-banner-isolated-on.jpg?s=612x612&w=0&k=20&c=j6W1QMERTVgCfKQq7aWLv4m4vUmzHEaC8Iul9883-iE=`
       ];
 
@@ -219,8 +219,14 @@
     const maxImages = Math.min(tcIds.length, 5);
     const imagePromises = [];
 
-    for (let i = 0; i < maxImages; i++) {
-      imagePromises.push(loadTyphoonImage(String(tcIds[i]), String(times[i]), orders[i]));
+    for (let i = 0; i < tcIds.length; i++) {
+      if (["K", "W"].includes(tcIds[i].slice(-1))) {
+        imagePromises.push(loadTyphoonImage(String(tcIds[i]), String(times[i]), orders[i]));
+      }
+      // 如果已經收集到 maxImages 張，停止迴圈
+      if (imagePromises.length >= maxImages) {
+        break;
+      }
     }
 
     // 等待所有圖片載入完成
