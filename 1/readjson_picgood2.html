@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>颱風 3D 狀態圖 (相容版)</title>
+  <script src="https://cdn.plot.ly/plotly-2.30.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      display: flex; 
+      height: 100vh; 
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f5f5f5;
+    }
+    #plot { 
+      flex: 3; 
+      background: white;
+    }
+    #node-info { 
+      flex: 1; 
+      padding: 20px; 
+      background: white;
+      border-left: 3px solid #4a90e2;
+      overflow: auto;
+      box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+    }
+    #node-info h3 {
+      color: #2c3e50;
+      margin-bottom: 15px;
+      font-size: 1.2em;
+    }
+    #node-info p {
+      margin: 10px 0;
+      color: #555;
+      line-height: 1.6;
+    }
+    #node-info b {
+      color: #2c3e50;
+    }
+    #node-info img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-top: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    #loading {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      font-size: 1.2em;
+      color: #4a90e2;
+      z-index: 1000;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+    .spinner {
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #4a90e2;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 15px;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .hint {
+      color: #888;
+      font-style: italic;
+      font-size: 0.9em;
+    }
+    #stats {
+      margin-top: 20px;
+      padding: 10px;
+      background: #f0f8ff;
+      border-radius: 5px;
+      font-size: 0.85em;
+    }
+    .image-container {
+      margin-top: 15px;
+    }
+    .image-wrapper {
+      position: relative;
+      margin-bottom: 10px;
+    }
+    .image-wrapper img {
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .image-caption {
+      font-size: 0.85em;
+      color: #666;
+      margin-top: 5px;
+      text-align: center;
+    }
+    .image-loading {
+      text-align: center;
+      padding: 20px;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+  <div id="plot"></div>
+  <div id="node-info">
+    <div class="hint">
+      <p>💡 提示：點擊圖中的節點查看詳細資訊</p>
+      <p>🖱️ 可以拖動旋轉視角、滾輪縮放</p>
+    </div>
+    <div id="stats"></div>
+  </div>
+  <div id="loading">
+    <div class="spinner"></div>
+    <div>載入資料中...</div>
+  </div>
+
+  <script type="module">
+  // ==============================================================================
+  // 載入資料 (支援 .json 和 .json.gz)
+  // ==============================================================================
+  async function loadData(filename) {
+    try {
+      const response = await fetch(filename);
+      
+      if (filename.endsWith('.gz')) {
+        const buffer = await response.arrayBuffer();
+        const decompressed = pako.inflate(new Uint8Array(buffer), { to: 'string' });
+        return JSON.parse(decompressed);
+      } else {
+        return await response.json();
+      }
+    } catch (error) {
+      console.error('載入資料失敗:', error);
+      document.getElementById('loading').innerHTML = `
+        <div style="color: red;">❌ 載入失敗</div>
+        <div style="font-size: 0.9em; margin-top: 10px;">請確認檔案存在: ${filename}</div>
+      `;
+      throw error;
+    }
+  }
+
+  // ==============================================================================
+  // 🖼️ 載入颱風圖片 (優化版 - 支援往回嘗試 TC ID)
+  // ==============================================================================
+  /**
+   * 生成所有可能的 TC ID (往回最多 10 個)
+   * @param {string} tcId - 原始颱風編號 (例如 "202018W")
+   * @returns {Array<string>} - TC ID 列表 (例如 ["202018", "202017", ..., "202009"])
+   */
+  function generateTcIdCandidates(tcId) {
+    // 移除最後的字母 (K 或 W)
+    const tcIdNum = tcId.slice(0, -1);
+    const suffix = tcId.slice(-1);
+    
+    // 解析年份和編號
+    const year = tcIdNum.slice(0, 4);  // 例如 "2020"
+    const num = parseInt(tcIdNum.slice(4));  // 例如 18
+    
+    const candidates = [];
+    
+    // 從原始編號開始往回嘗試最多 10 個
+    for (let i = 0; i < 10; i++) {
+      const tryNum = num - i;
+      
+      // 如果編號小於 1，停止 (例如 202005 → 202001 就停止)
+      if (tryNum < 1) break;
+      
+      // 組合成完整的 TC ID (格式: YYYYNN，例如 "202018")
+      const tryTcId = `${year}${String(tryNum).padStart(2, '0')}`;
+      candidates.push(tryTcId);
+    }
+    
+    return candidates;
+  }
+
+  /**
+   * 載入颱風圖片，嘗試多個來源直到成功
+   * @param {string} tcId - 颱風編號 (例如 "202018W")
+   * @param {string} time - 時間字串 (例如 "2020-08-15 06:00:00")
+   * @param {number} order - 順序編號
+   * @returns {Promise<HTMLImageElement>} - 成功載入的圖片元素
+   */
+  function loadTyphoonImage(tcId, time, order) {
+    return new Promise((resolve) => {
+      // 生成 TC ID 候選列表 (往回最多 10 個)
+      const tcIdCandidates = generateTcIdCandidates(tcId);
+      
+      // 格式化時間 (移除前兩位年份，例如 "2020-08-15 06:00:00" → "200815.0600")
+      // 假設 time 格式為 "YYYY-MM-DD HH:MM:SS"
+      const timeFormatted = time.replace(/[-:\s]/g, '').slice(2, 11); // "200815060" → "200815.06"
+      const timeStr = timeFormatted.slice(0, 6) + '.' + timeFormatted.slice(6, 8) + '00';
+      
+      // 🔧 為每個 TC ID 生成所有可能的圖片 URL
+      const allCandidates = [];
+      
+      for (const tryTcId of tcIdCandidates) {
+        allCandidates.push(
+          `https://agora.ex.nii.ac.jp/digital-typhoon/wnp/by-name/${tryTcId}/1/512x512/GMS4${timeStr}.${tryTcId}.jpg`
+        );
+        allCandidates.push(
+          `https://agora.ex.nii.ac.jp/digital-typhoon/wnp/by-name/${tryTcId}/4/512x512/HMW8${timeStr}.${tryTcId}.jpg`
+        );
+        allCandidates.push(
+          `https://agora.ex.nii.ac.jp/digital-typhoon/wnp/by-name/${tryTcId}/4/512x512/HMW9${timeStr}.${tryTcId}.jpg`
+        );
+      }
+      
+      // 最後加入備用圖片
+      allCandidates.push(
+        `https://media.istockphoto.com/id/1503385646/zh/%E7%85%A7%E7%89%87/portrait-funny-and-happy-shiba-inu-puppy-dog-peeking-out-from-behind-a-blue-banner-isolated-on.jpg?s=612x612&w=0&k=20&c=j6W1QMERTVgCfKQq7aWLv4m4vUmzHEaC8Iul9883-iE=`
+      );
+
+      const img = document.createElement('img');
+      img.alt = `颱風 ${tcId} 圖片`;
+      img.style.maxWidth = "100%";
+      img.style.borderRadius = "8px";
+      img.style.boxShadow = "0 2px 8px rgba(0,0,0,0.15)";
+
+      let currentIndex = 0;
+
+      function tryLoadImage() {
+        if (currentIndex >= allCandidates.length) {
+          // 所有來源都失敗,回傳 null
+          console.log(`❌ 所有來源都失敗: ${tcId}`);
+          resolve(null);
+          return;
+        }
+
+        const currentUrl = allCandidates[currentIndex];
+        img.src = currentUrl;
+
+        img.onload = function() {
+          // 成功載入
+          console.log(`✅ 成功載入圖片 [${currentIndex + 1}/${allCandidates.length}]: ${currentUrl}`);
+          resolve(img);
+        };
+
+        img.onerror = function() {
+          // 載入失敗,嘗試下一個
+          // console.log(`❌ 載入失敗 [${currentIndex + 1}/${allCandidates.length}]: ${currentUrl}`);
+          currentIndex++;
+          tryLoadImage();
+        };
+      }
+
+      tryLoadImage();
+    });
+  }
+
+  /**
+   * 載入多張颱風圖片 (最多 5 張，僅限西北太平洋)
+   * @param {Array} tcIds - 颱風編號列表
+   * @param {Array} times - 時間列表
+   * @param {Array} orders - 順序列表
+   * @param {HTMLElement} container - 圖片容器
+   */
+  async function loadMultipleTyphoonImages(tcIds, times, orders, container) {
+    // 清空容器
+    container.innerHTML = '<div class="image-loading">🖼️ 載入圖片中...</div>';
+
+    // 🔧 篩選西北太平洋颱風 (K 或 W 結尾) 並限制最多 5 張
+    const maxImages = 5;
+    const imagePromises = [];
+
+    for (let i = 0; i < tcIds.length; i++) {
+      const tcId = String(tcIds[i]);
+      
+      // 篩選颱風編號: K 是特殊編號, W 是西北太平洋
+      if (["K", "W"].includes(tcId.slice(-1))) {
+        imagePromises.push(
+          loadTyphoonImage(tcId, String(times[i]), orders[i])
+        );
+      }
+
+      // 如果已經收集到 maxImages 張，停止迴圈
+      if (imagePromises.length >= maxImages) {
+        break;
+      }
+    }
+
+    // 如果沒有符合條件的颱風
+    if (imagePromises.length === 0) {
+      container.innerHTML = '<div class="image-loading" style="color: #999;">⚠️ 無西北太平洋颱風圖片</div>';
+      return;
+    }
+
+    // 等待所有圖片載入完成
+    const images = await Promise.all(imagePromises);
+
+    // 移除 loading 訊息
+    container.innerHTML = '';
+
+    // 顯示成功載入的圖片
+    let successCount = 0;
+    images.forEach((img, index) => {
+      if (img) {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'image-wrapper';
+        
+        wrapper.appendChild(img);
+        
+        const caption = document.createElement('div');
+        caption.className = 'image-caption';
+        
+        // 找到對應的原始 index (因為可能有被篩選掉的)
+        let originalIndex = 0;
+        let validCount = 0;
+        for (let j = 0; j < tcIds.length; j++) {
+          if (["K", "W"].includes(String(tcIds[j]).slice(-1))) {
+            if (validCount === index) {
+              originalIndex = j;
+              break;
+            }
+            validCount++;
+          }
+        }
+        
+        caption.textContent = `颱風 ${tcIds[originalIndex]} - ${times[originalIndex]}`;
+        wrapper.appendChild(caption);
+        
+        container.appendChild(wrapper);
+        successCount++;
+      }
+    });
+
+    // 如果沒有任何圖片載入成功
+    if (successCount === 0) {
+      container.innerHTML = '<div class="image-loading" style="color: #999;">⚠️ 無可用圖片</div>';
+    } else {
+      console.log(`✅ 成功載入 ${successCount} 張圖片`);
+    }
+  }
+
+  // ==============================================================================
+  // 🔧 處理兩種不同的 JSON 格式
+  // ==============================================================================
+  function processGraphData(graphData) {
+    const nodes = graphData.nodes;
+    let edgeData = {};
+    let metadata = {};
+
+    if (Array.isArray(graphData.edges)) {
+      console.log('🔄 偵測到舊格式,正在轉換邊的座標...');
+      
+      const edge_x = [];
+      const edge_y = [];
+      const edge_z = [];
+      
+      for (const [u, v] of graphData.edges) {
+        if (u >= nodes.length || v >= nodes.length) continue;
+        
+        edge_x.push(nodes[u].x);
+        edge_y.push(nodes[u].y);
+        edge_z.push(nodes[u].z);
+        
+        edge_x.push(nodes[v].x);
+        edge_y.push(nodes[v].y);
+        edge_z.push(nodes[v].z);
+        
+        edge_x.push(null);
+        edge_y.push(null);
+        edge_z.push(null);
+      }
+      
+      edgeData = { x: edge_x, y: edge_y, z: edge_z };
+      metadata = {
+        total_nodes: nodes.length,
+        total_edges: graphData.edges.length,
+        sampled_edges: graphData.edges.length,
+        sample_rate: 1.0
+      };
+      
+      console.log(`✅ 已轉換 ${graphData.edges.length} 條邊`);
+      
+    } else if (graphData.edges && graphData.edges.x) {
+      console.log('✅ 偵測到優化格式');
+      edgeData = graphData.edges;
+      metadata = graphData.metadata || {
+        total_nodes: nodes.length,
+        total_edges: edgeData.count || 0,
+        sampled_edges: edgeData.count || 0,
+        sample_rate: 1.0
+      };
+    } else {
+      console.error('❌ 無法識別的邊格式');
+      edgeData = { x: [], y: [], z: [] };
+      metadata = { total_nodes: nodes.length, total_edges: 0, sampled_edges: 0, sample_rate: 0 };
+    }
+
+    return { nodes, edgeData, metadata };
+  }
+
+  // ==============================================================================
+  // 主程式
+  // ==============================================================================
+  (async () => {
+    try {
+      // 🔧 修改這裡來載入不同的檔案
+      const graphData = await loadData('graph_data_full.json.gz');
+      
+      console.log('📊 原始資料:', graphData);
+      
+      const { nodes, edgeData, metadata } = processGraphData(graphData);
+      
+      console.log('📊 處理後:', { nodes: nodes.length, edges: edgeData });
+      
+      document.getElementById('loading').style.display = 'none';
+
+      // ==============================================================================
+      // 繪製邊
+      // ==============================================================================
+      const edgeTrace = {
+        x: edgeData.x,
+        y: edgeData.y,
+        z: edgeData.z,
+        mode: 'lines',
+        type: 'scatter3d',
+        line: { 
+          color: 'rgba(150, 150, 150, 0.4)',
+          width: 1
+        },
+        hoverinfo: 'skip',
+        name: `時間演化 (${metadata.sampled_edges} 條邊)`
+      };
+
+      // ==============================================================================
+      // 繪製節點
+      // ==============================================================================
+      const nodeColors = Array(nodes.length).fill('#4a90e2');
+      const nodeTrace = {
+        x: nodes.map(n => n.x),
+        y: nodes.map(n => n.y),
+        z: nodes.map(n => n.z),
+        mode: 'markers',
+        type: 'scatter3d',
+        marker: {
+          size: 5,
+          color: nodeColors,
+          opacity: 0.8,
+          line: { width: 0.5, color: 'white' }
+        },
+        hovertext: nodes.map(n => n.info_text || `Node ${n.id}`),
+        hoverinfo: 'text',
+        name: `颱風狀態 (${nodes.length} 個)`
+      };
+
+      // ==============================================================================
+      // 配置圖表
+      // ==============================================================================
+      const layout = {
+        margin: { l: 0, r: 0, t: 0, b: 0 },
+        scene: { 
+          xaxis: { title: 'Layout X', showgrid: true },
+          yaxis: { title: 'Layout Y', showgrid: true },
+          zaxis: { title: 'Layout Z', showgrid: true },
+          camera: {
+            eye: { x: 1.5, y: 1.5, z: 1.5 }
+          },
+          bgcolor: '#f8f9fa'
+        },
+        hovermode: 'closest',
+        showlegend: true,
+        legend: {
+          x: 0.02,
+          y: 0.98,
+          bgcolor: 'rgba(255,255,255,0.9)'
+        }
+      };
+
+      const config = {
+        responsive: true,
+        displayModeBar: true,
+        displaylogo: false
+      };
+
+      Plotly.newPlot('plot', [edgeTrace, nodeTrace], layout, config);
+
+      // ==============================================================================
+      // 顯示統計資訊
+      // ==============================================================================
+      document.getElementById('stats').innerHTML = `
+        <b>📊 資料統計:</b><br>
+        節點數: ${metadata.total_nodes}<br>
+        邊數: ${metadata.sampled_edges} / ${metadata.total_edges}<br>
+        取樣率: ${(metadata.sample_rate * 100).toFixed(1)}%
+      `;
+
+      // ==============================================================================
+      // 點擊事件
+      // ==============================================================================
+      const plotDiv = document.getElementById('plot');
+      const nodeTraceIndex = 1;
+
+      plotDiv.on('plotly_click', function(eventData) {
+        const point = eventData.points[0];
+
+        if (!point || point.curveNumber !== nodeTraceIndex) {
+          return;
+        }
+
+        const nodeIndex = point.pointNumber;
+        const node = nodes[nodeIndex];
+
+        if (!node) return;
+
+        // 更新節點顏色
+        const newColors = Array(nodes.length).fill('#4a90e2');
+        newColors[nodeIndex] = '#e74c3c';
+
+        setTimeout(() => {
+          try {
+            Plotly.restyle('plot', { 'marker.color': [newColors] }, [nodeTraceIndex]);
+          } catch (e) {
+            console.error("Plotly restyle error:", e);
+          }
+        }, 0);
+
+        // 🎨 更新右側資訊 (包含圖片)
+        const tcIds = node.TC_ID || [];
+        const times = node.time || [];
+        const orders = node.order || [];
+
+        // 構建基本資訊
+        let infoHTML = `
+          <h3>🌀 颱風狀態</h3>
+          <p><b>節點 ID:</b> ${node.id}</p>
+          <p><b>狀態參數:</b> ${node.info_text || 'N/A'}</p>
+          <p><b>RMW:</b> ${node.RMW ? node.RMW.toFixed(1) : 'N/A'} km</p>
+          <p><b>Vmax:</b> ${node.Vmax ? node.Vmax.toFixed(2) : 'N/A'} m/s</p>
+          <p><b>IKE:</b> ${node.IKE ? node.IKE.toFixed(2) : 'N/A'} TJ</p>
+          <p><b>座標:</b> (${node.x.toFixed(3)}, ${node.y.toFixed(3)}, ${node.z.toFixed(3)})</p>
+        `;
+
+        // 如果有颱風編號,顯示列表
+        if (tcIds.length > 0) {
+          infoHTML += `<hr style="margin: 15px 0; border: none; border-top: 1px solid #ddd;">`;
+          infoHTML += `<p><b>颱風編號:</b> ${tcIds.join(', ')}</p>`;
+          infoHTML += `<p><b>時間:</b> ${times[0] || 'N/A'}</p>`;
+          infoHTML += `<p><b>順序:</b> ${orders.join(', ')}</p>`;
+        }
+
+        infoHTML += `<hr style="margin: 15px 0; border: none; border-top: 1px solid #ddd;">`;
+        infoHTML += `<div id="image-container" class="image-container"></div>`;
+        infoHTML += document.getElementById('stats').outerHTML;
+
+        document.getElementById('node-info').innerHTML = infoHTML;
+
+        // 🖼️ 非同步載入圖片
+        const imageContainer = document.getElementById('image-container');
+        if (tcIds.length > 0 && times.length > 0 && orders.length > 0) {
+          loadMultipleTyphoonImages(tcIds, times, orders, imageContainer);
+        } else {
+          imageContainer.innerHTML = '<div class="image-loading" style="color: #999;">⚠️ 無圖片資訊</div>';
+        }
+      });
+
+      console.log(`
+      ✅ 圖表渲染完成!
+      📊 統計:
+      - 節點數: ${metadata.total_nodes}
+      - 邊數: ${metadata.sampled_edges}
+      - 邊的座標陣列長度: x=${edgeData.x.length}, y=${edgeData.y.length}, z=${edgeData.z.length}
+      `);
+
+    } catch (error) {
+      console.error('❌ 初始化失敗:', error);
+      document.getElementById('loading').innerHTML = `
+        <div style="color: red;">❌ 發生錯誤</div>
+        <div style="font-size: 0.9em; margin-top: 10px;">${error.message}</div>
+      `;
+    }
+  })();
+  </script>
+</body>
+</html>
