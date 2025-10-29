@@ -194,26 +194,21 @@
       // 生成 TC ID 候選列表 (往回最多 10 個)
       const tcIdCandidates = generateTcIdCandidates(tcId);
       
-      // 格式化時間 (移除前兩位年份，例如 "2020-08-15 06:00:00" → "200815.0600")
-      // 假設 time 格式為 "YYYY-MM-DD HH:MM:SS"
-      const timeFormatted = time.replace(/[-:\s]/g, '').slice(2, 11); // "200815060" → "200815.06"
-      const timeStr = timeFormatted.slice(0, 6) + '.' + timeFormatted.slice(6, 8) + '00';
-      
       // 🔧 為每個 TC ID 生成所有可能的圖片 URL
       const allCandidates = [];
       
       for (const tryTcId of tcIdCandidates) {
         allCandidates.push(
-          `https://agora.ex.nii.ac.jp/digital-typhoon/wnp/by-name/${tryTcId}/1/512x512/GMS4${timeStr}.${tryTcId}.jpg`
+          `https://agora.ex.nii.ac.jp/digital-typhoon/wnp/by-name/${tryTcId}/1/512x512/GMS4${time.slice(2)}.${tryTcId}.jpg`
         );
         allCandidates.push(
-          `https://agora.ex.nii.ac.jp/digital-typhoon/wnp/by-name/${tryTcId}/4/512x512/MTS2${timeStr}.${tryTcId}.jpg`
+          `https://agora.ex.nii.ac.jp/digital-typhoon/wnp/by-name/${tryTcId}/4/512x512/MTS2${time.slice(2)}}.${tryTcId}.jpg`
         );        
         allCandidates.push(
-          `https://agora.ex.nii.ac.jp/digital-typhoon/wnp/by-name/${tryTcId}/4/512x512/HMW8${timeStr}.${tryTcId}.jpg`
+          `https://agora.ex.nii.ac.jp/digital-typhoon/wnp/by-name/${tryTcId}/4/512x512/HMW8${time.slice(2)}.${tryTcId}.jpg`
         );
         allCandidates.push(
-          `https://agora.ex.nii.ac.jp/digital-typhoon/wnp/by-name/${tryTcId}/4/512x512/HMW9${timeStr}.${tryTcId}.jpg`
+          `https://agora.ex.nii.ac.jp/digital-typhoon/wnp/by-name/${tryTcId}/4/512x512/HMW9${time.slice(2)}.${tryTcId}.jpg`
         );
       }
       
