@@ -167,8 +167,8 @@
     
     const candidates = [];
     
-    // 從原始編號開始往回嘗試最多 5 個
-    for (let i = 0; i < 5; i++) {
+    // 從原始編號開始往回嘗試最多 7 個
+    for (let i = 0; i < 7; i++) {
       const tryNum = num - i;
       
       // 如果編號小於 1，停止 (例如 202005 → 202001 就停止)
@@ -191,7 +191,7 @@
    */
   function loadTyphoonImage(tcId, time, order) {
     return new Promise((resolve) => {
-      // 生成 TC ID 候選列表 (往回最多 5 個)
+      // 生成 TC ID 候選列表 (往回最多 7 個)
       const tcIdCandidates = generateTcIdCandidates(tcId);
       
       // 🔧 為每個 TC ID 生成所有可能的圖片 URL
@@ -202,13 +202,22 @@
           `https://agora.ex.nii.ac.jp/digital-typhoon/wnp/by-name/${tryTcId}/1/512x512/GMS1${time.slice(2)}.${tryTcId}.jpg`
         );  
         allCandidates.push(
+          `https://agora.ex.nii.ac.jp/digital-typhoon/wnp/by-name/${tryTcId}/1/512x512/GMS2${time.slice(2)}.${tryTcId}.jpg`
+        );  
+        allCandidates.push(
           `https://agora.ex.nii.ac.jp/digital-typhoon/wnp/by-name/${tryTcId}/4/512x512/MTS2${time.slice(2)}.${tryTcId}.jpg`
         );   
+        allCandidates.push(
+          `https://agora.ex.nii.ac.jp/digital-typhoon/wnp/by-name/${tryTcId}/3/512x512/GOE9${time.slice(2)}.${tryTcId}.jpg`
+        );  
         allCandidates.push(
           `https://agora.ex.nii.ac.jp/digital-typhoon/wnp/by-name/${tryTcId}/1/512x512/GMS3${time.slice(2)}.${tryTcId}.jpg`
         );         
         allCandidates.push(
           `https://agora.ex.nii.ac.jp/digital-typhoon/wnp/by-name/${tryTcId}/1/512x512/GMS4${time.slice(2)}.${tryTcId}.jpg`
+        );
+        allCandidates.push(
+          `https://agora.ex.nii.ac.jp/digital-typhoon/wnp/by-name/${tryTcId}/3/512x512/GMS5${time.slice(2)}.${tryTcId}.jpg`
         );
         allCandidates.push(
           `https://agora.ex.nii.ac.jp/digital-typhoon/wnp/by-name/${tryTcId}/4/512x512/HMW8${time.slice(2)}.${tryTcId}.jpg`
