@@ -23,6 +23,8 @@ function calculateNodeColors(nodes, selectedIndex = null) {
     // 優先級 2: 高亮模式開啟時
     if (highlightMode) {
       // 起始點 (order === 1) → 藍色
+      console.log(highlightMode)
+      console.log(node.order)
       if (node.order === 1) {
         return '#3498db'; // 藍色
       }
