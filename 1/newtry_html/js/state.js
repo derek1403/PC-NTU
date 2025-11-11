@@ -17,7 +17,13 @@ export const state = {
     vmaxMax: null,
     ikeMin: null,
     ikeMax: null
-  }
+  },
+  
+  // 高亮模式（顯示起始點和最終點）
+  highlightMode: false,
+  
+  // 當前選中的節點索引
+  selectedNodeIndex: null
 };
 
 /**
@@ -88,4 +94,32 @@ export function getAllEdges() {
  */
 export function getMetadata() {
   return state.metadata;
+}
+
+/**
+ * 設定高亮模式
+ */
+export function setHighlightMode(enabled) {
+  state.highlightMode = enabled;
+}
+
+/**
+ * 取得高亮模式狀態
+ */
+export function getHighlightMode() {
+  return state.highlightMode;
+}
+
+/**
+ * 設定選中的節點索引
+ */
+export function setSelectedNodeIndex(index) {
+  state.selectedNodeIndex = index;
+}
+
+/**
+ * 取得選中的節點索引
+ */
+export function getSelectedNodeIndex() {
+  return state.selectedNodeIndex;
 }

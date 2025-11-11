@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>颱風 3D 狀態圖 (帶篩選)</title>
+  
+  <!-- 外部依賴 -->
+  <script src="https://cdn.plot.ly/plotly-2.30.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
+  
+  <!-- 樣式 -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="plot"></div>
+  
+  <div id="sidebar">
+    <!-- 篩選功能面板 -->
+    <div id="filter-panel">
+      <div class="panel-header" id="filter-toggle">
+        <h3>🎯 篩選功能</h3>
+        <span class="arrow">▼</span>
+      </div>
+      
+      <div class="panel-content" id="filter-content">
+        <div class="filter-group">
+          <label>RMW (km)</label>
+          <div class="filter-row">
+            <select id="rmw-min">
+              <option value="">不限制</option>
+              <option value="0">0</option>
+              <option value="20">20</option>
+              <option value="50">50</option>
+              <option value="100">100</option>
+              <option value="150">150</option>
+              <option value="200">200</option>
+              <option value="250">250</option>
+            </select>
+            <span>~</span>
+            <select id="rmw-max">
+              <option value="">不限制</option>
+              <option value="50">50</option>
+              <option value="100">100</option>
+              <option value="150">150</option>
+              <option value="200">200</option>
+              <option value="250">250</option>
+              <option value="300">300</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <label>Vmax (m/s)</label>
+          <div class="filter-row">
+            <select id="vmax-min">
+              <option value="">不限制</option>
+              <option value="0">0</option>
+              <option value="17">17 (Tc)</option>
+              <option value="33">33 (C1)</option>
+              <option value="51">51 (C3)</option>
+              <option value="58">58 (C4)</option>
+              <option value="70">70 (C5)</option>
+            </select>
+            <span>~</span>
+            <select id="vmax-max">
+              <option value="">不限制</option>
+              <option value="17">17 (Tc)</option>
+              <option value="33">33 (C1)</option>
+              <option value="51">51 (C3)</option>
+              <option value="58">58 (C4)</option>
+              <option value="70">70 (C5)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <label>IKE (TJ)</label>
+          <div class="filter-row">
+            <select id="ike-min">
+              <option value="">不限制</option>
+              <option value="0">0</option>
+              <option value="20">20</option>
+              <option value="50">50</option>
+              <option value="100">100</option>
+              <option value="150">150</option>
+              <option value="200">200</option>
+              <option value="250">250</option>
+            </select>
+            <span>~</span>
+            <select id="ike-max">
+              <option value="">不限制</option>
+              <option value="50">50</option>
+              <option value="100">100</option>
+              <option value="150">150</option>
+              <option value="200">200</option>
+              <option value="250">250</option>
+              <option value="300">300</option>
+            </select>
+          </div>
+        </div>
+
+        <button id="apply-filter-btn">✓ 套用篩選</button>
+        <button id="reset-filter-btn">↺ 重置</button>
+      </div>
+    </div>
+
+    <!-- 功能面板 -->
+    <div class="feature-panel">
+      <div class="panel-header" id="feature-toggle">
+        <h3>⚙️ 功能</h3>
+        <span class="arrow">▼</span>
+      </div>
+      
+      <div class="panel-content" id="feature-content">
+        <div class="switch-container">
+          <label>顯示起始/最終點</label>
+          <label class="switch">
+            <input type="checkbox" id="highlight-switch">
+            <span class="slider"></span>
+          </label>
+        </div>
+        
+        <div class="highlight-legend">
+          <div class="legend-item">
+            <span class="legend-color" style="background: #3498db;"></span>
+            <span>起始點 (order = 1)</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-color" style="background: #e67e22;"></span>
+            <span>最終點 (reverse_order = 1)</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-color" style="background: #e74c3c;"></span>
+            <span>選定的節點</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="node-info">
+      <div class="hint">
+        <p>💡 提示：點擊圖中的節點查看詳細資訊</p>
+        <p>🖱️ 可以拖動旋轉視角、滾輪縮放</p>
+        <p>🎯 使用上方篩選器過濾資料</p>
+      </div>
+      <div id="stats"></div>
+    </div>
+  </div>
+
+  <div id="loading">
+    <div class="spinner"></div>
+    <div>載入資料中...</div>
+  </div>
+
+  <!-- 主程式 (ES6 Module) -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

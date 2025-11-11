@@ -3,6 +3,40 @@
  * 負責 3D 圖表的渲染與更新
  */
 
+import { getHighlightMode } from './state.js';
+
+/**
+ * 計算節點顏色（根據高亮模式和選中狀態）
+ * @param {Array} nodes - 節點陣列
+ * @param {number} selectedIndex - 選中的節點索引
+ * @returns {Array} 顏色陣列
+ */
+function calculateNodeColors(nodes, selectedIndex = null) {
+  const highlightMode = getHighlightMode();
+  
+  return nodes.map((node, index) => {
+    // 優先級 1: 選中的節點 → 紅色
+    if (selectedIndex !== null && index === selectedIndex) {
+      return '#e74c3c'; // 紅色
+    }
+    
+    // 優先級 2: 高亮模式開啟時
+    if (highlightMode) {
+      // 起始點 (order === 1) → 藍色
+      if (node.order === 1) {
+        return '#3498db'; // 藍色
+      }
+      // 最終點 (reverse_order === 1) → 橘色
+      if (node.reverse_order === 1) {
+        return '#e67e22'; // 橘色
+      }
+    }
+    
+    // 預設顏色
+    return '#4a90e2'; // 淺藍色
+  });
+}
+
 /**
  * 更新 3D 圖表
  * @param {Array} nodes - 節點陣列
@@ -10,7 +44,7 @@
  * @param {number} filteredEdgeCount - 篩選後的邊數量
  */
 export function updatePlot(nodes, edgeData, filteredEdgeCount) {
-  const nodeColors = Array(nodes.length).fill('#4a90e2');
+  const nodeColors = calculateNodeColors(nodes);
   
   // 邊的軌跡
   const edgeTrace = {
@@ -76,15 +110,12 @@ export function updatePlot(nodes, edgeData, filteredEdgeCount) {
 }
 
 /**
- * 更新節點顏色（用於高亮選中的節點）
+ * 更新節點顏色（用於高亮選中的節點或高亮模式變更）
  * @param {Array} nodes - 節點陣列
  * @param {number} selectedIndex - 選中的節點索引
  */
 export function updateNodeColors(nodes, selectedIndex) {
-  const newColors = Array(nodes.length).fill('#4a90e2');
-  if (selectedIndex !== null && selectedIndex >= 0 && selectedIndex < nodes.length) {
-    newColors[selectedIndex] = '#e74c3c';
-  }
+  const newColors = calculateNodeColors(nodes, selectedIndex);
 
   setTimeout(() => {
     try {
@@ -93,4 +124,13 @@ export function updateNodeColors(nodes, selectedIndex) {
       console.error("Plotly restyle error:", e);
     }
   }, 0);
+}
+
+/**
+ * 更新節點顏色（含高亮模式）- 別名函數
+ * @param {Array} nodes - 節點陣列
+ * @param {number} selectedIndex - 選中的節點索引
+ */
+export function updatePlotWithHighlight(nodes, selectedIndex = null) {
+  updateNodeColors(nodes, selectedIndex);
 }

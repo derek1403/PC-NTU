@@ -8,6 +8,7 @@ import { processGraphData, filterNodes, filterEdges, buildEdgeCoordinates } from
 import { updatePlot } from './plotManager.js';
 import { readFilterFromUI, resetFilterUI, updateStats } from './filterUI.js';
 import { setupNodeClickHandler, setupFilterButtons } from './eventHandlers.js';
+import { initUIControls } from './uiControls.js';
 import { 
   setNodes, 
   setEdges, 
@@ -100,7 +101,7 @@ async function initialize() {
   try {
     // 載入資料
     console.log('📥 開始載入資料...');
-    const graphData = await loadData('https://raw.githubusercontent.com/derek1403/PC-NTU/main/1/graph_data_full.json.gz'); //../graph_data_full.json.gz 會有error 這只是目錄查詢系統
+    const graphData = await loadData('https://raw.githubusercontent.com/derek1403/PC-NTU/main/1/graph_data_full.json.gz');
     
     console.log('📊 原始資料:', graphData);
     
@@ -127,6 +128,9 @@ async function initialize() {
     // 設定事件處理
     setupNodeClickHandler(nodes);
     setupFilterButtons(applyFilter, resetFilter);
+    
+    // 初始化 UI 控制項（摺疊面板和高亮開關）
+    initUIControls();
 
     console.log('✅ 應用程式初始化完成！');
 
