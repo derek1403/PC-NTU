@@ -100,7 +100,7 @@ async function initialize() {
   try {
     // 載入資料
     console.log('📥 開始載入資料...');
-    const graphData = await loadData('https://github.com/derek1403/PC-NTU/tree/main/1/graph_data_full.json.gz');
+    const graphData = await loadData('https://github.com/derek1403/PC-NTU/1/graph_data_full.json.gz');
     
     console.log('📊 原始資料:', graphData);
     
