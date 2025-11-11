@@ -24,10 +24,13 @@ function calculateNodeColors(nodes, selectedIndex = null) {
     if (highlightMode) {
       // 起始點 (order === 1) → 藍色
       console.log(node.order.includes(1))
-      console.log(node.order === 1)
+      console.log(node.order )
+      console.log('a' )
       if (node.order.includes(1)) {
-        return '#3498db'; // 藍色
+        //return '#3498db'; // 藍色
+        return '#cc0404ff'; // 藍色
       }
+      console.log('b' )
       // 最終點 (reverse_order === 1) → 橘色
       if (node.reverse_order.includes(1)) {
         return '#e67e22'; // 橘色
