@@ -100,7 +100,7 @@ async function initialize() {
   try {
     // 載入資料
     console.log('📥 開始載入資料...');
-    const graphData = await loadData('../graph_data_full.json.gz');
+    const graphData = await loadData('https://raw.githubusercontent.com/derek1403/PC-NTU/main/1/graph_data_full.json.gz'); //../graph_data_full.json.gz 會有error 這只是目錄查詢系統
     
     console.log('📊 原始資料:', graphData);
     
