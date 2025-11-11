@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>颱風 3D 狀態圖 (帶篩選)</title>
-
-  <!-- 外部套件 -->
+  
+  <!-- 外部依賴 -->
   <script src="https://cdn.plot.ly/plotly-2.30.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
-
-  <!-- 引用自訂樣式 -->
-  <link rel="stylesheet" href="style.css">
+  
+  <!-- 樣式 -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <div id="plot"></div>
@@ -18,8 +18,7 @@
   <div id="sidebar">
     <div id="filter-panel">
       <h3>🎯 篩選條件</h3>
-
-      <!-- RMW -->
+      
       <div class="filter-group">
         <label>RMW (km)</label>
         <div class="filter-row">
@@ -46,7 +45,6 @@
         </div>
       </div>
 
-      <!-- Vmax -->
       <div class="filter-group">
         <label>Vmax (m/s)</label>
         <div class="filter-row">
@@ -71,7 +69,6 @@
         </div>
       </div>
 
-      <!-- IKE -->
       <div class="filter-group">
         <label>IKE (TJ)</label>
         <div class="filter-row">
@@ -117,7 +114,7 @@
     <div>載入資料中...</div>
   </div>
 
-  <!-- 引用外部 JavaScript -->
-  <script type="module" src="script.js"></script>
+  <!-- 主程式 (ES6 Module) -->
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>
