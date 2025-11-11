@@ -24,8 +24,8 @@ function calculateNodeColors(nodes, selectedIndex = null) {
     if (highlightMode) {
       // 起始點 (order === 1) → 藍色
       console.log(node.order.includes(1))
-      console.log(node.order )
-      console.log('a' )
+      console.log(node.reverse_orders )
+      console.log('A' )
       if (node.order.includes(1)) {
         //return '#3498db'; // 藍色
         return '#cc0404ff'; // 藍色
