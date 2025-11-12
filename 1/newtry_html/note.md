@@ -11,8 +11,10 @@ project/
     ├── filterUI.js        # 篩選介面與統計顯示
     ├── imageLoader.js     # 颱風圖片載入
     ├── eventHandlers.js   # UI 事件處理（點擊、按鈕）
-    └── uiControls.js      # 處理摺疊面板和開關邏輯
-    
+    ├── uiControls.js      # 處理摺疊面板和開關邏輯
+    ├── componentAnalysis.js   # 處理連通圖分析
+    └── typhoonTracker.js #  處理颱風路徑追蹤
+
 state.js - 類似 Python 的全域變數管理
 dataLoader.js - 處理 .gz 解壓縮和 JSON 載入
 graphProcessor.js - 圖資料的篩選和處理

@@ -24,7 +24,14 @@ export const state = {
   highlightMode: false,
   
   // 當前選中的節點索引
-  selectedNodeIndex: null
+  selectedNodeIndex: null,
+  
+  // 颱風路徑追蹤
+  typhoonTracks: [], // [{ id, color }, ...]
+  
+  // 陸地與島嶼顯示
+  showLandmass: false,
+  landmassData: null // { mainland, largestIsland, stats }
 };
 
 /**
@@ -65,7 +72,8 @@ export function resetFilter() {
     vmaxMin: null,
     vmaxMax: null,
     ikeMin: null,
-    ikeMax: null
+    ikeMax: null,
+    typhoonIds: []
   };
 }
 

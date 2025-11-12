@@ -8,7 +8,7 @@ import { processGraphData, filterNodes, filterEdges, buildEdgeCoordinates } from
 import { updatePlot } from './plotManager.js';
 import { readFilterFromUI, resetFilterUI, updateStats } from './filterUI.js';
 import { setupNodeClickHandler, setupFilterButtons } from './eventHandlers.js';
-import { initUIControls } from './uiControls.js';
+import { initUIControls, updateLandmassDisplay } from './uiControls.js';
 import { 
   setNodes, 
   setEdges, 
@@ -17,7 +17,8 @@ import {
   getAllNodes, 
   getAllEdges, 
   getMetadata,
-  getCurrentFilter 
+  getCurrentFilter,
+  state
 } from './state.js';
 
 /**
@@ -42,11 +43,14 @@ function applyFilter() {
   // 篩選邊
   const filteredEdges = filterEdges(allEdges, filteredNodeIds);
 
+  // 儲存當前的邊（供陸地與島嶼分析使用）
+  state.currentEdges = filteredEdges;
+
   // 建立邊的座標
   const edgeData = buildEdgeCoordinates(filteredEdges, allNodes);
 
-  // 更新圖表
-  updatePlot(filteredNodes, edgeData, filteredEdges.length);
+  // 更新圖表（傳入 edges 以支援彩色邊）
+  updatePlot(filteredNodes, edgeData, filteredEdges.length, filteredEdges);
 
   // 更新統計資訊
   updateStats(
@@ -58,6 +62,9 @@ function applyFilter() {
 
   // 重新綁定點擊事件（因為節點可能改變）
   setupNodeClickHandler(filteredNodes);
+  
+  // 更新陸地與島嶼資料（如果開啟）
+  updateLandmassDisplay();
 
   console.log(`✅ 篩選完成: ${filteredNodes.length} 節點, ${filteredEdges.length} 邊`);
 }
@@ -76,9 +83,12 @@ function resetFilter() {
   const allEdges = getAllEdges();
   const metadata = getMetadata();
 
+  // 儲存當前的邊
+  state.currentEdges = allEdges;
+
   // 顯示所有資料
   const edgeData = buildEdgeCoordinates(allEdges, allNodes);
-  updatePlot(allNodes, edgeData, allEdges.length);
+  updatePlot(allNodes, edgeData, allEdges.length, allEdges);
 
   // 更新統計資訊
   updateStats(
@@ -90,6 +100,9 @@ function resetFilter() {
 
   // 重新綁定點擊事件
   setupNodeClickHandler(allNodes);
+  
+  // 更新陸地與島嶼資料
+  updateLandmassDisplay();
 
   console.log('✅ 已重置篩選');
 }
@@ -112,6 +125,7 @@ async function initialize() {
     setNodes(nodes);
     setEdges(edges);
     setMetadata(metadata);
+    state.currentEdges = edges;
     
     console.log('📊 處理後:', { nodes: nodes.length, edges: edges.length });
     
@@ -120,7 +134,7 @@ async function initialize() {
 
     // 初始渲染
     const edgeData = buildEdgeCoordinates(edges, nodes);
-    updatePlot(nodes, edgeData, edges.length);
+    updatePlot(nodes, edgeData, edges.length, edges);
 
     // 更新統計資訊
     updateStats(nodes.length, edges.length, metadata.total_nodes, metadata.total_edges);
@@ -129,7 +143,7 @@ async function initialize() {
     setupNodeClickHandler(nodes);
     setupFilterButtons(applyFilter, resetFilter);
     
-    // 初始化 UI 控制項（摺疊面板和高亮開關）
+    // 初始化 UI 控制項（摺疊面板、高亮開關、颱風追蹤等）
     initUIControls();
 
     console.log('✅ 應用程式初始化完成！');

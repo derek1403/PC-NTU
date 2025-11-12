@@ -442,3 +442,146 @@ input:checked + .slider:before {
 .icon-btn:active {
   transform: scale(0.95);
 }
+
+/* ========== 功能分隔線 ========== */
+.feature-divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 15px 0;
+}
+
+/* ========== 功能區塊 ========== */
+.feature-section {
+  margin: 15px 0;
+}
+
+.feature-section label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.95em;
+  margin-bottom: 10px;
+}
+
+/* ========== 颱風追蹤項目 ========== */
+#typhoon-tracks-container {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+.track-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.track-input {
+  flex: 1;
+  padding: 6px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  background: white;
+  color: #333;
+  font-size: 0.85em;
+}
+
+.track-input.invalid {
+  border-color: #e74c3c;
+  background: #ffebee;
+}
+
+.track-input::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+.track-color {
+  width: 40px;
+  height: 30px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 2px;
+}
+
+.track-remove {
+  width: 30px;
+  height: 30px;
+  background: rgba(231, 76, 60, 0.8);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  padding: 0;
+}
+
+.track-remove:hover {
+  background: rgba(231, 76, 60, 1);
+  transform: scale(1.1);
+}
+
+.add-btn {
+  width: 100%;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px dashed rgba(255, 255, 255, 0.4);
+  border-radius: 5px;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.add-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-style: solid;
+}
+
+/* ========== 陸地與島嶼資訊 ========== */
+.landmass-info {
+  margin-top: 10px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.85em;
+}
+
+.info-section {
+  margin-bottom: 10px;
+}
+
+.info-section:last-child {
+  margin-bottom: 0;
+}
+
+.info-title {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.info-stats {
+  display: flex;
+  gap: 15px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9em;
+}
+
+.info-stats span {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
+}

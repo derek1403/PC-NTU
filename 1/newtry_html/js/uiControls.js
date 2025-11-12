@@ -1,11 +1,31 @@
 /**
  * UI 控制模組
- * 處理摺疊面板和開關邏輯
+ * 處理摺疊面板、開關和颱風追蹤 UI
  */
 
-import { state, setHighlightMode } from './state.js';
-import { getAllNodes } from './state.js';
+import { 
+  state, 
+  setHighlightMode, 
+  getTyphoonTracks, 
+  setTyphoonTracks,
+  addTyphoonTrack,
+  removeTyphoonTrack,
+  setShowLandmass,
+  setLandmassData,
+  getAllNodes
+} from './state.js';
 import { updatePlotWithHighlight } from './plotManager.js';
+import { validateTyphoonId } from './typhoonTracker.js';
+import { findConnectedComponents } from './componentAnalysis.js';
+
+// 預設顏色列表
+const DEFAULT_COLORS = [
+  '#e74c3c', '#3498db', '#2ecc71', '#f39c12', '#9b59b6',
+  '#1abc9c', '#e67e22', '#34495e', '#16a085', '#27ae60',
+  '#2980b9', '#8e44ad', '#c0392b', '#d35400', '#7f8c8d'
+];
+
+let colorIndex = 0;
 
 /**
  * 初始化摺疊面板
@@ -21,7 +41,6 @@ export function initCollapsiblePanels() {
       filterContent.classList.toggle('collapsed');
       filterToggle.classList.toggle('collapsed');
       
-      // 更新箭頭方向
       const arrow = filterToggle.querySelector('.arrow');
       if (arrow) {
         arrow.textContent = isCollapsed ? '▼' : '▶';
@@ -39,7 +58,6 @@ export function initCollapsiblePanels() {
       featureContent.classList.toggle('collapsed');
       featureToggle.classList.toggle('collapsed');
       
-      // 更新箭頭方向
       const arrow = featureToggle.querySelector('.arrow');
       if (arrow) {
         arrow.textContent = isCollapsed ? '▼' : '▶';
@@ -63,7 +81,6 @@ export function initHighlightSwitch() {
       
       console.log(`高亮模式: ${isEnabled ? '開啟' : '關閉'}`);
       
-      // 更新圖表顏色
       refreshPlotColors();
     });
   }
@@ -79,7 +96,6 @@ export function initLegendToggle() {
   const legendElement = document.getElementById('highlight-legend');
   
   if (legendToggleBtn && legendElement) {
-    // 預設隱藏圖例
     legendElement.style.display = 'none';
     
     legendToggleBtn.addEventListener('click', () => {
@@ -94,14 +110,191 @@ export function initLegendToggle() {
 }
 
 /**
- * 刷新圖表顏色（根據高亮模式）
+ * 初始化颱風路徑追蹤 UI
+ */
+export function initTyphoonTracker() {
+  const addTrackBtn = document.getElementById('add-track-btn');
+  
+  if (addTrackBtn) {
+    addTrackBtn.addEventListener('click', () => {
+      addTrackUI();
+    });
+  }
+
+  console.log('✅ 颱風路徑追蹤初始化完成');
+}
+
+/**
+ * 新增颱風追蹤 UI
+ */
+function addTrackUI() {
+  const container = document.getElementById('typhoon-tracks-container');
+  const trackIndex = getTyphoonTracks().length;
+  const color = DEFAULT_COLORS[colorIndex % DEFAULT_COLORS.length];
+  colorIndex++;
+
+  const trackDiv = document.createElement('div');
+  trackDiv.className = 'track-item';
+  trackDiv.dataset.index = trackIndex;
+
+  trackDiv.innerHTML = `
+    <input type="text" class="track-input" placeholder="輸入颱風 ID (如: 201324W)">
+    <input type="color" class="track-color" value="${color}">
+    <button class="track-remove" title="移除">×</button>
+  `;
+
+  container.appendChild(trackDiv);
+
+  // 綁定事件
+  const input = trackDiv.querySelector('.track-input');
+  const colorPicker = trackDiv.querySelector('.track-color');
+  const removeBtn = trackDiv.querySelector('.track-remove');
+
+  input.addEventListener('change', () => {
+    const typhoonId = input.value.trim();
+    if (typhoonId) {
+      const nodes = getAllNodes();
+      if (validateTyphoonId(typhoonId, nodes)) {
+        addTyphoonTrack(typhoonId, colorPicker.value);
+        input.classList.remove('invalid');
+        refreshPlotColors();
+      } else {
+        alert(`找不到颱風 ID: ${typhoonId}`);
+        input.classList.add('invalid');
+      }
+    }
+  });
+
+  colorPicker.addEventListener('change', () => {
+    updateTrackColor(trackIndex, colorPicker.value);
+  });
+
+  removeBtn.addEventListener('click', () => {
+    removeTrackUI(trackIndex, trackDiv);
+  });
+}
+
+/**
+ * 更新颱風追蹤的顏色
+ */
+function updateTrackColor(index, color) {
+  const tracks = getTyphoonTracks();
+  if (tracks[index]) {
+    tracks[index].color = color;
+    setTyphoonTracks(tracks);
+    refreshPlotColors();
+  }
+}
+
+/**
+ * 移除颱風追蹤 UI
+ */
+function removeTrackUI(index, element) {
+  removeTyphoonTrack(index);
+  element.remove();
+  refreshPlotColors();
+  
+  // 重新索引剩餘的追蹤項目
+  const container = document.getElementById('typhoon-tracks-container');
+  const items = container.querySelectorAll('.track-item');
+  items.forEach((item, i) => {
+    item.dataset.index = i;
+  });
+}
+
+/**
+ * 初始化陸地與島嶼開關
+ */
+export function initLandmassSwitch() {
+  const landmassSwitch = document.getElementById('landmass-switch');
+  const landmassInfoBtn = document.getElementById('landmass-info-btn');
+  const landmassInfo = document.getElementById('landmass-info');
+  
+  if (landmassInfo) {
+    landmassInfo.style.display = 'none';
+  }
+  
+  if (landmassInfoBtn && landmassInfo) {
+    landmassInfoBtn.addEventListener('click', () => {
+      const isHidden = landmassInfo.style.display === 'none';
+      landmassInfo.style.display = isHidden ? 'block' : 'none';
+    });
+  }
+  
+  if (landmassSwitch) {
+    landmassSwitch.addEventListener('change', (e) => {
+      const isEnabled = e.target.checked;
+      setShowLandmass(isEnabled);
+      
+      console.log(`陸地與島嶼標示: ${isEnabled ? '開啟' : '關閉'}`);
+      
+      if (isEnabled) {
+        updateLandmassData();
+      }
+      
+      refreshPlotColors();
+    });
+  }
+
+  console.log('✅ 陸地與島嶼開關初始化完成');
+}
+
+/**
+ * 更新陸地與島嶼資料
+ */
+function updateLandmassData() {
+  const nodes = getAllNodes();
+  if (!nodes || nodes.length === 0) return;
+  
+  // 從 state 取得當前顯示的邊（需要從 main.js 傳入）
+  // 這裡我們需要修改 main.js 來儲存當前的 filteredEdges
+  const edges = state.currentEdges || [];
+  
+  const result = findConnectedComponents(nodes, edges);
+  setLandmassData(result);
+  
+  // 更新統計資訊顯示
+  updateLandmassStats(result.stats);
+}
+
+/**
+ * 更新陸地與島嶼統計資訊顯示
+ */
+function updateLandmassStats(stats) {
+  const mainlandStats = document.getElementById('mainland-stats');
+  const islandStats = document.getElementById('island-stats');
+  
+  if (mainlandStats && stats) {
+    mainlandStats.innerHTML = `
+      <span>節點: ${stats.mainlandNodes}</span>
+      <span>邊: ${stats.mainlandEdges}</span>
+    `;
+  }
+  
+  if (islandStats && stats) {
+    islandStats.innerHTML = `
+      <span>節點: ${stats.islandNodes}</span>
+      <span>邊: ${stats.islandEdges}</span>
+    `;
+  }
+}
+
+/**
+ * 刷新圖表顏色（根據所有模式）
  */
 function refreshPlotColors() {
   const nodes = getAllNodes();
   if (!nodes || nodes.length === 0) return;
 
-  // 呼叫 plotManager 更新顏色
   updatePlotWithHighlight(nodes, state.selectedNodeIndex);
+}
+
+/**
+ * 公開的更新函數（供 main.js 呼叫）
+ */
+export function updateLandmassDisplay() {
+  updateLandmassData();
+  refreshPlotColors();
 }
 
 /**
@@ -111,5 +304,7 @@ export function initUIControls() {
   initCollapsiblePanels();
   initHighlightSwitch();
   initLegendToggle();
+  initTyphoonTracker();
+  initLandmassSwitch();
   console.log('✅ UI 控制項初始化完成');
 }
