@@ -34,6 +34,15 @@ export const state = {
   landmassData: null // { mainland, largestIsland, stats }
 };
 
+
+
+
+
+
+
+
+
+
 /**
  * 設定所有節點
  */
@@ -131,4 +140,25 @@ export function setSelectedNodeIndex(index) {
  */
 export function getSelectedNodeIndex() {
   return state.selectedNodeIndex;
+}
+
+/**
+ * 颱風路徑追蹤
+ */
+export function getTyphoonTracks() {
+  state.typhoonTracks;
+}
+
+/**
+ * 陸地與島嶼顯示
+ */
+export function getShowLandmass() {
+  state.showLandmass;
+}
+
+/**
+ * 陸地與島嶼資料
+ */
+export function getLandmassData() {
+  state.landmassData;
 }
