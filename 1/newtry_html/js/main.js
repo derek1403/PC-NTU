@@ -41,7 +41,7 @@ function applyFilter() {
   const filteredNodeIds = filteredNodes.map(n => n.id);
 
   // 篩選邊
-  const filteredEdges = filterEdges(allEdges, filteredNodeIds);
+  const filteredEdges = filterEdges(allEdges, filteredNodes, allNodes);
 
 
   // 🔍 加入這段測試

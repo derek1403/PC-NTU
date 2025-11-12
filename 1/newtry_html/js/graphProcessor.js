@@ -112,14 +112,39 @@ export function filterNodes(nodes, filter) {
 }
 
 /**
- * 篩選邊（保留兩端節點都有效的邊）
- * @param {Array} edges - 所有邊
- * @param {Array} validNodeIds - 有效節點 ID 陣列
- * @returns {Array} 篩選後的邊
+ * 篩選邊（保留兩端節點都有效的邊，並重新映射索引）
+ * @param {Array} edges - 所有邊（使用原始節點索引）
+ * @param {Array} filteredNodes - 篩選後的節點陣列
+ * @param {Array} allNodes - 所有節點陣列
+ * @returns {Array} 篩選後的邊（使用新索引）
  */
-export function filterEdges(edges, validNodeIds) {
-  const validSet = new Set(validNodeIds);
-  return edges.filter(([u, v]) => validSet.has(u) && validSet.has(v));
+export function filterEdges(edges, filteredNodes, allNodes) {
+  // 步驟 1: 建立「節點 ID → 新索引」的映射
+  const nodeIdToNewIndex = new Map();
+  filteredNodes.forEach((node, newIndex) => {
+    nodeIdToNewIndex.set(node.id, newIndex);
+  });
+  
+  // 步驟 2: 篩選並重新映射邊
+  const newEdges = [];
+  
+  for (const [oldU, oldV] of edges) {
+    // 從原始陣列取得節點 ID
+    const nodeU = allNodes[oldU];
+    const nodeV = allNodes[oldV];
+    
+    if (!nodeU || !nodeV) continue;
+    
+    // 檢查這兩個節點是否都在篩選後的集合中
+    const newU = nodeIdToNewIndex.get(nodeU.id);
+    const newV = nodeIdToNewIndex.get(nodeV.id);
+    
+    if (newU !== undefined && newV !== undefined) {
+      newEdges.push([newU, newV]);
+    }
+  }
+  
+  return newEdges;
 }
 
 /**
