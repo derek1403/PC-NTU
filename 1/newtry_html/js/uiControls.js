@@ -243,18 +243,34 @@ export function initLandmassSwitch() {
  * 更新陸地與島嶼資料
  */
 function updateLandmassData() {
-  const nodes = getAllNodes();
-  if (!nodes || nodes.length === 0) return;
-  
-  // 從 state 取得當前顯示的邊（需要從 main.js 傳入）
-  // 這裡我們需要修改 main.js 來儲存當前的 filteredEdges
-  const edges = state.currentEdges || [];
-  
-  const result = findConnectedComponents(nodes, edges);
-  setLandmassData(result);
-  
-  // 更新統計資訊顯示
-  updateLandmassStats(result.stats);
+  try {
+    const nodes = getAllNodes();
+    if (!nodes || nodes.length === 0) {
+      console.warn('沒有節點資料，無法分析陸地與島嶼');
+      return;
+    }
+    
+    // 從 state 取得當前顯示的邊
+    const edges = state.currentEdges || [];
+    
+    if (edges.length === 0) {
+      console.warn('沒有邊資料，無法分析連通分量');
+      setLandmassData(null);
+      updateLandmassStats(null);
+      return;
+    }
+    
+    const result = findConnectedComponents(nodes, edges);
+    setLandmassData(result);
+    
+    // 更新統計資訊顯示
+    updateLandmassStats(result.stats);
+    
+    console.log('✅ 陸地與島嶼分析完成:', result.stats);
+  } catch (error) {
+    console.error('陸地與島嶼分析錯誤:', error);
+    setLandmassData(null);
+  }
 }
 
 /**

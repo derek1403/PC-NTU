@@ -9,6 +9,8 @@
  * @param {Array} nodes - 所有節點
  * @returns {Array} 路徑上的節點索引陣列，按 order 排序
  */
+
+
 export function findTyphoonPath(typhoonId, nodes) {
   // 找出所有包含該颱風 ID 的節點
   const candidateNodes = [];

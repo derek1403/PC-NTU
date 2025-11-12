@@ -4,7 +4,7 @@
  */
 
 import { getHighlightMode, getTyphoonTracks, getShowLandmass, getLandmassData } from './state.js';
-import { assignPathColors } from './typhoonTracker.js';
+import { findTyphoonPath } from './typhoonTracker.js';
 import { isNodeInComponent } from './componentAnalysis.js';
 
 /**
@@ -20,10 +20,18 @@ function calculateNodeColors(nodes, selectedIndex = null) {
   const showLandmass = getShowLandmass();
   const landmassData = getLandmassData();
   
-  // 預先計算颱風路徑顏色映射
-  const typhoonColorMap = typhoonTracks.length > 0 
-    ? assignPathColors(typhoonTracks, nodes) 
-    : new Map();
+  // 預先計算颱風路徑節點集合（按優先級順序）
+  const typhoonNodeColors = new Map();
+  if (typhoonTracks && typhoonTracks.length > 0) {
+    // 從後往前遍歷，這樣前面的會覆蓋後面的（優先級更高）
+    for (let i = typhoonTracks.length - 1; i >= 0; i--) {
+      const track = typhoonTracks[i];
+      const pathIndices = findTyphoonPath(track.id, nodes);
+      for (const idx of pathIndices) {
+        typhoonNodeColors.set(idx, track.color);
+      }
+    }
+  }
   
   return nodes.map((node, index) => {
     // 優先級 1: 選中的節點 → 紅色
@@ -48,8 +56,8 @@ function calculateNodeColors(nodes, selectedIndex = null) {
     }
     
     // 優先級 3: 颱風路徑追蹤
-    if (typhoonColorMap.has(index)) {
-      return typhoonColorMap.get(index);
+    if (typhoonNodeColors.has(index)) {
+      return typhoonNodeColors.get(index);
     }
     
     // 優先級 4: 陸地與島嶼
@@ -68,70 +76,70 @@ function calculateNodeColors(nodes, selectedIndex = null) {
 }
 
 /**
- * 計算邊的顏色
+ * 計算每條邊的顏色
  * @param {Array} edges - 邊陣列 [[u, v], ...]
  * @param {Array} nodes - 節點陣列
- * @returns {Array} 顏色陣列
+ * @returns {Array} 每條邊對應的顏色字串
  */
 function calculateEdgeColors(edges, nodes) {
   const typhoonTracks = getTyphoonTracks();
   const showLandmass = getShowLandmass();
   const landmassData = getLandmassData();
   
-  // 預設顏色
   const defaultColor = 'rgba(150, 150, 150, 0.9)';
   
-  // 如果沒有任何特殊標示，返回預設顏色
-  if (typhoonTracks.length === 0 && !showLandmass) {
-    return Array(edges.length).fill(defaultColor);
+  // 如果沒有任何特殊標示，全部使用預設顏色
+  if ((!typhoonTracks || typhoonTracks.length === 0) && !showLandmass) {
+    return edges.map(() => defaultColor);
   }
   
-  const edgeColors = [];
-  
-  for (let i = 0; i < edges.length; i++) {
-    const [u, v] = edges[i];
-    let color = defaultColor;
-    
-    // 優先級 1: 颱風路徑（按用戶輸入順序，第一個優先）
+  // 預先計算所有颱風路徑的邊集合
+  const typhoonEdgeSets = [];
+  if (typhoonTracks && typhoonTracks.length > 0) {
     for (const track of typhoonTracks) {
-      const pathNodes = nodes.filter(node => 
-        node.TC_ID && node.TC_ID.includes(track.id)
-      ).map((_, idx) => nodes.findIndex(n => n === _));
-      
-      if (pathNodes.includes(u) && pathNodes.includes(v)) {
-        color = track.color;
-        break;
-      }
+      const pathIndices = findTyphoonPath(track.id, nodes);
+      const pathSet = new Set(pathIndices);
+      typhoonEdgeSets.push({ color: track.color, nodeSet: pathSet });
     }
-    
-    // 優先級 2: 陸地與島嶼（如果沒被颱風路徑覆蓋）
-    if (color === defaultColor && showLandmass && landmassData) {
-      if (landmassData.mainland) {
-        const mainlandSet = new Set(landmassData.mainland);
-        if (mainlandSet.has(u) && mainlandSet.has(v)) {
-          color = 'rgba(46, 204, 113, 0.8)'; // 綠色（陸地）
-        }
-      }
-      
-      if (color === defaultColor && landmassData.largestIsland) {
-        const islandSet = new Set(landmassData.largestIsland);
-        if (islandSet.has(u) && islandSet.has(v)) {
-          color = 'rgba(243, 156, 18, 0.8)'; // 橘黃色（島嶼）
-        }
-      }
-    }
-    
-    edgeColors.push(color);
   }
   
-  return edgeColors;
+  // 預先計算陸地和島嶼的節點集合
+  const mainlandSet = (showLandmass && landmassData && landmassData.mainland) 
+    ? new Set(landmassData.mainland) 
+    : null;
+  const islandSet = (showLandmass && landmassData && landmassData.largestIsland) 
+    ? new Set(landmassData.largestIsland) 
+    : null;
+  
+  // 為每條邊分配顏色
+  return edges.map(([u, v]) => {
+    // 優先級 1: 颱風路徑（第一個匹配的優先）
+    for (const { color, nodeSet } of typhoonEdgeSets) {
+      if (nodeSet.has(u) && nodeSet.has(v)) {
+        return color;
+      }
+    }
+    
+    // 優先級 2: 陸地
+    if (mainlandSet && mainlandSet.has(u) && mainlandSet.has(v)) {
+      return 'rgba(46, 204, 113, 0.8)';
+    }
+    
+    // 優先級 3: 島嶼
+    if (islandSet && islandSet.has(u) && islandSet.has(v)) {
+      return 'rgba(243, 156, 18, 0.8)';
+    }
+    
+    // 預設顏色
+    return defaultColor;
+  });
 }
 
 /**
- * 構建邊的座標和顏色（用於多色邊）
- * @param {Array} edges - 邊陣列
+ * 構建邊的座標和顏色（分組渲染以提升效能）
+ * @param {Array} edges - 邊陣列 [[u, v], ...]
  * @param {Array} nodes - 節點陣列
- * @param {Array} edgeColors - 邊顏色陣列
+ * @param {Array} edgeColors - 每條邊的顏色
  * @returns {Array} Plotly trace 陣列
  */
 function buildColoredEdgeTraces(edges, nodes, edgeColors) {
@@ -139,11 +147,13 @@ function buildColoredEdgeTraces(edges, nodes, edgeColors) {
   const colorGroups = new Map();
   
   for (let i = 0; i < edges.length; i++) {
+    const [u, v] = edges[i];
     const color = edgeColors[i];
+    
     if (!colorGroups.has(color)) {
       colorGroups.set(color, []);
     }
-    colorGroups.get(color).push(edges[i]);
+    colorGroups.get(color).push([u, v]);
   }
   
   // 為每組顏色創建一個 trace
@@ -153,7 +163,12 @@ function buildColoredEdgeTraces(edges, nodes, edgeColors) {
     const x = [], y = [], z = [];
     
     for (const [u, v] of edgeGroup) {
-      if (u >= nodes.length || v >= nodes.length) continue;
+      // 安全檢查
+      if (u >= nodes.length || v >= nodes.length || u < 0 || v < 0) {
+        console.warn(`無效的邊: [${u}, ${v}]`);
+        continue;
+      }
+      
       x.push(nodes[u].x, nodes[v].x, null);
       y.push(nodes[u].y, nodes[v].y, null);
       z.push(nodes[u].z, nodes[v].z, null);
@@ -163,7 +178,10 @@ function buildColoredEdgeTraces(edges, nodes, edgeColors) {
       x, y, z,
       mode: 'lines',
       type: 'scatter3d',
-      line: { color, width: 2 },
+      line: { 
+        color, 
+        width: color === 'rgba(150, 150, 150, 0.9)' ? 1 : 2 // 特殊顏色用較粗的線
+      },
       hoverinfo: 'skip',
       showlegend: false
     });
@@ -175,19 +193,39 @@ function buildColoredEdgeTraces(edges, nodes, edgeColors) {
 /**
  * 更新 3D 圖表
  * @param {Array} nodes - 節點陣列
- * @param {Object} edgeData - 邊的資料 { edges, ... }
+ * @param {Object} edgeData - 邊的資料（向後兼容）
  * @param {number} filteredEdgeCount - 篩選後的邊數量
+ * @param {Array} edges - 邊陣列 [[u, v], ...]（可選，用於彩色邊）
  */
 export function updatePlot(nodes, edgeData, filteredEdgeCount, edges = null) {
   const nodeColors = calculateNodeColors(nodes);
   
-  // 如果有 edges 參數，使用彩色邊
   let edgeTraces = [];
-  if (edges && edges.length > 0) {
-    const edgeColors = calculateEdgeColors(edges, nodes);
-    edgeTraces = buildColoredEdgeTraces(edges, nodes, edgeColors);
+  
+  // 如果提供了 edges 陣列，使用彩色邊渲染
+  if (edges && Array.isArray(edges) && edges.length > 0) {
+    try {
+      const edgeColors = calculateEdgeColors(edges, nodes);
+      edgeTraces = buildColoredEdgeTraces(edges, nodes, edgeColors);
+    } catch (error) {
+      console.error('邊渲染錯誤:', error);
+      // 降級到單色邊
+      edgeTraces = [{
+        x: edgeData.x,
+        y: edgeData.y,
+        z: edgeData.z,
+        mode: 'lines',
+        type: 'scatter3d',
+        line: { 
+          color: 'rgba(150, 150, 150, 0.9)',
+          width: 1
+        },
+        hoverinfo: 'skip',
+        name: `時間演化 (${filteredEdgeCount} 條邊)`
+      }];
+    }
   } else {
-    // 單色邊（向後兼容）
+    // 向後兼容：使用單色邊
     edgeTraces = [{
       x: edgeData.x,
       y: edgeData.y,
@@ -248,7 +286,12 @@ export function updatePlot(nodes, edgeData, filteredEdgeCount, edges = null) {
     displaylogo: false
   };
 
-  Plotly.newPlot('plot', [...edgeTraces, nodeTrace], layout, config);
+  try {
+    Plotly.newPlot('plot', [...edgeTraces, nodeTrace], layout, config);
+    console.log(`✅ 圖表渲染完成: ${edgeTraces.length} 個邊 trace, 1 個節點 trace`);
+  } catch (error) {
+    console.error('Plotly 渲染錯誤:', error);
+  }
 }
 
 /**
@@ -262,10 +305,16 @@ export function updateNodeColors(nodes, selectedIndex) {
   setTimeout(() => {
     try {
       // nodeTrace 是最後一個 trace
-      const traceIndex = document.getElementById('plot').data.length - 1;
+      const plotDiv = document.getElementById('plot');
+      if (!plotDiv || !plotDiv.data) {
+        console.warn('圖表尚未初始化');
+        return;
+      }
+      
+      const traceIndex = plotDiv.data.length - 1;
       Plotly.restyle('plot', { 'marker.color': [newColors] }, [traceIndex]);
     } catch (e) {
-      console.error("Plotly restyle error:", e);
+      console.error("Plotly restyle 錯誤:", e);
     }
   }, 0);
 }

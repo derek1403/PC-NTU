@@ -3,6 +3,8 @@
  * 使用 Union-Find (並查集) 找出連通分量
  */
 
+
+
 class UnionFind {
   constructor(n) {
     this.parent = Array.from({ length: n }, (_, i) => i);
