@@ -43,6 +43,27 @@ function applyFilter() {
   // 篩選邊
   const filteredEdges = filterEdges(allEdges, filteredNodeIds);
 
+
+  // 🔍 加入這段測試
+  console.log('=== 資料一致性檢查 ===');
+  console.log('篩選後的節點數:', filteredNodes.length);
+  console.log('篩選後的邊數:', filteredEdges.length);
+  
+  // 檢查邊是否使用正確的索引
+  const invalidEdges = filteredEdges.filter(([u, v]) => 
+    u >= filteredNodes.length || v >= filteredNodes.length || u < 0 || v < 0
+  );
+  
+  console.log('無效的邊數量:', invalidEdges.length);
+  if (invalidEdges.length > 0) {
+    console.log('無效邊的範例:', invalidEdges.slice(0, 5));
+    console.log('❌ 問題確認：edges 使用的是原始索引，而非篩選後的索引');
+  }
+  
+  // 繼續原本的邏輯...
+
+
+
   // 儲存當前的邊（供陸地與島嶼分析使用）
   state.currentEdges = filteredEdges;
 
