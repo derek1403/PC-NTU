@@ -28,7 +28,7 @@ function calculateNodeColors(nodes, selectedIndex = null) {
       console.log('A' )
       if (node.order.includes(1)) {
         //return '#3498db'; // 藍色
-        return '#cc0404ff'; // 藍色
+        return '#04cc0eff'; // 藍色
       }
       console.log('b' )
       // 最終點 (reverse_orders === 1) → 橘色

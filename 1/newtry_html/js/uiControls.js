@@ -72,6 +72,28 @@ export function initHighlightSwitch() {
 }
 
 /**
+ * 初始化圖例顯示/隱藏按鈕
+ */
+export function initLegendToggle() {
+  const legendToggleBtn = document.getElementById('legend-toggle-btn');
+  const legendElement = document.getElementById('highlight-legend');
+  
+  if (legendToggleBtn && legendElement) {
+    // 預設隱藏圖例
+    legendElement.style.display = 'none';
+    
+    legendToggleBtn.addEventListener('click', () => {
+      const isHidden = legendElement.style.display === 'none';
+      legendElement.style.display = isHidden ? 'block' : 'none';
+      
+      console.log(`圖例: ${isHidden ? '顯示' : '隱藏'}`);
+    });
+  }
+
+  console.log('✅ 圖例切換按鈕初始化完成');
+}
+
+/**
  * 刷新圖表顏色（根據高亮模式）
  */
 function refreshPlotColors() {
@@ -88,5 +110,6 @@ function refreshPlotColors() {
 export function initUIControls() {
   initCollapsiblePanels();
   initHighlightSwitch();
+  initLegendToggle();
   console.log('✅ UI 控制項初始化完成');
 }

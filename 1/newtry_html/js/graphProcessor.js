@@ -71,6 +71,18 @@ function reconstructEdgesFromCoordinates(edgeCoords, nodes) {
  */
 export function filterNodes(nodes, filter) {
   return nodes.filter(node => {
+    // 颱風 ID 篩選（聯集）
+    if (filter.typhoonIds && filter.typhoonIds.length > 0) {
+      const nodeTyphoonIds = node.TC_ID || [];
+      // 檢查節點的 TC_ID 是否包含任何一個搜尋的 ID
+      const hasMatchingId = filter.typhoonIds.some(searchId => 
+        nodeTyphoonIds.includes(searchId)
+      );
+      if (!hasMatchingId) {
+        return false;
+      }
+    }
+    
     // RMW 篩選
     if (filter.rmwMin !== null && (node.RMW === undefined || node.RMW < filter.rmwMin)) {
       return false;

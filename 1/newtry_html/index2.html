@@ -16,36 +16,48 @@
   <div id="plot"></div>
   
   <div id="sidebar">
-    <!-- 篩選功能面板 -->
+    <!-- 篩選面板 -->
     <div id="filter-panel">
       <div class="panel-header" id="filter-toggle">
-        <h3>🎯 篩選功能</h3>
+        <h3>🎯 篩選</h3>
         <span class="arrow">▼</span>
       </div>
       
       <div class="panel-content" id="filter-content">
+        <!-- 颱風 ID 搜尋 -->
+        <div class="filter-group">
+          <label>🔍 颱風 ID 搜尋</label>
+          <input 
+            type="text" 
+            id="typhoon-search" 
+            placeholder="例如: 198405E, 200015W"
+            class="search-input"
+          >
+          <small class="search-hint">輸入一個或多個颱風 ID（用逗號分隔）</small>
+        </div>
+
         <div class="filter-group">
           <label>RMW (km)</label>
           <div class="filter-row">
             <select id="rmw-min">
               <option value="">不限制</option>
               <option value="0">0</option>
-              <option value="20">20</option>
-              <option value="50">50</option>
-              <option value="100">100</option>
-              <option value="150">150</option>
-              <option value="200">200</option>
-              <option value="250">250</option>
+              <option value="20000">20</option>
+              <option value="50000">50</option>
+              <option value="100000">100</option>
+              <option value="150000">150</option>
+              <option value="200000">200</option>
+              <option value="250000">250</option>
             </select>
             <span>~</span>
             <select id="rmw-max">
               <option value="">不限制</option>
-              <option value="50">50</option>
-              <option value="100">100</option>
-              <option value="150">150</option>
-              <option value="200">200</option>
-              <option value="250">250</option>
-              <option value="300">300</option>
+              <option value="50000">50</option>
+              <option value="100000">100</option>
+              <option value="150000">150</option>
+              <option value="200000">200</option>
+              <option value="250000">250</option>
+              <option value="300000">300</option>
             </select>
           </div>
         </div>
@@ -115,13 +127,16 @@
       <div class="panel-content" id="feature-content">
         <div class="switch-container">
           <label>顯示起始/最終點</label>
-          <label class="switch">
-            <input type="checkbox" id="highlight-switch">
-            <span class="slider"></span>
-          </label>
+          <div class="switch-controls">
+            <button id="legend-toggle-btn" class="icon-btn" title="顯示/隱藏圖例">ℹ️</button>
+            <label class="switch">
+              <input type="checkbox" id="highlight-switch">
+              <span class="slider"></span>
+            </label>
+          </div>
         </div>
         
-        <div class="highlight-legend">
+        <div class="highlight-legend" id="highlight-legend">
           <div class="legend-item">
             <span class="legend-color" style="background: #3498db;"></span>
             <span>起始點 (order = 1)</span>

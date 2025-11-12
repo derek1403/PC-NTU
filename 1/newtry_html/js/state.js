@@ -16,7 +16,8 @@ export const state = {
     vmaxMin: null,
     vmaxMax: null,
     ikeMin: null,
-    ikeMax: null
+    ikeMax: null,
+    typhoonIds: [] // 颱風 ID 陣列
   },
   
   // 高亮模式（顯示起始點和最終點）
