@@ -31,17 +31,11 @@ export const state = {
   
   // 陸地與島嶼顯示
   showLandmass: false,
-  landmassData: null // { mainland, largestIsland, stats }
+  landmassData: null, // { mainland, largestIsland, stats }
+  
+  // 當前顯示的邊（供陸地與島嶼分析使用）
+  currentEdges: []
 };
-
-
-
-
-
-
-
-
-
 
 /**
  * 設定所有節點
@@ -143,22 +137,57 @@ export function getSelectedNodeIndex() {
 }
 
 /**
- * 颱風路徑追蹤
+ * 設定颱風追蹤列表
+ */
+export function setTyphoonTracks(tracks) {
+  state.typhoonTracks = tracks;
+}
+
+/**
+ * 取得颱風追蹤列表
  */
 export function getTyphoonTracks() {
-  state.typhoonTracks;
+  return state.typhoonTracks;
 }
 
 /**
- * 陸地與島嶼顯示
+ * 新增颱風追蹤
+ */
+export function addTyphoonTrack(id, color) {
+  state.typhoonTracks.push({ id, color });
+}
+
+/**
+ * 移除颱風追蹤
+ */
+export function removeTyphoonTrack(index) {
+  state.typhoonTracks.splice(index, 1);
+}
+
+/**
+ * 設定陸地與島嶼顯示模式
+ */
+export function setShowLandmass(enabled) {
+  state.showLandmass = enabled;
+}
+
+/**
+ * 取得陸地與島嶼顯示模式
  */
 export function getShowLandmass() {
-  state.showLandmass;
+  return state.showLandmass;
 }
 
 /**
- * 陸地與島嶼資料
+ * 設定陸地與島嶼資料
+ */
+export function setLandmassData(data) {
+  state.landmassData = data;
+}
+
+/**
+ * 取得陸地與島嶼資料
  */
 export function getLandmassData() {
-  state.landmassData;
+  return state.landmassData;
 }
