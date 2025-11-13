@@ -1,5 +1,5 @@
 /**
- * 全域狀態管理模組
+ * 全域狀態管理模組（修正版）
  * 類似 Python 的全域變數，集中管理應用程式狀態
  */
 
@@ -8,6 +8,10 @@ export const state = {
   allNodes: [],
   allEdges: [],
   metadata: {},
+  
+  // ✅ 新增：當前顯示的節點和邊（可能是篩選後的）
+  currentNodes: [],
+  currentEdges: [],
   
   // 當前篩選條件
   currentFilter: {
@@ -31,10 +35,7 @@ export const state = {
   
   // 陸地與島嶼顯示
   showLandmass: false,
-  landmassData: null, // { mainland, largestIsland, stats }
-  
-  // 當前顯示的邊（供陸地與島嶼分析使用）
-  currentEdges: []
+  landmassData: null // { mainland, largestIsland, stats }
 };
 
 /**
@@ -42,6 +43,7 @@ export const state = {
  */
 export function setNodes(nodes) {
   state.allNodes = nodes;
+  state.currentNodes = nodes; // ✅ 同時設定當前節點
 }
 
 /**
@@ -49,6 +51,7 @@ export function setNodes(nodes) {
  */
 export function setEdges(edges) {
   state.allEdges = edges;
+  state.currentEdges = edges; // ✅ 同時設定當前邊
 }
 
 /**

@@ -47,7 +47,8 @@ function applyFilter() {
   // ✅ 修正：篩選邊（傳入正確的參數）
   const filteredEdges = filterEdges(allEdges, filteredNodes, allNodes);
 
-  // 儲存當前的邊（供陸地與島嶼分析使用）
+  // ✅ 新增：儲存當前顯示的節點和邊
+  state.currentNodes = filteredNodes;
   state.currentEdges = filteredEdges;
 
   // ✅ 修正：使用篩選後的節點建立邊的座標
