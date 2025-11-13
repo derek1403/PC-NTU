@@ -1,7 +1,7 @@
 /**
  * UI 事件處理模組（修正版）
  * 負責處理節點點擊、篩選按鈕等事件
- * ✅ 修正：點擊節點時同時更新 node 和 edge 顏色
+ * ✅ 修正：點擊節點時同步更新 node 和 edge 顏色
  */
 
 import { updatePlot } from './plotManager.js';
@@ -10,6 +10,9 @@ import { updateStats } from './filterUI.js';
 import { getMetadata, setSelectedNodeIndex, state } from './state.js';
 import { buildEdgeCoordinates } from './graphProcessor.js';
 
+// ✅ 新增：儲存當前綁定的節點陣列
+let currentBoundNodes = null;
+
 /**
  * 設定節點點擊事件
  * @param {Array} nodes - 節點陣列
@@ -17,64 +20,145 @@ import { buildEdgeCoordinates } from './graphProcessor.js';
 export function setupNodeClickHandler(nodes) {
   const plotDiv = document.getElementById('plot');
   
-  // 解綁舊的事件（避免重複綁定）
-  // plotDiv.removeAllListeners('plotly_click');
+  if (!plotDiv) {
+    console.error('❌ 找不到 plot 元素');
+    return;
+  }
   
+  // ✅ 修正：儲存節點陣列的參考
+  currentBoundNodes = nodes;
+  
+  // ✅ 修正：Plotly 沒有 removeAllListeners，改用旗標防止重複執行
+  let isProcessing = false;
+  
+  console.log('🔗 綁定節點點擊事件，節點數:', nodes.length);
+  
+  // ✅ 修正：使用 Plotly 的標準方式綁定事件（會自動覆蓋舊的）
   plotDiv.on('plotly_click', function(eventData) {
-    const point = eventData.points[0];
-
-    // 檢查是否點擊的是節點（nodeTrace 是最後一個 trace）
-    if (!point) return;
-    
-    // 計算 nodeTrace 的索引（最後一個）
-    const nodeTraceIndex = plotDiv.data.length - 1;
-    
-    if (point.curveNumber !== nodeTraceIndex) {
+    // 防止重複處理
+    if (isProcessing) {
+      console.warn('⚠️ 正在處理上一個點擊，忽略此次點擊');
       return;
     }
+    
+    isProcessing = true;
+    
+    try {
+      console.log('🖱️ 偵測到點擊事件:', eventData);
+      
+      const point = eventData.points[0];
 
-    const nodeIndex = point.pointNumber;
-    const node = nodes[nodeIndex];
+      // 檢查是否點擊的是節點
+      if (!point) {
+        console.warn('⚠️ 點擊資料為空');
+        isProcessing = false;
+        return;
+      }
+      
+      // ✅ 修正：動態計算 nodeTrace 的索引
+      const plotData = plotDiv.data;
+      
+      if (!plotData || plotData.length === 0) {
+        console.error('❌ Plotly data 為空');
+        isProcessing = false;
+        return;
+      }
+      
+      const nodeTraceIndex = plotData.length - 1; // 最後一個 trace
+      
+      console.log(`點擊的 trace: ${point.curveNumber}, 節點 trace: ${nodeTraceIndex}`);
+      
+      if (point.curveNumber !== nodeTraceIndex) {
+        console.log('點擊的不是節點 trace，忽略');
+        isProcessing = false;
+        return;
+      }
 
-    if (!node) return;
+      const nodeIndex = point.pointNumber;
+      
+      // ✅ 修正：檢查索引是否有效
+      if (nodeIndex < 0 || nodeIndex >= currentBoundNodes.length) {
+        console.error(`❌ 無效的節點索引: ${nodeIndex}, 節點總數: ${currentBoundNodes.length}`);
+        isProcessing = false;
+        return;
+      }
+      
+      const node = currentBoundNodes[nodeIndex];
 
-    // ✅ 修正：儲存選中的節點索引到全域狀態
-    setSelectedNodeIndex(nodeIndex);
+      if (!node) {
+        console.error('❌ 找不到對應的節點');
+        isProcessing = false;
+        return;
+      }
 
-    console.log(`🔍 選中節點: index=${nodeIndex}, id=${node.id}`);
+      // ✅ 儲存選中的節點索引到全域狀態
+      setSelectedNodeIndex(nodeIndex);
 
-    // ✅ 修正：重新渲染整個圖表（包含 node 和 edge 的顏色）
-    refreshPlotWithSelection(nodes, nodeIndex);
+      console.log(`🔍 選中節點: index=${nodeIndex}, id=${node.id}`);
 
-    // 顯示節點資訊
-    displayNodeInfo(node);
+      // ✅ 重新渲染整個圖表（包含 node 和 edge 的顏色）
+      refreshPlotWithSelection(currentBoundNodes, nodeIndex);
 
+      // 顯示節點資訊
+      displayNodeInfo(node);
+      
+    } catch (error) {
+      console.error('❌ 處理點擊事件時發生錯誤:', error);
+    } finally {
+      // 延遲解鎖，避免雙擊問題
+      setTimeout(() => {
+        isProcessing = false;
+      }, 100);
+    }
   });
+  
+  console.log('✅ 節點點擊事件綁定完成');
 }
 
 /**
- * ✅ 新增：刷新圖表並標記選中的節點
+ * ✅ 刷新圖表並標記選中的節點
  * @param {Array} nodes - 節點陣列
  * @param {number} selectedIndex - 選中的節點索引
  */
 function refreshPlotWithSelection(nodes, selectedIndex) {
-  // 取得當前的邊
-  const edges = state.currentEdges || [];
+  console.log('🎨 開始刷新圖表...');
   
-  if (edges.length === 0) {
-    console.warn('沒有邊資料，無法刷新圖表');
+  // ✅ 安全檢查：確保所有必要資料都存在
+  if (!nodes || nodes.length === 0) {
+    console.error('❌ 節點陣列為空，無法刷新圖表');
     return;
   }
   
-  // 重新建立邊的座標
-  const edgeData = buildEdgeCoordinates(edges, nodes);
+  // 取得當前的邊
+  const edges = state.currentEdges || [];
   
-  // 重新渲染圖表（updatePlot 內部會讀取 selectedNodeIndex）
-  console.log('✅ 開始 updatePlot(nodes, edgeData, edges.length, edges) X');
-  updatePlot(nodes, edgeData, edges.length, edges);
-  console.log('✅ 開始 updatePlot(nodes, edgeData, edges.length, edges) ');
+  if (!edges || edges.length === 0) {
+    console.warn('⚠️ 沒有邊資料，無法刷新圖表');
+    return;
+  }
   
-  console.log('✅ 圖表已刷新（含選中節點標記）');
+  console.log(`📊 刷新資料: ${nodes.length} 個節點, ${edges.length} 條邊`);
+  
+  try {
+    // 重新建立邊的座標
+    const edgeData = buildEdgeCoordinates(edges, nodes);
+    
+    // ✅ 安全檢查：確保 edgeData 有效
+    if (!edgeData || !edgeData.x || !edgeData.y || !edgeData.z) {
+      console.error('❌ 邊座標資料無效');
+      return;
+    }
+    
+    console.log('✅ 邊座標建立完成');
+    
+    // 重新渲染圖表（updatePlot 內部會讀取 selectedNodeIndex）
+    updatePlot(nodes, edgeData, edges.length, edges);
+    
+    console.log('✅ 圖表已刷新（含選中節點標記）');
+  } catch (error) {
+    console.error('❌ 刷新圖表時發生錯誤:', error);
+    console.error('錯誤堆疊:', error.stack);
+  }
 }
 
 /**
