@@ -112,7 +112,7 @@ export function updatePlot(nodes, edgeData, filteredEdgeCount) {
     displayModeBar: true,
     displaylogo: false
   };
-  console.log(`edgeTraces : ${edgeTraces}`)
+  console.log(`edgeTrace : ${edgeTrace}`)
   console.log(`nodeTrace : ${nodeTrace}`)
   console.log(`layout : ${layout}`)
   console.log(`config : ${config}`)
