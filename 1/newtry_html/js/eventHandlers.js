@@ -47,7 +47,7 @@ export function setupNodeClickHandler(nodes) {
     refreshPlotWithSelection(nodes, nodeIndex);
 
     // 顯示節點資訊
-    displayNodeInfo(node);
+    //displayNodeInfo(node);
   });
 }
 
