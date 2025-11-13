@@ -1,10 +1,10 @@
 /**
- * Plotly 繪圖管理模組
+ * Plotly 繪圖管理模組（修正版）
  * 負責 3D 圖表的渲染與更新
  */
 
 import { getHighlightMode, getTyphoonTracks, getShowLandmass, getLandmassData } from './state.js';
-import { findTyphoonPath } from './typhoonTracker.js';
+import { findTyphoonPath, findPathEdges } from './typhoonTracker.js';
 import { isNodeInComponent } from './componentAnalysis.js';
 
 /**
@@ -76,7 +76,7 @@ function calculateNodeColors(nodes, selectedIndex = null) {
 }
 
 /**
- * 計算每條邊的顏色
+ * ✅ 修正版：計算每條邊的顏色（只標記連續 order 的邊）
  * @param {Array} edges - 邊陣列 [[u, v], ...]
  * @param {Array} nodes - 節點陣列
  * @returns {Array} 每條邊對應的顏色字串
@@ -93,13 +93,13 @@ function calculateEdgeColors(edges, nodes) {
     return edges.map(() => defaultColor);
   }
   
-  // 預先計算所有颱風路徑的邊集合
+  // ✅ 修正：預先計算所有颱風路徑的「合法邊集合」
   const typhoonEdgeSets = [];
   if (typhoonTracks && typhoonTracks.length > 0) {
     for (const track of typhoonTracks) {
-      const pathIndices = findTyphoonPath(track.id, nodes);
-      const pathSet = new Set(pathIndices);
-      typhoonEdgeSets.push({ color: track.color, nodeSet: pathSet });
+      // 使用新的 findPathEdges，只返回連續 order 的邊
+      const validEdges = findPathEdges(track.id, nodes, edges);
+      typhoonEdgeSets.push({ color: track.color, edgeSet: validEdges });
     }
   }
   
@@ -114,8 +114,9 @@ function calculateEdgeColors(edges, nodes) {
   // 為每條邊分配顏色
   return edges.map(([u, v]) => {
     // 優先級 1: 颱風路徑（第一個匹配的優先）
-    for (const { color, nodeSet } of typhoonEdgeSets) {
-      if (nodeSet.has(u) && nodeSet.has(v)) {
+    for (const { color, edgeSet } of typhoonEdgeSets) {
+      // ✅ 修正：檢查邊是否在「合法邊集合」中
+      if (edgeSet.has(`${u}-${v}`) || edgeSet.has(`${v}-${u}`)) {
         return color;
       }
     }

@@ -1,6 +1,6 @@
 /**
- * 颱風路徑追蹤模組
- * 追蹤特定颱風 ID 的完整路徑
+ * 颱風路徑追蹤模組（修正版）
+ * 追蹤特定颱風 ID 的完整路徑，只標記連續 order 的邊
  */
 
 /**
@@ -9,8 +9,6 @@
  * @param {Array} nodes - 所有節點
  * @returns {Array} 路徑上的節點索引陣列，按 order 排序
  */
-
-
 export function findTyphoonPath(typhoonId, nodes) {
   // 找出所有包含該颱風 ID 的節點
   const candidateNodes = [];
@@ -41,28 +39,67 @@ export function findTyphoonPath(typhoonId, nodes) {
 }
 
 /**
- * 找出路徑中的所有邊
- * @param {Array} pathNodeIndices - 路徑上的節點索引陣列
+ * ✅ 修正版：找出路徑中**連續 order** 的所有邊
+ * 只有當兩個節點在颱風路徑中相鄰（order 連續）時，才算是路徑上的邊
+ * 
+ * @param {string} typhoonId - 颱風 ID
+ * @param {Array} nodes - 所有節點
  * @param {Array} edges - 所有邊 [[u, v], ...]
- * @returns {Array} 路徑上的邊索引陣列
+ * @returns {Set} 路徑上的邊集合（用 "u-v" 字串表示）
  */
-export function findPathEdges(pathNodeIndices, edges) {
-  const nodeSet = new Set(pathNodeIndices);
-  const pathEdges = [];
-
-  for (let i = 0; i < edges.length; i++) {
-    const [u, v] = edges[i];
-    if (nodeSet.has(u) && nodeSet.has(v)) {
-      pathEdges.push(i);
+export function findPathEdges(typhoonId, nodes, edges) {
+  // 步驟 1: 找出颱風的所有節點（帶 order 資訊）
+  const pathNodes = [];
+  
+  for (let i = 0; i < nodes.length; i++) {
+    const node = nodes[i];
+    const tcIndex = node.TC_ID ? node.TC_ID.indexOf(typhoonId) : -1;
+    
+    if (tcIndex !== -1) {
+      pathNodes.push({
+        nodeIndex: i,
+        order: node.order[tcIndex]
+      });
     }
   }
 
-  return pathEdges;
+  if (pathNodes.length === 0) {
+    return new Set();
+  }
+
+  // 步驟 2: 按 order 排序
+  pathNodes.sort((a, b) => a.order - b.order);
+
+  // 步驟 3: 建立「節點索引 → 在路徑中的位置」的映射
+  const nodeIndexToPathPosition = new Map();
+  pathNodes.forEach((node, pathPos) => {
+    nodeIndexToPathPosition.set(node.nodeIndex, pathPos);
+  });
+
+  // 步驟 4: 檢查每條邊，只保留「路徑中相鄰節點」的邊
+  const validEdges = new Set();
+
+  for (const [u, v] of edges) {
+    const posU = nodeIndexToPathPosition.get(u);
+    const posV = nodeIndexToPathPosition.get(v);
+
+    // 兩個節點都在路徑中
+    if (posU !== undefined && posV !== undefined) {
+      // 檢查它們在路徑中是否相鄰（位置差為 1）
+      if (Math.abs(posU - posV) === 1) {
+        // 用字串表示邊（雙向）
+        validEdges.add(`${u}-${v}`);
+        validEdges.add(`${v}-${u}`);
+      }
+    }
+  }
+
+  return validEdges;
 }
 
 /**
- * 為多個颱風路徑分配顏色
- * @param {Array} typhoonTracks - 颱風追蹤配置 [{ id, color, path }, ...]
+ * 為多個颱風路徑分配顏色（節點）
+ * @param {Array} typhoonTracks - 颱風追蹤配置 [{ id, color }, ...]
  * @param {Array} nodes - 所有節點
  * @returns {Map} 節點索引 -> 顏色的映射
  */
@@ -83,27 +120,31 @@ export function assignPathColors(typhoonTracks, nodes) {
 }
 
 /**
- * 為多個颱風路徑的邊分配顏色
- * @param {Array} typhoonTracks - 颱風追蹤配置
+ * ✅ 修正版：為多個颱風路徑的邊分配顏色
+ * 只有連續 order 的邊會被上色
+ * 
+ * @param {Array} typhoonTracks - 颱風追蹤配置 [{ id, color }, ...]
  * @param {Array} nodes - 所有節點
  * @param {Array} edges - 所有邊
- * @returns {Map} 邊索引 -> 顏色的映射
+ * @returns {Array} 每條邊對應的顏色（與 edges 陣列順序一致），null 表示預設顏色
  */
 export function assignPathEdgeColors(typhoonTracks, nodes, edges) {
-  const edgeColorMap = new Map();
+  // 為每條邊初始化顏色為 null（預設）
+  const edgeColors = new Array(edges.length).fill(null);
 
-  // 按照用戶輸入順序（優先級從高到低）
-  for (let i = typhoonTracks.length - 1; i >= 0; i--) {
-    const track = typhoonTracks[i];
-    const path = findTyphoonPath(track.id, nodes);
-    const pathEdges = findPathEdges(path, edges);
+  // 按照用戶輸入順序（優先級從低到高，後面的會覆蓋前面的）
+  for (const track of typhoonTracks) {
+    const validEdges = findPathEdges(track.id, nodes, edges);
 
-    for (const edgeIndex of pathEdges) {
-      edgeColorMap.set(edgeIndex, track.color);
-    }
+    // 為每條邊檢查是否在路徑中
+    edges.forEach(([u, v], edgeIndex) => {
+      if (validEdges.has(`${u}-${v}`) || validEdges.has(`${v}-${u}`)) {
+        edgeColors[edgeIndex] = track.color;
+      }
+    });
   }
 
-  return edgeColorMap;
+  return edgeColors;
 }
 
 /**
