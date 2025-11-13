@@ -44,11 +44,11 @@ export function setupNodeClickHandler(nodes) {
     console.log(`🔍 選中節點: index=${nodeIndex}, id=${node.id}`);
 
     // ✅ 修正：重新渲染整個圖表（包含 node 和 edge 的顏色）
-    // refreshPlotWithSelection(nodes, nodeIndex);
+    refreshPlotWithSelection(nodes, nodeIndex);
 
     // 顯示節點資訊
     console.log('✅ 開始 displayNodeInfo(node) ');
-    //displayNodeInfo(node);
+    displayNodeInfo(node);
     console.log('✅ 結束 displayNodeInfo(node) ');
   });
 }
@@ -71,7 +71,9 @@ function refreshPlotWithSelection(nodes, selectedIndex) {
   const edgeData = buildEdgeCoordinates(edges, nodes);
   
   // 重新渲染圖表（updatePlot 內部會讀取 selectedNodeIndex）
-  updatePlot(nodes, edgeData, edges.length, edges);
+  console.log('✅ 開始 updatePlot(nodes, edgeData, edges.length, edges) ');
+  // updatePlot(nodes, edgeData, edges.length, edges);
+  console.log('✅ 開始 updatePlot(nodes, edgeData, edges.length, edges) ');
   
   console.log('✅ 圖表已刷新（含選中節點標記）');
 }
