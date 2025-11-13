@@ -112,8 +112,6 @@ export function updatePlot(nodes, edgeData, filteredEdgeCount) {
     displayModeBar: true,
     displaylogo: false
   };
-
-  Plotly.newPlot('plot', [...edgeTraces, nodeTrace], layout, config);
   console.log(`edgeTraces : ${edgeTraces}`)
   console.log(`nodeTrace : ${nodeTrace}`)
   console.log(`layout : ${layout}`)
