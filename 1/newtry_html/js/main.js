@@ -1,6 +1,7 @@
 /**
- * 主程式入口
+ * 主程式入口（修正版）
  * 協調各模組，初始化應用程式
+ * ✅ 修正：統一的顏色管理，確保所有操作都正確更新顏色
  */
 
 import { loadData, hideLoading } from './dataLoader.js';
@@ -18,6 +19,7 @@ import {
   getAllEdges, 
   getMetadata,
   getCurrentFilter,
+  setSelectedNodeIndex,
   state
 } from './state.js';
 
@@ -25,6 +27,9 @@ import {
  * 套用篩選
  */
 function applyFilter() {
+  // ✅ 修正：篩選後清除選中的節點（因為索引會改變）
+  setSelectedNodeIndex(null);
+  
   // 從 UI 讀取篩選條件
   const filter = readFilterFromUI();
   updateFilter(filter);
@@ -38,37 +43,15 @@ function applyFilter() {
 
   // 篩選節點
   const filteredNodes = filterNodes(allNodes, filter);
-  const filteredNodeIds = filteredNodes.map(n => n.id);
 
-  // 篩選邊
+  // ✅ 修正：篩選邊（傳入正確的參數）
   const filteredEdges = filterEdges(allEdges, filteredNodes, allNodes);
-
-
-  // 🔍 加入這段測試
-  console.log('=== 資料一致性檢查 ===');
-  console.log('篩選後的節點數:', filteredNodes.length);
-  console.log('篩選後的邊數:', filteredEdges.length);
-  
-  // 檢查邊是否使用正確的索引
-  const invalidEdges = filteredEdges.filter(([u, v]) => 
-    u >= filteredNodes.length || v >= filteredNodes.length || u < 0 || v < 0
-  );
-  
-  console.log('無效的邊數量:', invalidEdges.length);
-  if (invalidEdges.length > 0) {
-    console.log('無效邊的範例:', invalidEdges.slice(0, 5));
-    console.log('❌ 問題確認：edges 使用的是原始索引，而非篩選後的索引');
-  }
-  
-  // 繼續原本的邏輯...
-
-
 
   // 儲存當前的邊（供陸地與島嶼分析使用）
   state.currentEdges = filteredEdges;
 
-  // 建立邊的座標
-  const edgeData = buildEdgeCoordinates(filteredEdges, allNodes);
+  // ✅ 修正：使用篩選後的節點建立邊的座標
+  const edgeData = buildEdgeCoordinates(filteredEdges, filteredNodes);
 
   // 更新圖表（傳入 edges 以支援彩色邊）
   updatePlot(filteredNodes, edgeData, filteredEdges.length, filteredEdges);
@@ -94,6 +77,9 @@ function applyFilter() {
  * 重置篩選
  */
 function resetFilter() {
+  // ✅ 修正：重置時清除選中的節點
+  setSelectedNodeIndex(null);
+  
   // 重置 UI 和狀態
   resetFilterUI();
 

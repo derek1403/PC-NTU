@@ -1,12 +1,14 @@
 /**
- * UI 事件處理模組
+ * UI 事件處理模組（修正版）
  * 負責處理節點點擊、篩選按鈕等事件
+ * ✅ 修正：點擊節點時同時更新 node 和 edge 顏色
  */
 
-import { updateNodeColors } from './plotManager.js';
+import { updatePlot } from './plotManager.js';
 import { loadMultipleTyphoonImages } from './imageLoader.js';
 import { updateStats } from './filterUI.js';
-import { getMetadata } from './state.js';
+import { getMetadata, setSelectedNodeIndex, state } from './state.js';
+import { buildEdgeCoordinates } from './graphProcessor.js';
 
 /**
  * 設定節點點擊事件
@@ -14,12 +16,20 @@ import { getMetadata } from './state.js';
  */
 export function setupNodeClickHandler(nodes) {
   const plotDiv = document.getElementById('plot');
-  const nodeTraceIndex = 1; // nodeTrace 是第二個軌跡
-
+  
+  // 解綁舊的事件（避免重複綁定）
+  plotDiv.removeAllListeners('plotly_click');
+  
   plotDiv.on('plotly_click', function(eventData) {
     const point = eventData.points[0];
 
-    if (!point || point.curveNumber !== nodeTraceIndex) {
+    // 檢查是否點擊的是節點（nodeTrace 是最後一個 trace）
+    if (!point) return;
+    
+    // 計算 nodeTrace 的索引（最後一個）
+    const nodeTraceIndex = plotDiv.data.length - 1;
+    
+    if (point.curveNumber !== nodeTraceIndex) {
       return;
     }
 
@@ -28,12 +38,40 @@ export function setupNodeClickHandler(nodes) {
 
     if (!node) return;
 
-    // 高亮選中的節點
-    updateNodeColors(nodes, nodeIndex);
+    // ✅ 修正：儲存選中的節點索引到全域狀態
+    setSelectedNodeIndex(nodeIndex);
+
+    console.log(`🔍 選中節點: index=${nodeIndex}, id=${node.id}`);
+
+    // ✅ 修正：重新渲染整個圖表（包含 node 和 edge 的顏色）
+    refreshPlotWithSelection(nodes, nodeIndex);
 
     // 顯示節點資訊
     displayNodeInfo(node);
   });
+}
+
+/**
+ * ✅ 新增：刷新圖表並標記選中的節點
+ * @param {Array} nodes - 節點陣列
+ * @param {number} selectedIndex - 選中的節點索引
+ */
+function refreshPlotWithSelection(nodes, selectedIndex) {
+  // 取得當前的邊
+  const edges = state.currentEdges || [];
+  
+  if (edges.length === 0) {
+    console.warn('沒有邊資料，無法刷新圖表');
+    return;
+  }
+  
+  // 重新建立邊的座標
+  const edgeData = buildEdgeCoordinates(edges, nodes);
+  
+  // 重新渲染圖表（updatePlot 內部會讀取 selectedNodeIndex）
+  updatePlot(nodes, edgeData, edges.length, edges);
+  
+  console.log('✅ 圖表已刷新（含選中節點標記）');
 }
 
 /**
@@ -88,6 +126,17 @@ function displayNodeInfo(node) {
  * @param {Function} resetFilterCallback - 重置篩選的回調函數
  */
 export function setupFilterButtons(applyFilterCallback, resetFilterCallback) {
-  document.getElementById('apply-filter-btn').addEventListener('click', applyFilterCallback);
-  document.getElementById('reset-filter-btn').addEventListener('click', resetFilterCallback);
+  const applyBtn = document.getElementById('apply-filter-btn');
+  const resetBtn = document.getElementById('reset-filter-btn');
+  
+  if (applyBtn) {
+    // 移除舊的事件監聽器（避免重複綁定）
+    applyBtn.replaceWith(applyBtn.cloneNode(true));
+    document.getElementById('apply-filter-btn').addEventListener('click', applyFilterCallback);
+  }
+  
+  if (resetBtn) {
+    resetBtn.replaceWith(resetBtn.cloneNode(true));
+    document.getElementById('reset-filter-btn').addEventListener('click', resetFilterCallback);
+  }
 }

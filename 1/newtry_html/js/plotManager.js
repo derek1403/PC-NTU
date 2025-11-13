@@ -3,7 +3,13 @@
  * 負責 3D 圖表的渲染與更新
  */
 
-import { getHighlightMode, getTyphoonTracks, getShowLandmass, getLandmassData } from './state.js';
+import { 
+  getHighlightMode, 
+  getTyphoonTracks, 
+  getShowLandmass, 
+  getLandmassData, 
+  getSelectedNodeIndex 
+} from './state.js';
 import { findTyphoonPath, findPathEdges } from './typhoonTracker.js';
 import { isNodeInComponent } from './componentAnalysis.js';
 
@@ -11,10 +17,13 @@ import { isNodeInComponent } from './componentAnalysis.js';
  * 計算節點顏色（根據所有高亮模式和選中狀態）
  * 顏色優先級: 用戶選取(紅) > 起始/最終點 > 颱風路徑 > 陸地/島嶼 > 預設
  * @param {Array} nodes - 節點陣列
- * @param {number} selectedIndex - 選中的節點索引
+ * @param {number} selectedIndex - 選中的節點索引（可選，會自動從 state 讀取）
  * @returns {Array} 顏色陣列
  */
 function calculateNodeColors(nodes, selectedIndex = null) {
+  // ✅ 修正：從全域狀態讀取 selectedNodeIndex（同步方式）
+  const finalSelectedIndex = selectedIndex !== null ? selectedIndex : getSelectedNodeIndex();
+  
   const highlightMode = getHighlightMode();
   const typhoonTracks = getTyphoonTracks();
   const showLandmass = getShowLandmass();
@@ -35,7 +44,7 @@ function calculateNodeColors(nodes, selectedIndex = null) {
   
   return nodes.map((node, index) => {
     // 優先級 1: 選中的節點 → 紅色
-    if (selectedIndex !== null && index === selectedIndex) {
+    if (finalSelectedIndex !== null && index === finalSelectedIndex) {
       return '#e74c3c';
     }
     
