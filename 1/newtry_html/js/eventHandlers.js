@@ -44,10 +44,12 @@ export function setupNodeClickHandler(nodes) {
     console.log(`🔍 選中節點: index=${nodeIndex}, id=${node.id}`);
 
     // ✅ 修正：重新渲染整個圖表（包含 node 和 edge 的顏色）
-    refreshPlotWithSelection(nodes, nodeIndex);
+    // refreshPlotWithSelection(nodes, nodeIndex);
 
     // 顯示節點資訊
+    console.log('✅ 開始 displayNodeInfo(node) ');
     //displayNodeInfo(node);
+    console.log('✅ 結束 displayNodeInfo(node) ');
   });
 }
 
