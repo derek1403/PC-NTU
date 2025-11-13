@@ -1,7 +1,6 @@
 /**
- * 圖資料處理模組（完整修正版）
+ * 圖資料處理模組
  * 負責處理、篩選圖資料
- * ✅ 修正：正確處理節點索引映射，解決篩選後的索引錯位問題
  */
 
 /**
@@ -113,77 +112,44 @@ export function filterNodes(nodes, filter) {
 }
 
 /**
- * ✅ 完整修正版：篩選邊（保留兩端節點都有效的邊，並重新映射索引）
- * 
- * 關鍵概念：
- * 1. 邊的索引 [u, v] 是指向 allNodes 的
- * 2. 篩選後，需要將索引轉換為指向 filteredNodes 的新索引
- * 3. 使用節點物件的記憶體位址來建立映射（因為節點可能沒有唯一 ID）
- * 
+ * 篩選邊（保留兩端節點都有效的邊，並重新映射索引）
  * @param {Array} edges - 所有邊（使用原始節點索引）
  * @param {Array} filteredNodes - 篩選後的節點陣列
  * @param {Array} allNodes - 所有節點陣列
- * @returns {Array} 篩選後的邊（使用新索引，指向 filteredNodes）
+ * @returns {Array} 篩選後的邊（使用新索引）
  */
 export function filterEdges(edges, filteredNodes, allNodes) {
-  console.log('🔄 開始篩選邊:', {
-    totalEdges: edges.length,
-    filteredNodes: filteredNodes.length,
-    allNodes: allNodes.length
-  });
-  
-  // ✅ 步驟 1: 建立「節點物件 → 新索引」的映射
-  // 使用 Map 以節點物件本身作為 key（利用物件的記憶體位址）
-  const nodeToNewIndex = new Map();
-  
+  // 步驟 1: 建立「節點 ID → 新索引」的映射
+  const nodeIdToNewIndex = new Map();
   filteredNodes.forEach((node, newIndex) => {
-    nodeToNewIndex.set(node, newIndex);
+    nodeIdToNewIndex.set(node.id, newIndex);
   });
   
-  console.log('📍 建立索引映射完成:', nodeToNewIndex.size, '個節點');
-  
-  // ✅ 步驟 2: 篩選並重新映射邊
+  // 步驟 2: 篩選並重新映射邊
   const newEdges = [];
-  let skippedEdges = 0;
   
   for (const [oldU, oldV] of edges) {
-    // 從原始陣列取得節點物件
+    // 從原始陣列取得節點 ID
     const nodeU = allNodes[oldU];
     const nodeV = allNodes[oldV];
     
-    // 安全檢查
-    if (!nodeU || !nodeV) {
-      console.warn(`⚠️ 邊 [${oldU}, ${oldV}] 的節點不存在`);
-      skippedEdges++;
-      continue;
-    }
+    if (!nodeU || !nodeV) continue;
     
-    // ✅ 檢查這兩個節點是否都在篩選後的集合中
-    const newU = nodeToNewIndex.get(nodeU);
-    const newV = nodeToNewIndex.get(nodeV);
+    // 檢查這兩個節點是否都在篩選後的集合中
+    const newU = nodeIdToNewIndex.get(nodeU.id);
+    const newV = nodeIdToNewIndex.get(nodeV.id);
     
     if (newU !== undefined && newV !== undefined) {
-      // ✅ 重要：使用新索引（指向 filteredNodes）
       newEdges.push([newU, newV]);
-    } else {
-      skippedEdges++;
     }
   }
-  
-  console.log('✅ 邊篩選完成:', {
-    保留: newEdges.length,
-    跳過: skippedEdges,
-    原始: edges.length
-  });
   
   return newEdges;
 }
 
 /**
  * 建立邊的座標陣列（用於 Plotly 繪圖）
- * ✅ 修正：增加索引邊界檢查，避免 "Cannot read properties of null" 錯誤
- * 
- * @param {Array} edges - 邊陣列（索引應對應到 nodes 陣列）
+ * @param {Array} edges - 邊陣列
  * @param {Array} nodes - 節點陣列
  * @returns {Object} { x, y, z } 座標陣列
  */
@@ -192,35 +158,12 @@ export function buildEdgeCoordinates(edges, nodes) {
   const edge_y = [];
   const edge_z = [];
   
-  let invalidEdgeCount = 0;
-  
   for (const [u, v] of edges) {
-    // ✅ 嚴格的邊界檢查
-    if (u < 0 || u >= nodes.length || v < 0 || v >= nodes.length) {
-      console.warn(`⚠️ 無效的邊索引: [${u}, ${v}], 節點數量: ${nodes.length}`);
-      invalidEdgeCount++;
-      continue;
-    }
+    if (u >= nodes.length || v >= nodes.length) continue;
     
-    const nodeU = nodes[u];
-    const nodeV = nodes[v];
-    
-    // ✅ 檢查節點是否存在且有座標
-    if (!nodeU || !nodeV || 
-        nodeU.x === undefined || nodeU.y === undefined || nodeU.z === undefined ||
-        nodeV.x === undefined || nodeV.y === undefined || nodeV.z === undefined) {
-      console.warn(`⚠️ 節點缺少座標: u=${u}, v=${v}`);
-      invalidEdgeCount++;
-      continue;
-    }
-    
-    edge_x.push(nodeU.x, nodeV.x, null);
-    edge_y.push(nodeU.y, nodeV.y, null);
-    edge_z.push(nodeU.z, nodeV.z, null);
-  }
-  
-  if (invalidEdgeCount > 0) {
-    console.warn(`⚠️ 跳過 ${invalidEdgeCount} 條無效的邊`);
+    edge_x.push(nodes[u].x, nodes[v].x, null);
+    edge_y.push(nodes[u].y, nodes[v].y, null);
+    edge_z.push(nodes[u].z, nodes[v].z, null);
   }
   
   return { x: edge_x, y: edge_y, z: edge_z };

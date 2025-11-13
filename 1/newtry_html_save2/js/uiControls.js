@@ -358,19 +358,13 @@ export function initLandmassSwitch() {
 }
 
 /**
- * ✅ 更新陸地與島嶼資料（完整修正版）
+ * ✅ 更新陸地與島嶼資料
  */
 function updateLandmassData() {
   try {
-    // ✅ 關鍵：必須使用「同一個資料集」的節點和邊
-    // state.currentNodes 和 state.currentEdges 是配對的（邊的索引指向這些節點）
-    const nodes = state.currentNodes && state.currentNodes.length > 0 
-      ? state.currentNodes 
-      : getAllNodes();
-    
-    const edges = state.currentEdges && state.currentEdges.length > 0
-      ? state.currentEdges
-      : getAllEdges();
+    // ✅ 優先使用當前顯示的資料
+    const nodes = state.currentNodes?.length > 0 ? state.currentNodes : getAllNodes();
+    const edges = state.currentEdges?.length > 0 ? state.currentEdges : getAllEdges();
     
     if (!nodes || nodes.length === 0) {
       console.warn('⚠️ 沒有節點資料，無法分析陸地與島嶼');

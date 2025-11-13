@@ -1,8 +1,9 @@
 /**
- * 連通圖分析模組（完整修正版）
+ * 連通圖分析模組
  * 使用 Union-Find (並查集) 找出連通分量
- * ✅ 修正：正確處理篩選後的節點和邊索引
  */
+
+
 
 class UnionFind {
   constructor(n) {
@@ -46,57 +47,22 @@ class UnionFind {
 }
 
 /**
- * ✅ 完整修正版：找出圖中所有的連通分量
- * 
- * 重要概念：
- * - nodes 和 edges 應該來自「同一個資料集」
- * - edges 中的索引 [u, v] 是指向 nodes 陣列的（0-based）
- * - 如果是篩選後的資料，filterEdges() 已經重新映射過索引了
- * 
- * @param {Array} nodes - 當前顯示的節點陣列
- * @param {Array} edges - 當前顯示的邊陣列 [[u, v], ...]（索引已對應到 nodes）
+ * 找出圖中所有的連通分量
+ * @param {Array} nodes - 節點陣列
+ * @param {Array} edges - 邊陣列 [[u, v], ...]
  * @returns {Object} { components, mainland, largestIsland, stats }
  */
 export function findConnectedComponents(nodes, edges) {
   const n = nodes.length;
-  
-  console.log('🔍 開始連通分量分析:', {
-    節點數: n,
-    邊數: edges.length
-  });
-  
   if (n === 0) {
-    console.warn('⚠️ 沒有節點資料');
-    return { 
-      components: [], 
-      mainland: null, 
-      largestIsland: null, 
-      stats: {
-        mainlandNodes: 0,
-        mainlandEdges: 0,
-        islandNodes: 0,
-        islandEdges: 0,
-        totalComponents: 0
-      }
-    };
+    return { components: [], mainland: null, largestIsland: null, stats: null };
   }
 
   const uf = new UnionFind(n);
 
-  // ✅ 建立連通分量（直接使用邊的索引，因為已經是正確的）
-  let invalidEdges = 0;
+  // 建立連通分量
   for (const [u, v] of edges) {
-    // 邊界檢查
-    if (u < 0 || u >= n || v < 0 || v >= n) {
-      console.warn(`⚠️ 邊索引超出範圍: [${u}, ${v}], 節點數: ${n}`);
-      invalidEdges++;
-      continue;
-    }
     uf.union(u, v);
-  }
-
-  if (invalidEdges > 0) {
-    console.warn(`⚠️ 跳過 ${invalidEdges} 條無效的邊`);
   }
 
   // 收集每個連通分量的節點
@@ -112,10 +78,6 @@ export function findConnectedComponents(nodes, edges) {
   // 轉換為陣列並按大小排序
   const components = Array.from(componentMap.values())
     .sort((a, b) => b.length - a.length);
-
-  console.log(`🏝️ 找到 ${components.length} 個連通分量:`, 
-    components.map(c => c.length).slice(0, 5)
-  );
 
   // 找出陸地（最大連通分量）
   const mainland = components.length > 0 ? components[0] : null;
@@ -134,8 +96,6 @@ export function findConnectedComponents(nodes, edges) {
     islandEdges: islandEdges,
     totalComponents: components.length
   };
-
-  console.log('📊 連通分量統計:', stats);
 
   return { components, mainland, largestIsland, stats };
 }
