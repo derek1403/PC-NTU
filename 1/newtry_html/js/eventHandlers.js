@@ -47,9 +47,8 @@ export function setupNodeClickHandler(nodes) {
     refreshPlotWithSelection(nodes, nodeIndex);
 
     // 顯示節點資訊
-    console.log('✅ 開始 displayNodeInfo(node) ');
     displayNodeInfo(node);
-    console.log('✅ 結束 displayNodeInfo(node) ');
+
   });
 }
 
@@ -71,8 +70,8 @@ function refreshPlotWithSelection(nodes, selectedIndex) {
   const edgeData = buildEdgeCoordinates(edges, nodes);
   
   // 重新渲染圖表（updatePlot 內部會讀取 selectedNodeIndex）
-  console.log('✅ 開始 updatePlot(nodes, edgeData, edges.length, edges) ');
-  // updatePlot(nodes, edgeData, edges.length, edges);
+  console.log('✅ 開始 updatePlot(nodes, edgeData, edges.length, edges) X');
+  updatePlot(nodes, edgeData, edges.length, edges);
   console.log('✅ 開始 updatePlot(nodes, edgeData, edges.length, edges) ');
   
   console.log('✅ 圖表已刷新（含選中節點標記）');

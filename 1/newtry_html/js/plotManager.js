@@ -297,7 +297,8 @@ export function updatePlot(nodes, edgeData, filteredEdgeCount, edges = null) {
   };
 
   try {
-    Plotly.newPlot('plot', [...edgeTraces, nodeTrace], layout, config);
+    //Plotly.newPlot('plot', [...edgeTraces, nodeTrace], layout, config);
+    console.log(`✅ 沒有Plotly.newPlot`);
     console.log(`✅ 圖表渲染完成: ${edgeTraces.length} 個邊 trace, 1 個節點 trace`);
   } catch (error) {
     console.error('Plotly 渲染錯誤:', error);
