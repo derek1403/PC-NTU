@@ -18,7 +18,7 @@ export function setupNodeClickHandler(nodes) {
   const plotDiv = document.getElementById('plot');
   
   // 解綁舊的事件（避免重複綁定）
-  plotDiv.removeAllListeners('plotly_click');
+  // plotDiv.removeAllListeners('plotly_click');
   
   plotDiv.on('plotly_click', function(eventData) {
     const point = eventData.points[0];
