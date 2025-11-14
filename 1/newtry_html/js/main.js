@@ -83,6 +83,8 @@ function resetFilter() {
   
   // 重置 UI 和狀態
   resetFilterUI();
+  const filter = readFilterFromUI();
+  updateFilter(filter);
 
   console.log('重置篩選');
 
@@ -93,6 +95,7 @@ function resetFilter() {
 
   // 儲存當前的邊
   state.currentEdges = allEdges;
+  state.currentNodes = allNodes;
 
   // 顯示所有資料
   const edgeData = buildEdgeCoordinates(allEdges, allNodes);
