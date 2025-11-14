@@ -125,7 +125,8 @@ async function initialize() {
   try {
     // 載入資料
     console.log('📥 開始載入資料...');
-    const graphData = await loadData('https://raw.githubusercontent.com/derek1403/PC-NTU/main/1/graph_data_full.json.gz');
+    // 也可以載入舊版資料 'https://raw.githubusercontent.com/derek1403/PC-NTU/main/1/graph_data_full.json.gz'
+    const graphData = await loadData('https://raw.githubusercontent.com/derek1403/PC-NTU/main/1/graph_data_full_1114.json.gz');
     
     console.log('📊 原始資料:', graphData);
     
