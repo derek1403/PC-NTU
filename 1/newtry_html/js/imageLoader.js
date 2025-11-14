@@ -36,21 +36,30 @@ export function loadTyphoonImage(tcId, time, order) {
     const tcIdCandidates = generateTcIdCandidates(tcId);
     const allCandidates = [];
     
-    // 建立所有可能的圖片 URL
-    for (const tryTcId of tcIdCandidates) {
+    // 如果是202524W(RAGASA) 因為輸入的檔案在2025年只有RAGASA這個颱風，可以直接給定
+    if (tcId === '202524'){
+      console.log('📌 IS RAGASA');
       allCandidates.push(
-        `https://agora.ex.nii.ac.jp/digital-typhoon/wnp/by-name/${tryTcId}/4/512x512/MTS1${time.slice(2)}.${tryTcId}.jpg`,
-        `https://agora.ex.nii.ac.jp/digital-typhoon/wnp/by-name/${tryTcId}/4/512x512/MTS2${time.slice(2)}.${tryTcId}.jpg`,
-        `https://agora.ex.nii.ac.jp/digital-typhoon/wnp/by-name/${tryTcId}/3/512x512/GOE9${time.slice(2)}.${tryTcId}.jpg`,
-        `https://agora.ex.nii.ac.jp/digital-typhoon/wnp/by-name/${tryTcId}/1/512x512/GMS1${time.slice(2)}.${tryTcId}.jpg`,
-        `https://agora.ex.nii.ac.jp/digital-typhoon/wnp/by-name/${tryTcId}/1/512x512/GMS2${time.slice(2)}.${tryTcId}.jpg`,
-        `https://agora.ex.nii.ac.jp/digital-typhoon/wnp/by-name/${tryTcId}/1/512x512/GMS3${time.slice(2)}.${tryTcId}.jpg`,
-        `https://agora.ex.nii.ac.jp/digital-typhoon/wnp/by-name/${tryTcId}/1/512x512/GMS4${time.slice(2)}.${tryTcId}.jpg`,
-        `https://agora.ex.nii.ac.jp/digital-typhoon/wnp/by-name/${tryTcId}/3/512x512/GMS5${time.slice(2)}.${tryTcId}.jpg`,
-        `https://agora.ex.nii.ac.jp/digital-typhoon/wnp/by-name/${tryTcId}/4/512x512/HMW8${time.slice(2)}.${tryTcId}.jpg`,
-        `https://agora.ex.nii.ac.jp/digital-typhoon/wnp/by-name/${tryTcId}/4/512x512/HMW9${time.slice(2)}.${tryTcId}.jpg`
+        `https://agora.ex.nii.ac.jp/digital-typhoon/wnp/by-name/202518/4/512x512/HMW9${time.slice(2)}.202518.jpg`
       );
+    } else{
+      for (const tryTcId of tcIdCandidates) {
+        allCandidates.push(
+          `https://agora.ex.nii.ac.jp/digital-typhoon/wnp/by-name/${tryTcId}/4/512x512/MTS1${time.slice(2)}.${tryTcId}.jpg`,
+          `https://agora.ex.nii.ac.jp/digital-typhoon/wnp/by-name/${tryTcId}/4/512x512/MTS2${time.slice(2)}.${tryTcId}.jpg`,
+          `https://agora.ex.nii.ac.jp/digital-typhoon/wnp/by-name/${tryTcId}/3/512x512/GOE9${time.slice(2)}.${tryTcId}.jpg`,
+          `https://agora.ex.nii.ac.jp/digital-typhoon/wnp/by-name/${tryTcId}/1/512x512/GMS1${time.slice(2)}.${tryTcId}.jpg`,
+          `https://agora.ex.nii.ac.jp/digital-typhoon/wnp/by-name/${tryTcId}/1/512x512/GMS2${time.slice(2)}.${tryTcId}.jpg`,
+          `https://agora.ex.nii.ac.jp/digital-typhoon/wnp/by-name/${tryTcId}/1/512x512/GMS3${time.slice(2)}.${tryTcId}.jpg`,
+          `https://agora.ex.nii.ac.jp/digital-typhoon/wnp/by-name/${tryTcId}/1/512x512/GMS4${time.slice(2)}.${tryTcId}.jpg`,
+          `https://agora.ex.nii.ac.jp/digital-typhoon/wnp/by-name/${tryTcId}/3/512x512/GMS5${time.slice(2)}.${tryTcId}.jpg`,
+          `https://agora.ex.nii.ac.jp/digital-typhoon/wnp/by-name/${tryTcId}/4/512x512/HMW8${time.slice(2)}.${tryTcId}.jpg`,
+          `https://agora.ex.nii.ac.jp/digital-typhoon/wnp/by-name/${tryTcId}/4/512x512/HMW9${time.slice(2)}.${tryTcId}.jpg`
+        );
+      }
     }
+    // 建立所有可能的圖片 URL 因為沒有JTWC和JMA的兌換表
+
     
     // 備用圖片
     allCandidates.push(
