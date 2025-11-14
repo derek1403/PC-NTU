@@ -196,9 +196,9 @@ function displayNodeInfo(node) {
     <h3>🌀 颱風狀態</h3>
     <p><b>節點 ID:</b> ${node.id}</p>
     <p><b>狀態參數:</b> ${node.info_text || 'N/A'}</p>
-    <p><b>RMW:</b> ${node.RMW ? node.RMW.toFixed(1) : 'N/A'} km</p>
-    <p><b>Vmax:</b> ${node.Vmax ? node.Vmax.toFixed(2) : 'N/A'} m/s</p>
-    <p><b>IKE:</b> ${node.IKE ? node.IKE.toFixed(2) : 'N/A'} TJ</p>
+    <p><b>RMW:</b> ${node.RMW ? (node.RMW / 1000).toFixed(0) : 'N/A'} km</p>
+    <p><b>Vmax:</b> ${node.Vmax ? node.Vmax.toFixed(0) : 'N/A'} m/s</p>
+    <p><b>IKE:</b> ${node.IKE ? node.IKE.toFixed(0) : 'N/A'} TJ</p>
     <p><b>座標:</b> (${node.x.toFixed(3)}, ${node.y.toFixed(3)}, ${node.z.toFixed(3)})</p>
   `;
 
