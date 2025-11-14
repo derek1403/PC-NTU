@@ -37,8 +37,7 @@ export function loadTyphoonImage(tcId, time, order) {
     const allCandidates = [];
     
     // 如果是202524W(RAGASA) 因為輸入的檔案在2025年只有RAGASA這個颱風，可以直接給定
-    console.log(tcId);
-    if (tcId === '202524'){
+    if (tcId === '202524W'){
       console.log('📌 IS RAGASA');
       allCandidates.push(
         `https://agora.ex.nii.ac.jp/digital-typhoon/wnp/by-name/202518/4/512x512/HMW9${time.slice(2)}.202518.jpg`
