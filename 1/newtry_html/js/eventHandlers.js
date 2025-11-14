@@ -195,12 +195,12 @@ function displayNodeInfo(node) {
   let infoHTML = `
     <h3>🌀 颱風狀態</h3>
     <p><b>節點 ID:</b> ${node.id}</p>
-    <p><b>狀態參數:</b> ${node.info_text || 'N/A'}</p>
     <p><b>RMW:</b> ${node.RMW ? (node.RMW / 1000).toFixed(0) : 'N/A'} km</p>
     <p><b>Vmax:</b> ${node.Vmax ? node.Vmax.toFixed(0) : 'N/A'} m/s</p>
     <p><b>IKE:</b> ${node.IKE ? node.IKE.toFixed(0) : 'N/A'} TJ</p>
     <p><b>座標:</b> (${node.x.toFixed(3)}, ${node.y.toFixed(3)}, ${node.z.toFixed(3)})</p>
   `;
+  // 這個先不要，但是保留在註解上 <p><b>狀態參數:</b> ${node.info_text || 'N/A'}</p>
 
   if (tcIds.length > 0) {
     infoHTML += `<hr style="margin: 15px 0; border: none; border-top: 1px solid #ddd;">`;
