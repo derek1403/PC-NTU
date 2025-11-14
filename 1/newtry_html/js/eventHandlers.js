@@ -1,6 +1,5 @@
 /**
- * UI 事件處理模組（完全修正版）
- * ✅ 修正: 移除舊的事件監聽器,避免重複綁定
+ * UI 事件處理模組（WebGL 修正版）
  */
 
 import { updatePlot } from './plotManager.js';
@@ -9,15 +8,11 @@ import { updateStats } from './filterUI.js';
 import { getMetadata, setSelectedNodeIndex, state } from './state.js';
 import { buildEdgeCoordinates } from './graphProcessor.js';
 
-// ✅ 儲存當前綁定的節點陣列
 let currentBoundNodes = null;
-
-// ✅ 儲存事件處理函數的引用(用於移除)
 let currentClickHandler = null;
 
 /**
- * 設定節點點擊事件
- * @param {Array} nodes - 節點陣列
+ * ✅ 設定節點點擊事件（添加 WebGL 錯誤處理）
  */
 export function setupNodeClickHandler(nodes) {
   const plotDiv = document.getElementById('plot');
@@ -27,7 +22,13 @@ export function setupNodeClickHandler(nodes) {
     return;
   }
   
-  // ✅ 關鍵修正: 移除舊的事件監聽器
+  // ✅ 檢查 WebGL 上下文是否有效
+  if (!checkWebGLContext(plotDiv)) {
+    console.error('❌ WebGL 上下文無效,無法綁定事件');
+    return;
+  }
+  
+  // 移除舊的事件監聽器
   if (currentClickHandler) {
     try {
       plotDiv.removeListener('plotly_click', currentClickHandler);
@@ -37,77 +38,114 @@ export function setupNodeClickHandler(nodes) {
     }
   }
   
-  // 儲存節點陣列的參考
   currentBoundNodes = nodes;
-  
   console.log('🔗 綁定節點點擊事件,節點數:', nodes.length);
   
-  // ✅ 創建新的事件處理函數
+  // 創建新的事件處理函數
   currentClickHandler = function(eventData) {
-    console.log('🖱️ 偵測到點擊事件:', eventData);
-    
-    const point = eventData.points[0];
-
-    // 檢查是否點擊的是節點
-    if (!point) {
-      console.warn('⚠️ 點擊資料為空');
-      return;
+    try {
+      handleNodeClick(eventData, plotDiv);
+    } catch (error) {
+      console.error('❌ 處理點擊事件時發生錯誤:', error);
+      
+      // ✅ WebGL 錯誤特殊處理
+      if (error.message && error.message.includes('WebGL')) {
+        alert('圖表發生錯誤,請刷新頁面 (F5)');
+      }
     }
-    
-    // 動態計算 nodeTrace 的索引
-    const plotData = plotDiv.data;
-    
-    if (!plotData || plotData.length === 0) {
-      console.error('❌ Plotly data 為空');
-      return;
-    }
-    
-    const nodeTraceIndex = plotData.length - 1; // 最後一個 trace
-    
-    console.log(`點擊的 trace: ${point.curveNumber}, 節點 trace: ${nodeTraceIndex}`);
-    
-    if (point.curveNumber !== nodeTraceIndex) {
-      console.log('點擊的不是節點 trace,忽略');
-      return;
-    }
-
-    const nodeIndex = point.pointNumber;
-    
-    // 檢查索引是否有效
-    if (nodeIndex < 0 || nodeIndex >= currentBoundNodes.length) {
-      console.error(`❌ 無效的節點索引: ${nodeIndex}, 節點總數: ${currentBoundNodes.length}`);
-      return;
-    }
-    
-    const node = currentBoundNodes[nodeIndex];
-
-    if (!node) {
-      console.error('❌ 找不到對應的節點');
-      return;
-    }
-
-    // 儲存選中的節點索引到全域狀態
-    setSelectedNodeIndex(nodeIndex);
-
-    console.log(`🔍 選中節點: index=${nodeIndex}, id=${node.id}`);
-
-    // 重新渲染整個圖表
-    refreshPlotWithSelection(currentBoundNodes, nodeIndex);
-
-    // 顯示節點資訊
-    displayNodeInfo(node);
   };
   
-  // ✅ 綁定新的事件監聽器
   plotDiv.on('plotly_click', currentClickHandler);
-  
   console.log('✅ 節點點擊事件綁定完成');
 }
 
 /**
+ * ✅ 新增: 檢查 WebGL 上下文是否有效
+ */
+function checkWebGLContext(plotDiv) {
+  try {
+    // 嘗試獲取 canvas 元素
+    const canvas = plotDiv.querySelector('canvas.gl-canvas');
+    if (!canvas) {
+      console.warn('⚠️ 找不到 WebGL canvas');
+      return true; // 可能還沒渲染,允許繼續
+    }
+    
+    // 檢查 WebGL 上下文
+    const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+    if (!gl) {
+      console.error('❌ WebGL 上下文為 null');
+      return false;
+    }
+    
+    // 檢查上下文是否丟失
+    if (gl.isContextLost()) {
+      console.error('❌ WebGL 上下文已丟失');
+      return false;
+    }
+    
+    return true;
+  } catch (e) {
+    console.warn('⚠️ WebGL 檢查失敗:', e);
+    return true; // 預設允許繼續
+  }
+}
+
+/**
+ * ✅ 抽取點擊處理邏輯
+ */
+function handleNodeClick(eventData, plotDiv) {
+  console.log('🖱️ 偵測到點擊事件:', eventData);
+  
+  const point = eventData.points[0];
+
+  if (!point) {
+    console.warn('⚠️ 點擊資料為空');
+    return;
+  }
+  
+  const plotData = plotDiv.data;
+  
+  if (!plotData || plotData.length === 0) {
+    console.error('❌ Plotly data 為空');
+    return;
+  }
+  
+  const nodeTraceIndex = plotData.length - 1;
+  
+  console.log(`點擊的 trace: ${point.curveNumber}, 節點 trace: ${nodeTraceIndex}`);
+  
+  if (point.curveNumber !== nodeTraceIndex) {
+    console.log('點擊的不是節點 trace,忽略');
+    return;
+  }
+
+  const nodeIndex = point.pointNumber;
+  
+  if (nodeIndex < 0 || nodeIndex >= currentBoundNodes.length) {
+    console.error(`❌ 無效的節點索引: ${nodeIndex}, 節點總數: ${currentBoundNodes.length}`);
+    return;
+  }
+  
+  const node = currentBoundNodes[nodeIndex];
+
+  if (!node) {
+    console.error('❌ 找不到對應的節點');
+    return;
+  }
+
+  setSelectedNodeIndex(nodeIndex);
+  console.log(`🔍 選中節點: index=${nodeIndex}, id=${node.id}`);
+
+  // ✅ 使用延遲執行,給 WebGL 時間清理
+  setTimeout(() => {
+    refreshPlotWithSelection(currentBoundNodes, nodeIndex);
+    displayNodeInfo(node);
+  }, 50);
+}
+
+/**
  * 刷新圖表並標記選中的節點
- * @param {Array} nodes - 節點陣列
- * @param {number} selectedIndex - 選中的節點索引
  */
 function refreshPlotWithSelection(nodes, selectedIndex) {
   console.log('🎨 開始刷新圖表...');
@@ -136,7 +174,7 @@ function refreshPlotWithSelection(nodes, selectedIndex) {
     
     console.log('✅ 邊座標建立完成');
     
-    // 重新渲染圖表
+    // ✅ 現在使用 Plotly.react,不會重建 WebGL 上下文
     updatePlot(nodes, edgeData, edges.length, edges);
     
     console.log('✅ 圖表已刷新（含選中節點標記）');
@@ -148,7 +186,6 @@ function refreshPlotWithSelection(nodes, selectedIndex) {
 
 /**
  * 顯示節點資訊
- * @param {Object} node - 節點物件
  */
 function displayNodeInfo(node) {
   const tcIds = node.TC_ID || [];
@@ -192,8 +229,6 @@ function displayNodeInfo(node) {
 
 /**
  * 設定篩選按鈕事件
- * @param {Function} applyFilterCallback - 套用篩選的回調函數
- * @param {Function} resetFilterCallback - 重置篩選的回調函數
  */
 export function setupFilterButtons(applyFilterCallback, resetFilterCallback) {
   const applyBtn = document.getElementById('apply-filter-btn');
