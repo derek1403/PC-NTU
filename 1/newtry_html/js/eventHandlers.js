@@ -207,23 +207,14 @@ function displayNodeInfo(node) {
   }
 }
 
+
+
 /**
  * 設定篩選按鈕事件
  * @param {Function} applyFilterCallback - 套用篩選的回調函數
  * @param {Function} resetFilterCallback - 重置篩選的回調函數
  */
 export function setupFilterButtons(applyFilterCallback, resetFilterCallback) {
-  const applyBtn = document.getElementById('apply-filter-btn');
-  const resetBtn = document.getElementById('reset-filter-btn');
-  
-  if (applyBtn) {
-    // 移除舊的事件監聽器（避免重複綁定）
-    applyBtn.replaceWith(applyBtn.cloneNode(true));
-    document.getElementById('apply-filter-btn').addEventListener('click', applyFilterCallback);
-  }
-  
-  if (resetBtn) {
-    resetBtn.replaceWith(resetBtn.cloneNode(true));
-    document.getElementById('reset-filter-btn').addEventListener('click', resetFilterCallback);
-  }
+  document.getElementById('apply-filter-btn').addEventListener('click', applyFilterCallback);
+  document.getElementById('reset-filter-btn').addEventListener('click', resetFilterCallback);
 }
