@@ -1,7 +1,6 @@
 /**
- * UI 事件處理模組（修正版）
- * 負責處理節點點擊、篩選按鈕等事件
- * ✅ 修正：點擊節點時同步更新 node 和 edge 顏色
+ * UI 事件處理模組（完全修正版）
+ * ✅ 修正: 移除舊的事件監聽器,避免重複綁定
  */
 
 import { updatePlot } from './plotManager.js';
@@ -10,8 +9,11 @@ import { updateStats } from './filterUI.js';
 import { getMetadata, setSelectedNodeIndex, state } from './state.js';
 import { buildEdgeCoordinates } from './graphProcessor.js';
 
-// ✅ 新增：儲存當前綁定的節點陣列
+// ✅ 儲存當前綁定的節點陣列
 let currentBoundNodes = null;
+
+// ✅ 儲存事件處理函數的引用(用於移除)
+let currentClickHandler = null;
 
 /**
  * 設定節點點擊事件
@@ -25,125 +27,108 @@ export function setupNodeClickHandler(nodes) {
     return;
   }
   
-  // ✅ 修正：儲存節點陣列的參考
+  // ✅ 關鍵修正: 移除舊的事件監聽器
+  if (currentClickHandler) {
+    try {
+      plotDiv.removeListener('plotly_click', currentClickHandler);
+      console.log('🗑️ 已移除舊的點擊監聽器');
+    } catch (e) {
+      console.warn('移除舊監聽器時出錯:', e);
+    }
+  }
+  
+  // 儲存節點陣列的參考
   currentBoundNodes = nodes;
   
-  // ✅ 修正：Plotly 沒有 removeAllListeners，改用旗標防止重複執行
-  let isProcessing = false;
+  console.log('🔗 綁定節點點擊事件,節點數:', nodes.length);
   
-  console.log('🔗 綁定節點點擊事件，節點數:', nodes.length);
-  
-  // ✅ 修正：使用 Plotly 的標準方式綁定事件（會自動覆蓋舊的）
-  plotDiv.on('plotly_click', function(eventData) {
-    // 防止重複處理
-    if (isProcessing) {
-      console.warn('⚠️ 正在處理上一個點擊，忽略此次點擊');
+  // ✅ 創建新的事件處理函數
+  currentClickHandler = function(eventData) {
+    console.log('🖱️ 偵測到點擊事件:', eventData);
+    
+    const point = eventData.points[0];
+
+    // 檢查是否點擊的是節點
+    if (!point) {
+      console.warn('⚠️ 點擊資料為空');
       return;
     }
     
-    isProcessing = true;
+    // 動態計算 nodeTrace 的索引
+    const plotData = plotDiv.data;
     
-    try {
-      console.log('🖱️ 偵測到點擊事件:', eventData);
-      
-      const point = eventData.points[0];
-
-      // 檢查是否點擊的是節點
-      if (!point) {
-        console.warn('⚠️ 點擊資料為空');
-        isProcessing = false;
-        return;
-      }
-      
-      // ✅ 修正：動態計算 nodeTrace 的索引
-      const plotData = plotDiv.data;
-      
-      if (!plotData || plotData.length === 0) {
-        console.error('❌ Plotly data 為空');
-        isProcessing = false;
-        return;
-      }
-      
-      const nodeTraceIndex = plotData.length - 1; // 最後一個 trace
-      
-      console.log(`點擊的 trace: ${point.curveNumber}, 節點 trace: ${nodeTraceIndex}`);
-      
-      if (point.curveNumber !== nodeTraceIndex) {
-        console.log('點擊的不是節點 trace，忽略');
-        isProcessing = false;
-        return;
-      }
-
-      const nodeIndex = point.pointNumber;
-      
-      // ✅ 修正：檢查索引是否有效
-      if (nodeIndex < 0 || nodeIndex >= currentBoundNodes.length) {
-        console.error(`❌ 無效的節點索引: ${nodeIndex}, 節點總數: ${currentBoundNodes.length}`);
-        isProcessing = false;
-        return;
-      }
-      
-      const node = currentBoundNodes[nodeIndex];
-
-      if (!node) {
-        console.error('❌ 找不到對應的節點');
-        isProcessing = false;
-        return;
-      }
-
-      // ✅ 儲存選中的節點索引到全域狀態
-      setSelectedNodeIndex(nodeIndex);
-
-      console.log(`🔍 選中節點: index=${nodeIndex}, id=${node.id}`);
-
-      // ✅ 重新渲染整個圖表（包含 node 和 edge 的顏色）
-      refreshPlotWithSelection(currentBoundNodes, nodeIndex);
-
-      // 顯示節點資訊
-      displayNodeInfo(node);
-      
-    } catch (error) {
-      console.error('❌ 處理點擊事件時發生錯誤:', error);
-    } finally {
-      // 延遲解鎖，避免雙擊問題
-      setTimeout(() => {
-        isProcessing = false;
-      }, 100);
+    if (!plotData || plotData.length === 0) {
+      console.error('❌ Plotly data 為空');
+      return;
     }
-  });
+    
+    const nodeTraceIndex = plotData.length - 1; // 最後一個 trace
+    
+    console.log(`點擊的 trace: ${point.curveNumber}, 節點 trace: ${nodeTraceIndex}`);
+    
+    if (point.curveNumber !== nodeTraceIndex) {
+      console.log('點擊的不是節點 trace,忽略');
+      return;
+    }
+
+    const nodeIndex = point.pointNumber;
+    
+    // 檢查索引是否有效
+    if (nodeIndex < 0 || nodeIndex >= currentBoundNodes.length) {
+      console.error(`❌ 無效的節點索引: ${nodeIndex}, 節點總數: ${currentBoundNodes.length}`);
+      return;
+    }
+    
+    const node = currentBoundNodes[nodeIndex];
+
+    if (!node) {
+      console.error('❌ 找不到對應的節點');
+      return;
+    }
+
+    // 儲存選中的節點索引到全域狀態
+    setSelectedNodeIndex(nodeIndex);
+
+    console.log(`🔍 選中節點: index=${nodeIndex}, id=${node.id}`);
+
+    // 重新渲染整個圖表
+    refreshPlotWithSelection(currentBoundNodes, nodeIndex);
+
+    // 顯示節點資訊
+    displayNodeInfo(node);
+  };
+  
+  // ✅ 綁定新的事件監聽器
+  plotDiv.on('plotly_click', currentClickHandler);
   
   console.log('✅ 節點點擊事件綁定完成');
 }
 
 /**
- * ✅ 刷新圖表並標記選中的節點
+ * 刷新圖表並標記選中的節點
  * @param {Array} nodes - 節點陣列
  * @param {number} selectedIndex - 選中的節點索引
  */
 function refreshPlotWithSelection(nodes, selectedIndex) {
   console.log('🎨 開始刷新圖表...');
   
-  // ✅ 安全檢查：確保所有必要資料都存在
   if (!nodes || nodes.length === 0) {
-    console.error('❌ 節點陣列為空，無法刷新圖表');
+    console.error('❌ 節點陣列為空,無法刷新圖表');
     return;
   }
   
-  // 取得當前的邊
   const edges = state.currentEdges || [];
   
   if (!edges || edges.length === 0) {
-    console.warn('⚠️ 沒有邊資料，無法刷新圖表');
+    console.warn('⚠️ 沒有邊資料,無法刷新圖表');
     return;
   }
   
   console.log(`📊 刷新資料: ${nodes.length} 個節點, ${edges.length} 條邊`);
   
   try {
-    // 重新建立邊的座標
     const edgeData = buildEdgeCoordinates(edges, nodes);
     
-    // ✅ 安全檢查：確保 edgeData 有效
     if (!edgeData || !edgeData.x || !edgeData.y || !edgeData.z) {
       console.error('❌ 邊座標資料無效');
       return;
@@ -151,7 +136,7 @@ function refreshPlotWithSelection(nodes, selectedIndex) {
     
     console.log('✅ 邊座標建立完成');
     
-    // 重新渲染圖表（updatePlot 內部會讀取 selectedNodeIndex）
+    // 重新渲染圖表
     updatePlot(nodes, edgeData, edges.length, edges);
     
     console.log('✅ 圖表已刷新（含選中節點標記）');
@@ -190,7 +175,6 @@ function displayNodeInfo(node) {
   infoHTML += `<hr style="margin: 15px 0; border: none; border-top: 1px solid #ddd;">`;
   infoHTML += `<div id="image-container" class="image-container"></div>`;
   
-  // 保留統計資訊
   const statsElement = document.getElementById('stats');
   if (statsElement) {
     infoHTML += statsElement.outerHTML;
@@ -198,7 +182,6 @@ function displayNodeInfo(node) {
 
   document.getElementById('node-info').innerHTML = infoHTML;
 
-  // 載入颱風圖片
   const imageContainer = document.getElementById('image-container');
   if (tcIds.length > 0 && times.length > 0 && orders.length > 0) {
     loadMultipleTyphoonImages(tcIds, times, orders, imageContainer);
@@ -207,14 +190,22 @@ function displayNodeInfo(node) {
   }
 }
 
-
-
 /**
  * 設定篩選按鈕事件
  * @param {Function} applyFilterCallback - 套用篩選的回調函數
  * @param {Function} resetFilterCallback - 重置篩選的回調函數
  */
 export function setupFilterButtons(applyFilterCallback, resetFilterCallback) {
-  document.getElementById('apply-filter-btn').addEventListener('click', applyFilterCallback);
-  document.getElementById('reset-filter-btn').addEventListener('click', resetFilterCallback);
+  const applyBtn = document.getElementById('apply-filter-btn');
+  const resetBtn = document.getElementById('reset-filter-btn');
+  
+  if (applyBtn) {
+    applyBtn.replaceWith(applyBtn.cloneNode(true));
+    document.getElementById('apply-filter-btn').addEventListener('click', applyFilterCallback);
+  }
+  
+  if (resetBtn) {
+    resetBtn.replaceWith(resetBtn.cloneNode(true));
+    document.getElementById('reset-filter-btn').addEventListener('click', resetFilterCallback);
+  }
 }
