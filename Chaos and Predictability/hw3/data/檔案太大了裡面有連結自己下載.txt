@@ -1,0 +1,7 @@
+data:
+    name:
+        subset_50E_220E_-20_70-001.nc
+        EOF_z_JJA_20to30N_profile_eddy.npz
+    link:
+        https://drive.google.com/drive/folders/1Vc7r8wWn5hU5buF8NtFJv-a24EwsZnjv
+
