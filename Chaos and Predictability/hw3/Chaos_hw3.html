@@ -7482,7 +7482,64 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="%E6%B7%B7%E6%B2%8C%E8%88%87%E5%8F%AF%E9%A0%90%E5%A0%B1%E5%BA%A6-hw3-R14229017-%E8%91%89%E5%93%81%E8%BE%B0">混沌與可預報度 hw3 R14229017 葉品辰<a class="anchor-link" href="#%E6%B7%B7%E6%B2%8C%E8%88%87%E5%8F%AF%E9%A0%90%E5%A0%B1%E5%BA%A6-hw3-R14229017-%E8%91%89%E5%93%81%E8%BE%B0">¶</a></h1>
+<h1 id="%E6%B7%B7%E6%B2%8C%E8%88%87%E5%8F%AF%E9%A0%90%E5%A0%B1%E5%BA%A6-hw3-R14229017-%E8%91%89%E5%93%81%E8%BE%B0">混沌與可預報度 hw3 R14229017 葉品辰<a class="anchor-link" href="#%E6%B7%B7%E6%B2%8C%E8%88%87%E5%8F%AF%E9%A0%90%E5%A0%B1%E5%BA%A6-hw3-R14229017-%E8%91%89%E5%93%81%E8%BE%B0">¶</a></h1><style>
+/* === 基礎設定 (地基) === */
+.jp-RenderedMarkdown table {
+    table-layout: fixed !important;
+    width: 100% !important;
+    word-break: break-word;
+    font-size: 15px; /* 5欄時字體稍微縮小一點會更好讀 */
+}
+
+/* === 情境 A：當檢測到表格有「3 個欄位」時 === */
+/* 邏輯：選取「既是第一個孩子，又是倒數第三個孩子」的元素 -> 代表總共有3個 */
+.jp-RenderedMarkdown table tr:first-child th:first-child:nth-last-child(3),
+.jp-RenderedMarkdown table tr:first-child th:first-child:nth-last-child(3) ~ th {
+    /* 這裡不用寫 width，下面分開定義 */
+}
+
+/* 3欄 - 第 1 欄 (數學) */
+.jp-RenderedMarkdown table tr:first-child th:first-child:nth-last-child(3),
+.jp-RenderedMarkdown table tr:first-child th:first-child:nth-last-child(3) ~ th:nth-child(1) {
+    width: 25% !important;
+}
+/* 3欄 - 第 2 欄 */
+.jp-RenderedMarkdown table tr:first-child th:first-child:nth-last-child(3) ~ th:nth-child(2) {
+    width: 35% !important;
+}
+/* 3欄 - 第 3 欄 */
+.jp-RenderedMarkdown table tr:first-child th:first-child:nth-last-child(3) ~ th:nth-child(3) {
+    width: 40% !important;
+}
+
+
+/* === 情境 B：當檢測到表格有「5 個欄位」時 === */
+/* 5欄 - 第 1 欄 (數學 - 窄) */
+.jp-RenderedMarkdown table tr:first-child th:first-child:nth-last-child(5),
+.jp-RenderedMarkdown table tr:first-child th:first-child:nth-last-child(5) ~ th:nth-child(1) {
+    width: 14% !important;
+}
+
+/* 5欄 - 第 2 欄 (條件 - 極窄) */
+.jp-RenderedMarkdown table tr:first-child th:first-child:nth-last-child(5) ~ th:nth-child(2) {
+    width: 10% !important;
+}
+
+/* 5欄 - 第 3 欄 (物理 - 中) */
+.jp-RenderedMarkdown table tr:first-child th:first-child:nth-last-child(5) ~ th:nth-child(3) {
+    width: 28% !important;
+}
+
+/* 5欄 - 第 4 欄 (類型 - 窄) */
+.jp-RenderedMarkdown table tr:first-child th:first-child:nth-last-child(5) ~ th:nth-child(4) {
+    width: 12% !important;
+}
+
+/* 5欄 - 第 5 欄 (類比 - 寬) */
+.jp-RenderedMarkdown table tr:first-child th:first-child:nth-last-child(5) ~ th:nth-child(5) {
+    width: 36% !important;
+}
+</style>
 </div>
 </div>
 </div>
@@ -7509,9 +7566,6 @@ $$\det(J) = \det
 \frac{dx''}{da} &amp; \frac{dx''}{db} &amp; \frac{dx''}{dc}
 \end{pmatrix} $$<p>證明：</p>
 $$\frac{d}{dt} \det(J) = \det(J) \frac{\partial P}{\partial x''}$$<p>這裡的Liouville equation(LE)表明，$\det(J)$ 的時間演化僅依賴於系統中 <strong>最高階的導數項</strong>。</p>
-<blockquote>
-<p>(Lyapunov Exponent?)</p>
-</blockquote>
 </div>
 </div>
 </div>
@@ -7688,14 +7742,32 @@ $$<h4 id="2.-%E7%89%A9%E7%90%86%E6%84%8F%E7%BE%A9%EF%BC%9ALiouville%E8%88%87%E8%
 <li><p><strong>機制：</strong> 由於狀態向量中，所有低階項的演化（如 $x'=x''$）都是<strong>線性的鏈式定義</strong>，它們對相空間散度的貢獻皆為零。<strong>只有最高階項</strong> $P$ 對其自身變量 $x^{(n-1)}$ 的依賴性，是相空間體積變化（收縮/膨脹）的<strong>唯一來源</strong>。</p>
 </li>
 <li><p><strong>系統分類：</strong> 根據Liouville equation $\frac{d}{dt} \det(J) = \det(J) \cdot \frac{\partial P}{\partial x^{(n-1)}}$：</p>
-<p>| 條件 | 物理意義 | 系統類型 |
-  | :--- | :--- | :--- |
-  | $\overline{\frac{\partial P}{\partial x^{(n-1)}}} &lt; 0$ | 相空間體積收縮 ($\det(J) \to 0$) | <strong>耗散系統</strong>（吸引子存在） |
-  | $\frac{\partial P}{\partial x^{(n-1)}} = 0$ | 相空間體積守恆 ($\det(J) = \text{常數}$) | <strong>保守系統</strong>（哈密頓系統） |</p>
 </li>
-<li><p><strong>Lyapunov exponent關聯：</strong>
-  所有Lyapunov exponent的總和等於相空間散度的時間平均值：$\sum \lambda_i = \overline{\frac{\partial P}{\partial x^{(n-1)}}}$。</p>
-</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">條件</th>
+<th style="text-align:left">物理意義</th>
+<th style="text-align:left">系統類型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$\overline{\frac{\partial P}{\partial x^{(n-1)}}}&lt;0$</td>
+<td style="text-align:left">相空間體積收縮 ($\det(J) \to 0$)</td>
+<td style="text-align:left"><strong>耗散系統</strong>（吸引子存在）</td>
+</tr>
+<tr>
+<td style="text-align:left">$\frac{\partial P}{\partial x^{(n-1)}}=0$</td>
+<td style="text-align:left">相空間體積守恆 ($\det(J) = \text{常數}$)</td>
+<td style="text-align:left"><strong>保守系統</strong>（哈密頓系統）</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Lyapunov exponent關聯：</strong>
+  所有Lyapunov exponent的總和等於相空間散度的時間平均值：$\sum \lambda_i = \overline{\frac{\partial P}{\partial x^{(n-1)}}}$。</li>
 </ul>
 <p><strong>要判斷一個高階動力系統是否耗散，只需檢查定義其最高階導數的 $P$ 函數中，是否包含 $x^{(n-1)}$ 的依賴項。</strong></p>
 <hr/>
@@ -8063,7 +8135,7 @@ $$<p>這個解代表一個<strong>平均值</strong> $\mu(t) = X_0 + t$ 以速�
 <td style="text-align:left"><strong>拉伸-折疊機制 (Stretching-Folding)</strong>：局部膨脹（拉伸）與局部收縮（折疊）相互制衡，淨效應仍是耗散。</td>
 </tr>
 <tr>
-<td style="text-align:left"><strong>總機率估計 $(\sum \rho_i)$ 曲線</strong></td>
+<td style="text-align:left"><strong>總機率估計曲線</strong></td>
 <td style="text-align:left"><strong>指數性爆炸</strong>：曲線呈現對數線性上升，增長速度極快且穩定。</td>
 <td style="text-align:left"><strong>波動性飆升</strong>：曲線呈現波動性上升，但在長時間後，因機制的複雜性可能出現更劇烈的「飆升」段(第7秒)。</td>
 </tr>
@@ -8362,9 +8434,7 @@ $$\nabla \cdot \mathbf{\Phi} = -a + 2x - 2$$
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">rcParams</span>
 <span class="kn">import</span> <span class="nn">matplotlib.cm</span> <span class="k">as</span> <span class="nn">cm</span>
 
-<span class="c1"># 設定中文字體</span>
-<span class="n">rcParams</span><span class="p">[</span><span class="s1">'font.sans-serif'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Arial Unicode MS'</span><span class="p">,</span> <span class="s1">'SimHei'</span><span class="p">,</span> <span class="s1">'DejaVu Sans'</span><span class="p">]</span>
-<span class="n">rcParams</span><span class="p">[</span><span class="s1">'axes.unicode_minus'</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+
 
 <span class="k">class</span> <span class="nc">FPESolverFFT</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">"""福克-普朗克方程式求解器 (分步傅立葉法)"""</span>
