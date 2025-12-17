@@ -7517,27 +7517,27 @@ a.anchor-link {
 /* 5欄 - 第 1 欄 (數學 - 窄) */
 .jp-RenderedMarkdown table tr:first-child th:first-child:nth-last-child(5),
 .jp-RenderedMarkdown table tr:first-child th:first-child:nth-last-child(5) ~ th:nth-child(1) {
-    width: 14% !important;
+    width: 20% !important;
 }
 
 /* 5欄 - 第 2 欄 (條件 - 極窄) */
 .jp-RenderedMarkdown table tr:first-child th:first-child:nth-last-child(5) ~ th:nth-child(2) {
-    width: 10% !important;
+    width: 20% !important;
 }
 
 /* 5欄 - 第 3 欄 (物理 - 中) */
 .jp-RenderedMarkdown table tr:first-child th:first-child:nth-last-child(5) ~ th:nth-child(3) {
-    width: 28% !important;
+    width: 20% !important;
 }
 
 /* 5欄 - 第 4 欄 (類型 - 窄) */
 .jp-RenderedMarkdown table tr:first-child th:first-child:nth-last-child(5) ~ th:nth-child(4) {
-    width: 12% !important;
+    width: 20% !important;
 }
 
 /* 5欄 - 第 5 欄 (類比 - 寬) */
 .jp-RenderedMarkdown table tr:first-child th:first-child:nth-last-child(5) ~ th:nth-child(5) {
-    width: 36% !important;
+    width: 20% !important;
 }
 </style>
 </div>
@@ -7773,43 +7773,163 @@ $$Sv = \lambda v$$<p><strong>S 的最大特徵值對應的特徵向量 (Eigenvec
 <li><strong>Resonance:</strong>  $k \approx \frac{1}{3}$ → 外力的頻率和系統的自然震盪頻率接近→ 共振(震幅變無限大) → characteristic time 會接近 $\frac{1}{3}$</li>
 </ol>
 <p><strong>Sen2019 的模型和Hw1 Question3.3比較：</strong></p>
-<p>|   | Hw1 Q3.3 (振盪器) | Sen2019 SDM (衰減器)忽略隨機項 |
- | --- | --- | --- |
- | <strong>系統階數</strong> | <strong>二階 (慣性系統)</strong> | <strong>一階 (無慣性系統)</strong> |
- | <strong>內部行為</strong> | 即使沒有外力，系統也會<strong>振盪</strong>（有自己的週期 $2\pi/3$） | 若沒有外力，系統只會<strong>指數衰減</strong>回零（單調趨近平衡），不會振盪 |
- | <strong>特徵時間的混合</strong> | 會發生<strong>頻率混合</strong>，如果外力頻率與自然頻率不同能看到兩個頻率的疊加 | 主要是<strong>頻率跟隨</strong>，因為是過阻尼系統傾向於直接跟隨外力變化，稍微帶點滯後由 $1/\lambda$ 決定。 |
- | <strong>共振現象</strong> | <strong>有</strong>，當外力頻率 $\tau_{\text{forcing}} \approx 3$ 時，響應無限大 | <strong>無</strong>，一階系統不會發生頻率共振但它有季節性放大的概念，這在 Sen2019 中被稱為 C-mode 。|
- | <strong>時間尺度的層次</strong> | 外力 $k$ 改變的是振盪的快慢。 | 外力 (ENSO) 提供的是<strong>長記憶</strong>。IOD 本身記憶短但因為「搭上了」ENSO 這班長程列車，所以看起來好像有了長期的可預報性 |</p>
-<p><strong>帶回Sen2019的數值：</strong></p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Hw1 Q3.3 (振盪器)</th>
+<th>Sen2019 SDM (衰減器)忽略隨機項</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>系統階數</strong></td>
+<td><strong>二階 (慣性系統)</strong></td>
+<td><strong>一階 (無慣性系統)</strong></td>
+</tr>
+<tr>
+<td><strong>內部行為</strong></td>
+<td>即使沒有外力，系統也會<strong>振盪</strong>（有自己的週期 $2\pi/3$）</td>
+<td>若沒有外力，系統只會<strong>指數衰減</strong>回零（單調趨近平衡），不會振盪</td>
+</tr>
+<tr>
+<td><strong>特徵時間的混合</strong></td>
+<td>會發生<strong>頻率混合</strong>，如果外力頻率與自然頻率不同能看到兩個頻率的疊加</td>
+<td>主要是<strong>頻率跟隨</strong>，因為是過阻尼系統傾向於直接跟隨外力變化，稍微帶點滯後由 $1/\lambda$ 決定。</td>
+</tr>
+<tr>
+<td><strong>共振現象</strong></td>
+<td><strong>有</strong>，當外力頻率 $\tau_{\text{forcing}} \approx 3$ 時，響應無限大</td>
+<td><strong>無</strong>，一階系統不會發生頻率共振但它有季節性放大的概念，這在 Sen2019 中被稱為 C-mode 。</td>
+</tr>
+<tr>
+<td><strong>時間尺度的層次</strong></td>
+<td>外力 $k$ 改變的是振盪的快慢。</td>
+<td>外力 (ENSO) 提供的是<strong>長記憶</strong>。IOD 本身記憶短但因為「搭上了」ENSO 這班長程列車，所以看起來好像有了長期的可預報性</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>_
+  <strong>帶回Sen2019的數值：</strong></p>
 <p>$$
- \begin{aligned}
- \lambda(t) &amp;= \lambda_0 [1 + D \cos(\omega t + \phi_D)] \\
- &amp;= 0.35 [1 + 0.84 \cos(\frac{\pi}{6} t - 0.63)]
- \end{aligned}
- $$</p>
+  \begin{aligned}
+  \lambda(t) &amp;= \lambda_0 [1 + D \cos(\omega t + \phi_D)] \\
+  &amp;= 0.35 [1 + 0.84 \cos(\frac{\pi}{6} t - 0.63)]
+  \end{aligned}
+  $$</p>
 <p>$$
- \begin{aligned}
- \alpha(t) &amp;= \alpha_0 [1 + A \cos(\omega t + \phi_A)] \\
- &amp;= 0.043 [1 + 3.04 \cos(\frac{\pi}{6} t + 2.37)]
- \end{aligned}
- $$</p>
+  \begin{aligned}
+  \alpha(t) &amp;= \alpha_0 [1 + A \cos(\omega t + \phi_A)] \\
+  &amp;= 0.043 [1 + 3.04 \cos(\frac{\pi}{6} t + 2.37)]
+  \end{aligned}
+  $$</p>
 <p>$$T(t) = \underbrace{T(0)e^{-\lambda t}}_{\text{內部記憶}} + \underbrace{e^{-\lambda t} \int_{0}^{t} \alpha(t') T_{\text{ENSO}}(t') e^{\lambda t'} dt'}_{\text{外力強迫}}$$</p>
 <p>根據 Supplement Table S1 的實際數值：平均阻尼率 $\lambda_0 \approx 0.35 \text{ month}^{-1}$。特徵衰減時間 (e-folding time) $\tau = \frac{1}{\lambda} \approx \mathbf{2.86}$ 個月，這告訴我們一個關鍵的大約 3 個月是IOD的記憶上限。</p>
-<p>| month  | $\lambda$ |  $\frac{1}{\lambda} [\text{month}]$ |$e^{-\lambda 1}$ (1個月後剩餘記憶量) |$e^{-\lambda 3}$ (3個月後剩餘記憶量)|
- |---|---|---|---|---|
- | 1 | 0.642 | 1.557 | 0.526 | 0.146 |
- | 2 | 0.619 | 1.616 | 0.539 | 0.156 |
- | 3 | 0.523 | 1.911 | 0.593 | 0.208 |
- | 4 | 0.381 | 2.623 | 0.683 | 0.319 |
- | 5 | 0.231 | 4.331 | 0.794 | 0.5 |
- | 6 | 0.112 | 8.894 | 0.894 | 0.714 |
- | 7 | 0.058 | 17.342 | 0.944 | 0.841 |
- | 8 | 0.081 | 12.313 | 0.922 | 0.784 |
- | 9 | 0.177 | 5.656 | 0.838 | 0.588 |
- | 10 | 0.319 | 3.137 | 0.727 | 0.384 |
- | 11 | 0.469 | 2.132 | 0.626 | 0.245 |
- | 12 | 0.588 | 1.702 | 0.556 | 0.172 |</p>
-<p><img alt="" src="pic/Q2_1.png"/></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>month</th>
+<th>$\lambda$</th>
+<th>$\frac{1}{\lambda} [\text{month}]$</th>
+<th>$e^{-\lambda 1}$ (1個月後剩餘記憶量)</th>
+<th>$e^{-\lambda 3}$ (3個月後剩餘記憶量)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0.642</td>
+<td>1.557</td>
+<td>0.526</td>
+<td>0.146</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0.619</td>
+<td>1.616</td>
+<td>0.539</td>
+<td>0.156</td>
+</tr>
+<tr>
+<td>3</td>
+<td>0.523</td>
+<td>1.911</td>
+<td>0.593</td>
+<td>0.208</td>
+</tr>
+<tr>
+<td>4</td>
+<td>0.381</td>
+<td>2.623</td>
+<td>0.683</td>
+<td>0.319</td>
+</tr>
+<tr>
+<td>5</td>
+<td>0.231</td>
+<td>4.331</td>
+<td>0.794</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>6</td>
+<td>0.112</td>
+<td>8.894</td>
+<td>0.894</td>
+<td>0.714</td>
+</tr>
+<tr>
+<td>7</td>
+<td>0.058</td>
+<td>17.342</td>
+<td>0.944</td>
+<td>0.841</td>
+</tr>
+<tr>
+<td>8</td>
+<td>0.081</td>
+<td>12.313</td>
+<td>0.922</td>
+<td>0.784</td>
+</tr>
+<tr>
+<td>9</td>
+<td>0.177</td>
+<td>5.656</td>
+<td>0.838</td>
+<td>0.588</td>
+</tr>
+<tr>
+<td>10</td>
+<td>0.319</td>
+<td>3.137</td>
+<td>0.727</td>
+<td>0.384</td>
+</tr>
+<tr>
+<td>11</td>
+<td>0.469</td>
+<td>2.132</td>
+<td>0.626</td>
+<td>0.245</td>
+</tr>
+<tr>
+<td>12</td>
+<td>0.588</td>
+<td>1.702</td>
+<td>0.556</td>
+<td>0.172</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>_</p>
+<p><img alt="" src="pic/Q2_1_1.png"/></p>
 <p>看到 JJA 預報的很好其實不是ENSO做得多好，而是當時IOD的記憶本來就很久遠：</p>
 <ul>
 <li>在這個時期的短期預報 $e^{-\lambda t} \approx 0.9$ 的數值還很大，預報的準確度主要來自於我們準確知道了初始條件 $T(0)$ 不管有沒有外力ENSO只要初始水溫量得準近期預報就會準。</li>
@@ -7822,7 +7942,7 @@ $$Sv = \lambda v$$<p><strong>S 的最大特徵值對應的特徵向量 (Eigenvec
 <li>耦合強度 $\alpha(t)$ 是有季節性的：在(SON)秋季 　$\alpha(t)T_{\text{ENSO}}(t)$ 最大。(MAM)春季  $\alpha(t)T_{\text{ENSO}}(t)$ 很小，外力無法控制系統而內部記憶又已經衰減光了所以ACC很低。</li>
 </ul>
 </li>
-</ol>
+</ul>
 <h4 id="(b)-%E5%90%84%E9%A0%85%E8%B2%A2%E7%8D%BB">(b) 各項貢獻<a class="anchor-link" href="#(b)-%E5%90%84%E9%A0%85%E8%B2%A2%E7%8D%BB">¶</a></h4><p><strong>Hw3 到 Sen2019</strong></p>
 <p>Sen2019 的方程式 (3) 完全對應這個結構，這在物理上稱為 Ornstein-Uhlenbeck (OU) 過程也就是俗稱的Red Noise。</p>
 $$
@@ -7981,16 +8101,16 @@ $$\frac{dT}{dt} = \underbrace{-\lambda(t)T(t)}_{\text{Term 1}} + \underbrace{\al
 <p>在 $y=x^3$ 非線性變換下應該要相等，但這樣高斯假設會有誤。</p>
 <p>$$
    \begin{aligned}
-   R_{\theta,y} =&amp; \int_{-\infty}^{\infty} p(y) \ln\left( \frac{p(y)}{q(y)} \right) dy \
-   =&amp; E_p \left[\ln \frac{ p(y)}{ q(y)} \right] \
-   \ne&amp; E_p \left[\ln \frac{\frac{1}{\sqrt{2\pi}\sigma_p} e^{-\frac{(x-\mu_p)^2}{2\sigma_p^2}}}{\frac{1}{\sqrt{2\pi}\sigma_c} e^{-\frac{(y-\mu_c)^2}{2\sigma_c^2}}} \right] \
-   =&amp;  \ln\frac{\sigma_c}{\sigma_p} +  \frac{ \sigma_p^2 + (\mu_p-\mu_c)^2 }{2\sigma_c^2} - \frac{1}{2} \
-   =&amp;  \ln\frac{\sqrt {E[x_\text{c}^6] - (E[x_\text{c}^3])^2}}{\sqrt {E[x_\text{p}^6] - (E[x_\text{p}^3])^2}} +  \frac{ E[x_\text{p}^6] - (E[x_\text{p}^3])^2 + (E[x_\text{p}^3] -E[x_\text{c}^3] )^2 }{2(E[x_\text{c}^6] - (E[x_\text{c}^3])^2)} - \frac{1}{2} \
-   =&amp;  \ln\frac{\sqrt {(\mu_{x\text{c}}^6 + 15\mu_{x\text{c}}^4\sigma_{x\text{c}}^2 + 45\mu_{x\text{c}}^2\sigma_{x\text{c}}^4 + 15\sigma_{x\text{c}}^6) -(\mu_{x\text{c}}^3 + 3\mu_{x\text{c}}\sigma_{x\text{c}}^2 ) ^2}}{\sqrt {(\mu_{x\text{p}}^6 + 15\mu_{x\text{p}}^4\sigma_{x\text{p}}^2 + 45\mu_{x\text{p}}^2\sigma_{x\text{p}}^4 + 15\sigma_{x\text{p}}^6) - (\mu_{x\text{p}}^3 + 3\mu_{x\text{p}}\sigma_{x\text{p}}^2 ) ^2}} + \
-   &amp; \frac{ (\mu_{x\text{p}}^6 + 15\mu_{x\text{p}}^4\sigma_{x\text{p}}^2 + 45\mu_{x\text{p}}^2\sigma_{x\text{p}}^4 + 15\sigma_{x\text{p}}^6) - (\mu_{x\text{p}}^3 + 3\mu_{x\text{p}}\sigma_{x\text{p}}^2 ) ^2 + ((\mu_{x\text{p}}^3 + 3\mu_{x\text{p}}\sigma_{x\text{p}}^2 )  -(\mu_{x\text{c}}^3 + 3\mu_{x\text{c}}\sigma_{x\text{c}}^2 )  )^2 }{2((\mu_{x\text{c}}^6 + 15\mu_{x\text{c}}^4\sigma_{x\text{c}}^2 + 45\mu_{x\text{c}}^2\sigma_{x\text{c}}^4 + 15\sigma_{x\text{c}}^6) - (\mu_{x\text{c}}^3 + 3\mu_{x\text{c}}\sigma_{x\text{c}}^2 ) ^2)} - \frac{1}{2} \</p>
-<p>=&amp;  \ln\frac{\sqrt {(0^6 + 15\times 0^4 1^2 + 45\times 0^2 1^4 + 15\times 0^6) -(0^3 + 3\times0 \times 1^2 ) ^2}}{\sqrt {(2^6 + 15\times2^4 1^2 + 45\times2^2 1^4 + 15 \times 1^6) - (2^3 + 3\times 2 \times 1^2 ) ^2}} +\
-   &amp;\frac{ (2^6 + 15\times 2^4 1^2 + 45\times 2^2 1^4 + 15\times 1^6) - (2^3 + 3\times 2\times 1^2 ) ^2 + ((2^3 + 3\times 2 \times 1^2 )  -(0^3 + 3\times 0\times 1^2 )  )^2 }{2((0^6 + 15\times 0^4 1^2 + 45\times 0^2 1^4 + 15 \times 1^6) - (0^3 + 3\times0\times1^2 ) ^2)} - \frac{1}{2} \
-   =&amp;  \ln\frac{15}{303} +  \frac{ 303 + (14-0)^2 }{2 \times 15} - \frac{1}{2} \
+   R_{\theta,y} =&amp; \int_{-\infty}^{\infty} p(y) \ln\left( \frac{p(y)}{q(y)} \right) dy \\
+   =&amp; E_p \left[\ln \frac{ p(y)}{ q(y)} \right] \\
+   \ne&amp; E_p \left[\ln \frac{\frac{1}{\sqrt{2\pi}\sigma_p} e^{-\frac{(x-\mu_p)^2}{2\sigma_p^2}}}{\frac{1}{\sqrt{2\pi}\sigma_c} e^{-\frac{(y-\mu_c)^2}{2\sigma_c^2}}} \right] \\
+   =&amp;  \ln\frac{\sigma_c}{\sigma_p} +  \frac{ \sigma_p^2 + (\mu_p-\mu_c)^2 }{2\sigma_c^2} - \frac{1}{2} \\
+   =&amp;  \ln\frac{\sqrt {E[x_\text{c}^6] - (E[x_\text{c}^3])^2}}{\sqrt {E[x_\text{p}^6] - (E[x_\text{p}^3])^2}} +  \frac{ E[x_\text{p}^6] - (E[x_\text{p}^3])^2 + (E[x_\text{p}^3] -E[x_\text{c}^3] )^2 }{2(E[x_\text{c}^6] - (E[x_\text{c}^3])^2)} - \frac{1}{2} \\
+   =&amp;  \ln\frac{\sqrt {(\mu_{x\text{c}}^6 + 15\mu_{x\text{c}}^4\sigma_{x\text{c}}^2 + 45\mu_{x\text{c}}^2\sigma_{x\text{c}}^4 + 15\sigma_{x\text{c}}^6) -(\mu_{x\text{c}}^3 + 3\mu_{x\text{c}}\sigma_{x\text{c}}^2 ) ^2}}{\sqrt {(\mu_{x\text{p}}^6 + 15\mu_{x\text{p}}^4\sigma_{x\text{p}}^2 + 45\mu_{x\text{p}}^2\sigma_{x\text{p}}^4 + 15\sigma_{x\text{p}}^6) - (\mu_{x\text{p}}^3 + 3\mu_{x\text{p}}\sigma_{x\text{p}}^2 ) ^2}} + \\
+   &amp; \frac{ (\mu_{x\text{p}}^6 + 15\mu_{x\text{p}}^4\sigma_{x\text{p}}^2 + 45\mu_{x\text{p}}^2\sigma_{x\text{p}}^4 + 15\sigma_{x\text{p}}^6) - (\mu_{x\text{p}}^3 + 3\mu_{x\text{p}}\sigma_{x\text{p}}^2 ) ^2 + ((\mu_{x\text{p}}^3 + 3\mu_{x\text{p}}\sigma_{x\text{p}}^2 )  -(\mu_{x\text{c}}^3 + 3\mu_{x\text{c}}\sigma_{x\text{c}}^2 )  )^2 }{2((\mu_{x\text{c}}^6 + 15\mu_{x\text{c}}^4\sigma_{x\text{c}}^2 + 45\mu_{x\text{c}}^2\sigma_{x\text{c}}^4 + 15\sigma_{x\text{c}}^6) - (\mu_{x\text{c}}^3 + 3\mu_{x\text{c}}\sigma_{x\text{c}}^2 ) ^2)} - \frac{1}{2} \\
+   =&amp;  \ln\frac{\sqrt {(0^6 + 15\times 0^4 1^2 + 45\times 0^2 1^4 + 15\times 0^6) -(0^3 + 3\times0 \times 1^2 ) ^2}}{\sqrt {(2^6 + 15\times2^4 1^2 + 45\times2^2 1^4 + 15 \times 1^6) - (2^3 + 3\times 2 \times 1^2 ) ^2}} +\\
+   &amp;\frac{ (2^6 + 15\times 2^4 1^2 + 45\times 2^2 1^4 + 15\times 1^6) - (2^3 + 3\times 2\times 1^2 ) ^2 + ((2^3 + 3\times 2 \times 1^2 )  -(0^3 + 3\times 0\times 1^2 )  )^2 }{2((0^6 + 15\times 0^4 1^2 + 45\times 0^2 1^4 + 15 \times 1^6) - (0^3 + 3\times0\times1^2 ) ^2)} - \frac{1}{2} \\
+   =&amp;  \ln\frac{15}{303} +  \frac{ 303 + (14-0)^2 }{2 \times 15} - \frac{1}{2} \\
    \approx&amp;  \mathbf{13.1}
    \end{aligned}
    $$</p>
