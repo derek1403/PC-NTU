@@ -7623,7 +7623,7 @@ $$Sv = \lambda v$$<p><strong>S 的最大特徵值對應的特徵向量 (Eigenvec
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="%E5%AF%A6%E4%BD%9C%E5%B0%8D%E6%87%89-(Implementation-Mapping)%E5%9C%A8%E4%BD%A0%E7%9A%84-Python-%E7%A8%8B%E5%BC%8F%E7%A2%BC%E5%AF%A6%E4%BD%9C%E4%B8%AD%EF%BC%8C%E4%B8%8A%E8%BF%B0%E7%9A%84%E6%95%B8%E5%AD%B8%E7%AC%A6%E8%99%9F%E5%B0%8D%E6%87%89%E5%A6%82%E4%B8%8B%EF%BC%9A">實作對應 (Implementation Mapping)在你的 Python 程式碼實作中，上述的數學符號對應如下：<a class="anchor-link" href="#%E5%AF%A6%E4%BD%9C%E5%B0%8D%E6%87%89-(Implementation-Mapping)%E5%9C%A8%E4%BD%A0%E7%9A%84-Python-%E7%A8%8B%E5%BC%8F%E7%A2%BC%E5%AF%A6%E4%BD%9C%E4%B8%AD%EF%BC%8C%E4%B8%8A%E8%BF%B0%E7%9A%84%E6%95%B8%E5%AD%B8%E7%AC%A6%E8%99%9F%E5%B0%8D%E6%87%89%E5%A6%82%E4%B8%8B%EF%BC%9A">¶</a></h4><table>
+<h4 id="%E5%AF%A6%E4%BD%9C%E5%B0%8D%E6%87%89-(Implementation-Mapping)%E5%9C%A8%E8%AA%B2%E7%A8%8B%E7%9A%84-Python-%E7%A8%8B%E5%BC%8F%E7%A2%BC%E5%AF%A6%E4%BD%9C%E4%B8%AD%EF%BC%8C%E4%B8%8A%E8%BF%B0%E7%9A%84%E6%95%B8%E5%AD%B8%E7%AC%A6%E8%99%9F%E5%B0%8D%E6%87%89%E5%A6%82%E4%B8%8B%EF%BC%9A">實作對應 (Implementation Mapping)在課程的 Python 程式碼實作中，上述的數學符號對應如下：<a class="anchor-link" href="#%E5%AF%A6%E4%BD%9C%E5%B0%8D%E6%87%89-(Implementation-Mapping)%E5%9C%A8%E8%AA%B2%E7%A8%8B%E7%9A%84-Python-%E7%A8%8B%E5%BC%8F%E7%A2%BC%E5%AF%A6%E4%BD%9C%E4%B8%AD%EF%BC%8C%E4%B8%8A%E8%BF%B0%E7%9A%84%E6%95%B8%E5%AD%B8%E7%AC%A6%E8%99%9F%E5%B0%8D%E6%87%89%E5%A6%82%E4%B8%8B%EF%BC%9A">¶</a></h4><table>
 <thead>
 <tr>
 <th>數學符號</th>
@@ -7670,7 +7670,7 @@ $$Sv = \lambda v$$<p><strong>S 的最大特徵值對應的特徵向量 (Eigenvec
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="1.--%E9%81%B8%E4%B8%80%E7%B5%84-$s(t)$-,-$p$,-or-$x_%7B%5Ctext%7Bctrl%7D%7D(t)$">1.  選一組 $s(t)$ , $p$, or $x_{\text{ctrl}}(t)$<a class="anchor-link" href="#1.--%E9%81%B8%E4%B8%80%E7%B5%84-$s(t)$-,-$p$,-or-$x_%7B%5Ctext%7Bctrl%7D%7D(t)$">¶</a></h3><p>改變時間 $s(t)$ 從「暖化」變成「週期循環」，原本直線上升是在模擬全球暖化，但地球氣候充滿了週期性變化像是季節循環、ENSO、IPO、PPO，信號不是一直增加而是有週期性的變化。</p>
-<p>令 $s(t) = A \sin(\omega t + \phi)$ ，其中 $ A = 3 , \omega = \frac{2\pi}{200}, \phi= \frac{\pi}{7}$ ，由於 $t \in [0,1000]$ 所以會有5個時間週期，經過測試不同的相角差 $\phi$ 並沒有顯著差異，主要差異落在振幅 $A$ 和相頻 $\omega$，人類並沒有對於更長時間尺度的IPO、PPO的觀測資料故選擇很小的相頻，但同時希望有點解果所以讓振幅大一點。</p>
+<p>令 $s(t) = A \sin(\omega t + \phi)$ ，其中 $ A = 3 , \omega = \frac{2\pi}{200}, \phi= \frac{\pi}{7}$ ，由於 $t \in [0,1000]$ 所以會有5個時間週期，經過測試不同的相角差 $\phi$ 並沒有顯著差異，主要差異落在振幅 $A$ 和相頻 $\omega$，人類並沒有對於更長時間尺度的IPO、PPO的觀測資料故選擇很小的相頻，但同時希望有點結果所以讓振幅大一點。</p>
 </div>
 </div>
 </div>
@@ -7827,7 +7827,7 @@ $$Sv = \lambda v$$<p><strong>S 的最大特徵值對應的特徵向量 (Eigenvec
   \end{aligned}
   $$</p>
 <p>$$T(t) = \underbrace{T(0)e^{-\lambda t}}_{\text{內部記憶}} + \underbrace{e^{-\lambda t} \int_{0}^{t} \alpha(t') T_{\text{ENSO}}(t') e^{\lambda t'} dt'}_{\text{外力強迫}}$$</p>
-<p>根據 Supplement Table S1 的實際數值：平均阻尼率 $\lambda_0 \approx 0.35 \text{ month}^{-1}$。特徵衰減時間 (e-folding time) $\tau = \frac{1}{\lambda} \approx \mathbf{2.86}$ 個月，這告訴我們一個關鍵的大約 3 個月是IOD的記憶上限。</p>
+<p>根據 Supplement Table S1 的實際數值：平均阻尼率 $\lambda_0 \approx 0.35 \text{ month}^{-1}$ 、特徵衰減時間 (e-folding time) $\tau = \frac{1}{\lambda} \approx \mathbf{2.86}$ 個月，這告訴我們一個關鍵的大約 3 個月是IOD的記憶上限。</p>
 </li>
 </ul>
 <table>
@@ -8010,11 +8010,11 @@ $$\frac{dT}{dt} = \underbrace{-\lambda(t)T(t)}_{\text{Term 1}} + \underbrace{\al
 <li>0.35 K 的殘留誤差是Red Noise ($\xi$)</li>
 <li>IOD 還有很大一部分（約 $68\%$ 的變異量）是由不可預測的Red Noise控制的。(但是占比能量應該要大約等於真實發生事件吧 :0 )</li>
 </ul>
-<p>$$\frac{\sigma_{noise}^2}{\sigma_{total}^2} \approx 0.68$$</p>
+<p>$$\frac{\sigma_{\text{noise}}^2}{\sigma_{\text{total}}^2} \approx 0.68$$</p>
 <ul>
 <li>一個瘋狂的想法是將持續法當作total，就會得到跟作者一樣的結論</li>
 </ul>
-<p>$$\frac{\sigma_{noise}^2}{\sigma_{persistence}^2} \approx 0.34$$</p>
+<p>$$\frac{\sigma_{\text{noise}}^2}{\sigma_{\text{persistence}}^2} \approx 0.34$$</p>
 <p><img alt="" src="pic/Q2_1_3.png"/></p>
 <p>但其實考慮持續法變異度跟Red noise變異度的比值沒有太大的意義，但是數值很接近作者想講的 <strong>三分之一由非ENSO事件所驅動的IOD事件</strong> ，可以透過這種方式驗證只是單純的巧合，對於持續法的誤差:</p>
 <p>$$
@@ -8046,9 +8046,9 @@ $$\frac{dT}{dt} = \underbrace{-\lambda(t)T(t)}_{\text{Term 1}} + \underbrace{\al
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="2.-Ting-Liu-2021">2. Ting Liu 2021<a class="anchor-link" href="#2.-Ting-Liu-2021">¶</a></h3><h4 id="%E5%85%88%E5%82%99%E7%9F%A5%E8%AD%98-%5B%E8%AA%B2%E5%A0%82%5D-(%E9%83%AD%E5%8F%A1%E5%A6%82%E6%9E%9C%E5%A4%AA%E5%BF%99%E6%94%B9%E7%9A%84%E6%99%82%E5%80%99%E5%8F%AF%E4%BB%A5%E8%B7%B3%E9%81%8E-:D)">先備知識 [課堂] (郭叡如果太忙改的時候可以跳過 :D)<a class="anchor-link" href="#%E5%85%88%E5%82%99%E7%9F%A5%E8%AD%98-%5B%E8%AA%B2%E5%A0%82%5D-(%E9%83%AD%E5%8F%A1%E5%A6%82%E6%9E%9C%E5%A4%AA%E5%BF%99%E6%94%B9%E7%9A%84%E6%99%82%E5%80%99%E5%8F%AF%E4%BB%A5%E8%B7%B3%E9%81%8E-:D)">¶</a></h4><p>在week9的課程中我們 <del>可能</del> 學到 <strong>如何在數學上「客觀且一致」地定義可預報度</strong></p>
 <ul>
-<li>背景： 我們通常認為當「預報的機率分佈 (Forecast PDF)」與「氣候的機率分佈 (Climatological PDF)」無法區分時，就達到了可預報度的極限</li>
+<li>背景： 我們通常認為當「預報的機率分佈 (Forecast PDF)」與「氣候的機率分佈 (Climatological PDF)」無法區分時，就達到了 <strong>可預報度的極限</strong></li>
 <li>難點： 區分兩個機率分佈差異的方法有很多（例如 t-score, z-score），但傳統方法（如均方誤差 MSE）依賴於座標系的選擇且無法反映機率守恆</li>
-<li>目標： 尋找一種指標， <strong>既能衡量預報與氣候的差異</strong> 又 <strong>不受變數線性或非線性轉換的影響</strong> ，並能幫我們找出動力系統中「最可預報的特徵 (Most predictable feature)」</li>
+<li>目標： 尋找一種指標， <strong>既能衡量預報與氣候的差異</strong> 又 <strong>不受變數線性或非線性轉換的影響</strong> ，並能幫我們找出動力系統中 <strong>「最可預報的特徵 (Most predictable feature)」</strong></li>
 </ul>
 <p>我們從 <strong>資訊理論</strong> 的視角，而非僅僅依賴傳統的誤差統計來看</p>
 <ul>
@@ -8102,9 +8102,9 @@ $$\frac{dT}{dt} = \underbrace{-\lambda(t)T(t)}_{\text{Term 1}} + \underbrace{\al
 <p>$$
    \begin{aligned}
    R_{\theta,y} =&amp; \int_{-\infty}^{\infty} p(y) \ln\left( \frac{p(y)}{q(y)} \right) dy \\
-   =&amp; E_p \left[\ln \frac{ p(y)}{ q(y)} \right] \\
-   \ne&amp; E_p \left[\ln \frac{\frac{1}{\sqrt{2\pi}\sigma_p} e^{-\frac{(x-\mu_p)^2}{2\sigma_p^2}}}{\frac{1}{\sqrt{2\pi}\sigma_c} e^{-\frac{(y-\mu_c)^2}{2\sigma_c^2}}} \right] \\
-   =&amp;  \ln\frac{\sigma_c}{\sigma_p} +  \frac{ \sigma_p^2 + (\mu_p-\mu_c)^2 }{2\sigma_c^2} - \frac{1}{2} \\
+   =&amp; E_\text{p} \left[\ln \frac{ p(y)}{ q(y)} \right] \\
+   \ne&amp; E_\text{p} \left[\ln \frac{\frac{1}{\sqrt{2\pi}\sigma_\text{p}} e^{-\frac{(y-\mu_\text{p})^2}{2\sigma_\text{p}^2}}}{\frac{1}{\sqrt{2\pi}\sigma_c} e^{-\frac{(y-\mu_c)^2}{2\sigma_c^2}}} \right] \\
+   =&amp;  \ln\frac{\sigma_c}{\sigma_\text{p}} +  \frac{ \sigma_\text{p}^2 + (\mu_\text{p}-\mu_c)^2 }{2\sigma_c^2} - \frac{1}{2} \\
    =&amp;  \ln\frac{\sqrt {E[x_\text{c}^6] - (E[x_\text{c}^3])^2}}{\sqrt {E[x_\text{p}^6] - (E[x_\text{p}^3])^2}} +  \frac{ E[x_\text{p}^6] - (E[x_\text{p}^3])^2 + (E[x_\text{p}^3] -E[x_\text{c}^3] )^2 }{2(E[x_\text{c}^6] - (E[x_\text{c}^3])^2)} - \frac{1}{2} \\
    =&amp;  \ln\frac{\sqrt {(\mu_{x\text{c}}^6 + 15\mu_{x\text{c}}^4\sigma_{x\text{c}}^2 + 45\mu_{x\text{c}}^2\sigma_{x\text{c}}^4 + 15\sigma_{x\text{c}}^6) -(\mu_{x\text{c}}^3 + 3\mu_{x\text{c}}\sigma_{x\text{c}}^2 ) ^2}}{\sqrt {(\mu_{x\text{p}}^6 + 15\mu_{x\text{p}}^4\sigma_{x\text{p}}^2 + 45\mu_{x\text{p}}^2\sigma_{x\text{p}}^4 + 15\sigma_{x\text{p}}^6) - (\mu_{x\text{p}}^3 + 3\mu_{x\text{p}}\sigma_{x\text{p}}^2 ) ^2}} + \\
    &amp; \frac{ (\mu_{x\text{p}}^6 + 15\mu_{x\text{p}}^4\sigma_{x\text{p}}^2 + 45\mu_{x\text{p}}^2\sigma_{x\text{p}}^4 + 15\sigma_{x\text{p}}^6) - (\mu_{x\text{p}}^3 + 3\mu_{x\text{p}}\sigma_{x\text{p}}^2 ) ^2 + ((\mu_{x\text{p}}^3 + 3\mu_{x\text{p}}\sigma_{x\text{p}}^2 )  -(\mu_{x\text{c}}^3 + 3\mu_{x\text{c}}\sigma_{x\text{c}}^2 )  )^2 }{2((\mu_{x\text{c}}^6 + 15\mu_{x\text{c}}^4\sigma_{x\text{c}}^2 + 45\mu_{x\text{c}}^2\sigma_{x\text{c}}^4 + 15\sigma_{x\text{c}}^6) - (\mu_{x\text{c}}^3 + 3\mu_{x\text{c}}\sigma_{x\text{c}}^2 ) ^2)} - \frac{1}{2} \\
