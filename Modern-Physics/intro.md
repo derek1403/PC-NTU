@@ -21,17 +21,17 @@ tags: ["Modern Physics", "Quantum Mechanics", "Relativity"]
 
 ## 📝 目錄 (Contents)
 
-- [x] **1. [Introduction (簡介)](./lecture/01_Introduction/introduction.ipynb)**
-- [ ] **2. Relativity (相對論)**
-- [ ] **3. Particle Properties of Waves (波的粒子性質)**
-- [ ] **4. Wave Properties of Particles (粒子的波動性質)**
-- [ ] **5. Atomic Structure (原子結構)**
-- [ ] **6. Quantum Mechanics (量子力學)**
-- [ ] **7. Quantum Theory of the Hydrogen Atom (氫原子的量子理論)**
-- [ ] **8. Many-Electron Atoms (多電子原子)**
-- [ ] **9. Molecules (分子)**
-- [ ] **10. Statistical Mechanics (統計力學)**
-- [ ] **11. Solid State Physics (固態物理)**
+- [x] **0. [Introduction (簡介)](./lecture/01_Introduction/introduction.ipynb)**
+- [ ] **1. Relativity (相對論)**
+- [ ] **2. Particle Properties of Waves (波的粒子性質)**
+- [ ] **3. Wave Properties of Particles (粒子的波動性質)**
+- [ ] **4. Atomic Structure (原子結構)**
+- [ ] **5. Quantum Mechanics (量子力學)**
+- [ ] **6. Quantum Theory of the Hydrogen Atom (氫原子的量子理論)**
+- [ ] **7. Many-Electron Atoms (多電子原子)**
+- [ ] **8. Molecules (分子)**
+- [ ] **9. Statistical Mechanics (統計力學)**
+- [ ] **10. Solid State Physics (固態物理)**
 
 ---
 
