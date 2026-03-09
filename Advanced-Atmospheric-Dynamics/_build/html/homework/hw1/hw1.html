@@ -1,0 +1,706 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Advanced Atmospheric Dynamics Hw 1 &#8212; Advanced Atmospheric Dynamics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'homework/hw1/hw1';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Advanced Atmospheric Dynamics - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Advanced Atmospheric Dynamics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../markdown.html">Markdown Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks.html">Content with notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lecture/week1/week1.html">Advanced Atmospheric Dynamics - Week 1</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fhomework/hw1/hw1.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/homework/hw1/hw1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Advanced Atmospheric Dynamics Hw 1</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Advanced Atmospheric Dynamics Hw 1</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question 1</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1.4</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question 2</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">2.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">2.2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2.3 為何守恆定律的方程式以「特定形式（通量形式）」出現？</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">4. 古典守恆變數會是「密度」還是「混合比」？</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="advanced-atmospheric-dynamics-hw-1">
+<h1>Advanced Atmospheric Dynamics Hw 1<a class="headerlink" href="#advanced-atmospheric-dynamics-hw-1" title="Link to this heading">#</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="p">:</span><span class="n">葉品辰</span>
+<span class="n">ID</span><span class="p">:</span><span class="n">r14229017</span>
+<span class="n">date</span><span class="p">:</span> <span class="mf">2026.03.09</span>
+</pre></div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="question-1">
+<h1>Question 1<a class="headerlink" href="#question-1" title="Link to this heading">#</a></h1>
+<p>氧氣是維持生命機能的要素。在理想狀態下，我們以管道層流來模擬生物循環系統的氧氣輸送，若 <span class="math notranslate nohighlight">\([O_2]\)</span> 為流體內氧氣的濃度，且流體的體積積流量為 <span class="math notranslate nohighlight">\(Q = \frac{\pi r^4 \Delta p}{8 \mu l}\)</span>，則單位時間內的氧氣輸送量公式為：</p>
+<div class="math notranslate nohighlight">
+\[J_{O_2} = [O_2] \frac{\pi r^4 \Delta p}{8 \mu l}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(J_{O_2}\)</span> 是氧氣輸送速率，單位是 <span class="math notranslate nohighlight">\([\text{mol} \cdot \text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\([O_2]\)</span> 是氧氣濃度，單位是 <span class="math notranslate nohighlight">\([\text{mol} \cdot \text{m}^{-3}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Q\)</span> 流體的體積積流量，單位是 <span class="math notranslate nohighlight">\([\text{m}^3 \cdot \text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(r\)</span> 為管徑，單位是 <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Delta p\)</span> 為管道兩端壓力差，單位是 <span class="math notranslate nohighlight">\([\text{Pa}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mu\)</span> 為流體黏滯係數，單位是 <span class="math notranslate nohighlight">\([\text{Pa} \cdot \text{s}]=[\text{Nt} \cdot \text{s}\cdot \text{m}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(l\)</span> 為管道長度，單位是 <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+</ul>
+<p><img alt="" src="../../_images/Poiseuille%27s_Law.png" /></p>
+<ol class="arabic simple">
+<li><p>以人類為例，若血管發生病變導致半徑縮小 20%（即剩餘 80% 半徑），則心臟需增加多少比例的「血壓差」才能維持原有的氧氣輸送量？</p></li>
+<li><p>在溫度 20°C 時，水的黏滯係數 <span class="math notranslate nohighlight">\(\mu_{H_2O}\)</span> 約為空氣 <span class="math notranslate nohighlight">\(\mu_{air}\)</span> 的 55倍，且水中的氧氣濃度 <span class="math notranslate nohighlight">\([O_2]\)</span> 比空氣少約 40倍。若要維持相同的氧氣輸送量與管道幾何（半徑、長度），以空氣或水輸送，兩者需要的壓力差倍數關係為何？哪一種流體輸送較省力？</p></li>
+<li><p>承上題，若兩系統的「壓力差」與「氧氣輸送量」皆相同，兩個流體系統的管道半徑倍數差異為何？哪一個流體輸送需要較粗的管道？</p></li>
+<li><p>請討論：生物系統為何多數使用「液體管道」作為生命循環系統？（請先論述為何基於前述計算，這個問題是成立/值得探討的，再給出 3 個可能理由）</p></li>
+</ol>
+<section id="id1">
+<h2>1.1<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>設原半徑為 <span class="math notranslate nohighlight">\(r\)</span>，原壓力差為 <span class="math notranslate nohighlight">\(\Delta p\)</span>，阻塞後的半徑 <span class="math notranslate nohighlight">\(r' = 0.8r\)</span>，新壓力差為 <span class="math notranslate nohighlight">\(\Delta p'\)</span>，由於氧氣輸送量 <span class="math notranslate nohighlight">\(J_{O_2}\)</span> 維持不變，且流體與 <span class="math notranslate nohighlight">\(l\)</span> 不變。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+[O_2] \frac{\pi r^4 \Delta p}{8 \mu l} &amp;= J_{O_2} =&amp; [O_2] \frac{\pi (r')^4 \Delta p'}{8 \mu l} \\
+r^4 \Delta p &amp;=&amp; (r')^4 \Delta p' \\
+\Delta p' &amp;=&amp; \left(\frac{r}{0.8r}\right)^4 \Delta p \\
+&amp;=&amp; \left(\frac{1}{0.8}\right)^4 \Delta p \\
+&amp;\approx&amp;  2.441 \Delta p
+\end{gather*}\end{split}\]</div>
+<p>心臟需要將血壓差提高到原來的 2.441倍，因此需增加的血壓差比例為 <span class="math notranslate nohighlight">\((2.441 - 1) \times 100\% = \mathbf{144.1\%}\)</span>。</p>
+</section>
+<section id="id2">
+<h2>1.2<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>在 <span class="math notranslate nohighlight">\(J_{O_2}, l, r\)</span> 皆相同的情況下，壓力差與 <span class="math notranslate nohighlight">\(\frac{\mu}{[O_2]}\)</span> 成正比。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{\Delta p_{\text{water}}}{\Delta p_{\text{air}}} &amp;=&amp; \frac{J_{O_2} \frac{8 \mu_{\text{water}} l}{\pi r^4 [O_2]_{\text{water}}}}{J_{O_2} \frac{8 \mu_{\text{air}} l}{\pi r^4 [O_2]_{\text{air}}}}\\
+&amp;=&amp;\left(\frac{\mu_{\text{water}}}{\mu_{\text{air}}}\right) \times \left(\frac{[O_2]_{\text{air}}}{[O_2]_{\text{water}}}\right) \\
+&amp;=&amp; 55 \times 40 \\
+&amp;=&amp;\mathbf{2200}
+\end{gather*}\end{split}\]</div>
+<p>以水為基底的液體輸送，需要的壓力差是空氣的 2200倍。因此，以空氣輸送較為省力。</p>
+</section>
+<section id="id3">
+<h2>1.3<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>在 <span class="math notranslate nohighlight">\(J_{O_2}, l, \Delta p\)</span> 皆相同的情況下，<span class="math notranslate nohighlight">\(r^4\)</span> 與 <span class="math notranslate nohighlight">\(\frac{\mu}{[O_2]}\)</span> 成正比。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{ r^4_{\text{water}}}{ r^4_{\text{air}}} &amp;=&amp; \frac{J_{O_2} \frac{8 \mu_{\text{water}} l}{\pi \Delta p [O_2]_{\text{water}}}}{J_{O_2} \frac{8 \mu_{\text{air}} l}{\pi \Delta p [O_2]_{\text{air}}}}\\
+&amp;=&amp;\left(\frac{\mu_{\text{water}}}{\mu_{\text{air}}}\right) \times \left(\frac{[O_2]_{\text{air}}}{[O_2]_{\text{water}}}\right) \\
+&amp;=&amp; 55 \times 40 \\
+&amp;=&amp;\mathbf{2200} \\
+\frac{r_{\text{water}}}{r_{\text{air}}} &amp;=&amp; (2200)^{1/4} \\
+&amp;\approx&amp; \mathbf{6.85}
+\end{gather*}\end{split}\]</div>
+<p>液體系統需要的管道半徑約為空氣系統的 6.85倍。液體輸送需要較粗的管道</p>
+</section>
+<section id="id4">
+<h2>1.4<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>演化起源與內部環境恆定： <strong>生命起源於海洋</strong> ，早期細胞適應了在水溶液中進行生化反應。液體循環系統在生物體內創造了一個微型的「內部海洋」， <strong>維持了細胞所需的滲透壓與離子平衡</strong>。</p></li>
+<li><p>多功能溶劑與運輸載體：液體（水）是極佳的極性溶劑，血液不僅輸送氧氣（可利用紅血球中的血紅素來大幅突破純水的溶氧限制），還能同時溶解並輸送養分（葡萄糖、氨基酸）、荷爾蒙、免疫細胞，並帶走細胞代謝產生的水溶性廢物（尿素、乳酸），這是純氣體管道無法做到的。</p></li>
+<li><p>不可壓縮性與結構支撐：液體幾乎不可壓縮。在具有血壓的封閉血管系統中，液體可以提供流體靜力骨架（Hydrostatic skeleton）的 <strong>支撐作用</strong> ，並且在生物體受到外界壓力或重力變化時， <strong>液體管路較不易像氣體管路那樣被輕易壓扁而導致循環中斷</strong> 。</p></li>
+</ol>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="question-2">
+<h1>Question 2<a class="headerlink" href="#question-2" title="Link to this heading">#</a></h1>
+<ol class="arabic simple">
+<li><p>請簡述 Navier-Stokes 方程式背後的物理核心概念，並概述其推導步驟。</p></li>
+<li><p>在推導過程中，為何「本構方程式 (Constitutive equation)」是不可或缺的？</p></li>
+<li><p>在數值流體力學中，為何質量或能量的守恆方程式多以「通量形式 (Flux form)」出現？</p></li>
+<li><p>在可壓縮流體（如大氣）中，若探討跟隨流體運動的古典守恆變數，應使用「密度」還是「混合比」？為什麼？</p></li>
+</ol>
+<section id="id5">
+<h2>2.1<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<p><strong>物理核心：牛頓第二運動定律 (<span class="math notranslate nohighlight">\(F = ma\)</span>) 在流體上的應用。</strong></p>
+<p>Navier-Stokes equation 本質上就是流體的 <span class="math notranslate nohighlight">\(\mathbf{F}=m\mathbf{a}\)</span> ，只是流體會變形、會流動，所以我們不能只看一個固定的質點，而是看一個arbitrary volume</p>
+<p><strong>推導步驟</strong></p>
+<ul>
+<li><p><strong>Step 1: 描述加速度 (<span class="math notranslate nohighlight">\(\mathbf{a}\)</span>)</strong>
+加速度有兩種來源：一是 <strong>隨時間的局部變化</strong> <span class="math notranslate nohighlight">\(\frac{\partial \mathbf{v}}{\partial t}\)</span>，二是 <strong>因為位置改變而帶來的變化</strong>，即平流項 <span class="math notranslate nohighlight">\((\mathbf{v} \cdot \nabla)\mathbf{v}\)</span>。</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathbf{a}\)</span> 是3維加速度向量</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{v}\)</span> 是3維速度向量</p></li>
+</ul>
+<p>對流體而言，跟隨氣塊的總加速度寫為：</p>
+</li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\frac{D\mathbf{v}}{Dt} = \frac{\partial \mathbf{v}}{\partial t} + (\mathbf{v} \cdot \nabla)\mathbf{v}\]</div>
+<ul class="simple">
+<li><p><strong>Step 2: 盤點考慮的作用力 (<span class="math notranslate nohighlight">\(\mathbf{F}\)</span>)</strong>
+作用在流體微小控制體積上的力有兩種：</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p><strong>體積力 (Body forces)</strong>：超距力，通常只考慮有重力 <span class="math notranslate nohighlight">\(\rho \mathbf{g}\)</span> 有時考慮科氏力</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\rho \mathbf{g}\)</span> 是3維重力向量</p></li>
+</ul>
+</li>
+<li><p><strong>表面力 (Surface forces)</strong>：相鄰流體層互相推擠或摩擦的力，這需要用<strong>應力張量 (Stress Tensor) <span class="math notranslate nohighlight">\(\mathbf{\sigma}_{3 \times 3}\)</span></strong> 來描述，表面的淨作用力即為應力張量的散度 <span class="math notranslate nohighlight">\(\nabla \cdot \sigma\)</span>。</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathbf{\sigma}_{3 \times 3}\)</span> 是外力對表面作用的應力張量 <span class="math notranslate nohighlight">\((3 \times 3)\)</span>矩陣</p></li>
+<li><p><span class="math notranslate nohighlight">\(\nabla \cdot \boldsymbol{\sigma} = \begin{bmatrix} \frac{\partial}{\partial x} &amp; \frac{\partial}{\partial y} &amp; \frac{\partial}{\partial z} \end{bmatrix} \begin{bmatrix} \sigma_{xx} &amp; \sigma_{xy} &amp; \sigma_{xz} \\ \sigma_{yx} &amp; \sigma_{yy} &amp; \sigma_{yz} \\ \sigma_{zx} &amp; \sigma_{zy} &amp; \sigma_{zz} \end{bmatrix} = \begin{bmatrix} f_x &amp; f_y &amp; f_z \end{bmatrix}\)</span></p></li>
+</ul>
+</li>
+</ol>
+<ul class="simple">
+<li><p><strong>Step 3: 組合出 柯西動量方程式（Cauchy momentum equation）</strong>
+把質量（其實是密度 <span class="math notranslate nohighlight">\(\rho\)</span>）、加速度和力組合起來：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\rho \frac{D\mathbf{v}}{Dt} = \underbrace{\nabla \cdot \mathbf{\sigma}_{3 \times 3}}_{\text{表面力}} + \underbrace{\rho \mathbf{g}}_{\text{體積力}}\]</div>
+</section>
+<section id="id6">
+<h2>2.2<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<p><strong>簡單來說，本構方程式 (Constitutive Equation)是確定我們想考慮的表面力，並且提供一些額外的假設來達到數學上closure的條件</strong></p>
+<p>而大氣科學所使用的 <strong>本構方程式</strong> 考慮的</p>
+<ul class="simple">
+<li><p><strong>表面力:</strong> 氣壓梯度力、黏滯力</p></li>
+<li><p><strong>額外的假設</strong> 【正向應力 (Normal Stresses) —— 矩陣的對角線】 和 【剪應力 (Shear Stresses) —— 矩陣的非對角線】</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\sigma_{xx} = -p + 2\mu \frac{\partial u}{\partial x} - \frac{2}{3}\mu (\nabla \cdot \mathbf{v})\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\sigma_{yy} = -p + 2\mu \frac{\partial v}{\partial y} - \frac{2}{3}\mu (\nabla \cdot \mathbf{v})\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\sigma_{zz} = -p + 2\mu \frac{\partial w}{\partial z} - \frac{2}{3}\mu (\nabla \cdot \mathbf{v})\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\sigma_{xy} = \sigma_{yx} = \mu \left( \frac{\partial u}{\partial y} + \frac{\partial v}{\partial x} \right)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\sigma_{xz} = \sigma_{zx} = \mu \left( \frac{\partial u}{\partial z} + \frac{\partial w}{\partial x} \right)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\sigma_{yz} = \sigma_{zy} = \mu \left( \frac{\partial v}{\partial z} + \frac{\partial w}{\partial y} \right)\)</span></p></li>
+</ul>
+</li>
+</ul>
+<p>也就是說</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{\sigma}_{3 \times 3} = -p \mathbf{I} + \mu \left( \nabla \mathbf{v} + (\nabla \mathbf{v})^T - \frac{2}{3}(\nabla \cdot \mathbf{v})\mathbf{I} \right)\]</div>
+<p>把這個本構方程式代入 Cauchy 方程式，把 <span class="math notranslate nohighlight">\(\sigma\)</span> 換掉，才終於用出 <strong>Navier-Stokes Equation</strong>，沒有本構方程式系統就無法封閉、無法進行數值求解。</p>
+<section id="id7">
+<h3>2.3 為何守恆定律的方程式以「特定形式（通量形式）」出現？<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<p>無論是質量、動量還是能量的守恆在理論與數值運算中，我們極度偏好將它們寫成 Eulerian 觀點下的<strong>通量形式 (Flux form)</strong> 或<strong>守恆形式 (Conservative form)</strong>：</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial \phi}{\partial t} + \nabla \cdot (\phi \mathbf{v}) = S\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\phi\)</span> 是某個物理量</p></li>
+<li><p><span class="math notranslate nohighlight">\(\nabla \cdot (\phi \mathbf{v})\)</span> 是該物理量的通量散度</p></li>
+<li><p><span class="math notranslate nohighlight">\(S\)</span> 是源/匯</p></li>
+</ul>
+<p>會這樣寫是因為 <strong><a class="reference external" href="https://github.com/derek1403/PC-NTU/blob/main/Advanced-Atmospheric-Dynamics/_build/html/lecture/week1/week1.html#leibniz-integral-rule">雷諾傳輸定理 (Reynolds Transport Theorem)</a></strong> 。方程式寫成散度形式的最大好處是：當我們在網格上對整個空間進行積分時，根據高斯散度定理 (Divergence Theorem)，<span class="math notranslate nohighlight">\(\iiint \nabla \cdot (\phi \mathbf{v}) dV\)</span> 會轉化為邊界上的通量 <span class="math notranslate nohighlight">\(\iint (\phi \mathbf{v}) \cdot d\vec{A}\)</span>。
+這意味著，只要沒有東西流出系統邊界，系統內部的總量（無論網格怎麼切割、內部怎麼平流）在數值計算上都會<strong>絕對守恆</strong>，這對於確保數值天氣預報模式跑了好幾天後不會憑空創造出大氣質量或能量來說是至關重要的數學結構。</p>
+</section>
+<section id="id8">
+<h3>4. 古典守恆變數會是「密度」還是「混合比」？<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<p>這取決於你的流體環境。如果是針對大氣科學這樣的<strong>可壓縮流體</strong>，答案絕對是<strong>混合比 (Mixing ratio)</strong>。</p>
+<ul class="simple">
+<li><p><strong>密度 (<span class="math notranslate nohighlight">\(\rho\)</span>) 為什麼不守恆？</strong>
+密度定義為質量除以體積。想像一個氣塊從地面被抬升到高空，外界氣壓變低，氣塊會膨脹（體積變大）。即便氣塊裡面的分子數量（質量）完全沒變，它的密度還是下降了。也就是說，跟隨氣塊運動時 <span class="math notranslate nohighlight">\(\frac{D\rho}{Dt} \neq 0\)</span>。</p></li>
+<li><p><strong>混合比為什麼守恆？</strong>
+混合比的定義通常是「某物質（如水氣）的質量」除以「乾空氣的質量」。因為這兩個質量在氣塊單純經歷絕熱膨脹或壓縮的過程中，都不會隨體積變化而改變，所以只要沒有發生相變（如凝結下雨），跟隨氣塊運動時，混合比是守恆的 <span class="math notranslate nohighlight">\(\frac{D(Mixing\_Ratio)}{Dt} = 0\)</span>。</p></li>
+</ul>
+<hr class="docutils" />
+<p>這樣一路拆解下來，從最底層的牛頓定律，到本構方程式的封閉，再到數值計算的通量形式，最後落實到大氣變數的選擇，這個脈絡有比較清晰了嗎？</p>
+<p>這四個問題其實剛好串起了一個現代數值天氣預報模式的底層架構。接下來，你想不想試著把這個剛推導出來的 N-S 方程式寫成 Python 代碼，在 1D 網格上模擬一個簡單的平流現象看看？</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./homework\hw1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Advanced Atmospheric Dynamics Hw 1</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question 1</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1.4</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question 2</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">2.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">2.2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2.3 為何守恆定律的方程式以「特定形式（通量形式）」出現？</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">4. 古典守恆變數會是「密度」還是「混合比」？</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC YE
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
