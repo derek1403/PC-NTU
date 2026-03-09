@@ -182,9 +182,13 @@
             </li>
         </ul>
         <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../markdown.html">Markdown Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../notebooks.html">Content with notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../lecture/week1/week1.html">Advanced Atmospheric Dynamics - Week 1</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lecture/lecture.html">lecture</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/week1/week1.html">Advanced Atmospheric Dynamics - Week 1</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../homework.html">homeword</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+</ul>
+</details></li>
 </ul>
 
     </div>
@@ -389,10 +393,33 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question 2</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">2.1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">2.2</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2.3 為何守恆定律的方程式以「特定形式（通量形式）」出現？</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">4. 古典守恆變數會是「密度」還是「混合比」？</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#briefly-describe-the-core-physical-concept-behind-the-navierstokes-equations-and-outline-the-main-steps-in-their-derivation">2.1 Briefly describe the core physical concept behind the Navier–Stokes equations and outline the main steps in their derivation.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-the-constitutive-equation-indispensable-in-the-derivation-process">2.2 Why is the constitutive equation indispensable in the derivation process?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-computational-fluid-dynamics-why-are-conservation-equations-for-mass-or-energy-often-written-in-flux-form">2.3 In computational fluid dynamics, why are conservation equations for mass or energy often written in flux form?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-compressible-fluids-such-as-the-atmosphere-when-considering-classical-conserved-variables-that-follow-the-motion-of-the-fluid-should-one-use-density-or-mixing-ratio-why">2.4 In compressible fluids (such as the atmosphere), when considering classical conserved variables that follow the motion of the fluid, should one use density or mixing ratio? Why?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continuity-equation">所有守恆定律都會以「連續方程式 (Continuity Equation)」的形式出現</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">大氣科學從「質量守恆」出發推導連續方程式</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">已知與假設</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question 3</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">已知與假設</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">一、 氣泡幾何與物理動力學假設</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">二、 熱力學與海洋環境假設</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">三、 生物化學機制假設</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">3.1</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-tau-text-rise">Step 1: 定義「物理傳輸特徵時間」 (<span class="math notranslate nohighlight">\(\tau_{\text{rise}}\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-tau-text-bio">Step 2: 定義「生物消耗特徵時間」 (<span class="math notranslate nohighlight">\(\tau_{\text{bio}}\)</span>)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dimensionless-number">3.2 Dimensionless number</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-da">Step 3: 建構無因次參數 (<span class="math notranslate nohighlight">\(Da\)</span>)</a></li>
 </ul>
 </li>
 </ul>
@@ -486,6 +513,7 @@ r^4 \Delta p &amp;=&amp; (r')^4 \Delta p' \\
 </ol>
 </section>
 </section>
+<hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="question-2">
 <h1>Question 2<a class="headerlink" href="#question-2" title="Link to this heading">#</a></h1>
 <ol class="arabic simple">
@@ -494,23 +522,23 @@ r^4 \Delta p &amp;=&amp; (r')^4 \Delta p' \\
 <li><p>在數值流體力學中，為何質量或能量的守恆方程式多以「通量形式 (Flux form)」出現？</p></li>
 <li><p>在可壓縮流體（如大氣）中，若探討跟隨流體運動的古典守恆變數，應使用「密度」還是「混合比」？為什麼？</p></li>
 </ol>
-<section id="id5">
-<h2>2.1<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<section id="briefly-describe-the-core-physical-concept-behind-the-navierstokes-equations-and-outline-the-main-steps-in-their-derivation">
+<h2>2.1 Briefly describe the core physical concept behind the Navier–Stokes equations and outline the main steps in their derivation.<a class="headerlink" href="#briefly-describe-the-core-physical-concept-behind-the-navierstokes-equations-and-outline-the-main-steps-in-their-derivation" title="Link to this heading">#</a></h2>
 <p><strong>物理核心：牛頓第二運動定律 (<span class="math notranslate nohighlight">\(F = ma\)</span>) 在流體上的應用。</strong></p>
 <p>Navier-Stokes equation 本質上就是流體的 <span class="math notranslate nohighlight">\(\mathbf{F}=m\mathbf{a}\)</span> ，只是流體會變形、會流動，所以我們不能只看一個固定的質點，而是看一個arbitrary volume</p>
 <p><strong>推導步驟</strong></p>
 <ul>
 <li><p><strong>Step 1: 描述加速度 (<span class="math notranslate nohighlight">\(\mathbf{a}\)</span>)</strong>
-加速度有兩種來源：一是 <strong>隨時間的局部變化</strong> <span class="math notranslate nohighlight">\(\frac{\partial \mathbf{v}}{\partial t}\)</span>，二是 <strong>因為位置改變而帶來的變化</strong>，即平流項 <span class="math notranslate nohighlight">\((\mathbf{v} \cdot \nabla)\mathbf{v}\)</span>。</p>
+加速度有兩種來源：一是 <strong>隨時間的局部變化</strong> <span class="math notranslate nohighlight">\(\frac{\partial \mathbf{u}}{\partial t}\)</span>，二是 <strong>因為位置改變而帶來的變化</strong>，即平流項 <span class="math notranslate nohighlight">\((\mathbf{u} \cdot \nabla)\mathbf{u}\)</span>。</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\mathbf{a}\)</span> 是3維加速度向量</p></li>
-<li><p><span class="math notranslate nohighlight">\(\mathbf{v}\)</span> 是3維速度向量</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{u}\)</span> 是3維速度向量</p></li>
 </ul>
 <p>對流體而言，跟隨氣塊的總加速度寫為：</p>
 </li>
 </ul>
 <div class="math notranslate nohighlight">
-\[\frac{D\mathbf{v}}{Dt} = \frac{\partial \mathbf{v}}{\partial t} + (\mathbf{v} \cdot \nabla)\mathbf{v}\]</div>
+\[\frac{D\mathbf{u}}{Dt} = \frac{\partial \mathbf{u}}{\partial t} + (\mathbf{u} \cdot \nabla)\mathbf{u}\]</div>
 <ul class="simple">
 <li><p><strong>Step 2: 盤點考慮的作用力 (<span class="math notranslate nohighlight">\(\mathbf{F}\)</span>)</strong>
 作用在流體微小控制體積上的力有兩種：</p></li>
@@ -533,19 +561,19 @@ r^4 \Delta p &amp;=&amp; (r')^4 \Delta p' \\
 把質量（其實是密度 <span class="math notranslate nohighlight">\(\rho\)</span>）、加速度和力組合起來：</p></li>
 </ul>
 <div class="math notranslate nohighlight">
-\[\rho \frac{D\mathbf{v}}{Dt} = \underbrace{\nabla \cdot \mathbf{\sigma}_{3 \times 3}}_{\text{表面力}} + \underbrace{\rho \mathbf{g}}_{\text{體積力}}\]</div>
+\[\rho \frac{D\mathbf{u}}{Dt} = \underbrace{\nabla \cdot \mathbf{\sigma}_{3 \times 3}}_{\text{表面力}} + \underbrace{\rho \mathbf{g}}_{\text{體積力}}\]</div>
 </section>
-<section id="id6">
-<h2>2.2<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<section id="why-is-the-constitutive-equation-indispensable-in-the-derivation-process">
+<h2>2.2 Why is the constitutive equation indispensable in the derivation process?<a class="headerlink" href="#why-is-the-constitutive-equation-indispensable-in-the-derivation-process" title="Link to this heading">#</a></h2>
 <p><strong>簡單來說，本構方程式 (Constitutive Equation)是確定我們想考慮的表面力，並且提供一些額外的假設來達到數學上closure的條件</strong></p>
 <p>而大氣科學所使用的 <strong>本構方程式</strong> 考慮的</p>
 <ul class="simple">
 <li><p><strong>表面力:</strong> 氣壓梯度力、黏滯力</p></li>
 <li><p><strong>額外的假設</strong> 【正向應力 (Normal Stresses) —— 矩陣的對角線】 和 【剪應力 (Shear Stresses) —— 矩陣的非對角線】</p>
 <ul>
-<li><p><span class="math notranslate nohighlight">\(\sigma_{xx} = -p + 2\mu \frac{\partial u}{\partial x} - \frac{2}{3}\mu (\nabla \cdot \mathbf{v})\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\sigma_{yy} = -p + 2\mu \frac{\partial v}{\partial y} - \frac{2}{3}\mu (\nabla \cdot \mathbf{v})\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\sigma_{zz} = -p + 2\mu \frac{\partial w}{\partial z} - \frac{2}{3}\mu (\nabla \cdot \mathbf{v})\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\sigma_{xx} = -p + 2\mu \frac{\partial u}{\partial x} - \frac{2}{3}\mu (\nabla \cdot \mathbf{u})\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\sigma_{yy} = -p + 2\mu \frac{\partial v}{\partial y} - \frac{2}{3}\mu (\nabla \cdot \mathbf{u})\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\sigma_{zz} = -p + 2\mu \frac{\partial w}{\partial z} - \frac{2}{3}\mu (\nabla \cdot \mathbf{u})\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\sigma_{xy} = \sigma_{yx} = \mu \left( \frac{\partial u}{\partial y} + \frac{\partial v}{\partial x} \right)\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\sigma_{xz} = \sigma_{zx} = \mu \left( \frac{\partial u}{\partial z} + \frac{\partial w}{\partial x} \right)\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\sigma_{yz} = \sigma_{zy} = \mu \left( \frac{\partial v}{\partial z} + \frac{\partial w}{\partial y} \right)\)</span></p></li>
@@ -554,33 +582,204 @@ r^4 \Delta p &amp;=&amp; (r')^4 \Delta p' \\
 </ul>
 <p>也就是說</p>
 <div class="math notranslate nohighlight">
-\[\mathbf{\sigma}_{3 \times 3} = -p \mathbf{I} + \mu \left( \nabla \mathbf{v} + (\nabla \mathbf{v})^T - \frac{2}{3}(\nabla \cdot \mathbf{v})\mathbf{I} \right)\]</div>
+\[\mathbf{\sigma}_{3 \times 3} = -p \mathbf{I} + \mu \left( \nabla \mathbf{u} + (\nabla \mathbf{u})^T - \frac{2}{3}(\nabla \cdot \mathbf{u})\mathbf{I} \right)\]</div>
 <p>把這個本構方程式代入 Cauchy 方程式，把 <span class="math notranslate nohighlight">\(\sigma\)</span> 換掉，才終於用出 <strong>Navier-Stokes Equation</strong>，沒有本構方程式系統就無法封閉、無法進行數值求解。</p>
-<section id="id7">
-<h3>2.3 為何守恆定律的方程式以「特定形式（通量形式）」出現？<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+</section>
+<section id="in-computational-fluid-dynamics-why-are-conservation-equations-for-mass-or-energy-often-written-in-flux-form">
+<h2>2.3 In computational fluid dynamics, why are conservation equations for mass or energy often written in flux form?<a class="headerlink" href="#in-computational-fluid-dynamics-why-are-conservation-equations-for-mass-or-energy-often-written-in-flux-form" title="Link to this heading">#</a></h2>
 <p>無論是質量、動量還是能量的守恆在理論與數值運算中，我們極度偏好將它們寫成 Eulerian 觀點下的<strong>通量形式 (Flux form)</strong> 或<strong>守恆形式 (Conservative form)</strong>：</p>
 <div class="math notranslate nohighlight">
-\[\frac{\partial \phi}{\partial t} + \nabla \cdot (\phi \mathbf{v}) = S\]</div>
+\[\frac{\partial \phi}{\partial t} + \nabla \cdot (\phi \mathbf{u}) = S\]</div>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\phi\)</span> 是某個物理量</p></li>
-<li><p><span class="math notranslate nohighlight">\(\nabla \cdot (\phi \mathbf{v})\)</span> 是該物理量的通量散度</p></li>
+<li><p><span class="math notranslate nohighlight">\(\nabla \cdot (\phi \mathbf{u})\)</span> 是該物理量的通量散度</p></li>
 <li><p><span class="math notranslate nohighlight">\(S\)</span> 是源/匯</p></li>
 </ul>
-<p>會這樣寫是因為 <strong><a class="reference external" href="https://github.com/derek1403/PC-NTU/blob/main/Advanced-Atmospheric-Dynamics/_build/html/lecture/week1/week1.html#leibniz-integral-rule">雷諾傳輸定理 (Reynolds Transport Theorem)</a></strong> 。方程式寫成散度形式的最大好處是：當我們在網格上對整個空間進行積分時，根據高斯散度定理 (Divergence Theorem)，<span class="math notranslate nohighlight">\(\iiint \nabla \cdot (\phi \mathbf{v}) dV\)</span> 會轉化為邊界上的通量 <span class="math notranslate nohighlight">\(\iint (\phi \mathbf{v}) \cdot d\vec{A}\)</span>。
-這意味著，只要沒有東西流出系統邊界，系統內部的總量（無論網格怎麼切割、內部怎麼平流）在數值計算上都會<strong>絕對守恆</strong>，這對於確保數值天氣預報模式跑了好幾天後不會憑空創造出大氣質量或能量來說是至關重要的數學結構。</p>
+<p>會這樣寫是因為 <strong><a class="reference external" href="https://derek1403.github.io/PC-NTU/Advanced-Atmospheric-Dynamics/_build/html/lecture/week1/week1.html#leibniz-integral-rule">雷諾傳輸定理 (Reynolds Transport Theorem)</a></strong></p>
+<p>方程式寫成散度形式的最大好處是：當我們在網格上對整個空間進行積分時，根據高斯散度定理 (Divergence Theorem)，<span class="math notranslate nohighlight">\(\iiint \nabla \cdot (\phi \mathbf{u}) dV\)</span> 會轉化為邊界上的通量 <span class="math notranslate nohighlight">\(\iint (\phi \mathbf{u}) \cdot d\mathbf{A}\)</span>。</p>
+<p>這意味著，只要沒有東西流出系統邊界，系統內部的總量（無論網格怎麼切割、內部怎麼平流）在數值計算上都會<strong>絕對守恆</strong>，這對於確保數值天氣預報模式跑了好幾天後不會憑空創造出大氣質量或能量來說是至關重要的數學結構。</p>
 </section>
-<section id="id8">
-<h3>4. 古典守恆變數會是「密度」還是「混合比」？<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
-<p>這取決於你的流體環境。如果是針對大氣科學這樣的<strong>可壓縮流體</strong>，答案絕對是<strong>混合比 (Mixing ratio)</strong>。</p>
+<section id="in-compressible-fluids-such-as-the-atmosphere-when-considering-classical-conserved-variables-that-follow-the-motion-of-the-fluid-should-one-use-density-or-mixing-ratio-why">
+<h2>2.4 In compressible fluids (such as the atmosphere), when considering classical conserved variables that follow the motion of the fluid, should one use density or mixing ratio? Why?<a class="headerlink" href="#in-compressible-fluids-such-as-the-atmosphere-when-considering-classical-conserved-variables-that-follow-the-motion-of-the-fluid-should-one-use-density-or-mixing-ratio-why" title="Link to this heading">#</a></h2>
+<p><strong>這取決於流體環境</strong>。如果是針對大氣科學這樣的<strong>可壓縮流體</strong>，答案絕對是<strong>混合比 (Mixing ratio)</strong>。</p>
 <ul class="simple">
 <li><p><strong>密度 (<span class="math notranslate nohighlight">\(\rho\)</span>) 為什麼不守恆？</strong>
-密度定義為質量除以體積。想像一個氣塊從地面被抬升到高空，外界氣壓變低，氣塊會膨脹（體積變大）。即便氣塊裡面的分子數量（質量）完全沒變，它的密度還是下降了。也就是說，跟隨氣塊運動時 <span class="math notranslate nohighlight">\(\frac{D\rho}{Dt} \neq 0\)</span>。</p></li>
+密度定義為質量除以體積。想像一個氣塊從地面被抬升到高空，外界氣壓變低、氣塊會膨脹（體積變大）。即便氣塊裡面的分子數量（質量）完全沒變，它的密度還是下降了，跟隨氣塊運動時 <span class="math notranslate nohighlight">\(\frac{D\rho}{Dt} \neq 0\)</span>。</p></li>
 <li><p><strong>混合比為什麼守恆？</strong>
-混合比的定義通常是「某物質（如水氣）的質量」除以「乾空氣的質量」。因為這兩個質量在氣塊單純經歷絕熱膨脹或壓縮的過程中，都不會隨體積變化而改變，所以只要沒有發生相變（如凝結下雨），跟隨氣塊運動時，混合比是守恆的 <span class="math notranslate nohighlight">\(\frac{D(Mixing\_Ratio)}{Dt} = 0\)</span>。</p></li>
+混合比的定義通常是「某物質（如水氣）的質量」除以「乾空氣的質量」，因為這兩個質量在氣塊單純經歷絕熱膨脹或壓縮的過程中都不會隨體積變化而改變，所以只要沒有發生相變（如凝結下雨），跟隨氣塊運動時，混合比是守恆的 <span class="math notranslate nohighlight">\(\frac{D(Mixing\_Ratio)}{Dt} = 0\)</span>。</p></li>
 </ul>
+<section id="continuity-equation">
+<h3>所有守恆定律都會以「連續方程式 (Continuity Equation)」的形式出現<a class="headerlink" href="#continuity-equation" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\frac{\partial \rho}{\partial t} + \nabla \cdot \mathbf{J} = 0\]</div>
+<ul class="simple">
+<li><p>在電磁學中：<span class="math notranslate nohighlight">\(\rho\)</span> 是電荷密度（單位體積內的電荷量），<span class="math notranslate nohighlight">\(\mathbf{J}\)</span> 是電流密度</p></li>
+<li><p>在流體力學中：<span class="math notranslate nohighlight">\(\rho\)</span> 是質量密度（單位體積內的質量），<span class="math notranslate nohighlight">\(\mathbf{J} = \rho \mathbf{v}\)</span> 是質量通量。</p></li>
+</ul>
+<p><strong>在電磁學都用「密度」</strong>
+因為在一般的電磁學問題中，電荷是在固定的導線或真空中移動，空間本身（或導線的體積）並不會因為電子的流動而劇烈膨脹或收縮。既然「體積」是固定的，我們理所當然可以直接用「單位體積內的量（密度）」來定義守恆。</p>
+</section>
+<section id="id5">
+<h3><a class="reference external" href="https://derek1403.github.io/PC-NTU/Advanced-Atmospheric-Dynamics/_build/html/lecture/week1/week1.html#continuity-equation">大氣科學從「質量守恆」出發推導連續方程式</a><a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<section id="id6">
+<h4>已知與假設<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p><strong>【已知 A】質量守恆 (continuity equation):</strong></p>
+<ol class="arabic simple">
+<li><p><strong>【已知 1】散度定理 (Divergence Theorem):</strong></p></li>
+<li><p><strong>【已知 2】質量守恆:</strong></p></li>
+<li><p><strong>【已知 3】變分學基本引理 (微積分中的任意體積引理):</strong></p></li>
+<li><p><strong>【已知 4】雷諾傳輸定理 (Reynolds Transport Theorem, RTT):</strong></p></li>
+</ol>
+</li>
+<li><p><strong>【假設 1】不可壓縮流體:</strong>
+$<span class="math notranslate nohighlight">\(\nabla \cdot \mathbf{u} = 0\)</span>$</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\nabla \cdot \mathbf{u}\)</span> 的物理意義就是「體積的相對膨脹率」</p></li>
+<li><p>如果 <span class="math notranslate nohighlight">\(\nabla \cdot \mathbf{u} &gt; 0\)</span>（速度往外發散），代表這個水球正在被拉扯、體積膨脹。</p></li>
+<li><p>質量不變、體積膨脹，Arbitrary Volumes 裡面的空氣 <strong>密度</strong> 勢必會下降！</p></li>
+</ul>
+</li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+0 &amp;\overset{\text{已知 A}}{=}&amp; \frac{\partial \rho}{\partial t} + \nabla \cdot (\rho \mathbf{u})&amp;&amp; \\
+&amp;=&amp;  \frac{\partial \rho}{\partial t} + \mathbf{u} \cdot \nabla \rho + \rho \nabla \cdot \mathbf{u} &amp;&amp;\\
+&amp;=&amp; \frac{D\rho}{Dt} + \rho \nabla \cdot \mathbf{u} &amp;&amp;\\
+\frac{D\rho}{Dt} &amp;=&amp;  -\rho \nabla \cdot \mathbf{u} &amp;\overset{\text{假設 1}}{=}&amp;  0 \\
+\end{gather*}\end{split}\]</div>
+<p>使用了不可壓縮流體假設後才能夠得到密度的守恆 <span class="math notranslate nohighlight">\(\frac{D\rho}{Dt} = 0\)</span> ，而 <strong>混和比在不相變的情況下不論可否壓縮都守恆</strong></p>
+</section>
+</section>
+</section>
+</section>
 <hr class="docutils" />
-<p>這樣一路拆解下來，從最底層的牛頓定律，到本構方程式的封閉，再到數值計算的通量形式，最後落實到大氣變數的選擇，這個脈絡有比較清晰了嗎？</p>
-<p>這四個問題其實剛好串起了一個現代數值天氣預報模式的底層架構。接下來，你想不想試著把這個剛推導出來的 N-S 方程式寫成 Python 代碼，在 1D 網格上模擬一個簡單的平流現象看看？</p>
+<section class="tex2jax_ignore mathjax_ignore" id="question-3">
+<h1>Question 3<a class="headerlink" href="#question-3" title="Link to this heading">#</a></h1>
+<p>海水中嗜甲烷菌 (Methanotrophs) 扮演著地球的過濾器，能消耗海底噴發的甲烷 (<span class="math notranslate nohighlight">\(CH_4\)</span>)，減少其進入大氣加劇溫室效應。</p>
+<ol class="arabic simple">
+<li><p>請由物理與幾何機制解釋：為何海底甲烷冰產生「大規模爆發的大氣泡排放」與「微小氣泡排放」時，能抵達海面進入大氣的甲烷比例有顯著差異？</p></li>
+<li><p>請建構一個無因次參數（Dimensionless number）來量化此生化與物理的競爭過程，並說明該參數取決於哪些環境與幾何因素？</p></li>
+</ol>
+<section id="id7">
+<h2>已知與假設<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<section id="id8">
+<h3>一、 氣泡幾何與物理動力學假設<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>【假設 1】完美的球體假設 (Perfectly Spherical Bubble)</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>假設內容</strong>：氣泡的體積為 <span class="math notranslate nohighlight">\(\frac{4}{3}\pi R^3\)</span>，表面積為 <span class="math notranslate nohighlight">\(4\pi R^2\)</span>。</p></li>
+<li><p><strong>忽略了什麼</strong>：實際上，當氣泡變大或上浮速度變快時，流體阻力會將氣泡壓扁成橢球狀（Ellipsoidal）甚至蘑菇狀（Spherical cap）。這會大幅增加表面積/體積比。</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p><strong>【假設 2】瞬時終端速度 (Instantaneous Terminal Velocity)</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>假設內容</strong>：氣泡一離開海床，就以恆定的終端速度 <span class="math notranslate nohighlight">\(V(R)\)</span> 往上飄，且 <span class="math notranslate nohighlight">\(\tau_{rise} = H / V(R)\)</span>。</p></li>
+<li><p><strong>忽略了什麼</strong>：忽略了氣泡剛噴發時的加速期，也忽略了因為氣泡大小改變而導致的 <span class="math notranslate nohighlight">\(V(R)\)</span> 隨深度變化的動態過程。</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p><strong>【假設 3】孤立氣泡假設 (Isolated Single Bubble)</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>假設內容</strong>：我們只追蹤「單一顆」氣泡的命運，忽略周遭環境。</p></li>
+<li><p><strong>忽略了什麼</strong>：在大規模爆發（Blowout）時，大量氣泡會互相碰撞、合併（Coalescence）變大，或是被流體剪力撕裂變小。群體氣泡也會產生向上的尾流（Wake），把周圍的水帶上來，使上浮速度比單顆氣泡更快。</p></li>
+</ul>
+</section>
+<section id="id9">
+<h3>二、 熱力學與海洋環境假設<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<ol class="arabic simple" start="4">
+<li><p><strong>【假設 4】不可壓縮氣體 / 恆定密度 (Constant Gas Density)</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>假設內容</strong>：甲烷氣體的密度 <span class="math notranslate nohighlight">\(\rho_{CH_4}\)</span> 是一個常數。</p></li>
+<li><p><strong>忽略了什麼</strong>：這是物理上偏差最大的一個假設。海底水壓極大，當氣泡往上浮，靜水壓力隨深度驟降，根據理想氣體方程式（或波以耳定律 <span class="math notranslate nohighlight">\(P \cdot V = \text{常數}\)</span> ），氣泡應該會<strong>劇烈膨脹</strong>（<span class="math notranslate nohighlight">\(R\)</span> 變大、<span class="math notranslate nohighlight">\(\rho_{CH_4}\)</span> 變小）。</p></li>
+</ul>
+<ol class="arabic simple" start="5">
+<li><p><strong>【假設 5】靜止的均勻海洋 (Stagnant and Homogeneous Ocean)</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>假設內容</strong>：海水是完全靜止的，且物理性質（溫度、鹽度）從海底到海面都一樣。</p></li>
+<li><p><strong>忽略了什麼</strong>：忽略了強烈的水平洋流（會把氣泡吹離垂直路徑，增加滯留時間），以及海洋的溫度躍層（Thermocline），水溫的改變會嚴重影響氣體溶解度與細菌活性。</p></li>
+</ul>
+<ol class="arabic simple" start="6">
+<li><p><strong>【假設 6】純甲烷氣泡與單向傳輸 (Pure Methane and One-way Transfer)</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>假設內容</strong>：氣泡裡 100% 是甲烷，且只有甲烷往外跑。</p></li>
+<li><p><strong>忽略了什麼</strong>：海水中溶解了大量的氮氣和氧氣。在上浮過程中，海水中的 <span class="math notranslate nohighlight">\(N_2\)</span> 和 <span class="math notranslate nohighlight">\(O_2\)</span> 會擴散<strong>進入</strong>氣泡內，改變氣泡的成分和浮力。</p></li>
+</ul>
+</section>
+<section id="id10">
+<h3>三、 生物化學機制假設<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<ol class="arabic simple" start="7">
+<li><p><strong>【假設 7】零階表面反應 / 恆定消耗率 (Constant Surface Reaction Rate)</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>假設內容</strong>：細菌吃甲烷的速率 <span class="math notranslate nohighlight">\(k_{bio}\)</span> 是一個常數，直接與氣泡表面積成正比。</p></li>
+<li><p><strong>忽略了什麼</strong>：忽略了細菌的族群增長動態（例如越吃數量越多，速率應該要隨時間上升）。也忽略了周遭海水中氧氣或營養鹽可能耗盡的問題（如果氧氣不夠，細菌也無法代謝甲烷）。</p></li>
+</ul>
+<ol class="arabic simple" start="8">
+<li><p><strong>【假設 8】直接表面吞噬 (Direct Surface Consumption)</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>假設內容</strong>：我們把「物理溶解」和「生物消耗」合併成一個動作，假設細菌直接貼在氣泡表面把氣體吃掉。</p></li>
+<li><p><strong>忽略了什麼</strong>：真實的微觀物理過程是「兩階段」的：甲烷氣體必須先<strong>溶解 (Dissolve)</strong> 進入氣泡周圍的液體邊界層，然後懸浮在水中的細菌再去吃掉這些<strong>已溶解的甲烷 (Dissolved methane)</strong>。我們將複雜的質傳系數 (Mass transfer coefficient) 簡化成了單一的 <span class="math notranslate nohighlight">\(k_{bio}\)</span>。</p></li>
+</ul>
+</section>
+</section>
+<section id="id11">
+<h2>3.1<a class="headerlink" href="#id11" title="Link to this heading">#</a></h2>
+<p>把整個過程拆解成兩件事： <strong>「氣泡往上跑」</strong> 與 <strong>「細菌吃氣泡」</strong> ，這兩件事各自需要花費一定的時間。</p>
+<section id="step-1-tau-text-rise">
+<h3>Step 1: 定義「物理傳輸特徵時間」 (<span class="math notranslate nohighlight">\(\tau_{\text{rise}}\)</span>)<a class="headerlink" href="#step-1-tau-text-rise" title="Link to this heading">#</a></h3>
+<p>假設海底深度為 <span class="math notranslate nohighlight">\(H\)</span>，氣泡半徑為 <span class="math notranslate nohighlight">\(R\)</span>，氣泡的終端上浮速度為 <span class="math notranslate nohighlight">\(V(R)\)</span> 和【假設 1~6】，氣泡從海底浮到海面所需的特徵時間為：</p>
+<div class="math notranslate nohighlight">
+\[\tau_{rise} = \frac{H}{V(R)}\]</div>
+<p>較大的氣泡通常擁有較大的浮力、阻力，但在經驗法則上 <strong>大氣泡的上浮速度 <span class="math notranslate nohighlight">\(V(R)\)</span> 會比小氣泡快</strong>（對於中等雷諾數以上的氣泡，速度大致與 <span class="math notranslate nohighlight">\(\sqrt{R}\)</span> 成正比）。</p>
+</section>
+<section id="step-2-tau-text-bio">
+<h3>Step 2: 定義「生物消耗特徵時間」 (<span class="math notranslate nohighlight">\(\tau_{\text{bio}}\)</span>)<a class="headerlink" href="#step-2-tau-text-bio" title="Link to this heading">#</a></h3>
+<p>假設「細菌只能在表面積作用，但氣泡總量看的是體積」，【假設 7~8】</p>
+<ul class="simple">
+<li><p><strong>氣泡質量 (<span class="math notranslate nohighlight">\(M\)</span>)</strong>：與體積成正比，<span class="math notranslate nohighlight">\(M = \rho_{CH_4} \frac{4}{3}\pi R^3\)</span></p></li>
+<li><p><strong>消耗速率 (<span class="math notranslate nohighlight">\(\frac{dM}{dt}\)</span>)</strong>：細菌在氣泡表面進行反應，所以消耗速率與表面積成正比。設單位面積的生物消耗率為常數 <span class="math notranslate nohighlight">\(k_{\text{bio}}\)</span>，則 <span class="math notranslate nohighlight">\(\frac{dM}{dt} = -k_{\text{bio}} 4\pi R^2\)</span></p></li>
+</ul>
+<p>定義「生物消耗特徵時間」為完全消耗掉整顆氣泡所需的時間量級：</p>
+<div class="math notranslate nohighlight">
+\[\tau_{\text{bio}} \sim \frac{M}{|\frac{dM}{dt}|} = \frac{\rho_{CH_4} \frac{4}{3}\pi R^3}{k_{\text{bio}} 4\pi R^2} = \frac{\rho_{CH_4}}{3 k_{\text{bio}}} R\]</div>
+<p><strong>注意到：</strong> <span class="math notranslate nohighlight">\(\tau_{\text{bio}} \propto R\)</span>。這在物理上意味著，<strong>氣泡半徑 <span class="math notranslate nohighlight">\(R\)</span> 越大，細菌需要花費越長的時間才能把它完全吃完！</strong></p>
+</section>
+</section>
+<section id="dimensionless-number">
+<h2>3.2 Dimensionless number<a class="headerlink" href="#dimensionless-number" title="Link to this heading">#</a></h2>
+<section id="step-3-da">
+<h3>Step 3: 建構無因次參數 (<span class="math notranslate nohighlight">\(Da\)</span>)<a class="headerlink" href="#step-3-da" title="Link to this heading">#</a></h3>
+<p>將兩個特徵時間相除，定義出一個類似丹克勒數 (<span class="math notranslate nohighlight">\(Da\)</span>) 的無因次參數，用來比較「細菌消耗的速度」與「氣泡逃逸的速度」：</p>
+<div class="math notranslate nohighlight">
+\[Da = \frac{\text{氣泡滯留時間}}{\text{完全消耗所需時間}} = \frac{\tau_{\text{rise}}}{\tau_{\text{bio}}} = \frac{3 k_{\text{bio}} H}{\rho_{CH_4} R \cdot V(R)}\]</div>
+<p>利用我們推導出的 <span class="math notranslate nohighlight">\(Da\)</span> ，就可以完美解釋大規模爆發與小氣泡的差異：</p>
+<ol class="arabic simple">
+<li><p><strong>小氣泡排放 (Small Bubble Emission)</strong>：</p></li>
+</ol>
+<ul class="simple">
+<li><p>半徑 <span class="math notranslate nohighlight">\(R\)</span> 很小 <span class="math notranslate nohighlight">\(\rightarrow\)</span> 上浮速度 <span class="math notranslate nohighlight">\(V(R)\)</span> 慢 <span class="math notranslate nohighlight">\(\rightarrow\)</span> 滯留時間 <span class="math notranslate nohighlight">\(\tau_{\text{rise}}\)</span> 極長。</p></li>
+<li><p>半徑 <span class="math notranslate nohighlight">\(R\)</span> 很小 <span class="math notranslate nohighlight">\(\rightarrow\)</span> 表面積/體積比例大 <span class="math notranslate nohighlight">\(\rightarrow\)</span> 完全消耗時間 <span class="math notranslate nohighlight">\(\tau_{\text{bio}}\)</span> 極短。</p></li>
+<li><p>結果：<strong><span class="math notranslate nohighlight">\(Da \gg 1\)</span></strong>。代表氣泡還沒浮到水面，就在海水中被細菌吃得一乾二淨，不會影響大氣。</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p><strong>大規模爆發 / 大氣泡排放 (Large Bubble Burst)</strong>：</p></li>
+</ol>
+<ul class="simple">
+<li><p>半徑 <span class="math notranslate nohighlight">\(R\)</span> 很大 <span class="math notranslate nohighlight">\(\rightarrow\)</span> 上浮速度 <span class="math notranslate nohighlight">\(V(R)\)</span> 極快 <span class="math notranslate nohighlight">\(\rightarrow\)</span> 滯留時間 <span class="math notranslate nohighlight">\(\tau_{\text{rise}}\)</span> 極短。</p></li>
+<li><p>半徑 <span class="math notranslate nohighlight">\(R\)</span> 很大 <span class="math notranslate nohighlight">\(\rightarrow\)</span> 表面積/體積比例小 <span class="math notranslate nohighlight">\(\rightarrow\)</span> 細菌要花很久的時間才能吃完 (<span class="math notranslate nohighlight">\(\tau_{\text{bio}}\)</span> 極長)。</p></li>
+<li><p>結果：<strong><span class="math notranslate nohighlight">\(Da \ll 1\)</span></strong>。生物消耗的機制完全來不及作用，氣泡就如同搭特快車一樣衝出海面，將大量甲烷排放到大氣中。</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p><strong>取決因素總結</strong>：
+根據公式 <span class="math notranslate nohighlight">\(Da = \frac{3 k_{\text{bio}} H}{\rho_{CH_4} R \cdot V(R)}\)</span>，此過程取決於：海底深度 (<span class="math notranslate nohighlight">\(H\)</span>)、嗜甲烷菌的生化反應速率常數 (<span class="math notranslate nohighlight">\(k_{\text{bio}}\)</span>)、甲烷氣體密度 (<span class="math notranslate nohighlight">\(\rho_{CH_4}\)</span>，受深海壓力影響)、以及氣泡的初始半徑 (<span class="math notranslate nohighlight">\(R\)</span>)。</p></li>
+</ol>
 </section>
 </section>
 </section>
@@ -640,10 +839,33 @@ r^4 \Delta p &amp;=&amp; (r')^4 \Delta p' \\
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question 2</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">2.1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">2.2</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2.3 為何守恆定律的方程式以「特定形式（通量形式）」出現？</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">4. 古典守恆變數會是「密度」還是「混合比」？</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#briefly-describe-the-core-physical-concept-behind-the-navierstokes-equations-and-outline-the-main-steps-in-their-derivation">2.1 Briefly describe the core physical concept behind the Navier–Stokes equations and outline the main steps in their derivation.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-the-constitutive-equation-indispensable-in-the-derivation-process">2.2 Why is the constitutive equation indispensable in the derivation process?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-computational-fluid-dynamics-why-are-conservation-equations-for-mass-or-energy-often-written-in-flux-form">2.3 In computational fluid dynamics, why are conservation equations for mass or energy often written in flux form?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-compressible-fluids-such-as-the-atmosphere-when-considering-classical-conserved-variables-that-follow-the-motion-of-the-fluid-should-one-use-density-or-mixing-ratio-why">2.4 In compressible fluids (such as the atmosphere), when considering classical conserved variables that follow the motion of the fluid, should one use density or mixing ratio? Why?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continuity-equation">所有守恆定律都會以「連續方程式 (Continuity Equation)」的形式出現</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">大氣科學從「質量守恆」出發推導連續方程式</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">已知與假設</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question 3</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">已知與假設</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">一、 氣泡幾何與物理動力學假設</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">二、 熱力學與海洋環境假設</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">三、 生物化學機制假設</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">3.1</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-tau-text-rise">Step 1: 定義「物理傳輸特徵時間」 (<span class="math notranslate nohighlight">\(\tau_{\text{rise}}\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-tau-text-bio">Step 2: 定義「生物消耗特徵時間」 (<span class="math notranslate nohighlight">\(\tau_{\text{bio}}\)</span>)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dimensionless-number">3.2 Dimensionless number</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-da">Step 3: 建構無因次參數 (<span class="math notranslate nohighlight">\(Da\)</span>)</a></li>
 </ul>
 </li>
 </ul>
