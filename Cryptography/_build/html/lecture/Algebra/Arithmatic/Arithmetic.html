@@ -1,0 +1,965 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Arithmetic 算數 &#8212; Cryptography</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lecture/Algebra/Arithmatic/Arithmetic';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/logo.png" class="logo__image only-light" alt="Cryptography - Home"/>
+    <script>document.write(`<img src="../../../_static/logo.png" class="logo__image only-dark" alt="Cryptography - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../notebooks.html">Content with notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flecture/Algebra/Arithmatic/Arithmetic.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/lecture/Algebra/Arithmatic/Arithmetic.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Arithmetic 算數</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#content">Content</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-floor-and-ceiling"><strong>Definition</strong>: Floor and Ceiling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-modular-function"><strong>Definition</strong>: Modular Function (同餘函數)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-cayley-tables"><strong>Example</strong> 凱利表 (Cayley Tables)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#p-prime-z-p-field">只有當模數 <span class="math notranslate nohighlight">\(p\)</span> 是<strong>質數</strong>（Prime）時，<span class="math notranslate nohighlight">\(Z_p\)</span> 才會是一個體(field)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#latex">1. 圖片文字與 LaTeX 轉換</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2. 老師的觀念解析與推導</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">第一步：定義「因數」與「公因數」</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#propositions">第二步：觀察特例與基本性質 (Propositions)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">第三步：從暴力解法到演算法思維</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="arithmetic">
+<h1><strong>Arithmetic 算數</strong><a class="headerlink" href="#arithmetic" title="Link to this heading">#</a></h1>
+<section id="content">
+<h2>Content<a class="headerlink" href="#content" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Modular Function</strong></p></li>
+<li><p><strong>GCD and Euclidean Algorithm</strong></p></li>
+<li><p><strong>Extended GCD Algorithm</strong></p></li>
+<li><p><strong>Fundamental Theorem of Arithmetic</strong></p></li>
+<li><p><strong>Modular Arithmetic</strong></p></li>
+<li><p><strong>Chinese Remainder Theorem</strong></p></li>
+<li><p><strong>Theorems of Fermat and Euler</strong></p></li>
+</ol>
+</section>
+<section id="definition-floor-and-ceiling">
+<h2><strong>Definition</strong>: Floor and Ceiling<a class="headerlink" href="#definition-floor-and-ceiling" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>The <strong>floor</strong> <span class="math notranslate nohighlight">\(\lfloor x \rfloor\)</span> of <span class="math notranslate nohighlight">\(x \in \boldsymbol{R}\)</span> is the largest integer <span class="math notranslate nohighlight">\(\leq x\)</span> ，代表不大於 <span class="math notranslate nohighlight">\(x\)</span> 的「最大整數」</p></li>
+<li><p>The <strong>ceiling</strong> <span class="math notranslate nohighlight">\(\lceil x \rceil\)</span> of <span class="math notranslate nohighlight">\(x \in \boldsymbol{R}\)</span> is the smallest integer <span class="math notranslate nohighlight">\(\geq x\)</span> ，代表不小於 <span class="math notranslate nohighlight">\(x\)</span> 的「最小整數」</p></li>
+</ol>
+<p><strong>Example</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\lfloor e \rfloor = 2\)</span>, <span class="math notranslate nohighlight">\(\lceil e \rceil = 3\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\lfloor -3.1416 \rfloor = -4\)</span>, <span class="math notranslate nohighlight">\(\lceil -3.1416 \rceil = -3\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(25 = 3 \times 7 + 4\)</span> [7: divisor, 3: quotient, 4: remainder]</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(25 \bmod 7 = 25 - \lfloor 25 / 7 \rfloor \times 7 = 25 - 3 \times 7 = 25 - 21=4\)</span> (remainder)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="definition-modular-function">
+<h2><strong>Definition</strong>: Modular Function (同餘函數)<a class="headerlink" href="#definition-modular-function" title="Link to this heading">#</a></h2>
+<p><span class="math notranslate nohighlight">\(m, n \in \boldsymbol{Z}, m &gt; 0\)</span>, define <span class="math notranslate nohighlight">\(\boldsymbol{n \bmod m} = n - \lfloor n/m \rfloor \times m\)</span></p>
+<ul class="simple">
+<li><p>i.e., the remainder after dividing <span class="math notranslate nohighlight">\(n\)</span> by <span class="math notranslate nohighlight">\(m\)</span>, which is <span class="math notranslate nohighlight">\(\ge 0\)</span> and <span class="math notranslate nohighlight">\(&lt; m\)</span></p></li>
+<li><p><strong>Example</strong> 58 in the base 3 representation</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+a_0 =&amp; 58 \bmod 3 = 1 &amp;\qquad 19 &amp;= \left\lfloor \frac{58}{3} \right\rfloor \\
+a_1 =&amp; 19 \bmod 3 = 1 &amp;\qquad 6 &amp;= \left\lfloor \frac{19}{3} \right\rfloor\\
+a_2 =&amp;  6 \bmod 3 = 0 &amp;\qquad 2 &amp;= \left\lfloor \frac{6}{3} \right\rfloor \\
+a_3 =&amp;  2 \bmod 3 = 2 &amp;\qquad 0 &amp;= \left\lfloor \frac{2}{3}  \right\rfloor \\
+\end{gather*}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[(2011)_3 = 2 \times 3^3 + 0 \times 3^2 + 1 \times 3^1 + 1 \times 3^0 = 58\]</div>
+</section>
+<section id="example-cayley-tables">
+<h2><strong>Example</strong> 凱利表 (Cayley Tables)<a class="headerlink" href="#example-cayley-tables" title="Link to this heading">#</a></h2>
+<p>For group <span class="math notranslate nohighlight">\(G_1=(Z_6, \oplus)\)</span> and <span class="math notranslate nohighlight">\(G_2=(Z_6, \otimes)\)</span></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(Z_6 = \{0, 1, 2, 3, 4, 5\}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a \oplus b = (a + b) \bmod 6\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a \otimes b = (a \times b) \bmod 6\)</span></p></li>
+</ul>
+<p><strong><span class="math notranslate nohighlight">\(G_1\)</span></strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(\oplus\)</span></p></th>
+<th class="head"><p>0</p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>3</p></th>
+<th class="head"><p>4</p></th>
+<th class="head"><p>5</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>0</strong></p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>1</strong></p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>2</strong></p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>3</strong></p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>4</strong></p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>5</strong></p></td>
+<td><p>5</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong><span class="math notranslate nohighlight">\(G_2\)</span></strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(\otimes\)</span></p></th>
+<th class="head"><p>0</p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>3</p></th>
+<th class="head"><p>4</p></th>
+<th class="head"><p>5</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>0</strong></p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>1</strong></p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>2</strong></p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td><p>4</p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>3</strong></p></td>
+<td><p>0</p></td>
+<td><p>3</p></td>
+<td><p>0</p></td>
+<td><p>3</p></td>
+<td><p>0</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>4</strong></p></td>
+<td><p>0</p></td>
+<td><p>4</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+<td><p>4</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>5</strong></p></td>
+<td><p>0</p></td>
+<td><p>5</p></td>
+<td><p>4</p></td>
+<td><p>3</p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>可以把「體」(field)想像成一個「完美的數字世界」。在這個世界裡你可以自由地進行加、減、乘，以及<strong>除法（除了除以 0 之外）</strong>，而且運算完的結果絕對不會掉出這個世界的範圍外。</p>
+<p>「可以進行除法」在抽象代數中的嚴格定義是：<strong>每一個非零元素，都必須存在一個「乘法反元素」（Multiplicative Inverse）。</strong> 換句話說，對於任何不為 0 的 <span class="math notranslate nohighlight">\(a\)</span> 都要能找到一個 <span class="math notranslate nohighlight">\(b\)</span>，使得 <span class="math notranslate nohighlight">\(a \otimes b = 1\)</span>（1 是乘法的單位元素）。</p>
+<p>現在，我們來檢查乘法凱萊表（<span class="math notranslate nohighlight">\(\otimes\)</span>）：</p>
+<ul class="simple">
+<li><p>找元素 1 的反元素：<span class="math notranslate nohighlight">\(1 \otimes 1 = 1\)</span> (存在)</p></li>
+<li><p>找元素 5 的反元素：<span class="math notranslate nohighlight">\(5 \otimes 5 = 25 \bmod 6 = 1\)</span> (存在)</p></li>
+<li><p><strong>找元素 2 的反元素</strong>：看表格中 2 的那一個橫列：<code class="docutils literal notranslate"><span class="pre">0,</span> <span class="pre">2,</span> <span class="pre">4,</span> <span class="pre">0,</span> <span class="pre">2,</span> <span class="pre">4</span></code>。<strong>這列裡面根本沒有 1！</strong>
+這代表在 <span class="math notranslate nohighlight">\(Z_6\)</span> 的世界裡，找不到任何數字 <span class="math notranslate nohighlight">\(b\)</span> 可以讓 <span class="math notranslate nohighlight">\(2 \otimes b = 1\)</span>。也就是說，在這裡你無法「除以 2」。</p></li>
+</ul>
+<p>此外，我們還觀察到一個違反直覺的現象：<span class="math notranslate nohighlight">\(2 \otimes 3 = 0\)</span>。兩個非零的數字相乘結果居然變成了 0。這兩個數字在代數中被稱為「零因子」（Zero Divisors），在一個「體」的完美世界裡面，是不允許有零因子存在的。</p>
+<p><strong>結論</strong>：因為 <span class="math notranslate nohighlight">\(Z_6\)</span> 中並非每個非零元素都有乘法反元素（且存在零因子），所以 <strong><span class="math notranslate nohighlight">\(Z_6\)</span> 不是一個體 (Field)</strong>。</p>
+<section id="p-prime-z-p-field">
+<h3>只有當模數 <span class="math notranslate nohighlight">\(p\)</span> 是<strong>質數</strong>（Prime）時，<span class="math notranslate nohighlight">\(Z_p\)</span> 才會是一個體(field)<a class="headerlink" href="#p-prime-z-p-field" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(Z_7 = \{0, 1, 2, 3, 4, 5, 6\}\)</span></p>
+<p><strong>加法</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(\oplus\)</span></p></th>
+<th class="head"><p>0</p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>3</p></th>
+<th class="head"><p>4</p></th>
+<th class="head"><p>5</p></th>
+<th class="head"><p>6</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>0</strong></p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>1</strong></p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+<td><p>6</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>2</strong></p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+<td><p>6</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>3</strong></p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+<td><p>6</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>4</strong></p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+<td><p>6</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>5</strong></p></td>
+<td><p>5</p></td>
+<td><p>6</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>6</strong></p></td>
+<td><p>6</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>乘法</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(\otimes\)</span></p></th>
+<th class="head"><p>0</p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>3</p></th>
+<th class="head"><p>4</p></th>
+<th class="head"><p>5</p></th>
+<th class="head"><p>6</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>0</strong></p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>1</strong></p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>2</strong></p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td><p>4</p></td>
+<td><p>6</p></td>
+<td><p>1</p></td>
+<td><p>3</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>3</strong></p></td>
+<td><p>0</p></td>
+<td><p>3</p></td>
+<td><p>6</p></td>
+<td><p>2</p></td>
+<td><p>5</p></td>
+<td><p>1</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>4</strong></p></td>
+<td><p>0</p></td>
+<td><p>4</p></td>
+<td><p>1</p></td>
+<td><p>5</p></td>
+<td><p>2</p></td>
+<td><p>6</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>5</strong></p></td>
+<td><p>0</p></td>
+<td><p>5</p></td>
+<td><p>3</p></td>
+<td><p>1</p></td>
+<td><p>6</p></td>
+<td><p>4</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>6</strong></p></td>
+<td><p>0</p></td>
+<td><p>6</p></td>
+<td><p>5</p></td>
+<td><p>4</p></td>
+<td><p>3</p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>對比之前 <span class="math notranslate nohighlight">\(Z_6\)</span> 的表格，你可以從 <span class="math notranslate nohighlight">\(Z_7\)</span> 的乘法表中觀察到兩個非常重要的性質，這也是它成為一個「體」（Field）的關鍵：</p>
+<ol class="arabic simple">
+<li><p><strong>無零因子 (No Zero Divisors)</strong>：除了 <span class="math notranslate nohighlight">\(0\)</span> 乘上任何數等於 <span class="math notranslate nohighlight">\(0\)</span> 之外，你找不到任何兩個非零的數字相乘會等於 <span class="math notranslate nohighlight">\(0\)</span>。</p></li>
+<li><p><strong>每個非零元素都有乘法反元素 (Multiplicative Inverses)</strong>：請看乘法表內部，除了第 0 行與第 0 列之外， <strong>每一行與每一列都剛好出現一次 <span class="math notranslate nohighlight">\(1\)</span></strong> ，這代表每一個非零數字都能找到一個對應的數字，相乘後結果為 <span class="math notranslate nohighlight">\(1\)</span>：</p></li>
+</ol>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(1 \otimes 1 = 1\)</span> (1 的反元素是 1)</p></li>
+<li><p><span class="math notranslate nohighlight">\(2 \otimes 4 = 1\)</span> (2 的反元素是 4)</p></li>
+<li><p><span class="math notranslate nohighlight">\(3 \otimes 5 = 1\)</span> (3 的反元素是 5)</p></li>
+<li><p><span class="math notranslate nohighlight">\(4 \otimes 2 = 1\)</span> (4 的反元素是 2)</p></li>
+<li><p><span class="math notranslate nohighlight">\(5 \otimes 3 = 1\)</span> (5 的反元素是 3)</p></li>
+<li><p><span class="math notranslate nohighlight">\(6 \otimes 6 = 1\)</span> (6 的反元素是 6)</p></li>
+</ul>
+<p>所以 <span class="math notranslate nohighlight">\(Z_7\)</span> 是一個標準的有限體! owob</p>
+<p>這是一張關於數學中「最大公因數」（Greatest Common Divisor，簡稱 GCD）的基礎定義與性質教學投影片。這個概念是演算法（特別是密碼學與整數運算）中非常核心的基石。</p>
+<p>我們一樣先將投影片的內容精確地轉換成文字與 LaTeX 格式，接著我會像老師一樣，帶你拆解這些定義背後的意義與簡單的推導。</p>
+</section>
+<section id="latex">
+<h3>1. 圖片文字與 LaTeX 轉換<a class="headerlink" href="#latex" title="Link to this heading">#</a></h3>
+<p><strong>Greatest Common Divisor</strong></p>
+<ul class="simple">
+<li><p>Assume <span class="math notranslate nohighlight">\(a, b \in \boldsymbol{Z}\)</span>, <span class="math notranslate nohighlight">\(a \neq 0\)</span> or <span class="math notranslate nohighlight">\(b \neq 0\)</span></p></li>
+<li><p><strong>Definition</strong> <span class="math notranslate nohighlight">\(d \neq 0\)</span> is a <strong>common divisor</strong> of <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> if <span class="math notranslate nohighlight">\(d \mid a\)</span> and <span class="math notranslate nohighlight">\(d \mid b\)</span></p></li>
+<li><p><strong>Definition</strong> The <strong>greatest common divisor</strong> <span class="math notranslate nohighlight">\(d = \gcd(a, b)\)</span> is the largest of the common divisors</p></li>
+<li><p><strong>Example</strong> * Divisors of <span class="math notranslate nohighlight">\(20: \pm 1, \pm 2, \pm 4, \pm 5, \pm 10, \pm 20\)</span></p></li>
+<li><p>Divisors of <span class="math notranslate nohighlight">\(16: \pm 1, \pm 2, \pm 4, \pm 8, \pm 16 \Rightarrow \gcd(20, 16) = 4\)</span></p></li>
+<li><p><strong>Proposition</strong> <span class="math notranslate nohighlight">\(a \in \boldsymbol{P}\)</span> (positive integer)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\gcd(a, a) = a\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\gcd(a, 0) = a\)</span></p></li>
+<li><p><strong>Proposition</strong> <span class="math notranslate nohighlight">\(a, b \in \boldsymbol{Z}\)</span>, <span class="math notranslate nohighlight">\(a \neq 0\)</span> or <span class="math notranslate nohighlight">\(b \neq 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\gcd(a, b) = \gcd(|a|, |b|)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\gcd(a, b) = \gcd(b, a)\)</span></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="id1">
+<h3>2. 老師的觀念解析與推導<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>我們把這些數學定義當作寫程式前的邏輯梳理，一步步來看。</p>
+<section id="id2">
+<h4>第一步：定義「因數」與「公因數」<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<p><strong>觀念類比</strong>：想像你有兩根長度分別為 <span class="math notranslate nohighlight">\(20\)</span> 公分和 <span class="math notranslate nohighlight">\(16\)</span> 公分的木條。所謂的「因數」，就是你能找到一種標準長度的短尺，可以把木條「剛好量完（沒有剩下）」。而「公因數」就是這把短尺不但能剛好量完 <span class="math notranslate nohighlight">\(20\)</span> 公分的木條，也能剛好量完 <span class="math notranslate nohighlight">\(16\)</span> 公分的木條。</p>
+<ul class="simple">
+<li><p>數學符號 <span class="math notranslate nohighlight">\(d \mid a\)</span> 讀作「<span class="math notranslate nohighlight">\(d\)</span> 整除 <span class="math notranslate nohighlight">\(a\)</span>」。這代表存在某個整數 <span class="math notranslate nohighlight">\(k\)</span>，使得 <span class="math notranslate nohighlight">\(a = k \cdot d\)</span>。</p></li>
+<li><p>在 Python 的邏輯中，這等同於 <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">%</span> <span class="pre">d</span> <span class="pre">==</span> <span class="pre">0</span></code>。</p></li>
+</ul>
+</section>
+<section id="propositions">
+<h4>第二步：觀察特例與基本性質 (Propositions)<a class="headerlink" href="#propositions" title="Link to this heading">#</a></h4>
+<p>投影片下半部列出了幾個看起來很直觀，但在演算法中非常實用的性質。我們來推導並理解它們：</p>
+<ol class="arabic simple">
+<li><p><strong><span class="math notranslate nohighlight">\(\gcd(a, a) = a\)</span></strong></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>推導</strong>：<span class="math notranslate nohighlight">\(a\)</span> 能被 <span class="math notranslate nohighlight">\(a\)</span> 整除（<span class="math notranslate nohighlight">\(a = 1 \cdot a\)</span>）。既然兩個數字一樣，能同時整除它們的最大整數當然就是 <span class="math notranslate nohighlight">\(a\)</span> 自己。</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p><strong><span class="math notranslate nohighlight">\(\gcd(a, 0) = a\)</span></strong></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>推導</strong>：這是一個初學者常卡住的地方。為什麼 <span class="math notranslate nohighlight">\(0\)</span> 有因數？因為對於任何非零整數 <span class="math notranslate nohighlight">\(d\)</span>，都滿足 <span class="math notranslate nohighlight">\(0 = 0 \cdot d\)</span>。也就是說，<strong>任何非零整數都是 0 的因數</strong>（在 Python 裡你不能寫 <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">%</span> <span class="pre">0</span></code>，但數學上任何非零整數都能整除 <span class="math notranslate nohighlight">\(0\)</span>）。</p></li>
+<li><p>既然 <span class="math notranslate nohighlight">\(0\)</span> 可以被所有數字整除，那麼 <span class="math notranslate nohighlight">\(a\)</span> 和 <span class="math notranslate nohighlight">\(0\)</span> 的「公因數」其實就取決於 <span class="math notranslate nohighlight">\(a\)</span> 的因數有哪些。而 <span class="math notranslate nohighlight">\(a\)</span> 的最大因數就是 <span class="math notranslate nohighlight">\(a\)</span>，所以 <span class="math notranslate nohighlight">\(\gcd(a, 0) = a\)</span>。</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p><strong><span class="math notranslate nohighlight">\(\gcd(a, b) = \gcd(|a|, |b|)\)</span></strong></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>推導</strong>：如投影片 Example 所示，因數總是正負成對出現的（<span class="math notranslate nohighlight">\(\pm 1, \pm 2 \dots\)</span>）。因為我們要找的是「最大的」公因數，所以一定會挑選正數。因此，原本的數字帶不帶負號（絕對值）根本不影響結果。</p></li>
+</ul>
+<ol class="arabic simple" start="4">
+<li><p><strong><span class="math notranslate nohighlight">\(\gcd(a, b) = \gcd(b, a)\)</span></strong></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>推導</strong>：這只是說明這是一個對稱的關係，誰放前面、誰放後面，共同擁有的最大因數都是同一個。</p></li>
+</ul>
+</section>
+<section id="id3">
+<h4>第三步：從暴力解法到演算法思維<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<p>投影片的 Example 展示了「列舉法」：把所有因數列出來，然後找交集裡最大的。
+但如果數字換成 <span class="math notranslate nohighlight">\(a = 105623\)</span> 和 <span class="math notranslate nohighlight">\(b = 39481\)</span> 呢？顯然把所有因數找出來是非常耗時的（在程式中這樣寫效率極低）。這就暗示了我們需要更聰明的數學工具來解決這個問題。</p>
+<hr class="docutils" />
+<p>請問你需要我接著介紹，在程式設計中如何利用「輾轉相除法」（Euclidean Algorithm），藉由前面學過的 <span class="math notranslate nohighlight">\(\bmod\)</span> 運算和 <span class="math notranslate nohighlight">\(\gcd(a, 0) = a\)</span> 這個性質，寫出極度高效的 Python 求最大公因數函數嗎？</p>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lecture\Algebra\Arithmatic"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#content">Content</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-floor-and-ceiling"><strong>Definition</strong>: Floor and Ceiling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-modular-function"><strong>Definition</strong>: Modular Function (同餘函數)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-cayley-tables"><strong>Example</strong> 凱利表 (Cayley Tables)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#p-prime-z-p-field">只有當模數 <span class="math notranslate nohighlight">\(p\)</span> 是<strong>質數</strong>（Prime）時，<span class="math notranslate nohighlight">\(Z_p\)</span> 才會是一個體(field)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#latex">1. 圖片文字與 LaTeX 轉換</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2. 老師的觀念解析與推導</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">第一步：定義「因數」與「公因數」</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#propositions">第二步：觀察特例與基本性質 (Propositions)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">第三步：從暴力解法到演算法思維</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC YE
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

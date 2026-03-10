@@ -1,0 +1,1790 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Group &#8212; Cryptography</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lecture/Algebra/Abstract_Algebra/Group';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/logo.png" class="logo__image only-light" alt="Cryptography - Home"/>
+    <script>document.write(`<img src="../../../_static/logo.png" class="logo__image only-dark" alt="Cryptography - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../notebooks.html">Content with notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flecture/Algebra/Abstract_Algebra/Group.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/lecture/Algebra/Abstract_Algebra/Group.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Group</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition"><strong>Definition</strong> : 群的定義</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example"><strong>Example</strong>：群的例子</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#infinite-additive-and-multiplicative-groups">1. 無限加法群與乘法群 (Infinite Additive and Multiplicative Groups)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subgroups-and-simple-finite-groups">2. 子群與簡單有限群 (Subgroups and Simple Finite Groups)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modular-arithmetic-groups">3. 模運算群 (Modular Arithmetic Groups)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#elliptic-curve-group">4. 橢圓曲線群 (Elliptic Curve Group)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>Example</strong>：非群的例子</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-permutation"><strong>Definition</strong>：Permutation排列的定義(雙射函數)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-symmetric-group"><strong>Definition</strong>：Symmetric Group(對稱群)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-abelian-group"><strong>Definition</strong>：阿貝爾群 (Abelian Group)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#z-p">質數模群的通則 (<span class="math notranslate nohighlight">\(Z_p^*\)</span>)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-non-abelian-group"><strong>Example</strong>：非阿貝爾群 (Non-Abelian Group)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-cyclic-group"><strong>Definition</strong> 循環群 (Cyclic Group)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-group-order"><strong>Definition</strong> 群的階 (Group Order)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gl-n-sl-n"><strong>矩陣群 (<span class="math notranslate nohighlight">\(GL_n, SL_n\)</span>)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gl-8-z-2"><span class="math notranslate nohighlight">\(|GL_8(Z_2)|\)</span> 等於多少？</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-subgroup"><strong>Definition</strong> :子群 (Subgroup)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-coset"><strong>Definition</strong> :陪集 (Coset)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lagrange-s-theorem"><strong>拉格朗日定理 (Lagrange’s Theorem)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lagrange-s-theorem-h-g">1. 拉格朗日定理 (Lagrange’s Theorem)：為什麼 <span class="math notranslate nohighlight">\(|H|\)</span> 能整除 <span class="math notranslate nohighlight">\(|G|\)</span>？</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#index-g-h">2. 指數 (Index)：<span class="math notranslate nohighlight">\([G:H]\)</span> 是什麼？</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#order-of-an-element-o-g">3. 元素的階 (Order of an element)：<span class="math notranslate nohighlight">\(o(g)\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#corollary">4. 推論 (Corollary)：完美的連擊組合技</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transcription">第一步：原始投影片內容輸出 (Transcription)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-homomorphism-isomorphism"><strong>Definition</strong> : 同態 (Homomorphism) 與 同構 (Isomorphism)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#homomorphism">同態 (Homomorphism)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#isomorphism">同構 (Isomorphism)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-homomorphism"><strong>Example Homomorphism (同態)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#f-1-3-f-a-g-b-f-a-h-f-b-3-x"><span class="math notranslate nohighlight">\(f(1)=3\)</span> 為什麼會變成 <span class="math notranslate nohighlight">\(f(a *_G b) = f(a) *_H f(b) = 3^x\)</span>？</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#f-1-2-f-a-g-b-f-a-h-f-b-2x"><span class="math notranslate nohighlight">\(f(1)=2\)</span> 為什麼會變成 <span class="math notranslate nohighlight">\(f(a *_G b) = f(a) *_H f(b) = 2x\)</span>？</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">進階補充：那 0 和負數呢？</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-isomorphism"><strong>Example Isomorphism (同構)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#f-g-rightarrow-h-f-2-h-rightarrow-g">1. 為什麼只檢查 <span class="math notranslate nohighlight">\(f: G \rightarrow H\)</span>，不需要檢查反向的 <span class="math notranslate nohighlight">\(f_2: H \rightarrow G\)</span>？</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#g-cong-h">2. 寫 <span class="math notranslate nohighlight">\(G \cong H\)</span> 是不是應該加上映射方式才完整？一種成立代表全部成立嗎？</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">第一步：破解直覺上的迷思 —— 「存在」不等於「全部」</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#function-composition">第二步：嚴謹數學推導 —— 函數合成 (Function Composition)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equivalence-relation">第三步：代數學家眼中的「等價關係 (Equivalence Relation)」</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="group">
+<h1>Group<a class="headerlink" href="#group" title="Link to this heading">#</a></h1>
+<p><strong>Notation</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(Z = \{\dots, -3, -2, -1, 0, 1, 2, 3, \dots\}\)</span> of integers</p>
+<ul>
+<li><p><strong><span class="math notranslate nohighlight">\(Z\)</span> (所有整數):</strong> 這是數學最基礎的集合，相當於 Python 中沒有大小限制的 <code class="docutils literal notranslate"><span class="pre">int</span></code> 型別。</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(Z_n = \{0, 1, 2, \dots, n-1\}\)</span></p>
+<ul>
+<li><p><strong><span class="math notranslate nohighlight">\(Z_n\)</span> (模 <span class="math notranslate nohighlight">\(n\)</span> 的同餘類):</strong> 這是將無限的整數局限在一個長度為 <span class="math notranslate nohighlight">\(n\)</span> 的循環中。</p></li>
+<li><p><strong>程式思維：</strong> 這非常類似於執行 <code class="docutils literal notranslate"><span class="pre">range(n)</span></code> 所產生的結果，裡面的元素就是任何數字除以 <span class="math notranslate nohighlight">\(n\)</span> 之後可能出現的餘數。</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(Z_n^* = \{a \in Z_n \mid \text{gcd}(a, n) = 1\}\)</span> (直接與 <span class="math notranslate nohighlight">\(\times x \pmod n\)</span> 綁定)</p>
+<ul>
+<li><p><strong>定義推導：</strong> <span class="math notranslate nohighlight">\(\text{gcd}(a, n)\)</span> 代表兩數的最大公因數 (Greatest Common Divisor)。當 <span class="math notranslate nohighlight">\(\text{gcd}(a, n) = 1\)</span> 時，代表 <span class="math notranslate nohighlight">\(a\)</span> 與 <span class="math notranslate nohighlight">\(n\)</span> 「互質」。在模反元素的定理中，一個數字 <span class="math notranslate nohighlight">\(a\)</span> 在模 <span class="math notranslate nohighlight">\(n\)</span> 之下要有「乘法反元素」（也就是能找到一個 <span class="math notranslate nohighlight">\(x\)</span> 使得 <span class="math notranslate nohighlight">\(a \times x \equiv 1 \pmod n\)</span>），充要條件就是 <span class="math notranslate nohighlight">\(a\)</span> 與 <span class="math notranslate nohighlight">\(n\)</span> 必須互質。</p></li>
+<li><p><strong>程式思維：</strong> 這就像是寫了一個 List Comprehension 過濾器：<code class="docutils literal notranslate"><span class="pre">[a</span> <span class="pre">for</span> <span class="pre">a</span> <span class="pre">in</span> <span class="pre">range(n)</span> <span class="pre">if</span> <span class="pre">math.gcd(a,</span> <span class="pre">n)</span> <span class="pre">==</span> <span class="pre">1]</span></code>。以圖中的 <span class="math notranslate nohighlight">\(Z_{12}^*\)</span> 為例，<strong>1</strong> 到 <strong>11</strong> 中與 <strong>12</strong> 互質的數字正是 <strong>1, 5, 7, 11</strong>。</p></li>
+<li><p><span class="math notranslate nohighlight">\(Z_{12}^* = \{1, 5, 7, 11\}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Z_{\text{prime number}}^* = \{1,2,3,4,5,6,\dots ,\text{prime number}-1\} = Z_{\text{prime number}}\)</span></p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(N = \{0, 1, 2, 3, \dots\}\)</span> of non-negative integers <strong>非零整數集合</strong></p></li>
+<li><p><span class="math notranslate nohighlight">\(P = \{1, 2, 3, \dots\}\)</span> of positive integers <strong>正整數集合</strong></p></li>
+<li><p><span class="math notranslate nohighlight">\(Q =\)</span> The set of rational numbers <strong>有理數集合</strong></p></li>
+<li><p><span class="math notranslate nohighlight">\(R =\)</span> The set of real numbers <strong>實數集合</strong></p></li>
+<li><p><span class="math notranslate nohighlight">\(C =\)</span> The set of complex numbers <strong>複數集合</strong></p></li>
+<li><p><span class="math notranslate nohighlight">\(Q^*, R^*, C^* =\)</span> The set of non-zero rational, real, complex numbers</p>
+<ul>
+<li><p>代表「排除 <strong>0</strong> 的集合」</p></li>
+<li><p>探討乘法時，<strong>0</strong> 不能放在分母沒有乘法反元素，將 <strong>0</strong> 排除後，剩下的元素才能形成一個完美的「乘法群」</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(GL_n(R) (一般線性群, General Linear Group): =\)</span> The set of <span class="math notranslate nohighlight">\(n \times n\)</span> invertible matrices with entries in <span class="math notranslate nohighlight">\(R\)</span></p>
+<ul>
+<li><p><strong>定義推導：</strong> 一個矩陣要能夠反轉（求反矩陣），其行列式 (Determinant) 絕對不能為 <strong>0</strong>。因此 <span class="math notranslate nohighlight">\(GL_n(R)\)</span> 就是所有行列式不為 <strong>0</strong> 的方陣集合。</p></li>
+<li><p><strong>幾何推導與意義：</strong> 在線性代數中，矩陣代表一種「空間變換」。行列式的絕對值 <span class="math notranslate nohighlight">\(|\det(A)|\)</span>，代表了這個變換將空間「放大或縮小了多少倍的面積（或體積）」</p></li>
+<li><p>建構一個 <span class="math notranslate nohighlight">\(GL_2(R)\)</span> 的元素：<strong>檢查元素：</strong> <span class="math notranslate nohighlight">\(2, 0, 3\)</span> 都是實數 (<span class="math notranslate nohighlight">\(R\)</span>)。 <span class="math notranslate nohighlight">\(M = \begin{pmatrix} 2 &amp; 0 \\ 0 &amp; 3 \end{pmatrix}\)</span></p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(SL_n(R) (特殊線性群, Special Linear Group): =\)</span> The subset of <span class="math notranslate nohighlight">\(GL_n(R)\)</span> with each matrix of determinant 1</p>
+<ul>
+<li><p>它是 <span class="math notranslate nohighlight">\(GL_n(R)\)</span> 的嚴格子集。它不僅要求矩陣可逆，還嚴格規定該矩陣的行列式必須精準等於 <strong>1</strong>。這類矩陣在幾何變換上代表「保持體積且不翻轉」的變換。</p></li>
+<li><p><strong>例子 1：錯切變換 (Shear Mapping)</strong> <span class="math notranslate nohighlight">\(S = \begin{pmatrix} 1 &amp; 1 \\ 0 &amp; 1 \end{pmatrix}\)</span></p></li>
+<li><p><strong>例子 2：旋轉變換 (Rotation Matrix)</strong>  <span class="math notranslate nohighlight">\(R_\theta = \begin{pmatrix} \cos \theta &amp; -\sin \theta \\ \sin \theta &amp; \cos \theta \end{pmatrix}\)</span></p></li>
+</ul>
+</li>
+</ul>
+<hr class="docutils" />
+<section id="definition">
+<h2><strong>Definition</strong> : 群的定義<a class="headerlink" href="#definition" title="Link to this heading">#</a></h2>
+<p>A <strong>group</strong> <span class="math notranslate nohighlight">\((G, *)\)</span> is a set <span class="math notranslate nohighlight">\(G\)</span> with an operation <span class="math notranslate nohighlight">\(*\)</span>, such that the following conditions are satisfied:</p>
+<ol class="arabic simple">
+<li><p><strong>封閉性 (Closure)</strong> <span class="math notranslate nohighlight">\(a * b \in G\)</span> for all <span class="math notranslate nohighlight">\(a, b \in G\)</span></p>
+<ul class="simple">
+<li><p><strong>意義：</strong> 集合裡面的任何兩個元素互相作用後，產生的新結果必須「依然留在這個集合內」，不能跑出去。</p></li>
+<li><p><strong>程式思維：</strong> 這就像是 Python 裡的「型別限制」或是對物件實作 Magic Method。假設我們定義了一個類別 <code class="docutils literal notranslate"><span class="pre">MySet</span></code>，封閉性要求當你實作 <code class="docutils literal notranslate"><span class="pre">__add__(self,</span> <span class="pre">other)</span></code> 或是 <code class="docutils literal notranslate"><span class="pre">__mul__(self,</span> <span class="pre">other)</span></code> 時，它 <code class="docutils literal notranslate"><span class="pre">return</span></code> 的結果型別必須保證還是 <code class="docutils literal notranslate"><span class="pre">MySet</span></code> 的實例，而不能突然變成一個普通的 <code class="docutils literal notranslate"><span class="pre">int</span></code> 或 <code class="docutils literal notranslate"><span class="pre">list</span></code>。</p></li>
+</ul>
+</li>
+<li><p><strong>結合律 (Associativity)</strong> <span class="math notranslate nohighlight">\(a * (b * c) = (a * b) * c\)</span> for all <span class="math notranslate nohighlight">\(a, b, c \in G\)</span></p>
+<ul class="simple">
+<li><p><strong>意義：</strong> 當有多個元素要連著運算時，括號刮在哪裡（先算前面還是先算後面）不影響最終結果。</p></li>
+<li><p><strong>注意，這裡並沒有要求 <span class="math notranslate nohighlight">\(a * b = b * a\)</span> (交換律)</strong>，一個群不一定要滿足交換律（滿足交換律的群特別稱為阿貝爾群 Abelian Group）。</p></li>
+<li><p><strong>減法不是群的運算</strong>，因為 <span class="math notranslate nohighlight">\(a - (b - c) \ne (a - b) - c\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>單位元素 (Identity)</strong> There is an element <span class="math notranslate nohighlight">\(e \in G\)</span> such that <span class="math notranslate nohighlight">\(a = a * e = e * a\)</span> for each <span class="math notranslate nohighlight">\(a \in G\)</span></p>
+<ul class="simple">
+<li><p><strong>意義：</strong> 集合裡面必須存在一個特別的元素 <span class="math notranslate nohighlight">\(e\)</span>（通常稱為 identity element），它的功用就像是「透明人」，任何元素跟它作用後，都會保持原樣。</p></li>
+<li><p><strong>注意，單位元素必定唯一</strong> ，可以<a class="reference internal" href="#derek1403.github.io/Theory_Playground/_build/html/02_Concepts/Abstract_Algebra/proof_group_fundamental_theory.html"><span class="xref myst">查看證明</span></a></p></li>
+<li><p><strong>程式思維：</strong> 如果這個運算是整數加法，這個 <span class="math notranslate nohighlight">\(e\)</span> 就是 <code class="docutils literal notranslate"><span class="pre">0</span></code>；如果是整數乘法，<span class="math notranslate nohighlight">\(e\)</span> 就是 <code class="docutils literal notranslate"><span class="pre">1</span></code>。如果你在處理字串串接 (String Concatenation)，這個 <span class="math notranslate nohighlight">\(e\)</span> 就是空字串 <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>，因為 <code class="docutils literal notranslate"><span class="pre">&quot;hello&quot;</span> <span class="pre">+</span> <span class="pre">&quot;&quot;</span> <span class="pre">==</span> <span class="pre">&quot;hello&quot;</span></code>。</p></li>
+</ul>
+</li>
+<li><p><strong>反元素 (Inverse)</strong> For each <span class="math notranslate nohighlight">\(a \in G\)</span>, there is an element <span class="math notranslate nohighlight">\(b \in G\)</span> such that <span class="math notranslate nohighlight">\(a * b = b * a = e\)</span></p>
+<ul class="simple">
+<li><p><strong>意義：</strong> 對於集合裡的每一個元素 <span class="math notranslate nohighlight">\(a\)</span>，你必定能找到一個對應的專屬夥伴 <span class="math notranslate nohighlight">\(b\)</span>（通常記作 <span class="math notranslate nohighlight">\(a^{-1}\)</span>），讓他們兩個作用後互相抵消，變回那個透明的單位元素 <span class="math notranslate nohighlight">\(e\)</span>。</p></li>
+<li><p><strong>程式思維：</strong> 這非常類似系統設計裡的「復原 (Undo)」機制。如果你執行了一個改變狀態的函數 <code class="docutils literal notranslate"><span class="pre">action_a()</span></code>，群的定義保證了你一定能找到並呼叫一個 <code class="docutils literal notranslate"><span class="pre">action_b()</span></code>，把系統狀態完美地重置回初始狀態 <span class="math notranslate nohighlight">\(e\)</span>。</p></li>
+</ul>
+</li>
+</ol>
+<p>在數學中，我們習慣了加減乘除，但如果我們想要把「運算」的概念推廣到更抽象的事物上（例如矩陣相乘、多項式相加，甚至魔術方塊的旋轉）我們就需要一個通用的定義，只要一個集合 (Set) <span class="math notranslate nohighlight">\(G\)</span> 加上一個運算規則 <span class="math notranslate nohighlight">\(*\)</span> 滿足以上4個條件，我們就可以稱它們為一個「群」。</p>
+<p>一些<a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/02_Concepts/Abstract_Algebra/proof_group_fundamental_theory.html">關於Group的Proposition的證明</a></p>
+</section>
+<section id="example">
+<h2><strong>Example</strong>：群的例子<a class="headerlink" href="#example" title="Link to this heading">#</a></h2>
+<p><strong>Example</strong> Each of the following sets with the specified operation is a group</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(Z, Q, R, C\)</span> with <span class="math notranslate nohighlight">\(+\)</span> (addition)</p></li>
+<li><p><span class="math notranslate nohighlight">\(Q^*, R^*, C^*\)</span> with <span class="math notranslate nohighlight">\(\times\)</span> (multiplication)</p></li>
+<li><p><span class="math notranslate nohighlight">\(5Z = \{5a \mid a \in Z\}\)</span> with <span class="math notranslate nohighlight">\(+\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\{1, -1\}\)</span> with <span class="math notranslate nohighlight">\(\times\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Z_6 = \{0, 1, 2, 3, 4, 5\}\)</span> with <span class="math notranslate nohighlight">\(+\)</span> modulo 6</p></li>
+<li><p><span class="math notranslate nohighlight">\(Z_7^* = \{1, 2, 3, 4, 5, 6\}\)</span> with <span class="math notranslate nohighlight">\(\times\)</span> modulo 7</p></li>
+<li><p><span class="math notranslate nohighlight">\(\{(x, y) \in R^2 \mid y^2 = x^3 + ax + b\} \cup \{\infty\}\)</span> with point addition and point doubling laws on elliptic curves</p></li>
+</ul>
+<hr class="docutils" />
+<section id="infinite-additive-and-multiplicative-groups">
+<h3>1. 無限加法群與乘法群 (Infinite Additive and Multiplicative Groups)<a class="headerlink" href="#infinite-additive-and-multiplicative-groups" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong><span class="math notranslate nohighlight">\(Z, Q, R, C\)</span> with <span class="math notranslate nohighlight">\(+\)</span></strong>：這最直觀。任何整數、有理數、實數或複數相加，結果依然是同一類（封閉性）。它們的「單位元素」都是 <strong>0</strong>。元素 <span class="math notranslate nohighlight">\(x\)</span> 的「反元素」就是 <span class="math notranslate nohighlight">\(-x\)</span>。</p></li>
+<li><p><strong><span class="math notranslate nohighlight">\(Q^*, R^*, C^*\)</span> with <span class="math notranslate nohighlight">\(\times\)</span></strong>：還記得上一張投影片我們提到右上角的星號 <span class="math notranslate nohighlight">\(*\)</span> 代表「排除 0」嗎？</p></li>
+<li><p><strong>為什麼要排除 0？</strong> 因為這裡的運算是「乘法」。乘法群的單位元素是 <strong>1</strong>。元素 <span class="math notranslate nohighlight">\(x\)</span> 的乘法反元素是 <span class="math notranslate nohighlight">\(\frac{1}{x}\)</span>。在 Python 裡，如果 <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">0</span></code>，計算 <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">/</span> <span class="pre">x</span></code> 會直接噴出 <code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code>！0 沒有反元素，所以會破壞群的定義，必須把它踢出去。</p></li>
+<li><p><strong>為什麼沒有 <span class="math notranslate nohighlight">\(Z^*\)</span>？</strong> 因為對於整數 <strong>2</strong> 來說，它的乘法反元素是 <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span>，但 <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span> 並不是整數（不滿足封閉性），所以整數配上乘法無法形成群。</p></li>
+</ul>
+</section>
+<section id="subgroups-and-simple-finite-groups">
+<h3>2. 子群與簡單有限群 (Subgroups and Simple Finite Groups)<a class="headerlink" href="#subgroups-and-simple-finite-groups" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong><span class="math notranslate nohighlight">\(5Z\)</span> with <span class="math notranslate nohighlight">\(+\)</span></strong>：這是所有 5 的倍數的集合。我們來做個簡單的數學推導，驗證它為什麼是個群：</p>
+<ul>
+<li><p><strong>封閉性推導：</strong> 假設有兩個元素 <span class="math notranslate nohighlight">\(5a\)</span> 和 <span class="math notranslate nohighlight">\(5b\)</span>（其中 <span class="math notranslate nohighlight">\(a, b \in Z\)</span>）。相加後得到 <span class="math notranslate nohighlight">\(5a + 5b = 5(a + b)\)</span>。因為 <span class="math notranslate nohighlight">\((a + b)\)</span> 依然是整數，所以結果仍然是 5 的倍數，封閉性成立！</p></li>
+<li><p><strong>單位元素：</strong> 當 <span class="math notranslate nohighlight">\(a = 0\)</span> 時，<span class="math notranslate nohighlight">\(5 \times 0 = 0\)</span>。<strong>0</strong> 在集合內。</p></li>
+<li><p><strong>反元素：</strong> <span class="math notranslate nohighlight">\(5a\)</span> 的反元素是 <span class="math notranslate nohighlight">\(-5a = 5(-a)\)</span>，依然是 5 的倍數。</p></li>
+<li><p><strong>程式思維：</strong> 這就像是你寫了一個 generator 或 iterator 專門產生 5 的倍數。</p></li>
+</ul>
+</li>
+<li><p><strong><span class="math notranslate nohighlight">\(\{1, -1\}\)</span> with <span class="math notranslate nohighlight">\(\times\)</span></strong>：這是一個超迷你的群。<span class="math notranslate nohighlight">\(1 \times 1 = 1\)</span>；<span class="math notranslate nohighlight">\(-1 \times -1 = 1\)</span>；<span class="math notranslate nohighlight">\(-1 \times 1 = -1\)</span>。不管怎麼乘，結果都在這個只有兩個元素的 <code class="docutils literal notranslate"><span class="pre">set</span></code> 裡面，非常完美。</p></li>
+</ul>
+</section>
+<section id="modular-arithmetic-groups">
+<h3>3. 模運算群 (Modular Arithmetic Groups)<a class="headerlink" href="#modular-arithmetic-groups" title="Link to this heading">#</a></h3>
+<p>這裡進入了密碼學的基礎：</p>
+<ul class="simple">
+<li><p><strong><span class="math notranslate nohighlight">\(Z_6\)</span> with <span class="math notranslate nohighlight">\(+\)</span> modulo 6</strong>：這就像時鐘一樣，走到 6 就會歸零。</p></li>
+<li><p><strong>程式思維：</strong> 運算邏輯等同於 <code class="docutils literal notranslate"><span class="pre">(a</span> <span class="pre">+</span> <span class="pre">b)</span> <span class="pre">%</span> <span class="pre">6</span></code>。</p></li>
+<li><p>它的單位元素是 <strong>0</strong></p></li>
+<li><p><strong>2</strong> 的反元素是 <strong>4</strong>，因為 <code class="docutils literal notranslate"><span class="pre">(2</span> <span class="pre">+</span> <span class="pre">4)</span> <span class="pre">%</span> <span class="pre">6</span> <span class="pre">==</span> <span class="pre">0</span></code>。</p></li>
+</ul>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(a\)</span>的反元素是<span class="math notranslate nohighlight">\(b\)</span>則表示相互運算後會是單位元素: <span class="math notranslate nohighlight">\(a*b=e\)</span></p>
+</div></blockquote>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(+\)</span></p></th>
+<th class="head"><p>0</p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>3</p></th>
+<th class="head"><p>4</p></th>
+<th class="head"><p>5</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>0</strong></p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>1</strong></p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>2</strong></p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>3</strong></p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>4</strong></p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>5</strong></p></td>
+<td><p>5</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<div><p>當我們把一個群的所有可能運算結果像這樣畫成一張二維表格時，在數學上我們稱之為<strong>凱萊表 (Cayley Table)</strong>。在標準的數學約定中，對於運算 <span class="math notranslate nohighlight">\(a * b\)</span>：</p>
+<ul class="simple">
+<li><p><strong><span class="math notranslate nohighlight">\(a\)</span> (第一個運算元)</strong>：對應到<strong>左邊的 Column (Row 的標頭)</strong>。</p></li>
+<li><p><strong><span class="math notranslate nohighlight">\(b\)</span> (第二個運算元)</strong>：對應到<strong>上面的 Row (Column 的標頭)</strong>。</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p><strong><span class="math notranslate nohighlight">\(Z_7^*\)</span> with <span class="math notranslate nohighlight">\(\times\)</span> modulo 7</strong>：這是在模 7 系統下的乘法群。</p></li>
+<li><p><strong>為什麼是 7？</strong> 注意到了嗎？7 是質數 (Prime number)！在模運算中，只有當模數為質數 <span class="math notranslate nohighlight">\(p\)</span> 時，從 <strong>1</strong> 到 <span class="math notranslate nohighlight">\(p-1\)</span> 的所有數字才會都有「乘法反元素」。</p></li>
+<li><p>單位元素是 <strong>1</strong></p></li>
+<li><p><strong>3</strong> 在 <span class="math notranslate nohighlight">\(Z_7^*\)</span> 中的反元素：我們需要找到一個數 <span class="math notranslate nohighlight">\(x\)</span>，使得 <code class="docutils literal notranslate"><span class="pre">(3</span> <span class="pre">*</span> <span class="pre">x)</span> <span class="pre">%</span> <span class="pre">7</span> <span class="pre">==</span> <span class="pre">1</span></code>。試算一下發現 <span class="math notranslate nohighlight">\(3 \times 5 = 15\)</span>，<span class="math notranslate nohighlight">\(15 \div 7 = 2 \dots 1\)</span>。所以 <strong>3</strong> 的反元素是 <strong>5</strong>！</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(\otimes\)</span></p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>3</p></th>
+<th class="head"><p>4</p></th>
+<th class="head"><p>5</p></th>
+<th class="head"><p>6</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>1</strong></p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>2</strong></p></td>
+<td><p>2</p></td>
+<td><p>4</p></td>
+<td><p>6</p></td>
+<td><p>1</p></td>
+<td><p>3</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>3</strong></p></td>
+<td><p>3</p></td>
+<td><p>6</p></td>
+<td><p>2</p></td>
+<td><p>5</p></td>
+<td><p>1</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>4</strong></p></td>
+<td><p>4</p></td>
+<td><p>1</p></td>
+<td><p>5</p></td>
+<td><p>2</p></td>
+<td><p>6</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>5</strong></p></td>
+<td><p>5</p></td>
+<td><p>3</p></td>
+<td><p>1</p></td>
+<td><p>6</p></td>
+<td><p>4</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>6</strong></p></td>
+<td><p>6</p></td>
+<td><p>5</p></td>
+<td><p>4</p></td>
+<td><p>3</p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<div><p><strong>老師的溫馨提示 (關於交換律)：</strong>
+因為我們接下來要畫的 <span class="math notranslate nohighlight">\((Z_6, +)\)</span> 和 <span class="math notranslate nohighlight">\((Z_7^*, \times)\)</span> 剛好都是「阿貝爾群 (Abelian Group)」，也就是它們滿足交換律 (<span class="math notranslate nohighlight">\(a * b = b * a\)</span>)。這會導致它們的凱萊表沿著左上到右下的對角線呈現<strong>完美對稱</strong>。因此在這兩個例子中，即使你不小心看反了，答案也會是一樣的。但在處理不滿足交換律的群（例如矩陣乘法群 <span class="math notranslate nohighlight">\(GL_n\)</span>）時，區分左右就變得至關重要了！</p>
+</div></blockquote>
+<section id="elliptic-curve-group">
+<h4>4. 橢圓曲線群 (Elliptic Curve Group)<a class="headerlink" href="#elliptic-curve-group" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong><span class="math notranslate nohighlight">\(\{(x, y) \in R^2 \mid y^2 = x^3 + ax + b\} \cup \{\infty\}\)</span></strong>：這是最進階的一個例子，它是現代加密技術（如比特幣使用的 ECDSA）的基石。</p></li>
+<li><p>集合裡的元素不再是單一數字，而是二維平面座標上的「點 <span class="math notranslate nohighlight">\((x, y)\)</span>」。</p></li>
+<li><p>運算不是普通的加法，而是幾何上的「點相加 (Point addition)」。</p></li>
+<li><p>這裡的單位元素被定義為一個無窮遠點 <span class="math notranslate nohighlight">\(\infty\)</span>。任何點加上 <span class="math notranslate nohighlight">\(\infty\)</span> 都會等於它自己。</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="id1">
+<h2><strong>Example</strong>：非群的例子<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p><strong>Example</strong> <em>None</em> of the following sets with the specified operation is a group</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(Z_7 = \{0, 1, 2, 3, 4, 5, 6\}\)</span> with <span class="math notranslate nohighlight">\(+\)</span> but no modulo</p>
+<ul>
+<li><p>not closed</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(P\)</span> with <span class="math notranslate nohighlight">\(+\)</span></p>
+<ul>
+<li><p>沒有單位元素</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(Z\)</span> with <span class="math notranslate nohighlight">\(-\)</span></p>
+<ul>
+<li><p>不符合結合律</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(2Z + 1 = \{2a + 1 \mid a \in Z\}\)</span> with <span class="math notranslate nohighlight">\(\times\)</span></p>
+<ul>
+<li><p>沒有反元素</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="definition-permutation">
+<h2><strong>Definition</strong>：Permutation排列的定義(雙射函數)<a class="headerlink" href="#definition-permutation" title="Link to this heading">#</a></h2>
+<p>A <strong>permutation</strong> is a bijective (one-to-one and onto) function <strong>雙射函數</strong> <span class="math notranslate nohighlight">\(f : T \rightarrow T\)</span> on a set <span class="math notranslate nohighlight">\(T\)</span> into itself</p>
+<ol class="arabic simple">
+<li><p><strong>One-to-one (一對一 / Injective)：</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>意義：</strong> 不同的輸入絕對不能對應到同一個輸出。也就是如果 <span class="math notranslate nohighlight">\(x \neq y\)</span>，那麼 <span class="math notranslate nohighlight">\(f(x) \neq f(y)\)</span>。</p></li>
+<li><p><strong>程式思維：</strong> 想像這是一個 Python <code class="docutils literal notranslate"><span class="pre">dictionary</span></code>，其中絕對沒有任何兩個不同的 <code class="docutils literal notranslate"><span class="pre">key</span></code> 會對應到相同內容的 <code class="docutils literal notranslate"><span class="pre">value</span></code>。</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p><strong>Onto (映成 / Surjective)：</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>意義：</strong> 目標集合裡面的每一個元素，都一定「至少被一個」輸入對應到。沒有任何元素被遺漏。</p></li>
+</ul>
+<p>當一個函數同時滿足「一對一」和「映成」時我們稱之為「雙射」，既然輸入和輸出都在同一個集合 <span class="math notranslate nohighlight">\(T\)</span> 裡面，這就意味著 <span class="math notranslate nohighlight">\(f\)</span> 的作用只是把集合裡面的元素<strong>重新洗牌 (Shuffle)</strong>，不會無中生有也不會讓任何元素消失。這就是「排列」的數學本質！</p>
+<p><strong>Example</strong>: <span class="math notranslate nohighlight">\(T = \{1, 2, 3\}\)</span> with <span class="math notranslate nohighlight">\(f(1) = 2\)</span>, <span class="math notranslate nohighlight">\(f(2) = 3\)</span>, and <span class="math notranslate nohighlight">\(f(3) = 1\)</span> is a permutation represented by the array</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix}
+1 &amp; 2 &amp; 3 \\
+2 &amp; 3 &amp; 1 
+\end{pmatrix}\end{split}\]</div>
+<ul class="simple">
+<li><p><strong>第一列 (Top row)：</strong> 代表輸入值 (Input)。</p></li>
+<li><p><strong>第二列 (Bottom row)：</strong> 代表對應的輸出值 (Output)。</p></li>
+<li><p>這其實就是一個簡單的 1D Array <code class="docutils literal notranslate"><span class="pre">[2,</span> <span class="pre">3,</span> <span class="pre">1]</span></code>（假設 index 從 1 開始）</p></li>
+</ul>
+<p><strong>Remark:</strong> <strong>任何給定密鑰的區塊加密演算法（如 DES, AES），都是一個排列函數。</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\text{DES}_k : \{0, 1\}^{64} \rightarrow \{0, 1\}^{64}\)</span> (block size = 64 bits)，例如 <span class="math notranslate nohighlight">\(\begin{pmatrix}1 &amp; 2 &amp; \dots &amp; 64 \\2 &amp; 3 &amp; \dots &amp; 22 \end{pmatrix}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\text{AES}_k : \{0, 1\}^{128} \rightarrow \{0, 1\}^{128}\)</span> (block size = 128 bits)</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="definition-symmetric-group">
+<h2><strong>Definition</strong>：Symmetric Group(對稱群)<a class="headerlink" href="#definition-symmetric-group" title="Link to this heading">#</a></h2>
+<p>A <strong>symmetric group(對稱群)</strong> <span class="math notranslate nohighlight">\(S_n\)</span> is the set of all permutations on <span class="math notranslate nohighlight">\(\{1, 2, \dots, n\}\)</span> with <span class="math notranslate nohighlight">\(\circ\)</span> (composition)</p>
+<ul class="simple">
+<li><p>對稱群 <span class="math notranslate nohighlight">\(S_n\)</span> 就是把 <span class="math notranslate nohighlight">\(n\)</span> 個元素「所有可能的排列方式」收集起來組成一個集合，排列的方法總共有 <span class="math notranslate nohighlight">\(n!\)</span>種 。</p></li>
+<li><p><strong>合成函數</strong> <span class="math notranslate nohighlight">\((f \circ g)(x) = f(g(x))\)</span></p></li>
+</ul>
+<p><strong>Example</strong>: 對於一個 <span class="math notranslate nohighlight">\(S_3\)</span> 對稱群我們知道</p>
+<ul>
+<li><div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*} S_3 &amp;=&amp; \left\{ \begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 1 &amp; 2 &amp; 3 \end{pmatrix}, \begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 2 &amp; 1 &amp; 3 \end{pmatrix}, \begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 3 &amp; 2 &amp; 1 \end{pmatrix}, \begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 1 &amp; 3 &amp; 2 \end{pmatrix}, \begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 2 &amp; 3 &amp; 1 \end{pmatrix}, \begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 3 &amp; 1 &amp; 2 \end{pmatrix} \right\} \\ &amp;=&amp; \{e, (12), (13), (23), (123), (132)\}\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>循環表示法 (Cycle Notation)</p>
+<ul>
+<li><p><strong>以 <span class="math notranslate nohighlight">\((123)\)</span> 為例：</strong> 它的意思是 <span class="math notranslate nohighlight">\(1 \rightarrow 2\)</span>, 然後 <span class="math notranslate nohighlight">\(2 \rightarrow 3\)</span>, 最後 <span class="math notranslate nohighlight">\(3 \rightarrow 1\)</span>（繞回起點形成一個 Cycle）。這剛好對應到 <span class="math notranslate nohighlight">\(S_3\)</span> 集合裡的第 5 個矩陣。</p></li>
+<li><p><strong>以 <span class="math notranslate nohighlight">\((12)\)</span> 為例：</strong> 這代表 <span class="math notranslate nohighlight">\(1 \rightarrow 2\)</span> 且 <span class="math notranslate nohighlight">\(2 \rightarrow 1\)</span>。那沒有寫出來的 <span class="math notranslate nohighlight">\(3\)</span> 呢？約定俗成的規矩是：<strong>沒寫出來的數字就是保持不變（自己對應到自己）</strong>。這對應到 <span class="math notranslate nohighlight">\(S_3\)</span> 裡的第 2 個矩陣。</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 2 &amp; 3 &amp; 1 \end{pmatrix} \circ \begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 2 &amp; 1 &amp; 3 \end{pmatrix} = \begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 3 &amp; 2 &amp; 1 \end{pmatrix}\)</span> in <span class="math notranslate nohighlight">\(S_3\)</span></p>
+<ul class="simple">
+<li><p><strong>追蹤數字 1：</strong> 輸入 1 <span class="math notranslate nohighlight">\(\xrightarrow{\text{右矩陣}}\)</span> 變成 2 <span class="math notranslate nohighlight">\(\xrightarrow{\text{左矩陣找2的下方}}\)</span> 變成 3。所以最終 <strong><span class="math notranslate nohighlight">\(1 \rightarrow 3\)</span></strong>。</p></li>
+<li><p><strong>追蹤數字 2：</strong> 輸入 2 <span class="math notranslate nohighlight">\(\xrightarrow{\text{右矩陣}}\)</span> 變成 1 <span class="math notranslate nohighlight">\(\xrightarrow{\text{左矩陣找1的下方}}\)</span> 變成 2。所以最終 <strong><span class="math notranslate nohighlight">\(2 \rightarrow 2\)</span></strong>。</p></li>
+<li><p><strong>追蹤數字 3：</strong> 輸入 3 <span class="math notranslate nohighlight">\(\xrightarrow{\text{右矩陣}}\)</span> 變成 3 <span class="math notranslate nohighlight">\(\xrightarrow{\text{左矩陣找3的下方}}\)</span> 變成 1。所以最終 <strong><span class="math notranslate nohighlight">\(3 \rightarrow 1\)</span></strong>。</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\((123)^{-1} = (321) = (132)\)</span></p></li>
+</ul>
+<p><strong>Remark</strong> The S-box of AES is a permutation in <span class="math notranslate nohighlight">\(S_{256}\)</span> ，<span class="math notranslate nohighlight">\(S_3\)</span> 只有 6 個元素，但 <span class="math notranslate nohighlight">\(S_{256}\)</span> 裡面的元素總共有 <span class="math notranslate nohighlight">\(256!\)</span> 個</p>
+</section>
+<hr class="docutils" />
+<section id="definition-abelian-group">
+<h2><strong>Definition</strong>：阿貝爾群 (Abelian Group)<a class="headerlink" href="#definition-abelian-group" title="Link to this heading">#</a></h2>
+<p>A group <span class="math notranslate nohighlight">\((G, *)\)</span> is <strong>commutative</strong> or <strong>abelian</strong> if <span class="math notranslate nohighlight">\(a * b = b * a\)</span> for all <span class="math notranslate nohighlight">\(a, b \in G\)</span></p>
+<ul class="simple">
+<li><p>「群」需要滿足四大條件（封閉性、結合律、單位元素、反元素），如果這個群<strong>額外</strong>滿足了第五個條件： <strong>交換律 (Commutativity)</strong> ，也就是對於所有元素 <span class="math notranslate nohighlight">\(a, b\)</span>，互相作用的順序不影響結果 (<span class="math notranslate nohighlight">\(a * b = b * a\)</span>)，我們就稱它為「交換群」或「阿貝爾群」。</p></li>
+</ul>
+<p><strong>Example</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(Z, Q, R, C\)</span> with <span class="math notranslate nohighlight">\(+\)</span> are commutative</p></li>
+<li><p><span class="math notranslate nohighlight">\(Z_9^* = \{1, 2, 4, 5, 7, 8\}\)</span> with <span class="math notranslate nohighlight">\(\otimes\)</span> [<span class="math notranslate nohighlight">\(\times \text{modulo } 9\)</span>] is commutative</p></li>
+<li><p><span class="math notranslate nohighlight">\(Z_p^* = \{1, 2, \dots, p-1\}\)</span> with <span class="math notranslate nohighlight">\(\otimes\)</span> [<span class="math notranslate nohighlight">\(\times \text{modulo } p\)</span>] is commutative for every prime <span class="math notranslate nohighlight">\(p\)</span></p></li>
+</ul>
+<p>附帶的 <span class="math notranslate nohighlight">\(Z_9^*\)</span> 凱萊表 (Cayley Table)：</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(\otimes\)</span></p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>4</p></th>
+<th class="head"><p>5</p></th>
+<th class="head"><p>7</p></th>
+<th class="head"><p>8</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>1</strong></p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+<td><p>7</p></td>
+<td><p>8</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>2</strong></p></td>
+<td><p>2</p></td>
+<td><p>4</p></td>
+<td><p>8</p></td>
+<td><p>1</p></td>
+<td><p>5</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>4</strong></p></td>
+<td><p>4</p></td>
+<td><p>8</p></td>
+<td><p>7</p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>5</strong></p></td>
+<td><p>5</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>7</p></td>
+<td><p>8</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>7</strong></p></td>
+<td><p>7</p></td>
+<td><p>5</p></td>
+<td><p>1</p></td>
+<td><p>8</p></td>
+<td><p>4</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>8</strong></p></td>
+<td><p>8</p></td>
+<td><p>7</p></td>
+<td><p>5</p></td>
+<td><p>4</p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<div><p><strong>如何一眼看出它是阿貝爾群？</strong>
+在凱萊表 (Cayley Table) 中，有一個非常直觀的幾何特徵可以驗證交換律：<strong>沿著主對角線（左上到右下）的鏡像對稱</strong>。</p>
+</div></blockquote>
+<section id="z-p">
+<h3>質數模群的通則 (<span class="math notranslate nohighlight">\(Z_p^*\)</span>)<a class="headerlink" href="#z-p" title="Link to this heading">#</a></h3>
+<p>投影片最後一行提到一個強大的通則：對於<strong>任何質數 <span class="math notranslate nohighlight">\(p\)</span></strong>，<span class="math notranslate nohighlight">\(Z_p^*\)</span> 搭配乘法模 <span class="math notranslate nohighlight">\(p\)</span>，必定是一個阿貝爾群。
+這是因為普通的整數乘法本身就滿足交換律，而且當我們對質數 <span class="math notranslate nohighlight">\(p\)</span> 取餘數時，這個交換的性質被完美地保留了下來。這也是為什麼在 RSA 或是橢圓曲線加密等密碼學領域，我們幾乎都是在阿貝爾群（尤其是在質數域上）裡面做運算。</p>
+</section>
+</section>
+<section id="example-non-abelian-group">
+<h2><strong>Example</strong>：非阿貝爾群 (Non-Abelian Group)<a class="headerlink" href="#example-non-abelian-group" title="Link to this heading">#</a></h2>
+<p><strong>Example</strong></p>
+<ul class="simple">
+<li><p>For <span class="math notranslate nohighlight">\(n \ge 3\)</span>, the symmetric group (對稱群) <span class="math notranslate nohighlight">\(S_n\)</span> is not abelian.</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 2 &amp; 1 &amp; 3 \end{pmatrix} \circ \begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 2 &amp; 3 &amp; 1 \end{pmatrix} = \begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 1 &amp; 3 &amp; 2 \end{pmatrix} \neq \begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 3 &amp; 2 &amp; 1 \end{pmatrix} = \begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 2 &amp; 3 &amp; 1 \end{pmatrix} \circ \begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 2 &amp; 1 &amp; 3 \end{pmatrix}\end{split}\]</div>
+<ul class="simple">
+<li><p>With the operation of matrix multiplication, each of the following is not abelian</p>
+<ul>
+<li><p>A <strong>general linear group</strong> <span class="math notranslate nohighlight">\(GL_n(R)\)</span></p></li>
+<li><p>A <strong>special linear group</strong> <span class="math notranslate nohighlight">\(SL_n(R)\)</span></p></li>
+<li><p><strong>物理與幾何直覺：</strong> 矩陣代表對網格進行的旋轉或推擠（錯切），<code class="docutils literal notranslate"><span class="pre">先沿著</span> <span class="pre">X</span> <span class="pre">軸推擠，再沿著</span> <span class="pre">Y</span> <span class="pre">軸推擠」跟「先沿著</span> <span class="pre">Y</span> <span class="pre">軸推擠，再沿著</span> <span class="pre">X</span> <span class="pre">軸推擠</span></code>，最終網格變形的樣子是完全不一樣的。
+$<span class="math notranslate nohighlight">\(\begin{bmatrix} 1 &amp; 1 \\ 0 &amp; 1 \end{bmatrix} \begin{bmatrix} 1 &amp; 0 \\ 1 &amp; 1 \end{bmatrix} = \begin{bmatrix} 2 &amp; 1 \\ 1 &amp; 1 \end{bmatrix} \neq \begin{bmatrix} 1 &amp; 1 \\ 1 &amp; 2 \end{bmatrix} = \begin{bmatrix} 1 &amp; 0 \\ 1 &amp; 1 \end{bmatrix} \begin{bmatrix} 1 &amp; 1 \\ 0 &amp; 1 \end{bmatrix} \text{ in } SL_2(Q) \subset GL_2(Q)\)</span>$</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="definition-cyclic-group">
+<h2><strong>Definition</strong> 循環群 (Cyclic Group)<a class="headerlink" href="#definition-cyclic-group" title="Link to this heading">#</a></h2>
+<p>A group <span class="math notranslate nohighlight">\((G, *)\)</span> is <strong>cyclic (循環群)</strong> if there exists a <strong>generator(生成元)</strong> <span class="math notranslate nohighlight">\(g \in G\)</span> such that every <span class="math notranslate nohighlight">\(a \in G\)</span> is of the form <span class="math notranslate nohighlight">\(a = g * \dots * g\)</span> (<span class="math notranslate nohighlight">\(n\)</span> copies) for some <span class="math notranslate nohighlight">\(n \in Z\)</span> 。只要存在一個生成元素 <span class="math notranslate nohighlight">\(g \in G\)</span>，讓群裡面的 <strong>每一個(遍歷所有)</strong> 元素都可以寫成 <span class="math notranslate nohighlight">\(g^n\)</span> 跟自己運算（<span class="math notranslate nohighlight">\(n\)</span> 次）的結果，這個群就是循環群。</p>
+<p><strong>Example</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\((Z, +)\)</span> is cyclic with generators 1 and -1</p>
+<ul>
+<li><p>3 就是 <span class="math notranslate nohighlight">\(1 + 1 + 1\)</span> (3 copies)</p></li>
+<li><p>-2 就是 <span class="math notranslate nohighlight">\((-1)*1 + (-1)*1\)</span> (這裡的 <span class="math notranslate nohighlight">\(n\)</span> 變成負數，代表反元素的重複)</p></li>
+<li><p>0 就是 1 的 0 copies</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\((Z_7^*, \otimes)\)</span> is cyclic: <span class="math notranslate nohighlight">\(\{1 = 3^0 = 3^6, 2 = 3^2, 3 = 3^1, 4 = 3^4, 5 = 3^5, 6 = 3^3\}\)</span></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(Z_7^* = \{1, 2, 3, 4, 5, 6\}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(3^1 \equiv 3 \pmod 7\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(3^2 = 9 \equiv 2 \pmod 7\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(3^3 = 27 \equiv 6 \pmod 7\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(3^4 = 81 \equiv 4 \pmod 7\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(3^5 = 243 \equiv 5 \pmod 7\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(3^6 = 729 \equiv 1 \pmod 7\)</span> （回到起點，完成循環）</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\((Z_9^*, \otimes)\)</span> is cyclic with generators 2 and 5</p></li>
+</ul>
+<p><strong>Example</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\((Q, +)\)</span> is <strong>not</strong> cyclic</p>
+<ul>
+<li><p><strong>反證法推導：</strong> 假設 <span class="math notranslate nohighlight">\((Q, +)\)</span> 是循環群，那必定存在一個生成元，我們叫它分數 <span class="math notranslate nohighlight">\(\frac{a}{b}\)</span>。
+如果它是生成元，那麼群裡面「所有」的元素都必須是 <span class="math notranslate nohighlight">\(\frac{a}{b}\)</span> 的整數倍，也就是 <span class="math notranslate nohighlight">\(n \times \frac{a}{b}\)</span> ，但是，有理數集合裡面存在一個數字叫做 <span class="math notranslate nohighlight">\(\frac{a}{2b}\)</span>（也就是它的一半）。你永遠無法找到一個整數 <span class="math notranslate nohighlight">\(n\)</span>，使得 <span class="math notranslate nohighlight">\(n \times \frac{a}{b} = \frac{a}{2b}\)</span>。既然無法生成 <span class="math notranslate nohighlight">\(\frac{a}{2b}\)</span>，這就打破了「能生成所有元素」的定義，所以 <span class="math notranslate nohighlight">\(Q\)</span> 絕對不是循環群。</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\((Z_8^*, \otimes)\)</span> is <strong>not</strong> cyclic (Klein 4)，<span class="math notranslate nohighlight">\(Z_8^* = \{1, 3, 5, 7\}\)</span> (與 8 互質的數)</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(Z_8^*\)</span> 凱萊表 (Cayley Table)：</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(\otimes\)</span></p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>3</p></th>
+<th class="head"><p>5</p></th>
+<th class="head"><p>7</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>1</strong></p></td>
+<td><p>1</p></td>
+<td><p>3</p></td>
+<td><p>5</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>3</strong></p></td>
+<td><p>3</p></td>
+<td><p>1</p></td>
+<td><p>7</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>5</strong></p></td>
+<td><p>5</p></td>
+<td><p>7</p></td>
+<td><p>1</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>7</strong></p></td>
+<td><p>7</p></td>
+<td><p>5</p></td>
+<td><p>3</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>要成為循環群，必須要有元素能透過不斷自乘（<span class="math notranslate nohighlight">\(g^1, g^2, g^3, g^4\)</span>）走遍 4 個狀態。但你沿著表格對角線看：</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(3 \times 3 \equiv 1 \pmod 8\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(5 \times 5 \equiv 1 \pmod 8\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(7 \times 7 \equiv 1 \pmod 8\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>發現致命傷：</strong> 裡面的每一個數字，只要<strong>自乘一次（平方）就立刻掉回單位元素 1</strong>！迴圈被強制提早結束了。這就像是你寫了一個長度預期為 4 的迴圈，但每次跑到第 2 步就觸發 <code class="docutils literal notranslate"><span class="pre">break</span></code>，你永遠無法生成完整的 4 個狀態。這種「每個元素都是自己的反元素」的特殊結構，就是 <strong>著名的克萊因四元群 (Klein 4) —— <span class="math notranslate nohighlight">\(Z_8^*\)</span></strong> ，它絕對不是循環群。</p></li>
+</ul>
+</section>
+<section id="definition-group-order">
+<h2><strong>Definition</strong> 群的階 (Group Order)<a class="headerlink" href="#definition-group-order" title="Link to this heading">#</a></h2>
+<p>The <strong>order</strong> (denoted as <span class="math notranslate nohighlight">\(|G|\)</span>) of a group <span class="math notranslate nohighlight">\((G, *)\)</span> is the number of the elements(元素個數) in <span class="math notranslate nohighlight">\(G\)</span>, or the <strong>cardinality（基數）</strong> of <span class="math notranslate nohighlight">\(G\)</span></p>
+<ul class="simple">
+<li><p><strong>Example</strong></p></li>
+<li><p><span class="math notranslate nohighlight">\(|S_3| = 6\)</span>, <span class="math notranslate nohighlight">\(|S_4| = 24\)</span>, <span class="math notranslate nohighlight">\(|S_n| = n!\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(|Z_p| = p\)</span>, <span class="math notranslate nohighlight">\(|Z_p^*| = p - 1\)</span> for any prime <span class="math notranslate nohighlight">\(p\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(|Z_9^*| = 6\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(|Z_n^*| = |\{a \in Z_n \mid \text{gcd}(a, n) = 1\}| = \phi(n)\)</span></p>
+<ul>
+<li><p>Euler <span class="math notranslate nohighlight">\(\phi\)</span>-function [<span class="math notranslate nohighlight">\(\phi\)</span>: phi]</p></li>
+<li><p><strong>尤拉函數 <span class="math notranslate nohighlight">\(\phi(n)\)</span>：</strong> 尤拉發明了一個專屬函數 <span class="math notranslate nohighlight">\(\phi(n)\)</span> ，專門用來計算「小於 <span class="math notranslate nohighlight">\(n\)</span> 且與 <span class="math notranslate nohighlight">\(n\)</span> 互質的正整數個數」。所以，<span class="math notranslate nohighlight">\(|Z_n^*|\)</span> 的大小，定義上就等於 <span class="math notranslate nohighlight">\(\phi(n)\)</span>。</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Side Definition</strong></p>
+<ul>
+<li><p><strong>有限群 (Finite Group)：</strong> 如果群的 Order（元素個數）是一個具體的數字（小於無限大），它就是有限群。例如我們前面看過的 <span class="math notranslate nohighlight">\(Z_6\)</span> 或 <span class="math notranslate nohighlight">\(S_3\)</span>。</p></li>
+<li><p><strong>無限群 (Infinite Group)：</strong> 如果群裡面的元素有無窮多個，它就是無限群。康托爾 (Georg Cantor)
+<strong>1. 可數無限 (Countable Infinity)：<span class="math notranslate nohighlight">\(|Z|\)</span> 和 <span class="math notranslate nohighlight">\(|Q|\)</span></strong></p>
+<ul class="simple">
+<li><p><strong>意義：</strong> 「可數」的意思並不是說你可以把它「數完」（因為它是無限的），而是指你可以為它們 <strong>「編號」</strong> 。只要給定足夠的時間，你可以把它們排成一列，給每一個元素貼上 <span class="math notranslate nohighlight">\(0, 1, 2, 3 \dots\)</span> 的標籤，而且保證<strong>絕對不會漏掉任何一個</strong>。</p></li>
+<li><p><strong>整數 <span class="math notranslate nohighlight">\(|Z|\)</span> 的編號法：</strong> <span class="math notranslate nohighlight">\(0, 1, -1, 2, -2, 3, -3 \dots\)</span>。這樣一直排下去，任何一個整數遲早都會被點到名。</p></li>
+<li><p><strong>有理數 <span class="math notranslate nohighlight">\(|Q|\)</span> 的震撼：</strong> 直覺上，兩個分數之間有無窮多個分數，有理數應該比整數多很多吧？但數學家證明了，我們可以透過一種「對角線貪食蛇」的走法，把所有分數也完美對應到 <span class="math notranslate nohighlight">\(0, 1, 2, 3 \dots\)</span>。所以，<strong>整數和有理數的「無限大」是同一個等級的！</strong></p></li>
+</ul>
+<p><strong>2. 不可數無限 (Uncountable Infinity)：<span class="math notranslate nohighlight">\(|R|\)</span> 和 <span class="math notranslate nohighlight">\(|C|\)</span></strong></p>
+<ul class="simple">
+<li><p><strong>意義：</strong> 實數 <span class="math notranslate nohighlight">\(|R|\)</span>（包含無理數如 <span class="math notranslate nohighlight">\(\pi, \sqrt{2}\)</span>）的數量，是另一種「更巨大」的無限。</p></li>
+<li><p><strong>康托爾對角線論證 (Cantor’s Diagonal Argument)：</strong> 數學家證明了，就算你窮盡全宇宙的力量，試圖把所有的實數排成一列並標上 <span class="math notranslate nohighlight">\(1, 2, 3 \dots\)</span> 的編號，我永遠都可以輕易地構造出一個「絕對不在你列表上」的全新實數。</p></li>
+<li><p>這意味著實數的連續性太過密集，密集到連整數的編號系統都不夠用。所以我們說它的基數 (Cardinality) 是<strong>不可數 (uncountable)</strong> 的。</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="gl-n-sl-n">
+<h2><strong>矩陣群 (<span class="math notranslate nohighlight">\(GL_n, SL_n\)</span>)</strong><a class="headerlink" href="#gl-n-sl-n" title="Link to this heading">#</a></h2>
+<p><strong><span class="math notranslate nohighlight">\(GL_8(Z_2)\)</span> with AES</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(Z_2 = \{0, 1\}\)</span> 也就是二進位，加法等同於程式中的 <strong>XOR (互斥或)</strong> (<span class="math notranslate nohighlight">\(1 + 1 = 0\)</span>)、乘法等同於 <strong>AND (及)</strong> (<span class="math notranslate nohighlight">\(1 \times 1 = 1\)</span>)。</p></li>
+<li><p><span class="math notranslate nohighlight">\(GL_8(Z_2) = SL_8(Z_2)\)</span></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(GL\)</span> (一般線性群) 要求行列式 (Determinant) <span class="math notranslate nohighlight">\(\neq 0\)</span>；<span class="math notranslate nohighlight">\(SL\)</span> (特殊線性群) 要求行列式精準 $= 1</p></li>
+<li><p>在 <span class="math notranslate nohighlight">\(Z_2\)</span> 的世界裡數字只有 0 和 1，所以計算出 <span class="math notranslate nohighlight">\(\det(A)\)</span> 仍要 <span class="math notranslate nohighlight">\(\pmod 2\)</span> ，既然要成為可逆矩陣<code class="docutils literal notranslate"><span class="pre">行列式絕對不能是</span> <span class="pre">0</span></code>，那它剩下的唯一選擇就只能是 <strong>1</strong> 了！所以在二進位矩陣的世界裡 <span class="math notranslate nohighlight">\(GL\)</span> 和 <span class="math notranslate nohighlight">\(SL\)</span> 完美重合是同一個集合。</p></li>
+</ul>
+</li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{bmatrix} 
+1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\ 
+1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 1 \\ 
+1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 \\ 
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \\ 
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \\ 
+0 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 \\ 
+0 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 0 \\ 
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 
+\end{bmatrix} \in GL_8(Z_2) (= SL_8(Z_2))\end{split}\]</div>
+<p>is selected to construct the S-box of AES</p>
+<ul class="simple">
+<li><p>How many <span class="math notranslate nohighlight">\(8 \times 8\)</span> invertible matrices over <span class="math notranslate nohighlight">\(Z_2\)</span>?</p></li>
+<li><p>i.e., <span class="math notranslate nohighlight">\(|GL_8(Z_2)| = ?\)</span></p></li>
+</ul>
+<p><strong>3. AES S-box 的建構</strong>
+AES 加密演算法的核心是 S-box (Substitution-box)，它負責製造「混淆 (Confusion)」。這個 <span class="math notranslate nohighlight">\(8 \times 8\)</span> 矩陣就是 AES 標準中用來對一個 Byte (8 bits) 進行「仿射變換 (Affine Transformation)」的矩陣。這個矩陣被精心設計過，確保它可逆且具有極高的代數複雜度，能完美抵禦駭客的線性分析攻擊。</p>
+<section id="gl-8-z-2">
+<h3><span class="math notranslate nohighlight">\(|GL_8(Z_2)|\)</span> 等於多少？<a class="headerlink" href="#gl-8-z-2" title="Link to this heading">#</a></h3>
+<p><strong>問題：在 <span class="math notranslate nohighlight">\(Z_2\)</span> 的世界裡，到底能湊出多少個 <span class="math notranslate nohighlight">\(8 \times 8\)</span> 的「可逆」矩陣？</strong></p>
+<p><strong>核心觀念：</strong> 一個矩陣要「可逆」，它所有的 Row (列) 向量都必須是「線性獨立 (Linearly Independent)」的。我們來一行一行把這個 <span class="math notranslate nohighlight">\(8 \times 8\)</span> 矩陣建構出來：</p>
+<ol class="arabic simple">
+<li><p><strong>第一行 (Row 1)：</strong>
+它有 8 個 bit，總共有 <span class="math notranslate nohighlight">\(2^8\)</span> 種組合。但是，它絕對不能全都是 0（否則行列式立刻變 0）。
+所以 Row 1 有 <strong><span class="math notranslate nohighlight">\(2^8 - 1\)</span></strong> 種選擇。</p></li>
+<li><p><strong>第二行 (Row 2)：</strong>
+它也不能全為 0，而且它絕對「不能跟 Row 1 長得一模一樣」。它必須避開由 Row 1 產生出來的所有線性組合（共 <span class="math notranslate nohighlight">\(2^1\)</span> 種）。
+所以 Row 2 有 <strong><span class="math notranslate nohighlight">\(2^8 - 2^1\)</span></strong> 種選擇。</p></li>
+<li><p><strong>第三行 (Row 3)：</strong>
+它必須避開由 Row 1 和 Row 2 組合出來的所有可能空間（共 <span class="math notranslate nohighlight">\(2^2\)</span> 種）。
+所以 Row 3 有 <strong><span class="math notranslate nohighlight">\(2^8 - 2^2\)</span></strong> 種選擇。</p></li>
+<li><p><strong>依此類推…</strong> 一直到第八行 (Row 8)，必須避開前面 7 行所組成的空間（<span class="math notranslate nohighlight">\(2^7\)</span> 種）。
+所以 Row 8 有 <strong><span class="math notranslate nohighlight">\(2^8 - 2^7\)</span></strong> 種選擇。</p></li>
+</ol>
+<p><strong>最終公式：</strong>
+將每一行的選擇數量乘起來，群的大小 <span class="math notranslate nohighlight">\(|GL_8(Z_2)|\)</span> 等於：</p>
+<div class="math notranslate nohighlight">
+\[(2^8 - 2^0) \times (2^8 - 2^1) \times (2^8 - 2^2) \times (2^8 - 2^3) \times (2^8 - 2^4) \times (2^8 - 2^5) \times (2^8 - 2^6) \times (2^8 - 2^7) \approx 5.34 \times 10^{18}\]</div>
+<p>AES 的設計者從 <code class="docutils literal notranslate"><span class="pre">534</span> <span class="pre">億億</span></code>種可能的矩陣中，精心挑選了一個『代數結構最堅固、最能擾亂資料』的矩陣公開作為標準。配合上足夠長度的祕密金鑰，這套演算法即使在量子電腦問世後，依然能維持 <code class="docutils literal notranslate"><span class="pre">Computational</span> <span class="pre">Impossibility</span></code> 的絕對安全。</p>
+</section>
+</section>
+<section id="definition-subgroup">
+<h2><strong>Definition</strong> :子群 (Subgroup)<a class="headerlink" href="#definition-subgroup" title="Link to this heading">#</a></h2>
+<p>A subset <span class="math notranslate nohighlight">\(H\)</span> of a group <span class="math notranslate nohighlight">\((G, *)\)</span> is a <strong>subgroup</strong> of <span class="math notranslate nohighlight">\(G\)</span> if <span class="math notranslate nohighlight">\(H\)</span> is itself a group under the operation <span class="math notranslate nohighlight">\(*\)</span> in <span class="math notranslate nohighlight">\(G\)</span></p>
+<p><strong>Proposition</strong> A subset <span class="math notranslate nohighlight">\(H\)</span> of a group <span class="math notranslate nohighlight">\((G, *)\)</span> is a subgroup of <span class="math notranslate nohighlight">\(G\)</span> iff<code class="docutils literal notranslate"><span class="pre">(&quot;if</span> <span class="pre">and</span> <span class="pre">only</span> <span class="pre">if&quot;是「若且唯若」也是「充要條件」)</span></code></p>
+<ol class="arabic simple">
+<li><p><strong>封閉性 (Closure):</strong> <span class="math notranslate nohighlight">\(a * b \in H\)</span> for all <span class="math notranslate nohighlight">\(a, b \in H\)</span></p></li>
+<li><p><strong>反元素 (Inverse):</strong> <span class="math notranslate nohighlight">\(a^{-1} \in H\)</span> for all <span class="math notranslate nohighlight">\(a \in H\)</span></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>結合律 (Associativity)</strong> 從 <span class="math notranslate nohighlight">\(G\)</span> 繼承</p></li>
+<li><p><strong>單位元素 (Identity)</strong> 可以用<strong>條件 2</strong>和<strong>條件 1</strong>得到</p></li>
+</ul>
+<p><strong>結論：</strong> 因為結合律可以「免費繼承」，單位元素可以被「邏輯推導」出來，所以數學家總結出了這個 Proposition 捷徑：<strong>未來要證明一個子集是不是子群，只要驗證「封閉性」和「反元素存在」這兩點就大功告成了！</strong></p>
+<p><strong>Example</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\((5Z, +)\)</span> is a subgroup of <span class="math notranslate nohighlight">\((Z, +)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((Q^*, \times)\)</span> is a subgroup of <span class="math notranslate nohighlight">\((R^*, \times)\)</span></p></li>
+</ul>
+<p>這兩張全新的投影片帶我們進入了群論中極度重要、也是推導後續許多強大定理（例如拉格朗日定理）的基石概念：<strong>陪集 (Coset)</strong>。</p>
+<p>當我們從一個大群 <span class="math notranslate nohighlight">\(G\)</span> 中挑出一個子群 <span class="math notranslate nohighlight">\(H\)</span> 後，如果我們拿一個不屬於 <span class="math notranslate nohighlight">\(H\)</span> 的元素去跟 <span class="math notranslate nohighlight">\(H\)</span> 互動，會發生什麼事呢？這就是陪集要探討的。我們一樣先將內容轉換出來，接著再一步步拆解這些代數操作。</p>
+</section>
+<section id="definition-coset">
+<h2><strong>Definition</strong> :陪集 (Coset)<a class="headerlink" href="#definition-coset" title="Link to this heading">#</a></h2>
+<p>If <span class="math notranslate nohighlight">\(H\)</span> is a subgroup of a group <span class="math notranslate nohighlight">\(G\)</span>, and <span class="math notranslate nohighlight">\(g \in G\)</span>, then</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(gH := \{gh \mid h \in H\}\)</span> is a <strong>left coset</strong> of <span class="math notranslate nohighlight">\(H\)</span> in <span class="math notranslate nohighlight">\(G\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Hg := \{hg \mid h \in H\}\)</span> is a <strong>right coset</strong> of <span class="math notranslate nohighlight">\(H\)</span> in <span class="math notranslate nohighlight">\(G\)</span></p></li>
+</ul>
+<p>陪集的概念非常像是「平移 (Translation)」。假設子群 <span class="math notranslate nohighlight">\(H\)</span> 是一條通過原點的直線，那麼當我們用一個群裡的元素 <span class="math notranslate nohighlight">\(g\)</span> 去乘上 <span class="math notranslate nohighlight">\(H\)</span> 的所有元素時，就像是把這條直線「平移」到另一個不通過原點的地方。</p>
+<ul>
+<li><p><strong>注意1:</strong> 陪集 <span class="math notranslate nohighlight">\(gH\)</span> 本身「幾乎不會是」一個群！只有當 <span class="math notranslate nohighlight">\(g \in H\)</span> 才會是群</p></li>
+<li><p><strong>注意2:</strong> For abelian groups(阿貝爾群) written additively, the notation is changed to <span class="math notranslate nohighlight">\(g + H (= H + g)\)</span> ，因為加法滿足交換律，所以左陪集永遠等於右陪集 (<span class="math notranslate nohighlight">\(g + H = H + g\)</span>)</p></li>
+<li><p><strong>Remark</strong> In general, Left coset <span class="math notranslate nohighlight">\(\neq\)</span> Right coset <strong>在不滿足交換律的群中（例如對稱群 <span class="math notranslate nohighlight">\(S_n\)</span>），左陪集與右陪集通常是不一樣的！</strong></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\((123)\{e, (12)\} = \{(123), (13)\}\)</span> , <span class="math notranslate nohighlight">\(\{e, (12)\}(123) = \{(123), (23)\}\)</span></p>
+<ol class="arabic simple">
+<li><p>計算左陪集 <span class="math notranslate nohighlight">\(gH\)</span>： 把 <span class="math notranslate nohighlight">\((123)\)</span> 乘在左邊。</p></li>
+</ol>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\((123) \circ e = (123)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((123) \circ (12)\)</span>：記得從右邊往左邊算。輸入 <span class="math notranslate nohighlight">\(1 \rightarrow 2 \rightarrow 3\)</span>；輸入 <span class="math notranslate nohighlight">\(2 \rightarrow 1 \rightarrow 2\)</span>；輸入 <span class="math notranslate nohighlight">\(3 \rightarrow 3 \rightarrow 1\)</span>。結果是 <span class="math notranslate nohighlight">\((13)\)</span>。</p></li>
+<li><p>所以左陪集 <span class="math notranslate nohighlight">\(gH = \{(123), (13)\}\)</span>。</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>計算右陪集 <span class="math notranslate nohighlight">\(Hg\)</span>： 把 <span class="math notranslate nohighlight">\((123)\)</span> 乘在右邊。</p></li>
+</ol>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(e \circ (123) = (123)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((12) \circ (123)\)</span>：一樣從右往左。輸入 <span class="math notranslate nohighlight">\(1 \rightarrow 2 \rightarrow 1\)</span>；輸入 <span class="math notranslate nohighlight">\(2 \rightarrow 3 \rightarrow 3\)</span>；輸入 <span class="math notranslate nohighlight">\(3 \rightarrow 1 \rightarrow 2\)</span>。結果是 <span class="math notranslate nohighlight">\((23)\)</span>。</p></li>
+<li><p>所以右陪集 <span class="math notranslate nohighlight">\(Hg = \{(123), (23)\}\)</span>。</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p><strong>結論：</strong> <span class="math notranslate nohighlight">\(\{(123), (13)\} \neq \{(123), (23)\}\)</span>。順序一換，平移出來的集合完全不同。</p></li>
+</ol>
+</li>
+<li><p><span class="math notranslate nohighlight">\((12)\{e, (123), (132)\} = \{(12), (23), (13)\}\)</span> , <span class="math notranslate nohighlight">\(\{e, (123), (132)\}(12) = \{(12), (13), (23)\}\)</span></p>
+<ul class="simple">
+<li><p>左陪集 = 右陪集</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Proposition</strong> <span class="math notranslate nohighlight">\(g_1H = g_2H \iff g_1^{-1}g_2 \in H\)</span></p>
+<ul class="simple">
+<li><p><strong>Example</strong> <span class="math notranslate nohighlight">\((123)\{e, (12)\} = \{(123), (13)\} = (13)\{e, (12)\} \iff (123)^{-1}(13) = (132)(13) = (12) \in \{e, (12)\}\)</span></p></li>
+<li><p><strong>這個公式在解決什麼問題？</strong></p>
+<ul>
+<li><p>群裡面的元素可能非常多，如果我們用每一個元素 <span class="math notranslate nohighlight">\(g\)</span> 都去產生一個陪集 <span class="math notranslate nohighlight">\(gH\)</span>，我們會發現<strong>很多元素產生出來的陪集居然是完全一模一樣的！</strong> 這個公式提供了一個極快的捷徑，讓我們不需把整個集合算出來，就能一眼看出 <span class="math notranslate nohighlight">\(g_1\)</span> 和 <span class="math notranslate nohighlight">\(g_2\)</span> 產生的陪集會不會「撞衫」。</p></li>
+</ul>
+</li>
+<li><p><strong>Example 驗證：</strong></p>
+<ul>
+<li><p>我們設定 <span class="math notranslate nohighlight">\(g_1 = (123)\)</span>，它的左陪集是 <span class="math notranslate nohighlight">\(\{(123), (13)\}\)</span>。</p></li>
+<li><p>我們設定 <span class="math notranslate nohighlight">\(g_2 = (13)\)</span>，它的左陪集也是 <span class="math notranslate nohighlight">\((13)\{e, (12)\} = \{(13), (123)\}\)</span>。</p></li>
+<li><p>兩個陪集完全相等！為什麼？我們套用公式檢查：</p></li>
+<li><p><span class="math notranslate nohighlight">\(g_1^{-1} \circ g_2 = (123)^{-1} \circ (13)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(= (132) \circ (13)\)</span> （算出結果為 <span class="math notranslate nohighlight">\((12)\)</span>）</p></li>
+<li><p>因為 <span class="math notranslate nohighlight">\((12)\)</span> 確實存在於我們的子群 <span class="math notranslate nohighlight">\(H = \{e, (12)\}\)</span> 之中，所以公式完美預測了這兩個陪集必定相等。</p></li>
+</ul>
+</li>
+</ul>
+<p>這張壓軸投影片，終於把我們前面辛苦推導的「陪集 (Coset)」與「子群 (Subgroup)」拼湊在一起，引出了有限群論中最美麗、也最核心的定理：！</p>
+<p>我們先把這張投影片的內容精確轉換成文字與 LaTeX 語法，接著我會像老師一樣，帶您利用前面「切蛋糕」的直覺，用最白話的方式把它推導出來！</p>
+</section>
+<section id="lagrange-s-theorem">
+<h2><strong>拉格朗日定理 (Lagrange’s Theorem)</strong><a class="headerlink" href="#lagrange-s-theorem" title="Link to this heading">#</a></h2>
+<p>If <span class="math notranslate nohighlight">\(H\)</span> is a subgroup of a finite group <span class="math notranslate nohighlight">\(G\)</span>, then <span class="math notranslate nohighlight">\(|H|\)</span> divides <span class="math notranslate nohighlight">\(|G|\)</span></p>
+<ul class="simple">
+<li><p><strong>Definition</strong> If <span class="math notranslate nohighlight">\(H\)</span> is a subgroup of a finite group <span class="math notranslate nohighlight">\(G\)</span>, then <span class="math notranslate nohighlight">\([G : H] \overset{\text{def}}{=} |G| / |H|\)</span> is the <strong>index</strong> of <span class="math notranslate nohighlight">\(H\)</span> in <span class="math notranslate nohighlight">\(G\)</span></p></li>
+<li><p><strong>Definition</strong> For <span class="math notranslate nohighlight">\(g \in G\)</span>, the <strong>order</strong> of <span class="math notranslate nohighlight">\(g\)</span>, denoted by <span class="math notranslate nohighlight">\(o(g)\)</span>, is the smallest positive integer <span class="math notranslate nohighlight">\(n\)</span> such that <span class="math notranslate nohighlight">\(g^n = e\)</span></p></li>
+<li><p><strong>Corollary</strong> <span class="math notranslate nohighlight">\(o(g)\)</span> divides <span class="math notranslate nohighlight">\(|G|\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\langle g \rangle = \{g, g^2, \dots, g^{o(g)-1}, g^{o(g)} (= e)\}\)</span> is a subgroup of <span class="math notranslate nohighlight">\(G\)</span>
+<em>(註：投影片上的 <code class="docutils literal notranslate"><span class="pre">&lt;g&gt;</span></code> 在標準數學符號中通常寫作 <span class="math notranslate nohighlight">\(\langle g \rangle\)</span>，代表由 <span class="math notranslate nohighlight">\(g\)</span> 產生的循環子群)</em></p></li>
+</ul>
+<section id="lagrange-s-theorem-h-g">
+<h3>1. 拉格朗日定理 (Lagrange’s Theorem)：為什麼 <span class="math notranslate nohighlight">\(|H|\)</span> 能整除 <span class="math notranslate nohighlight">\(|G|\)</span>？<a class="headerlink" href="#lagrange-s-theorem-h-g" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>意義：</strong> 如果您有一個大小為 <span class="math notranslate nohighlight">\(|G|\)</span> 的母群，以及一個大小為 <span class="math notranslate nohighlight">\(|H|\)</span> 的子群，那麼子群的元素個數，<strong>必定能完美整除</strong>母群的元素個數。例如母群有 12 個元素，子群的數量只可能是 1, 2, 3, 4, 6, 12，絕對不可能出現大小為 5 的子群！</p></li>
+<li><p><strong>幾何/直覺推導 (結合陪集)：</strong> 還記得我們上一章討論的「左陪集不重疊」特性嗎？</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>我們知道，母群 <span class="math notranslate nohighlight">\(G\)</span> 裡的所有元素，都可以被分配到各個陪集 <span class="math notranslate nohighlight">\(gH\)</span> 中，這就像是<strong>把一塊大蛋糕 <span class="math notranslate nohighlight">\(G\)</span> 切成了好多塊小蛋糕</strong>。</p></li>
+<li><p>我們也知道，每一個陪集 <span class="math notranslate nohighlight">\(gH\)</span> 的大小，都跟原來的子群 <span class="math notranslate nohighlight">\(H\)</span> <strong>一模一樣大</strong>（因為只是平移，元素個數不變）。</p></li>
+<li><p>既然整塊大蛋糕 <span class="math notranslate nohighlight">\(G\)</span> 是由好幾塊「大小完全等於 <span class="math notranslate nohighlight">\(|H|\)</span>」的小蛋糕拼起來的，那麼總大小 <span class="math notranslate nohighlight">\(|G|\)</span> 理所當然就是 <span class="math notranslate nohighlight">\(|H|\)</span> 的整數倍！這就完美證明了 <span class="math notranslate nohighlight">\(|H|\)</span> divides <span class="math notranslate nohighlight">\(|G|\)</span>。</p></li>
+</ol>
+</section>
+<section id="index-g-h">
+<h3>2. 指數 (Index)：<span class="math notranslate nohighlight">\([G:H]\)</span> 是什麼？<a class="headerlink" href="#index-g-h" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>意義：</strong> 既然 <span class="math notranslate nohighlight">\(|G|\)</span> 是 <span class="math notranslate nohighlight">\(|H|\)</span> 的倍數，那麼它們相除的商數 <span class="math notranslate nohighlight">\(|G| / |H|\)</span> 代表什麼呢？它代表的正是**「到底切出了幾塊蛋糕」<strong>（也就是共有幾個相異的左陪集）。數學家給這個數量取了一個名字，叫做 <span class="math notranslate nohighlight">\(H\)</span> 在 <span class="math notranslate nohighlight">\(G\)</span> 中的</strong>指數 (Index)**。</p></li>
+<li><p><strong>程式思維：</strong> 如果 <code class="docutils literal notranslate"><span class="pre">len(G)</span> <span class="pre">==</span> <span class="pre">12</span></code> 且 <code class="docutils literal notranslate"><span class="pre">len(H)</span> <span class="pre">==</span> <span class="pre">4</span></code>，那麼記憶體裡就會有 <code class="docutils literal notranslate"><span class="pre">12</span> <span class="pre">/</span> <span class="pre">4</span> <span class="pre">=</span> <span class="pre">3</span></code> 個完全不重複的 Array (陪集)。</p></li>
+</ul>
+</section>
+<section id="order-of-an-element-o-g">
+<h3>3. 元素的階 (Order of an element)：<span class="math notranslate nohighlight">\(o(g)\)</span><a class="headerlink" href="#order-of-an-element-o-g" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>意義：</strong> 我們前面學過「群的階 (Group Order)」是集合的大小。現在這個「元素的階 (Element Order)」，則是指一個元素 <span class="math notranslate nohighlight">\(g\)</span> <strong>不斷自乘，最少需要乘幾次才會回到單位元素 <span class="math notranslate nohighlight">\(e\)</span></strong>。</p></li>
+<li><p><strong>程式思維：</strong> 您可以想像這是一個 <code class="docutils literal notranslate"><span class="pre">while</span></code> 迴圈：</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">current</span> <span class="o">=</span> <span class="n">g</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">current</span> <span class="o">!=</span> <span class="n">e</span><span class="p">:</span>
+    <span class="n">current</span> <span class="o">=</span> <span class="n">current</span> <span class="o">*</span> <span class="n">g</span>  <span class="c1"># 不斷自乘</span>
+    <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="k">return</span> <span class="n">n</span>  <span class="c1"># 這個 n 就是 o(g)</span>
+
+</pre></div>
+</div>
+</section>
+<section id="corollary">
+<h3>4. 推論 (Corollary)：完美的連擊組合技<a class="headerlink" href="#corollary" title="Link to this heading">#</a></h3>
+<p><strong>任何一個元素的階 <span class="math notranslate nohighlight">\(o(g)\)</span>，也必定能整除母群的大小 <span class="math notranslate nohighlight">\(|G|\)</span>。</strong></p>
+<ul class="simple">
+<li><p><strong>嚴格推導：</strong></p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>我們把元素 <span class="math notranslate nohighlight">\(g\)</span> 不斷自乘，產生的所有結果收集起來，變成一個集合 <span class="math notranslate nohighlight">\(\langle g \rangle = \{g, g^2, \dots, e\}\)</span>。</p></li>
+<li><p>因為它會不斷循環，且包含單位元素 <span class="math notranslate nohighlight">\(e\)</span> 與反元素，所以這個集合 <span class="math notranslate nohighlight">\(\langle g \rangle\)</span> <strong>本身就是一個子群</strong>（稱為循環子群）。</p></li>
+<li><p>這個循環子群裡面有幾個元素呢？剛好就是 <span class="math notranslate nohighlight">\(o(g)\)</span> 個！所以 <span class="math notranslate nohighlight">\(|\langle g \rangle| = o(g)\)</span>。</p></li>
+<li><p>既然 <span class="math notranslate nohighlight">\(\langle g \rangle\)</span> 是 <span class="math notranslate nohighlight">\(G\)</span> 的子群，我們直接召喚剛剛證明的<strong>拉格朗日定理</strong>：子群的大小必定整除母群的大小。</p></li>
+<li><p>結論：<span class="math notranslate nohighlight">\(o(g)\)</span> 必定整除 <span class="math notranslate nohighlight">\(|G|\)</span>。得證！</p></li>
+</ol>
+<hr class="docutils" />
+<p>拉格朗日定理之所以偉大，是因為它能幫我們直接「刪除」不可能的選項——如果一個群的大小是質數 <span class="math notranslate nohighlight">\(p\)</span>（例如 7），那它的子群大小只能是 1 或 7，這意味著質數大小的群<strong>必定沒有其他複雜的子結構</strong>！</p>
+<p><strong>費馬小定理:</strong></p>
+<div class="math notranslate nohighlight">
+\[a^{p-1} = a^{k \cdot m} = (a^k)^m \equiv 1^m \equiv 1 \pmod p\]</div>
+<hr class="docutils" />
+<p><strong>Example</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\{e, (123), (132)\}\)</span> is a subgroup of <span class="math notranslate nohighlight">\(S_3\)</span>, <span class="math notranslate nohighlight">\(3|6\)</span>  (讀作 “3 divides 6” )</p></li>
+<li><p><span class="math notranslate nohighlight">\(\{1, 8\}\)</span> is a subgroup of <span class="math notranslate nohighlight">\((Z_9^*, \otimes)\)</span>, <span class="math notranslate nohighlight">\(2|6\)</span></p>
+<ul>
+<li><p>母群 <span class="math notranslate nohighlight">\(Z_9^*\)</span> 的大小是 <span class="math notranslate nohighlight">\(\phi(9) = 6\)</span> (與 9 互質的數有 <span class="math notranslate nohighlight">\(\{1, 2, 4, 5, 7, 8\}\)</span>)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\{1, 8\}\)</span> 有封閉性：<span class="math notranslate nohighlight">\(8 \times 8 = 64 \equiv 1 \pmod 9\)</span> 、 反元素：<span class="math notranslate nohighlight">\(8\)</span> 的反元素就是 <span class="math notranslate nohighlight">\(8\)</span> 自己，也在集合內。</p></li>
+<li><p>既然 <span class="math notranslate nohighlight">\(\{1, 8\}\)</span> 是合法的子群，它的大小 <strong>2</strong> 也必定能完美整除母群的大小 <strong>6</strong></p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(SL_2(Z_7)\)</span> is a subgroup of <span class="math notranslate nohighlight">\(GL_2(Z_7)\)</span></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(|GL_2(Z_7)| = (7^2 - 1)(7^2 - 7)\)</span>, <span class="math notranslate nohighlight">\(|SL_2(Z_7)| = |GL_2(Z_7)| / 6\)</span></p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(T_2(Z_7) = \{M \in GL_2(Z_7) \mid M \text{ is upper triangular}\}\)</span> is a subgroup of <span class="math notranslate nohighlight">\(GL_2(Z_7)\)</span></p>
+<ul>
+<li><p><strong>上三角矩陣群 <span class="math notranslate nohighlight">\(|T_2(Z_7)| = 6 \times 6 \times 7\)</span></strong></p></li>
+<li><p><span class="math notranslate nohighlight">\(\begin{bmatrix} a &amp; b \\ 0 &amp; c \end{bmatrix}\)</span></p>
+<ul>
+<li><p><strong>要保持可逆：</strong> 對角線上的數字相乘不能是 0 (即 <span class="math notranslate nohighlight">\(a \times c \neq 0\)</span>)。</p></li>
+<li><p>這代表 <span class="math notranslate nohighlight">\(a\)</span> 不能是 0（有 1 到 6，共 <strong>6</strong> 種選擇）。</p></li>
+<li><p>同理，<span class="math notranslate nohighlight">\(c\)</span> 也不能是 0（共 <strong>6</strong> 種選擇）。</p></li>
+<li><p>右上角的 <span class="math notranslate nohighlight">\(b\)</span> 則無所謂，填什麼都不影響行列式，所以它有 <span class="math notranslate nohighlight">\(0\)</span> 到 <span class="math notranslate nohighlight">\(6\)</span> 全部 <strong>7</strong> 種選擇</p></li>
+<li><p><span class="math notranslate nohighlight">\(252|2016\)</span></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="transcription">
+<h2>第一步：原始投影片內容輸出 (Transcription)<a class="headerlink" href="#transcription" title="Link to this heading">#</a></h2>
+<p><strong>Subgroup Order</strong></p>
+<p><strong>Explanation of</strong> <span class="math notranslate nohighlight">\(|SL_2(Z_7)| = |GL_2(Z_7)| / 6\)</span></p>
+<ul class="simple">
+<li><p>Let <span class="math notranslate nohighlight">\(H = SL_2(Z_7) = \left\{ \begin{bmatrix} a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22} \end{bmatrix} \mid a_{ij} \in Z_7, a_{11}a_{22} - a_{12}a_{21} = 1 \right\}\)</span> 。我們把行列式等於 1 的矩陣集合 <span class="math notranslate nohighlight">\(SL_2(Z_7)\)</span> 當作我們的子群 <span class="math notranslate nohighlight">\(H\)</span>（第一塊小蛋糕）。</p></li>
+<li><p>For <span class="math notranslate nohighlight">\(t = 2, 3, 4, 5, 6\)</span>, define the left coset <span class="math notranslate nohighlight">\(H_t = \begin{bmatrix} 1 &amp; 0 \\ 0 &amp; t \end{bmatrix} H\)</span>, then</p></li>
+<li><p><span class="math notranslate nohighlight">\(H_t = \{ M \in GL_2(Z_7) \mid \det(M) = t \}\)</span></p>
+<ul>
+<li><p>對於其他的行列式值 <span class="math notranslate nohighlight">\(t\)</span> (從 2 到 6)，我們刻意挑選了一個非常簡單的對角矩陣 <span class="math notranslate nohighlight">\(g = \begin{bmatrix} 1 &amp; 0 \\ 0 &amp; t \end{bmatrix}\)</span>。</p></li>
+<li><p>這個矩陣 <span class="math notranslate nohighlight">\(g\)</span> 的行列式剛好就是 <span class="math notranslate nohighlight">\(1 \times t - 0 = t\)</span>。</p></li>
+<li><p>當我們用 <span class="math notranslate nohighlight">\(g\)</span> 去乘上 <span class="math notranslate nohighlight">\(H\)</span> 裡面的任何一個矩陣 <span class="math notranslate nohighlight">\(M\)</span> (其行列式為 1) 時，根據行列式相乘定理：
+$<span class="math notranslate nohighlight">\(\det(gM) = \det(g) \times \det(M) = t \times 1 = t\)</span>$</p></li>
+<li><p>所以，這個左陪集 <span class="math notranslate nohighlight">\(H_t = gH\)</span>，完美收集了所有「行列式精準等於 <span class="math notranslate nohighlight">\(t\)</span>」的矩陣！</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(H\)</span> and <span class="math notranslate nohighlight">\(H_t\)</span>’s are mutually disjoint</p>
+<ul>
+<li><p><strong>互不相交 (Mutually disjoint)</strong>: 一個矩陣算出來的行列式，不可能同時是 2 又是 3。所以這 6 個集合（<span class="math notranslate nohighlight">\(H, H_2, H_3, H_4, H_5, H_6\)</span>）裡面的矩陣絕對不會「撞衫」，它們是完全互斥的。</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(f_t : H \rightarrow H_t\)</span> defined by <span class="math notranslate nohighlight">\(f_t(M) = \begin{bmatrix} 1 &amp; 0 \\ 0 &amp; t \end{bmatrix} M\)</span> is <em>bijective</em></p>
+<ul>
+<li><p><strong>一對一 (Injective)：</strong> 如果有兩個不同的矩陣 <span class="math notranslate nohighlight">\(M_1\)</span> 和 <span class="math notranslate nohighlight">\(M_2\)</span>，乘上 <span class="math notranslate nohighlight">\(g\)</span> 之後變成了一樣的結果 (<span class="math notranslate nohighlight">\(gM_1 = gM_2\)</span>)。因為 <span class="math notranslate nohighlight">\(g\)</span> 是可逆矩陣（行列式 <span class="math notranslate nohighlight">\(t \neq 0\)</span>），我們可以在兩邊同乘 <span class="math notranslate nohighlight">\(g^{-1}\)</span>，推導出 <span class="math notranslate nohighlight">\(M_1 = M_2\)</span>。這代表只要輸入不同，輸出就絕對不同。</p></li>
+<li><p><strong>映成 (Surjective)：</strong> 對於 <span class="math notranslate nohighlight">\(H_t\)</span> 裡面的任何一個目標矩陣 <span class="math notranslate nohighlight">\(Y\)</span> (已知 <span class="math notranslate nohighlight">\(\det(Y) = t\)</span>)，我們能不能在 <span class="math notranslate nohighlight">\(H\)</span> 裡面找到一個來源？可以！我們只要構造 <span class="math notranslate nohighlight">\(M = g^{-1}Y\)</span>，它的行列式會是 <span class="math notranslate nohighlight">\(t^{-1} \times t = 1\)</span>，剛好符合 <span class="math notranslate nohighlight">\(H\)</span> 的條件。</p></li>
+<li><p><strong>結論：</strong> 既然是雙射，就代表這兩堆矩陣可以「一對一完美連線」，沒有多也沒有少。這就在數學上鐵證了：<strong>每一塊切下來的蛋糕 <span class="math notranslate nohighlight">\(H_t\)</span>，大小都跟原本的 <span class="math notranslate nohighlight">\(H\)</span> 一模一樣！ (<span class="math notranslate nohighlight">\(|H| = |H_t|\)</span>)</strong></p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(|H| = |H_t|\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(GL_2(Z_7) = H \cup H_2 \cup H_3 \cup H_4 \cup H_5 \cup H_6\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(|GL_2(Z_7)| = |H| + |H_2| + |H_3| + |H_4| + |H_5| + |H_6| = 6 \times |SL_2(Z_7)|\)</span></p>
+<ul>
+<li><p>既然 <span class="math notranslate nohighlight">\(GL_2\)</span> 這個大群可以被切成 6 塊互不重疊、且大小完全相同的陪集，那麼總數 <span class="math notranslate nohighlight">\(|GL_2(Z_7)|\)</span> 理所當然就是 <span class="math notranslate nohighlight">\(6 \times |H|\)</span> 了</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="definition-homomorphism-isomorphism">
+<h2><strong>Definition</strong> : 同態 (Homomorphism) 與 同構 (Isomorphism)<a class="headerlink" href="#definition-homomorphism-isomorphism" title="Link to this heading">#</a></h2>
+<p><span class="math notranslate nohighlight">\((G, *)\)</span> and <span class="math notranslate nohighlight">\((H, \bullet)\)</span> are two groups</p>
+<section id="homomorphism">
+<h3>同態 (Homomorphism)<a class="headerlink" href="#homomorphism" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>A function <span class="math notranslate nohighlight">\(f : G \rightarrow H\)</span> is a <strong>homomorphism</strong> if</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(f(a * b) = f(a) \bullet f(b)\)</span> for all <span class="math notranslate nohighlight">\(a, b \in G\)</span></p></li>
+</ol>
+<p>群論最關心的不是數字本身，而是「結構」。同態函數 <span class="math notranslate nohighlight">\(f\)</span> 就是一座連接兩個群 <span class="math notranslate nohighlight">\((G, *)\)</span> 和 <span class="math notranslate nohighlight">\((H, \bullet)\)</span> 的橋樑。</p>
+<ul class="simple">
+<li><p><strong>核心等式破解：<span class="math notranslate nohighlight">\(f(a * b) = f(a) \bullet f(b)\)</span></strong></p></li>
+<li><p><strong>左邊 <span class="math notranslate nohighlight">\(f(a * b)\)</span>：</strong> 在原本的 <span class="math notranslate nohighlight">\(G\)</span> 宇宙裡，我們先把 <span class="math notranslate nohighlight">\(a\)</span> 和 <span class="math notranslate nohighlight">\(b\)</span> 運算完（算完後還是在 <span class="math notranslate nohighlight">\(G\)</span> 裡），然後再把結果「翻譯」到 <span class="math notranslate nohighlight">\(H\)</span> 宇宙。</p></li>
+<li><p><strong>右邊 <span class="math notranslate nohighlight">\(f(a) \bullet f(b)\)</span>：</strong> 先把 <span class="math notranslate nohighlight">\(a\)</span> 和 <span class="math notranslate nohighlight">\(b\)</span> 分別「翻譯」到 <span class="math notranslate nohighlight">\(H\)</span> 宇宙，然後在 <span class="math notranslate nohighlight">\(H\)</span> 宇宙裡用他們專屬的運算規則 <span class="math notranslate nohighlight">\(\bullet\)</span> 來進行結合。</p></li>
+<li><p><strong>直覺意義：</strong> 這個等式代表 <strong>「先計算再翻譯」和「先翻譯再計算」的結果竟然一模一樣！</strong> 這意味著函數 <span class="math notranslate nohighlight">\(f\)</span> 完美地保留了原本的「代數結構」。</p></li>
+</ul>
+<p><strong>【經典的數學例子：對數 Logarithm】</strong> 對數公式 <span class="math notranslate nohighlight">\(\log(a \times b) = \log(a) + \log(b)\)</span> ，這其實就是一個完美的同態！</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(G\)</span> 宇宙：正實數的<strong>乘法</strong>群 <span class="math notranslate nohighlight">\((R^+, \times)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(H\)</span> 宇宙：實數的<strong>加法</strong>群 <span class="math notranslate nohighlight">\((R, +)\)</span></p></li>
+<li><p>翻譯機 <span class="math notranslate nohighlight">\(f\)</span>：對數函數 <span class="math notranslate nohighlight">\(\log\)</span> 你看，在乘法世界裡相乘，翻譯到加法世界裡變成相加，結構被完美保留了下來！</p></li>
+</ul>
+</section>
+<section id="isomorphism">
+<h3>同構 (Isomorphism)<a class="headerlink" href="#isomorphism" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>A function <span class="math notranslate nohighlight">\(f : G \rightarrow H\)</span> is an <strong>isomorphism</strong> if</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(f(a * b) = f(a) \bullet f(b)\)</span> for all <span class="math notranslate nohighlight">\(a, b \in G\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f\)</span> is bijective</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f\)</span> is injective (one-to-one)</p></li>
+<li><p><span class="math notranslate nohighlight">\(f\)</span> is surjective (onto)</p></li>
+</ul>
+</li>
+</ol>
+<p>如果同態是一台「翻譯機」，那同構就是一台 <strong>「完美無損的雙向翻譯機」</strong>，要成為同構 (Isomorphism)，除了要是同態之外，還必須加上一個極度嚴格的條件：<strong>函數 <span class="math notranslate nohighlight">\(f\)</span> 必須是雙射 (Bijective)</strong></p>
+<ul class="simple">
+<li><p>我們前面學排列時學過，雙射代表「一對一 (Injective)」且「沒有遺漏 (Surjective)」。</p></li>
+<li><p><strong>這代表什麼？</strong> 這代表 <span class="math notranslate nohighlight">\(G\)</span> 群和 <span class="math notranslate nohighlight">\(H\)</span> 群裡面的元素不僅數量一模一樣大，而且它們的運算結構也完全對應。在數學家的眼裡，只要 <span class="math notranslate nohighlight">\(G \cong H\)</span>（<span class="math notranslate nohighlight">\(G\)</span> 同構於 <span class="math notranslate nohighlight">\(H\)</span>），這兩個群<strong>本質上就是完全一模一樣的東西</strong>！它們只是穿上了不同的衣服（用了不同的符號或變數名稱）而已。</p></li>
+</ul>
+<p><strong>【程式思維與直覺】</strong>
+同構的概念，非常像是在寫程式時的「變數重新命名 (Renaming Variables)」，或是將 <code class="docutils literal notranslate"><span class="pre">0</span></code> 和 <code class="docutils literal notranslate"><span class="pre">1</span></code> 替換成 <code class="docutils literal notranslate"><span class="pre">False</span></code> 和 <code class="docutils literal notranslate"><span class="pre">True</span></code>。雖然外表變了，資料型別變了，但底層執行的邏輯 (AND/OR 運算) 卻能完美地 <span class="math notranslate nohighlight">\(1:1\)</span> 對應，毫無差別。</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(G\)</span> is <strong>isomorphic</strong> to <span class="math notranslate nohighlight">\(H\)</span> , <span class="math notranslate nohighlight">\(G \text{ and } H \)</span> are  <strong>isomorphic</strong> , or <span class="math notranslate nohighlight">\(G \cong H\)</span></p></li>
+</ul>
+</section>
+</section>
+<section id="example-homomorphism">
+<h2><strong>Example Homomorphism (同態)</strong><a class="headerlink" href="#example-homomorphism" title="Link to this heading">#</a></h2>
+<p>同態的精髓在於：它能保留運算結構，但<strong>不保證</strong>元素數量一對一對應</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(f : (Z, +) \rightarrow (Z, +)\)</span> is a homomorphism with <span class="math notranslate nohighlight">\(f(1) = 2\)</span></p></li>
+</ol>
+<ul class="simple">
+<li><p>injective, not surjective (one-to-one, not onto)</p></li>
+<li><p><strong>翻譯機邏輯：</strong> 輸入任何整數 <span class="math notranslate nohighlight">\(x\)</span>，輸出就是 <span class="math notranslate nohighlight">\(2x\)</span>。</p></li>
+<li><p><strong>為什麼是同態？</strong> 檢查加法是否被保留：<span class="math notranslate nohighlight">\(f(a + b) = 2(a + b) = 2a + 2b = f(a) + f(b)\)</span>。完美成立！</p></li>
+<li><p><strong>為何 Injective (一對一)？</strong> 輸入不同的數字（例如 3 和 4），輸出的結果（6 和 8）絕對不同。</p></li>
+<li><p><strong>為何 Not Surjective (非映成)？</strong> 因為這台翻譯機<strong>只會吐出「偶數」</strong>。右邊集合裡面的奇數（如 3, 5, 7）永遠等不到對應的輸入。因為有遺漏，所以它不是同構。</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p><span class="math notranslate nohighlight">\(f : (Z, +) \rightarrow (Z_7^*, \times \bmod 7)\)</span> is a homomorphism with <span class="math notranslate nohighlight">\(f(1) = 3\)</span></p></li>
+</ol>
+<ul class="simple">
+<li><p>surjective, not injective (onto, not one-to-one)</p></li>
+<li><p><strong>翻譯機邏輯：</strong> 輸入整數 <span class="math notranslate nohighlight">\(x\)</span>，輸出就是 <span class="math notranslate nohighlight">\(3^x \pmod 7\)</span>。</p></li>
+<li><p><strong>為什麼是同態？</strong> 檢查「加法變乘法」的結構：<span class="math notranslate nohighlight">\(f(a + b) = 3^{a+b} = 3^a \times 3^b = f(a) \times f(b)\)</span>。完美運用了指數律！</p></li>
+<li><p><strong>為何 Surjective (映成)？</strong> 還記得我們之前算過，3 是 <span class="math notranslate nohighlight">\(Z_7^*\)</span> 的<strong>生成元 (Generator)</strong> 嗎？<span class="math notranslate nohighlight">\(3^1=3, 3^2=2, 3^3=6, 3^4=4, 3^5=5, 3^6=1\)</span>。它完美生成了 <span class="math notranslate nohighlight">\(Z_7^*\)</span> 裡面的所有 6 個數字，沒有遺漏！</p></li>
+<li><p><strong>為何 Not Injective (非一對一)？</strong> 因為左邊的 <span class="math notranslate nohighlight">\(Z\)</span> 是無限大的整數，而右邊只有 6 個狀態。所以輸入 <span class="math notranslate nohighlight">\(1\)</span> 和輸入 <span class="math notranslate nohighlight">\(7\)</span> (<span class="math notranslate nohighlight">\(3^7 \equiv 3 \pmod 7\)</span>)，都會對應到相同的輸出 <code class="docutils literal notranslate"><span class="pre">3</span></code>。這就像是多對一的 Hash 函數，發生了碰撞。</p></li>
+</ul>
+<section id="f-1-3-f-a-g-b-f-a-h-f-b-3-x">
+<h3><span class="math notranslate nohighlight">\(f(1)=3\)</span> 為什麼會變成 <span class="math notranslate nohighlight">\(f(a *_G b) = f(a) *_H f(b) = 3^x\)</span>？<a class="headerlink" href="#f-1-3-f-a-g-b-f-a-h-f-b-3-x" title="Link to this heading">#</a></h3>
+<p><strong>核心解答：這是利用了「生成元 (Generator)」與「同態公式」產生骨牌效應！</strong></p>
+<p>推導：</p>
+<ul class="simple">
+<li><p><strong>先看清我們的兩個宇宙：</strong></p></li>
+<li><p><span class="math notranslate nohighlight">\(G\)</span> 宇宙是加法群 <span class="math notranslate nohighlight">\((Z_6, +)\)</span>，運算元 <span class="math notranslate nohighlight">\(*_G\)</span> 就是 <strong>加法 (<span class="math notranslate nohighlight">\(+\)</span>)</strong>。</p></li>
+<li><p><span class="math notranslate nohighlight">\(H\)</span> 宇宙是乘法群 <span class="math notranslate nohighlight">\((Z_7^*, \times)\)</span>，運算元 <span class="math notranslate nohighlight">\(*_H\)</span> 就是 <strong>乘法 (<span class="math notranslate nohighlight">\(\times\)</span>)</strong>。</p></li>
+<li><p>所以同態公式 <span class="math notranslate nohighlight">\(f(a *_G b) = f(a) *_H f(b)\)</span>，在這裡具體化為：<strong><span class="math notranslate nohighlight">\(f(a + b) = f(a) \times f(b)\)</span></strong>。</p></li>
+<li><p><strong>生成元 1 的威力：</strong>
+在 <span class="math notranslate nohighlight">\((Z_6, +)\)</span> 裡面，任何一個整數 <span class="math notranslate nohighlight">\(x\)</span>（例如 3 或 4），其實都只是把「單位積木 1」疊起來而已：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[x = 1 + 1 + \dots + 1 \quad \text{(總共加了 } x \text{ 次)}\]</div>
+<ul class="simple">
+<li><p><strong>開始套用同態翻譯機：</strong>
+現在我們想知道 <span class="math notranslate nohighlight">\(f(x)\)</span> 等於多少。我們把 <span class="math notranslate nohighlight">\(x\)</span> 拆解成一堆 1：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[f(x) = f(1 + 1 + \dots + 1)\]</div>
+<p>利用同態公式 <span class="math notranslate nohighlight">\(f(a+b) = f(a) \times f(b)\)</span>，我們可以把括號裡面的「加法」，一刀一刀切開，變成外面的「乘法」：</p>
+<div class="math notranslate nohighlight">
+\[f(x) = f(1) \times f(1) \times \dots \times f(1) \quad \text{(總共乘了 } x \text{ 次)}\]</div>
+<ul class="simple">
+<li><p><strong>代入我們的設定值：</strong>
+我們一開始手動設定了這台翻譯機的種子：<strong><span class="math notranslate nohighlight">\(f(1) = 3\)</span></strong>。
+把所有的 <span class="math notranslate nohighlight">\(f(1)\)</span> 都換成 3：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[f(x) = 3 \times 3 \times \dots \times 3 \quad \text{(總共乘了 } x \text{ 次)}\]</div>
+<p>這不就是指數的定義嗎！所以：</p>
+<div class="math notranslate nohighlight">
+\[f(x) = 3^x\]</div>
+<p><strong>結論：</strong> 因為群有「規律遞迴」的特性，只要我們規定了「基礎積木 (生成元 1)」要翻譯成什麼（設定 <span class="math notranslate nohighlight">\(f(1)=3\)</span>），同態的嚴格公式就會像骨牌一樣，自動把後面所有的數字 <span class="math notranslate nohighlight">\(f(2), f(3) \dots\)</span> 全部決定好，最終推導出了 <span class="math notranslate nohighlight">\(3^x\)</span> 這個優美的指數函數！</p>
+</section>
+<section id="f-1-2-f-a-g-b-f-a-h-f-b-2x">
+<h3><span class="math notranslate nohighlight">\(f(1)=2\)</span> 為什麼會變成 <span class="math notranslate nohighlight">\(f(a *_G b) = f(a) *_H f(b) = 2x\)</span>？<a class="headerlink" href="#f-1-2-f-a-g-b-f-a-h-f-b-2x" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong><span class="math notranslate nohighlight">\(G\)</span> 宇宙（出發地）：</strong> 整數加法群 <span class="math notranslate nohighlight">\((\mathbb{Z}, +)\)</span>。它的運算元 <span class="math notranslate nohighlight">\(*_G\)</span> 是 <strong>加法 (<span class="math notranslate nohighlight">\(+\)</span>)</strong>。</p></li>
+<li><p><strong><span class="math notranslate nohighlight">\(H\)</span> 宇宙（目的地）：</strong> 同樣是整數加法群 <span class="math notranslate nohighlight">\((\mathbb{Z}, +)\)</span>。它的運算元 <span class="math notranslate nohighlight">\(*_H\)</span> 也是 <strong>加法 (<span class="math notranslate nohighlight">\(+\)</span>)</strong>。</p></li>
+<li><p>所以，最核心的同態公式 <span class="math notranslate nohighlight">\(f(a *_G b) = f(a) *_H f(b)\)</span>，在這個例子裡會具體化為：
+<strong><span class="math notranslate nohighlight">\(f(a + b) = f(a) + f(b)\)</span></strong></p></li>
+</ul>
+<p><strong>第二步：生成元 1 的積木拆解</strong></p>
+<p>假設我們輸入一個正整數 <span class="math notranslate nohighlight">\(x\)</span>（例如 5）。在加法世界裡，<span class="math notranslate nohighlight">\(x\)</span> 其實就是把單位積木「<span class="math notranslate nohighlight">\(1\)</span>」連加 <span class="math notranslate nohighlight">\(x\)</span> 次：</p>
+<div class="math notranslate nohighlight">
+\[x = 1 + 1 + \dots + 1 \quad \text{(總共 } x \text{ 個 1)}\]</div>
+<p><strong>第三步：套用同態公式（魔術發生的地方）</strong></p>
+<p>我們現在要把整串積木丟進翻譯機 <span class="math notranslate nohighlight">\(f\)</span> 裡面：</p>
+<div class="math notranslate nohighlight">
+\[f(x) = f(1 + 1 + \dots + 1)\]</div>
+<p>根據第一步的同態公式 <span class="math notranslate nohighlight">\(f(a + b) = f(a) + f(b)\)</span>，翻譯機可以把括號裡面的「加法」，完美地切開變成外面的「加法」：</p>
+<div class="math notranslate nohighlight">
+\[f(x) = f(1) + f(1) + \dots + f(1) \quad \text{(總共 } x \text{ 個 } f(1) \text{ 相加)}\]</div>
+<p><strong>第四步：代入初始設定值</strong></p>
+<p>投影片幫我們設定了這台翻譯機的種子：<strong><span class="math notranslate nohighlight">\(f(1) = 2\)</span></strong>。
+我們把上面式子裡所有的 <span class="math notranslate nohighlight">\(f(1)\)</span> 都替換成 <span class="math notranslate nohighlight">\(2\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[f(x) = 2 + 2 + \dots + 2 \quad \text{(總共 } x \text{ 個 2 相加)}\]</div>
+<p>在數學上，把一個數字 <span class="math notranslate nohighlight">\(2\)</span> 連續相加 <span class="math notranslate nohighlight">\(x\)</span> 次，那不就是乘法的定義嗎！</p>
+<div class="math notranslate nohighlight">
+\[f(x) = 2 \times x = 2x\]</div>
+</section>
+<hr class="docutils" />
+<section id="id2">
+<h3>進階補充：那 0 和負數呢？<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>剛剛我們推導了正整數，但在完整的群 <span class="math notranslate nohighlight">\((\mathbb{Z}, +)\)</span> 裡面還有 <span class="math notranslate nohighlight">\(0\)</span> 和負整數，這台翻譯機撐得住嗎？我們可以用同態公式繼續推導，這非常有趣：</p>
+<p><strong>1. 數字 0 的翻譯：</strong>
+利用 <span class="math notranslate nohighlight">\(0 + 0 = 0\)</span> 的性質：</p>
+<div class="math notranslate nohighlight">
+\[f(0) = f(0 + 0) = f(0) + f(0)\]</div>
+<p>兩邊消掉一個 <span class="math notranslate nohighlight">\(f(0)\)</span>，我們嚴格證明了：<strong><span class="math notranslate nohighlight">\(f(0) = 0\)</span></strong>。這剛好吻合 <span class="math notranslate nohighlight">\(2 \times 0 = 0\)</span>。</p>
+<p><strong>2. 負數的翻譯（例如 -1）：</strong>
+利用 <span class="math notranslate nohighlight">\(1 + (-1) = 0\)</span> 的性質：</p>
+<div class="math notranslate nohighlight">
+\[f(1 + (-1)) = f(0)\]</div>
+<div class="math notranslate nohighlight">
+\[f(1) + f(-1) = 0\]</div>
+<p>把我們已知設定的 <span class="math notranslate nohighlight">\(f(1) = 2\)</span> 代進去：</p>
+<div class="math notranslate nohighlight">
+\[2 + f(-1) = 0 \implies f(-1) = -2\]</div>
+<p>這也完美吻合了 <span class="math notranslate nohighlight">\(2 \times (-1) = -2\)</span>。</p>
+<p><strong>總結來說：</strong>
+在同態函數中，只要定義了生成元（像是設定 <span class="math notranslate nohighlight">\(f(1)\)</span>），整個函數的長相就被徹底鎖死了。</p>
+<ul class="simple">
+<li><p>當目的地是<strong>乘法群</strong>時，連續的翻譯會變成「連乘」，也就是<strong>指數</strong>（如上一題的 <span class="math notranslate nohighlight">\(3^x\)</span>）。</p></li>
+<li><p>當目的地是<strong>加法群</strong>時，連續的翻譯會變成「連加」，也就是<strong>倍數乘法</strong>（如這題的 <span class="math notranslate nohighlight">\(2x\)</span>）。</p></li>
+</ul>
+<p>想像在寫 Python 迴圈，如果您在迴圈裡寫 <code class="docutils literal notranslate"><span class="pre">result</span> <span class="pre">*=</span> <span class="pre">3</span></code>（目的地是乘法），跑 <span class="math notranslate nohighlight">\(x\)</span> 次的結果就是 <span class="math notranslate nohighlight">\(3^x\)</span>；如果您在迴圈裡寫 <code class="docutils literal notranslate"><span class="pre">result</span> <span class="pre">+=</span> <span class="pre">2</span></code>（目的地是加法），跑 <span class="math notranslate nohighlight">\(x\)</span> 次的結果就是 <span class="math notranslate nohighlight">\(2x\)</span>。群論的結構，其實就隱含著這樣的程式邏輯之美！</p>
+</section>
+</section>
+<section id="example-isomorphism">
+<h2><strong>Example Isomorphism (同構)</strong><a class="headerlink" href="#example-isomorphism" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f : (C^*, \times) \rightarrow (C^*, \times)\)</span> defined by <span class="math notranslate nohighlight">\(f(a + bi) = a - bi\)</span></p>
+<ul>
+<li><p>因為共軛運算完全保留了乘法的結構 <span class="math notranslate nohighlight">\(\overline{z_1 \times z_2} = \overline{z_1} \times \overline{z_2}\)</span>，而且翻轉過去還能完美翻轉回來，所以這是一個同構。</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(f : (Z_6, + \bmod 6) \rightarrow (Z_7^*, \times \bmod 7)\)</span> is a homomorphism (also isomorphism) defined with <span class="math notranslate nohighlight">\(f(1) = 3\)</span></p>
+<ul>
+<li><p>這兩個群雖然看起來完全不一樣（一個是加法模 6，一個是乘法模 7），但因為它們的大小都是 6 (<span class="math notranslate nohighlight">\(|Z_6| = 6\)</span>, <span class="math notranslate nohighlight">\(|Z_7^*| = 6\)</span>)，而且都是循環群，所以它們<strong>本質上是一模一樣的群</strong>！</p></li>
+<li><p>我們設定 <span class="math notranslate nohighlight">\(f(1) = 3\)</span>。利用同態的性質 <span class="math notranslate nohighlight">\(f(x) = f(1+1+\dots+1) = 3^x \pmod 7\)</span>。</p></li>
+<li><p>這就會完美對應出投影片上的結果：<span class="math notranslate nohighlight">\(f(0)=1, f(1)=3, f(2)=2, f(3)=6, f(4)=4, f(5)=5\)</span>。</p></li>
+<li><p>輸入 6 個不重複的數字，剛好對應輸出 6 個不重複的數字，這就是完美的雙射 (Bijective)，因此是同構！</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(f(2) = 2, f(3) = 6, f(4) = 4, f(5) = 5, f(0) = 1\)</span> [since <span class="math notranslate nohighlight">\(f(0) = f(0+0) = f(0) \times f(0)\)</span>]</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(f\)</span> is defined by <span class="math notranslate nohighlight">\(f(1) = 5\)</span>? If <span class="math notranslate nohighlight">\(f\)</span> is defined by <span class="math notranslate nohighlight">\(f(1) = 2\)</span>?</p></li>
+</ul>
+<p><strong>挑戰 1：If <span class="math notranslate nohighlight">\(f\)</span> is defined by <span class="math notranslate nohighlight">\(f(1) = 5\)</span>?</strong></p>
+<ul class="simple">
+<li><p><strong>解答：</strong> 它是同構 (Isomorphism)！</p></li>
+<li><p><strong>推導：</strong> 我們把 5 不斷自乘：<span class="math notranslate nohighlight">\(5^1=5, 5^2=4, 5^3=6, 5^4=2, 5^5=3, 5^6=1\)</span>。您會發現，5 同樣也是 <span class="math notranslate nohighlight">\(Z_7^*\)</span> 的生成元，它依然能完美對應出 6 個不重複的數字。所以這個對應法則依然是合法的同構！</p></li>
+</ul>
+<p><strong>挑戰 2：If <span class="math notranslate nohighlight">\(f\)</span> is defined by <span class="math notranslate nohighlight">\(f(1) = 2\)</span>?</strong></p>
+<ul class="simple">
+<li><p><strong>解答：</strong> 它只是同態，<strong>不是同構</strong>！</p></li>
+<li><p><strong>推導：</strong> 我們把 2 不斷自乘：<span class="math notranslate nohighlight">\(2^1=2, 2^2=4, 2^3=1, 2^4=2, 2^5=4, 2^6=1 \dots\)</span></p></li>
+<li><p>您會發現，它陷入了 <span class="math notranslate nohighlight">\(\{1, 2, 4\}\)</span> 的小循環中！它永遠無法輸出 3, 5, 6。</p></li>
+<li><p>既然沒有對應到 <span class="math notranslate nohighlight">\(Z_7^*\)</span> 裡面的所有元素，它就不是 Surjective (映成)，所以這台翻譯機破局了，它無法成為同構。</p></li>
+</ul>
+<p>AES:Advanced Encryption Standard 進階加密標準</p>
+<p>RSA:Ron Rivest、Adi Shamir 和 Leonard Adleman 非對稱加密演算法</p>
+<section id="f-g-rightarrow-h-f-2-h-rightarrow-g">
+<h3>1. 為什麼只檢查 <span class="math notranslate nohighlight">\(f: G \rightarrow H\)</span>，不需要檢查反向的 <span class="math notranslate nohighlight">\(f_2: H \rightarrow G\)</span>？<a class="headerlink" href="#f-g-rightarrow-h-f-2-h-rightarrow-g" title="Link to this heading">#</a></h3>
+<p><strong>核心解答：因為「雙射 (Bijective)」自帶完美的「反向保證」！</strong></p>
+<p>在同構 (Isomorphism) 的定義中，我們規定 <span class="math notranslate nohighlight">\(f\)</span> 必須是「雙射（一對一且映成）」。在數學上，只要一個函數是雙射，它的<strong>反函數 (Inverse Function)</strong> <span class="math notranslate nohighlight">\(f^{-1}: H \rightarrow G\)</span> 就必定存在，而且也必定是雙射。</p>
+<p>但最神奇的是：<strong>只要 <span class="math notranslate nohighlight">\(f\)</span> 是同態，<span class="math notranslate nohighlight">\(f^{-1}\)</span> 就會「自動免費」變成同態！</strong> 我們來做個簡單的推導證明這件事：</p>
+<ul class="simple">
+<li><p><strong>目標：</strong> 證明反函數 <span class="math notranslate nohighlight">\(f^{-1}\)</span> 也能保留結構，也就是證明 <span class="math notranslate nohighlight">\(f^{-1}(x *_H y) = f^{-1}(x) *_G f^{-1}(y)\)</span>。</p></li>
+<li><p><strong>推導步驟：</strong></p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>因為 <span class="math notranslate nohighlight">\(f\)</span> 是映成，對於 <span class="math notranslate nohighlight">\(H\)</span> 中的任何兩個元素 <span class="math notranslate nohighlight">\(x, y\)</span>，在 <span class="math notranslate nohighlight">\(G\)</span> 中一定找得到對應的 <span class="math notranslate nohighlight">\(a, b\)</span>，使得 <span class="math notranslate nohighlight">\(f(a) = x\)</span> 且 <span class="math notranslate nohighlight">\(f(b) = y\)</span>。</p></li>
+<li><p>這也等價於寫成：<span class="math notranslate nohighlight">\(a = f^{-1}(x)\)</span> 以及 <span class="math notranslate nohighlight">\(b = f^{-1}(y)\)</span>。</p></li>
+<li><p>我們來觀察 <span class="math notranslate nohighlight">\(x\)</span> 和 <span class="math notranslate nohighlight">\(y\)</span> 在 <span class="math notranslate nohighlight">\(H\)</span> 宇宙的運算：<span class="math notranslate nohighlight">\(x *_H y = f(a) *_H f(b)\)</span>。</p></li>
+<li><p>因為我們已知 <span class="math notranslate nohighlight">\(f\)</span> 是一台完美的同態翻譯機，所以 <span class="math notranslate nohighlight">\(f(a) *_H f(b) = f(a *_G b)\)</span>。</p></li>
+<li><p>現在，我們把等式 <span class="math notranslate nohighlight">\(x *_H y = f(a *_G b)\)</span> 的兩邊同時套用反函數 <span class="math notranslate nohighlight">\(f^{-1}\)</span>：</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[f^{-1}(x *_H y) = f^{-1}(f(a *_G b))\]</div>
+<div class="math notranslate nohighlight">
+\[f^{-1}(x *_H y) = a *_G b\]</div>
+<ol class="arabic simple" start="6">
+<li><p>最後，把第 2 步的 <span class="math notranslate nohighlight">\(a, b\)</span> 代換回來：</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[f^{-1}(x *_H y) = f^{-1}(x) *_G f^{-1}(y)\]</div>
+<p><strong>結論：</strong> 完美得證！在 <span class="math notranslate nohighlight">\(H\)</span> 宇宙先運算再反向翻譯，等於先反向翻譯回 <span class="math notranslate nohighlight">\(G\)</span> 宇宙再運算。</p>
+<ul class="simple">
+<li><p><strong>程式碼視角：</strong> 想像您寫了一個完美的 <span class="math notranslate nohighlight">\(1:1\)</span> Dictionary mapping。只要您驗證了正向的 <code class="docutils literal notranslate"><span class="pre">key</span> <span class="pre">-&gt;</span> <span class="pre">value</span></code> 不會破壞資料結構，因為它是絕對的 <span class="math notranslate nohighlight">\(1:1\)</span>，您用 <code class="docutils literal notranslate"><span class="pre">value</span> <span class="pre">-&gt;</span> <span class="pre">key</span></code> 反向 mapping 回去時，結構自然也不會崩壞。所以數學家為了偷懶（簡化定義），就規定只要檢查單邊 <span class="math notranslate nohighlight">\(f\)</span> 加上「雙射」這個條件就足夠了。</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="g-cong-h">
+<h3>2. 寫 <span class="math notranslate nohighlight">\(G \cong H\)</span> 是不是應該加上映射方式才完整？一種成立代表全部成立嗎？<a class="headerlink" href="#g-cong-h" title="Link to this heading">#</a></h3>
+<p><strong>核心解答：寫 <span class="math notranslate nohighlight">\(G \cong H\)</span> 只是在宣告「它們是同一種生物」，而「並非所有的映射方式」都是同構！</strong></p>
+<p>您的直覺非常精準！這兩個問題我們分開來看：</p>
+<ul class="simple">
+<li><p><strong>寫法是否完整？</strong>
+單純寫 <span class="math notranslate nohighlight">\(G \cong H\)</span>（唸作 G is isomorphic to H），在數學語言中是一個**「存在性敘述」**。它的意思是：「在茫茫大海的函數中，<strong>存在（至少一個）<strong>函數 <span class="math notranslate nohighlight">\(f\)</span>，可以完美雙向翻譯這兩個群。」
+這就像是宣告「USB Type-C 接口可以接上這支手機」。如果只是陳述事實，這樣寫就夠了；但如果您要</strong>「證明」<strong>這件事（就像投影片在做的事），您就</strong>必須</strong>把那個特定的翻譯機 <span class="math notranslate nohighlight">\(f\)</span> 給明確定義出來！</p></li>
+<li><p><strong>一種映射成立，所有映射都是同構嗎？</strong>
+<strong>絕對不是！這是一個常見的陷阱。</strong>
+我們拿上一張投影片的例子：<span class="math notranslate nohighlight">\(G = (Z_6, +)\)</span>，<span class="math notranslate nohighlight">\(H = (Z_7^*, \times)\)</span>。</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>如果我們定義映射 <span class="math notranslate nohighlight">\(f_1(1) = 3\)</span>，我們剛剛推導過，這是一個完美的<strong>同構</strong>。</p></li>
+<li><p>但如果我們定義映射 <span class="math notranslate nohighlight">\(f_2(x) = 1\)</span>（不管輸入什麼，全部都翻譯成單位元素 1）。您會發現 <span class="math notranslate nohighlight">\(f_2(a+b) = 1\)</span>，<span class="math notranslate nohighlight">\(f_2(a) \times f_2(b) = 1 \times 1 = 1\)</span>。它滿足同態公式！<strong>但是它不是雙射</strong>（它把所有東西都塞給 1 了），所以它<strong>不是同構</strong>。</p></li>
+<li><p>又或者我們定義映射 <span class="math notranslate nohighlight">\(f_3(1) = 2\)</span>。上一張投影片解答過，它會陷入 <span class="math notranslate nohighlight">\(\{1, 2, 4\}\)</span> 的死胡同，無法產生 6 個元素，所以它<strong>也不是同構</strong>。</p></li>
+</ol>
+<p><strong>結論：</strong> 兩個群之間可能存在成千上萬種映射函數（就像亂接電線一樣），其中可能只有極少數的幾種特定的接法（特定的 <span class="math notranslate nohighlight">\(f\)</span>），才能真正成為「同構翻譯機」。只要能找到一台，我們就能大聲宣告 <span class="math notranslate nohighlight">\(G \cong H\)</span>。</p>
+<hr class="docutils" />
+<p>這是一個邏輯非常縝密、極度精彩的提問！您正在挑戰數學定義的邊界，這正是數學家在建立理論時會做的壓力測試。</p>
+<p>讓我先給您最明確的答案：<strong>這件事絕對不可能發生！</strong> 只要 <span class="math notranslate nohighlight">\(G \cong H\)</span> 且 <span class="math notranslate nohighlight">\(H \cong I\)</span>，那麼 <strong><span class="math notranslate nohighlight">\(G \cong I\)</span> 必定永遠成立</strong>。</p>
+<p>您的疑惑非常合理，因為您注意到「有很多函數 <span class="math notranslate nohighlight">\(f_i\)</span> 是壞掉的（不是雙射）」。但這裡我們要把「特定的翻譯機 (函數 <span class="math notranslate nohighlight">\(f\)</span>)」和「兩個國家是否有邦交 (同構關係 <span class="math notranslate nohighlight">\(\cong\)</span>)」分開來看。</p>
+<p>我們像老師一樣，用一個直觀的比喻，接著親自把這個數學證明推導出來！</p>
+</section>
+<section id="id3">
+<h3>第一步：破解直覺上的迷思 —— 「存在」不等於「全部」<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>當我們寫下 <span class="math notranslate nohighlight">\(G \cong H\)</span> 時，它的數學定義是：<strong>「在成千上萬種可能的函數中，『至少存在一台』完美的雙向翻譯機 <span class="math notranslate nohighlight">\(f\)</span>」</strong>。</p>
+<ul class="simple">
+<li><p><strong>航班比喻：</strong></p></li>
+<li><p><span class="math notranslate nohighlight">\(G \cong H\)</span> 代表「存在從台北 (<span class="math notranslate nohighlight">\(G\)</span>) 直飛東京 (<span class="math notranslate nohighlight">\(H\)</span>) 的完美航班 <span class="math notranslate nohighlight">\(f\)</span>」。</p></li>
+<li><p><span class="math notranslate nohighlight">\(H \cong I\)</span> 代表「存在從東京 (<span class="math notranslate nohighlight">\(H\)</span>) 直飛紐約 (<span class="math notranslate nohighlight">\(I\)</span>) 的完美航班 <span class="math notranslate nohighlight">\(g\)</span>」。</p></li>
+<li><p>您說得對，的確有很多爛航班（不是雙射的 <span class="math notranslate nohighlight">\(f_i\)</span>）會飛錯地方或搞丟行李。但是，這完全不影響我們證明 <span class="math notranslate nohighlight">\(G \cong I\)</span>。</p></li>
+<li><p>為什麼？因為我們根本不需要管那些爛航班！我們只要<strong>把那兩班完美的直飛航班「串接」起來</strong>（先搭 <span class="math notranslate nohighlight">\(f\)</span> 再搭 <span class="math notranslate nohighlight">\(g\)</span>），我們就「親手打造」出了一班從台北直飛紐約的完美航班了！只要這班新航班存在，我們就可以大聲宣告 <span class="math notranslate nohighlight">\(G \cong I\)</span>。</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="function-composition">
+<h3>第二步：嚴謹數學推導 —— 函數合成 (Function Composition)<a class="headerlink" href="#function-composition" title="Link to this heading">#</a></h3>
+<p>在數學上，這個「轉機」的動作叫做<strong>函數合成 (Composition)</strong>。
+已知：</p>
+<ol class="arabic simple">
+<li><p>存在同構翻譯機 <span class="math notranslate nohighlight">\(f: G \rightarrow H\)</span></p></li>
+<li><p>存在同構翻譯機 <span class="math notranslate nohighlight">\(g: H \rightarrow I\)</span></p></li>
+</ol>
+<p>我們現在要定義一台全新的翻譯機 <span class="math notranslate nohighlight">\(h: G \rightarrow I\)</span>，定義方式就是把它們串起來：<strong><span class="math notranslate nohighlight">\(h(x) = g(f(x))\)</span></strong>。</p>
+<p>我們只要證明這台新機器 <span class="math notranslate nohighlight">\(h\)</span> 也是「同構（雙射＋同態）」，就可以宣告 <span class="math notranslate nohighlight">\(G \cong I\)</span> 了。我們來闖兩關：</p>
+<p><strong>第一關：證明 <span class="math notranslate nohighlight">\(h\)</span> 依然是雙射 (Bijective)</strong></p>
+<ul class="simple">
+<li><p>這在集合論中是一個鐵則：<strong>「兩個雙射函數的合成，必定也是雙射」</strong>。</p></li>
+<li><p>一對一保證：因為 <span class="math notranslate nohighlight">\(f\)</span> 沒有把不同的輸入撞在一起，<span class="math notranslate nohighlight">\(g\)</span> 也沒有把不同的輸入撞在一起，所以連過兩關後，源頭不同的輸入，結果必定不同。</p></li>
+<li><p>映成保證：因為 <span class="math notranslate nohighlight">\(g\)</span> 能涵蓋所有紐約的機場，<span class="math notranslate nohighlight">\(f\)</span> 能涵蓋所有東京的機場，所以只要從台北出發，絕對能抵達紐約的任何一個角落。</p></li>
+<li><p><strong>第一關通過！</strong></p></li>
+</ul>
+<p><strong>第二關：證明 <span class="math notranslate nohighlight">\(h\)</span> 依然是同態 (Homomorphism)</strong>
+我們必須證明：在 <span class="math notranslate nohighlight">\(G\)</span> 宇宙運算再翻譯，等於翻譯到 <span class="math notranslate nohighlight">\(I\)</span> 宇宙再運算。也就是 <span class="math notranslate nohighlight">\(h(a *_G b) = h(a) *_I h(b)\)</span>。</p>
+<p>請看這個如行雲流水般的推導：</p>
+<div class="math notranslate nohighlight">
+\[h(a *_G b) = g(f(a *_G b)) \quad \text{(這是新機器的定義)}\]</div>
+<p>因為 <span class="math notranslate nohighlight">\(f\)</span> 是同態，它可以把括號裡面的 <span class="math notranslate nohighlight">\(*_G\)</span> 拆開變成 <span class="math notranslate nohighlight">\(*_H\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[= g(f(a) *_H f(b))\]</div>
+<p>現在，看最外層的 <span class="math notranslate nohighlight">\(g\)</span>。因為 <span class="math notranslate nohighlight">\(g\)</span> 也是同態，它可以把括號裡面的 <span class="math notranslate nohighlight">\(*_H\)</span> 拆開變成 <span class="math notranslate nohighlight">\(*_I\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[= g(f(a)) *_I g(f(b))\]</div>
+<p>最後，把 <span class="math notranslate nohighlight">\(g(f(a))\)</span> 和 <span class="math notranslate nohighlight">\(g(f(b))\)</span> 用新機器的名字 <span class="math notranslate nohighlight">\(h\)</span> 寫回來：</p>
+<div class="math notranslate nohighlight">
+\[= h(a) *_I h(b)\]</div>
+<p><strong>第二關完美通過！</strong></p>
+</section>
+<hr class="docutils" />
+<section id="equivalence-relation">
+<h3>第三步：代數學家眼中的「等價關係 (Equivalence Relation)」<a class="headerlink" href="#equivalence-relation" title="Link to this heading">#</a></h3>
+<p>透過您這個犀利的提問，我們剛好證明了同構 (<span class="math notranslate nohighlight">\(\cong\)</span>) 具備了數學上極度重要的一個性質：<strong>遞移律 (Transitivity)</strong>。</p>
+<p>在群論中，同構 (<span class="math notranslate nohighlight">\(\cong\)</span>) 是一種完美的「等價關係」：</p>
+<ol class="arabic simple">
+<li><p><strong>反身性：</strong> <span class="math notranslate nohighlight">\(G \cong G\)</span> （自己當然和自己一模一樣，用 <span class="math notranslate nohighlight">\(f(x) = x\)</span> 就能證明）。</p></li>
+<li><p><strong>對稱性：</strong> <span class="math notranslate nohighlight">\(G \cong H \implies H \cong G\)</span> （因為有反函數 <span class="math notranslate nohighlight">\(f^{-1}\)</span>，我們上一題推導過）。</p></li>
+<li><p><strong>遞移律：</strong> <span class="math notranslate nohighlight">\(G \cong H\)</span> 且 <span class="math notranslate nohighlight">\(H \cong I \implies G \cong I\)</span> （就是我們剛剛用合成函數 <span class="math notranslate nohighlight">\(g(f(x))\)</span> 證明的！）。</p></li>
+</ol>
+<p><strong>結論：</strong>
+因為同構具備這三個神聖的性質，代數學家就可以安心地把世界上無限多種的群，依照「同構」來分門別類。<strong>凡是能透過同構符號 <span class="math notranslate nohighlight">\(\cong\)</span> 連接在一起的群，不管它們中間隔了多少個中繼站，它們在代數結構上統統會被視為「同一個群的化身」！</strong></p>
+<p>您能想到遞移律可能出現破口，代表您已經開始用數學家的直覺在審視定義了。請問這套「函數合成」的推導，有成功消除您對 <span class="math notranslate nohighlight">\(G \cong I\)</span> 可能不成立的疑慮嗎？</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lecture\Algebra\Abstract_Algebra"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition"><strong>Definition</strong> : 群的定義</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example"><strong>Example</strong>：群的例子</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#infinite-additive-and-multiplicative-groups">1. 無限加法群與乘法群 (Infinite Additive and Multiplicative Groups)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subgroups-and-simple-finite-groups">2. 子群與簡單有限群 (Subgroups and Simple Finite Groups)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modular-arithmetic-groups">3. 模運算群 (Modular Arithmetic Groups)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#elliptic-curve-group">4. 橢圓曲線群 (Elliptic Curve Group)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>Example</strong>：非群的例子</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-permutation"><strong>Definition</strong>：Permutation排列的定義(雙射函數)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-symmetric-group"><strong>Definition</strong>：Symmetric Group(對稱群)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-abelian-group"><strong>Definition</strong>：阿貝爾群 (Abelian Group)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#z-p">質數模群的通則 (<span class="math notranslate nohighlight">\(Z_p^*\)</span>)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-non-abelian-group"><strong>Example</strong>：非阿貝爾群 (Non-Abelian Group)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-cyclic-group"><strong>Definition</strong> 循環群 (Cyclic Group)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-group-order"><strong>Definition</strong> 群的階 (Group Order)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gl-n-sl-n"><strong>矩陣群 (<span class="math notranslate nohighlight">\(GL_n, SL_n\)</span>)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gl-8-z-2"><span class="math notranslate nohighlight">\(|GL_8(Z_2)|\)</span> 等於多少？</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-subgroup"><strong>Definition</strong> :子群 (Subgroup)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-coset"><strong>Definition</strong> :陪集 (Coset)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lagrange-s-theorem"><strong>拉格朗日定理 (Lagrange’s Theorem)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lagrange-s-theorem-h-g">1. 拉格朗日定理 (Lagrange’s Theorem)：為什麼 <span class="math notranslate nohighlight">\(|H|\)</span> 能整除 <span class="math notranslate nohighlight">\(|G|\)</span>？</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#index-g-h">2. 指數 (Index)：<span class="math notranslate nohighlight">\([G:H]\)</span> 是什麼？</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#order-of-an-element-o-g">3. 元素的階 (Order of an element)：<span class="math notranslate nohighlight">\(o(g)\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#corollary">4. 推論 (Corollary)：完美的連擊組合技</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transcription">第一步：原始投影片內容輸出 (Transcription)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-homomorphism-isomorphism"><strong>Definition</strong> : 同態 (Homomorphism) 與 同構 (Isomorphism)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#homomorphism">同態 (Homomorphism)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#isomorphism">同構 (Isomorphism)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-homomorphism"><strong>Example Homomorphism (同態)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#f-1-3-f-a-g-b-f-a-h-f-b-3-x"><span class="math notranslate nohighlight">\(f(1)=3\)</span> 為什麼會變成 <span class="math notranslate nohighlight">\(f(a *_G b) = f(a) *_H f(b) = 3^x\)</span>？</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#f-1-2-f-a-g-b-f-a-h-f-b-2x"><span class="math notranslate nohighlight">\(f(1)=2\)</span> 為什麼會變成 <span class="math notranslate nohighlight">\(f(a *_G b) = f(a) *_H f(b) = 2x\)</span>？</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">進階補充：那 0 和負數呢？</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-isomorphism"><strong>Example Isomorphism (同構)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#f-g-rightarrow-h-f-2-h-rightarrow-g">1. 為什麼只檢查 <span class="math notranslate nohighlight">\(f: G \rightarrow H\)</span>，不需要檢查反向的 <span class="math notranslate nohighlight">\(f_2: H \rightarrow G\)</span>？</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#g-cong-h">2. 寫 <span class="math notranslate nohighlight">\(G \cong H\)</span> 是不是應該加上映射方式才完整？一種成立代表全部成立嗎？</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">第一步：破解直覺上的迷思 —— 「存在」不等於「全部」</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#function-composition">第二步：嚴謹數學推導 —— 函數合成 (Function Composition)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equivalence-relation">第三步：代數學家眼中的「等價關係 (Equivalence Relation)」</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC YE
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
