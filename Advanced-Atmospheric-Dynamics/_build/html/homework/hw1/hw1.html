@@ -405,18 +405,23 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">已知與假設</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">核心總結：兩種視角的對立與統一</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mass">第一層次：質量 (Mass)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scalars">第二層次：純量 (Scalars，以水氣為例)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vectors">第三層次：向量 (Vectors，以動量為例)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">總結來說</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question 3</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">已知與假設</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">一、 氣泡幾何與物理動力學假設</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">二、 熱力學與海洋環境假設</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">三、 生物化學機制假設</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">已知與假設</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">一、 氣泡幾何與物理動力學假設</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">二、 熱力學與海洋環境假設</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">三、 生物化學機制假設</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">3.1</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">3.1</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-tau-text-rise">Step 1: 定義「物理傳輸特徵時間」 (<span class="math notranslate nohighlight">\(\tau_{\text{rise}}\)</span>)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-tau-text-bio">Step 2: 定義「生物消耗特徵時間」 (<span class="math notranslate nohighlight">\(\tau_{\text{bio}}\)</span>)</a></li>
 </ul>
@@ -655,9 +660,68 @@ r^4 \Delta p &amp;=&amp; (r')^4 \Delta p' \\
 <p>使用了不可壓縮流體假設後才能夠得到密度的守恆 <span class="math notranslate nohighlight">\(\frac{D\rho}{Dt} = 0\)</span> ，而 <strong>混和比在不相變的情況下不論可否壓縮都守恆</strong></p>
 </section>
 </section>
-</section>
+<section id="id7">
+<h3>核心總結：兩種視角的對立與統一<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<p>在處理流體力學（尤其是可壓縮的大氣）時，所有的物理量都具備兩種面貌，取決於我們是「站在原地觀測」還是「跟著氣流移動」。</p>
+<ul class="simple">
+<li><p><strong>尤拉視角 (Eulerian，固定空間)</strong>：關注的是 <strong>「密度 (Density)」</strong> 與通量。這就像是氣象雷達或固定測站，我們看著物理量在網格點中進進出出。</p></li>
+<li><p><strong>拉格朗日視角 (Lagrangian，跟隨質點)</strong>：關注的是 <strong>「比例/混合比 (Mixing Ratio)」</strong> 與自身的演化。這就像是施放探空氣球，追蹤同一個空氣塊在颱風環流中的生命史。</p></li>
+</ul>
 </section>
 <hr class="docutils" />
+<section id="mass">
+<h3>第一層次：質量 (Mass)<a class="headerlink" href="#mass" title="Link to this heading">#</a></h3>
+<p>這是所有流體方程式的基石。因為流體是連續體，我們無法追蹤離散的總質量 <span class="math notranslate nohighlight">\(m\)</span>，必須轉換為密度 <span class="math notranslate nohighlight">\(\rho\)</span>。</p>
+<ul class="simple">
+<li><p><strong>尤拉視角 (普遍的質量守恆)</strong>：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\frac{\partial \rho}{\partial t} + \nabla \cdot (\rho \mathbf{u}) = 0\]</div>
+<p><strong>物理意義</strong>：網格點密度的時間變化，完全來自於四周氣流帶來的淨質量通量（散度項）。</p>
+<ul class="simple">
+<li><p><strong>拉格朗日視角 (質點的體積變化)</strong>：
+利用實質導數 <span class="math notranslate nohighlight">\(\frac{D}{Dt} = \frac{\partial}{\partial t} + \mathbf{u} \cdot \nabla\)</span> 展開後得到：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\frac{D \rho}{D t} + \rho (\nabla \cdot \mathbf{u}) = 0\]</div>
+<p><strong>物理意義</strong>：跟著空氣塊走，密度的改變完全取決於流場是否對它進行「壓縮或膨脹」（<span class="math notranslate nohighlight">\(\nabla \cdot \mathbf{u}\)</span>）。只有在不可壓縮流體（如水，<span class="math notranslate nohighlight">\(\nabla \cdot \mathbf{u} = 0\)</span>）中，才會出現 <span class="math notranslate nohighlight">\(\frac{D \rho}{D t} = 0\)</span> 的特例。</p>
+</section>
+<section id="scalars">
+<h3>第二層次：純量 (Scalars，以水氣為例)<a class="headerlink" href="#scalars" title="Link to this heading">#</a></h3>
+<p>當我們要追蹤流體內部的某種特定成分（如水氣）時，因為空氣是可壓縮的，直接使用「水氣密度 <span class="math notranslate nohighlight">\(\rho_v\)</span>」會因為體積膨脹而改變，難以追蹤。</p>
+<ul class="simple">
+<li><p><strong>數學魔法 (消去法)</strong>：我們定義「混合比 <span class="math notranslate nohighlight">\(r = \frac{\rho_v}{\rho_d}\)</span>」，將它代入水氣密度的尤拉守恆方程式中，並利用微積分乘積法則展開。</p></li>
+<li><p><strong>關鍵步驟</strong>：展開後，式子中會剛好出現「乾空氣的質量守恆方程式 <span class="math notranslate nohighlight">\(\left[ \frac{\partial \rho_d}{\partial t} + \nabla \cdot (\rho_d \mathbf{u}) \right]\)</span>」，因為這個項恆為 0，所以一大坨複雜的密度變化項直接被消去！</p></li>
+<li><p><strong>最終結果 (極簡的守恆)</strong>：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\frac{D r}{D t} = 0 \quad (\text{假設無蒸發凝結})\]</div>
+<p><strong>物理意義</strong>：大氣科學愛用混合比，因為無論空氣塊在對流層中怎麼被抬升、膨脹，只要沒有相變，混合比在拉格朗日視角下是<strong>絕對保守</strong>的。</p>
+</section>
+<section id="vectors">
+<h3>第三層次：向量 (Vectors，以動量為例)<a class="headerlink" href="#vectors" title="Link to this heading">#</a></h3>
+<p>「動量混合比」完美呼應了第二層次的邏輯，動量 <span class="math notranslate nohighlight">\(P = m\mathbf{u}\)</span> 也遵循同樣的轉換法則。</p>
+<ul class="simple">
+<li><p><strong>尤拉視角 (動量密度 <span class="math notranslate nohighlight">\(\rho \mathbf{u}\)</span>)</strong>：
+通量形式的守恆律：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\frac{\partial (\rho \mathbf{u})}{\partial t} + \nabla \cdot (\rho \mathbf{u} \otimes \mathbf{u}) = \sum \mathbf{F}_{vol}\]</div>
+<p><strong>物理意義</strong>：確保在固定網格上，動量的進出與受力完美平衡。為了保證總動量不滅，全球數值天氣預報模型（無論是傳統動力核心或資料驅動的 AI 模型）在設計底層網格時，經常必須小心處理這一條通量守恆式。</p>
+<ul class="simple">
+<li><p><strong>拉格朗日視角 (動量混合比，即速度 <span class="math notranslate nohighlight">\(\mathbf{u}\)</span>)</strong>：
+再次施展上述的「數學魔法」！利用乘積法則展開，並消去連續方程式後，我們得到平流形式：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\frac{D\mathbf{u}}{Dt} = \sum \mathbf{F}_{mass}\]</div>
+<p><strong>物理意義</strong>：剝除掉因為「流體可壓縮性」帶來的數學複雜度後，我們回到了最純粹的牛頓第二運動定律——空氣塊的加速度，等於它受到的單位質量外力。</p>
+</section>
+<section id="id8">
+<h3>總結來說<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<p><strong>尤拉視角方程式 - 連續方程式 = 拉格朗日視角方程式</strong> 是古典流體力學處理守恆律的最強套路，在分析熱帶氣旋演變時我們常交替使用兩者：用尤拉通量看眼牆的質量輻合，用拉格朗日守恆量看氣塊的來源。</p>
+</section>
+</section>
+</section>
 <section class="tex2jax_ignore mathjax_ignore" id="question-3">
 <h1>Question 3<a class="headerlink" href="#question-3" title="Link to this heading">#</a></h1>
 <p>海水中嗜甲烷菌 (Methanotrophs) 扮演著地球的過濾器，能消耗海底噴發的甲烷 (<span class="math notranslate nohighlight">\(CH_4\)</span>)，減少其進入大氣加劇溫室效應。</p>
@@ -665,10 +729,10 @@ r^4 \Delta p &amp;=&amp; (r')^4 \Delta p' \\
 <li><p>請由物理與幾何機制解釋：為何海底甲烷冰產生「大規模爆發的大氣泡排放」與「微小氣泡排放」時，能抵達海面進入大氣的甲烷比例有顯著差異？</p></li>
 <li><p>請建構一個無因次參數（Dimensionless number）來量化此生化與物理的競爭過程，並說明該參數取決於哪些環境與幾何因素？</p></li>
 </ol>
-<section id="id7">
-<h2>已知與假設<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
-<section id="id8">
-<h3>一、 氣泡幾何與物理動力學假設<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<section id="id9">
+<h2>已知與假設<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
+<section id="id10">
+<h3>一、 氣泡幾何與物理動力學假設<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p><strong>【假設 1】完美的球體假設 (Perfectly Spherical Bubble)</strong></p></li>
 </ol>
@@ -691,8 +755,8 @@ r^4 \Delta p &amp;=&amp; (r')^4 \Delta p' \\
 <li><p><strong>忽略了什麼</strong>：在大規模爆發（Blowout）時，大量氣泡會互相碰撞、合併（Coalescence）變大，或是被流體剪力撕裂變小。群體氣泡也會產生向上的尾流（Wake），把周圍的水帶上來，使上浮速度比單顆氣泡更快。</p></li>
 </ul>
 </section>
-<section id="id9">
-<h3>二、 熱力學與海洋環境假設<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<section id="id11">
+<h3>二、 熱力學與海洋環境假設<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
 <ol class="arabic simple" start="4">
 <li><p><strong>【假設 4】不可壓縮氣體 / 恆定密度 (Constant Gas Density)</strong></p></li>
 </ol>
@@ -715,8 +779,8 @@ r^4 \Delta p &amp;=&amp; (r')^4 \Delta p' \\
 <li><p><strong>忽略了什麼</strong>：海水中溶解了大量的氮氣和氧氣。在上浮過程中，海水中的 <span class="math notranslate nohighlight">\(N_2\)</span> 和 <span class="math notranslate nohighlight">\(O_2\)</span> 會擴散<strong>進入</strong>氣泡內，改變氣泡的成分和浮力。</p></li>
 </ul>
 </section>
-<section id="id10">
-<h3>三、 生物化學機制假設<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<section id="id12">
+<h3>三、 生物化學機制假設<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
 <ol class="arabic simple" start="7">
 <li><p><strong>【假設 7】零階表面反應 / 恆定消耗率 (Constant Surface Reaction Rate)</strong></p></li>
 </ol>
@@ -733,8 +797,8 @@ r^4 \Delta p &amp;=&amp; (r')^4 \Delta p' \\
 </ul>
 </section>
 </section>
-<section id="id11">
-<h2>3.1<a class="headerlink" href="#id11" title="Link to this heading">#</a></h2>
+<section id="id13">
+<h2>3.1<a class="headerlink" href="#id13" title="Link to this heading">#</a></h2>
 <p>把整個過程拆解成兩件事： <strong>「氣泡往上跑」</strong> 與 <strong>「細菌吃氣泡」</strong> ，這兩件事各自需要花費一定的時間。</p>
 <section id="step-1-tau-text-rise">
 <h3>Step 1: 定義「物理傳輸特徵時間」 (<span class="math notranslate nohighlight">\(\tau_{\text{rise}}\)</span>)<a class="headerlink" href="#step-1-tau-text-rise" title="Link to this heading">#</a></h3>
@@ -861,18 +925,23 @@ r^4 \Delta p &amp;=&amp; (r')^4 \Delta p' \\
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">已知與假設</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">核心總結：兩種視角的對立與統一</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mass">第一層次：質量 (Mass)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scalars">第二層次：純量 (Scalars，以水氣為例)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vectors">第三層次：向量 (Vectors，以動量為例)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">總結來說</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question 3</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">已知與假設</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">一、 氣泡幾何與物理動力學假設</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">二、 熱力學與海洋環境假設</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">三、 生物化學機制假設</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">已知與假設</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">一、 氣泡幾何與物理動力學假設</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">二、 熱力學與海洋環境假設</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">三、 生物化學機制假設</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">3.1</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">3.1</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-tau-text-rise">Step 1: 定義「物理傳輸特徵時間」 (<span class="math notranslate nohighlight">\(\tau_{\text{rise}}\)</span>)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-tau-text-bio">Step 2: 定義「生物消耗特徵時間」 (<span class="math notranslate nohighlight">\(\tau_{\text{bio}}\)</span>)</a></li>
 </ul>
