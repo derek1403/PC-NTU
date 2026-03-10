@@ -1,0 +1,854 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Modern Physics - Relativity &#8212; Modern Physics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lecture/01_Relativity/relativity';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="homework hardword" href="../../homework/homework.html" />
+    <link rel="prev" title="lecture.md" href="../lecture.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Modern Physics - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Modern Physics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    近代物理 (Modern Physics) 課程筆記
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../lecture.html">lecture.md</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Modern Physics - Relativity</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../homework/homework.html">homework hardword</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../homework/hw1/hw1.html">Modern Physics Hw 1</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flecture/01_Relativity/relativity.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/lecture/01_Relativity/relativity.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Modern Physics - Relativity</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#special-relativity">1.1 特殊相對論 (Special Relativity)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frame-of-reference">參考座標系 (Frame of Reference)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">特殊相對論的兩大假設</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#michelson-morley-experiment">麥克生-莫雷 干涉實驗 (Michelson-Morley Experiment)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#galilean-transformation">1.2 伽利略轉換 (Galilean Transformation)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lorentz-transformation">1.3 羅倫茲轉換 (Lorentz Transformation)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">推導過程</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-dilation">1.4 時間膨脹 (Time Dilation)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#light-clock-derivation">移動光鐘實驗 (Light Clock Derivation)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#length-contraction">1.5 長度收縮 (Length Contraction)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">推導過程</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#twin-paradox">雙生子悖論 (Twin Paradox)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relativistic-momentum">1.6 相對論動量 (Relativistic Momentum)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tau">相對論動量推導 (經由原時 <span class="math notranslate nohighlight">\(\tau\)</span>)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mass-and-energy">1.7 質量與能量 (Mass and Energy)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">已知與假設</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-and-momentum">1.8 能量與動量關係式 (Energy and Momentum)</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="modern-physics-relativity">
+<h1>Modern Physics - Relativity<a class="headerlink" href="#modern-physics-relativity" title="Link to this heading">#</a></h1>
+<p><strong>日期:</strong> 2026.03.03</p>
+<section id="special-relativity">
+<h2>1.1 特殊相對論 (Special Relativity)<a class="headerlink" href="#special-relativity" title="Link to this heading">#</a></h2>
+<section id="frame-of-reference">
+<h3>參考座標系 (Frame of Reference)<a class="headerlink" href="#frame-of-reference" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>慣性參考座標系 (Inertial Frame of Reference)：</strong> 指的是一個不受外力作用（或合力為零）的座標系。在此座標系中，靜止的物體保持靜止，運動中的物體則會持續以等速度直線移動（即滿足牛頓第一運動定律）。</p></li>
+</ul>
+</section>
+<section id="id1">
+<h3>特殊相對論的兩大假設<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>特殊相對論建立在以下兩個基本假設之上，主要探討無重力、無加速度的慣性系統：</p>
+<ol class="arabic simple">
+<li><p><strong>相對性原理 (The Principle of Relativity)：</strong> 所有物理定律在所有慣性座標系中皆具有相同的數學形式，沒有任何一個慣性座標系比其他座標系更「優越」或「特殊」。</p></li>
+<li><p><strong>光速不變原理 (The Constancy of the Speed of Light)：</strong> 實驗證實，光在真空中的傳播速度 <span class="math notranslate nohighlight">\(c\)</span>（約為 299,792,458 <span class="math notranslate nohighlight">\([\text{m}\text{s}^{-1}]\)</span>），對於任何慣性座標系的觀察者而言皆相同，與光源本身的運動速度無關。</p></li>
+</ol>
+</section>
+<section id="michelson-morley-experiment">
+<h3><a class="reference external" href="https://physicsopenlab.org/2020/05/16/michelson-morley-interferometer/">麥克生-莫雷 干涉實驗 (Michelson-Morley Experiment)</a><a class="headerlink" href="#michelson-morley-experiment" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>描述：</strong> 利用干涉儀，將單一光源透過半反半透鏡分為互相垂直的兩道光束，經反射鏡反射後重新匯聚於屏幕上，觀察是否因地球在「乙太」(Aether) 中運動而 <strong>產生相位差</strong> 與 *<em>干涉條紋的移動</em>。</p></li>
+<li><p><strong>結果：</strong> 無論在什麼季節、什麼方向進行測量，皆<strong>沒有觀察到預期的干涉條紋移動</strong>（即無相位差）。</p></li>
+<li><p><strong>結論：</strong></p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>光在所有慣性坐標系中的速度皆相同。</p></li>
+<li><p>宇宙中不存在「絕對靜止」的參考座標系。</p></li>
+<li><p>傳遞光的介質「乙太」並不存在，光可以在真空中傳播。</p></li>
+</ol>
+<p><img alt="" src="../../_images/Michelson-Morley_experiment.png" /></p>
+<blockquote>
+<div><p><strong>補充：廣義相對論 (General Relativity)</strong>
+旨在描述物質如何彎曲時空幾何，以及這種彎曲如何表現為重力。其處理的是包含重力與加速度的「非慣性座標系」。本章後續討論均限制於特殊相對論範疇。</p>
+</div></blockquote>
+</section>
+</section>
+<section id="galilean-transformation">
+<h2>1.2 伽利略轉換 (Galilean Transformation)<a class="headerlink" href="#galilean-transformation" title="Link to this heading">#</a></h2>
+<p>假設有一慣性坐標系 <span class="math notranslate nohighlight">\(S\)</span> 具有 <span class="math notranslate nohighlight">\(x, y, z\)</span> 軸。另一個慣性坐標系 <span class="math notranslate nohighlight">\(S'\)</span> 以相對速度 <span class="math notranslate nohighlight">\(v\)</span> 沿著 <span class="math notranslate nohighlight">\(x\)</span> 軸正方向移動。在牛頓力學的絕對時空觀下，兩座標系的轉換關係如下：
+<span class="math notranslate nohighlight">\( x=1, y=2 \)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left\{
+\begin{aligned}
+x' &amp;= x - vt \\
+y' &amp;= y \\
+z' &amp;= z \\
+t' &amp;= t \quad \text{(絕對時間假設)}
+\end{aligned}
+\right. 
+\quad , \quad
+\left\{
+\begin{aligned}
+v_{x}' &amp;= \frac{dx'}{dt'} = v_x - v \\
+v_{y}' &amp;= \frac{dy'}{dt'} = v_y \\
+v_{z}' &amp;= \frac{dz'}{dt'} = v_z
+\end{aligned}
+\right.\end{split}\]</div>
+<p><strong>伽利略轉換的失效：</strong>
+如果我們在 <span class="math notranslate nohighlight">\(S'\)</span> 座標系（例如一列高速行駛的火車）上向前方發射一道光，依據伽利略速度疊加原理，站在地面 (<span class="math notranslate nohighlight">\(S\)</span> 座標系) 的觀察者測量到的光速將會是 <span class="math notranslate nohighlight">\(c_{obs} = c + v\)</span>。這直接違背了特殊相對論的第二假設：「光速在所有慣性座標系中皆恆定為 <span class="math notranslate nohighlight">\(c\)</span>」。因此我們必須尋找一組新的轉換方程式。</p>
+</section>
+<section id="lorentz-transformation">
+<h2>1.3 羅倫茲轉換 (Lorentz Transformation)<a class="headerlink" href="#lorentz-transformation" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p><strong>物理哲學觀：</strong> 物理學的推論往往始於「假設 (postulate)」。這些假設並非純粹憑空推導而來，而是從無數次實驗中歸納得出的公理。直到有新的實驗現象（如光速不變）挑戰了舊有假設（如牛頓的絕對時空），物理學家便會提出新的假設來修正理論。</p>
+</div></blockquote>
+<p>為了滿足光速不變原理，我們假設新的轉換（羅倫茲轉換）相對於伽利略轉換必須保持<strong>線性關係</strong>（以確保慣性運動在轉換後仍為慣性運動）。</p>
+<p>在羅倫茲轉換中：</p>
+<ul class="simple">
+<li><p><strong>會改變的變數（相對量）：</strong> 空間座標 (<span class="math notranslate nohighlight">\(x, y, z\)</span>)、時間 (<span class="math notranslate nohighlight">\(t\)</span>)、動量 (<span class="math notranslate nohighlight">\(p\)</span>)、動能 (<span class="math notranslate nohighlight">\(KE\)</span>) 等。</p></li>
+<li><p><strong>不改變的變數（不變量）：</strong> 相對速度 (<span class="math notranslate nohighlight">\(v\)</span>)、真空中光速 (<span class="math notranslate nohighlight">\(c\)</span>)、靜止質量 (<span class="math notranslate nohighlight">\(m_0\)</span>) 等。</p></li>
+</ul>
+<section id="id2">
+<h3>推導過程<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>我們假設存在一個轉換常數 <span class="math notranslate nohighlight">\(k\)</span>，使得：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left \{\begin{gather*}
+x' &amp;=&amp; k(x - vt) \\
+x  &amp;=&amp; k(x' + vt') &amp;\quad \text{(由對稱性可知，} S \text{ 相對於 } S' \text{ 速度為 } -v\text{)} \\
+\end{gather*}\right .\end{split}\]</div>
+<p>為了找出 <span class="math notranslate nohighlight">\(k\)</span>，我們利用光速不變原理。假設在 <span class="math notranslate nohighlight">\(t = t' = 0\)</span> 時，原點重合，且發出一道閃光。經過一段時間後，兩座標系觀察到的波前方程式必分別為 <span class="math notranslate nohighlight">\(\left \{ \begin{aligned}x &amp;= ct \\ x' &amp;= ct'\end{aligned}\right .\)</span>。將其代入上述假設：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left \{ \begin{aligned}
+x &amp;=&amp; ct &amp;=&amp;  k(x' + vt')\\
+x' &amp;=&amp; ct' &amp;=&amp; k(x - vt)
+\end{aligned}\right . \\
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gather*}
+\implies &amp; c^2 t t' &amp;=&amp; k^2 t t' (c - v)(c + v)\\
+&amp; c^2 &amp;=&amp; k^2 (c^2 - v^2)\\
+&amp; k^2 &amp;=&amp; \frac{c^2}{c^2 - v^2} = \frac{1}{1 - \frac{v^2}{c^2}} \\
+&amp; k &amp;=&amp; \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}} &amp;\underset{\text{Lorentz factor}}{\overset{\text{def}}{=}} \gamma \tag{1.1}
+\end{gather*}
+\end{split}\]</div>
+<p>我們定義此因子為 <strong>羅倫茲因子 <span class="math notranslate nohighlight">\(\gamma\)</span> (Lorentz factor)</strong></p>
+<p>因此，空間的轉換方程式為：</p>
+<div class="math notranslate nohighlight">
+\[x' = \gamma (x - vt) \tag{1.2}\]</div>
+</section>
+</section>
+<section id="time-dilation">
+<h2>1.4 時間膨脹 (Time Dilation)<a class="headerlink" href="#time-dilation" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p><strong>「飛船繞地球轉的例子是不是很不好？」</strong>
+如果飛船在「繞地球轉」就具有向心加速度，屬於<strong>非慣性座標系</strong>，嚴格來說必須使用廣義相對論來處理。為了精確說明特殊相對論，我們應將例子修正為：「飛船以等速度 0.8c 沿直線遠離地球」。</p>
+</div></blockquote>
+<p><strong>核心概念：</strong> 靜止的觀察者會測量到，相對於他運動的時鐘，其滴答速度比他身旁靜止的時鐘還要慢。所謂的 <strong>原時 (Proper time, <span class="math notranslate nohighlight">\(\Delta t_0\)</span>)</strong>，是指<strong>在同一個空間座標點上發生的兩個事件之間的時間間隔</strong>（即跟著時鐘一起移動的人所測量到的時間，事件可以例如說光發射的時間點、光反射的時間點）。</p>
+<section id="light-clock-derivation">
+<h3>移動光鐘實驗 (Light Clock Derivation)<a class="headerlink" href="#light-clock-derivation" title="Link to this heading">#</a></h3>
+<p><img alt="" src="../../_images/Light_Clock_Derivation1.png" /></p>
+<p>假設飛船上有一個光鐘，光子在相距 <span class="math notranslate nohighlight">\(L_0\)</span> 的兩面鏡子間上下反射。</p>
+<ul class="simple">
+<li><p><strong>在飛船上 (<span class="math notranslate nohighlight">\(S'\)</span> 座標系)：</strong> 觀察者看到光子直上直下，來回一次所需的時間為原時 <span class="math notranslate nohighlight">\(\Delta t_0\)</span>。</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\frac{\Delta t_0}{2} = \frac{L_0}{c}\]</div>
+<ul class="simple">
+<li><p><strong>在地球上 (<span class="math notranslate nohighlight">\(S\)</span> 座標系)：</strong> 觀察者看到飛船以速度 <span class="math notranslate nohighlight">\(v\)</span> 前進，因此光子走的是斜線路徑、設地球觀察者測量到的時間為 <span class="math notranslate nohighlight">\(\Delta t\)</span>，根據畢氏定理：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\left( c \frac{\Delta t}{2} \right)^2 = L_0^2 + \left( v \frac{\Delta t}{2} \right)^2\]</div>
+<p>將 <span class="math notranslate nohighlight">\(L_0 = c \frac{\Delta t_0}{2}\)</span> 代入：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+c^2 \left( \frac{\Delta t}{2} \right)^2 &amp;= \left( c \frac{\Delta t_0}{2} \right)^2 + v^2 \left( \frac{\Delta t}{2} \right)^2 \\
+c^2 (\Delta t)^2 &amp;= c^2 (\Delta t_0)^2 + v^2 (\Delta t)^2 \\
+(\Delta t)^2 (c^2 - v^2) &amp;= c^2 (\Delta t_0)^2 \\
+(\Delta t)^2 &amp;= \frac{c^2}{c^2 - v^2} (\Delta t_0)^2 = \frac{1}{1 - v^2/c^2} (\Delta t_0)^2
+\end{aligned}\end{split}\]</div>
+<p>開根號後得到時間膨脹公式：</p>
+<div class="math notranslate nohighlight">
+\[\Delta t = \gamma \Delta t_0 \tag{1.3}\]</div>
+<p>因為 <span class="math notranslate nohighlight">\(\gamma \ge 1\)</span>，所以 <span class="math notranslate nohighlight">\(\Delta t \ge \Delta t_0\)</span>，這證明了「運動中的時鐘走得比較慢」。</p>
+<blockquote>
+<div><p><strong>針對你的疑問：「我搞混了，我們要證明的是 <span class="math notranslate nohighlight">\(t' = \gamma(t - \frac{vx}{c^2})\)</span> 嗎？」</strong>
+這裡需要明確區分 <strong>「時間間隔 (Time Interval)」</strong> 與 <strong>「座標轉換 (Coordinate Transformation)」</strong>
+上方證明的 <span class="math notranslate nohighlight">\(\Delta t = \gamma \Delta t_0\)</span> 是指兩個事件的<strong>時間差</strong>（且前提是這兩事件在 <span class="math notranslate nohighlight">\(S'\)</span> 座標系發生於同一個地點）。
+若要推導時間的<strong>座標轉換</strong> <span class="math notranslate nohighlight">\(t'\)</span>，可以將 <span class="math notranslate nohighlight">\(x = \gamma(x' + vt')\)</span> 代入 <span class="math notranslate nohighlight">\(x' = \gamma(x - vt)\)</span> 並解出 <span class="math notranslate nohighlight">\(t'\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[t' = \gamma \left( t - \frac{vx}{c^2} \right) \tag{1.4}\]</div>
+<p>這個式子說明了時間不只與觀察者的速度有關，還與事件發生的<strong>空間位置 <span class="math notranslate nohighlight">\(x\)</span></strong> 有關，這正是「同時性的相對性」的數學表現。</p>
+</div></blockquote>
+</section>
+</section>
+<section id="length-contraction">
+<h2>1.5 長度收縮 (Length Contraction)<a class="headerlink" href="#length-contraction" title="Link to this heading">#</a></h2>
+<p><strong>核心概念：</strong> 靜止的觀察者會發現，相對於他運動的物體，在其運動方向上的長度會縮短。<strong>原長 (Proper length, <span class="math notranslate nohighlight">\(L_0\)</span>)</strong> 是指在與物體相對靜止的座標系中所測量到的長度。</p>
+<section id="id3">
+<h3>推導過程<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p><img alt="" src="../../_images/Length_Contraction.png" /></p>
+<p>假設一把尺相對於 <span class="math notranslate nohighlight">\(S'\)</span> 座標系靜止，長度為原長 <span class="math notranslate nohighlight">\(L_0 = x_2' - x_1'\)</span>。
+我們站在 <span class="math notranslate nohighlight">\(S\)</span> 座標系測量這把移動中的尺，長度為 <span class="math notranslate nohighlight">\(L = x_2 - x_1\)</span>。
+<strong>測量長度的關鍵條件是：必須「同時」紀錄尺的兩端</strong>，也就是在 <span class="math notranslate nohighlight">\(S\)</span> 座標系中 <span class="math notranslate nohighlight">\(t_1 = t_2\)</span>。</p>
+<p>利用羅倫茲空間轉換式 <span class="math notranslate nohighlight">\(x' = \gamma(x - vt)\)</span> ，因為測量是同時進行的 (<span class="math notranslate nohighlight">\(t_1 = t_2\)</span>)，包含 <span class="math notranslate nohighlight">\(t\)</span> 的項會互相抵消：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+L_0 &amp;= x_2' - x_1' \\
+    &amp;= \gamma(x_2 - vt_2) - \gamma(x_1 - vt_1) \\
+    &amp;= \gamma(x_2 - x_1) \\
+    &amp;= \gamma L
+\end{aligned}\end{split}\]</div>
+<p>得到長度收縮公式：</p>
+<div class="math notranslate nohighlight">
+\[L = \frac{L_0}{\gamma} \tag{1.5}\]</div>
+<p>因為 <span class="math notranslate nohighlight">\(\gamma \ge 1\)</span>，所以 <span class="math notranslate nohighlight">\(L \le L_0\)</span>，運動方向上的長度會被觀察到變短。</p>
+</section>
+<section id="twin-paradox">
+<h3>雙生子悖論 (Twin Paradox)<a class="headerlink" href="#twin-paradox" title="Link to this heading">#</a></h3>
+<p>這是一個探討相對性對稱破缺的經典案例。</p>
+<p><img alt="" src="../../_images/Twin_Paradox.png" /></p>
+<ul class="simple">
+<li><p><strong>情境：</strong> 雙胞胎迪克(Dick)在 20 歲時，以 0.8c 的速度搭乘太空船前往 20 光年遠的星球，隨後折返。珍(Jane)則留在地球。</p></li>
+<li><p><strong>矛盾點：</strong> 從地球的珍來看，迪克在高速運動，迪克的時間變慢了；但依據相對性原理，迪克也可以認為是地球在反向高速運動，珍的時間應該變慢。如果兩者都認為對方比較年輕，當他們重聚時會發生什麼事？</p></li>
+<li><p><strong>解答與邏輯銜接：</strong> 這個悖論的盲點在於「兩人的經歷並非完全對稱」。珍始終待在同一個慣性座標系中；然而，迪克在到達目的地並<strong>掉頭折返時，必須經歷減速與加速的過程</strong>，這導致迪克從一個慣性座標系切換到了另一個慣性座標系。因此，狹義相對論的時間膨脹對稱性被打破。</p></li>
+<li><p><strong>計算結果：</strong></p>
+<ul>
+<li><p>珍在地球上的等待時間（地球視角計算）：去程 <span class="math notranslate nohighlight">\(\frac{20\text{ly}}{0.8c} = 25\)</span> 年，回程 25 年，總共 50 年。珍重聚時 70 歲。</p></li>
+<li><p>迪克的經歷時間（計算原時）：因為 <span class="math notranslate nohighlight">\(\gamma = \frac{1}{\sqrt{1 - 0.8^2}} = 1.67\)</span>，迪克的原時流逝為 <span class="math notranslate nohighlight">\(\Delta t_0 = \frac{\Delta t}{\gamma} = \frac{25}{1.67} = 15\)</span> 年。去程加回程共 30 年。迪克重聚時 50 歲。</p></li>
+</ul>
+</li>
+<li><p><strong>結論：</strong> 迪克的生命並未被「拉長」，他實實在在地只度過了 30 年的生物歲月。</p></li>
+</ul>
+</section>
+</section>
+<section id="relativistic-momentum">
+<h2>1.6 相對論動量 (Relativistic Momentum)<a class="headerlink" href="#relativistic-momentum" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p><strong>針對你的疑問：「為什麼要保全動量守恆，甚至不惜違反質量守恆？」</strong>
+這牽涉到理論物理學中非常深刻的「諾特定理 (Noether’s Theorem)」。該定理指出，每一個連續的對稱性都對應一個守恆律。<strong>空間的平移對稱性要求動量必須絕對守恆</strong>（如果動量不守恆，代表物理定律會因為你在宇宙中的位置不同而改變，這違背了相對性原理）。相對地，「質量守恆」只是一個低速世界下的近似經驗法則。在相對論中，質量與能量是可以互相轉換的，真正守恆的是「總能量-動量」。</p>
+</div></blockquote>
+<blockquote>
+<div><p>為了避免混淆，現代物理學強烈建議：<strong><span class="math notranslate nohighlight">\(m_0\)</span> 專門代表靜止質量 (Rest mass)，它是一個洛倫茲不變量 (Lorentz Invariant)，所有觀察者看這個數值都一樣。</strong> 我們放棄使用「動質量 (Relativistic mass, <span class="math notranslate nohighlight">\(m = \gamma m_0\)</span>)」這個容易引起誤會的名詞，而是將 <span class="math notranslate nohighlight">\(\gamma\)</span> 歸因於速度與座標的變換。</p>
+</div></blockquote>
+<section id="tau">
+<h3>相對論動量推導 (經由原時 <span class="math notranslate nohighlight">\(\tau\)</span>)<a class="headerlink" href="#tau" title="Link to this heading">#</a></h3>
+<p>在古典力學中，動量定義為 <span class="math notranslate nohighlight">\(\mathbf{p} = m_0 \frac{d\mathbf{x}}{dt}\)</span>。但在相對論中，時間 <span class="math notranslate nohighlight">\(t\)</span> 會隨著座標系改變，導致這樣定義出來的動量在座標轉換下不守恆。
+為了構造一個在所有慣性系都協變的動量，我們必須對「不變量」進行微分。空間座標 <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> 微分的對象應改為不變的<strong>原時 (Proper time, <span class="math notranslate nohighlight">\(\tau\)</span>)</strong>。</p>
+<p>根據時間膨脹公式(1.3)，微小時間間隔關係為 <span class="math notranslate nohighlight">\(dt = \gamma d\tau\)</span>，所以：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\mathbf{p} &amp;= m_0 \frac{d\mathbf{x}}{d\tau} \\
+           &amp;= m_0 \frac{d\mathbf{x}}{dt} \frac{dt}{d\tau} \\
+           &amp;= m_0 \mathbf{v} \gamma
+\end{aligned}\end{split}\]</div>
+<p>因此，相對論動量的正確定義式為：</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{p} = \gamma m_0 \mathbf{v} \tag{1.6}\]</div>
+</section>
+</section>
+<section id="mass-and-energy">
+<h2>1.7 質量與能量 (Mass and Energy)<a class="headerlink" href="#mass-and-energy" title="Link to this heading">#</a></h2>
+<section id="id4">
+<h3>已知與假設<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>【已知 1】分部積分法 Integration by parts:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\int x \, dy = xy - \int y \, dx\)</span></p></li>
+</ul>
+</li>
+</ul>
+<p>我們可透過功能定理 (Work-Energy Theorem) 來推導相對論中的動能 (<span class="math notranslate nohighlight">\(KE\)</span>)。動能等於外力對物體從靜止 (<span class="math notranslate nohighlight">\(v=0\)</span>) 加速到速度 <span class="math notranslate nohighlight">\(v\)</span> 所作的功。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+&amp;KE &amp;=&amp; \int_{0}^{s} F \, dx \\
+\xrightarrow{\text{牛頓第二定律的普遍形式}}&amp;   &amp;=&amp; \int_{0}^{s} \frac{dp}{dt} \, dx  \\
+\xrightarrow{v = \frac{dx}{dt}}&amp;   &amp;=&amp; \int_{0}^{p} v \, dp \\
+&amp;   &amp;=&amp; \int_{0}^{v} v \, d(\gamma m_0 v) \\
+\xrightarrow{\text{已知 1}}&amp;   &amp;=&amp; \left[ v (\gamma m_0 v) \right]_{0}^{v} - \int_{0}^{v} \gamma m_0 v \, dv \\
+&amp;   &amp;=&amp; \gamma m_0 v^2 - m_0 \int_{0}^{v} \frac{v}{\sqrt{1 - \frac{v^2}{c^2}}} \, dv \\
+\underset{du = -\frac{2v}{c^2} dv }{\xrightarrow{u \overset{\text{let}}{=} 1 - \frac{v^2}{c^2}}}&amp; &amp;=&amp;  \gamma m_0 v^2 - m_0 \int_{u^*_1}^{u^*_0} \frac{-c^2/2}{\sqrt{u}} \, du \\
+&amp;   &amp;=&amp; \gamma m_0 v^2 - m_0  \left[-c^2 \sqrt{u}\, \right]_{u^*_1}^{u^*_0}\\
+&amp;   &amp;=&amp; \gamma m_0 v^2 - m_0  \left[ -c^2 \sqrt{1 - \frac{v^2}{c^2}} \, \right]_{0}^{v}\\
+&amp;   &amp;=&amp; \gamma m_0 v^2 - m_0 (-\frac{c^2}{\gamma} + c^2)\\
+&amp;   &amp;=&amp; \gamma m_0 v^2 + m_0 \frac{ c^2}{\gamma} - m_0 c^2  \\
+&amp;   &amp;=&amp; \gamma \left( m_0 v^2 + m_0 c^2 \left( \frac{1}{\gamma^2} \right) \right) - m_0 c^2\\
+\xrightarrow{\frac{1}{\gamma^2} = 1 - \frac{v^2}{c^2}}&amp; &amp;=&amp; \gamma \left( m_0 v^2 + m_0 c^2 \left( 1 - \frac{v^2}{c^2} \right) \right) - m_0 c^2\\
+&amp;   &amp;=&amp; \gamma \left( m_0 v^2 + m_0 c^2 - m_0 v^2 \right) - m_0 c^2 \\
+&amp;   &amp;=&amp;  \gamma m_0 c^2 - m_0 c^2 \tag{1.7}
+\end{gather*}\end{split}\]</div>
+<p><strong>物理意義結論：</strong></p>
+<ul class="simple">
+<li><p><strong>動能 (Kinetic Energy)：</strong> <span class="math notranslate nohighlight">\(KE = (\gamma - 1)m_0 c^2\)</span>，代表物體因運動而多出的能量。</p></li>
+<li><p><strong>總能量 (Total Energy)：</strong> <span class="math notranslate nohighlight">\(E = \gamma m_0 c^2\)</span>，這是動能與靜止能量的總和。</p></li>
+<li><p><strong>靜止能量 (Rest Energy)：</strong> <span class="math notranslate nohighlight">\(E_0 = m_0 c^2\)</span>，即使物體不動，其質量本身就蘊含著龐大的能量（這也就是著名的質能等價公式）。</p></li>
+</ul>
+</section>
+</section>
+<section id="energy-and-momentum">
+<h2>1.8 能量與動量關係式 (Energy and Momentum)<a class="headerlink" href="#energy-and-momentum" title="Link to this heading">#</a></h2>
+<p>我們希望找出不包含速度變數 <span class="math notranslate nohighlight">\(v\)</span> 的能量與動量關係。
+已知總能量 <span class="math notranslate nohighlight">\(E = \gamma m_0 c^2\)</span> 與動量 <span class="math notranslate nohighlight">\(p = \gamma m_0 v\)</span>。</p>
+<p>將兩者平方後相減：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+&amp;E^2 - (pc)^2 &amp;=&amp; (\gamma m_0 c^2)^2 - (\gamma m_0 v c)^2 \\
+&amp;             &amp;=&amp; \gamma^2 m_0^2 c^4 - \gamma^2 m_0^2 v^2 c^2 \\
+&amp;             &amp;=&amp; \gamma^2 m_0^2 c^4 \left( 1 - \frac{v^2}{c^2} \right) \\
+\xrightarrow{\gamma^2 \left( 1 - \frac{v^2}{c^2} \right) = 1}&amp;&amp;=&amp; m_0^2 c^4 \\
+&amp; E^2 &amp;=&amp; (m_0 c^2)^2 + (pc)^2 \tag{1.8}
+\end{gather*}\end{split}\]</div>
+<blockquote>
+<div><p><strong>針對你的疑問：「P 是向量？更正確的寫法是 <span class="math notranslate nohighlight">\(\mathbf{P} \cdot \mathbf{P} c^2\)</span> 嗎？」</strong>
+非常精準的問題！是的，<strong>動量 <span class="math notranslate nohighlight">\(\mathbf{p}\)</span> 是一個三維空間向量</strong>，包含 <span class="math notranslate nohighlight">\((p_x, p_y, p_z)\)</span>。
+因此，公式中的 <span class="math notranslate nohighlight">\(p^2\)</span> 嚴格來說確實應該寫作內積 <span class="math notranslate nohighlight">\(\mathbf{p} \cdot \mathbf{p} = p_x^2 + p_y^2 + p_z^2\)</span> 的純量大小。公式 <span class="math notranslate nohighlight">\((1.8)\)</span> 更嚴謹的寫法正如你所說，是：</p>
+<div class="math notranslate nohighlight">
+\[E^2 = (m_0 c^2)^2 + (\mathbf{p} \cdot \mathbf{p}) c^2\]</div>
+<p><strong>關於光速 <span class="math notranslate nohighlight">\(c\)</span>：</strong> 光速 <span class="math notranslate nohighlight">\(c\)</span> (<span class="math notranslate nohighlight">\(299,792,458\)</span> m/s) 是一個「純量」，代表速度的<strong>大小</strong>。但光子的「運動方向」可以用速度向量 <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> (大小為 <span class="math notranslate nohighlight">\(c\)</span>) 來表示。
+<strong>具體例子（光子）：</strong> 光子沒有靜止質量 (<span class="math notranslate nohighlight">\(m_0 = 0\)</span>)，但光子是有動量的！代入公式 <span class="math notranslate nohighlight">\((1.8)\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[E^2 = (0 \cdot c^2)^2 + p^2 c^2 \implies E = pc\]</div>
+<p>在量子力學中，光子的動量向量大小由 <span class="math notranslate nohighlight">\(p = \frac{h}{\lambda}\)</span> 決定（<span class="math notranslate nohighlight">\(h\)</span> 為普朗克常數），而方向就是光的傳播方向。所以光子雖然沒有質量，卻具有向量形式的動量，可以對物體產生「光壓」。</p>
+</div></blockquote>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lecture\01_Relativity"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../lecture.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">lecture.md</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../homework/homework.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">homework hardword</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#special-relativity">1.1 特殊相對論 (Special Relativity)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frame-of-reference">參考座標系 (Frame of Reference)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">特殊相對論的兩大假設</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#michelson-morley-experiment">麥克生-莫雷 干涉實驗 (Michelson-Morley Experiment)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#galilean-transformation">1.2 伽利略轉換 (Galilean Transformation)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lorentz-transformation">1.3 羅倫茲轉換 (Lorentz Transformation)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">推導過程</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-dilation">1.4 時間膨脹 (Time Dilation)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#light-clock-derivation">移動光鐘實驗 (Light Clock Derivation)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#length-contraction">1.5 長度收縮 (Length Contraction)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">推導過程</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#twin-paradox">雙生子悖論 (Twin Paradox)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relativistic-momentum">1.6 相對論動量 (Relativistic Momentum)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tau">相對論動量推導 (經由原時 <span class="math notranslate nohighlight">\(\tau\)</span>)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mass-and-energy">1.7 質量與能量 (Mass and Energy)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">已知與假設</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-and-momentum">1.8 能量與動量關係式 (Energy and Momentum)</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC YE
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

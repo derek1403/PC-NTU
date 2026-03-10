@@ -1,0 +1,758 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Modern Physics - Introduction &#8212; Modern Physics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lecture/00_Introduction/introduction';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Modern Physics - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Modern Physics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    近代物理 (Modern Physics) 課程筆記
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lecture.html">lecture.md</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01_Relativity/relativity.html">Modern Physics - Relativity</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../homework/homework.html">homework hardword</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../homework/hw1/hw1.html">Modern Physics Hw 1</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flecture/00_Introduction/introduction.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/lecture/00_Introduction/introduction.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Modern Physics - Introduction</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-physics">1. Classical Physics (古典物理)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanics">1.1 Mechanics (力學與粒子性)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#electromagnetism">1.2 Electromagnetism (電磁學與波動性)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#blackbody-radiation">2. Blackbody Radiation (黑體輻射)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stefan-boltzmann-law">2.1 Stefan-Boltzmann Law (斯特凡-波茲曼定律)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wien-s-displacement-law">2.2 Wien’s Displacement Law (維恩位移定律)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.3 能量量子化的誕生</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#einstein-photoelectric-effect">3. Einstein: Photoelectric Effect (光電效應)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#em-theory">3.1 古典電磁理論 (EM Theory) 的三大崩潰</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#photon-theory">3.2 愛因斯坦的光子理論 (Photon Theory)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stability-of-atoms">4. Stability of Atoms (原子的穩定性)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-physics">5. Quantum Physics 諾獎歷史整理</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#governing-equations">6. Governing Equations 總整理與重點回顧</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">🌟 核心觀念總結</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="modern-physics-introduction">
+<h1>Modern Physics - Introduction<a class="headerlink" href="#modern-physics-introduction" title="Link to this heading">#</a></h1>
+<p><strong>日期:</strong> 2026.02.24</p>
+<section id="classical-physics">
+<h2>1. Classical Physics (古典物理)<a class="headerlink" href="#classical-physics" title="Link to this heading">#</a></h2>
+<section id="mechanics">
+<h3>1.1 Mechanics (力學與粒子性)<a class="headerlink" href="#mechanics" title="Link to this heading">#</a></h3>
+<p>古典力學主要探討具備質量的粒子行為，核心由重力（Gravitational force）與牛頓運動定律（Newton’s laws of motion）建構。</p>
+<ul class="simple">
+<li><p><strong>第一運動定律 (慣性定律):</strong> 靜者恆靜、動者恆動。</p></li>
+<li><p><strong>物理視角：</strong> 為什麼要有第一定律？明明第一定律看起來只是第二定律在 <span class="math notranslate nohighlight">\(\mathbf{F}=0\)</span> 時的特例（沒有力就沒有加速度）。事實上，第一定律的核心價值在於 <strong>定義「慣性坐標系」</strong>（Inertial frame of reference）。它宣告了宇宙中存在一種觀察視角，在這種視角下，不受力的物體會保持等速直線運動。後續所有的牛頓力學甚至愛因斯坦的狹義相對論，都是建立在慣性坐標系的假設之上。</p></li>
+<li><p><strong>第二運動定律:</strong> <span class="math notranslate nohighlight">\(\mathbf{F} = m\mathbf{a}\)</span></p></li>
+<li><p><strong>概念類比：</strong> 這條定律其實是在定義 <strong>質量（Mass）</strong> 。就像電路學中的歐姆定律 <span class="math notranslate nohighlight">\(V = IR\)</span> 定義了「電阻」是電壓與電流的比例常數；牛頓第二定律定義了「質量」是物體在受力（<span class="math notranslate nohighlight">\(\mathbf{F}\)</span>）與產生加速度（<span class="math notranslate nohighlight">\(\mathbf{a}\)</span>）之間的抵抗係數（慣性大小）。</p></li>
+<li><p><strong>第三運動定律 (作用力與反作用力):</strong> 對於每一個作用力 <span class="math notranslate nohighlight">\(\mathbf{F}_{ij}\)</span>，必然存在一個大小相等、方向相反的反作用力 <span class="math notranslate nohighlight">\(\mathbf{F}_{ji} = -\mathbf{F}_{ij}\)</span>。</p></li>
+</ul>
+</section>
+<section id="electromagnetism">
+<h3>1.2 Electromagnetism (電磁學與波動性)<a class="headerlink" href="#electromagnetism" title="Link to this heading">#</a></h3>
+<p>古典電磁學主要探討電磁力（Electromagnetic force）與波動行為，其核心為馬克士威方程組（Maxwell’s Equations）。</p>
+<ol class="arabic simple">
+<li><p>高斯定律 (Gauss’s Law)</p></li>
+<li><p>高斯磁定律 (Gauss’s Law for Magnetism)</p></li>
+<li><p>法拉第電磁感應定律 (Faraday’s Law of Induction)</p></li>
+<li><p>安培-馬克士威定律 (Ampère-Maxwell Law)</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases} 
+\nabla \cdot \mathbf{E} &amp;=&amp; \frac{\rho}{\varepsilon_0} \\ 
+\nabla \cdot \mathbf{B} &amp;=&amp; 0 \\
+\nabla \times \mathbf{E} &amp;=&amp; -\frac{\partial \mathbf{B}}{\partial t} \\
+\nabla \times \mathbf{B} &amp;=&amp; \mu_0 \left( \mathbf{J} + \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t} \right)
+\end{cases}\end{split}\]</div>
+<p>若考慮介質中的磁場與電場，可引入輔助場 <span class="math notranslate nohighlight">\(\mathbf{H}\)</span> 與極化向量 <span class="math notranslate nohighlight">\(\mathbf{P}\)</span>（此處 <span class="math notranslate nohighlight">\(\mathbf{D} = \varepsilon_0 \mathbf{E} + \mathbf{P}\)</span>，在特定單位制下可寫作你筆記中的形式，但國際標準制 SI 如下）：</p>
+<div class="math notranslate nohighlight">
+\[\nabla \times \mathbf{H} = \mathbf{J}_f + \frac{\partial \mathbf{D}}{\partial t}\]</div>
+<p><strong>【符號精確定義】</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathbf{E}\)</span>: 電場 (Electric field) <span class="math notranslate nohighlight">\([\text{V} \cdot \text{m}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{B}\)</span>: 磁場 (Magnetic field)，<span class="math notranslate nohighlight">\([\text{T}] = [\text{Tesla}] \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{P}\)</span>: 電極化強度 (Electric Polarization) <span class="math notranslate nohighlight">\([\text{C} \cdot \text{m}^{-2}] \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{D}\)</span>: 電位移場 (Electric Displacement Field) <span class="math notranslate nohighlight">\([\text{C} \cdot \text{m}^{-2}] \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{H}\)</span>: 磁場強度 (Magnetic Field Intensity) <span class="math notranslate nohighlight">\([\text{A} \cdot \text{m}^{-1}] \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c\)</span>: 真空中的光速，精確值為 <span class="math notranslate nohighlight">\(299,792,458\)</span> <span class="math notranslate nohighlight">\([\text{m} \cdot \text{s}^{-1}] \)</span> ，近似計算常取 <span class="math notranslate nohighlight">\(3 \times 10^8\)</span> <span class="math notranslate nohighlight">\([\text{m} \cdot \text{s}^{-1}] \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\rho\)</span>: 體電荷密度 (Volume charge density) <span class="math notranslate nohighlight">\([\text{C} \cdot \text{m}^{-3}] \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{J}\)</span>: 電流密度 (Current density) <span class="math notranslate nohighlight">\([\text{A} \cdot \text{m}^{-2}] \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{J}_f\)</span>: 自由電流密度 (Free current density)  <span class="math notranslate nohighlight">\([\text{A} \cdot \text{m}^{-2}] \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mu_0\)</span>: 真空磁導率 (Vacuum permeability)，精確值為 <span class="math notranslate nohighlight">\(4\pi \times 10^{-7}\)</span> <span class="math notranslate nohighlight">\([\text{T} \cdot \text{m} \cdot \text{A}^{-1}] \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\varepsilon_0\)</span>: 真空電容率 (Vacuum permittivity)，近似值為 <span class="math notranslate nohighlight">\(8.854 \times 10^{-12}\)</span> <span class="math notranslate nohighlight">\([\text{F} \cdot \text{m}^{-1}] \)</span></p></li>
+</ul>
+<blockquote>
+<div><p><strong>【數學推導：如何從馬克士威方程組導出電磁波？】</strong>
+我們想證明電場 <span class="math notranslate nohighlight">\(\mathbf{E}\)</span> 滿足波動方程式。假設在<strong>無電荷且無電流的真空中</strong>（即 <span class="math notranslate nohighlight">\(\rho = 0\)</span> 且 <span class="math notranslate nohighlight">\(\mathbf{J} = 0\)</span>），方程式退化為：
+(1) <span class="math notranslate nohighlight">\(\nabla \cdot \mathbf{E} = 0\)</span>
+(2) <span class="math notranslate nohighlight">\(\nabla \cdot \mathbf{B} = 0\)</span>
+(3) <span class="math notranslate nohighlight">\(\nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}}{\partial t}\)</span>
+(4) <span class="math notranslate nohighlight">\(\nabla \times \mathbf{B} = \mu_0 \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t}\)</span>
+<strong>Step 1:</strong> 對法拉第定律 (3) 的兩邊同時取旋度 (curl)：</p>
+<div class="math notranslate nohighlight">
+\[\nabla \times (\nabla \times \mathbf{E}) = \nabla \times \left(-\frac{\partial \mathbf{B}}{\partial t}\right)\]</div>
+<p><strong>Step 2:</strong> 利用向量恆等式 <span class="math notranslate nohighlight">\(\nabla \times (\nabla \times \mathbf{A}) = \nabla(\nabla \cdot \mathbf{A}) - \nabla^2\mathbf{A}\)</span> 展開左邊，並將右邊的空間微分與時間微分交換：</p>
+<div class="math notranslate nohighlight">
+\[\nabla(\nabla \cdot \mathbf{E}) - \nabla^2\mathbf{E} = -\frac{\partial}{\partial t}(\nabla \times \mathbf{B})\]</div>
+<p><strong>Step 3:</strong> 代入真空高斯定律 (1) <span class="math notranslate nohighlight">\(\nabla \cdot \mathbf{E} = 0\)</span>，以及真空安培定律 (4) <span class="math notranslate nohighlight">\(\nabla \times \mathbf{B} = \mu_0 \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t}\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[0 - \nabla^2\mathbf{E} = -\frac{\partial}{\partial t}\left(\mu_0 \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t}\right)\]</div>
+<p><strong>Step 4:</strong> 整理後即可得到標準的三維波動方程式：</p>
+<div class="math notranslate nohighlight">
+\[\nabla^2\mathbf{E} = \mu_0 \varepsilon_0 \frac{\partial^2 \mathbf{E}}{\partial t^2}\]</div>
+<p>與古典波動方程式 <span class="math notranslate nohighlight">\(\nabla^2 f = \frac{1}{v^2} \frac{\partial^2 f}{\partial t^2}\)</span> 比較，可得知電磁波的傳播速度為 <span class="math notranslate nohighlight">\(v = \frac{1}{\sqrt{\mu_0 \varepsilon_0}} = c\)</span>。這證明了光本質上就是一種電磁波。</p>
+</div></blockquote>
+</section>
+</section>
+<section id="blackbody-radiation">
+<h2>2. Blackbody Radiation (黑體輻射)<a class="headerlink" href="#blackbody-radiation" title="Link to this heading">#</a></h2>
+<p>黑體 (Blackbody) 是一個理想化的物理模型：它能吸收所有入射的電磁輻射，不論頻率與入射角為何。既然沒有反射，我們觀測到黑體放出的電磁波就<strong>只與物體的絕對溫度 <span class="math notranslate nohighlight">\(T\)</span> 有關</strong>。這排除了材料特性的干擾，讓觀測結果具有普適性。</p>
+<section id="stefan-boltzmann-law">
+<h3>2.1 Stefan-Boltzmann Law (斯特凡-波茲曼定律)<a class="headerlink" href="#stefan-boltzmann-law" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[R = \sigma T^4\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(R\)</span>: 輻射出射度 (Power radiated per unit area)，即單位面積在單位時間內輻射出的總能量，<span class="math notranslate nohighlight">\([\text{W} \cdot \text{m}^{-2}] \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(T\)</span>: 黑體的絕對溫度，單位是 <span class="math notranslate nohighlight">\([\text{K} ] \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\sigma\)</span>: 斯特凡-波茲曼常數 (Stefan-Boltzmann constant)，值約為 <span class="math notranslate nohighlight">\(5.67 \times 10^{-8}\)</span> <span class="math notranslate nohighlight">\([\text{W} \cdot \text{m}^{-2} \cdot \text{K}^{-4}] = [\text{J} \cdot \text{s}^{-1} \cdot \text{m}^{-2} \cdot \text{K}^{-4}]\)</span></p></li>
+</ul>
+</section>
+<section id="wien-s-displacement-law">
+<h3>2.2 Wien’s Displacement Law (維恩位移定律)<a class="headerlink" href="#wien-s-displacement-law" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\lambda_{\text{max}} \propto \frac{1}{T} \implies \lambda_{\text{max}} T = 2.898 \times 10^{-3} \text{ m}\cdot\text{K}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\lambda_{\text{max}}\)</span>: 黑體輻射光譜中，能量強度達到最大值時所對應的波長，單位是 <span class="math notranslate nohighlight">\([\text{m} ] \)</span>。</p></li>
+<li><p><strong>物理意義:</strong> 溫度越高的物體，其輻射最強的波長越短（例如打鐵時，溫度升高，顏色從不可見的紅外線轉為暗紅，再轉為亮黃甚至偏藍）。</p></li>
+</ul>
+<p><img alt="" src="../../_images/Wien%27s_Displacement_Law.png" /></p>
+</section>
+<section id="id1">
+<h3>2.3 能量量子化的誕生<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Rayleigh-Jeans Law 的古典災難 (Ultraviolet Catastrophe):</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p>古典物理假設空腔內的電磁波是駐波，且根據 <strong>能量均分定理</strong> ，每一種頻率的駐波模式都分配到相同的平均能量 <span class="math notranslate nohighlight">\(k_B T\)</span>（<span class="math notranslate nohighlight">\(k_B\)</span> 為波茲曼常數）。</p></li>
+<li><p>結果導致：隨著頻率趨近無窮大（紫外區），輻射能量也會發散至無窮大，這與實驗結果完全不符。</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p><strong>Planck’s Postulate (普朗克假設):</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p>為了解決這個災難並擬合實驗數據，普朗克大膽假設：<strong>振盪器吸收或發射的能量不是連續的，而是量子化的（離散的）。</strong></p></li>
+<li><p>公式：<span class="math notranslate nohighlight">\(E_n = n h \nu\)</span> ，其中 <span class="math notranslate nohighlight">\(n = 0, 1, 2, \dots\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(h\)</span>: 普朗克常數，約為 <span class="math notranslate nohighlight">\(6.626 \times 10^{-34}\)</span>  <span class="math notranslate nohighlight">\([\text{J} \cdot \text{s}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\nu\)</span>: 輻射頻率 <span class="math notranslate nohighlight">\([ \text{s}^{-1}]\)</span></p></li>
+<li><p><strong>老師的解答（為什麼要假設非連續？）：</strong> 你可以想像能量是貨幣，古典物理認為能量是「液體」，要給多少都可以；但普朗克假設能量是「硬幣」，面額是 <span class="math notranslate nohighlight">\(h\nu\)</span>。對於高頻率（紫外光）的電磁波，它的單枚硬幣面額極大。在常溫下，系統擁有的總零錢（熱能 <span class="math notranslate nohighlight">\(k_B T\)</span>）根本湊不出一枚高頻硬幣，因此高頻輻射根本不會產生。這完美壓制了高頻區的能量發散，解決了紫外災難。</p></li>
+</ul>
+</section>
+</section>
+<section id="einstein-photoelectric-effect">
+<h2>3. Einstein: Photoelectric Effect (光電效應)<a class="headerlink" href="#einstein-photoelectric-effect" title="Link to this heading">#</a></h2>
+<p>光電效應證明了光不僅在發射時是量子化的，其在空間中傳播的本質也是一顆顆的粒子（光子）。</p>
+<ul class="simple">
+<li><p><strong>實驗裝置:</strong> 真空玻璃管內有兩金屬極板。光源照射目標金屬（如鈉 Na），釋放出電子。透過外加逆向電壓（截止電壓 <span class="math notranslate nohighlight">\(V_s\)</span>）可測量出射電子的最大動能。必須抽真空以避免光電子與空氣分子碰撞而損失能量。</p></li>
+</ul>
+<section id="em-theory">
+<h3>3.1 古典電磁理論 (EM Theory) 的三大崩潰<a class="headerlink" href="#em-theory" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>沒有時間延遲 (Time Delay):</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>實驗事實:</strong> 光一照到金屬，電子在小於 <span class="math notranslate nohighlight">\(10^{-9} [\text{s}]\)</span> 內立刻射出。</p></li>
+<li><p><strong>古典計算打臉:</strong> 假設極弱光源。鈉原子密度約 <span class="math notranslate nohighlight">\(10^{19}\)</span> <span class="math notranslate nohighlight">\([\text{atoms} \cdot \text{m}^{-2}]\)</span>  。若入射光功率極低，平均每個原子每秒吸收的能量可能僅有 <span class="math notranslate nohighlight">\(10^{-25}\)</span> <span class="math notranslate nohighlight">\([\text{J} \cdot \text{s}^{-1}]\)</span></p></li>
+<li><p>要讓電子逃離金屬，需要克服功函數 (Work function) 約 <span class="math notranslate nohighlight">\(1 [\text{eV}] = 1.6 \times 10^{-19} [\text{J}]\)</span></p></li>
+<li><p>古典理論認為能量像波一樣均勻散布，因此單一電子累積足夠能量所需時間為：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[t = \frac{1.6 \times 10^{-19} [\text{ J}]}{10^{-25} [\text{J}\cdot \text{s}^{-1}]} = 1.6 \times 10^6 [\text{s}]\]</div>
+<p>這大約是 18 天！但實驗卻是瞬間發生。</p>
+<ol class="arabic simple">
+<li><p><strong>光強度不影響最大動能:</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>實驗事實:</strong> 同頻率下，越亮的光只會產生「越多」的電子（電流變大），但電子的最大動能固定。</p></li>
+<li><p><strong>古典理論:</strong> 光越亮代表電磁波振幅越大，傳遞能量應該越多，電子動能應該變大。</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p><strong>存在底線頻率 (Threshold Frequency):</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>實驗事實:</strong> 照射光頻率必須大於某個底線頻率 <span class="math notranslate nohighlight">\(\nu_0\)</span> 才有電子射出。若頻率不夠，光再亮都沒用。射出電子的動能與頻率呈線性關係。</p></li>
+<li><p><strong>古典理論:</strong> 只要光夠亮、照得夠久，任何頻率的光都應該能把電子打出來，無法解釋底線頻率的存在。</p></li>
+</ul>
+</section>
+<section id="photon-theory">
+<h3>3.2 愛因斯坦的光子理論 (Photon Theory)<a class="headerlink" href="#photon-theory" title="Link to this heading">#</a></h3>
+<p>1905年，愛因斯坦將普朗克的概念延伸：光在空間中的傳播也是一個個能量包，稱為「光子」(Photon)。</p>
+<ul class="simple">
+<li><p>單一光子能量：<span class="math notranslate nohighlight">\(E = h\nu\)</span>。</p></li>
+<li><p><strong>解釋光電效應 (能量守恆方程式):</strong>
+一顆電子只能「一次吞下一整顆」光子。電子吸收能量 <span class="math notranslate nohighlight">\(h\nu\)</span> 後，一部分用來當作「過路費」克服金屬表面的束縛能（稱為功函數 Work function，記為 <span class="math notranslate nohighlight">\(\phi\)</span> 或 <span class="math notranslate nohighlight">\(W\)</span>，你筆記中使用 <span class="math notranslate nohighlight">\(\psi\)</span>），剩下的能量就變成電子飛出去的最大動能 <span class="math notranslate nohighlight">\(K_{\text{max}}\)</span>。
+$<span class="math notranslate nohighlight">\(h\nu = K_{\text{max}} + \psi\)</span>$</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[K_{\text{max}} = h\nu - \psi\]</div>
+<p>其中，功函數可以寫成底線頻率的形式：<span class="math notranslate nohighlight">\(\psi = h\nu_0\)</span>。</p>
+<div class="math notranslate nohighlight">
+\[K_{\text{max}} = h(\nu - \nu_0)\]</div>
+<p>這完美解釋了三大難題：</p>
+<ol class="arabic simple">
+<li><p>一對一碰撞，不需累積時間。</p></li>
+<li><p>光變亮只代表光子「顆數」變多，單顆光子的能量不變。</p></li>
+<li><p>若 <span class="math notranslate nohighlight">\(h\nu &lt; \psi\)</span>，單顆光子能量付不起過路費，電子出不來。</p></li>
+</ol>
+<p><img alt="" src="../../_images/The_Photoelectric_Effect.png" /></p>
+</section>
+</section>
+<section id="stability-of-atoms">
+<h2>4. Stability of Atoms (原子的穩定性)<a class="headerlink" href="#stability-of-atoms" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>古典物理的致命傷:</strong> 在拉塞福的行星模型中，電子繞著帶正電的原子核作圓周運動。由於電子具有向心加速度，根據古典電磁學（Larmor formula），加速運動的帶電體必須持續輻射出電磁波。</p></li>
+<li><p><strong>毀滅的倒數計時:</strong> 一旦持續放出能量，電子的軌道半徑就會不斷縮小，最終以螺旋軌跡墜毀入原子核中。計算顯示，這個過程大約只需 <span class="math notranslate nohighlight">\(10^{-9}\)</span> 秒。這意味著如果古典物理是對的，宇宙中所有的物質會在瞬間湮滅。</p></li>
+<li><p><strong>量子解方 (Bohr Model):</strong> 波耳假設了角動量量子化（<span class="math notranslate nohighlight">\(L = n\hbar\)</span>），後來由德布羅意（de Broglie）的物質波理論給出物理圖像：電子在特定軌道上形成「駐波」（Standing wave），首尾相接不發生破壞性干涉。在這些特定的駐波軌道（定態）上，電子不會輻射能量。</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="quantum-physics">
+<h2>5. Quantum Physics 諾獎歷史整理<a class="headerlink" href="#quantum-physics" title="Link to this heading">#</a></h2>
+<p>近代物理的發展是一連串打破常規的接力賽：</p>
+<ul class="simple">
+<li><p><strong>Planck (1918):</strong> Energy Quantization (能量量子化)</p></li>
+<li><p><strong>Einstein (1921):</strong> Photoelectric Effect (光電效應 - 證明光的粒子性)</p></li>
+<li><p><strong>Bohr (1922):</strong> Atomic Structure (原子結構 - 角動量量子化)</p></li>
+<li><p><strong>Compton (1926):</strong> Particle Properties of Light (康普頓效應 - 再次印證光子帶有動量)</p></li>
+<li><p><strong>de Broglie (1927):</strong> Wave-particle Duality (波粒二象性 - 粒子也具有波動性)</p></li>
+<li><p><strong>Schrödinger (1933):</strong> Quantum Mechanics (量子力學 - 提出薛丁格方程式)</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="governing-equations">
+<h2>6. Governing Equations 總整理與重點回顧<a class="headerlink" href="#governing-equations" title="Link to this heading">#</a></h2>
+<section id="id2">
+<h3>🌟 核心觀念總結<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>古典力學的基石：</strong> 牛頓第一定律確立了「慣性坐標系」的存在，這不僅支撐了牛頓第二定律，在未來愛因斯坦的狹義相對論中更是至關重要的前提假設。</p></li>
+<li><p><strong>光的電磁本質：</strong> 透過馬克士威方程組，將法拉第定律取旋度並代入安培-馬克士威定律與高斯定律，可以嚴格導出電場 <span class="math notranslate nohighlight">\(\mathbf{E}\)</span> 與磁場 <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> 均符合波動方程式，且波速等於光速，證明了光就是電磁波。</p></li>
+<li><p><strong>黑體輻射的測量：</strong> 根據 Stefan-Boltzmann 定律，只要測量黑體放出的電磁波總輻射強度，就能反推該物體的絕對溫度 <span class="math notranslate nohighlight">\(T\)</span>。</p></li>
+<li><p><strong>能量的離散化：</strong> 普朗克透過假設「能量量子化」（<span class="math notranslate nohighlight">\(E = nh\nu\)</span>），限制了高頻振盪器的激發機率，成功解釋了黑體輻射光譜在高頻區塊的能量分佈，解決了紫外災難。</p></li>
+<li><p><strong>光的粒子性：</strong> 光電效應證明了光能量具有空間局域性（光子）。因為電子的逸出時間極短，且存在截止頻率，這只能用光子與電子發生「一對一、全有或全無」的能量轉移來解釋。</p></li>
+<li><p><strong>物質的波動性與原子穩定：</strong> 氫原子的穩定存在（不會因為輻射電磁波而瞬間塌縮），必須依賴角動量量子化的假設。電子以「機率駐波」的形式存在於軌道中，打破了古典電磁學必定輻射能量的限制。</p></li>
+</ol>
+<hr class="docutils" />
+<p>這份筆記已經將中間跳躍的邏輯以及馬克士威方程式推導波動方程式的過程完整補齊。對於剛才提到的「功函數」部分，在未來的章節中你可能會看到不同教科書使用 <span class="math notranslate nohighlight">\(\phi\)</span> 或 <span class="math notranslate nohighlight">\(W\)</span> 來替代你原本筆記中的 <span class="math notranslate nohighlight">\(\psi\)</span>。</p>
+<p>請問你希望我們接著探討波耳氫原子模型的詳細數學推導（如推導出芮得柏常數與能階公式），還是先針對光電效應進行一些計算練習呢？</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lecture\00_Introduction"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-physics">1. Classical Physics (古典物理)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanics">1.1 Mechanics (力學與粒子性)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#electromagnetism">1.2 Electromagnetism (電磁學與波動性)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#blackbody-radiation">2. Blackbody Radiation (黑體輻射)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stefan-boltzmann-law">2.1 Stefan-Boltzmann Law (斯特凡-波茲曼定律)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wien-s-displacement-law">2.2 Wien’s Displacement Law (維恩位移定律)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.3 能量量子化的誕生</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#einstein-photoelectric-effect">3. Einstein: Photoelectric Effect (光電效應)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#em-theory">3.1 古典電磁理論 (EM Theory) 的三大崩潰</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#photon-theory">3.2 愛因斯坦的光子理論 (Photon Theory)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stability-of-atoms">4. Stability of Atoms (原子的穩定性)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-physics">5. Quantum Physics 諾獎歷史整理</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#governing-equations">6. Governing Equations 總整理與重點回顧</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">🌟 核心觀念總結</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC YE
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

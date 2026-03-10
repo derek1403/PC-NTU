@@ -4,6 +4,10 @@
 format: jb-book
 root: intro
 chapters:
-- file: markdown
-- file: notebooks
-- file: lecture/week1/week1.ipynb
+- file: lecture/lecture.md
+  sections:      # <--- 代表下面的檔案都屬於它
+    - file: lecture/00_introduction/introduction.ipynb
+    - file: lecture/01_Relativity/relativity.ipynb
+- file: homework/homework.md
+  sections:
+    - file: homework/hw1/hw1.ipynb
