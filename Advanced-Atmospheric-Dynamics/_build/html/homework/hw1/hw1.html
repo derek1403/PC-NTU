@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'homework/hw1/hw1';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="homeword" href="../homework.html" />
+    <link rel="prev" title="homework" href="../homework.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -185,7 +185,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../lecture/week1/week1.html">Advanced Atmospheric Dynamics - Week 1</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../homework.html">homeword</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../homework.html">homework</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Advanced Atmospheric Dynamics Hw 1</a></li>
 </ul>
 </details></li>
@@ -413,9 +413,10 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">一、 氣泡幾何與物理動力學假設</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">二、 熱力學與海洋環境假設</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">三、 生物化學機制假設</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">氣泡幾何與物理動力學已知</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">3.1</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">3.1</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-tau-text-rise">Step 1: 定義「物理傳輸特徵時間」 (<span class="math notranslate nohighlight">\(\tau_{\text{rise}}\)</span>)</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-tau-text-bio">Step 2: 定義「生物消耗特徵時間」 (<span class="math notranslate nohighlight">\(\tau_{\text{bio}}\)</span>)</a></li>
 </ul>
@@ -787,16 +788,27 @@ r^4 \Delta p &amp;=&amp; (r')^4 \Delta p' \\
 <li><p><strong>忽略了什麼</strong>：真實的微觀物理過程是「兩階段」的：甲烷氣體必須先<strong>溶解 (Dissolve)</strong> 進入氣泡周圍的液體邊界層，然後懸浮在水中的細菌再去吃掉這些<strong>已溶解的甲烷 (Dissolved methane)</strong>。我們將複雜的質傳系數 (Mass transfer coefficient) 簡化成了單一的 <span class="math notranslate nohighlight">\(k_{bio}\)</span>。</p></li>
 </ul>
 </section>
-</section>
 <section id="id13">
-<h3>3.1<a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
+<h4>氣泡幾何與物理動力學已知<a class="headerlink" href="#id13" title="Link to this heading">#</a></h4>
+<ol class="arabic simple" start="9">
+<li><p><strong><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/02_Concepts/Fluid_Dynamics/Terminal_velocity.html#terminal-velocity-of-water">【已知 1】氣泡在海洋的終端速度 (Terminal velocity of water)</a></strong></p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[v = \sqrt{\frac{8}{3}\frac{(\rho_{\text{water}} - \rho_{\text{gas}})}{\rho_{\text{water}}}\frac{g}{C_D}r}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(v \sim r^{0.5}\)</span></p></li>
+</ul>
+</section>
+</section>
+<section id="id14">
+<h3>3.1<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
 <p>把整個過程拆解成兩件事： <strong>「氣泡往上跑」</strong> 與 <strong>「細菌吃氣泡」</strong> ，這兩件事各自需要花費一定的時間。</p>
 <section id="step-1-tau-text-rise">
 <h4>Step 1: 定義「物理傳輸特徵時間」 (<span class="math notranslate nohighlight">\(\tau_{\text{rise}}\)</span>)<a class="headerlink" href="#step-1-tau-text-rise" title="Link to this heading">#</a></h4>
 <p>假設海底深度為 <span class="math notranslate nohighlight">\(H\)</span>，氣泡半徑為 <span class="math notranslate nohighlight">\(R\)</span>，氣泡的終端上浮速度為 <span class="math notranslate nohighlight">\(V(R)\)</span> 和【假設 1~6】，氣泡從海底浮到海面所需的特徵時間為：</p>
 <div class="math notranslate nohighlight">
 \[\tau_{rise} = \frac{H}{V(R)}\]</div>
-<p>較大的氣泡通常擁有較大的浮力、阻力，但在經驗法則上 <strong>大氣泡的上浮速度 <span class="math notranslate nohighlight">\(V(R)\)</span> 會比小氣泡快</strong>（對於中等雷諾數以上的氣泡，速度大致與 <span class="math notranslate nohighlight">\(\sqrt{R}\)</span> 成正比）。</p>
+<p>較大的氣泡通常擁有較大的浮力、阻力，但在經驗法則上 <strong>大氣泡的上浮速度 <span class="math notranslate nohighlight">\(V(R)\)</span> 會比小氣泡快</strong>（對於中等雷諾數以上的氣泡，速度大致與 <span class="math notranslate nohighlight">\(\sqrt{R}\)</span> 成正比(已知 1)）。</p>
 </section>
 <section id="step-2-tau-text-bio">
 <h4>Step 2: 定義「生物消耗特徵時間」 (<span class="math notranslate nohighlight">\(\tau_{\text{bio}}\)</span>)<a class="headerlink" href="#step-2-tau-text-bio" title="Link to this heading">#</a></h4>
@@ -880,7 +892,7 @@ r^4 \Delta p &amp;=&amp; (r')^4 \Delta p' \\
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">homeword</p>
+        <p class="prev-next-title">homework</p>
       </div>
     </a>
 </div>
@@ -928,9 +940,10 @@ r^4 \Delta p &amp;=&amp; (r')^4 \Delta p' \\
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">一、 氣泡幾何與物理動力學假設</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">二、 熱力學與海洋環境假設</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">三、 生物化學機制假設</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">氣泡幾何與物理動力學已知</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">3.1</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">3.1</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-tau-text-rise">Step 1: 定義「物理傳輸特徵時間」 (<span class="math notranslate nohighlight">\(\tau_{\text{rise}}\)</span>)</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-tau-text-bio">Step 2: 定義「生物消耗特徵時間」 (<span class="math notranslate nohighlight">\(\tau_{\text{bio}}\)</span>)</a></li>
 </ul>
