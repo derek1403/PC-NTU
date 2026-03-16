@@ -183,7 +183,6 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../lecture/lecture.html">lecture</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../lecture/week2/week2.html">Typhoon-Dynamics - Week 2</a></li>
-
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../homework.html">homework</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
@@ -398,6 +397,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">2. 解釋「為何慢速颱風都在台灣北邊？為何會引發極端降雨？」</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">更詳細可以參考</a></li>
 </ul>
 </li>
 </ul>
@@ -465,22 +465,22 @@ document.write(`
 <ul class="simple">
 <li><p><strong>正壓不穩定 (Barotropic Instability)</strong>：這是擾動發展為颱風的核心機制。</p>
 <ul>
-<li><p><strong>學理解釋</strong>：將風場做雷諾分解（<span class="math notranslate nohighlight">\(u = \bar{u} + u'\)</span>）。在季風槽中，東西風交會產生極大的水平風切（<span class="math notranslate nohighlight">\(\frac{\partial \bar{u}}{\partial y} \neq 0\)</span>）。當微小的天氣擾動（小漩渦）的結構配合大環境風切時，擾動動能方程式 <span class="math notranslate nohighlight">\(\frac{\partial \overline{K'}}{\partial t} \approx -\overline{u'v'} \frac{\partial \bar{u}}{\partial y}\)</span> 會大於零。這代表擾動成功從背景季風槽中「提取」動能，讓自己迅速增強。</p></li>
+<li><p><strong>學理解釋</strong>：將風場做雷諾分解（<span class="math notranslate nohighlight">\(u = \bar{u} + u'\)</span>）。在季風合流區東西風交會產生極大的水平風切（<span class="math notranslate nohighlight">\(\frac{\partial \bar{u}}{\partial y} \neq 0\)</span>），當微小的天氣擾動（小漩渦）的結構配合大環境風切時，擾動動能方程式 <span class="math notranslate nohighlight">\(\frac{\partial \overline{K'}}{\partial t} \approx -\overline{u'v'} \frac{\partial \bar{u}}{\partial y}\)</span> 會大於零，這代表擾動成功從背景季風槽中「提取」動能，讓自己迅速增強。</p></li>
 </ul>
 </li>
 <li><p><strong>波能量累積 (Wave Energy Accumulation)</strong>：</p>
 <ul>
-<li><p><strong>學理解釋</strong>：東風波進入極大風切的合流區時，其「群速度 (Group Velocity)」會趨近於零。波動能量無法頻散而產生「塞車」，能量高度聚集進而引發對流爆發。</p></li>
+<li><p><strong>學理解釋</strong>：東風波進入極大風切的合流區時「群速度 (Group Velocity)」會趨近於零，波動能量無法頻散而產生「塞車」，能量高度聚集進而引發對流爆發。</p></li>
 </ul>
 </li>
 <li><p><strong>羅斯貝波頻散 (Rossby Wave Dispersion)</strong>：</p>
 <ul>
-<li><p><strong>學理解釋</strong>：第一個颱風生成後，能量會以羅斯貝波形式向東輻射，觸發下一個擾動，完美解釋了每隔 5~6 天颱風連續生成的「群聚觀測事實」。</p></li>
+<li><p><strong>學理解釋</strong>：第一個颱風生成後，能量會以羅斯貝波形式向東輻射觸發下一個擾動，完美解釋了每隔 5~6 天颱風連續生成的「群聚觀測事實」</p></li>
 </ul>
 </li>
 <li><p><strong>完美的第一斜壓模 (First Baroclinic Mode)</strong>：</p>
 <ul>
-<li><p><strong>學理解釋</strong>：季風槽低層低壓，配合大量降雨釋放潛熱造成的高層高壓與 TUTT（熱帶對流層上部槽），形成上下顛倒的結構。這種配置造就了極小的垂直風切，保護颱風結構不被切離。</p></li>
+<li><p><strong>學理解釋</strong>：季風槽低層低壓，配合大量降雨釋放潛熱造成的高層高壓與 TUTT（熱帶對流層上部槽）形成上下顛倒的結構，這種配置造就了極小的垂直風切保護颱風結構不被切離。</p></li>
 </ul>
 </li>
 </ul>
@@ -490,26 +490,32 @@ document.write(`
 <ul class="simple">
 <li><p><strong>渦度伸展與地形鎖定 (Vortex Stretching &amp; Topographic Locking)</strong>：</p>
 <ul>
-<li><p><strong>學理解釋</strong>：依據渦度方程式 <span class="math notranslate nohighlight">\(\frac{d(\zeta + f)}{dt} = -(\zeta + f)(\nabla \cdot \mathbf{V})\)</span>，當北邊移入的颱風環流將水氣帶入台灣南部山區，地形強迫抬升產生極大降雨與低層輻合（<span class="math notranslate nohighlight">\(\nabla \cdot \mathbf{V} &lt; 0\)</span>）。在角動量守恆作用下（負負得正），南部山區局部的相對渦度 (<span class="math notranslate nohighlight">\(\zeta\)</span>) 隨時間快速飆升。</p></li>
+<li><p><strong>學理解釋</strong>：依據渦度方程式 <span class="math notranslate nohighlight">\(\frac{d(\zeta + f)}{dt} = -(\zeta + f)(\nabla \cdot \mathbf{V})\)</span>，當北邊移入的颱風環流將水氣帶入台灣南部山區，地形強迫抬升產生極大降雨與低層輻合（<span class="math notranslate nohighlight">\(\nabla \cdot \mathbf{V} &lt; 0\)</span>），在角動量守恆作用下南部山區局部的相對渦度 (<span class="math notranslate nohighlight">\(\zeta\)</span>) 隨時間快速飆升。</p></li>
 </ul>
 </li>
 <li><p><strong>Wave Number 1 的不對稱拉力</strong>：</p>
 <ul>
-<li><p><strong>學理解釋</strong>：上述南部山區生成的「渦度異常區」，會使整個颱風系統呈現前方渦度大、後方渦度小的不對稱分佈 (Wave Number 1)。這個異常區宛如一顆強大磁鐵，將北邊的颱風主體往南「拉住」，迫使颱風移速大幅減慢（如莫拉克颱風）。走得越慢，雨下得越久，拉力越強，形成致災的正回饋。</p></li>
+<li><p><strong>學理解釋</strong>：台灣南部山區生成的「渦度異常區」會使整個颱風系統呈現前方渦度大、後方渦度小的不對稱分佈 (Wave Number 1)，這個異常區宛如一顆強大磁鐵將北邊的颱風主體往南「拉住」，迫使颱風移速大幅減慢（如莫拉克颱風），走得越慢雨下得越久拉力越強，形成致災的正回饋。</p></li>
 </ul>
 </li>
-<li><p><strong>後向建構機制 (Back-building)</strong>：</p>
+<li><p><strong>Back-building</strong>：</p>
 <ul>
-<li><p><strong>學理解釋</strong>：解釋了離陸後的平地豪雨現象。當颱風引進充沛的西南季風水氣，配合中央山脈地形阻擋，會在海面上游或迎風坡不斷「向後」長出新的對流胞。這些對流胞順著氣流一波波移入陸地，引發長時間暴雨（如凱米颱風尾端效應）。</p></li>
+<li><p><strong>學理解釋</strong>：解釋了離陸後的平地豪雨現象，當颱風引進充沛的西南季風水氣配合中央山脈地形阻擋會在海面上游或迎風坡不斷「向後」長出新的對流胞，這些對流胞順著氣流一波波移入陸地引發長時間暴雨（如凱米颱風尾端效應）。</p></li>
 </ul>
 </li>
 <li><p><strong>螺旋雨帶的形成</strong>：</p>
 <ul>
-<li><p><strong>學理解釋</strong>：颱風中心釋放潛熱激發出「慣性重力波 (Inertia-gravity wave)」。由於颱風內部具備極高的相對渦度與慣性頻率，波動在向外傳遞的過程中被強烈的背景旋轉流場牽引拉扯，最終色散呈現出雷達回波上觀測到的螺旋狀特徵。</p></li>
+<li><p><strong>學理解釋</strong>：颱風中心釋放潛熱激發出「慣性重力波 (Inertia-gravity wave)」，由於颱風內部具備極高的相對渦度與慣性頻率，波動在向外傳遞的過程中被強烈的背景旋轉流場牽引拉扯最終頻散呈現出雷達回波上觀測到的螺旋狀特徵。</p></li>
 </ul>
 </li>
 </ul>
 </section>
+</section>
+<section id="id6">
+<h2>更詳細可以參考<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://derek1403.github.io/PC-NTU/Typhoon-Dynamics/_build/html/lecture/week2/week2.html">當周的筆記整理(現在還很破爛)</a></p></li>
+</ul>
 </section>
 </section>
 
@@ -580,6 +586,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">2. 解釋「為何慢速颱風都在台灣北邊？為何會引發極端降雨？」</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">更詳細可以參考</a></li>
 </ul>
 </li>
 </ul>
