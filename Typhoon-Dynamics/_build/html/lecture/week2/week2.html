@@ -1,0 +1,777 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Typhoon-Dynamics - Week 2 &#8212; Typhoon Dynamics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lecture/week2/week2';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="homework" href="../../homework/homework.html" />
+    <link rel="prev" title="lecture" href="../lecture.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Typhoon Dynamics - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Typhoon Dynamics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../lecture.html">lecture</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Typhoon-Dynamics - Week 2</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../homework/homework.html">homework</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../homework/hw1/hw1.html">Typhoon Dynamics Hw 1</a></li>
+
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flecture/week2/week2.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/lecture/week2/week2.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Typhoon-Dynamics - Week 2</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Typhoon-Dynamics - Week 2</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">西北太平洋颱風生成機制與環境場</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-conditions">一、 觀測現象與大環境背景 (Background Conditions)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#barotropic-instability">三、 動力機制：正壓不穩定與能量轉換 (Barotropic Instability)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reynolds-decomposition">步驟 1：雷諾分解 (Reynolds Decomposition)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">步驟 2：擾動動能方程式</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">步驟 3：物理意義與大河漩渦的類比</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">熱帶波動</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">壹、 颱風的群聚與連續生成機制</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mjo-monsoon-trough">1. 背景：MJO 與東西風合流 (Monsoon Trough)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">2. 連續生成的三大動力機制</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai">貳、 AI 在氣候科學的應用與極端天氣</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">參、 颱風結構：為何會有螺旋雨帶？</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">肆、 台灣地形效應與極端降雨機制</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">1. 降雨量增加的關鍵：「移速變慢」</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">2. 地形鎖定與「慢颱風」的群聚</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#back-building">3. 後向建構 (Back-building) 與西南氣流</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="typhoon-dynamics-week-2">
+<h1>Typhoon-Dynamics - Week 2<a class="headerlink" href="#typhoon-dynamics-week-2" title="Link to this heading">#</a></h1>
+<p><strong>日期:</strong> 2026.03.04</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>西北太平洋颱風生成機制與環境場<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<section id="background-conditions">
+<h2>一、 觀測現象與大環境背景 (Background Conditions)<a class="headerlink" href="#background-conditions" title="Link to this heading">#</a></h2>
+<p>在探討颱風動力學時，我們必須先認識到<strong>地域性的差異</strong>。許多教科書偏重於大西洋的觀測，但在我們所在的西北太平洋，情況有些不同。</p>
+<ul class="simple">
+<li><p><strong>海洋熱含量 (Ocean Heat Content, OHC)：</strong> 在大西洋，OHC 是決定颱風生成的關鍵限制因素；但在西北太平洋，因為整體的 OHC 通常已經非常大（不缺乏熱量），所以它反而不常被視為此區域颱風生成的最關鍵變數。</p></li>
+<li><p><strong>降雨的氣候趨勢：</strong> 觀測 1979 年到 2008 年的數據可以發現一個現象：「濕的地方越濕，乾的地方越乾」(Moist gets moister, dry gets drier)。這代表熱帶的上升氣流與副熱帶的下沉氣流都在增強，整體環流發生了改變。</p></li>
+</ul>
+<p><a class="reference external" href="https://link.springer.com/article/10.1007/s00382-011-1266-z"><img alt="" src="../../_images/Rainfall-variation-from-1979to2008.png" /></a></p>
+<ul class="simple">
+<li><p><strong>西北太平洋的獨特結構：</strong></p>
+<ul>
+<li><p><strong>低層大氣：</strong> 存在一個巨大的<strong>季風槽 (Monsoon Trough)</strong>，這是西風（西南季風）與東風（副熱帶高壓帶來）交會的大低壓區。</p></li>
+<li><p><strong>高層大氣：</strong> 由於季風降雨釋放潛熱，高層會形成大高壓。當高層質量往外擴散（羅斯貝波能量頻散，Rossby Wave Energy Dispersion），會在周圍形成槽線，例如 <strong>TUTT (熱帶對流層上部槽)</strong>。</p></li>
+<li><p><strong>上下顛倒的斜壓結構 (First Baroclinic Mode)：</strong> 下層低壓、上層高壓的配置，造就了較小的垂直風切，這也是西北太平洋有一半的颱風都在季風槽內生成的原因。</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="../../_images/The_unique_structure_of_the_Northwest_Pacific-formation.png" /></p>
+<p><img alt="" src="../../_images/The_unique_structure_of_the_Northwest_Pacific-steady_state1.png" /></p>
+<p>大氣的氣候背景並不是一塊鐵板，而是充滿著低頻率的變化，這就是<strong>季內震盪 (ISO)</strong>。</p>
+<p><img alt="" src="../../_images/Intra-seasonal-oscillations_affect_the_distribution_of_surface_pressure_in_the_western_Pacific.png" /></p>
+<ul class="simple">
+<li><p><strong>大氣的呼吸：</strong> 老師打個比方，副熱帶高壓的強弱變化就像是大氣在「緩慢地呼吸」，有時候強（熱到爆），過幾天又慢慢減弱，週期大約落在 7 到 10 天。</p></li>
+<li><p><strong>變異度最大的「走廊」：</strong> 氣象學家 Gabriel Lau 在 1997 年的研究中尋找夏天天氣圖上變化最大的區域。結果發現，最大的變異度出現在<strong>副熱帶高壓與季風槽的合流區，並沿著高壓邊緣向西北延伸</strong>。</p></li>
+<li><p><em>比喻：</em> 就像一間教室，大家都坐在位子上時變異度很小；但「走廊」上總有人來來去去，所以變異度最大。這個天氣系統的「走廊」週期大約是 6 到 8 天，每隔這段時間改變當前的大氣基本狀態。當這個呼吸特別強的時候就會孕育出颱風。</p></li>
+</ul>
+<p><img alt="" src="../../_images/The_region_with_the_greatest_variability_in_the_monsoon_confluence_zone-Corridor.png" /></p>
+<p>年時間尺度的震盪導致颱風生成位置不同</p>
+<p><img alt="" src="lecture/week2/pic/The_location_of_the_east-west_confluence_zone_during_El-Ni%C3%B1o_phenomenon_changes.png" /></p>
+<p><img alt="" src="../../_images/Changes_in_the_location_of_typhoon_formation_over_decadal_variations_time.png" /></p>
+<p><strong>例子:</strong> 2020台灣無颱風</p>
+<p><img alt="" src="../../_images/All_is_ready_except_for_the_west_wind.png" /></p>
+</section>
+<section id="barotropic-instability">
+<h2>三、 動力機制：正壓不穩定與能量轉換 (Barotropic Instability)<a class="headerlink" href="#barotropic-instability" title="Link to this heading">#</a></h2>
+<p>為什麼在季風合流區，小小的天氣擾動特別容易長大變成颱風？這背後的核心機制是<strong>正壓不穩定 (Barotropic Instability)</strong>。我們來一步步推導這個物理過程。</p>
+<section id="reynolds-decomposition">
+<h3>步驟 1：雷諾分解 (Reynolds Decomposition)<a class="headerlink" href="#reynolds-decomposition" title="Link to this heading">#</a></h3>
+<p>為了解析複雜的風場，我們將實際風場拆解為「大環境氣候平均場」與「微小的天氣擾動場」。
+假設東西向風速為 <span class="math notranslate nohighlight">\(u\)</span>，南北向風速為 <span class="math notranslate nohighlight">\(v\)</span>：
+<span class="math notranslate nohighlight">\(u = \bar{u} + u'\)</span>
+<span class="math notranslate nohighlight">\(v = \bar{v} + v'\)</span>
+（其中 <span class="math notranslate nohighlight">\(\bar{u}\)</span> 是季風槽的背景風場，<span class="math notranslate nohighlight">\(u'\)</span> 則是颱風胚胎的擾動）</p>
+</section>
+<section id="id2">
+<h3>步驟 2：擾動動能方程式<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>我們關心的是擾動會不會長大，也就是單位質量的「擾動動能」 <span class="math notranslate nohighlight">\(\overline{K'}\)</span> 隨時間的變化。定義擾動動能為：</p>
+<div class="math notranslate nohighlight">
+\[\overline{K'} = \frac{1}{2}(\overline{u'^2 + v'^2})\]</div>
+<p>將雷諾分解後的風場代入水平運動方程式，對時間取平均並化簡（忽略摩擦力等次要項），我們可以得到決定擾動生死的「正壓能量轉換項」或「風切產生項」(Shear Production)：</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial \overline{K'}}{\partial t} \approx -\overline{u'v'} \frac{\partial \bar{u}}{\partial y}\]</div>
+</section>
+<section id="id3">
+<h3>步驟 3：物理意義與大河漩渦的類比<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>這個公式代表什麼意思呢？老師用一個比喻來解釋：</p>
+<ul class="simple">
+<li><p><strong>大河 (背景場 <span class="math notranslate nohighlight">\(\bar{u}\)</span>)：</strong> 季風槽區域南邊吹西風、北邊吹東風，這就像一條寬闊的大河，不同緯度的水流速度方向完全不同，產生了極大的<strong>水平風切 (<span class="math notranslate nohighlight">\(\frac{\partial \bar{u}}{\partial y} \neq 0\)</span>)</strong>。</p></li>
+<li><p><strong>小漩渦 (擾動場 <span class="math notranslate nohighlight">\(u', v'\)</span>)：</strong> 雷諾應力項 <span class="math notranslate nohighlight">\(\overline{u'v'}\)</span> 代表了這些小擾動的形狀與旋轉方向。</p></li>
+</ul>
+<p>當小漩渦的旋轉結構剛好配合大河的風切流速差異時，公式右邊的計算結果會大於零。這意味著：</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial \overline{K'}}{\partial t} &gt; 0\]</div>
+<p>小漩渦（擾動）成功從大河（季風槽背景場）身上「偷走」了動能，讓自己越來越強大，最終發展成颱風。這就是季風槽成為颱風溫床的最主要動力學原因。</p>
+</section>
+<section id="id4">
+<h3>熱帶波動<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p><img alt="" src="../../_images/Cloud_cluster_5to10N_satellite_obs_in1967August.png" /></p>
+<p>熱帶Beta效應明顯(<span class="math notranslate nohighlight">\(\sin \phi\)</span>)，Rossby wave容易頻散，但是仍看到波動因為 <strong>對流</strong> 將 <strong>渦度</strong> 鎖住了</p>
+</section>
+</section>
+<section id="id5">
+<h2>壹、 颱風的群聚與連續生成機制<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<section id="mjo-monsoon-trough">
+<h3>1. 背景：MJO 與東西風合流 (Monsoon Trough)<a class="headerlink" href="#mjo-monsoon-trough" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>傳統認知衝突</strong>：東太平洋背景上幾乎都吹東風，理論上很難產生東西風的「合流」。</p></li>
+<li><p><strong>MJO 的關鍵角色</strong>：當「馬登－朱利安震盪 (MJO)」移入時，會減弱背景東風，甚至產生「西風異常 (westerly anomaly)」。在 MJO 移入的剎那，創造了短暫但強烈的<strong>東西風合流區</strong>。</p></li>
+<li><p><strong>群聚現象</strong>：颱風生成並非均勻分布於季節中，而是呈現「不生成則已，一生成就是連續生成」的群聚特徵。取得生成「門票」（初始擾動）的數量在 MJO 活躍期大幅增加。</p></li>
+<li><p>MJO與環境 提供了 <span class="math notranslate nohighlight">\(10^{-4} [\text{s}]\)</span> 渦度</p></li>
+</ul>
+<p>合流、disturbances使TD數量增加，TD變TC的比例在有沒有MJO都一樣，只是有MJO會使TD數量變多</p>
+<p><img alt="" src="../../_images/TKE_TC_formation.png" /></p>
+</section>
+<section id="id6">
+<h3>2. 連續生成的三大動力機制<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<p>在東西風合流區，颱風通常會每隔 5~6 天、相距約 2000 公里連續生成，這背後有三個核心物理過程：</p>
+<ol class="arabic simple">
+<li><p><strong>波能量累積 (Wave Energy Accumulation)</strong>：</p></li>
+</ol>
+<ul class="simple">
+<li><p>東西風合流區存在極大的環境風切。東風波（波長約 2000 公里）進入此區域時，其<strong>群速度 (Group Velocity) 會趨近於零</strong>。</p></li>
+<li><p>波能量無法頻散，全數聚集於此，引發強烈對流。</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p><strong>正壓不穩定 (Barotropic Instability)</strong>：</p></li>
+</ol>
+<ul class="simple">
+<li><p>當波動振幅變大進入非線性階段，波形在南北向發生變化。</p></li>
+<li><p>強烈的水平風切會將「大尺度背景東西風的動能」轉換為「波的動能」，使擾動迅速增強為颱風。</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p><strong>羅斯貝波頻散 (Rossby Wave Dispersion)</strong>：</p></li>
+</ol>
+<ul class="simple">
+<li><p>第一個颱風生成後，其能量會以羅斯貝波的形式向東輻射頻散。</p></li>
+<li><p>這股向東傳遞的能量會觸發下一個擾動，進而長出第二個、第三個颱風。</p></li>
+<li><p>颱風頻散出去的能量可以激發另一個颱風</p></li>
+</ul>
+<blockquote>
+<div><p>💡 <strong>老師的物理小教室：群速度與能量累積</strong>
+<strong>類比</strong>：你可以把「相速度」想像成單一輛車的速度，而「群速度」是一整批車隊（車潮）前進的速度。當車隊開到一個道路施工、車道縮減的地方（極大的背景風切區），車隊前進的速度（群速度）降為零。這時後面的車不斷湧入，車子全部擠在一起（能量累積），這個能量的「大塞車」就成了颱風爆發的最佳溫床。</p>
+</div></blockquote>
+<p><img alt="" src="../../_images/wave-CISK_TC_induce_TC_seed.png" /></p>
+<p><img alt="" src="../../_images/Rossby_waves_energy_dispersion.png" /></p>
+<p><img alt="" src="../../_images/Differences_arising_from_the_absence_of_nonlinear_terms_in_Nondivergent_barotropic_vorticity_model_simulations_of_typhoons.png" /></p>
+<p><img alt="" src="../../_images/Differences_arising_from_the_absence_of_nonlinear_terms_in_Nondivergent_barotropic_vorticity_model_simulations_of_typhoons-Result.png" /></p>
+<p>當空間被壓縮， <span class="math notranslate nohighlight">\(\nabla \phi\)</span> 很大、非線性項重要時，更應該關注Beta driver</p>
+<ul class="simple">
+<li><p>Beta driver使颱風往西北邊走</p></li>
+<li><p>Beta driver使高氣壓往西南邊走(如果有)</p></li>
+</ul>
+<p><img alt="" src="../../_images/beta_gyre_dynamics.png" /></p>
+<div class="math notranslate nohighlight">
+\[R_\beta = \frac{\text{相對渦度平流}}{\text{行星渦度平流}} = \frac{U^2/L^2}{U\beta} = \frac{U}{\beta L^2}\]</div>
+<p>Beta Rossby 數 (<span class="math notranslate nohighlight">\(R_\beta\)</span>) 越大，代表渦漩越「小」且轉得越快，它反而「感受不到」地球的 Beta 效應；相反地，渦漩尺寸越「大」，<span class="math notranslate nohighlight">\(R_\beta\)</span> 會越小，這時它才會強烈感受到 Beta 效應，會使的颱風能量很快地被頻散掉。</p>
+<p><img alt="" src="../../_images/beta_Rossby_number.png" /></p>
+</section>
+</section>
+<section id="ai">
+<h2>貳、 AI 在氣候科學的應用與極端天氣<a class="headerlink" href="#ai" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>分佈動力學 (Distribution Dynamics)</strong>：
+氣候變遷不只要看「平均值」上升，更要看「變異度 (Variance)」的改變。如果變異度變大，極端天氣就會增加。</p></li>
+<li><p><strong>傳統模式的困境</strong>：高解析度數值模式運算昂貴，導致<strong>樣本數 (sample size) 嚴重不足</strong>，難以準確評估變異度。</p></li>
+<li><p><strong>AI 模式的突破 (如 AI2 的 S2 模式)</strong>：
+AI 模式的運算速度比傳統模式快了一萬倍，使得樣本數可以大幅擴增（像是一次一塊錢可以量 1000 次溫度）。但在應用上，必須證明 AI 預測結果符合「物理機制」，而不僅是「資料經驗的擬合」。</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="id7">
+<h2>參、 颱風結構：為何會有螺旋雨帶？<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>觀測特徵</strong>：颱風擁有眼牆 (eyewall) 與外圍的螺旋雨帶 (spiral rainband)。</p></li>
+<li><p><strong>動力機制</strong>：</p></li>
+<li><p>颱風中心釋放潛熱產生強對流，這些熱源會向外激發出<strong>慣性重力波 (Inertia-gravity wave)</strong>。</p></li>
+<li><p>由於颱風內部風速極快，具有極大的<strong>相對渦度 (Relative vorticity)</strong> 與<strong>慣性頻率 (Inertial frequency)</strong>。</p></li>
+<li><p>波動向外傳遞時，被強烈的背景旋轉流場牽引、拉扯，最終頻散並呈現出我們在雷達回波上看到的「螺旋狀」特徵。</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="id8">
+<h2>肆、 台灣地形效應與極端降雨機制<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
+<section id="id9">
+<h3>1. 降雨量增加的關鍵：「移速變慢」<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>分析台灣過去 60 年（19 個測站）的降雨資料發現，近 30 年颱風總雨量大幅增加（+37%~64%）。</p></li>
+<li><p><strong>觀測事實</strong>：登陸前與登陸期間，侵台颱風的「每小時降雨率」並未顯著增加。總雨量飆高，最直接的原因是**「颱風停留時間變長（走得慢）」**。</p></li>
+</ul>
+<p><img alt="" src="../../_images/TC_mean_rainfall1.png" /></p>
+</section>
+<section id="id10">
+<h3>2. 地形鎖定與「慢颱風」的群聚<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>空間分佈異常</strong>：歷史上移速最慢、帶來極端降雨的颱風（會打轉、停滯），幾乎全數集中在<strong>台灣北邊</strong>登陸。這絕對不是巧合，而是地形機制的影響。</p></li>
+<li><p><strong>動力學解釋：Wave Number 1 與渦度拉扯</strong>：</p>
+<ul>
+<li><p>當慢速颱風從台灣北邊移入時，環流會將水氣帶入台灣南邊的山區。</p></li>
+<li><p>南部山區被迫抬升，產生強烈的對流與<strong>非絕熱加熱 (Diabatic heating)</strong>。</p></li>
+<li><p>對流不斷向上抽氣，導致南部局部地區的渦度異常變大（正回饋機制）。</p></li>
+<li><p>颱風前方的渦度變大、後方變小（這是一種 Wave number 1 的不對稱分佈）。這個南部生成的「渦度異常區」就像一顆磁鐵，將北邊的颱風主體往南「拉住」，使得颱風移速變得更慢。</p></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<div><p>💡 <strong>老師的物理小教室：角動量守恆與渦度伸展 (Vortex Stretching)</strong>
+在這裡我們用到了一個很基礎的數學定理：<strong>渦度方程式 (Vorticity Equation)</strong>。
+簡化後的渦度方程式中有一項叫做「伸展項 (Stretching term)」：
+<span class="math notranslate nohighlight">\(\frac{d(\zeta + f)}{dt} = -(\zeta + f)(\nabla \cdot \vec{V})\)</span></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\zeta\)</span> 是相對渦度（旋轉的強度），<span class="math notranslate nohighlight">\(\nabla \cdot \vec{V}\)</span> 是水平輻散。</p></li>
+<li><p>當南部山區下大雨，低層大氣會產生強烈的<strong>輻合</strong>（即 <span class="math notranslate nohighlight">\(\nabla \cdot \vec{V} &lt; 0\)</span>）。</p></li>
+<li><p>負負得正，這會導致 <span class="math notranslate nohighlight">\(\frac{d\zeta}{dt} &gt; 0\)</span>，也就是渦度隨時間快速增加！</p></li>
+</ul>
+<p><strong>類比</strong>：這就像是在冰上旋轉的滑冰選手（角動量守恆）。當對流把空氣往上抽，等於是滑冰選手把向外伸展的手臂「往身體收縮」，這時她旋轉的速度（渦度）就會瞬間飆高！這股新生成的旋轉力量，就成了拉住颱風減速的關鍵。</p>
+</div></blockquote>
+<p><img alt="" src="../../_images/Space_locking_of_slow_typhoons1.png" /></p>
+</section>
+<section id="back-building">
+<h3>3. 後向建構 (Back-building) 與西南氣流<a class="headerlink" href="#back-building" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>除了移速慢，颱風引進的西南氣流若與地形交互作用，會在迎風面或海面上游不斷長出新的對流胞，並接連移入陸地。</p></li>
+<li><p>這種現象稱為「後向建構」，是造成平地（如嘉義平原、小林村事件）發生大範圍、長時間致災性豪雨的主因。</p></li>
+</ul>
+<hr class="docutils" />
+<p>這份筆記把老師長達數小時的演講，濃縮成了有條理的動力學知識點。如果在上述的推導或物理機制中，有哪一個部分你還覺得不夠直觀，隨時告訴我，老師再換個方式為你拆解！</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lecture\week2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../lecture.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">lecture</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../homework/homework.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">homework</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Typhoon-Dynamics - Week 2</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">西北太平洋颱風生成機制與環境場</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-conditions">一、 觀測現象與大環境背景 (Background Conditions)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#barotropic-instability">三、 動力機制：正壓不穩定與能量轉換 (Barotropic Instability)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reynolds-decomposition">步驟 1：雷諾分解 (Reynolds Decomposition)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">步驟 2：擾動動能方程式</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">步驟 3：物理意義與大河漩渦的類比</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">熱帶波動</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">壹、 颱風的群聚與連續生成機制</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mjo-monsoon-trough">1. 背景：MJO 與東西風合流 (Monsoon Trough)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">2. 連續生成的三大動力機制</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai">貳、 AI 在氣候科學的應用與極端天氣</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">參、 颱風結構：為何會有螺旋雨帶？</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">肆、 台灣地形效應與極端降雨機制</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">1. 降雨量增加的關鍵：「移速變慢」</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">2. 地形鎖定與「慢颱風」的群聚</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#back-building">3. 後向建構 (Back-building) 與西南氣流</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC YE
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
