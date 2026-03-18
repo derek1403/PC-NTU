@@ -1,0 +1,1472 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Advanced Atmospheric Dynamics - Week 2 &#8212; Advanced Atmospheric Dynamics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lecture/week2/week2';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="homework" href="../../homework/homework.html" />
+    <link rel="prev" title="Advanced Atmospheric Dynamics - Week 1" href="../week1/week1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Advanced Atmospheric Dynamics - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Advanced Atmospheric Dynamics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../lecture.html">lecture</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../week1/week1.html">Advanced Atmospheric Dynamics - Week 1</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Advanced Atmospheric Dynamics - Week 2</a></li>
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../homework/homework.html">homework</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../homework/hw1/hw1.html">Advanced Atmospheric Dynamics Hw 1</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flecture/week2/week2.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/lecture/week2/week2.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Advanced Atmospheric Dynamics - Week 2</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Advanced Atmospheric Dynamics - Week 2</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuity-equation-diffusion">1 連續方程式與擴散守恆 (Continuity Equation &amp; Diffusion)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.1 基本物理量與假設</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.2 定義「一般化」的連續方程式</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>應用：流體連續方程式</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><strong>應用：熱傳導方程式</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">變數定義與對應關係</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id6"><strong>已知與假設</strong></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">推導</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#momentum-equation-viscous-dissipation">2. 動量方程式與黏滯耗散 (Momentum Equation &amp; Viscous Dissipation)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2.1 積分形式的動量方程式</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-2">2.2 黏滯力與拉普拉斯算子 (<span class="math notranslate nohighlight">\(\nabla^2\)</span>)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#turbulence-eddy-diffusivity">3. 亂流與渦流擴散 (Turbulence &amp; Eddy Diffusivity)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a">3.1a 已知與假設</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-kinetic-energy-dissipation">3.1b 擾動動能的耗散 (Kinetic Energy Dissipation)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pi-buckingham-pi-theorem-reynolds-number">4. 白金漢 <span class="math notranslate nohighlight">\(\pi\)</span> 定理與雷諾數 (Buckingham <span class="math notranslate nohighlight">\(\pi\)</span> Theorem &amp; Reynolds Number)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dimensional-analysis">4.1 因次分析 (Dimensional Analysis)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">4.2 阻力係數圖 的物理拆解</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pm2-5">4.3 PM2.5 在大氣中的沉降計算</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#poiseuille-flow">5. 圓管流體力學：波以耳定律與電路類比 (Poiseuille Flow)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#force-balance">5.1 穩態力平衡 (Force Balance)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#velocity-profile">5.2 速度分佈推導 (Velocity Profile)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">假設與已知</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-rate">5.3 總流量計算 (Flow Rate)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#circuit-analogy">5.4 跨領域類比：流體與電路 (Circuit Analogy)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#murray-s-law">6. 分支管路系統的最佳化：穆雷定律 (Murray’s Law)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">6.1 幾何設定與總流阻方程式</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">6.2 尋求最佳分叉角度</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">假設與已知</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">6.3 物理與生物的印證</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-momentum-equations-in-a-rotating-frame">七a、 旋轉座標系中的動量方程式 (Momentum Equations in a Rotating Frame)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d">壹、 2D 圓柱座標系下的動量推導 (局部渦旋/颱風系統)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">1. 變數與方程式定義</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#material-derivative-of-unit-vectors">2. 單位向量的物質導數 (Material Derivative of Unit Vectors)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">3. 動力方程式的完全展開</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">4. 兩個極端特例的物理意義</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">貳、 3D 球座標系下的動量方程式 (全球氣候與環流模式)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#primitive-equations">參、 傳統近似與原始方程式 (Primitive Equations)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">1. 我們可以丟掉什麼？</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hydrostatic-approximation">2. 靜力平衡 (Hydrostatic Approximation)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">3. 大氣數值模式的基石</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#b-rhs">七b、 旋轉座標系中的動量方程式 (加強下標與 RHS 展開版)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rhs">零、 座標系命名空間與 RHS 總定義</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cartesian-coordinates">1. 直角座標系 (Cartesian Coordinates)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cylindrical-coordinates">2. 圓柱座標系 (Cylindrical Coordinates) - 適用於颱風中心分析</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spherical-coordinates">3. 球面座標系 (Spherical Coordinates) - 適用於全球環流模式</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">壹、 2D 圓柱座標系下的動量推導 (局部渦旋/颱風系統)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">1. 單位向量的物質導數</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">2. 動力方程式展開與 RHS 結合</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">貳、 3D 球座標系下的動量方程式 (全球氣候模式)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">參、 傳統近似與原始方程式 (Primitive Equations)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-2">七b-2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-p">一、 破解向量的幻象：為什麼 <span class="math notranslate nohighlight">\(\nabla P\)</span> 長得不一樣？</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#x-y-z">二、 為什麼課堂上都用直角座標系 (<span class="math notranslate nohighlight">\(x, y, z\)</span>)？有限制嗎？</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">1. 這是在做什麼？</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">2. 這有什麼限制嗎？</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id28">3. 什麼時候「必須」用到 3D 球座標系？</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="advanced-atmospheric-dynamics-week-2">
+<h1>Advanced Atmospheric Dynamics - Week 2<a class="headerlink" href="#advanced-atmospheric-dynamics-week-2" title="Link to this heading">#</a></h1>
+<p><strong>日期:</strong> 2026.03.01</p>
+<section id="continuity-equation-diffusion">
+<h2>1 連續方程式與擴散守恆 (Continuity Equation &amp; Diffusion)<a class="headerlink" href="#continuity-equation-diffusion" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h3>1.1 基本物理量與假設<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>在推導連續方程式前，我們必須確立幾個核心概念：</p>
+<ul class="simple">
+<li><p><strong>物質體積 (Material Volume, <span class="math notranslate nohighlight">\(V_m\)</span>)</strong>：隨著流體運動的封閉體積，其內部質量守恆。</p></li>
+<li><p><strong>連續體假設</strong>：流體密度 <span class="math notranslate nohighlight">\(\rho\)</span> 必須能在宏觀上被平滑定義。這要求觀測的物理尺度 <span class="math notranslate nohighlight">\(L\)</span> 必須遠大於分子的平均自由徑 <span class="math notranslate nohighlight">\(l\)</span>（即 <span class="math notranslate nohighlight">\(l \ll L\)</span>）。</p></li>
+<li><p><strong>任意體積 (Arbitrary Volume)</strong>：方程式對空間中任何一個固定大小的控制體積皆成立。</p></li>
+</ul>
+<blockquote>
+<div><p><strong>💡 物理史類比：富蘭克林的池塘實驗</strong>
+班傑明·富蘭克林曾將一茶匙的油滴入池塘，觀察到油膜擴散至約半英畝大就不再擴散。假設油膜最終厚度為單一分子層，利用巨觀的體積與面積關係 (<span class="math notranslate nohighlight">\(V = A \cdot h\)</span>)，即可估算出油分子的直徑。這是一個利用巨觀連續體現象去推測微觀尺度的經典例子，與我們定義 <span class="math notranslate nohighlight">\(\rho\)</span> 的概念相呼應。</p>
+</div></blockquote>
+</section>
+<section id="id2">
+<h3>1.2 定義「一般化」的連續方程式<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\frac{\partial C}{\partial t} + \nabla \cdot \vec{J}_C = 0\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(C\)</span> (Concentration / Content)：代表我們想討論的「某種物理量的空間分佈」，它可以是質量密度 (<span class="math notranslate nohighlight">\(\rho\)</span>)、熱能密度 (<span class="math notranslate nohighlight">\(e\)</span>)、電荷密度、甚至是機率密度假設 <span class="math notranslate nohighlight">\(C\)</span> 的單位是 <span class="math notranslate nohighlight">\([C]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\vec{J}_C\)</span> (Flux density)：代表這個物理量 <span class="math notranslate nohighlight">\(C\)</span> 在空間中流動的「通量密度」， <span class="math notranslate nohighlight">\(\vec{J}_C\)</span> 的單位是 <span class="math notranslate nohighlight">\([C] \cdot \frac{m}{s}\)</span></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\vec{J}_C\)</span> 的普遍物理意義永遠是：「每單位時間 (<span class="math notranslate nohighlight">\(s\)</span>)、穿過每單位截面積 (<span class="math notranslate nohighlight">\(m^2\)</span>) 的總物理量 (<span class="math notranslate nohighlight">\([C] \cdot m^3\)</span>)」，這就是「通量 (Flux)」的本質</p></li>
+</ul>
+</li>
+</ul>
+<section id="id3">
+<h4><strong>應用：流體連續方程式</strong><a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<p>給定<span class="math notranslate nohighlight">\(C\)</span>是流體密度 <span class="math notranslate nohighlight">\(\rho \)</span>、<span class="math notranslate nohighlight">\(\vec{J}_C=\rho \mathbf{u}\)</span>，根據守恆定律，單位時間內控制體積內密度的變化等於通量進出該體積的淨值：</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial \rho}{\partial t } + \nabla \cdot (\rho \mathbf{u}) = 0\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\rho\)</span>: 流體密度 <span class="math notranslate nohighlight">\([\text{kg} \cdot \text{m}^{-3}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{u}\)</span>: 三維速度向量 <span class="math notranslate nohighlight">\((u, v, w)\)</span>  <span class="math notranslate nohighlight">\([\text{m} \cdot \text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(t\)</span>: 時間 <span class="math notranslate nohighlight">\([\text{s}]\)</span></p></li>
+</ul>
+</section>
+<section id="id4">
+<h4><strong>應用：熱傳導方程式</strong><a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<section id="id5">
+<h5>變數定義與對應關係<a class="headerlink" href="#id5" title="Link to this heading">#</a></h5>
+<p>在廣義的連續方程式 <span class="math notranslate nohighlight">\(\frac{\partial C}{\partial t} + \nabla \cdot \vec{J}_C = 0\)</span> 中，我們必須先定義好這套系統裡的「主體變數 <span class="math notranslate nohighlight">\(C\)</span>」與「通量 <span class="math notranslate nohighlight">\(\vec{J}_C\)</span>」分別代表什麼實體物理量：</p>
+<ol class="arabic simple">
+<li><p><strong>廣義主體 <span class="math notranslate nohighlight">\(C \implies\)</span> 體積熱能密度 <span class="math notranslate nohighlight">\(e\)</span></strong></p>
+<ul class="simple">
+<li><p><strong>定義</strong>：單位體積內所含的熱能。</p></li>
+<li><p><strong>公式</strong>：<span class="math notranslate nohighlight">\(e = \rho c_p T\)</span></p></li>
+<li><p><strong>變數說明</strong>：</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\rho\)</span> 為密度 <span class="math notranslate nohighlight">\([\text{kg} \cdot \text{m}^{-3}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c_p\)</span> 為等壓比熱 <span class="math notranslate nohighlight">\([\text{J} \cdot \text{kg}^{-1} \cdot \text{K}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(T\)</span> 為絕對溫度 <span class="math notranslate nohighlight">\([\text{K}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>單位</strong>：<span class="math notranslate nohighlight">\([\text{J} \cdot \text{m}^{-3}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>廣義通量 <span class="math notranslate nohighlight">\(\vec{J}_C \implies\)</span> 熱通量密度 <span class="math notranslate nohighlight">\(\vec{J}_q\)</span></strong></p>
+<ul class="simple">
+<li><p><strong>定義</strong>：單位時間內，通過單位面積的熱能。</p></li>
+<li><p><strong>公式</strong>：根據傅立葉熱傳導定律（Fourier’s Law），熱量會從高溫往低溫流動，其大小與溫度梯度成正比，即 <span class="math notranslate nohighlight">\(\vec{J}_q = -k \nabla T\)</span>。</p></li>
+<li><p><strong>變數說明</strong>：</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(k\)</span> 為熱傳導係數（Thermal conductivity） <span class="math notranslate nohighlight">\([\text{W} \cdot \text{m}^{-1} \text{K}^{-1}]\)</span></p></li>
+<li><p>負號代表熱量往溫度「下降」的方向流動</p></li>
+</ul>
+</li>
+<li><p><strong>單位</strong>：<span class="math notranslate nohighlight">\([\text{W} \cdot \text{m}^{-2}]=[\text{J} \cdot \text{m}^{-2} \cdot \text{s}^{-1}]\)</span></p></li>
+</ul>
+</li>
+</ol>
+<p><img alt="" src="../../_images/Fourier%27s_law_of_heat_conduction.png" /></p>
+</section>
+<section id="id6">
+<h5><strong>已知與假設</strong><a class="headerlink" href="#id6" title="Link to this heading">#</a></h5>
+<p>在進行數學推導前，我們必須先框定這個方程式適用的物理環境</p>
+<ul>
+<li><p><strong>【已知 1】無巨觀流體運動</strong>：</p>
+<p>我們探討的是固體，或者是一塊完全靜止沒有對流（Advection）的流體，熱能只能靠分子碰撞（傳導）來傳遞。</p>
+</li>
+<li><p><strong>【假設 1】均質且不可壓縮</strong>：</p>
+<p>假設材料是均勻的，密度 <span class="math notranslate nohighlight">\(\rho\)</span>、比熱 <span class="math notranslate nohighlight">\(c_p\)</span> 與熱傳導係數 <span class="math notranslate nohighlight">\(k\)</span> 在空間與時間中皆為常數，不隨溫度變化。</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\frac{\partial (\rho c_p T)}{\partial t} = \rho c_p \frac{\partial T}{\partial t}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\nabla \cdot (-k \nabla T) = k \nabla \cdot (\nabla T)\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【假設 2】無內部熱源</strong>：</p>
+<p>假設系統內部沒有化學反應或輻射加熱（如無核反應或微波加熱），即內部生熱項為零。</p>
+</li>
+<li><p><strong>【假設 3】熱擴散係數</strong> <span class="math notranslate nohighlight">\(\alpha = \frac{k}{\rho c_p}\)</span></p>
+<ul class="simple">
+<li><p><strong>分子 <span class="math notranslate nohighlight">\(k\)</span> (熱傳導係數)</strong>：代表材料「導熱的能力」</p>
+<ul>
+<li><p>金屬的 <span class="math notranslate nohighlight">\(k\)</span> 很大，木頭的 <span class="math notranslate nohighlight">\(k\)</span> 很小</p></li>
+<li><p>單位:<span class="math notranslate nohighlight">\([\text{W} \cdot \text{m}^{-1}\cdot \text{K}^{-1}]\)</span>，材料厚度為 <span class="math notranslate nohighlight">\(1\)</span> 公尺、兩端溫差為 <span class="math notranslate nohighlight">\(1\)</span> 度時，每秒鐘會有多少焦耳的熱能穿過 <span class="math notranslate nohighlight">\(1\)</span> 平方公尺的面積</p></li>
+</ul>
+</li>
+<li><p><strong>分母 <span class="math notranslate nohighlight">\(\rho c_p\)</span> (體積熱容量)</strong>：代表材料「儲存熱能的能力」</p>
+<ul>
+<li><p>水的值很大，空氣的值很小</p></li>
+<li><p>單位:<span class="math notranslate nohighlight">\([\text{kg} \cdot \text{m}^{-3} \cdot \text{J} \cdot \text{kg}^{-1}\cdot \text{K}^{-1}] = [\text{J}\cdot \text{m}^{-3}\cdot \text{K}^{-1}]\)</span>，要讓 <span class="math notranslate nohighlight">\(1\)</span> 立方公尺的物體升溫 <span class="math notranslate nohighlight">\(1\)</span> 度，需要吃掉多少熱量</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id7">
+<h5>推導<a class="headerlink" href="#id7" title="Link to this heading">#</a></h5>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gather*}
+&amp;\frac{\partial C}{\partial t} + \nabla \cdot \vec{J}_C &amp;=&amp; 0  \\
+\overset{\text{代入熱能與熱通量}}{\Rightarrow}&amp;\frac{\partial e}{\partial t} + \nabla \cdot \vec{J}_q &amp;=&amp; 0  \\
+&amp;\frac{\partial (\rho c_p T)}{\partial t} + \nabla \cdot (-k \nabla T) &amp;=&amp; 0  \\
+\overset{\text{假設 1，提出常數} \rho, c_p, k}{\Rightarrow}&amp;\rho c_p \frac{\partial T}{\partial t} - k \nabla \cdot (\nabla T) &amp;=&amp; 0  \\
+&amp;\rho c_p \frac{\partial T}{\partial t} - k \nabla^2 T &amp;=&amp; 0 \\
+&amp;\frac{\partial T}{\partial t} &amp;=&amp; \frac{k}{\rho c_p} \nabla^2 T \\
+\overset{\text{假設 3} }{\Rightarrow}&amp;\frac{\partial T}{\partial t} &amp;=&amp; \alpha \nabla^2 T
+\end{gather*}
+\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(T\)</span>: 是溫度 <span class="math notranslate nohighlight">\([\text{K}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(t\)</span>: 是時間 <span class="math notranslate nohighlight">\([\text{s}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(k\)</span>: 是熱傳導係數 <span class="math notranslate nohighlight">\([\text{W} \cdot \text{m}^{-1}\cdot \text{K}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\rho\)</span> 是流體密度 <span class="math notranslate nohighlight">\([\text{kg} \cdot \text{m}^{-3}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c_p\)</span> 為等壓比熱 <span class="math notranslate nohighlight">\([\text{J} \cdot \text{kg}^{-1}\cdot \text{K}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha\)</span> 為熱擴散係數（Thermal diffusivity） <span class="math notranslate nohighlight">\([\text{m}^{2}\cdot  \text{s}^{-1}]\)</span></p></li>
+</ul>
+<p><strong>📐 數學與物理的現實落差：</strong>
+這個偏微分方程是建立在泰勒展開式中極限 <span class="math notranslate nohighlight">\(\Delta x \to 0\)</span> 的數學基礎上。但在實際大氣觀測中，我們儀器的解析度無法做到真正的 <span class="math notranslate nohighlight">\(\Delta x \to 0\)</span>。此外，大氣中的亂流（Turbulence）不僅存在大尺度能量傳遞至小尺度（Energy cascade），也存在小尺度擾動發展成大尺度結構的現象（如斜壓不穩定、正壓不穩定），這涉及到從線性行為過渡到非線性行為的複雜動力學。</p>
+</section>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="momentum-equation-viscous-dissipation">
+<h2>2. 動量方程式與黏滯耗散 (Momentum Equation &amp; Viscous Dissipation)<a class="headerlink" href="#momentum-equation-viscous-dissipation" title="Link to this heading">#</a></h2>
+<section id="id8">
+<h3>2.1 積分形式的動量方程式<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<p>納維-斯托克斯方程式（Navier-Stokes Equation）的積分形式描述了控制體積 <span class="math notranslate nohighlight">\(V_m\)</span> 內動量的變化率等於所受外力的總和：</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{dt} \int_{V_m} \rho \mathbf{u} \, dV = \int_{V_m} \rho \mathbf{g} \, dV - \oint_{\partial V_m} P \, d\mathbf{A} + \int_{V_m} \mu \nabla^2 \mathbf{u} \, dV
+\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathbf{u}\)</span>: 三維速度向量 <span class="math notranslate nohighlight">\((u, v, w)\)</span>  <span class="math notranslate nohighlight">\([\text{m} \cdot \text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{g}\)</span>: 重力加速度向量 <span class="math notranslate nohighlight">\((0, 0, -g)\)</span> <span class="math notranslate nohighlight">\([\text{m} \cdot \text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(P\)</span>: 氣壓 <span class="math notranslate nohighlight">\( [\text{Pa}] = [\text{kg} \cdot \text{m}^{-1}\cdot \text{s}^{-2}] \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\rho\)</span>: 流體密度 <span class="math notranslate nohighlight">\([\text{kg} \cdot \text{m}^{-3}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mu\)</span>: 動力黏滯係數 (Dynamic viscosity) <span class="math notranslate nohighlight">\([\text{kg} \cdot \text{m}^{-1}\cdot \text{s}^{-1}] \)</span></p></li>
+</ul>
+</section>
+<section id="nabla-2">
+<h3>2.2 黏滯力與拉普拉斯算子 (<span class="math notranslate nohighlight">\(\nabla^2\)</span>)<a class="headerlink" href="#nabla-2" title="Link to this heading">#</a></h3>
+<p>方程式中的最後一項(<span class="math notranslate nohighlight">\(\int_{V_m} \mu \nabla^2 \mathbf{u} \, dV\)</span>)是由流體內摩擦引起的黏滯力，在物理上 <span class="math notranslate nohighlight">\(\mu \frac{\partial u_i}{\partial x_j}\)</span> 代表 <span class="math notranslate nohighlight">\(u_i\)</span> 動量在 <span class="math notranslate nohighlight">\(x_j\)</span> 方向上的傳送（動量通量），其散度即為 <span class="math notranslate nohighlight">\(\mu \nabla^2 \mathbf{u}\)</span>。</p>
+<p><strong>這在做什麼：</strong> 拉普拉斯算子 <span class="math notranslate nohighlight">\(\nabla^2\)</span> 在物理方程式中通常扮演「平滑化」（Smoothing）的角色，它是一個「消耗項」（Sink）。</p>
+<ul class="simple">
+<li><p><strong>數學推導視角</strong>：若我們將速度場轉換到傅立葉空間（Fourier space），對空間微分兩次會產生 <span class="math notranslate nohighlight">\(-k^2\)</span>（<span class="math notranslate nohighlight">\(k\)</span> 為波數），這意味著高頻擾動（波數 <span class="math notranslate nohighlight">\(k\)</span> 很大，即劇烈的空間變化）會被快速衰減。它會將空間中的極大值壓低、極小值拉高。</p></li>
+<li><p><strong>類比</strong>：如果把世界看作一個動力系統，<span class="math notranslate nohighlight">\(\frac{\partial \mathbf{u}}{\partial t} = \nu \nabla^2 \mathbf{u}\)</span> 就是一個「抹平一切差異」的方程式（黑色玩笑地說，這是某種物理學上的「<span class="math notranslate nohighlight">\(\mathbb{C}\mathbb{N}-\dot{8}\dot{9}\mathit{64}\)</span>大同世界」方程式）。</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="turbulence-eddy-diffusivity">
+<h2>3. 亂流與渦流擴散 (Turbulence &amp; Eddy Diffusivity)<a class="headerlink" href="#turbulence-eddy-diffusivity" title="Link to this heading">#</a></h2>
+<section id="a">
+<h3>3.1a 已知與假設<a class="headerlink" href="#a" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><strong>【假設 1】雷諾分解 (Reynolds Decomposition)</strong></p>
+<p>在亂流中，我們將物理量 <span class="math notranslate nohighlight">\(q\)</span> 分解為平均態 <span class="math notranslate nohighlight">\(\bar{q}\)</span> 與擾動態 <span class="math notranslate nohighlight">\(q'\)</span>：<span class="math notranslate nohighlight">\(q = \bar{q} + q'\)</span>，假設擾動量純粹受到擴散影響</p>
+</li>
+<li><p><strong>【已知 1】只考慮耗散的平流擴散方程式</strong></p>
+<ul class="simple">
+<li><p>需要一些假設</p>
+<ul>
+<li><p>雷諾分解</p></li>
+<li><p>假設沒有背景風（或跟著背景風走）：令 <span class="math notranslate nohighlight">\(\bar{\mathbf{u}} = 0\)</span></p></li>
+<li><p>假設背景場很均勻（沒有梯度）：令 <span class="math notranslate nohighlight">\(\nabla \bar{q} = 0\)</span></p></li>
+<li><p>線性化假設（忽略極小項）：假設擾動非常微弱，兩個微小的擾動相乘 <span class="math notranslate nohighlight">\(\mathbf{u}' \cdot \nabla q'\)</span> 近似於 0</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\frac{\partial q'}{\partial t} = \nu \nabla^2 q'\]</div>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\frac{\partial q}{\partial t}\)</span>：局地隨時間的變化</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{u} \cdot \nabla q\)</span>：被流體速度 <span class="math notranslate nohighlight">\(\mathbf{u}\)</span> 帶著走的平流項</p></li>
+<li><p><span class="math notranslate nohighlight">\(\nu \nabla^2 q\)</span>：分子擴散項（抹平差異的力量）</p></li>
+<li><p><strong>【已知 2】分部積分與散度定理</strong></p>
+<div class="math notranslate nohighlight">
+\[q' \nabla^2 q' = \nabla \cdot (q' \nabla q') - \nabla q' \cdot \nabla q'\]</div>
+</li>
+</ul>
+</section>
+<section id="b-kinetic-energy-dissipation">
+<h3>3.1b 擾動動能的耗散 (Kinetic Energy Dissipation)<a class="headerlink" href="#b-kinetic-energy-dissipation" title="Link to this heading">#</a></h3>
+<p>在多數的流體力學基礎推導中，<span class="math notranslate nohighlight">\(q\)</span> 通常被用來代表「任意一種具備擴散性質的純量」（例如：溫度 <span class="math notranslate nohighlight">\(T\)</span>、比濕 <span class="math notranslate nohighlight">\(r\)</span>、甚至是某種化學濃度），分項 <span class="math notranslate nohighlight">\(\int \frac{1}{2} {q'}^2 \, dV\)</span> 在統計數學上真正的名字叫做 <strong>「擾動變異數 (Scalar Variance)」</strong> ，它量度的是這個純量場「不均勻的程度」（例如一塊冷空氣與一塊熱空氣的溫差起伏）。<a class="reference internal" href="#123"><span class="xref myst">想要看嚴格擾動動能的耗散證明請到這裡</span></a>。</p>
+<p>我們來觀察擾動變異數（代表亂流動能 Kinetic Energy, KE）隨時間的變化，對擾動量平方的一半進行空間積分並對時間求導：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\frac{d}{dt} \int \frac{{q'}^2}{2} \, dV &amp;= \int q' \frac{\partial q'}{\partial t} \, dV \\
+&amp;= \nu \int q' (\nabla^2 q') \, dV \\
+&amp;=  \nu \int \nabla \cdot (q' \nabla q') \, dV - \nu \int \nabla q' \cdot \nabla q' \, dV \\
+&amp;= 0 - \nu \int \nabla q' \cdot \nabla q' \, dV \\
+&amp;= - \nu \int \nabla q' \cdot \nabla q' \, dV \\
+&amp;= - \nu \int |\nabla q'|^2 \, dV \\
+\end{aligned}
+\end{split}\]</div>
+<p><strong>物理意義：</strong>
+這證明了<strong>耗散是與速度梯度的平方 (<span class="math notranslate nohighlight">\(|\nabla q'|^2\)</span>) 成正比</strong>的（負號代表能量正在減少），在 2D 亂流的Energy cascade（能量串級）中系統會傾向讓梯度極小化，如果我們尋找使耗散最小化的穩態函數，就會得到拉普拉斯方程式（Laplace equation）<span class="math notranslate nohighlight">\(\nabla^2 q' = 0\)</span>。</p>
+<blockquote>
+<div><p><strong>💡 巨觀與微觀的類比：渦流擴散係數 <span class="math notranslate nohighlight">\(K\)</span></strong>
+在地球大氣中，分子黏滯係數 <span class="math notranslate nohighlight">\(\nu\)</span> 非常小（幾乎要趴在貼近地板的邊界層才感受得到），在大尺度氣象學中我們經常使用「渦流擴散係數 (Eddy diffusivity, <span class="math notranslate nohighlight">\(K\)</span>)」，它在數學形式上與 <span class="math notranslate nohighlight">\(\nu\)</span> 一模一樣但物理機制不同：<span class="math notranslate nohighlight">\(\nu\)</span> 是分子間的碰撞交換，而 <span class="math notranslate nohighlight">\(K\)</span> 是一大塊熱空氣和一大塊冷空氣在大氣中互相翻攪（亂流）。即使自由大氣不考慮分子黏滯力 <span class="math notranslate nohighlight">\(\mu\)</span>，我們依舊能用相同的數學框架來理解大氣亂流。</p>
+</div></blockquote>
+</section>
+</section>
+<hr class="docutils" />
+<section id="pi-buckingham-pi-theorem-reynolds-number">
+<h2>4. 白金漢 <span class="math notranslate nohighlight">\(\pi\)</span> 定理與雷諾數 (Buckingham <span class="math notranslate nohighlight">\(\pi\)</span> Theorem &amp; Reynolds Number)<a class="headerlink" href="#pi-buckingham-pi-theorem-reynolds-number" title="Link to this heading">#</a></h2>
+<section id="dimensional-analysis">
+<h3>4.1 因次分析 (Dimensional Analysis)<a class="headerlink" href="#dimensional-analysis" title="Link to this heading">#</a></h3>
+<p>根據白金漢 <span class="math notranslate nohighlight">\(\pi\)</span> 定理（Buckingham <span class="math notranslate nohighlight">\(\pi\)</span> Theorem）：</p>
+<div class="math notranslate nohighlight">
+\[\text{無因次參數數量} = \text{物理變數數量} - \text{基本單位數量}\]</div>
+<p>假設流體所受外力 <span class="math notranslate nohighlight">\(F\)</span> 與動力黏滯係數 <span class="math notranslate nohighlight">\(\mu\)</span>、特徵速度 <span class="math notranslate nohighlight">\(v\)</span>、特徵長度 <span class="math notranslate nohighlight">\(l\)</span>、流體密度 <span class="math notranslate nohighlight">\(\rho\)</span> 有關。
+函數關係：<span class="math notranslate nohighlight">\(F(\mu, v, l, \rho, F_{force}) = 0\)</span>
+這裡有 5 個變數，基本單位有 3 個（質量 M、長度 L、時間 T）。
+因此，我們可以得出 <span class="math notranslate nohighlight">\(5 - 3 = 2\)</span> 個無因次參數，組合後得到：</p>
+<div class="math notranslate nohighlight">
+\[\frac{F}{\rho v^2 l^2} = f\left(\frac{\rho v l}{\mu}\right)\]</div>
+<p><span class="math notranslate nohighlight">\(\frac{\rho v l}{\mu}\)</span> 就是著名的 <strong><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/02_Concepts/Fluid_Dynamics/Reynolds_number.html">雷諾數 (Reynolds Number, <span class="math notranslate nohighlight">\(Re\)</span>)</a></strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(Re = \frac{\text{慣性力}}{\text{黏滯力}} = \frac{\text{擴散時間尺度}}{\text{慣性時間尺度}}\)</span></p></li>
+<li><p>當 <span class="math notranslate nohighlight">\(Re\)</span> 很大時，擴散時間遠大於慣性時間，意味著在短暫的慣性運動時間內，擴散效應可忽略不計</p></li>
+</ul>
+</section>
+<section id="id9">
+<h3>4.2 阻力係數圖 的物理拆解<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://commons.wikimedia.org/wiki/File%3ASmooth_sphere_drag_coefficient.svg"><img alt="" src="../../_images/Drag_coefficient_Reynolds_number_for_sphere.png" /></a></p>
+<p>觀察摩擦力係數與雷諾數的關係圖：</p>
+<ul class="simple">
+<li><p><strong>A區 (層流，Low <span class="math notranslate nohighlight">\(Re\)</span> domain, <span class="math notranslate nohighlight">\(Re&lt;10^2\)</span>)：</strong></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(y \propto 1/x \Rightarrow \frac{F}{\rho v^2 l^2} \propto \frac{\mu}{\rho v l} \Rightarrow F \propto \mu v l\)</span></p></li>
+<li><p>這代表在低雷諾數下（如微小顆粒或黏稠流體），阻力主要由黏滯力 <span class="math notranslate nohighlight">\(\mu\)</span> 貢獻，密度 <span class="math notranslate nohighlight">\(\rho\)</span> 幾乎沒有發揮作用（對應斯托克斯阻力定律 Stokes’ drag）</p></li>
+</ul>
+</li>
+<li><p><strong>B區 (<span class="math notranslate nohighlight">\(10^2Re&lt;10^5\)</span>)：</strong></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(y \sim \text{const} \Rightarrow frac{F}{\rho v^2 l^2} \sim 1 \Rightarrow F \propto \rho v^2 l^2\)</span></p></li>
+<li><p>此時慣性力主導</p></li>
+<li><p><em>類比</em>：同樣射速的水槍與空氣槍，水槍造成的打擊力 (<span class="math notranslate nohighlight">\(F\)</span>) 會大空氣槍大約 1000 倍，因為 <span class="math notranslate nohighlight">\(\rho_{\text{water}} \approx 1000 \rho_{\text{air}}\)</span>，此時處於 B 區，力與密度成正比</p></li>
+</ul>
+</li>
+<li><p><strong>C區 (亂流，High <span class="math notranslate nohighlight">\(Re\)</span> domain, <span class="math notranslate nohighlight">\(&lt;10^5Re\)</span>)：</strong></p>
+<ul>
+<li><p>沒有明確的函數關係</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="pm2-5">
+<h3>4.3 PM2.5 在大氣中的沉降計算<a class="headerlink" href="#pm2-5" title="Link to this heading">#</a></h3>
+<p>已知在低雷諾數下的<a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/02_Concepts/Fluid_Dynamics/Terminal_velocity.html#terminal-velocity-of-air">終端速度公式</a>為：
+$<span class="math notranslate nohighlight">\(v_{\text{terminal}} = \frac{2}{9}\frac{r^2\rho g}{\mu}\)</span><span class="math notranslate nohighlight">\(
+*(註：PM2.5 顆粒極小 (\)</span>r<span class="math notranslate nohighlight">\( 小) 且沉降速度慢 (\)</span>v<span class="math notranslate nohighlight">\( 小)，因此 \)</span>Re \ll 1<span class="math notranslate nohighlight">\(，必須代入低雷諾數的公式，而非 \)</span>v \propto \sqrt{r}$ 的高雷諾數公式)*</p>
+<p><strong>參數代入：</strong></p>
+<ul class="simple">
+<li><p>半徑 <span class="math notranslate nohighlight">\(r \sim 2.5 \times 10^{-6} [\text{m} ]\)</span></p></li>
+<li><p>顆粒密度 <span class="math notranslate nohighlight">\(\rho \sim 10^3 [\text{m} \cdot \text{m}^{-3}]\)</span> (假設類似水滴或固體微粒)</p></li>
+<li><p>重力 <span class="math notranslate nohighlight">\(g \sim 10 [\text{m} \cdot \text{s}^{-2}]\)</span></p></li>
+<li><p>空氣動力黏滯係數 <span class="math notranslate nohighlight">\(\mu \sim 10^{-5} [\text{kg} \cdot \text{m}^{-1}\cdot \text{s}^{-1}] \)</span></p></li>
+</ul>
+<p>算出來的終端速度 <span class="math notranslate nohighlight">\(v_{\text{terminal}} \sim 10^{-3} [\text{m} \cdot \text{s}^{-1}] \)</span>。
+這代表大面積（大 <span class="math notranslate nohighlight">\(r\)</span>）的顆粒落得越快。</p>
+<p><strong>沉降時間尺度評估：</strong></p>
+<ul class="simple">
+<li><p>若 PM2.5 處於<strong>邊界層 (厚度約 <span class="math notranslate nohighlight">\(10^3 \ m\)</span>)</strong>：完全沉降需 <span class="math notranslate nohighlight">\(10^3 / 10^{-3} = 10^6  [\text{s}] \approx 10 \ \text{天}\)</span>。</p></li>
+<li><p>若 PM2.5 進入<strong>對流層頂 (高度約 <span class="math notranslate nohighlight">\(10^4 \ m\)</span>)</strong>：完全沉降需 <span class="math notranslate nohighlight">\(10^4 / 10^{-3} = 10^7  [\text{s}] \approx 1 \ \text{年}\)</span>。</p></li>
+<li><p><em>結論</em>：一旦污染物（如火山灰、核爆塵）被送入對流層頂或平流層，將會造成「年尺度」的長期全球氣候效應。</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="poiseuille-flow">
+<h2>5. 圓管流體力學：波以耳定律與電路類比 (Poiseuille Flow)<a class="headerlink" href="#poiseuille-flow" title="Link to this heading">#</a></h2>
+<section id="force-balance">
+<h3>5.1 穩態力平衡 (Force Balance)<a class="headerlink" href="#force-balance" title="Link to this heading">#</a></h3>
+<p>想像液體在管子裡等速前進（Steady state），流體的內部摩擦阻力必須等於管子兩端的推力。</p>
+<p><img alt="" src="../../_images/steady_state_flow_pipe.png" /></p>
+<div class="math notranslate nohighlight">
+\[
+\begin{aligned}
+\text{流體的內部摩擦阻力} &amp;= \text{管子兩端的推力}
+\mu \frac{du}{dr} (2\pi r \ell) &amp;= -\Delta P (\pi r^2)
+\end{aligned}\]</div>
+<p><strong>這在做什麼：</strong></p>
+<ul class="simple">
+<li><p><strong>等號右邊 (<span class="math notranslate nohighlight">\(-\Delta P \pi r^2\)</span>)</strong>：這是水壓造成的「推力」，<span class="math notranslate nohighlight">\(\Delta P\)</span> 是管子兩端（長度 <span class="math notranslate nohighlight">\(\ell\)</span>）的壓力差，乘上截面積 <span class="math notranslate nohighlight">\(\pi r^2\)</span> 就是總推力。</p></li>
+<li><p><strong>等號左邊 (<span class="math notranslate nohighlight">\(\mu \frac{du}{dr} 2\pi r \ell\)</span>)</strong>：這是流體摩擦產生的「黏滯阻力」，<span class="math notranslate nohighlight">\(\mu\)</span> 是黏滯係數，<span class="math notranslate nohighlight">\(\frac{du}{dr}\)</span> 是徑向的速度梯度，乘上該半徑處的圓柱側面積 <span class="math notranslate nohighlight">\(2\pi r \ell\)</span> 就是總摩擦力。</p></li>
+</ul>
+</section>
+<section id="velocity-profile">
+<h3>5.2 速度分佈推導 (Velocity Profile)<a class="headerlink" href="#velocity-profile" title="Link to this heading">#</a></h3>
+<p>將上式移項並進行積分，以找出管內徑向位置 <span class="math notranslate nohighlight">\(r\)</span> 處的速度 <span class="math notranslate nohighlight">\(u(r)\)</span>：</p>
+<section id="id10">
+<h4>假設與已知<a class="headerlink" href="#id10" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>【已知 1】無滑動邊界條件</strong></p>
+<ul>
+<li><p>在管壁邊緣（<span class="math notranslate nohighlight">\(r = r_0\)</span>），流體黏附於管壁速度為 <span class="math notranslate nohighlight">\(0\)</span>；在任意半徑 <span class="math notranslate nohighlight">\(r\)</span> 速度為 <span class="math notranslate nohighlight">\(u(r)\)</span></p></li>
+</ul>
+</li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gather*}
+&amp;\mu \frac{du}{dr} (2\pi r \ell) &amp;=&amp; -\Delta P (\pi r^2) \\
+&amp;du &amp;=&amp; \frac{-\Delta P}{2\ell\mu} r \, dr \\
+\overset{\text{已知 1}}{\Rightarrow}&amp;\int_{u(r)}^0 du &amp;=&amp; \int_r^{r_0} \frac{-\Delta P}{2\ell\mu} r \, dr \\
+&amp;0 - u(r) &amp;=&amp; \frac{-\Delta P}{2\ell\mu} \left[ \frac{1}{2}r^2 \right]_r^{r_0} \\
+&amp;u(r) &amp;=&amp; \frac{\Delta P}{4\ell\mu} (r_0^2 - r^2)
+\end{gather*}\end{split}\]</div>
+<p>這是一個標準的拋物線分佈。管子中心（<span class="math notranslate nohighlight">\(r=0\)</span>）速度最快，管壁處速度為零。</p>
+</section>
+</section>
+<section id="flow-rate">
+<h3>5.3 總流量計算 (Flow Rate)<a class="headerlink" href="#flow-rate" title="Link to this heading">#</a></h3>
+<p>將整個圓管切成無數個面積為 <span class="math notranslate nohighlight">\(2\pi r \, dr\)</span> 的同心圓環，將每一圈的流量積分加總：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+I &amp;= \int_0^{r_0} u(r) 2\pi r \, dr \\
+&amp;= \int_0^{r_0} \frac{\Delta P}{4\ell\mu} 2\pi r(r_0^2 - r^2) \, dr \\
+&amp;= \frac{\pi \Delta P}{2\ell\mu} \int_0^{r_0} (r_0^2 r - r^3) \, dr \\
+&amp;= \frac{\pi \Delta P}{2\ell\mu} \left( \frac{1}{2}r_0^4 - \frac{1}{4}r_0^4 \right) \\
+&amp;= \frac{\pi \Delta P}{8 \ell \mu} r_0^4
+\end{aligned}
+\end{split}\]</div>
+<p>這就是著名的 <strong>Poiseuille’s Law</strong>，總流量 <span class="math notranslate nohighlight">\(I\)</span> 與管徑的「四次方」成正比，<span class="math notranslate nohighlight">\(I \propto r_0^4\)</span> 表示管徑的微小變化會對流量造成巨大影響。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+I &amp;= k r_0^4\\
+dI &amp;= 4k r_0^3 \, dr_0 \\
+\frac{dI}{I} &amp;= \frac{4k r_0^3 \, dr_0}{k r_0^4} \\
+\frac{\Delta I}{I} &amp;\approx 4 \frac{\Delta r_0}{r_0}
+\end{aligned}\end{split}\]</div>
+<p>若 <span class="math notranslate nohighlight">\(\frac{\Delta r_0}{r_0} \sim 5\%\)</span>，則 <span class="math notranslate nohighlight">\(\frac{\Delta I}{I}  \sim 20\%\)</span>！</p>
+</section>
+<section id="circuit-analogy">
+<h3>5.4 跨領域類比：流體與電路 (Circuit Analogy)<a class="headerlink" href="#circuit-analogy" title="Link to this heading">#</a></h3>
+<p>我們可以將複雜的流體公式改寫成國中學過的歐姆定律形式：
+$<span class="math notranslate nohighlight">\(\Delta V = I \cdot R_{\text{electric}}\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(\Delta P = I \cdot R_{\text{fluid}}\)</span>$</p>
+<p>移項觀察 Poiseuille’s Law，可定義出「流阻 (Fluid Resistance)」：
+$<span class="math notranslate nohighlight">\(R_{\text{fluid}} = \frac{8 \ell \mu}{\pi r_0^4}\)</span>$</p>
+<p>這與電阻定律 <span class="math notranslate nohighlight">\(R_{\text{electric}} = \rho_e \frac{\ell}{A} \propto \frac{\ell}{r^2}\)</span> 概念如出一轍。</p>
+<blockquote>
+<div><p><strong>💡 生物醫學類比：</strong></p>
+<ul class="simple">
+<li><p>人類吃高油食物導致血管稍微阻塞（<span class="math notranslate nohighlight">\(r_0\)</span> 下降 5%），流阻 <span class="math notranslate nohighlight">\(R_{\text{fluid}}\)</span> 會因為四次方關係急遽上升。為維持相同的血流量 <span class="math notranslate nohighlight">\(I\)</span>，心臟必須加壓，導致 <span class="math notranslate nohighlight">\(\Delta P\)</span> 大幅上升（高血壓）。</p></li>
+<li><p>吃高鹽食物導致血液變稠（動力黏滯係數 <span class="math notranslate nohighlight">\(\mu\)</span> 上升），同樣會讓流阻上升，引發高血壓。這正是心血管疾病危險的物理學根源。</p></li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+<hr class="docutils" />
+<section id="murray-s-law">
+<h2>6. 分支管路系統的最佳化：穆雷定律 (Murray’s Law)<a class="headerlink" href="#murray-s-law" title="Link to this heading">#</a></h2>
+<p>自然界中的血管、氣管，甚至植物的導管，為何會以特定的角度分叉？流體力學提供了一個尋求「總阻力最小」的極值問題解答。</p>
+<section id="id11">
+<h3>6.1 幾何設定與總流阻方程式<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<p><img alt="" src="../../_images/Three-Way_pipe.png" /></p>
+<p><strong>目標</strong>：在固定流體壓力差下，將流體從主管（半徑 <span class="math notranslate nohighlight">\(r_1\)</span>）透過支管（半徑 <span class="math notranslate nohighlight">\(r_2\)</span>）送到末端，並調整分叉角度 <span class="math notranslate nohighlight">\(\theta\)</span> 以達到最大傳送量（即流阻最小化）。</p>
+<ul class="simple">
+<li><p>末端空間座標：水平總距離 <span class="math notranslate nohighlight">\(a\)</span>，垂直距離 <span class="math notranslate nohighlight">\(b\)</span>。</p></li>
+<li><p><strong>支管的長度</strong>：利用三角函數，為斜邊 <span class="math notranslate nohighlight">\(b \csc\theta\)</span>。</p></li>
+<li><p><strong>主管的長度</strong>：總水平長度減去支管的水平投影（<span class="math notranslate nohighlight">\(b \cot\theta\)</span>），為 <span class="math notranslate nohighlight">\(a - b \cot\theta\)</span>。</p></li>
+</ul>
+<p>將兩段管子的流阻串聯相加 <span class="math notranslate nohighlight">\(R_{\text{總}} = R_1 + R_2\)</span>：
+$<span class="math notranslate nohighlight">\(
+\Delta P = I \cdot R_{\text{總}} = I \cdot \frac{8\mu}{\pi} \left( \frac{a - b \cot\theta}{r_1^4} + \frac{b \csc\theta}{r_2^4} \right)
+\)</span>$</p>
+</section>
+<section id="id12">
+<h3>6.2 尋求最佳分叉角度<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
+<section id="id13">
+<h4>假設與已知<a class="headerlink" href="#id13" title="Link to this heading">#</a></h4>
+<ul>
+<li><p><strong>【已知 1】讓流阻最小</strong>: 阻力函數對 <span class="math notranslate nohighlight">\(\theta\)</span> 微分，並令其為零</p>
+<div class="math notranslate nohighlight">
+\[\frac{dR_{\text{總}}}{d\theta} = 0\]</div>
+</li>
+<li><p><strong>【已知 2】三角函數微分基本公式</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\frac{d}{d\theta}(\cot\theta) = -\csc^2\theta\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{d}{d\theta}(\csc\theta) = -\csc\theta \cot\theta\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 3】三角函數基本公式</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\csc\theta = \frac{1}{\sin\theta}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\cot\theta = \frac{\cos\theta}{\sin\theta}\)</span></p></li>
+</ul>
+</li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gather*}
+\overset{\text{已知 1}}{\Rightarrow}&amp;\frac{dR_{\text{總}}}{d\theta} &amp;=&amp; 0 \\
+\overset{\text{已知 2}}{\Rightarrow}&amp;\frac{d}{d\theta} \left[ \frac{a - b \cot\theta}{r_1^4} + \frac{b \csc\theta}{r_2^4} \right] &amp;=&amp; 0 \\
+&amp;\frac{-b(-\csc^2\theta)}{r_1^4} + \frac{b(-\csc\theta \cot\theta)}{r_2^4} &amp;=&amp; 0 \\
+&amp;\frac{\csc^2\theta}{r_1^4} &amp;=&amp; \frac{\csc\theta \cot\theta}{r_2^4} \\
+\overset{\text{已知 3}}{\Rightarrow}&amp;\frac{1}{\sin^2\theta}\frac{1}{r_1^4} &amp;=&amp; \frac{\cos\theta}{\sin^2\theta } \frac{1}{r_2^4} \\
+&amp;\cos\theta &amp;=&amp; \frac{r_2^4}{r_1^4}
+\end{gather*}\end{split}\]</div>
+</section>
+</section>
+<section id="id14">
+<h3>6.3 物理與生物的印證<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>破水管類比 (<span class="math notranslate nohighlight">\(\theta \rightarrow \frac{\pi}{2}\)</span>)</strong>：若主管破了一個小洞噴水，支管半徑 <span class="math notranslate nohighlight">\(r_2 \ll r_1\)</span>。此時 <span class="math notranslate nohighlight">\(\frac{r_2^4}{r_1^4} \approx 0\)</span>，即 <span class="math notranslate nohighlight">\(\cos\theta = 0\)</span>，解得 <span class="math notranslate nohighlight">\(\theta = 90^\circ\)</span>。這完美吻合了我們在日常生活中看到破水管的水會「垂直」噴出的現象。</p></li>
+<li><p><strong>樹枝的生長模型修正</strong>：雖然樹木在演化中也服從流動阻力最小的力學原則，但正如筆記所洞見的，生物體並非純粹的管線。植物的<strong>向光性 (Phototropism)</strong> 會為了爭取更多陽光而強行改變枝條的生長角度，因此在建立真實的生物物理模型時，這項因素必須被視為額外的權重加入修正。</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="a-momentum-equations-in-a-rotating-frame">
+<h1>七a、 旋轉座標系中的動量方程式 (Momentum Equations in a Rotating Frame)<a class="headerlink" href="#a-momentum-equations-in-a-rotating-frame" title="Link to this heading">#</a></h1>
+<section id="d">
+<h2>壹、 2D 圓柱座標系下的動量推導 (局部渦旋/颱風系統)<a class="headerlink" href="#d" title="Link to this heading">#</a></h2>
+<p>在探討像颱風這樣的局部旋轉系統時，使用圓柱座標系 (Cylindrical coordinates) 遠比直角座標系方便。</p>
+<section id="id15">
+<h3>1. 變數與方程式定義<a class="headerlink" href="#id15" title="Link to this heading">#</a></h3>
+<p>首先定義我們的出發點——水平旋轉座標系下的動量方程式：
+$<span class="math notranslate nohighlight">\(
+\frac{D \vec{V}}{Dt} + f \hat{k} \times \vec{V} = -\frac{1}{\rho} \nabla P
+\)</span>$</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\vec{V} = u \hat{r} + v \hat{\lambda}\)</span>：二維水平風速向量。</p></li>
+<li><p><span class="math notranslate nohighlight">\(u\)</span>：徑向風速 (Radial velocity，向外為正)。</p></li>
+<li><p><span class="math notranslate nohighlight">\(v\)</span>：切向風速 (Tangential/Azimuthal velocity，逆時針為正)。</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{r}\)</span>：徑向單位向量； <span class="math notranslate nohighlight">\(\hat{\lambda}\)</span>：切向單位向量； <span class="math notranslate nohighlight">\(\hat{k}\)</span>：垂直單位向量。</p></li>
+<li><p><span class="math notranslate nohighlight">\(f = 2\Omega \sin\phi\)</span>：科氏參數 (Coriolis parameter)。</p></li>
+<li><p><span class="math notranslate nohighlight">\(\rho\)</span>：空氣密度； <span class="math notranslate nohighlight">\(P\)</span>：氣壓。</p></li>
+</ul>
+</section>
+<section id="material-derivative-of-unit-vectors">
+<h3>2. 單位向量的物質導數 (Material Derivative of Unit Vectors)<a class="headerlink" href="#material-derivative-of-unit-vectors" title="Link to this heading">#</a></h3>
+<p>這正是流體力學中最容易讓人卡關的地方！在極座標中，單位向量 <span class="math notranslate nohighlight">\(\hat{r}\)</span> 與 <span class="math notranslate nohighlight">\(\hat{\lambda}\)</span> 的方向會隨著質點的移動而改變，因此<strong>它們對時間的微分不為零</strong>。</p>
+<p>根據幾何關係與連鎖律：
+$<span class="math notranslate nohighlight">\(
+\begin{aligned}
+\frac{D \hat{r}}{Dt} &amp;= \frac{\partial \hat{r}}{\partial t} + u \frac{\partial \hat{r}}{\partial r} + \frac{v}{r} \frac{\partial \hat{r}}{\partial \lambda} = 0 + 0 + \frac{v}{r} \hat{\lambda} = \frac{v}{r} \hat{\lambda} \\
+\frac{D \hat{\lambda}}{Dt} &amp;= \frac{\partial \hat{\lambda}}{\partial t} + u \frac{\partial \hat{\lambda}}{\partial r} + \frac{v}{r} \frac{\partial \hat{\lambda}}{\partial \lambda} = 0 + 0 + \frac{v}{r} (-\hat{r}) = -\frac{v}{r} \hat{r}
+\end{aligned}
+\)</span>$</p>
+<blockquote>
+<div><p><strong>💡 老師的白話分解：</strong>
+質點沿著半徑往外走 (<span class="math notranslate nohighlight">\(u\)</span>)，不會改變單位向量的指向；但只要質點有繞圈圈的動作 (<span class="math notranslate nohighlight">\(v \neq 0\)</span>)，它眼中的「正前方 (<span class="math notranslate nohighlight">\(\hat{\lambda}\)</span>)」跟「正外側 (<span class="math notranslate nohighlight">\(\hat{r}\)</span>)」就會不斷旋轉。這就是為什麼單位向量的微分會跑出 <span class="math notranslate nohighlight">\(\frac{v}{r}\)</span> 的原因。</p>
+</div></blockquote>
+</section>
+<section id="id16">
+<h3>3. 動力方程式的完全展開<a class="headerlink" href="#id16" title="Link to this heading">#</a></h3>
+<p>將 <span class="math notranslate nohighlight">\(\vec{V} = u \hat{r} + v \hat{\lambda}\)</span> 代入動量方程式左邊的加速度項：
+$<span class="math notranslate nohighlight">\(
+\begin{aligned}
+\frac{D \vec{V}}{Dt} &amp;= \frac{D}{Dt}(u \hat{r} + v \hat{\lambda}) \\
+&amp;= \left( \frac{Du}{Dt} \hat{r} + u \frac{D \hat{r}}{Dt} \right) + \left( \frac{Dv}{Dt} \hat{\lambda} + v \frac{D \hat{\lambda}}{Dt} \right) \\
+&amp;= \left( \frac{Du}{Dt} \hat{r} + u \frac{v}{r} \hat{\lambda} \right) + \left( \frac{Dv}{Dt} \hat{\lambda} - v \frac{v}{r} \hat{r} \right) \\
+&amp;= \left( \frac{Du}{Dt} - \frac{v^2}{r} \right) \hat{r} + \left( \frac{Dv}{Dt} + \frac{uv}{r} \right) \hat{\lambda}
+\end{aligned}
+\)</span>$</p>
+<p>接著處理科氏力項：
+$<span class="math notranslate nohighlight">\(
+f \hat{k} \times (u \hat{r} + v \hat{\lambda}) = f u (\hat{k} \times \hat{r}) + f v (\hat{k} \times \hat{\lambda}) = f u \hat{\lambda} - f v \hat{r}
+\)</span>$</p>
+<p>將所有 <span class="math notranslate nohighlight">\(\hat{r}\)</span> (徑向) 與 <span class="math notranslate nohighlight">\(\hat{\lambda}\)</span> (切向) 的分量分別收集起來，等號右邊代入氣壓梯度力，我們就得到了筆記中漂亮的結論：</p>
+<p><strong>【徑向方程式 <span class="math notranslate nohighlight">\(\hat{r}\)</span>】</strong>
+$<span class="math notranslate nohighlight">\(
+\frac{Du}{Dt} - \frac{v^2}{r} - fv = -\frac{1}{\rho} \frac{\partial P}{\partial r}
+\)</span>$</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\frac{v^2}{r}\)</span>：<strong>離心力項 (Centrifugal force)</strong>。當颱風風速 <span class="math notranslate nohighlight">\(v\)</span> 極大、眼牆半徑 <span class="math notranslate nohighlight">\(r\)</span> 很小時，這一項會變得無比巨大，這就是為什麼颱風中心氣壓會這麼低的原因（梯度風平衡）。</p></li>
+</ul>
+<p><strong>【切向方程式 <span class="math notranslate nohighlight">\(\hat{\lambda}\)</span>】</strong>
+$<span class="math notranslate nohighlight">\(
+\frac{Dv}{Dt} + \frac{uv}{r} + fu = -\frac{1}{\rho r} \frac{\partial P}{\partial \lambda}
+\)</span>$</p>
+</section>
+<section id="id17">
+<h3>4. 兩個極端特例的物理意義<a class="headerlink" href="#id17" title="Link to this heading">#</a></h3>
+<p>如果你筆記下方寫到的氣壓梯度力為 0 時（也就是等壓線完全平坦，沒有外力推動）：</p>
+<ol class="arabic simple">
+<li><p><strong>慣性圓 (Inertial Circle)</strong>：<span class="math notranslate nohighlight">\(\frac{Du}{Dt} - \left(f + \frac{v}{r}\right)v = 0\)</span></p></li>
+<li><p><strong>角動量守恆 (Angular Momentum Conservation)</strong>：<span class="math notranslate nohighlight">\(\frac{Dv}{Dt} + \left(f + \frac{v}{r}\right)u = 0\)</span></p>
+<ul class="simple">
+<li><p>將切向方程式乘上 <span class="math notranslate nohighlight">\(r\)</span>，其實就等價於 <span class="math notranslate nohighlight">\(\frac{D}{Dt}(vr + \frac{1}{2}fr^2) = 0\)</span>。括號內的就是「絕對角動量」。這解釋了為什麼颱風周圍的空氣在被吸入中心（<span class="math notranslate nohighlight">\(u &lt; 0\)</span>，半徑 <span class="math notranslate nohighlight">\(r\)</span> 縮小）時，它的旋轉速度 <span class="math notranslate nohighlight">\(v\)</span> 必須狂飆，因為宇宙的角動量是守恆的！</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id18">
+<h2>貳、 3D 球座標系下的動量方程式 (全球氣候與環流模式)<a class="headerlink" href="#id18" title="Link to this heading">#</a></h2>
+<p>當我們離開局部的颱風，放眼整個地球時，我們必須將方程式搬到 3D 的球面座標系上。這段推導是 Holton 教科書裡的藝術品。</p>
+<ul class="simple">
+<li><p><strong>座標定義</strong>：緯度 <span class="math notranslate nohighlight">\(\phi\)</span>，地球半徑 <span class="math notranslate nohighlight">\(R\)</span>，地球自轉角速度 <span class="math notranslate nohighlight">\(\Omega\)</span>。</p></li>
+<li><p><strong>風速定義</strong>：<span class="math notranslate nohighlight">\(u\)</span> 為緯向風 (Zonal, 向東為正)，<span class="math notranslate nohighlight">\(v\)</span> 為經向風 (Meridional, 向北為正)，<span class="math notranslate nohighlight">\(w\)</span> 為垂直風 (Vertical, 向上為正)。</p></li>
+</ul>
+<p>筆記中巧妙地將「地球本身的自轉」與「空氣在地球上的相對旋轉」合併成一個「<strong>絕對角速度係數</strong>」： <span class="math notranslate nohighlight">\(\left(2\Omega + \frac{u}{R \cos\phi}\right)\)</span>。</p>
+<p>完整的三維方程式可以寫成如下極具對稱美感的結構（等號右邊的 RHS 為氣壓梯度力與摩擦力）：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\text{[u 緯向]} \quad &amp;\frac{Du}{Dt} + \left(2\Omega + \frac{u}{R \cos\phi}\right)(w \cos\phi - v \sin\phi) = \text{RHS} \\
+\text{[v 經向]} \quad &amp;\frac{Dv}{Dt} + \left(2\Omega + \frac{u}{R \cos\phi}\right)u \sin\phi + \frac{vw}{R} = \text{RHS} \\
+\text{[w 垂直]} \quad &amp;\frac{Dw}{Dt} - \left(2\Omega + \frac{u}{R \cos\phi}\right)u \cos\phi - \frac{v^2}{R} = \text{RHS}
+\end{aligned}
+\end{split}\]</div>
+<blockquote>
+<div><p><strong>💡 解析：</strong>
+如果我們把緯向 <span class="math notranslate nohighlight">\([u]\)</span> 方程式乘開，會得到 <span class="math notranslate nohighlight">\(2\Omega w \cos\phi - 2\Omega v \sin\phi + \frac{uw \cos\phi}{R \cos\phi} - \frac{uv \sin\phi}{R \cos\phi}\)</span>。
+代入 <span class="math notranslate nohighlight">\(f = 2\Omega \sin\phi\)</span>，這串東西就變成了大氣動力學中最經典的展開式：<span class="math notranslate nohighlight">\(-fv + 2\Omega w \cos\phi + \frac{uw}{R} - \frac{uv \tan\phi}{R}\)</span>。你筆記上的縮寫形式，完美收納了這些繁雜的曲率項 (Metric terms)。</p>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="primitive-equations">
+<h2>參、 傳統近似與原始方程式 (Primitive Equations)<a class="headerlink" href="#primitive-equations" title="Link to this heading">#</a></h2>
+<p>數學很美，但大自然給了我們簡化的權利。地球半徑 <span class="math notranslate nohighlight">\(a \approx 6371 \text{ km}\)</span>，而對流層厚度大約只有 <span class="math notranslate nohighlight">\(10 \text{ km}\)</span>。相對於地球，大氣層就像蘋果皮一樣薄。這引出了我們在數值天氣預報中最重要的「<strong>淺水近似 (Shallow Fluid Approximation / Traditional Approximation)</strong>」。</p>
+<section id="id19">
+<h3>1. 我們可以丟掉什麼？<a class="headerlink" href="#id19" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong><span class="math notranslate nohighlight">\(R \approx a\)</span> 近似</strong>：因為高度變化太小，所有分母的變動半徑 <span class="math notranslate nohighlight">\(R\)</span> 都直接用地球常數半徑 <span class="math notranslate nohighlight">\(a\)</span> 取代。</p></li>
+<li><p><strong>忽略垂直相關的微小項</strong>：因為大氣很扁平，垂直風速 <span class="math notranslate nohighlight">\(w\)</span> 遠小於水平風速 <span class="math notranslate nohighlight">\(u, v\)</span>（<span class="math notranslate nohighlight">\(w \ll u, v\)</span>）。</p>
+<ul>
+<li><p>因此，曲率項中含有 <span class="math notranslate nohighlight">\(w\)</span> 的 <span class="math notranslate nohighlight">\(\frac{vw}{a}, \frac{uw}{a}\)</span> 可以直接劃掉。</p></li>
+<li><p>科氏力項中，帶有水平地球自轉分量的 <span class="math notranslate nohighlight">\(2\Omega w \cos\phi\)</span> 以及 <span class="math notranslate nohighlight">\(2\Omega u \cos\phi\)</span> 也被視為微小項而捨棄。<strong>（正如你筆記右下角寫的真知灼見：”2<span class="math notranslate nohighlight">\(\Omega\sin\phi\)</span> 是 f，而 2<span class="math notranslate nohighlight">\(\Omega\cos\phi\)</span> 不重要”）</strong>。</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="hydrostatic-approximation">
+<h3>2. 靜力平衡 (Hydrostatic Approximation)<a class="headerlink" href="#hydrostatic-approximation" title="Link to this heading">#</a></h3>
+<p>在垂直方向上，垂直加速度 <span class="math notranslate nohighlight">\(\frac{Dw}{Dt}\)</span> 以及所有剩餘的曲率項，在強大的地球重力 <span class="math notranslate nohighlight">\(g\)</span> 與垂直氣壓梯度力面前，簡直微不足道。
+因此垂直方程式直接退化為：
+$<span class="math notranslate nohighlight">\(
+0 = -\frac{1}{\rho} \frac{\partial P}{\partial z} - g
+\)</span>$</p>
+</section>
+<section id="id20">
+<h3>3. 大氣數值模式的基石<a class="headerlink" href="#id20" title="Link to this heading">#</a></h3>
+<p>經過傳統近似的大刀闊斧，我們最終得到了全世界所有大型天氣模式（從傳統的 GFS、WRF 到你感興趣的 AI 模型如 Pangu-Weather、GraphCast）底層所遵循的**「原始方程式 (Primitive Equations)」**：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\frac{Du}{Dt} - fv - \frac{uv \tan\phi}{a} &amp;= -\frac{1}{\rho} \frac{\partial P}{\partial x} \\
+\frac{Dv}{Dt} + fu + \frac{u^2 \tan\phi}{a} &amp;= -\frac{1}{\rho} \frac{\partial P}{\partial y} \\
+\frac{\partial P}{\partial z} &amp;= -\rho g
+\end{aligned}
+\end{split}\]</div>
+<p>這組方程式完美平衡了物理的嚴謹性與計算的可行性。</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="b-rhs">
+<h1>七b、 旋轉座標系中的動量方程式 (加強下標與 RHS 展開版)<a class="headerlink" href="#b-rhs" title="Link to this heading">#</a></h1>
+<section id="rhs">
+<h2>零、 座標系命名空間與 RHS 總定義<a class="headerlink" href="#rhs" title="Link to this heading">#</a></h2>
+<p>在寫下任何方程式前，我們先把變數的「命名空間」定義清楚。大氣動力學中的 RHS (方程式右側) 代表的是<strong>絕對加速度以外的所有外力</strong>。通常包含三個主要外力：氣壓梯度力 (Pressure Gradient Force)、重力 (Gravity，僅垂直方向)、以及摩擦力/黏滯力 (Friction，記為 <span class="math notranslate nohighlight">\(F\)</span>)。</p>
+<section id="cartesian-coordinates">
+<h3>1. 直角座標系 (Cartesian Coordinates)<a class="headerlink" href="#cartesian-coordinates" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>座標軸</strong>：<span class="math notranslate nohighlight">\((x, y, z)\)</span></p></li>
+<li><p><strong>速度分量</strong>：<span class="math notranslate nohighlight">\((u_x, u_y, u_z)\)</span></p></li>
+<li><p><strong>RHS 展開</strong>：</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\text{RHS}_x = -\frac{1}{\rho} \frac{\partial P}{\partial x} + F_x\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\text{RHS}_y = -\frac{1}{\rho} \frac{\partial P}{\partial y} + F_y\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\text{RHS}_z = -\frac{1}{\rho} \frac{\partial P}{\partial z} - g + F_z\)</span></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="cylindrical-coordinates">
+<h3>2. 圓柱座標系 (Cylindrical Coordinates) - 適用於颱風中心分析<a class="headerlink" href="#cylindrical-coordinates" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>座標軸</strong>：<span class="math notranslate nohighlight">\((r, \lambda, z)\)</span>，分別為半徑、方位角、高度。</p></li>
+<li><p><strong>速度分量</strong>：<span class="math notranslate nohighlight">\((u_r, u_\lambda, u_z)\)</span></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(u_r\)</span>：徑向風速 (向外為正)。</p></li>
+<li><p><span class="math notranslate nohighlight">\(u_\lambda\)</span>：切向風速 (逆時針為正)。</p></li>
+</ul>
+</li>
+<li><p><strong>RHS 展開</strong> (注意方位的氣壓梯度寫法不同)：</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\text{RHS}_r = -\frac{1}{\rho} \frac{\partial P}{\partial r} + F_r\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\text{RHS}_\lambda = -\frac{1}{\rho r} \frac{\partial P}{\partial \lambda} + F_\lambda\)</span></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="spherical-coordinates">
+<h3>3. 球面座標系 (Spherical Coordinates) - 適用於全球環流模式<a class="headerlink" href="#spherical-coordinates" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>座標軸</strong>：<span class="math notranslate nohighlight">\((\lambda, \phi, z)\)</span>，分別為經度 (Longitude)、緯度 (Latitude)、高度。</p></li>
+<li><p><strong>速度分量</strong>：<span class="math notranslate nohighlight">\((u_\lambda, u_\phi, u_z)\)</span></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(u_\lambda\)</span>：緯向風 Zonal wind (由西向東吹為正)。</p></li>
+<li><p><span class="math notranslate nohighlight">\(u_\phi\)</span>：經向風 Meridional wind (由南向北吹為正)。</p></li>
+</ul>
+</li>
+<li><p><strong>RHS 展開</strong> (需考慮地球半徑 <span class="math notranslate nohighlight">\(R\)</span> 與緯度 <span class="math notranslate nohighlight">\(\phi\)</span> 造成的弧長變化)：</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\text{RHS}_\lambda = -\frac{1}{\rho R \cos\phi} \frac{\partial P}{\partial \lambda} + F_\lambda\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\text{RHS}_\phi = -\frac{1}{\rho R} \frac{\partial P}{\partial \phi} + F_\phi\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\text{RHS}_z = -\frac{1}{\rho} \frac{\partial P}{\partial z} - g + F_z\)</span></p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id21">
+<h2>壹、 2D 圓柱座標系下的動量推導 (局部渦旋/颱風系統)<a class="headerlink" href="#id21" title="Link to this heading">#</a></h2>
+<p>當我們使用帶有下標的變數 <span class="math notranslate nohighlight">\((u_r, u_\lambda)\)</span> 來取代原本的 <span class="math notranslate nohighlight">\((u, v)\)</span>，單位向量微分的邏輯就會變得非常清晰。</p>
+<section id="id22">
+<h3>1. 單位向量的物質導數<a class="headerlink" href="#id22" title="Link to this heading">#</a></h3>
+<p>因為質點繞著中心旋轉，它眼中的單位向量 <span class="math notranslate nohighlight">\(\hat{r}\)</span> (正前方) 與 <span class="math notranslate nohighlight">\(\hat{\lambda}\)</span> (正左方) 會隨時間改變：
+$<span class="math notranslate nohighlight">\(
+\begin{aligned}
+\frac{D \hat{r}}{Dt} &amp;= \frac{u_\lambda}{r} \hat{\lambda} \\
+\frac{D \hat{\lambda}}{Dt} &amp;= -\frac{u_\lambda}{r} \hat{r}
+\end{aligned}
+\)</span>$
+<em>(推導邏輯：旋轉造成的方向改變率，等於切向速度除以旋轉半徑)</em></p>
+</section>
+<section id="id23">
+<h3>2. 動力方程式展開與 RHS 結合<a class="headerlink" href="#id23" title="Link to this heading">#</a></h3>
+<p>將二維向量 <span class="math notranslate nohighlight">\(\vec{V} = u_r \hat{r} + u_\lambda \hat{\lambda}\)</span> 代入總加速度 <span class="math notranslate nohighlight">\(\frac{D \vec{V}}{Dt}\)</span>，並展開科氏力 <span class="math notranslate nohighlight">\(f \hat{k} \times \vec{V}\)</span>，我們將 <span class="math notranslate nohighlight">\(\hat{r}\)</span> 與 <span class="math notranslate nohighlight">\(\hat{\lambda}\)</span> 方向的項分別整理，並直接等化對應的 RHS：</p>
+<p><strong>【徑向方程式 (Radial, <span class="math notranslate nohighlight">\(\hat{r}\)</span> 方向)】</strong>
+$<span class="math notranslate nohighlight">\(
+\frac{D u_r}{Dt} - \frac{u_\lambda^2}{r} - f u_\lambda = -\frac{1}{\rho} \frac{\partial P}{\partial r} + F_r
+\)</span>$</p>
+<ul class="simple">
+<li><p><strong>物理翻譯</strong>：質點向外的加速度 <span class="math notranslate nohighlight">\(\frac{D u_r}{Dt}\)</span>，扣掉強大的向心力需求 (即加上離心力 <span class="math notranslate nohighlight">\(\frac{u_\lambda^2}{r}\)</span>) 與向右偏轉的科氏力 (<span class="math notranslate nohighlight">\(f u_\lambda\)</span>) 後，必須由氣壓梯度力與摩擦力來平衡。</p></li>
+</ul>
+<p><strong>【切向方程式 (Azimuthal, <span class="math notranslate nohighlight">\(\hat{\lambda}\)</span> 方向)】</strong>
+$<span class="math notranslate nohighlight">\(
+\frac{D u_\lambda}{Dt} + \frac{u_r u_\lambda}{r} + f u_r = -\frac{1}{\rho r} \frac{\partial P}{\partial \lambda} + F_\lambda
+\)</span>$</p>
+<ul class="simple">
+<li><p><strong>物理翻譯</strong>：若沒有外界壓力差與摩擦力 (<span class="math notranslate nohighlight">\(\text{RHS}_\lambda = 0\)</span>)，當颱風把外圍空氣往中心吸入時 (<span class="math notranslate nohighlight">\(u_r &lt; 0\)</span>)，為了守恆角動量，切向風速 <span class="math notranslate nohighlight">\(u_\lambda\)</span> 就會瘋狂加速。</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id24">
+<h2>貳、 3D 球座標系下的動量方程式 (全球氣候模式)<a class="headerlink" href="#id24" title="Link to this heading">#</a></h2>
+<p>現在我們換到地球尺度的球座標系，變數切換為 <span class="math notranslate nohighlight">\((u_\lambda, u_\phi, u_z)\)</span>。
+老師筆記中的「絕對角速度係數」是由地球自轉 <span class="math notranslate nohighlight">\(2\Omega\)</span> 與空氣相對地球的旋轉 <span class="math notranslate nohighlight">\(\frac{u_\lambda}{R \cos\phi}\)</span> 疊加而成的。</p>
+<p>我們把所有的 RHS 完全寫出來，這就是完整的大尺度動量方程式：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\text{[} u_\lambda \text{ 緯向]} \quad &amp;\frac{D u_\lambda}{Dt} + \left(2\Omega + \frac{u_\lambda}{R \cos\phi}\right)(u_z \cos\phi - u_\phi \sin\phi) = -\frac{1}{\rho R \cos\phi} \frac{\partial P}{\partial \lambda} + F_\lambda \\
+\text{[} u_\phi \text{ 經向]} \quad &amp;\frac{D u_\phi}{Dt} + \left(2\Omega + \frac{u_\lambda}{R \cos\phi}\right)u_\lambda \sin\phi + \frac{u_\phi u_z}{R} = -\frac{1}{\rho R} \frac{\partial P}{\partial \phi} + F_\phi \\
+\text{[} u_z \text{ 垂直]} \quad &amp;\frac{D u_z}{Dt} - \left(2\Omega + \frac{u_\lambda}{R \cos\phi}\right)u_\lambda \cos\phi - \frac{u_\phi^2}{R} = -\frac{1}{\rho} \frac{\partial P}{\partial z} - g + F_z
+\end{aligned}
+\end{split}\]</div>
+</section>
+<hr class="docutils" />
+<section id="id25">
+<h2>參、 傳統近似與原始方程式 (Primitive Equations)<a class="headerlink" href="#id25" title="Link to this heading">#</a></h2>
+<p>套用大氣科學中最著名的「淺水近似 (Traditional Approximation)」：因為大氣太薄了，我們把 <span class="math notranslate nohighlight">\(R\)</span> 換成常數 <span class="math notranslate nohighlight">\(a\)</span> (地球半徑)，並丟掉所有垂直速度 <span class="math notranslate nohighlight">\(u_z\)</span> 乘上微小項的部分，以及垂直方程式中微小的科氏力分量。</p>
+<p>最終化簡，我們得到了數值模式 (如 WRF 或 AI 氣象模型) 真正拿來計算的核心——<strong>原始方程式</strong>：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\text{[} u_\lambda \text{ 方程式]} \quad &amp;\frac{D u_\lambda}{Dt} - f u_\phi - \frac{u_\lambda u_\phi \tan\phi}{a} = -\frac{1}{\rho a \cos\phi} \frac{\partial P}{\partial \lambda} + F_\lambda \\
+\text{[} u_\phi \text{ 方程式]} \quad &amp;\frac{D u_\phi}{Dt} + f u_\lambda + \frac{u_\lambda^2 \tan\phi}{a} = -\frac{1}{\rho a} \frac{\partial P}{\partial \phi} + F_\phi \\
+\text{[} u_z \text{ 方程式]} \quad &amp;0 = -\frac{1}{\rho} \frac{\partial P}{\partial z} - g \quad \text{(即靜力平衡 Hydrostatic balance)}
+\end{aligned}
+\end{split}\]</div>
+<p><em>(註：這裡的科氏參數 <span class="math notranslate nohighlight">\(f = 2\Omega \sin\phi\)</span> 已經被代回去了)</em></p>
+</section>
+<section id="b-2">
+<h2>七b-2<a class="headerlink" href="#b-2" title="Link to this heading">#</a></h2>
+<section id="nabla-p">
+<h3>一、 破解向量的幻象：為什麼 <span class="math notranslate nohighlight">\(\nabla P\)</span> 長得不一樣？<a class="headerlink" href="#nabla-p" title="Link to this heading">#</a></h3>
+<p>老師說：「寫成向量 <span class="math notranslate nohighlight">\(\nabla P\)</span> 在哪個座標都是對的。」
+這句話的意思是，<strong>向量方程式是一種「抽象介面 (Abstract Interface)」</strong>，它描述的是純粹的物理與幾何事實，還沒有被綁定到任何特定的「資料結構 (Grid System)」上。</p>
+<ul class="simple">
+<li><p><strong>物理事實</strong>：氣壓梯度力永遠指向氣壓降得最快的方向。這個「最快傾斜的陡峭程度」，數學上就叫梯度算子 <span class="math notranslate nohighlight">\(\nabla\)</span> (Nabla)。</p></li>
+</ul>
+<p>但是，當我們要把這個抽象的 <span class="math notranslate nohighlight">\(\nabla\)</span> 具體「實作 (Implement)」到特定的座標系時，必須考慮那個座標系的**「度量張量 (Metric / Scale factor)」**。也就是說，你的網格線在真實空間中代表多長的物理距離？</p>
+<ol class="arabic simple">
+<li><p><strong>在直角座標系中：</strong>
+網格是正方形的。你在 <span class="math notranslate nohighlight">\(x\)</span> 軸上前進一個單位的座標 <span class="math notranslate nohighlight">\(dx\)</span>，真實世界你就前進了 <span class="math notranslate nohighlight">\(1\)</span> 公尺。
+所以：
+$<span class="math notranslate nohighlight">\(\nabla P = \hat{i} \frac{\partial P}{\partial x} + \hat{j} \frac{\partial P}{\partial y} + \hat{k} \frac{\partial P}{\partial z}\)</span>$</p></li>
+<li><p><strong>在球面座標系中：</strong>
+網格是經緯度。當你在經度上移動一個微小角度 <span class="math notranslate nohighlight">\(d\lambda\)</span> 時，你實際在地球表面走過的<strong>物理距離</strong>並不是 <span class="math notranslate nohighlight">\(d\lambda\)</span>，而是會隨著緯度收縮的弧長！</p>
+<ul class="simple">
+<li><p>赤道上的 <span class="math notranslate nohighlight">\(1^\circ\)</span> 經度很寬，靠近極地時 <span class="math notranslate nohighlight">\(1^\circ\)</span> 經度很窄。</p></li>
+<li><p>實際的物理距離 <span class="math notranslate nohighlight">\(dx = R \cos\phi \, d\lambda\)</span>。
+因此，當你把「純粹的物理距離對微分」轉換成「經緯度座標對微分」時，分母就會自動吐出那個修正項：
+$<span class="math notranslate nohighlight">\(\frac{\partial P}{\partial (\text{物理距離 } x)} = \frac{\partial P}{R \cos\phi \, \partial \lambda}\)</span>$</p></li>
+</ul>
+</li>
+</ol>
+<p><strong>結論：</strong>
+老師沒有騙你。<span class="math notranslate nohighlight">\(-\frac{1}{\rho}\nabla P\)</span> 永遠是對的，它只是把所有座標系底層的複雜度量（<span class="math notranslate nohighlight">\(R \cos\phi\)</span> 等曲率項）都打包封裝進了 <span class="math notranslate nohighlight">\(\nabla\)</span> 這個符號裡。當你把它解壓縮（展開成純量分量）時，不同座標系自然會長得不一樣。</p>
+</section>
+<hr class="docutils" />
+<section id="x-y-z">
+<h3>二、 為什麼課堂上都用直角座標系 (<span class="math notranslate nohighlight">\(x, y, z\)</span>)？有限制嗎？<a class="headerlink" href="#x-y-z" title="Link to this heading">#</a></h3>
+<p>你在課堂上看到老師幾乎都用 <span class="math notranslate nohighlight">\(\text{RHS}_x = -\frac{1}{\rho} \frac{\partial P}{\partial x} + F_x\)</span>，是因為老師在不知不覺中，幫你們掛上了一個大氣科學中最佛心的外掛：<strong>「局部直角座標系近似 (Local Cartesian Approximation)」</strong>，這包含了著名的 <span class="math notranslate nohighlight">\(f\)</span>-plane 或 <span class="math notranslate nohighlight">\(\beta\)</span>-plane 近似。</p>
+<section id="id26">
+<h4>1. 這是在做什麼？<a class="headerlink" href="#id26" title="Link to this heading">#</a></h4>
+<p>想像你拿一張平坦的 A4 畫紙，貼在地球表面的某個緯度 <span class="math notranslate nohighlight">\(\phi_0\)</span> 上（例如貼在台灣上空）。</p>
+<ul class="simple">
+<li><p>我們定義 <span class="math notranslate nohighlight">\(x\)</span> 是向東的實體距離，<span class="math notranslate nohighlight">\(y\)</span> 是向北的實體距離。</p></li>
+<li><p>只要我們討論的天氣系統（例如颱風，尺度大約 1000 公里）相對於地球半徑（6371 公里）還算小，我們就可以假裝這張平坦的 A4 紙就是地球表面。</p></li>
+<li><p>在這個局部平面上，球面曲率造成的項（比如 <span class="math notranslate nohighlight">\(\frac{uv \tan\phi}{R}\)</span>）小到可以忽略不計。</p></li>
+</ul>
+<p>這就是為什麼在探討「颱風動力學」、「斜壓不穩定」、「羅斯貝波」的基礎理論時，我們一律用 <span class="math notranslate nohighlight">\(x, y, z\)</span>。如果不這麼做，方程式裡會塞滿 <span class="math notranslate nohighlight">\(\sin\phi\)</span> 和 <span class="math notranslate nohighlight">\(\cos\phi\)</span> 加上非線性項，人類根本無法在黑板上求出解析解 (Analytical solution)。</p>
+</section>
+<section id="id27">
+<h4>2. 這有什麼限制嗎？<a class="headerlink" href="#id27" title="Link to this heading">#</a></h4>
+<p>有，非常嚴格的限制！<strong>當天氣系統的尺度大到可以「感受到地球是圓的」時，直角座標系就會崩潰。</strong></p>
+<ul class="simple">
+<li><p><strong>局部尺度 (Mesoscale/Synoptic scale, <span class="math notranslate nohighlight">\(L &lt; 2000\)</span> km)</strong>：例如單一颱風、鋒面、雷暴雲。用局部直角座標系 <span class="math notranslate nohighlight">\(x, y, z\)</span> 非常完美，誤差極小。</p></li>
+<li><p><strong>行星尺度 (Planetary scale, <span class="math notranslate nohighlight">\(L \sim 10000\)</span> km)</strong>：例如超長波、全球季風環流、或者是跨越半個地球的遙相關機制。這時候地球的曲率 <span class="math notranslate nohighlight">\(R \cos\phi\)</span> 會有劇烈變化，你如果繼續用 <span class="math notranslate nohighlight">\(x, y, z\)</span>，算出來的能量傳遞和波速會完全錯掉。</p></li>
+</ul>
+</section>
+<section id="id28">
+<h4>3. 什麼時候「必須」用到 3D 球座標系？<a class="headerlink" href="#id28" title="Link to this heading">#</a></h4>
+<p>答案是：<strong>運行全球數值天氣模式 (Global NWP Models) 的時候！</strong></p>
+<p>當我們不靠手算，而是把大氣動力學交給超級電腦時，例如傳統的 GFS 模型，或是近年極度強大的資料驅動 AI 模型（像是 Pangu-Weather、GraphCast），它們的訓練資料與底層邏輯是覆蓋整個地球的。</p>
+<ul class="simple">
+<li><p>這些模型的網格資料格式（例如存放在 NetCDF 檔案裡、用 Xarray 讀取的資料），其座標維度通常是 <code class="docutils literal notranslate"><span class="pre">(time,</span> <span class="pre">level,</span> <span class="pre">latitude,</span> <span class="pre">longitude)</span></code>。</p></li>
+<li><p>當你要在這個覆蓋全球的陣列上計算某個點的氣壓梯度力時，你絕對不能只拿相鄰格點的值相減除以常數 <span class="math notranslate nohighlight">\(dx\)</span>。你必須在程式碼中寫入 <span class="math notranslate nohighlight">\(\frac{1}{R \cos\phi} \frac{\Delta P}{\Delta \lambda}\)</span>，否則極地的氣壓梯度力會被嚴重低估！</p></li>
+</ul>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lecture\week2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../week1/week1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Advanced Atmospheric Dynamics - Week 1</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../homework/homework.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">homework</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Advanced Atmospheric Dynamics - Week 2</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuity-equation-diffusion">1 連續方程式與擴散守恆 (Continuity Equation &amp; Diffusion)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.1 基本物理量與假設</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.2 定義「一般化」的連續方程式</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>應用：流體連續方程式</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><strong>應用：熱傳導方程式</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">變數定義與對應關係</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id6"><strong>已知與假設</strong></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">推導</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#momentum-equation-viscous-dissipation">2. 動量方程式與黏滯耗散 (Momentum Equation &amp; Viscous Dissipation)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2.1 積分形式的動量方程式</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-2">2.2 黏滯力與拉普拉斯算子 (<span class="math notranslate nohighlight">\(\nabla^2\)</span>)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#turbulence-eddy-diffusivity">3. 亂流與渦流擴散 (Turbulence &amp; Eddy Diffusivity)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a">3.1a 已知與假設</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-kinetic-energy-dissipation">3.1b 擾動動能的耗散 (Kinetic Energy Dissipation)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pi-buckingham-pi-theorem-reynolds-number">4. 白金漢 <span class="math notranslate nohighlight">\(\pi\)</span> 定理與雷諾數 (Buckingham <span class="math notranslate nohighlight">\(\pi\)</span> Theorem &amp; Reynolds Number)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dimensional-analysis">4.1 因次分析 (Dimensional Analysis)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">4.2 阻力係數圖 的物理拆解</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pm2-5">4.3 PM2.5 在大氣中的沉降計算</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#poiseuille-flow">5. 圓管流體力學：波以耳定律與電路類比 (Poiseuille Flow)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#force-balance">5.1 穩態力平衡 (Force Balance)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#velocity-profile">5.2 速度分佈推導 (Velocity Profile)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">假設與已知</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-rate">5.3 總流量計算 (Flow Rate)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#circuit-analogy">5.4 跨領域類比：流體與電路 (Circuit Analogy)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#murray-s-law">6. 分支管路系統的最佳化：穆雷定律 (Murray’s Law)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">6.1 幾何設定與總流阻方程式</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">6.2 尋求最佳分叉角度</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">假設與已知</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">6.3 物理與生物的印證</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-momentum-equations-in-a-rotating-frame">七a、 旋轉座標系中的動量方程式 (Momentum Equations in a Rotating Frame)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d">壹、 2D 圓柱座標系下的動量推導 (局部渦旋/颱風系統)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">1. 變數與方程式定義</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#material-derivative-of-unit-vectors">2. 單位向量的物質導數 (Material Derivative of Unit Vectors)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">3. 動力方程式的完全展開</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">4. 兩個極端特例的物理意義</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">貳、 3D 球座標系下的動量方程式 (全球氣候與環流模式)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#primitive-equations">參、 傳統近似與原始方程式 (Primitive Equations)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">1. 我們可以丟掉什麼？</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hydrostatic-approximation">2. 靜力平衡 (Hydrostatic Approximation)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">3. 大氣數值模式的基石</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#b-rhs">七b、 旋轉座標系中的動量方程式 (加強下標與 RHS 展開版)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rhs">零、 座標系命名空間與 RHS 總定義</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cartesian-coordinates">1. 直角座標系 (Cartesian Coordinates)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cylindrical-coordinates">2. 圓柱座標系 (Cylindrical Coordinates) - 適用於颱風中心分析</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spherical-coordinates">3. 球面座標系 (Spherical Coordinates) - 適用於全球環流模式</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">壹、 2D 圓柱座標系下的動量推導 (局部渦旋/颱風系統)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">1. 單位向量的物質導數</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">2. 動力方程式展開與 RHS 結合</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">貳、 3D 球座標系下的動量方程式 (全球氣候模式)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">參、 傳統近似與原始方程式 (Primitive Equations)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-2">七b-2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-p">一、 破解向量的幻象：為什麼 <span class="math notranslate nohighlight">\(\nabla P\)</span> 長得不一樣？</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#x-y-z">二、 為什麼課堂上都用直角座標系 (<span class="math notranslate nohighlight">\(x, y, z\)</span>)？有限制嗎？</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">1. 這是在做什麼？</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">2. 這有什麼限制嗎？</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id28">3. 什麼時候「必須」用到 3D 球座標系？</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC YE
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
