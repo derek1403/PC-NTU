@@ -1,0 +1,881 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Modern Physics Hw 2 &#8212; Modern Physics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'homework/hw2/hw2';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Modern Physics - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Modern Physics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    近代物理 (Modern Physics) 課程筆記
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lecture/lecture.html">lecture.md</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Relativity/relativity.html">Modern Physics - Relativity</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../homework.html">homework hardword</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../hw1/hw1.html">Modern Physics Hw 1</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fhomework/hw2/hw2.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/homework/hw2/hw2.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Modern Physics Hw 2</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-density-of-standing-waves-in-cavity">Question 1 : Density of standing waves in cavity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-answer">Question 1 - Answer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">證明</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-average-energy-per-standing-wave">Question 2 Average energy per standing wave</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-answer">Question 2 - Answer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">已知與假設</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proof">proof</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-answer">Question 3 - Answer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">已知與假設</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">proof</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question 4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4-answer">Question 4 - Answer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">已知與假設</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">proof</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question 5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5-answer">Question 5 - Answer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">已知與假設</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-a-v-e">proof (a) 尋找逃逸速度 <span class="math notranslate nohighlight">\(v_e\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-b-r-s">proof (b)推導史瓦西半徑 <span class="math notranslate nohighlight">\(R_S\)</span></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="modern-physics-hw-2">
+<h1>Modern Physics Hw 2<a class="headerlink" href="#modern-physics-hw-2" title="Link to this heading">#</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="p">:</span><span class="n">葉品辰</span>
+<span class="n">ID</span><span class="p">:</span><span class="n">r14229017</span>
+<span class="n">date</span><span class="p">:</span> <span class="mf">2026.03.27</span>
+</pre></div>
+</div>
+<section id="question-1-density-of-standing-waves-in-cavity">
+<h2>Question 1 : Density of standing waves in cavity<a class="headerlink" href="#question-1-density-of-standing-waves-in-cavity" title="Link to this heading">#</a></h2>
+<p>Consider the radiation inside a cavity of absolute temperature <span class="math notranslate nohighlight">\(T\)</span> whose walls are perfect reflectors to be a series of standing em waves(電磁波). This is a three-dimensional generalization of standing waves in a stretched string. The condition for standing waves in such a cavity is that the path length from wall to wall, whatever the direction, must be a whole number of half-wavelengths, so that a node occurs at each reflecting surface. Proof that the number of independent standing waves <span class="math notranslate nohighlight">\(G(\nu)d\nu\)</span> in the frequency interval between <span class="math notranslate nohighlight">\(\nu\)</span> and <span class="math notranslate nohighlight">\(\nu+d\nu\)</span> per unit volume in the cavity is</p>
+<div class="math notranslate nohighlight">
+\[G(\nu)d\nu = \frac{8\pi\nu^2}{c^3} d\nu \]</div>
+</section>
+<section id="question-1-answer">
+<h2>Question 1 - Answer<a class="headerlink" href="#question-1-answer" title="Link to this heading">#</a></h2>
+<p>邏輯主軸:
+邊界條件限制了波長 <span class="math notranslate nohighlight">\(\to\)</span> 波長離散化形成網格點 <span class="math notranslate nohighlight">\(\to\)</span> 計算球體體積求總數 <span class="math notranslate nohighlight">\(\to\)</span> 轉成頻率求微分 <span class="math notranslate nohighlight">\(\to\)</span> 乘以2（偏振）得到密度。</p>
+<div class="math notranslate nohighlight">
+\[G(\nu)d\nu = \frac{8\pi\nu^2}{c^3} d\nu\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\nu\)</span> (頻率) <span class="math notranslate nohighlight">\([\text{Hz}] = [\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(d\nu\)</span> (頻率區間)：一個極小的頻率範圍（從 <span class="math notranslate nohighlight">\(\nu\)</span> 到 <span class="math notranslate nohighlight">\(\nu + d\nu\)</span>）<span class="math notranslate nohighlight">\([\text{Hz}] = [\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c\)</span> (光速)：真空中光速，<span class="math notranslate nohighlight">\(2.99 \times 10^8  [\text{m} \cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(G(\nu)\)</span> (駐波密度 / 狀態密度，Density of States)：在單位體積內、每單位頻率區間中，可以容納多少個駐波模式</p></li>
+<li><p><span class="math notranslate nohighlight">\(G(\nu)d\nu\)</span> (總駐波數密度)：代表在頻率介於 <span class="math notranslate nohighlight">\(\nu\)</span> 與 <span class="math notranslate nohighlight">\(\nu + d\nu\)</span> 之間，單位體積內共有多少個駐波模式 <span class="math notranslate nohighlight">\([\text{m}^{-3}]\)</span></p></li>
+</ul>
+<hr class="docutils" />
+<section id="assumptions-preliminaries">
+<h3>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><strong>【已知 1】 考慮3D正方體空腔情況：</strong></p>
+<ul class="simple">
+<li><p>三維正方體:一個邊長為 <span class="math notranslate nohighlight">\(L\)</span>、體積為 <span class="math notranslate nohighlight">\(V = L^3\)</span></p></li>
+<li><p>模式方向有3個 <span class="math notranslate nohighlight">\(x\)</span>、<span class="math notranslate nohighlight">\(y\)</span>、<span class="math notranslate nohighlight">\(z\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(k_x = n_x \frac{\pi}{L}, \quad k_y = n_y \frac{\pi}{L}, \quad k_z = n_z \frac{\pi}{L}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n_x, n_y, n_z\)</span> 都是正整數 (<span class="math notranslate nohighlight">\(1, 2, 3, \dots\)</span>) (<span class="math notranslate nohighlight">\(n_x, n_y, n_z \in \mathbb{N}\)</span>)</p></li>
+</ul>
+</li>
+<li><p><strong>【已知 2】 波向量的總長度平方 <span class="math notranslate nohighlight">\(k^2\)</span> 為：</strong></p>
+<div class="math notranslate nohighlight">
+\[k^2 = k_x^2 + k_y^2 + k_z^2 = \left(\frac{\pi}{L}\right)^2 (n_x^2 + n_y^2 + n_z^2)\]</div>
+</li>
+<li><p><strong>【定義 1】 模式空間中的半徑 <span class="math notranslate nohighlight">\(R\)</span> ：</strong></p>
+<div class="math notranslate nohighlight">
+\[R^2 \overset{\text{let}}{=} n_x^2 + n_y^2 + n_z^2\]</div>
+<ul class="simple">
+<li><p>「<span class="math notranslate nohighlight">\(n\)</span> 空間」的三維網格系統裡。每一個座標點 <span class="math notranslate nohighlight">\((n_x, n_y, n_z)\)</span> 都代表一個合法的「駐波模式」， <strong>如何計算特定半徑範圍內，總共有多少個點？</strong></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 3】 波向量 <span class="math notranslate nohighlight">\(k\)</span> 轉換透過真空中電磁波的角頻率 <span class="math notranslate nohighlight">\(\omega\)</span> ：</strong></p>
+<div class="math notranslate nohighlight">
+\[k = \frac{2\pi\nu}{c}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\omega = c k\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\omega = 2\pi\nu\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 4】 大模式空間的半徑<span class="math notranslate nohighlight">\(R\)</span>內的整數點近似體積  ：</strong></p>
+<div class="math notranslate nohighlight">
+\[\text{半徑R內的整數點} = \frac{4}{3}\pi R^3\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(R = \frac{2L\nu}{c} \sim 3.33 \cdot 10^5\)</span></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(L = 0.1 \text{ m}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\nu = 5 \times 10^{14} \text{ Hz}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c = 3 \times 10^8 \text{ m}\cdot \text{ s}^{-1} \)</span></p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\frac{\text{表面誤差的方塊數}}{\text{總體積的方塊數}} \propto \frac{R^2}{R^3} = \frac{1}{R} \approx \frac{1}{333,333} \approx 0.0003\%\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 2】 模式空間的半徑在 <span class="math notranslate nohighlight">\(R\)</span> 以內的總模式數 <span class="math notranslate nohighlight">\(N(R)\)</span>：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  N(R) &amp;=&amp; \text{半徑R內的合法整數點} \\
+  &amp;=&amp; \left(\text{合法整數點比例}\right) \times \left(\text{半徑R內的整數點}\right) \\
+  &amp;\overset{\text{已知 4}}{\sim}&amp;\left(\text{合法整數點比例}\right) \times \frac{4}{3}\pi R^3 \\
+  &amp;\overset{\text{已知 1}}{=}&amp; \frac{1}{8} \times \frac{4}{3}\pi R^3 \\
+  &amp;=&amp; \frac{\pi}{6} R^3
+  \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>【已知 5】 模式空間的半徑 <span class="math notranslate nohighlight">\(R\)</span> 對頻率轉換  ：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  R &amp;=&amp; \sqrt{\left(\frac{L}{\pi}\right)^2 k^2}\\
+  &amp;=&amp;\frac{L}{\pi}  k \\
+  &amp;=&amp; \frac{L}{\pi} \left( \frac{2\pi\nu}{c} \right) \\
+  &amp;=&amp; \frac{2L\nu}{c}\\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>【定義 1】<span class="math notranslate nohighlight">\(R^2 \overset{\text{let}}{=} n_x^2 + n_y^2 + n_z^2\)</span></p></li>
+<li><p>【已知 2】<span class="math notranslate nohighlight">\(k^2 = \left(\frac{\pi}{L}\right)^2 (n_x^2 + n_y^2 + n_z^2)\)</span></p></li>
+<li><p>【已知 3】<span class="math notranslate nohighlight">\(k = \frac{2\pi\nu}{c}\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 6】 電磁波的極化 ：</strong></p>
+<div class="math notranslate nohighlight">
+\[dN_{\text{total}} = 2 dN\]</div>
+<ul class="simple">
+<li><p>於電磁波而言，給定一個行進方向（一個波向量 <span class="math notranslate nohighlight">\(\mathbf{k}\)</span>），它可以有<strong>兩種互相垂直的獨立偏振方向</strong>（例如 <span class="math notranslate nohighlight">\(x\)</span> 偏振與 <span class="math notranslate nohighlight">\(y\)</span> 偏振的橫波）。因此，實際的駐波數量必須乘以 2</p></li>
+</ul>
+</li>
+<li><p><strong>【定義 3】 單位體積內的駐波密度 <span class="math notranslate nohighlight">\(G(\nu)\)</span> ：</strong></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[G(\nu)d\nu = \frac{dN_{\text{total}}}{V}\]</div>
+</section>
+<section id="id1">
+<h3>證明<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+N(\nu) &amp;\overset{\text{定義 2}}{=}&amp; \frac{\pi}{6} R^3 \\
+N(\nu)&amp;\overset{\text{已知 5}}{=}&amp; \frac{\pi}{6} \left( \frac{2L\nu}{c} \right)^3 \\
+N(\nu)&amp;=&amp; \frac{\pi}{6}  \frac{8 L^3 \nu^3}{c^3} \\
+N(\nu)&amp;=&amp; \frac{4\pi L^3}{3 c^3} \nu^3 \\
+N(\nu)&amp;\overset{\text{已知 1}}{=}&amp; \frac{4\pi V}{3 c^3} \nu^3 \\
+\frac{dN}{d\nu} d\nu&amp;=&amp; \frac{d}{d\nu} \left[ \frac{4\pi V}{3 c^3} \nu^3 \right] d\nu \\
+dN&amp;=&amp; \frac{4\pi V}{c^3} \nu^2 d\nu\\
+dN_{\text{total}} &amp;\overset{\text{已知 6}}{=}&amp;2\frac{4\pi V}{c^3} \nu^2 d\nu \\
+\frac{dN_{\text{total}}}{V} &amp;=&amp;\frac{8\pi }{c^3} \nu^2 d\nu \\
+G(\nu) d\nu &amp;\overset{\text{定義 3}}{=}&amp;\frac{8\pi }{c^3} \nu^2 d\nu \\
+\end{gather*}\end{split}\]</div>
+</section>
+</section>
+<section id="question-2-average-energy-per-standing-wave">
+<h2>Question 2 Average energy per standing wave<a class="headerlink" href="#question-2-average-energy-per-standing-wave" title="Link to this heading">#</a></h2>
+<p>Suppose the oscillators in the cavity walls do not have a continuous distribution of possible energies but have only the specific energies</p>
+<div class="math notranslate nohighlight">
+\[\epsilon_{n}=nh\nu\]</div>
+<p>Proof that the average energy per oscillator in the cavity walls—and so per standing wave—is</p>
+<div class="math notranslate nohighlight">
+\[\bar{\epsilon} = \frac{h\nu}{e^{h\nu/kT}-1}\]</div>
+<p>(Hint: Maxwell-Boltzmann distribution function <span class="math notranslate nohighlight">\(f_{MB} (\epsilon)=Ae^{-\epsilon/kT} \)</span> )</p>
+</section>
+<section id="question-2-answer">
+<h2>Question 2 - Answer<a class="headerlink" href="#question-2-answer" title="Link to this heading">#</a></h2>
+<section id="id2">
+<h3>已知與假設<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>【已知 1】無窮等比級數求和:</p>
+<div class="math notranslate nohighlight">
+\[\sum_{n=0}^{\infty} x^n = 1 + x + x^2 + \dots = \frac{1}{1-x}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(|x| &lt; 1\)</span> ，本題中 <span class="math notranslate nohighlight">\(x = e^{-h\nu/kT}\)</span> ，符合條件</p></li>
+</ul>
+</li>
+<li><p>【已知 2】等式:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+   x \frac{d}{dx} \left[ \sum_{n=0}^{\infty} x^n \right] &amp;= x \frac{d}{dx} \left[ \frac{1}{1-x} \right] \\
+   \sum_{n=0}^{\infty} n x^n &amp;= \frac{x}{(1-x)^2}
+   \end{aligned}\end{split}\]</div>
+</li>
+<li><p>【已知 3】能量量子化:</p>
+<div class="math notranslate nohighlight">
+\[\epsilon_{n}=nh\nu\]</div>
+</li>
+<li><p>【已知 4】Maxwell-Boltzmann distribution function:</p>
+<div class="math notranslate nohighlight">
+\[f_{MB}(\epsilon)=Ae^{-\epsilon/kT}\]</div>
+</li>
+<li><p>【定義 1】亞變數:</p>
+<div class="math notranslate nohighlight">
+\[x = e^{-h\nu/kT}\]</div>
+</li>
+</ul>
+</section>
+<section id="proof">
+<h3>proof<a class="headerlink" href="#proof" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\bar{\epsilon} &amp;=&amp; \frac{\sum_{n=0}^{\infty} \epsilon_n f_{MB}(\epsilon_n)}{\sum_{n=0}^{\infty} f_{MB}(\epsilon_n)}\\
+&amp;\overset{\text{已知 3,4}}{=}&amp;\frac{\sum_{n=0}^{\infty} (nh\nu) A e^{-nh\nu/kT}}{\sum_{n=0}^{\infty} A e^{-nh\nu/kT}}\\
+&amp;\overset{\text{定義 1}}{=}&amp; \frac{h\nu \sum_{n=0}^{\infty} n x^n}{\sum_{n=0}^{\infty} x^n}\\
+&amp;\overset{\text{已知 2}}{=}&amp; \frac{h\nu \frac{x}{(1-x)^2}}{\frac{1}{1-x}}\\
+&amp;=&amp; h\nu \frac{x}{1-x}\\
+&amp;\overset{\text{定義 1}}{=}&amp;h\nu \frac{e^{-h\nu/kT}}{1 - e^{-h\nu/kT}}\\
+&amp;=&amp; \frac{h\nu \cdot e^{-h\nu/kT} \cdot e^{h\nu/kT}}{(1 - e^{-h\nu/kT}) \cdot e^{h\nu/kT}}\\
+&amp;=&amp; \frac{h\nu}{e^{h\nu/kT} - 1}
+\end{gather*}\end{split}\]</div>
+</section>
+</section>
+<section id="question-3">
+<h2>Question 3<a class="headerlink" href="#question-3" title="Link to this heading">#</a></h2>
+<p>Express the Planck radiation formula in terms of wavelength.</p>
+</section>
+<section id="question-3-answer">
+<h2>Question 3 - Answer<a class="headerlink" href="#question-3-answer" title="Link to this heading">#</a></h2>
+<section id="id3">
+<h3>已知與假設<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>【已知 1】頻率 <span class="math notranslate nohighlight">\(\nu\)</span> 與波長 <span class="math notranslate nohighlight">\(\lambda\)</span> 的關係式:</p>
+<div class="math notranslate nohighlight">
+\[\nu = \frac{c}{\lambda}\]</div>
+<div class="math notranslate nohighlight">
+\[d\nu =-\frac{c}{\lambda^2} d\lambda\]</div>
+<ul class="simple">
+<li><p>能量是正的 <span class="math notranslate nohighlight">\(|d\nu| = \frac{c}{\lambda^2} |d\lambda|\)</span></p></li>
+</ul>
+</li>
+<li><p>【已知 2】Jacobiany 在 <span class="math notranslate nohighlight">\(u(\nu)\)</span> 與 <span class="math notranslate nohighlight">\(u(\lambda)\)</span> 的關係式:</p>
+<div class="math notranslate nohighlight">
+\[|u(\nu)d\nu| = |u(\lambda)d\lambda|\]</div>
+</li>
+</ul>
+</section>
+<section id="id4">
+<h3>proof<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+u(\nu)d\nu &amp;=&amp; G(\nu) \bar{\epsilon} d\nu \\
+u(\nu)d\nu&amp;\overset{\text{Q 1,2}}{=}&amp; \left( \frac{8\pi \nu^2}{c^3} \right) \left( \frac{h\nu}{e^{h\nu/kT} - 1} \right) d\nu \\
+u(\nu)d\nu&amp;=&amp; \frac{8\pi h \nu^3}{c^3 (e^{h\nu/kT} - 1)} d\nu  \\
+u(\lambda)d\lambda &amp;\overset{\text{已知 1,2}}{=}&amp; \frac{8\pi h \left( \frac{c}{\lambda} \right)^3}{c^3 \left( e^{\frac{h(c/\lambda)}{kT}} - 1 \right)} \left( \frac{c}{\lambda^2} d\lambda \right)\\
+u(\lambda)d\lambda &amp;=&amp; \frac{8\pi hc}{\lambda^5} \frac{1}{e^{hc/\lambda kT} - 1} d\lambda
+\end{gather*}\end{split}\]</div>
+</section>
+</section>
+<section id="question-4">
+<h2>Question 4<a class="headerlink" href="#question-4" title="Link to this heading">#</a></h2>
+<p>A photon of frequency 𝜈 is scattered by an electron initially at rest. Verify that the maximum kinetic energy of the recoil electron is</p>
+<div class="math notranslate nohighlight">
+\[KE_{max}=\frac{2h^{2}\nu^{2}/mc^{2}}{1+2h\nu/mc^{2}}\]</div>
+</section>
+<section id="question-4-answer">
+<h2>Question 4 - Answer<a class="headerlink" href="#question-4-answer" title="Link to this heading">#</a></h2>
+<section id="id5">
+<h3>已知與假設<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>【已知 1】康普頓波長位移公式（Compton shift formula）:</p>
+<div class="math notranslate nohighlight">
+\[\Delta \lambda = \lambda' - \lambda = \frac{h}{mc}(1 - \cos\theta)\]</div>
+<ul class="simple">
+<li><p>能量守恆、動量守恆</p></li>
+<li><p>讓電子獲得最大動能 <span class="math notranslate nohighlight">\(\theta = 180^\circ\)</span></p></li>
+</ul>
+</li>
+<li><p>【已知 2】散射後頻率 <span class="math notranslate nohighlight">\(\nu'\)</span> :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \lambda' - \lambda &amp;=&amp; \frac{h}{mc}(1 - (-1)) \\
+    \lambda' - \lambda &amp;=&amp; \frac{2h}{mc}\\
+    \frac{c}{\nu'} - \frac{c}{\nu} &amp;=&amp; \frac{2h}{mc}\\
+    \frac{1}{\nu'} - \frac{1}{\nu} &amp;=&amp; \frac{2h}{mc^2}\\
+    \frac{1}{\nu'} &amp;=&amp; \frac{1}{\nu} + \frac{2h}{mc^2}  \\
+    \frac{1}{\nu'} &amp;=&amp; \frac{mc^2 + 2h\nu}{\nu mc^2}\\
+    \nu' &amp;=&amp; \frac{\nu mc^2}{mc^2 + 2h\nu}\\
+    \end{gather*}\end{split}\]</div>
+</li>
+</ul>
+</section>
+<section id="id6">
+<h3>proof<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+E_{\text{光子,初}} + E_{\text{電子,初}} &amp;\overset{\text{能量守恆}}{=}&amp; E_{\text{光子,末}} + E_{\text{電子,末}}\\
+h\nu + mc^2 &amp;=&amp; h\nu' + (KE_{max} + mc^2)\\
+KE_{max} &amp;=&amp; h\nu - h\nu' \\
+KE_{max}&amp;\overset{\text{已知 2}}{=}&amp; h\nu - h\left( \frac{\nu mc^2}{mc^2 + 2h\nu} \right) \\
+KE_{max}&amp;=&amp; h\nu \left( 1 - \frac{mc^2}{mc^2 + 2h\nu} \right)\\
+KE_{max}&amp;=&amp; h\nu \left( \frac{mc^2 + 2h\nu - mc^2}{mc^2 + 2h\nu} \right) \\
+KE_{max}&amp;=&amp; h\nu \left( \frac{2h\nu}{mc^2 + 2h\nu} \right) \\
+KE_{max}&amp;=&amp; \frac{2h^2\nu^2}{mc^2 + 2h\nu}\\
+KE_{max} &amp;=&amp; \frac{2h^2\nu^2 / mc^2}{1 + 2h\nu / mc^2}
+\end{gather*}\end{split}\]</div>
+</section>
+</section>
+<section id="question-5">
+<h2>Question 5<a class="headerlink" href="#question-5" title="Link to this heading">#</a></h2>
+<p>The gravitational potential energy <span class="math notranslate nohighlight">\(U\)</span> relative to infinity of a body of mass m at a distance <span class="math notranslate nohighlight">\(R\)</span> from the center of a body of mass <span class="math notranslate nohighlight">\(M\)</span> is <span class="math notranslate nohighlight">\(U = -GmM/R\)</span>.</p>
+<p>(a) If <span class="math notranslate nohighlight">\(R\)</span> is the radius of the body of mass <span class="math notranslate nohighlight">\(M\)</span> , find the escape speed <span class="math notranslate nohighlight">\(v_e\)</span> of the body, which is the minimum speed needed to leave it permanently.</p>
+<p>(b) Obtain a formula for the Schwarzschild radius of the body by setting <span class="math notranslate nohighlight">\(v_e=c\)</span>, the speed of light, and solving for <span class="math notranslate nohighlight">\(R\)</span>. (Of course, a relativistic calculation is correct here, but it is interesting to see what a classical calculation produces.)</p>
+</section>
+<section id="question-5-answer">
+<h2>Question 5 - Answer<a class="headerlink" href="#question-5-answer" title="Link to this heading">#</a></h2>
+<section id="id7">
+<h3>已知與假設<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>【已知 1】力學能守恆定律（Conservation of Mechanical Energy）:</p>
+<div class="math notranslate nohighlight">
+\[E_{total} = K + U = \text{常數}\]</div>
+<ul class="simple">
+<li><p>初始總能量：<span class="math notranslate nohighlight">\(E_i = \frac{1}{2}mv_e^2 - \frac{GmM}{R}\)</span></p>
+<ul>
+<li><p>初始動能：<span class="math notranslate nohighlight">\(K_i = \frac{1}{2}mv_e^2\)</span></p></li>
+<li><p>初始位能：<span class="math notranslate nohighlight">\(U_i = -\frac{GmM}{R}\)</span></p></li>
+</ul>
+</li>
+<li><p>最終總能量：<span class="math notranslate nohighlight">\(E_f = 0\)</span></p>
+<ul>
+<li><p>最終動能：<span class="math notranslate nohighlight">\(K_f = 0\)</span>（因為停下來了）</p></li>
+<li><p>最終位能：<span class="math notranslate nohighlight">\(U_f = -\frac{GmM}{\infty} = 0\)</span></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="proof-a-v-e">
+<h3>proof (a) 尋找逃逸速度 <span class="math notranslate nohighlight">\(v_e\)</span><a class="headerlink" href="#proof-a-v-e" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{1}{2}mv_e^2 - \frac{GmM}{R} &amp;\overset{\text{已知 1}}{=}&amp; 0 \\
+\frac{1}{2}mv_e^2 &amp;=&amp; \frac{GmM}{R}\\
+v_e^2 &amp;=&amp; \frac{2GM}{R}\\
+v_e &amp;=&amp; \sqrt{\frac{2GM}{R}}
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="proof-b-r-s">
+<h3>proof (b)推導史瓦西半徑 <span class="math notranslate nohighlight">\(R_S\)</span><a class="headerlink" href="#proof-b-r-s" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+v_e &amp;=&amp; \sqrt{\frac{2GM}{R}} \\
+c &amp;=&amp; \sqrt{\frac{2GM}{R_s}}\\
+R_s &amp;=&amp; \frac{2GM}{c^2}
+\end{gather*}\end{split}\]</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./homework\hw2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-density-of-standing-waves-in-cavity">Question 1 : Density of standing waves in cavity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-answer">Question 1 - Answer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">證明</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-average-energy-per-standing-wave">Question 2 Average energy per standing wave</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-answer">Question 2 - Answer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">已知與假設</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proof">proof</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-answer">Question 3 - Answer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">已知與假設</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">proof</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question 4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4-answer">Question 4 - Answer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">已知與假設</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">proof</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question 5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5-answer">Question 5 - Answer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">已知與假設</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-a-v-e">proof (a) 尋找逃逸速度 <span class="math notranslate nohighlight">\(v_e\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-b-r-s">proof (b)推導史瓦西半徑 <span class="math notranslate nohighlight">\(R_S\)</span></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC YE
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

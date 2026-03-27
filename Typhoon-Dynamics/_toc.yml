@@ -10,4 +10,5 @@ chapters:
 - file: homework/homework.md
   sections:
     - file: homework/hw1/hw1.ipynb
+    - file: homework/hw2/hw2.ipynb
 

@@ -573,21 +573,22 @@ document.write(`
 <h3>3.2 愛因斯坦的光子理論 (Photon Theory)<a class="headerlink" href="#photon-theory" title="Link to this heading">#</a></h3>
 <p>1905年，愛因斯坦將普朗克的概念延伸：光在空間中的傳播也是一個個能量包，稱為「光子」(Photon)。</p>
 <ul class="simple">
-<li><p>單一光子能量：<span class="math notranslate nohighlight">\(E = h\nu\)</span>。</p></li>
+<li><p>單一光子能量：<span class="math notranslate nohighlight">\(E = h\nu\)</span></p></li>
+<li><p>電子游離能量、功函數：<span class="math notranslate nohighlight">\(IE = \phi = h\nu_0\)</span></p></li>
 <li><p><strong>解釋光電效應 (能量守恆方程式):</strong>
-一顆電子只能「一次吞下一整顆」光子。電子吸收能量 <span class="math notranslate nohighlight">\(h\nu\)</span> 後，一部分用來當作「過路費」克服金屬表面的束縛能（稱為功函數 Work function，記為 <span class="math notranslate nohighlight">\(\phi\)</span> 或 <span class="math notranslate nohighlight">\(W\)</span>，你筆記中使用 <span class="math notranslate nohighlight">\(\psi\)</span>），剩下的能量就變成電子飛出去的最大動能 <span class="math notranslate nohighlight">\(K_{\text{max}}\)</span>。
-$<span class="math notranslate nohighlight">\(h\nu = K_{\text{max}} + \psi\)</span>$</p></li>
+一顆電子只能「一次吞下一整顆」光子。電子吸收能量 <span class="math notranslate nohighlight">\(h\nu\)</span> 後，一部分用來當作「過路費」克服金屬表面的束縛能（稱為功函數 Work function，記為 <span class="math notranslate nohighlight">\(\phi\)</span> 或 <span class="math notranslate nohighlight">\(W\)</span> 或 <span class="math notranslate nohighlight">\(\psi\)</span>），剩下的能量就變成電子飛出去的最大動能 <span class="math notranslate nohighlight">\(K_{\text{max}}\)</span>。</p></li>
 </ul>
 <div class="math notranslate nohighlight">
-\[K_{\text{max}} = h\nu - \psi\]</div>
-<p>其中，功函數可以寫成底線頻率的形式：<span class="math notranslate nohighlight">\(\psi = h\nu_0\)</span>。</p>
-<div class="math notranslate nohighlight">
-\[K_{\text{max}} = h(\nu - \nu_0)\]</div>
+\[\begin{split}\begin{aligned}
+h\nu &amp;= K_{\text{max}} + \phi \\
+K_{\text{max}} &amp;= h\nu - \phi \\
+K_{\text{max}} &amp;= h(\nu - \nu_0)
+\end{aligned}\end{split}\]</div>
 <p>這完美解釋了三大難題：</p>
 <ol class="arabic simple">
 <li><p>一對一碰撞，不需累積時間。</p></li>
 <li><p>光變亮只代表光子「顆數」變多，單顆光子的能量不變。</p></li>
-<li><p>若 <span class="math notranslate nohighlight">\(h\nu &lt; \psi\)</span>，單顆光子能量付不起過路費，電子出不來。</p></li>
+<li><p>若 <span class="math notranslate nohighlight">\(h\nu &lt; \phi\)</span>，單顆光子能量付不起過路費，電子出不來。</p></li>
 </ol>
 <p><img alt="" src="../../_images/The_Photoelectric_Effect.png" /></p>
 </section>
