@@ -8,6 +8,8 @@ chapters:
   sections:      # <--- 代表下面的檔案都屬於它
     - file: lecture/00_introduction/introduction.ipynb
     - file: lecture/01_Relativity/relativity.ipynb
+    - file: lecture/02_Particle_Properties_of_Waves/particle_properties_of_waves.ipynb
 - file: homework/homework.md
   sections:
     - file: homework/hw1/hw1.ipynb
+    - file: homework/hw2/hw2.ipynb
