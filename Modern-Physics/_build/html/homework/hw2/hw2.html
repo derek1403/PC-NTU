@@ -183,7 +183,7 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../lecture/lecture.html">lecture.md</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Relativity/relativity.html">Modern Physics - Relativity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../lecture/02_Particle_Properties_of_Waves/particle_properties_of_waves.html">近代物理學 - 波的粒子特性 (Modern Physics - Particle Properties of Waves)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/02_Particle_Properties_of_Waves/particle_properties_of_waves.html">Modern Physics - Particle Properties of Waves</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../homework.html">homework hardword</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
@@ -561,44 +561,32 @@ G(\nu) d\nu &amp;\overset{\text{定義 3}}{=}&amp;\frac{8\pi }{c^3} \nu^2 d\nu \
 <div class="math notranslate nohighlight">
 \[\bar{\epsilon} = \frac{h\nu}{e^{h\nu/kT}-1}\]</div>
 <p>(Hint: Maxwell-Boltzmann distribution function <span class="math notranslate nohighlight">\(f_{MB} (\epsilon)=Ae^{-\epsilon/kT} \)</span> )</p>
-<div class="math notranslate nohighlight">
-\[
-\gdef\kGeomSum{\text{已知 1}}
-\gdef\kDerivSum{\text{已知 2}}
-\gdef\assumQuant{\text{假設 1}}  % 把原本的已知3換成假設1
-\gdef\kMB{\text{已知 3}}         % 把原本的已知4遞補成已知3
-\gdef\defSub{\text{定義 1}}
-\]</div>
 </section>
 <section id="question-2-answer">
 <h2>Question 2 - Answer<a class="headerlink" href="#question-2-answer" title="Link to this heading">#</a></h2>
 <section id="id2">
 <h3>已知與假設<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <ul>
-<li><p>【<span class="math notranslate nohighlight">\(\kGeomSum\)</span>】無窮等比級數求和:</p>
+<li><p>【已知 1】無窮等比級數求和:</p>
 <div class="math notranslate nohighlight">
 \[\sum_{n=0}^{\infty} x^n = 1 + x + x^2 + \dots = \frac{1}{1-x}\]</div>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(|x| &lt; 1\)</span> ，本題中 <span class="math notranslate nohighlight">\(x = e^{-h\nu/kT}\)</span> ，符合條件</p></li>
 </ul>
 </li>
-<li><p>【<span class="math notranslate nohighlight">\(\kDerivSum\)</span>】等式:</p>
+<li><p>【已知 2】等式:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\begin{gather*}
-   \sum_{n=0}^{\infty} x^n  &amp;\overset{\kGeomSum}{=}&amp;  \frac{1}{1-x}  \\
-   x \frac{d}{dx} \left[ \sum_{n=0}^{\infty} x^n \right] &amp;=&amp; x \frac{d}{dx} \left[ \frac{1}{1-x} \right] \\
-   \sum_{n=0}^{\infty} n x^n &amp;=&amp; \frac{x}{(1-x)^2}
-   \end{gather*}\end{split}\]</div>
+\[ \begin{align}\begin{aligned}\begin{gather}\\\begin{split}    \sum_{n=0}^{\infty} x^n  &amp;\overset{\text{已知 1}}{=}&amp;  \frac{1}{1-x}  \\\end{split}\\\begin{split}   x \frac{d}{dx} \left[ \sum_{n=0}^{\infty} x^n \right] &amp;=&amp; x \frac{d}{dx} \left[ \frac{1}{1-x} \right] \\\end{split}\\   \sum_{n=0}^{\infty} n x^n &amp;=&amp; \frac{x}{(1-x)^2}\\   \end{gather}\end{aligned}\end{align} \]</div>
 </li>
-<li><p>【<span class="math notranslate nohighlight">\(\assumQuant\)</span>】能量量子化:</p>
+<li><p>【已知 3】能量量子化:</p>
 <div class="math notranslate nohighlight">
 \[\epsilon_{n}=nh\nu\]</div>
 </li>
-<li><p>【<span class="math notranslate nohighlight">\(\kMB\)</span>】Maxwell-Boltzmann distribution function:</p>
+<li><p>【已知 4】Maxwell-Boltzmann distribution function:</p>
 <div class="math notranslate nohighlight">
 \[f_{MB}(\epsilon)=Ae^{-\epsilon/kT}\]</div>
 </li>
-<li><p>【<span class="math notranslate nohighlight">\(\defSub\)</span>】亞變數:</p>
+<li><p>【定義 1】亞變數:</p>
 <div class="math notranslate nohighlight">
 \[x = e^{-h\nu/kT}\]</div>
 </li>
@@ -607,16 +595,7 @@ G(\nu) d\nu &amp;\overset{\text{定義 3}}{=}&amp;\frac{8\pi }{c^3} \nu^2 d\nu \
 <section id="proof">
 <h3>proof<a class="headerlink" href="#proof" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
-\[\begin{split}\begin{gather*}
-\bar{\epsilon} &amp;=&amp; \frac{\sum_{n=0}^{\infty} \epsilon_n f_{MB}(\epsilon_n)}{\sum_{n=0}^{\infty} f_{MB}(\epsilon_n)}\\
-&amp;\overset{\assumQuant, \kMB}{=}&amp;\frac{\sum_{n=0}^{\infty} (nh\nu) A e^{-nh\nu/kT}}{\sum_{n=0}^{\infty} A e^{-nh\nu/kT}}\\
-&amp;\overset{\defSub}{=}&amp; \frac{h\nu \sum_{n=0}^{\infty} n x^n}{\sum_{n=0}^{\infty} x^n}\\
-&amp;\overset{\kDerivSum}{=}&amp; \frac{h\nu \frac{x}{(1-x)^2}}{\frac{1}{1-x}}\\
-&amp;=&amp; h\nu \frac{x}{1-x}\\
-&amp;\overset{\defSub}{=}&amp;h\nu \frac{e^{-h\nu/kT}}{1 - e^{-h\nu/kT}}\\
-&amp;=&amp; \frac{h\nu \cdot e^{-h\nu/kT} \cdot e^{h\nu/kT}}{(1 - e^{-h\nu/kT}) \cdot e^{h\nu/kT}}\\
-&amp;=&amp; \frac{h\nu}{e^{h\nu/kT} - 1}
-\end{gather*}\end{split}\]</div>
+\[ \begin{align}\begin{aligned}\begin{gather*}\\\begin{split}\bar{\epsilon} &amp;=&amp; \frac{\sum_{n=0}^{\infty} \epsilon_n f_{MB}(\epsilon_n)}{\sum_{n=0}^{\infty} f_{MB}(\epsilon_n)}\\\end{split}\\\begin{split}&amp;\overset{\text{已知 3,4}}{=}&amp;\frac{\sum_{n=0}^{\infty} (nh\nu) A e^{-nh\nu/kT}}{\sum_{n=0}^{\infty} A e^{-nh\nu/kT}}\\\end{split}\\\begin{split}&amp;\overset{\text{定義 1}}{=}&amp; \frac{h\nu \sum_{n=0}^{\infty} n x^n}{\sum_{n=0}^{\infty} x^n}\\\end{split}\\\begin{split}&amp;\overset{\text{已知 2}}{=}&amp; \frac{h\nu \frac{x}{(1-x)^2}}{\frac{1}{1-x}}\\\end{split}\\\begin{split}&amp;=&amp; h\nu \frac{x}{1-x}\\\end{split}\\\begin{split}&amp;\overset{\text{定義 1}}{=}&amp;h\nu \frac{e^{-h\nu/kT}}{1 - e^{-h\nu/kT}}\\\end{split}\\\begin{split}&amp;=&amp; \frac{h\nu \cdot e^{-h\nu/kT} \cdot e^{h\nu/kT}}{(1 - e^{-h\nu/kT}) \cdot e^{h\nu/kT}}\\\end{split}\\&amp;=&amp; \frac{h\nu}{e^{h\nu/kT} - 1}\\\end{gather*}\end{aligned}\end{align} \]</div>
 </section>
 </section>
 <section id="question-3">
