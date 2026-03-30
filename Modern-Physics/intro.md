@@ -23,7 +23,7 @@ tags: ["Modern Physics", "Quantum Mechanics", "Relativity"]
 
 - [x] **0. [Introduction (簡介)](./lecture/00_Introduction/introduction.ipynb)**
 - [x] **1. [Relativity (相對論)](./lecture/01_Relativity/relativity.ipynb)**
-- [ ] **2. Particle Properties of Waves (波的粒子性質)**
+- [x] **2. [Particle Properties of Waves (波的粒子性質)](./lecture/02_Particle_Properties_of_Waves/particle_properties_of_waves.html)**
 - [ ] **3. Wave Properties of Particles (粒子的波動性質)**
 - [ ] **4. Atomic Structure (原子結構)**
 - [ ] **5. Quantum Mechanics (量子力學)**
