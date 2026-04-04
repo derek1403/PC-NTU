@@ -392,12 +392,16 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">變數的主次</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-a-b-c">Question 2：A, B, C 參數代表意義與次環流形狀</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ac-b-2-stiffness">作業 3：<span class="math notranslate nohighlight">\(AC - B^2\)</span> 代表意義、Stiffness 與熱力風平衡調整</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">作業 4：推導次環流方程式與交互作用概念</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-a-b-c">Question 2：A, B, C 參數代表意義與次環流形狀</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-2">Answer 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-ac-b-2-stiffness">Question 3：<span class="math notranslate nohighlight">\(AC - B^2\)</span> 代表意義、Stiffness 與熱力風平衡調整</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-3">Answer 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question 4：推導次環流方程式與交互作用概念</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-4">Answer 4</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#x-y"><span class="xref myst">老師課堂講義上的證明是x-y座標</span>，這裡證的是圓柱座標，詳細證明過程可以參考</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">更詳細可以參考</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">更詳細可以參考</a></li>
 </ul>
             </nav>
         </div>
@@ -416,12 +420,6 @@ document.write(`
 <span class="n">date</span><span class="p">:</span> <span class="mf">2026.03.25</span>
 </pre></div>
 </div>
-<p>同學你好！這份講義探討的是大氣動力學（特別是針對颱風等軸對稱系統）中非常進階且核心的「次環流方程式（Eliassen Equation）」與「對稱不穩定性」。</p>
-<p>既然你喜歡用比喻來學習，在我們進入數學之前，先想像一個<strong>高速旋轉的陀螺</strong>（或是花式溜冰選手）。
-陀螺主要在原地高速旋轉，這股強大的旋轉氣流就是系統的**「主環流（Primary Circulation）」<strong>。
-但是，如果陀螺摩擦到地面（摩擦力），或是內部受到不均勻的加熱（潛熱釋放），它原本完美的平衡就會被破壞。為了不讓自己倒下，陀螺的內部結構會產生非常微小的「上下」與「向內/向外」的移動來重新找回平衡。這個用來「調整並維持系統平衡」的微小翻轉運動，就是</strong>「次環流（Secondary Circulation）」** 。</p>
-<p>接下來，老師帶你一步一步拆解這四個作業。</p>
-<hr class="docutils" />
 <section id="question-1">
 <h2>Question 1：解釋方程式代表意義與主次環流變數<a class="headerlink" href="#question-1" title="Link to this heading">#</a></h2>
 <div class="math notranslate nohighlight">
@@ -470,7 +468,7 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(X\)</span>：動量強迫 / 摩擦力 (Momentum forcing / Friction) <span class="math notranslate nohighlight">\([\text{m} \cdot \text{s}^{-2}]\)</span></p></li>
 </ul>
 </li>
-<li><p><strong>意義：</strong> 這是切線方向的 <strong><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Angular_Momentum_Equation.html">軸對稱角動量方程式 (Axisymmetric Angular Momentum Equation)</a></strong> ，描述切線風速 <span class="math notranslate nohighlight">\(v\)</span> 隨時間的變化，是由於徑向風 <span class="math notranslate nohighlight">\(u\)</span> 與垂直風 <span class="math notranslate nohighlight">\(w\)</span> 帶來了不同區域的角動量，加上外界摩擦力 <span class="math notranslate nohighlight">\(X\)</span> 所導致 。</p></li>
+<li><p><strong>意義：</strong> 這是切線方向的 <strong><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Tangentialr_Momentum_Equation.html">軸對稱切線動量方程式 (Axisymmetric Tangential Momentum Equation)</a></strong> ，描述切線風速 <span class="math notranslate nohighlight">\(v\)</span> 隨時間的變化，是由於徑向風 <span class="math notranslate nohighlight">\(u\)</span> 與垂直風 <span class="math notranslate nohighlight">\(w\)</span> 帶來了不同區域的角動量，加上外界摩擦力 <span class="math notranslate nohighlight">\(X\)</span> 所導致 。</p></li>
 </ul>
 <ol class="arabic simple" start="3">
 <li><p><span class="math notranslate nohighlight">\(\frac{\partial\phi}{\partial z}=\frac{g}{\theta_{0}}\theta\)</span></p></li>
@@ -524,8 +522,8 @@ document.write(`
 </section>
 <section id="id2">
 <h3>變數的主次<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
-<p><strong>主環流變數：</strong> <span class="math notranslate nohighlight">\(v\)</span> (切線風)、<span class="math notranslate nohighlight">\(\phi\)</span> (重力位勢)、<span class="math notranslate nohighlight">\(\theta\)</span> (位溫):它們是颱風的主要結構，通常處於水平是梯度風與垂直是靜力平衡
-<strong>次環流變數：</strong> <span class="math notranslate nohighlight">\(u\)</span> (徑向風)、<span class="math notranslate nohighlight">\(w\)</span> (垂直風):它們相對微弱，負責在主環流失去平衡時進行調整。</p>
+<p><strong>主環流變數：</strong> <span class="math notranslate nohighlight">\(v\)</span> (切線風)、<span class="math notranslate nohighlight">\(\phi\)</span> (重力位勢)、<span class="math notranslate nohighlight">\(\theta\)</span> (位溫):它們是颱風的主要結構，通常處於水平是梯度風與垂直是靜力平衡</p>
+<p><strong>次環流變數：</strong> <span class="math notranslate nohighlight">\(u\)</span> (徑向風)、<span class="math notranslate nohighlight">\(w\)</span> (垂直風):它們相對微弱，負責在主環流失去平衡時進行調整。</p>
 </section>
 </section>
 <hr class="docutils" />
@@ -537,21 +535,25 @@ document.write(`
 \[\rho B=-\frac{g}{\theta_{0}}\frac{\partial\theta}{\partial r}=-(f+\frac{2v}{r})\frac{\partial v}{\partial z}\]</div>
 <div class="math notranslate nohighlight">
 \[\rho C=(f+\frac{2v}{r})(f+\frac{\partial rv}{r\partial r})\]</div>
-<p>這三個參數決定了流體抵抗變形的能力（恢復力），我們統稱為「穩定度參數」。你可以把這想像成空間中三個方向的彈簧，決定了次環流（翻轉橢圓）被擠壓的形狀。</p>
+</section>
+<section id="answer-2">
+<h2>Answer 2<a class="headerlink" href="#answer-2" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Secondary_Circulation_Coefficients.html"><span class="math notranslate nohighlight">\(\rho A , \rho B , \rho C \)</span></a> 決定了流體抵抗變形的能力（恢復力），我們統稱為「穩定度參數」。可以想像成空間中三個方向的彈簧，決定了次環流被擠壓的形狀。</p>
+<p><img alt="" src="../../_images/Eliassen_Transverse_Equation.png" /></p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\rho A=\frac{g}{\theta_{0}}\frac{\partial\theta}{\partial z}\)</span></p>
 <ul>
-<li><p><strong>意義：</strong> <span class="math notranslate nohighlight">\(A\)</span> 代表<strong>靜力穩定度 (Static Stability)</strong> 。它衡量大氣抵抗「垂直運動」的能力。</p></li>
+<li><p><strong>意義：</strong> <span class="math notranslate nohighlight">\(A\)</span> 代表<strong>靜力穩定度 (Static Stability)</strong> ，數值越高越能抵抗流體「垂直運動」的能力</p></li>
 </ul>
 </li>
 <li><p><span class="math notranslate nohighlight">\(\rho B=-\frac{g}{\theta_{0}}\frac{\partial\theta}{\partial r}=-(f+\frac{2v}{r})\frac{\partial v}{\partial z}\)</span></p>
 <ul>
-<li><p><strong>意義：</strong> <span class="math notranslate nohighlight">\(B\)</span> 代表<strong>斜壓性 (Baroclinicity)</strong> 或熱力風垂直風切 。它連接著徑向的溫度梯度與垂直的風速變化，代表大氣的傾斜程度。</p></li>
+<li><p><strong>意義：</strong> <span class="math notranslate nohighlight">\(B\)</span> 代表<strong>斜壓性 (Baroclinicity)</strong> 或熱力風垂直風切 ，它連接著徑向的溫度梯度與垂直的風速變化，代表大氣的傾斜程度。數值越高越能抵抗流體「純垂直運動」和「純水平運動」的能力，強迫流體必須沿著某個「特定的傾斜角度」滑動</p></li>
 </ul>
 </li>
 <li><p><span class="math notranslate nohighlight">\(\rho C=(f+\frac{2v}{r})(f+\frac{\partial rv}{r\partial r})\)</span></p>
 <ul>
-<li><p><strong>意義：</strong> <span class="math notranslate nohighlight">\(C\)</span> 代表<strong>慣性穩定度 (Inertial Stability)</strong> 。它衡量流體抵抗「水平（徑向）運動」的能力。</p></li>
+<li><p><strong>意義：</strong> <span class="math notranslate nohighlight">\(C\)</span> 代表<strong>慣性穩定度 (Inertial Stability)</strong> ，數值越高越能抵抗流體「水平運動」的能力</p></li>
 </ul>
 </li>
 </ul>
@@ -562,50 +564,75 @@ document.write(`
 <li><p><strong>當 <span class="math notranslate nohighlight">\(C \gg A\)</span>（慣性穩定度主宰）：</strong> 水平方向的「彈簧」很硬，很難往內外走。所以次環流會變成<strong>垂直拉長、水平被限制</strong>的橢圓</p></li>
 <li><p><strong>參數 <span class="math notranslate nohighlight">\(B\)</span> 的影響：</strong> 它相當於一個交叉項，會造成這個次環流橢圓發生<strong>傾斜 (Tilt)</strong></p></li>
 </ol>
+</section>
 <hr class="docutils" />
-<section id="ac-b-2-stiffness">
-<h3>作業 3：<span class="math notranslate nohighlight">\(AC - B^2\)</span> 代表意義、Stiffness 與熱力風平衡調整<a class="headerlink" href="#ac-b-2-stiffness" title="Link to this heading">#</a></h3>
+<section id="question-3-ac-b-2-stiffness">
+<h2>Question 3：<span class="math notranslate nohighlight">\(AC - B^2\)</span> 代表意義、Stiffness 與熱力風平衡調整<a class="headerlink" href="#question-3-ac-b-2-stiffness" title="Link to this heading">#</a></h2>
+</section>
+<section id="answer-3">
+<h2>Answer 3<a class="headerlink" href="#answer-3" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong><span class="math notranslate nohighlight">\(AC - B^2\)</span> 的意義：</strong>
-在數學上，它是穩定度矩陣的行列式值；在物理上，它等同於系統的<strong>位渦 (Potential Vorticity, PV)</strong> 或是 <span class="math notranslate nohighlight">\(P\)</span> 值
-要讓次環流方程式有穩定的解（數學上的橢圓型偏微分方程式），必須滿足 <span class="math notranslate nohighlight">\(AC - B^2 &gt; 0\)</span>，這也就是系統呈現「對稱穩定 (Symmetric stable)」的必要條件。若 <span class="math notranslate nohighlight">\(AC - B^2 &lt; 0\)</span>，系統就會發生對稱不穩定</p></li>
-<li><p><strong>Stiffness (剛性) 的特性：</strong>
-講義中提到 “PV is a measure of the ‘stiffness’” [cite: 143]。你可以把 PV 想像成這團流體的「綜合剛性」。當 PV 很大（大氣非常穩定）時，流體很硬，任何微小的擾動都會產生高頻的震盪（頻率 <span class="math notranslate nohighlight">\(\omega\)</span> 很大）；當 PV 變小（例如因為潛熱釋放導致靜力穩定度下降），流體變軟，就容易被觸發不穩定現像</p></li>
-<li><p><strong>次環流如何調整主環流的熱力風平衡？</strong>
-主環流原本維持著完美的「熱力風平衡」 。但是，當颱風底部發生<strong>摩擦 (Friction, <span class="math notranslate nohighlight">\(X / F\)</span>)</strong> 或是雲帶中有<strong>潛熱釋放 (Diabatic heating, <span class="math notranslate nohighlight">\(Q\)</span>)</strong> 時，這個平衡會瞬間被破壞
-這時候，次環流 (<span class="math notranslate nohighlight">\(u, w\)</span>) 就會立刻啟動！上升氣流 <span class="math notranslate nohighlight">\(w\)</span> 會透過絕熱冷卻來改變溫度場 <span class="math notranslate nohighlight">\(\theta\)</span>，而徑向氣流 <span class="math notranslate nohighlight">\(u\)</span> 會帶來不同的角動量來改變風場 <span class="math notranslate nohighlight">\(v\)</span>。透過 <span class="math notranslate nohighlight">\(u\)</span> 和 <span class="math notranslate nohighlight">\(w\)</span> 的輸送，次環流能迅速把溫度和風場「喬」回符合熱力風平衡的狀態</p></li>
+<li><p><strong><span class="math notranslate nohighlight">\(AC - B^2\)</span> 的意義：</strong></p>
+<ul>
+<li><p>在數學上，<a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Stability_Matrix.html">可以證明</a>它是穩定度矩陣的行列式值</p></li>
+<li><p>在物理上，<a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Relation_between_Axisymmetric_Structural_Parameters_and_PV.html">可以證明</a>它等同於系統的<strong>位渦 (Ertel Potential Vorticity)</strong> <span class="math notranslate nohighlight">\(AC - B^2 = \frac{1}{\rho^2}\left(f+\frac{2v}{r}\right)  PV_b = \frac{1}{\rho^2} \left(f+\frac{2v}{r}\right) \left(\frac{\rho_0 g}{\theta_0}\right) PV = \frac{1}{\rho^2 r} \left(f+\frac{2v}{r}\right) J(M, b)\)</span></p></li>
+<li><p>要讓次環流方程式（Eliassen Transverse Equation）呈現擁有封閉環流解的橢圓型偏微分方程式 (Elliptic PDE)，必須滿足 <span class="math notranslate nohighlight">\(AC - B^2 &gt; 0\)</span>，在物理上代表環境的位渦 (PV) 為正值，系統處於對稱穩定 (Symmetrically stable) 的狀態。若 <span class="math notranslate nohighlight">\(AC - B^2 &lt; 0\)</span>，方程式將轉為雙曲型 (Hyperbolic PDE)，代表環境位渦轉為負值，系統將觸發對稱不穩定，導致沿特定斜率爆發的傾斜對流。</p></li>
+</ul>
+</li>
+<li><p><strong>Stiffness (剛性) 的特性：</strong></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(PV\)</span> is a measure of the ‘stiffness’ ， <span class="math notranslate nohighlight">\(PV\)</span> 可以想像成這團流體的「綜合剛性」</p></li>
+<li><p>當 <span class="math notranslate nohighlight">\(PV\)</span> 很大，渦漩系統非常堅固(科氏力與離心力在眼牆周圍築起了一道「堅不可摧的無形氣牆」)，任何空氣往內衝撞到了「超高 <span class="math notranslate nohighlight">\(PV\)</span> 與超高 <span class="math notranslate nohighlight">\(C\)</span>」組成的無形眼牆都 <strong>無法在水平方向上穿透進去!</strong> 既然水平方向走不通，這些成千上萬噸的空氣就被迫以極其暴力的速度「往上噴發」（強烈的上升氣流 <span class="math notranslate nohighlight">\(w\)</span>）</p></li>
+<li><p>當 <span class="math notranslate nohighlight">\(PV\)</span> 變小，流體變軟，結構就容易被破壞</p></li>
+</ul>
+</li>
+<li><p><strong>次環流如何調整主環流的熱力風平衡？</strong></p>
+<ul>
+<li><p>主環流原本維持著完美的 <strong>「熱力風平衡」</strong></p></li>
+<li><p>當颱風底部發生<strong>摩擦 (Friction, <span class="math notranslate nohighlight">\(X / F\)</span>)</strong> 或是雲帶中有<strong>潛熱釋放 (Diabatic heating, <span class="math notranslate nohighlight">\(Q\)</span>)</strong> 時，破壞平熱力風衡，這時候次環流 (<span class="math notranslate nohighlight">\(u, w\)</span>) 就會以重力波的速度立刻啟動！上升氣流 <span class="math notranslate nohighlight">\(w\)</span> 會透過絕熱冷卻來改變溫度場 <span class="math notranslate nohighlight">\(\theta\)</span>，而徑向氣流 <span class="math notranslate nohighlight">\(u\)</span> 會帶來不同的角動量來改變風場 <span class="math notranslate nohighlight">\(v\)</span>。透過 <span class="math notranslate nohighlight">\(u\)</span> 和 <span class="math notranslate nohighlight">\(w\)</span> 的輸送，次環流能迅速把溫度和風場「喬」回符合熱力風平衡的狀態</p></li>
+</ul>
+</li>
 </ul>
 </section>
 <hr class="docutils" />
-<section id="id3">
-<h3>作業 4：推導次環流方程式與交互作用概念<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
-<p><em>(這題講義說不用交，但老師還是帶你看懂背後的魔術！)</em></p>
-<p><strong>推導概念 (簡單推導)：</strong>
-我們想要把 <span class="math notranslate nohighlight">\(u\)</span> 和 <span class="math notranslate nohighlight">\(w\)</span> 統整成一個方程式。</p>
-<ol class="arabic simple">
-<li><p><strong>引入流函數 <span class="math notranslate nohighlight">\(\psi\)</span>：</strong> 為了滿足質量守恆 <span class="math notranslate nohighlight">\(\frac{\partial\rho ru}{r\partial r}+\frac{\partial\rho w}{\partial z}=0\)</span> ，我們定義 <span class="math notranslate nohighlight">\(\rho w=\frac{\partial r\psi}{r\partial r}\)</span> 且 <span class="math notranslate nohighlight">\(\rho u=-\frac{\partial\psi}{\partial z}\)</span> 。這樣只要解出 <span class="math notranslate nohighlight">\(\psi\)</span>，就知道 <span class="math notranslate nohighlight">\(u\)</span> 和 <span class="math notranslate nohighlight">\(w\)</span> 了。</p></li>
-<li><p><strong>消去時間項：</strong> 熱力風平衡告訴我們，溫度的徑向梯度與風的垂直切變是綁定的。如果我們把動量方程式對 <span class="math notranslate nohighlight">\(z\)</span> 微分，把熱力學方程式對 <span class="math notranslate nohighlight">\(r\)</span> 微分，然後把它們相加/相減來消去時間微分 <span class="math notranslate nohighlight">\(\frac{\partial}{\partial t}\)</span>。</p></li>
-<li><p><strong>整理成 Eliassen 方程式：</strong> 把第一步定義的 <span class="math notranslate nohighlight">\(\psi\)</span> 代入第二步整理好的方程式，並把參數 <span class="math notranslate nohighlight">\(A, B, C\)</span> 替換進去，就會得到一個二階偏微分方程式：</p></li>
-</ol>
+<section id="question-4">
+<h2>Question 4：推導次環流方程式與交互作用概念<a class="headerlink" href="#question-4" title="Link to this heading">#</a></h2>
+</section>
+<section id="answer-4">
+<h2>Answer 4<a class="headerlink" href="#answer-4" title="Link to this heading">#</a></h2>
+<section id="x-y">
+<h3><a class="reference internal" href="#(https://derek1403.github.io/PC-NTU/Typhoon-Dynamics/_build/html/lecture/week3/week3.html)"><span class="xref myst">老師課堂講義上的證明是x-y座標</span></a>，這裡證的是圓柱座標，<a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Transverse_Equation.html">詳細證明過程可以參考</a><a class="headerlink" href="#x-y" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
-\[
-\mathcal{L}\psi=\frac{\partial J}{\partial r}-\frac{\partial F}{\partial z}
-\]</div>
-<p>其中</p>
-<p><span class="math notranslate nohighlight">\(\mathcal{L}(\cdot)=\frac{\partial}{\partial r}(A\frac{\partial r(\cdot)}{r\partial r}+B\frac{\partial(\cdot)}{\partial z})+\frac{\partial}{\partial z}(B\frac{\partial r(\cdot)}{r\partial r}+C\frac{\partial(\cdot)}{\partial z})\)</span> 。</p>
-<p><strong>意義與主次交互作用（準平衡）：</strong>
-這個方程式是一個「診斷方程式」（沒有時間項）。等號右邊是<strong>外力強迫項</strong>（熱源 <span class="math notranslate nohighlight">\(J\)</span> 的徑向不均勻，以及摩擦力 <span class="math notranslate nohighlight">\(F\)</span> 的垂直不均勻）
-這告訴我們一個非常漂亮的物理圖像：我們為什麼要區分主、次環流？
-因為大氣喜歡處於「準平衡 (Quasi-balance)」。主環流 (<span class="math notranslate nohighlight">\(v, \theta\)</span>) 負責提供穩定的舞台（決定了 <span class="math notranslate nohighlight">\(A, B, C\)</span> 這些彈簧的硬度），而外力強迫一旦試圖打破平衡，系統不用等到整個垮掉，它會<strong>瞬間診斷</strong>出需要多少的次環流 <span class="math notranslate nohighlight">\(\psi\)</span> 來抵銷這些外力，確保系統永遠踩在平衡的鋼索上 。</p>
-<hr class="docutils" />
-<p>以上就是這四個題目的脈絡解析！從「認清誰是主次」、到「了解形狀參數」、再到「判斷系統穩定度」，最後看見「大氣如何自我修正」。</p>
-<p>同學，針對 Eliassen 次環流方程式的這套推導邏輯，或是在 <span class="math notranslate nohighlight">\(A, B, C\)</span> 參數對應橢圓形狀的比喻上，你還有哪邊覺得有點抽象，希望我再用不同的方式解釋嗎？</p>
-</section>
-</section>
-<section id="id4">
-<h2>更詳細可以參考<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+\[\begin{split}\begin{gather*}
+\frac{\partial}{\partial r}\left[ \frac{\partial^2\phi}{\partial t\partial z} \right] &amp;=&amp; \frac{\partial}{\partial z}\left[ \frac{\partial^2\phi}{\partial t\partial r} \right] \\
+\frac{\partial}{\partial r}\left[ u\rho B - w\rho A + J \right] &amp;=&amp; \frac{\partial}{\partial z}\left[ -u\rho C + w\rho B + F \right] \\
+\frac{\partial}{\partial r}\left[ u\rho B - w\rho A \right] + \frac{\partial J}{\partial r} &amp;=&amp; \frac{\partial}{\partial z}\left[ -u\rho C + w\rho B \right] + \frac{\partial F}{\partial z} \\
+\frac{\partial}{\partial r}\left[ u\rho B - w\rho A \right] - \frac{\partial}{\partial z}\left[ -u\rho C + w\rho B \right] &amp;=&amp; \frac{\partial F}{\partial z} - \frac{\partial J}{\partial r} \\
+\frac{\partial}{\partial r}\left[ u\rho B - w\rho A \right] + \frac{\partial}{\partial z}\left[ u\rho C - w\rho B \right] &amp;=&amp; \frac{\partial F}{\partial z} - \frac{\partial J}{\partial r} \\
+\frac{\partial}{\partial r}\left[ -\frac{1}{r}\frac{\partial\psi}{\partial z} B -\frac{1}{r}\frac{\partial\psi}{\partial r} A \right] + \frac{\partial}{\partial z}\left[ -\frac{1}{r}\frac{\partial\psi}{\partial z} C - \frac{1}{r}\frac{\partial\psi}{\partial r} B \right] &amp;=&amp;  \frac{\partial F}{\partial z} - \frac{\partial J}{\partial r} \\
+\frac{\partial}{\partial r}\left[ -\left( \frac{A}{r}\frac{\partial\psi}{\partial r} + \frac{B}{r}\frac{\partial\psi}{\partial z} \right) \right] + \frac{\partial}{\partial z}\left[ -\left( \frac{B}{r}\frac{\partial\psi}{\partial r} + \frac{C}{r}\frac{\partial\psi}{\partial z} \right) \right] &amp;=&amp; \frac{\partial F}{\partial z} - \frac{\partial J}{\partial r} \\
+\frac{\partial}{\partial r}\left[ \frac{A}{r}\frac{\partial\psi}{\partial r} + \frac{B}{r}\frac{\partial\psi}{\partial z} \right] + \frac{\partial}{\partial z}\left[ \frac{B}{r}\frac{\partial\psi}{\partial r} + \frac{C}{r}\frac{\partial\psi}{\partial z} \right] &amp;=&amp; \frac{\partial J}{\partial r} - \frac{\partial F}{\partial z}\\
+\mathcal{L_{\text{cyl}}}[\psi] &amp;=&amp; \frac{\partial J}{\partial r} - \frac{\partial F}{\partial z}
+\end{gather*}\end{split}\]</div>
 <ul class="simple">
-<li><p><a class="reference external" href="https://derek1403.github.io/PC-NTU/Typhoon-Dynamics/_build/html/lecture/week2/week2.html">當周的筆記整理(現在還很破爛)</a></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{L_{\text{cyl}}}[\cdot]=\frac{\partial}{\partial r}\left[ \frac{A}{r}\frac{\partial r[\cdot]}{\partial r}+\frac{B}{r}\frac{\partial[\cdot]}{\partial z} \right]+\frac{\partial}{\partial z}\left[ \frac{B}{r}\frac{\partial r[\cdot]}{\partial r}+\frac{C}{r}\frac{\partial[\cdot]}{\partial z}\right]\)</span></p></li>
+</ul>
+<p><strong>意義與主次交互作用（準平衡）：</strong></p>
+<ul class="simple">
+<li><p>這個方程式是一個「診斷方程式」（沒有時間項）</p></li>
+<li><p>等號右邊是<strong>外力強迫項</strong>（熱源 <span class="math notranslate nohighlight">\(J\)</span> 的徑向不均勻，以及摩擦力 <span class="math notranslate nohighlight">\(F\)</span> 的垂直不均勻）</p></li>
+</ul>
+<p><strong>我們為什麼要區分主、次環流？</strong></p>
+<ul class="simple">
+<li><p>大氣喜歡處於「準平衡 (Quasi-balance)」</p></li>
+<li><p>主環流 (<span class="math notranslate nohighlight">\(v, \theta\)</span>) 負責提供穩定的舞台（決定了 <span class="math notranslate nohighlight">\(A, B, C\)</span> 這些彈簧的硬度），而外力強迫一旦試圖打破平衡會 <strong>以重力波的速度很快診斷</strong> 出需要多少的次環流 <span class="math notranslate nohighlight">\(\psi\)</span> 來抵銷這些外力，確保系統永遠踩在平衡的鋼索上</p></li>
+</ul>
+</section>
+</section>
+<section id="id3">
+<h2>更詳細可以參考<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://derek1403.github.io/PC-NTU/Typhoon-Dynamics/_build/html/lecture/week3/week3.html">Typhoon Dynamics week3的筆記整理(現在還很破爛)</a></p></li>
 </ul>
 </section>
 </section>
@@ -671,12 +698,16 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">變數的主次</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-a-b-c">Question 2：A, B, C 參數代表意義與次環流形狀</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ac-b-2-stiffness">作業 3：<span class="math notranslate nohighlight">\(AC - B^2\)</span> 代表意義、Stiffness 與熱力風平衡調整</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">作業 4：推導次環流方程式與交互作用概念</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-a-b-c">Question 2：A, B, C 參數代表意義與次環流形狀</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-2">Answer 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-ac-b-2-stiffness">Question 3：<span class="math notranslate nohighlight">\(AC - B^2\)</span> 代表意義、Stiffness 與熱力風平衡調整</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-3">Answer 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question 4：推導次環流方程式與交互作用概念</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-4">Answer 4</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#x-y"><span class="xref myst">老師課堂講義上的證明是x-y座標</span>，這裡證的是圓柱座標，詳細證明過程可以參考</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">更詳細可以參考</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">更詳細可以參考</a></li>
 </ul>
   </nav></div>
 
