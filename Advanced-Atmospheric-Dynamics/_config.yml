@@ -31,3 +31,9 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
+
+# 給 Sphinx 引擎的進階設定
+sphinx:
+  config:
+    html_static_path: ["_static"]    # 告訴系統靜態檔案放在這個資料夾
+    html_css_files: ["custom.css"]   # 告訴系統要載入這個 CSS 檔案

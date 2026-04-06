@@ -1,0 +1,9 @@
+/* 將主要文章容器的最大寬度限制解除，並設定為視窗寬度的 95% */
+.bd-article-container {
+    max-width: 95% !important; 
+}
+
+/* 確保內容區塊也能夠自由伸展 */
+.bd-main .bd-content {
+    max-width: 100% !important;
+}
