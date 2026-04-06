@@ -10,7 +10,10 @@ chapters:
     - file: lecture/01_Relativity/relativity.ipynb
     - file: lecture/02_Particle_Properties_of_Waves/particle_properties_of_waves.ipynb
       title: Modern Physics - Particle Properties of Waves
+    - file: lecture/03_Wave_Properties_of_Particles/wave_properties_of_particles.ipynb
+      title: Modern Physics - Wave Properties of Particles
 - file: homework/homework.md
   sections:
     - file: homework/hw1/hw1.ipynb
     - file: homework/hw2/hw2.ipynb
+    - file: homework/hw3/hw3.ipynb
