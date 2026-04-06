@@ -1,0 +1,890 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>近代物理學 - 粒子的波特性 (Modern Physics - Wave Properties of Particles) &#8212; Modern Physics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lecture/03_Wave_Properties_of_Particles/wave_properties_of_particles';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Modern Physics - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Modern Physics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    近代物理 (Modern Physics) 課程筆記
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lecture.html">lecture.md</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00_Introduction/introduction.html">Modern Physics - Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_Relativity/relativity.html">Modern Physics - Relativity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_Particle_Properties_of_Waves/particle_properties_of_waves.html">Modern Physics - Particle Properties of Waves</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../homework/homework.html">homework hardword</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../homework/hw1/hw1.html">Modern Physics Hw 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../homework/hw2/hw2.html">Modern Physics Hw 2</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flecture/03_Wave_Properties_of_Particles/wave_properties_of_particles.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/lecture/03_Wave_Properties_of_Particles/wave_properties_of_particles.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>近代物理學 - 粒子的波特性 (Modern Physics - Wave Properties of Particles)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#de-broglie-wave">3.1 德布羅依波 (De Broglie Wave)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">光子與粒子的動量</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">例題：巨觀與微觀的物質波</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a"><strong>例題 3.1(a) 巨觀物體：高爾夫球</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b"><strong>例題 3.1(b) 微觀粒子：電子</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#c"><strong>例題 3.1(c) 質子的相對論性能量與動量</strong></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-wave">什麼波？機率波 (Probability Wave)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#describing-a-wave">3.2 描述波 (Describing a Wave)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-velocity">德布羅依相速度 (Phase Velocity)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-and-group-velocities">3.3 相速度與群速度 (Phase and Group Velocities)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#beat">節拍 (Beat) 與波群速度推導</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#v-g-v">證明：物質波的群速度等於粒子真實速度 (<span class="math notranslate nohighlight">\(v_g = v\)</span>)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#particle-in-a-box">3.5 箱子中的粒子 (Particle in a Box)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uncertainty-principle">3.6 測不準原理 (Uncertainty Principle)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">數學推導：傅立葉轉換與高斯波包</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wave-packet-spreading">波包擴散 (Wave Packet Spreading) 與色散關係</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applying-the-uncertainty-principle">3.7 測不準原理應用 (Applying the Uncertainty Principle)</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="modern-physics-wave-properties-of-particles">
+<h1>近代物理學 - 粒子的波特性 (Modern Physics - Wave Properties of Particles)<a class="headerlink" href="#modern-physics-wave-properties-of-particles" title="Link to this heading">#</a></h1>
+<p><strong>日期:</strong> 2026.03.24</p>
+<section id="de-broglie-wave">
+<h2>3.1 德布羅依波 (De Broglie Wave)<a class="headerlink" href="#de-broglie-wave" title="Link to this heading">#</a></h2>
+<p>1924年，德布羅依 (Louis de Broglie) 提出了一個大膽的假說：既然光（電磁波）具有粒子性（光子），那麼所有具備質量的物質（如電子、原子等）也應該具有波動性。這稱為<strong>物質波 (Matter wave)</strong>，是波粒二象性的完美對稱。</p>
+<p>物體的波長 <span class="math notranslate nohighlight">\(\lambda\)</span> 與其動量 <span class="math notranslate nohighlight">\(p\)</span> 之間的關係由以下公式給出：</p>
+<div class="math notranslate nohighlight">
+\[\lambda \overset{\text{def}}{=} \frac{h}{p}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\lambda\)</span> : 德布羅依波長 (de Broglie wavelength) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(h\)</span> : 普朗克常數 (Planck’s constant) <span class="math notranslate nohighlight">\(h \approx 6.626 \times 10^{-34} \text{ J}\cdot\text{s} \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p\)</span> : 物體動量 (Momentum) <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+</ul>
+<section id="id1">
+<h3>光子與粒子的動量<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p><strong>1. 光子 (Photon)</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/01_Relativity/relativity.html#energy-and-momentum">物體的能量與動量關係式</a> <span class="math notranslate nohighlight">\(E^2 = (m_0 c^2)^2 + (pc)^2 \quad (1.8)\)</span></p></li>
+<li><p>光子沒有靜止質量 (<span class="math notranslate nohighlight">\(m_0 = 0\)</span>)</p></li>
+<li><p>若光子的頻率為 <span class="math notranslate nohighlight">\(\nu\)</span>，根據<a class="reference external" href="https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/02_Particle_Properties_of_Waves/particle_properties_of_waves.html#einsteins-photon-hypothesis">愛因斯坦的光量子假說</a>，其能量為 <span class="math notranslate nohighlight">\(E = h\nu\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c=\nu \lambda\)</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+E^2 &amp;\overset{\text{(1.8)}}{=}&amp; (pc)^2 + (m_0 c^2)^2 \\
+E^2&amp;=&amp; (pc)^2 \\
+(h\nu)^2 &amp;=&amp; (pc)^2 \\
+h\nu &amp;=&amp; pc\\
+h\frac{c}{\lambda} &amp;=&amp; pc\\
+\end{gather*}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\Rightarrow p = \frac{E}{c} = \frac{h\nu}{c} = \frac{h}{\lambda} \tag{3.1}\]</div>
+<p>這與德布羅依公式 <span class="math notranslate nohighlight">\(\lambda = \frac{h}{p}\)</span> 完全吻合。</p>
+<p><strong>2. 粒子 (Particle)</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/01_Relativity/relativity.html#energy-and-momentum">物體的能量與動量關係式</a> <span class="math notranslate nohighlight">\(E^2 = (m_0 c^2)^2 + (pc)^2 \quad (1.8)\)</span></p></li>
+<li><p>有靜止質量 <span class="math notranslate nohighlight">\(m_0\)</span> 的粒子</p></li>
+<li><p>運動速度為 <span class="math notranslate nohighlight">\(v\)</span>，若 <span class="math notranslate nohighlight">\(v\)</span> 接近光速 <span class="math notranslate nohighlight">\(c\)</span> 則需考慮<a class="reference external" href="https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/01_Relativity/relativity.html#relativistic-momentum">相對論效應</a> <span class="math notranslate nohighlight">\(p = \gamma m_0 v\)</span></p></li>
+<li><p><a class="reference external" href="https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/01_Relativity/relativity.html#mass-and-energy">物體總能量 (Total Energy)</a>：<span class="math notranslate nohighlight">\(E = \gamma m_0 c^2 \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(1\text{eV} = 1.6\times 10^{-19} \text{J}\)</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+E^2 &amp;\overset{\text{(1.8)}}{=}&amp; (pc)^2 + (m_0 c^2)^2 \\
+E^2 - (m_0 c^2)^2 &amp;=&amp; (pc)^2 \\
+\frac{1}{c}\sqrt{E^2 - (m_0 c^2)^2} &amp;=&amp; p \\
+\frac{1}{c}\sqrt{(KE+E_0)^2 - (m_0 c^2)^2} &amp;=&amp; p \\
+\frac{1}{c}\sqrt{{KE}^2+2KE \cdot E_0} &amp;=&amp; p \\
+\end{gather*}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\Rightarrow p =\sqrt{\gamma^2 -1} m_0 c  =  \frac{\sqrt{E^2 - (m_0 c^2)^2}}{c} = \frac{\sqrt{{KE}^2+2KE \cdot E_0}}{c} = \gamma m_0 v = \frac{h}{\lambda} \tag{3.2}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\gamma\)</span> : 勞侖茲因子 (Lorentz factor)</p></li>
+<li><p><span class="math notranslate nohighlight">\(v\)</span> : 物體速度 (Velocity)，<span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m_0\)</span> : 物體靜止質量 (Rest mass)，<span class="math notranslate nohighlight">\([\text{kg}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c\)</span> : 真空中光速 (Speed of light)，<span class="math notranslate nohighlight">\(c \approx 3 \times 10^8 \text{ m}\cdot\text{s}^{-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(E_0\)</span> : 靜止能量 (Rest Energy) <span class="math notranslate nohighlight">\(E_0 = m_0 c^2\)</span>  <span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(KE\)</span> : 動能 (Kinetic Energy)， <span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="id2">
+<h3>例題：巨觀與微觀的物質波<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<section id="a">
+<h4><strong>例題 3.1(a) 巨觀物體：高爾夫球</strong><a class="headerlink" href="#a" title="Link to this heading">#</a></h4>
+<p><strong>題目：</strong> 求出質量 <span class="math notranslate nohighlight">\(46 \text{ g}\)</span> 且速度為 <span class="math notranslate nohighlight">\(30 \text{ m/s}\)</span> 的高爾夫球的德布羅依波長</p>
+<ul class="simple">
+<li><p>高爾夫球速度遠小於光速 <span class="math notranslate nohighlight">\(\gamma \approx 1\)</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\lambda &amp;\overset{\text{(3.2)}}{=}&amp;  \frac{h}{\gamma m_0 v} \\
+&amp;=&amp; \frac{6.626 \times 10^{-34} \text{ J}\cdot\text{s}}{1\times 0.046 \text{ kg} \times 30 \text{ m/s}} \\
+&amp;=&amp; 4.8 \times 10^{-34} \text{ m}
+\end{gather*}\end{split}\]</div>
+<p><strong>物理解釋：</strong> <span class="math notranslate nohighlight">\(10^{-34} \text{ m}\)</span> 是一個小到無法想像的尺度（質子直徑約為 <span class="math notranslate nohighlight">\(10^{-15} \text{ m}\)</span>）。因為波長遠小於任何可測量或發生繞射的狹縫尺寸，故我們無法觀察到高爾夫球的波動行為。日常生活中感受不到物質波</p>
+<blockquote>
+<div><p><strong>思想實驗探討：</strong> 若把高爾夫球切成一半 (<span class="math notranslate nohighlight">\(23 \text{ g}\)</span>)，以同速度丟出，波長會變為 <span class="math notranslate nohighlight">\(9.6 \times 10^{-34} \text{ m}\)</span>。若切的足夠小是不是就可以觀察到物質波了?</p>
+</div></blockquote>
+</section>
+<section id="b">
+<h4><strong>例題 3.1(b) 微觀粒子：電子</strong><a class="headerlink" href="#b" title="Link to this heading">#</a></h4>
+<p><strong>題目：</strong> 計算以速度 <span class="math notranslate nohighlight">\(10^7 \text{ m/s}\)</span> 運動之電子的德布羅依波長，電子靜止質量 <span class="math notranslate nohighlight">\(m_e = 9.11 \times 10^{-31} \text{ kg}\)</span></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(v = 10^7 \text{ m/s}\approx 0.033c\)</span> 所以 <span class="math notranslate nohighlight">\(\gamma \approx 1\)</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\lambda &amp;\overset{\text{(3.2)}}{=}&amp; \frac{h}{\gamma m_0 v} \\
+&amp;=&amp; \frac{6.626 \times 10^{-34} \text{ J}\cdot\text{s}}{1\times 9.11 \times 10^{-31} \text{ kg} \times 10^7 \text{ m/s}} \\
+&amp;=&amp; 7.3 \times 10^{-11} \text{ m}
+\end{gather*}\end{split}\]</div>
+<p><strong>物理解釋：</strong> <span class="math notranslate nohighlight">\(7.3 \times 10^{-11} \text{ m}\)</span> 大約是 <span class="math notranslate nohighlight">\(0.073 \text{ nm}\)</span>，相當於氫原子的波耳半徑約為 <span class="math notranslate nohighlight">\(0.053 \text{ nm}\)</span>。當電子的波長與原子尺寸相當甚至更大時，電子的波動特性就會與原子結構產生強烈的交互作用（例如干涉、繞射），這就是為什麼古典物理無法解釋原子內部運作，必須引入量子力學。</p>
+</section>
+<section id="c">
+<h4><strong>例題 3.1(c) 質子的相對論性能量與動量</strong><a class="headerlink" href="#c" title="Link to this heading">#</a></h4>
+<p><strong>題目：</strong> 德布羅依波長為 <span class="math notranslate nohighlight">\(1 \text{ fm}\)</span> (<span class="math notranslate nohighlight">\(1 \times 10^{-15} \text{ m}\)</span>) 的質子，此波長大約為質子的直徑，請計算其動能，質子靜止質量 <span class="math notranslate nohighlight">\(E_0 = m_p c^2 \approx 938 \text{ MeV}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{\sqrt{{KE}^2+2KE \cdot E_0}}{c}  &amp;\overset{\text{(3.2)}}{=}&amp; \frac{h}{\lambda} \\
+{KE}^2+2KE \cdot E_0 &amp;=&amp; \left(\frac{hc}{\lambda}\right)^2 \\
+{KE}^2+2KE \cdot E_0 - \left(\frac{hc}{\lambda}\right)^2 &amp;=&amp; 0 \\
+KE  &amp;=&amp; \frac{-2E_0 \pm \sqrt{(2 E_0)^2+4\left(\frac{hc}{\lambda}\right)^2}}{2}\\
+KE  &amp;=&amp; -E_0 \pm \sqrt{(E_0)^2+\left(\frac{hc}{\lambda}\right)^2}\\
+KE  &amp;=&amp; -938 \text{ MeV} \pm \sqrt{(938 \text{ MeV})^2+\left(\frac{ 6.6 \times 10^{-34} \text{ J}\cdot\text{s} \cdot 3 \times 10^8 \text{ m}\cdot\text{ s}^{-1}}{10^{-15} \text{ m}}\right)^2}\\
+KE  &amp;=&amp; -938 \text{ MeV} \pm \sqrt{(938 \text{ MeV})^2+\left( 19.8 \times 10^{-11} \text{ J} \right)^2}\\
+KE  &amp;=&amp; -938 \text{ MeV} \pm \sqrt{(938 \text{ MeV})^2+\left( \frac{19.8 \times 10^{-11} \text{ J}}{1.6\times 10^{-19} \text{ J} \cdot \text{ eV}^{-1}} \right)^2}\\
+KE  &amp;=&amp; -938 \text{ MeV} \pm \sqrt{(938 \text{ MeV})^2+\left( 1240 \text{ MeV} \right)^2}\\
+KE  &amp;=&amp; -938 \text{ MeV} \pm \sqrt{ 2417444 }\text{ MeV}\\
+KE  &amp;=&amp; -938 \text{ MeV} \pm 1555 \text{ MeV} \\
+KE  &amp;\overset{KE&gt;0}{=}&amp; -938 \text{ MeV} + 1555 \text{ MeV} \\
+KE  &amp;=&amp; 617 \text{ MeV} \\
+\end{gather*}\end{split}\]</div>
+<p><strong>物理解釋：</strong> 當我們想要探測原子核內部的結構（尺度約 <span class="math notranslate nohighlight">\(1 \text{ fm}\)</span>）時，探測粒子（如質子或電子）的波長必須小於或等於這個尺度才能發生有效的交互作用 (interaction)。由計算可知，這需要高達數百 <span class="math notranslate nohighlight">\(\text{MeV}\)</span> 的動能，這也是為什麼研究核物理需要「高能粒子加速器」。</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="probability-wave">
+<h3>什麼波？機率波 (Probability Wave)<a class="headerlink" href="#probability-wave" title="Link to this heading">#</a></h3>
+<p>在古典物理中，波都有具體的物理量在震盪（水波是高度，聲波是壓力，光波是電磁場）。那物質波是什麼在震盪？
+物理學家 Max Born 提出了<strong>機率幅 (Probability Amplitude)</strong> 的解釋：</p>
+<ul class="simple">
+<li><p><strong>波函數 (Wave function) <span class="math notranslate nohighlight">\(\Psi(x,y,z,t)\)</span></strong>：代表物質波的振幅（本身為複數，無直接物理意義）。</p></li>
+<li><p><strong>機率密度 (Probability density) <span class="math notranslate nohighlight">\(|\Psi(x,y,z,t)|^2\)</span></strong>：代表在時間 <span class="math notranslate nohighlight">\(t\)</span>、空間座標 <span class="math notranslate nohighlight">\((x,y,z)\)</span> 處找到該粒子的<strong>機率</strong>。</p></li>
+</ul>
+<blockquote>
+<div><p>“Life can be understood backwards, but must be lived forwards.” —— 呼應了量子力學中，對於尚未測量的未來，粒子存在於各種狀態的機率疊加中；一旦測量（時間過去），波函數塌縮，結果才成為確定的事實。</p>
+</div></blockquote>
+</section>
+</section>
+<hr class="docutils" />
+<section id="describing-a-wave">
+<h2>3.2 描述波 (Describing a Wave)<a class="headerlink" href="#describing-a-wave" title="Link to this heading">#</a></h2>
+<p>一個向 <span class="math notranslate nohighlight">\(+x\)</span> 方向傳播的簡諧波一般表達式為：
+$<span class="math notranslate nohighlight">\(y(x,t) = A\cos\left[2\pi \nu \left(t - \frac{x}{v_p}\right)\right]\)</span>$
+為了數學上的簡潔，我們定義：</p>
+<ul class="simple">
+<li><p>角頻率 <span class="math notranslate nohighlight">\(\omega \overset{\text{def}}{=} 2\pi \nu\)</span></p></li>
+<li><p>波數 <span class="math notranslate nohighlight">\(k \overset{\text{def}}{=} \frac{2\pi}{\lambda} = \frac{\omega}{v_p}\)</span></p></li>
+</ul>
+<p>因此波函數可寫為：
+$<span class="math notranslate nohighlight">\(y(x,t) = A\cos(\omega t - kx)\)</span>$</p>
+<section id="phase-velocity">
+<h3>德布羅依相速度 (Phase Velocity)<a class="headerlink" href="#phase-velocity" title="Link to this heading">#</a></h3>
+<p>單一頻率波浪的「波峰」前進的速度稱為相速度 <span class="math notranslate nohighlight">\(v_p\)</span>。
+$<span class="math notranslate nohighlight">\(v_p = \nu \lambda = \left(\frac{E}{h}\right) \left(\frac{h}{p}\right) = \frac{E}{p} = \frac{\gamma m_0 c^2}{\gamma m_0 v} = \frac{c^2}{v}\)</span>$</p>
+<blockquote>
+<div><p><strong>老師的解說：相速度超越光速 (<span class="math notranslate nohighlight">\(v_p &gt; c\)</span>) 違反相對論嗎？</strong>
+你的筆記中問到了這個重點。相對論說「攜帶能量或資訊的物體速度不能超過 <span class="math notranslate nohighlight">\(c\)</span>」。
+<strong>相速度 <span class="math notranslate nohighlight">\(v_p\)</span> 只是數學上「純粹正弦波波峰」移動的速率。</strong> 一個從 <span class="math notranslate nohighlight">\(-\infty\)</span> 到 <span class="math notranslate nohighlight">\(+\infty\)</span> 完美重複的正弦波，是處處存在的，它沒有開頭也沒有結尾，因此<strong>無法用來傳遞任何資訊（像是摩斯密碼）</strong>。
+<strong>物理類比：</strong> 想像你拿著一支超強雷射筆，從地球掃過月球表面。你轉動手腕的速度很快，導致月球上的「雷射紅點」移動速度超越了光速。這違反相對論嗎？沒有，因為紅點只是光子打在月球上的幾何投影位置，你不能利用這個紅點從月球的A點傳送訊息到B點。相速度超越光速也是同樣的幾何假象。</p>
+</div></blockquote>
+</section>
+</section>
+<hr class="docutils" />
+<section id="phase-and-group-velocities">
+<h2>3.3 相速度與群速度 (Phase and Group Velocities)<a class="headerlink" href="#phase-and-group-velocities" title="Link to this heading">#</a></h2>
+<p>真正的粒子（如電子）存在於局部的空間中，而不是像純粹正弦波那樣延伸到無限遠。因此，粒子必須被描述為一個<strong>波包 (Wave packet) 或波群 (Wave group)</strong>，這是由許多不同頻率、不同波數的波疊加而成的。</p>
+<section id="beat">
+<h3>節拍 (Beat) 與波群速度推導<a class="headerlink" href="#beat" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p><strong>老師的解說：你提到「完全不知道這邊在說什麼，應由淺入深」。</strong>
+讓我一步步為你推導。群速度的本質，就是當兩個（或多個）頻率相近的波疊加時，它們產生的「干涉包絡線」的移動速度。</p>
+</div></blockquote>
+<p>假設有兩個振幅相同、但頻率和波數略有差異的波：
+$<span class="math notranslate nohighlight">\(y_1 = A\cos(\omega t - kx)\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(y_2 = A\cos[(\omega + \Delta \omega)t - (k + \Delta k)x]\)</span>$</p>
+<p>根據三角函數和差化積公式：<span class="math notranslate nohighlight">\(\cos \alpha + \cos \beta = 2 \cos \left(\frac{\alpha + \beta}{2}\right) \cos \left(\frac{\alpha - \beta}{2}\right)\)</span>。
+我們將 <span class="math notranslate nohighlight">\(y_1\)</span> 的括號內視為 <span class="math notranslate nohighlight">\(\beta\)</span>，<span class="math notranslate nohighlight">\(y_2\)</span> 的括號內視為 <span class="math notranslate nohighlight">\(\alpha\)</span>：
+$<span class="math notranslate nohighlight">\(\alpha + \beta = (2\omega + \Delta \omega)t - (2k + \Delta k)x\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(\alpha - \beta = \Delta \omega t - \Delta k x\)</span>$</p>
+<p>代入相加：
+$<span class="math notranslate nohighlight">\(y = y_1 + y_2 = 2A \cos \left[ \frac{(2\omega + \Delta \omega)t - (2k + \Delta k)x}{2} \right] \cos \left[ \frac{\Delta \omega t - \Delta k x}{2} \right]\)</span>$</p>
+<p>當 <span class="math notranslate nohighlight">\(\Delta \omega \ll \omega\)</span> 且 <span class="math notranslate nohighlight">\(\Delta k \ll k\)</span> 時，前面那一項的 <span class="math notranslate nohighlight">\(2\omega + \Delta \omega \approx 2\omega\)</span>。
+$<span class="math notranslate nohighlight">\(y \approx \underbrace{2A \cos \left( \frac{\Delta \omega}{2} t - \frac{\Delta k}{2} x \right)}_{\text{振幅調變（包絡線）}} \cdot \underbrace{\cos(\omega t - kx)}_{\text{載波（高頻震盪）}}\)</span>$</p>
+<p><strong>物理意義：</strong></p>
+<ol class="arabic simple">
+<li><p>後面的 <span class="math notranslate nohighlight">\(\cos(\omega t - kx)\)</span> 是原本的高頻波，它的移動速度是<strong>相速度</strong> <span class="math notranslate nohighlight">\(v_p = \frac{\omega}{k}\)</span>。</p></li>
+<li><p>前面的 <span class="math notranslate nohighlight">\(2A \cos(\dots)\)</span> 形成了一個巨大的「封包」（包絡線），這個封包就是粒子的實體。這個封包移動的速度，就是<strong>群速度</strong>。從括號內的相位可知，群速度為：
+$<span class="math notranslate nohighlight">\(v_g = \frac{\Delta \omega / 2}{\Delta k / 2} = \frac{\Delta \omega}{\Delta k}\)</span>$</p></li>
+</ol>
+<p>當我們考慮連續的頻率分佈時，取極限就得到了群速度的嚴格定義：
+$<span class="math notranslate nohighlight">\(v_g \overset{\text{def}}{=} \frac{d\omega}{dk}\)</span>$</p>
+</section>
+<section id="v-g-v">
+<h3>證明：物質波的群速度等於粒子真實速度 (<span class="math notranslate nohighlight">\(v_g = v\)</span>)<a class="headerlink" href="#v-g-v" title="Link to this heading">#</a></h3>
+<p>根據相對論，粒子的能量與動量為：
+$<span class="math notranslate nohighlight">\(E = \gamma m_0 c^2 = \frac{m_0 c^2}{\sqrt{1 - \frac{v^2}{c^2}}} \implies \omega = \frac{E}{\hbar} = \frac{m_0 c^2}{\hbar\sqrt{1 - \frac{v^2}{c^2}}}\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(p = \gamma m_0 v = \frac{m_0 v}{\sqrt{1 - \frac{v^2}{c^2}}} \implies k = \frac{p}{\hbar} = \frac{m_0 v}{\hbar\sqrt{1 - \frac{v^2}{c^2}}}\)</span>$</p>
+<p>利用微積分連鎖律 <span class="math notranslate nohighlight">\(v_g = \frac{d\omega}{dk} = \frac{d\omega/dv}{dk/dv}\)</span>：
+$<span class="math notranslate nohighlight">\(\frac{d\omega}{dv} = \frac{m_0 c^2}{\hbar} \left(-\frac{1}{2}\right)\left(1-\frac{v^2}{c^2}\right)^{-3/2} \left(-\frac{2v}{c^2}\right) = \frac{m_0 v}{\hbar(1-v^2/c^2)^{3/2}}\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(\frac{dk}{dv} = \frac{m_0}{\hbar} \left[ \left(1-\frac{v^2}{c^2}\right)^{-1/2} + v\left(-\frac{1}{2}\right)\left(1-\frac{v^2}{c^2}\right)^{-3/2}\left(-\frac{2v}{c^2}\right) \right] = \frac{m_0}{\hbar(1-v^2/c^2)^{3/2}}\)</span><span class="math notranslate nohighlight">\(
+兩式相除：
+\)</span><span class="math notranslate nohighlight">\(v_g = \frac{d\omega / dv}{dk / dv} = v\)</span><span class="math notranslate nohighlight">\(
+**結論：波包整體的移動速度（群速度）完美對應了粒子在巨觀世界中被測量到的運動速度 \)</span>v<span class="math notranslate nohighlight">\(。**
+且由先前可知 \)</span>v_p = c^2/v<span class="math notranslate nohighlight">\(，故有優美的關係式：
+\)</span><span class="math notranslate nohighlight">\(v_p \cdot v_g = c^2\)</span>$</p>
+<hr class="docutils" />
+<p><strong>例題 3.3 電子的相速度與群速度</strong>
+<strong>題目：</strong> 一個電子的德布羅依波長為 <span class="math notranslate nohighlight">\(2 \text{ pm} = 2.00 \times 10^{-12} \text{ m}\)</span>，求出其動能和德布羅依波的相速度與群速度。</p>
+<blockquote>
+<div><p><strong>老師的解說：解答你對 <span class="math notranslate nohighlight">\((pc)^2\)</span> 的疑惑</strong>
+你問：一直把 <span class="math notranslate nohighlight">\((pc)^2\)</span> 和 <span class="math notranslate nohighlight">\(KE\)</span> 搞混。
+請記住核心公式：<strong><span class="math notranslate nohighlight">\(E^2 = E_0^2 + (pc)^2\)</span></strong>。這是一個直角三角形的畢氏定理關係！
+斜邊是總能量 <span class="math notranslate nohighlight">\(E\)</span>，一股是靜止能量 <span class="math notranslate nohighlight">\(E_0 = m_0 c^2\)</span>，另一股是「動量對應的能量」<span class="math notranslate nohighlight">\(pc\)</span>。
+而動能 <span class="math notranslate nohighlight">\(KE\)</span> 的定義是「總能扣掉靜止能」，也就是 <span class="math notranslate nohighlight">\(KE = E - E_0\)</span>（也就是斜邊減掉其中一股）。
+<span class="math notranslate nohighlight">\((pc)^2\)</span> 不是動能！在非相對論極限下，<span class="math notranslate nohighlight">\(KE \approx p^2 / 2m\)</span>，但在高能下這不成立。正確的流程永遠是：算出 <span class="math notranslate nohighlight">\(pc\)</span> <span class="math notranslate nohighlight">\(\rightarrow\)</span> 算出總能 <span class="math notranslate nohighlight">\(E\)</span> <span class="math notranslate nohighlight">\(\rightarrow\)</span> 算出動能 <span class="math notranslate nohighlight">\(KE = E - E_0\)</span>。</p>
+</div></blockquote>
+<p><strong>計算步驟：</strong>
+<strong>(a) 第一個步驟為計算電子的 <span class="math notranslate nohighlight">\(pc\)</span></strong>
+$<span class="math notranslate nohighlight">\(pc = \frac{hc}{\lambda} = \frac{1240 \text{ eV}\cdot\text{nm}}{0.002 \text{ nm}} = 6.20 \times 10^5 \text{ eV} = 620 \text{ keV}\)</span><span class="math notranslate nohighlight">\(
+電子的靜止能量為 \)</span>E_0 = m_e c^2 \approx 511 \text{ keV}<span class="math notranslate nohighlight">\(。
+利用能量三角形求總能量 \)</span>E<span class="math notranslate nohighlight">\(：
+\)</span><span class="math notranslate nohighlight">\(E = \sqrt{E_0^2 + (pc)^2} = \sqrt{(511 \text{ keV})^2 + (620 \text{ keV})^2} = 803 \text{ keV}\)</span><span class="math notranslate nohighlight">\(
+動能 \)</span>KE<span class="math notranslate nohighlight">\( 為總能量減去靜止能量：
+\)</span><span class="math notranslate nohighlight">\(KE = E - E_0 = 803 \text{ keV} - 511 \text{ keV} = 292 \text{ keV}\)</span>$</p>
+<p><strong>(b) 計算速度</strong>
+由 <span class="math notranslate nohighlight">\(E = \gamma E_0 = \frac{E_0}{\sqrt{1 - v^2/c^2}}\)</span> 移項可得：
+$<span class="math notranslate nohighlight">\(v = c\sqrt{1 - \left(\frac{E_0}{E}\right)^2} = c\sqrt{1 - \left(\frac{511}{803}\right)^2} \approx 0.771c\)</span>$</p>
+<ul class="simple">
+<li><p><strong>群速度 (粒子實際速度)：</strong> <span class="math notranslate nohighlight">\(v_g = v = 0.771c\)</span></p></li>
+<li><p><strong>相速度 (波峰虛擬速度)：</strong> <span class="math notranslate nohighlight">\(v_p = \frac{c^2}{v} = \frac{c^2}{0.771c} \approx 1.30c\)</span></p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="particle-in-a-box">
+<h2>3.5 箱子中的粒子 (Particle in a Box)<a class="headerlink" href="#particle-in-a-box" title="Link to this heading">#</a></h2>
+<p>當粒子被限制在特定空間中，其波動性會導致「能量量子化」(Energy Quantization)。</p>
+<p><strong>邊界條件的物理意義：</strong>
+如果一個粒子被困在一個寬度為 <span class="math notranslate nohighlight">\(L\)</span> 的堅硬箱子裡，由於粒子無法穿透箱壁，因此在牆壁上以及箱子外找到粒子的機率必須為零。這意味著波函數在牆壁處必須為零（即 <span class="math notranslate nohighlight">\(\Psi(0) = \Psi(L) = 0\)</span>）。
+這就像是在兩端固定的吉他弦上產生<strong>駐波 (Standing wave)</strong>，能穩定存在的波，其半波長的整數倍必須剛好等於箱子寬度：
+$<span class="math notranslate nohighlight">\(L = n \frac{\lambda}{2} \implies \lambda_n = \frac{2L}{n} \quad (n = 1, 2, 3, \dots)\)</span><span class="math notranslate nohighlight">\(
+將德布羅依關係式 \)</span>\lambda = h/p<span class="math notranslate nohighlight">\( 轉換為動量 \)</span>p = h/\lambda = \frac{nh}{2L}<span class="math notranslate nohighlight">\(。
+因為箱內沒有位能，粒子的總能即為動能（非相對論情況 \)</span>E = p^2/2m<span class="math notranslate nohighlight">\(）：
+\)</span><span class="math notranslate nohighlight">\(E_n = \frac{p^2}{2m} = \frac{(nh/2L)^2}{2m} = \frac{n^2 h^2}{8mL^2} \quad (n = 1, 2, 3, \dots)\)</span>$</p>
+<p><strong>公式變數解釋：</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(E_n\)</span>：第 <span class="math notranslate nohighlight">\(n\)</span> 個能階的能量 <span class="math notranslate nohighlight">\([\text{J}]\)</span> 或 <span class="math notranslate nohighlight">\([\text{eV}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span>：主量子數 <span class="math notranslate nohighlight">\([\text{dimensionless}]\)</span>，必須為正整數。</p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span>：粒子質量 <span class="math notranslate nohighlight">\([\text{kg}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(L\)</span>：箱子寬度（一維位能井長度） <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+</ul>
+<p><strong>例題 3.5 宏觀與微觀的量子效應差異</strong>
+<em>(結合你筆記中的兩個例子)</em></p>
+<ul class="simple">
+<li><p><strong>微觀：<span class="math notranslate nohighlight">\(0.1 \text{ nm}\)</span> 箱中的電子</strong> (原子尺度)
+代入質量 <span class="math notranslate nohighlight">\(m_e = 9.1 \times 10^{-31} \text{ kg}\)</span>，寬度 <span class="math notranslate nohighlight">\(L = 1.0 \times 10^{-10} \text{ m}\)</span>，計算得基態 (<span class="math notranslate nohighlight">\(n=1\)</span>) 能量約為 <span class="math notranslate nohighlight">\(38 \text{ eV}\)</span>。能階間距很大 (<span class="math notranslate nohighlight">\(152 \text{ eV}, 342 \text{ eV}\dots\)</span>)，能量呈明顯不連續階梯狀。</p></li>
+<li><p><strong>巨觀：<span class="math notranslate nohighlight">\(10 \text{ cm}\)</span> 箱中的 <span class="math notranslate nohighlight">\(10 \text{ g}\)</span> 彈珠</strong> (日常尺度)
+代入質量 <span class="math notranslate nohighlight">\(10^{-2} \text{ kg}\)</span>，寬度 <span class="math notranslate nohighlight">\(0.1 \text{ m}\)</span>，計算得基態能量約為 <span class="math notranslate nohighlight">\(5.5 \times 10^{-64} \text{ J}\)</span>。如果彈珠以極慢的 <span class="math notranslate nohighlight">\(1/3 \text{ m/s}\)</span> 滾動，對應的量子數 <span class="math notranslate nohighlight">\(n \sim 10^{30}\)</span>！相鄰能階的能量差小到任何儀器都測不出來，看起來就像是連續的。
+<strong>物理知識點回顧：</strong> 這完美展現了玻耳的<strong>對應原理 (Correspondence Principle)</strong>：在巨觀極限下（量子數 <span class="math notranslate nohighlight">\(n\)</span> 極大，或尺寸 <span class="math notranslate nohighlight">\(L\)</span> 極大，或質量 <span class="math notranslate nohighlight">\(m\)</span> 極大），量子力學的預測會平滑地過渡到古典牛頓力學的結果。</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="uncertainty-principle">
+<h2>3.6 測不準原理 (Uncertainty Principle)<a class="headerlink" href="#uncertainty-principle" title="Link to this heading">#</a></h2>
+<p>1927年，海森堡提出測不準原理：<strong>不可能同時絕對精準地知道一個粒子的位置與動量。</strong> 這不是測量儀器不夠好的問題，而是物質波本質上的數學限制。</p>
+<section id="id3">
+<h3>數學推導：傅立葉轉換與高斯波包<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>一個局部的波包 <span class="math notranslate nohighlight">\(\Psi(x)\)</span> 可以看作是無限多個不同波數 <span class="math notranslate nohighlight">\(k\)</span> 的完美正弦波的疊加，這正是傅立葉轉換：
+$<span class="math notranslate nohighlight">\(\Psi(x) = \int_{-\infty}^{\infty} g(k) e^{ikx} \, dk\)</span>$</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(g(k)\)</span> 代表在波數 <span class="math notranslate nohighlight">\(k\)</span> 上的權重分佈（頻譜）。</p></li>
+</ul>
+<blockquote>
+<div><p><strong>老師的解說：證明高斯函數的傅立葉轉換仍是高斯函數</strong>
+你在筆記中問到「須證明」。這是一個非常優美的數學性質。
+假設空間中的波包是一個標準差為 <span class="math notranslate nohighlight">\(\sigma_x\)</span> 的高斯函數：
+$<span class="math notranslate nohighlight">\(\Psi(x) = N \exp\left(-\frac{x^2}{2\sigma_x^2}\right)\)</span><span class="math notranslate nohighlight">\(
+其傅立葉轉換 \)</span>g(k)<span class="math notranslate nohighlight">\( 為：
+\)</span><span class="math notranslate nohighlight">\(g(k) \propto \int_{-\infty}^{\infty} \exp\left(-\frac{x^2}{2\sigma_x^2}\right) e^{-ikx} \, dx = \int_{-\infty}^{\infty} \exp\left(-\frac{x^2}{2\sigma_x^2} - ikx\right) \, dx\)</span><span class="math notranslate nohighlight">\(
+我們在指數部位「配方 (Completing the square)」：
+\)</span><span class="math notranslate nohighlight">\(-\frac{1}{2\sigma_x^2} \left( x^2 + 2i\sigma_x^2 kx \right) = -\frac{1}{2\sigma_x^2} \left[ (x + i\sigma_x^2 k)^2 - (i\sigma_x^2 k)^2 \right] = -\frac{(x + i\sigma_x^2 k)^2}{2\sigma_x^2} - \frac{\sigma_x^2 k^2}{2}\)</span><span class="math notranslate nohighlight">\(
+積分中只與 \)</span>x<span class="math notranslate nohighlight">\( 有關的部分會積出一個常數，剩下與 \)</span>k<span class="math notranslate nohighlight">\( 有關的部分會被提出來：
+\)</span><span class="math notranslate nohighlight">\(g(k) \propto \exp\left(-\frac{\sigma_x^2 k^2}{2}\right)\)</span><span class="math notranslate nohighlight">\(
+這依然是一個高斯函數！若我們將其標準差定義為 \)</span>\sigma_k<span class="math notranslate nohighlight">\(，則 \)</span>\sigma_k^2 = \frac{1}{\sigma_x^2}<span class="math notranslate nohighlight">\(，也就是 \)</span>\sigma_x \sigma_k = 1<span class="math notranslate nohighlight">\(。
+結合動量 \)</span>p = \hbar k<span class="math notranslate nohighlight">\(，所以 \)</span>\Delta p = \hbar \Delta k<span class="math notranslate nohighlight">\(。因此：
+\)</span><span class="math notranslate nohighlight">\(\Delta x \Delta p = \hbar (\sigma_x \sigma_k) = \hbar\)</span><span class="math notranslate nohighlight">\(
+（註：嚴格定義下方差為 \)</span>\Delta x = \sigma_x / \sqrt{2}<span class="math notranslate nohighlight">\( 時，極限值即為 \)</span>\hbar / 2$）。</p>
+</div></blockquote>
+<p><strong>測不準關係式：</strong>
+$<span class="math notranslate nohighlight">\(\Delta x \Delta p \ge \frac{\hbar}{2}\)</span><span class="math notranslate nohighlight">\(
+其中 \)</span>\hbar = \frac{h}{2\pi} \approx 1.054 \times 10^{-34} \text{ J}\cdot\text{s}$，稱為約化普朗克常數。</p>
+</section>
+<section id="wave-packet-spreading">
+<h3>波包擴散 (Wave Packet Spreading) 與色散關係<a class="headerlink" href="#wave-packet-spreading" title="Link to this heading">#</a></h3>
+<p><strong>例題 3.6 質子位置的擴散</strong>
+<strong>題目：</strong> 若時間 <span class="math notranslate nohighlight">\(t=0\)</span> 時對質子位置測量準確度為 <span class="math notranslate nohighlight">\(\Delta x_0 = 1.00 \times 10^{-11} \text{ m}\)</span>，求一秒後位置的不確定度。（假設非相對論 <span class="math notranslate nohighlight">\(v \ll c\)</span>）。
+<strong>推導與計算：</strong>
+初始動量不確定度：
+$<span class="math notranslate nohighlight">\(\Delta p \ge \frac{\hbar}{2\Delta x_0}\)</span><span class="math notranslate nohighlight">\(
+因為 \)</span>\Delta p = m \Delta v<span class="math notranslate nohighlight">\(，速度不確定度為：
+\)</span><span class="math notranslate nohighlight">\(\Delta v = \frac{\Delta p}{m} \ge \frac{\hbar}{2m\Delta x_0}\)</span><span class="math notranslate nohighlight">\(
+經過時間 \)</span>t<span class="math notranslate nohighlight">\( 後，由於粒子實際速度不明確，位置的散佈範圍會增加：
+\)</span><span class="math notranslate nohighlight">\(\Delta x = t \Delta v \ge \frac{\hbar t}{2m\Delta x_0}\)</span><span class="math notranslate nohighlight">\(
+代入質子質量 \)</span>m \approx 1.67 \times 10^{-27} \text{ kg}<span class="math notranslate nohighlight">\(， \)</span>t=1 \text{ s}<span class="math notranslate nohighlight">\(：
+\)</span><span class="math notranslate nohighlight">\(\Delta x \ge \frac{(1.054 \times 10^{-34})(1)}{(2)(1.67 \times 10^{-27})(10^{-11})} \approx 3.15 \times 10^3 \text{ m} = 3.15 \text{ km}\)</span>$</p>
+<blockquote>
+<div><p><strong>老師的解說：連結色散關係 (Dispersion Relation)</strong>
+你問到了為什麼會這樣。因為物質波的角頻率 <span class="math notranslate nohighlight">\(\omega = \frac{\hbar k^2}{2m}\)</span>（由 <span class="math notranslate nohighlight">\(E = p^2/2m\)</span> 推得）。
+這代表相速度 <span class="math notranslate nohighlight">\(v_p = \omega / k = \frac{\hbar k}{2m}\)</span> 是<strong>波數 <span class="math notranslate nohighlight">\(k\)</span> 的函數</strong>。
+也就是說，組成波包的各種不同波長的分波，它們「跑的速度不一樣」！高頻波跑得快，低頻波跑得慢。隨著時間過去，原本疊加在一起的波包就會像一群速度不一的賽跑選手一樣，越拉越開。這就是所謂的「色散 (Dispersion)」，導致了巨觀時間後位置的極度不確定。</p>
+</div></blockquote>
+</section>
+</section>
+<hr class="docutils" />
+<section id="applying-the-uncertainty-principle">
+<h2>3.7 測不準原理應用 (Applying the Uncertainty Principle)<a class="headerlink" href="#applying-the-uncertainty-principle" title="Link to this heading">#</a></h2>
+<p>測不準原理不僅適用於位置與動量，也適用於能量與時間：
+$<span class="math notranslate nohighlight">\(\Delta E \Delta t \ge \frac{\hbar}{2}\)</span>$</p>
+<p><strong>例題 3.7(a) 原子核內沒有電子</strong>
+<strong>題目：</strong> 典型原子核半徑 <span class="math notranslate nohighlight">\(R \approx 5.0 \times 10^{-15} \text{ m}\)</span>。若電子被束縛在核內，求其所需動能下限。
+<strong>計算：</strong>
+將不確定度視為直徑 <span class="math notranslate nohighlight">\(\Delta x = 2R = 10 \times 10^{-15} \text{ m}\)</span>。（或直接取數量級 <span class="math notranslate nohighlight">\(5 \times 10^{-15}\)</span>）
+$<span class="math notranslate nohighlight">\(\Delta p \ge \frac{\hbar}{2\Delta x} \approx 1.1 \times 10^{-20} \text{ kg}\cdot\text{m/s}\)</span><span class="math notranslate nohighlight">\(
+因為這動量極大，必定為極端相對論情況，動能 \)</span>K \approx E \approx pc<span class="math notranslate nohighlight">\(：
+\)</span><span class="math notranslate nohighlight">\(K \approx pc = (1.1 \times 10^{-20} \text{ kg}\cdot\text{m/s})(3 \times 10^8 \text{ m/s}) = 3.3 \times 10^{-12} \text{ J} \approx 20 \text{ MeV}\)</span><span class="math notranslate nohighlight">\(
+**物理知識點回顧與解答：** 計算結果顯示，如果電子要穩定待在原子核內，它必須具備至少 \)</span>20 \text{ MeV}<span class="math notranslate nohighlight">\( 的動能。但實驗觀測到 \)</span>\beta<span class="math notranslate nohighlight">\( 衰變射出的電子能量只有幾 \)</span>\text{MeV}$，這反證了「電子平時並不存在於原子核內」。</p>
+<ul class="simple">
+<li><p><strong>你問：<span class="math notranslate nohighlight">\(\beta\)</span> 衰變具體是如何在沒有電子的原子核中「變」出電子來的？</strong>
+這涉及<strong>弱交互作用 (Weak Interaction)</strong>。在中子衰變成質子的瞬間，能量和電荷發生轉換：<span class="math notranslate nohighlight">\(n \rightarrow p^+ + e^- + \bar{\nu}_e\)</span>（反電子微中子）。
+<strong>物理類比：</strong> 就像你說話時發出的聲音。聲音並不是原本就「儲存」在你的肺部或喉嚨裡，而是氣流經過聲帶振動時，能量在瞬間「轉換」成了聲波。電子也是在核衰變的瞬間，由能量轉換而生成的。</p></li>
+</ul>
+<p><strong>例題 3.7(b) 原子輻射頻率的測不準度（譜線變寬）</strong>
+<strong>題目：</strong> 原子從激發態躍遷發光，平均壽命 <span class="math notranslate nohighlight">\(\Delta t \approx 1.0 \times 10^{-8} \text{ s}\)</span>。求光子頻率的測不準量。
+<strong>計算：</strong>
+$<span class="math notranslate nohighlight">\(\Delta E \ge \frac{\hbar}{2\Delta t} = \frac{1.054 \times 10^{-34}}{2 \times 10^{-8}} \approx 5.3 \times 10^{-27} \text{ J}\)</span><span class="math notranslate nohighlight">\(
+由 \)</span>E = h\nu<span class="math notranslate nohighlight">\(，得 \)</span>\Delta E = h \Delta \nu<span class="math notranslate nohighlight">\(：
+\)</span><span class="math notranslate nohighlight">\(\Delta \nu \ge \frac{\Delta E}{h} \approx 8 \times 10^6 \text{ Hz}\)</span>$
+<strong>物理知識點回顧：</strong> 即使是同種原子的同一個躍遷，發出的光也不會是絕對單一的頻率（完美的雷射是不存在的）。這被稱為<strong>自然譜線變寬 (Natural line broadening)</strong>，這是大自然給定的物理極限。</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lecture\03_Wave_Properties_of_Particles"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#de-broglie-wave">3.1 德布羅依波 (De Broglie Wave)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">光子與粒子的動量</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">例題：巨觀與微觀的物質波</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a"><strong>例題 3.1(a) 巨觀物體：高爾夫球</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b"><strong>例題 3.1(b) 微觀粒子：電子</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#c"><strong>例題 3.1(c) 質子的相對論性能量與動量</strong></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-wave">什麼波？機率波 (Probability Wave)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#describing-a-wave">3.2 描述波 (Describing a Wave)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-velocity">德布羅依相速度 (Phase Velocity)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-and-group-velocities">3.3 相速度與群速度 (Phase and Group Velocities)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#beat">節拍 (Beat) 與波群速度推導</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#v-g-v">證明：物質波的群速度等於粒子真實速度 (<span class="math notranslate nohighlight">\(v_g = v\)</span>)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#particle-in-a-box">3.5 箱子中的粒子 (Particle in a Box)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uncertainty-principle">3.6 測不準原理 (Uncertainty Principle)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">數學推導：傅立葉轉換與高斯波包</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wave-packet-spreading">波包擴散 (Wave Packet Spreading) 與色散關係</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applying-the-uncertainty-principle">3.7 測不準原理應用 (Applying the Uncertainty Principle)</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC YE
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

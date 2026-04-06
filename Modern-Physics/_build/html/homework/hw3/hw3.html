@@ -1,0 +1,1051 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Modern Physics Hw 3 &#8212; Modern Physics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'homework/hw3/hw3';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Modern Physics - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Modern Physics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    近代物理 (Modern Physics) 課程筆記
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lecture/lecture.html">lecture.md</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Introduction/introduction.html">Modern Physics - Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Relativity/relativity.html">Modern Physics - Relativity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/02_Particle_Properties_of_Waves/particle_properties_of_waves.html">Modern Physics - Particle Properties of Waves</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../homework.html">homework hardword</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../hw1/hw1.html">Modern Physics Hw 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hw2/hw2.html">Modern Physics Hw 2</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fhomework/hw3/hw3.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/homework/hw3/hw3.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Modern Physics Hw 3</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Modern Physics Hw 3</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-density-of-standing-waves-in-cavity">Question 1 : Density of standing waves in cavity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-answer">Question 1 - Answer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proof">proof:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-answer">Question 2 - Answer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">已知與假設</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">proof</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#english-version">English Version</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-answer">Question 3 - Answer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">已知與假設</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda">1. 德布羅依波長 (<span class="math notranslate nohighlight">\(\lambda\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#v-text-g">2. 群速度 (<span class="math notranslate nohighlight">\(v_{\text{g}}\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#v-text-p">3. 相速度 (<span class="math notranslate nohighlight">\(v_{\text{p}}\)</span>)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question 4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4-answer">Question 4 - Answer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-a">proof (a)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compare-b">compare (b)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question 5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5-answer">Question 5 - Answer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">已知與假設</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">proof:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">程式</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q4-b">Q4-b</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="modern-physics-hw-3">
+<h1>Modern Physics Hw 3<a class="headerlink" href="#modern-physics-hw-3" title="Link to this heading">#</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="p">:</span><span class="n">葉品辰</span>
+<span class="n">ID</span><span class="p">:</span><span class="n">r14229017</span>
+<span class="n">date</span><span class="p">:</span> <span class="mf">2026.04.06</span>
+</pre></div>
+</div>
+<section id="question-1-density-of-standing-waves-in-cavity">
+<h2>Question 1 : Density of standing waves in cavity<a class="headerlink" href="#question-1-density-of-standing-waves-in-cavity" title="Link to this heading">#</a></h2>
+<p>Show that the de Broglie wavelength of a particle of mass <span class="math notranslate nohighlight">\(m\)</span> and kinetic energy <span class="math notranslate nohighlight">\(KE\)</span> is given by</p>
+<div class="math notranslate nohighlight">
+\[\lambda = \frac{hc}{\sqrt{KE(KE + 2mc^2)}}\]</div>
+</section>
+<section id="question-1-answer">
+<h2>Question 1 - Answer<a class="headerlink" href="#question-1-answer" title="Link to this heading">#</a></h2>
+<section id="assumptions-preliminaries">
+<h3>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/01_Relativity/relativity.html#energy-and-momentum">物體的能量與動量關係式</a>：</strong></p>
+<div class="math notranslate nohighlight">
+\[E^2 = (m_0 c^2)^2 + (pc)^2 \]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(E\)</span> : 總能量 (Total Energy) <span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m_0\)</span> : 物體靜止質量 (Rest mass)，<span class="math notranslate nohighlight">\([\text{kg}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c\)</span> : 真空中光速 (Speed of light)，<span class="math notranslate nohighlight">\(c \approx 3 \times 10^8 \text{ m}\cdot\text{s}^{-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p\)</span> : 物體動量 ，<span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 1】 德布羅依波 (De Broglie Wave)  ：</strong></p>
+<div class="math notranslate nohighlight">
+\[\lambda \overset{\text{def}}{=} \frac{h}{p}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\lambda\)</span> : 德布羅依波長 (de Broglie wavelength) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(h\)</span> : 普朗克常數 (Planck’s constant) <span class="math notranslate nohighlight">\(h \approx 6.626 \times 10^{-34} \text{ J}\cdot\text{s} \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p\)</span> : 物體動量 (Momentum) <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="proof">
+<h3>proof:<a class="headerlink" href="#proof" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+E^2 &amp;\overset{\text{已知 1}}{=}&amp; (pc)^2 + (m_0 c^2)^2 \\
+E^2 - (m_0 c^2)^2 &amp;=&amp; (pc)^2 \\
+\frac{1}{c}\sqrt{E^2 - (m_0 c^2)^2} &amp;=&amp; p \\
+\frac{1}{c}\sqrt{(KE+E_0)^2 - (m_0 c^2)^2} &amp;=&amp; p \\
+\frac{1}{c}\sqrt{{KE}^2+2KE \cdot E_0} &amp;=&amp; p \\
+\frac{1}{c}\sqrt{KE(KE + 2m_0c^2)} &amp;=&amp; p \\
+\frac{1}{c}\sqrt{KE(KE + 2m_0c^2)} &amp;\overset{\text{定義 1}}{=}&amp; \frac{h}{\lambda} \\
+\lambda &amp;=&amp;\frac{hc}{\sqrt{KE(KE + 2m_0c^2)}}  \\
+\end{gather*}\end{split}\]</div>
+</section>
+</section>
+<section id="question-2">
+<h2>Question 2<a class="headerlink" href="#question-2" title="Link to this heading">#</a></h2>
+<p>Show that if the total energy <span class="math notranslate nohighlight">\(E\)</span> of a moving particle greatly exceeds its rest energy <span class="math notranslate nohighlight">\(E_0\)</span> (<span class="math notranslate nohighlight">\(E \gg E_0\)</span>), its de Broglie wavelength <span class="math notranslate nohighlight">\(\lambda\)</span> is nearly the same as the wavelength of a photon with the same total energy.</p>
+</section>
+<section id="question-2-answer">
+<h2>Question 2 - Answer<a class="headerlink" href="#question-2-answer" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h3>已知與假設<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><strong>【假設 1】總能量 <span class="math notranslate nohighlight">\(E\)</span> 遠大於其靜止能量 <span class="math notranslate nohighlight">\(E_0\)</span>:</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+   &amp;E &amp;\gg&amp; E_0 \\
+   &amp;E_0+KE &amp;\gg&amp; E_0\\
+   &amp;KE &amp;\gg&amp; E_0\\
+   \Rightarrow E= &amp; KE+E_0 &amp;\sim&amp; KE
+   \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(1+10^{5} \gg 1 \Rightarrow 10^{5} \gg 1\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/01_Relativity/relativity.html#energy-and-momentum">物體的能量與動量關係式</a>：</strong></p>
+<div class="math notranslate nohighlight">
+\[E^2 = (m_0 c^2)^2 + (pc)^2 \]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(E\)</span> : 總能量 (Total Energy) <span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m_0\)</span> : 物體靜止質量 (Rest mass)，<span class="math notranslate nohighlight">\([\text{kg}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c\)</span> : 真空中光速 (Speed of light)，<span class="math notranslate nohighlight">\(c \approx 3 \times 10^8 \text{ m}\cdot\text{s}^{-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p\)</span> : 物體動量 ，<span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 2】 光子沒有靜止質量：</strong></p>
+<div class="math notranslate nohighlight">
+\[m_0 = 0\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(m_0\)</span> : 光子靜止質量 (Rest mass)，<span class="math notranslate nohighlight">\([\text{kg}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 1】 德布羅依波 (De Broglie Wave)  ：</strong></p>
+<div class="math notranslate nohighlight">
+\[\lambda \overset{\text{def}}{=} \frac{h}{p}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\lambda\)</span> : 德布羅依波長 (de Broglie wavelength) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(h\)</span> : 普朗克常數 (Planck’s constant) <span class="math notranslate nohighlight">\(h \approx 6.626 \times 10^{-34} \text{ J}\cdot\text{s} \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p\)</span> : 物體動量 (Momentum) <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 3】 特定能量 <span class="math notranslate nohighlight">\(E\)</span> 的光子波長 <span class="math notranslate nohighlight">\(\lambda_{\text{photon}}\)</span>：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+   E^2 &amp;\overset{\text{已知 1}}{=}&amp; (pc)^2 + (m_0 c^2)^2 \\
+   E^2 &amp;\overset{\text{已知 2}}{=}&amp; (pc)^2 \\
+   \frac{E}{c} &amp;=&amp; p \\
+   \frac{E}{c} &amp;\overset{\text{定義 1}}{=}&amp; \frac{h}{\lambda_{\text{photon}}} \\
+   \lambda_{\text{photon}} &amp;=&amp; \frac{hc}{E}
+   \end{gather*}\end{split}\]</div>
+</li>
+</ul>
+</section>
+<section id="id2">
+<h3>proof<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\lambda_{\text{particle}} &amp;\overset{\text{Q1}}{=}&amp;\frac{hc}{\sqrt{KE(KE + 2mc^2)}} \\
+\lambda_{\text{particle}} &amp;=&amp;\frac{hc}{\sqrt{KE(KE + 2E_0)}} \\
+\lambda_{\text{particle}} &amp;\overset{\text{假設 1}}{=}&amp;\frac{hc}{\sqrt{KE(KE)}} \\
+\lambda_{\text{particle}} &amp;=&amp;\frac{hc}{KE} \\
+\lambda_{\text{particle}} &amp;\overset{\text{假設 1}}{=}&amp;\frac{hc}{E} &amp;\overset{\text{已知 3}}{=}&amp; \lambda_{\text{photon}}\\
+\end{gather*}\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(E \gg mc^2\)</span> 的情況下，<span class="math notranslate nohighlight">\(\lambda_{\text{particle}} \approx  \lambda_{\text{photon}}\)</span></p>
+</section>
+</section>
+<section id="question-3">
+<h2>Question 3<a class="headerlink" href="#question-3" title="Link to this heading">#</a></h2>
+</section>
+<section id="english-version">
+<h2>English Version<a class="headerlink" href="#english-version" title="Link to this heading">#</a></h2>
+<p>Problem:
+An electron and a proton have the same kinetic energy (<span class="math notranslate nohighlight">\(KE\)</span>). Compare the wavelengths (<span class="math notranslate nohighlight">\(\lambda\)</span>), phase velocities (<span class="math notranslate nohighlight">\(v_p\)</span>), and group velocities (<span class="math notranslate nohighlight">\(v_g\)</span>) of their de Broglie waves.</p>
+</section>
+<section id="question-3-answer">
+<h2>Question 3 - Answer<a class="headerlink" href="#question-3-answer" title="Link to this heading">#</a></h2>
+<section id="id3">
+<h3>已知與假設<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><strong>【假設 1】動能相同:</strong></p>
+<div class="math notranslate nohighlight">
+\[KE_{\text{electron}} = KE_{\text{proton}}\]</div>
+</li>
+<li><p><strong>【已知 1】古典動能:</strong></p>
+<div class="math notranslate nohighlight">
+\[KE = \frac{1}{2}mv^2\]</div>
+<ul class="simple">
+<li><p>在 <strong>不失一般性</strong> 的情況下，依題目我們可以直接考慮 <strong>古典動能</strong></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 1】 德布羅依波 (De Broglie Wave)  ：</strong></p>
+<div class="math notranslate nohighlight">
+\[\lambda \overset{\text{def}}{=} \frac{h}{p}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\lambda\)</span> : 德布羅依波長 (de Broglie wavelength) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(h\)</span> : 普朗克常數 (Planck’s constant) <span class="math notranslate nohighlight">\(h \approx 6.626 \times 10^{-34} \text{ J}\cdot\text{s} \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p\)</span> : 物體動量 (Momentum) <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 2】質子質量遠大於電子質量:</strong></p>
+<div class="math notranslate nohighlight">
+\[m_e \ll m_p\]</div>
+<ul class="simple">
+<li><p>電子質量 : <span class="math notranslate nohighlight">\(m_e \sim 9.11 \times 10^{-31} \text{kg}\)</span></p></li>
+<li><p>質子質量 : <span class="math notranslate nohighlight">\(m_p \sim 1.67 \times 10^{-27} \text{kg}\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 3】群速度是物體速度:</strong></p>
+<div class="math notranslate nohighlight">
+\[v_{\text{g}}=v\]</div>
+</li>
+<li><p><strong>【已知 4】群速度乘相速度是光速平方:</strong></p>
+<div class="math notranslate nohighlight">
+\[v_{\text{g}} v_{\text{p}}=c^2\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(v_{\text{g}}\)</span> 是群速度</p></li>
+<li><p><span class="math notranslate nohighlight">\(v_{\text{p}}\)</span> 是相速度</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="lambda">
+<h3>1. 德布羅依波長 (<span class="math notranslate nohighlight">\(\lambda\)</span>)<a class="headerlink" href="#lambda" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+KE_{\text{electron}} &amp;\overset{\text{假設 1}}{=}&amp; KE_{\text{proton}} \\
+m_{\text{electron}} KE_{\text{electron}} &amp;\overset{\text{已知 2}}{\ll}&amp; m_{\text{proton}}  KE_{\text{proton}} \\
+\sqrt{2m_{\text{electron}} KE_{\text{electron}}} &amp;\ll&amp; \sqrt{2m_{\text{proton}}  KE_{\text{proton}}} \\
+p_{\text{electron}}  &amp;\ll&amp; p_{\text{proton}} \\
+\frac{1}{p_{\text{electron}}} &amp;\gg&amp; \frac{1}{p_{\text{proton}}} \\
+\frac{h}{p_{\text{electron}}} &amp;\gg&amp; \frac{h}{p_{\text{proton}}} \\
+\lambda_{\text{electron}} &amp;\overset{\text{定義 1}}{\gg}&amp; \lambda_{\text{proton}} \\
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="v-text-g">
+<h3>2. 群速度 (<span class="math notranslate nohighlight">\(v_{\text{g}}\)</span>)<a class="headerlink" href="#v-text-g" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+KE_{\text{electron}} &amp;\overset{\text{假設 1}}{=}&amp; KE_{\text{proton}} \\
+\frac{1}{2}m_{\text{electron}}v_{\text{electron}}^2 &amp;=&amp; \frac{1}{2}m_{\text{proton}}v_{\text{proton}}^2 \\
+\frac{m_{\text{electron}}}{m_{\text{proton}}}v_{\text{electron}}^2 &amp;=&amp; v_{\text{proton}}^2 \\
+v_{\text{electron}} &amp;\overset{\text{已知 2}}{\gg}&amp; v_{\text{proton}}\\
+v_{\text{g,electron}} &amp;\overset{\text{已知 3}}{\gg}&amp; v_{\text{g,proton}}\\
+\end{gather*}\end{split}\]</div>
+<p><strong>電子的群速度</strong> 比 <strong>質子的群速度</strong> 較 <strong>快</strong></p>
+</section>
+<section id="v-text-p">
+<h3>3. 相速度 (<span class="math notranslate nohighlight">\(v_{\text{p}}\)</span>)<a class="headerlink" href="#v-text-p" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+v_{\text{g,electron}} v_{\text{p,electron}} &amp;\overset{\text{已知 4}}{=}&amp; v_{\text{g,proton}} v_{\text{p,proton}}\\
+\frac{v_{\text{g,electron}}}{v_{\text{g,proton}}}  v_{\text{p,electron}} &amp;=&amp;  v_{\text{p,proton}}\\
+v_{\text{p,electron}} &amp;\overset{\text{Q3-2}}{\ll}&amp; v_{\text{p,proton}}\\
+\end{gather*}\end{split}\]</div>
+<p><strong>質子的群速度</strong> 比 <strong>電子的群速度</strong> 較 <strong>快</strong></p>
+</section>
+</section>
+<section id="question-4">
+<h2>Question 4<a class="headerlink" href="#question-4" title="Link to this heading">#</a></h2>
+<p>(a) Show that the phase velocity of the de Broglie waves of a particle of mass <span class="math notranslate nohighlight">\(m\)</span> and de Broglie wavelength <span class="math notranslate nohighlight">\(\lambda\)</span> is given by</p>
+<div class="math notranslate nohighlight">
+\[v_p = c \sqrt{1 + \left( \frac{mc\lambda}{h} \right)^2}\]</div>
+<p>(b) Compare the phase and group velocities of an electron whose de Broglie wavelength is exactly <span class="math notranslate nohighlight">\(1 \times 10^{-13} \text{m}\)</span>.</p>
+</section>
+<section id="question-4-answer">
+<h2>Question 4 - Answer<a class="headerlink" href="#question-4-answer" title="Link to this heading">#</a></h2>
+<section id="id4">
+<h3>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/01_Relativity/relativity.html#lorentz-transformation">勞侖茲因子 (Lorentz factor)</a></strong></p>
+<div class="math notranslate nohighlight">
+\[\gamma = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}}\]</div>
+</li>
+<li><p><strong>【已知 2】 <a class="reference external" href="https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/01_Relativity/relativity.html#mass-and-energy">總能量 (Total Energy)</a>：</strong></p>
+<div class="math notranslate nohighlight">
+\[E = \gamma m_0 c^2 \]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(E\)</span> : 總能量 (Total Energy) <span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\gamma\)</span> : <a class="reference external" href="https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/01_Relativity/relativity.html#lorentz-transformation">勞侖茲因子 (Lorentz factor)</a> <span class="math notranslate nohighlight">\(\gamma \overset{\text{已知 1}}{=} \frac{1}{\sqrt{1-v^2/c^2}}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m_0\)</span> : 物體靜止質量 (Rest mass)，<span class="math notranslate nohighlight">\([\text{kg}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c\)</span> : 真空中光速 (Speed of light)，<span class="math notranslate nohighlight">\(c \approx 3 \times 10^8 \text{ m}\cdot\text{s}^{-1}\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 3】 <a class="reference external" href="https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/01_Relativity/relativity.html#energy-and-momentum">物體的能量與動量關係式</a>：</strong></p>
+<div class="math notranslate nohighlight">
+\[E^2 = (m_0 c^2)^2 + (pc)^2 \]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(E\)</span> : 總能量 (Total Energy) <span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m_0\)</span> : 物體靜止質量 (Rest mass)，<span class="math notranslate nohighlight">\([\text{kg}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c\)</span> : 真空中光速 (Speed of light)，<span class="math notranslate nohighlight">\(c \approx 3 \times 10^8 \text{ m}\cdot\text{s}^{-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p\)</span> : 物體動量 ，<span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 1】 德布羅依波 (De Broglie Wave)  ：</strong></p>
+<div class="math notranslate nohighlight">
+\[\lambda \overset{\text{def}}{=} \frac{h}{p}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\lambda\)</span> : 德布羅依波長 (de Broglie wavelength) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(h\)</span> : 普朗克常數 (Planck’s constant) <span class="math notranslate nohighlight">\(h \approx 6.626 \times 10^{-34} \text{ J}\cdot\text{s} \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p\)</span> : 物體動量 (Momentum) <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 4】群速度是物體速度:</strong></p>
+<div class="math notranslate nohighlight">
+\[v_{\text{g}}=v\]</div>
+</li>
+<li><p><strong>【已知 5】群速度乘相速度是光速平方:</strong></p>
+<div class="math notranslate nohighlight">
+\[v_{\text{g}} v_{\text{p}}=c^2\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(v_{\text{g}}\)</span> 是群速度</p></li>
+<li><p><span class="math notranslate nohighlight">\(v_{\text{p}}\)</span> 是相速度</p></li>
+</ul>
+</li>
+<li><p><strong>【已知 5】群速度乘相速度是光速平方:</strong></p>
+<div class="math notranslate nohighlight">
+\[v_{\text{g}} v_{\text{p}}=c^2\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(v_{\text{g}}\)</span> 是群速度</p></li>
+<li><p><span class="math notranslate nohighlight">\(v_{\text{p}}\)</span> 是相速度</p></li>
+</ul>
+</li>
+<li><p><strong>【已知 6】電子資訊:</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(m_{\text{e}} \sim 9.11e-31 \text{ kg} \)</span></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="proof-a">
+<h3>proof (a)<a class="headerlink" href="#proof-a" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+E^2 &amp;\overset{\text{已知 3}}{=}&amp; (m_0 c^2)^2 + (pc)^2 \\
+\left( \gamma m_0 c^2 \right)^2 &amp;\overset{\text{已知 2}}{=}&amp; (m_0 c^2)^2 + (pc)^2 \\
+\gamma^2 m_0^2 c^4 &amp;=&amp; m_0^2 c^4 + p^2c^2 \\
+\gamma^2 m_0^2 c^4 &amp;\overset{\text{定義 1}}{=}&amp; m_0^2 c^4 + \left( \frac{h}{\lambda} \right)^2c^2 \\
+\gamma^2 m_0^2 c^4 &amp;=&amp; m_0^2 c^4 + \frac{h^2}{\lambda^2} c^2 \\
+\left( \gamma^2 - 1 \right)   m_0^2 c^4 &amp;=&amp; \frac{h^2}{\lambda^2} c^2 \\
+\gamma^2   &amp;=&amp; \frac{h^2}{\lambda^2 m_0^2 c^2 }+1 \\
+\frac{1}{1-\frac{v^2}{c^2}}  &amp;\overset{\text{已知 1}}{=}&amp; \frac{h^2}{\lambda^2 m_0^2 c^2 } +1 \\
+1-\frac{v^2}{c^2}  &amp;=&amp; \frac{1}{\frac{h^2}{\lambda^2 m_0^2 c^2 } +1} \\
+\frac{v^2}{c^2}  &amp;=&amp; 1-\frac{1}{\frac{h^2}{\lambda^2 m_0^2 c^2 } +1} \\
+v &amp;=&amp; c \sqrt{1 - \frac{1}{\frac{h^2}{\lambda^2 m_0^2 c^2 } +1}} \\
+v &amp;=&amp; c \sqrt{1 - \frac{\lambda^2 m_0^2 c^2}{h^2 +\lambda^2 m_0^2 c^2}} \\
+v &amp;=&amp; c \sqrt{\frac{h^2}{h^2 +\lambda^2 m_0^2 c^2}} \\
+v_{\text{g}} &amp;\overset{\text{已知 4}}{=}&amp; c \sqrt{\frac{h^2}{h^2 +\lambda^2 m_0^2 c^2}} \\
+\frac{c^2}{v_{\text{p}}}&amp;\overset{\text{已知 5}}{=}&amp; c \sqrt{\frac{h^2}{h^2 +\lambda^2 m_0^2 c^2}} \\
+\frac{1}{v_{\text{p}}}&amp;=&amp; \frac{1}{c} \sqrt{\frac{h^2}{h^2 +\lambda^2 m_0^2 c^2}} \\
+v_{\text{p}} &amp;=&amp; c \sqrt{\frac{h^2+\lambda^2 m_0^2 c^2}{h^2 }} \\
+v_{\text{p}} &amp;=&amp; c \sqrt{1+\frac{\lambda^2 m_0^2 c^2}{h^2 }} \\
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="compare-b">
+<h3>compare (b)<a class="headerlink" href="#compare-b" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>計算 <span class="math notranslate nohighlight">\(v_{\text{g}}\)</span></p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+v_{\text{g}} &amp;\overset{\text{已知 4}}{=}&amp; c \sqrt{\frac{h^2}{h^2 +\lambda^2 m_0^2 c^2}} \\
+&amp;\overset{\text{已知 6}}{=}&amp; 3\times 10^8 \text{ m}\cdot\text{s}^{-1} \sqrt{\frac{(6.626 \times 10^{-34} \text{ J}\cdot\text{s})^2}{(6.626 \times 10^{-34} \text{ J}\cdot\text{s})^2 +(10^{-13} \text{m})^2 (9.11e-31 \text{ kg})^2 (3\times 10^8 \text{ m}\cdot\text{s}^{-1})^2}} \\
+&amp;\approx&amp;  0.99915 c \\
+&amp;\approx&amp;  2.997 \times 10^8 \text{ m}\cdot\text{s}^{-1} \\
+\end{gather*}\end{split}\]</div>
+<ol class="arabic simple" start="2">
+<li><p>計算 <span class="math notranslate nohighlight">\(v_{\text{p}}\)</span></p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+v_{\text{p}} &amp;\overset{\text{已知 5}}{=}&amp; \frac{c^2}{v_{\text{g}}}  \\
+&amp;\overset{\text{Q4-b1}}{\approx}&amp; 1.0008 c  \\
+&amp;\approx&amp;  3.002 \times 10^8 \text{ m}\cdot\text{s}^{-1} \\
+\end{gather*}\end{split}\]</div>
+<p><img alt="" src="../../_images/velocity_plot_electron.png" /></p>
+<p><img alt="" src="../../_images/velocity_plot.png" /></p>
+</section>
+</section>
+<section id="question-5">
+<h2>Question 5<a class="headerlink" href="#question-5" title="Link to this heading">#</a></h2>
+<p>A beam of <span class="math notranslate nohighlight">\(50 \text{ keV}\)</span> electrons is directed at a crystal and diffracted electrons are found at an angle of <span class="math notranslate nohighlight">\(50^\circ\)</span> relative to the original beam. What is the spacing of the atomic planes of the crystal? A relativistic calculation is needed for <span class="math notranslate nohighlight">\(\lambda\)</span>.</p>
+</section>
+<section id="question-5-answer">
+<h2>Question 5 - Answer<a class="headerlink" href="#question-5-answer" title="Link to this heading">#</a></h2>
+<section id="id5">
+<h3>已知與假設<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><strong>【已知 1】 德布羅依波長與動能關係式</strong></p>
+<div class="math notranslate nohighlight">
+\[\lambda \overset{\text{Q1}}{=} \frac{hc}{\sqrt{KE(KE + 2m_0c^2)}}  \]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\lambda\)</span> : 德布羅依波長 (de Broglie wavelength) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(h\)</span> : 普朗克常數 (Planck’s constant) <span class="math notranslate nohighlight">\(h \approx 6.626 \times 10^{-34} \text{ J}\cdot\text{s} \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(KE\)</span> : 動能 (Kinetic Energy) <span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m_0\)</span> : 物體靜止質量 (Rest mass)，<span class="math notranslate nohighlight">\([\text{kg}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c\)</span> : 真空中光速 (Speed of light)，<span class="math notranslate nohighlight">\(c \approx 3 \times 10^8 \text{ m}\cdot\text{s}^{-1}\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 2】 <a class="reference external" href="https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/02_Particle_Properties_of_Waves/particle_properties_of_waves.html#x-diffraction-of-x-rays">布拉格定律 (Bragg’s Law)</a></strong></p>
+<div class="math notranslate nohighlight">
+\[2d \sin \theta = n\lambda, \quad n = 1, 2, 3,\dots\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(d\)</span> 是布拉格平面之間的距離</p></li>
+<li><p><span class="math notranslate nohighlight">\(\theta\)</span> 是入射 X 射線與<strong>布拉格平面</strong>之間的夾角 <strong>（注意：非與平面法線夾角，一般來說 <span class="math notranslate nohighlight">\(\theta\)</span> 會是入射光與折射光夾角的一半）</strong></p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> 是繞射的階數，訊號最強的情況是 <span class="math notranslate nohighlight">\(n=1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda\)</span> 是 X 射線的波長</p></li>
+</ul>
+</li>
+<li><p><strong>【已知 3】 一些常數和題目給的</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(hc \approx 1240 \text{ eV}\cdot\text{nm} = 1.24 \text{ keV}\cdot\text{nm}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(KE = 50 \text{ keV}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(E_0 = 511 \text{ keV}\)</span> (Rest energy of an electron)</p></li>
+<li><p>入射和射出夾角 : <span class="math notranslate nohighlight">\(50^\circ\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span>取信號最強的情況</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id6">
+<h3>proof:<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+2d \sin \theta &amp;\overset{\text{已知 2}}{=}&amp; n\lambda \\
+d  &amp;=&amp; \frac{n\lambda}{2\sin \theta} \\
+d  &amp;\overset{\text{已知 1}}{=}&amp; \frac{n \frac{hc}{\sqrt{KE(KE + 2m_0c^2)}}  }{2\sin \theta} \\
+d  &amp;\overset{\text{已知 3}}{=}&amp; \frac{n \frac{1.24 \text{ keV}\cdot\text{nm} }{\sqrt{ 50 \text{ keV} \cdot ( 50 \text{ keV} + 511 \text{ keV})}}  }{2\sin \theta} \\
+d  &amp;=&amp; \frac{n \cdot 0.005356 \text{ nm}  }{2\sin \theta} \\
+d  &amp;=&amp; \frac{n \cdot 5.356 \text{ pm}  }{2\sin \theta} \\
+d  &amp;\overset{\text{已知 3}}{=}&amp; \frac{ 5.356 \text{ pm}  }{2\sin 50^\circ} \\
+d &amp;\approx&amp; \frac{5.356 \text{ pm}}{2 \times 0.4226} \\
+d&amp;\approx &amp;6.337 \text{ pm} &amp;=  0.006337 \text{ nm}
+\end{gather*}\end{split}\]</div>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id7">
+<h1>程式<a class="headerlink" href="#id7" title="Link to this heading">#</a></h1>
+<section id="q4-b">
+<h2>Q4-b<a class="headerlink" href="#q4-b" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># --- 步驟 A: 定義物理常數 ---</span>
+<span class="n">h</span> <span class="o">=</span> <span class="mf">6.626e-34</span>      <span class="c1"># 普朗克常數 (J·s)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mf">3e8</span>            <span class="c1"># 光速 (m/s)</span>
+<span class="n">m_e</span> <span class="o">=</span> <span class="mf">9.109e-31</span>    <span class="c1"># 電子靜止質量 (kg)</span>
+<span class="n">m_p</span> <span class="o">=</span> <span class="mf">1.672e-27</span>    <span class="c1"># 質子靜止質量 (kg)</span>
+
+<span class="c1"># --- 步驟 B: 設定觀察區間 ---</span>
+<span class="c1"># 波長範圍 (設定從 10^-16 到 10^-10 公尺，這範圍涵蓋了相對論效應最明顯的區域)</span>
+<span class="n">lambdas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">16</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+
+<span class="c1"># --- 步驟 C: 定義核心計算函數 ---</span>
+<span class="k">def</span> <span class="nf">calculate_velocities</span><span class="p">(</span><span class="n">m0</span><span class="p">,</span> <span class="n">lambdas</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;計算給定靜止質量與波長陣列下的群速度與相速度&quot;&quot;&quot;</span>
+    <span class="c1"># 為了程式碼簡潔與執行效能，先把公式中重複出現的龐大項先算出來</span>
+    <span class="n">term</span> <span class="o">=</span> <span class="p">(</span><span class="n">lambdas</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">m0</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">c</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="n">h</span><span class="o">**</span><span class="mi">2</span>
+    
+    <span class="c1"># 群速度 v_g (除以 c 轉換為相對光速的比例)</span>
+    <span class="n">vg_c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">term</span><span class="p">))</span>
+    
+    <span class="c1"># 相速度 v_p (除以 c 轉換為相對光速的比例)</span>
+    <span class="n">vp_c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">term</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">vg_c</span><span class="p">,</span> <span class="n">vp_c</span>
+
+<span class="c1"># 利用 numpy 的向量化計算，一次算出所有波長下的速度</span>
+<span class="n">vg_e</span><span class="p">,</span> <span class="n">vp_e</span> <span class="o">=</span> <span class="n">calculate_velocities</span><span class="p">(</span><span class="n">m_e</span><span class="p">,</span> <span class="n">lambdas</span><span class="p">)</span>
+<span class="n">vg_p</span><span class="p">,</span> <span class="n">vp_p</span> <span class="o">=</span> <span class="n">calculate_velocities</span><span class="p">(</span><span class="n">m_p</span><span class="p">,</span> <span class="n">lambdas</span><span class="p">)</span>
+
+<span class="c1"># --- 步驟 D: 繪圖 ---</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="c1"># 繪製電子 (藍色) - 實線為群速度，虛線為相速度</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lambdas</span><span class="p">,</span> <span class="n">vg_e</span><span class="p">,</span> <span class="s1">&#39;b-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Electron Group Velocity ($v_g$)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lambdas</span><span class="p">,</span> <span class="n">vp_e</span><span class="p">,</span> <span class="s1">&#39;b--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Electron Phase Velocity ($v_p$)&#39;</span><span class="p">)</span>
+
+<span class="c1"># 繪製質子 (紅色) - 實線為群速度，虛線為相速度</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lambdas</span><span class="p">,</span> <span class="n">vg_p</span><span class="p">,</span> <span class="s1">&#39;r-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Proton Group Velocity ($v_g$)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lambdas</span><span class="p">,</span> <span class="n">vp_p</span><span class="p">,</span> <span class="s1">&#39;r--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Proton Phase Velocity ($v_p$)&#39;</span><span class="p">)</span>
+
+<span class="c1"># 畫出一條垂直於 10^-13 m 的線</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mf">1e-13</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Reference Wavelength [$10^{-13} m$]&#39;</span><span class="p">)</span>
+
+<span class="c1"># 設定對數座標軸與基準線</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Speed of Light [$c$]&#39;</span><span class="p">)</span> 
+
+<span class="c1"># 設定標籤、標題與圖例 (Legend)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;De Broglie Wavelength $\lambda$ [m]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Velocity (in units of $c$)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Phase Velocity and Group Velocity vs De Broglie Wavelength&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;velocity_plot.png&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>  <span class="c1"># 儲存高解析度圖片</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./homework\hw3"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Modern Physics Hw 3</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-density-of-standing-waves-in-cavity">Question 1 : Density of standing waves in cavity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-answer">Question 1 - Answer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proof">proof:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-answer">Question 2 - Answer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">已知與假設</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">proof</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#english-version">English Version</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-answer">Question 3 - Answer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">已知與假設</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda">1. 德布羅依波長 (<span class="math notranslate nohighlight">\(\lambda\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#v-text-g">2. 群速度 (<span class="math notranslate nohighlight">\(v_{\text{g}}\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#v-text-p">3. 相速度 (<span class="math notranslate nohighlight">\(v_{\text{p}}\)</span>)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question 4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4-answer">Question 4 - Answer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-a">proof (a)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compare-b">compare (b)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question 5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5-answer">Question 5 - Answer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">已知與假設</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">proof:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">程式</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q4-b">Q4-b</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC YE
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
