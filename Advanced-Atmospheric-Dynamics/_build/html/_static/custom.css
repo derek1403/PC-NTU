@@ -1,9 +1,21 @@
-/* 將主要文章容器的最大寬度限制解除，並設定為視窗寬度的 95% */
-.bd-article-container {
-    max-width: 95% !important; 
+/* 1. 放大最外層的容器 (解除最大寬度限制) */
+.bd-container {
+    max-width: 95% !important;
 }
 
-/* 確保內容區塊也能夠自由伸展 */
-.bd-main .bd-content {
+/* 2. 放大內層容器，確保它填滿外層 */
+.bd-container .bd-container__inner {
+    max-width: 100% !important;
+}
+
+/* 3. 放大文章主體的容器 (涵蓋新舊版本的寫法) */
+.bd-main .bd-content .bd-article-container,
+div.bd-article-container {
+    max-width: 100% !important;
+}
+
+/* 4. 針對長公式 (MathJax) 給予專屬設定，允許公式太長時不被截斷 */
+div.math {
+    overflow-x: auto !important;
     max-width: 100% !important;
 }
