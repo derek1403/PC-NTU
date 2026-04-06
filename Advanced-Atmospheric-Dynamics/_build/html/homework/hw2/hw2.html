@@ -1,0 +1,1252 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Advanced Atmospheric Dynamics Hw 2 &#8212; Advanced Atmospheric Dynamics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'homework/hw2/hw2';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Advanced Atmospheric Dynamics Hw 1" href="../hw1/hw1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Advanced Atmospheric Dynamics - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Advanced Atmospheric Dynamics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lecture/lecture.html">lecture</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/week1/week1.html">Advanced Atmospheric Dynamics - Week 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/week2/week2.html">Advanced Atmospheric Dynamics - Week 2</a></li>
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../homework.html">homework</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../hw1/hw1.html">Advanced Atmospheric Dynamics Hw 1</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Advanced Atmospheric Dynamics Hw 2</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fhomework/hw2/hw2.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/homework/hw2/hw2.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Advanced Atmospheric Dynamics Hw 2</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#note">Note</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">簡單來說:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-momentum-equation">1. 向量動量方程式 (Vector Momentum Equation)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nonhydrostatic-primitive-equations-exact-primitive-equations">2. 非靜力原始方程式 (Nonhydrostatic Primitive Equations) / 精確原始方程式 (Exact Primitive Equations)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#traditional-approximation-equations">3. 傳統近似方程式 (Traditional Approximation Equations)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#quasi-static-primitive-equations"><strong>4. 準靜力原始方程式 (Quasi-static Primitive Equations)</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-1">Answer 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-1">Q1.1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-2">Q1.2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-3-4-is-distorted-form-of-3">Q1.3 <span class="math notranslate nohighlight">\((4)\)</span> Is Distorted Form of <span class="math notranslate nohighlight">\((3)\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-2">Answer 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-1-ke-of-exact-primitive-equations">Q2.1 <span class="math notranslate nohighlight">\(KE\)</span> of Exact Primitive Equations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-2-ke-of-traditional-approximation-equations">Q2.2 <span class="math notranslate nohighlight">\(KE\)</span> of Traditional Approximation Equations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question 3</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">已知與假設</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q3-1a-zonal-wind-at-u-0-circ-text-n-16-text-km">Q3.1a zonal wind at <span class="math notranslate nohighlight">\(u(0^\circ \text{N} , 16 \text{ km})\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">對於 精確版</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">對於 近似版</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q3-1b-zonal-wind-at-u-30-circ-text-n-16-text-km">Q3.1b zonal wind at <span class="math notranslate nohighlight">\(u(30^\circ \text{N} , 16 \text{ km})\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">對於 精確版</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">對於 近似版</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q3-2-zonal-wind-errors-at-u-30-circ-text-n-16-text-km">Q3.2 zonal wind errors at <span class="math notranslate nohighlight">\(u(30^\circ \text{N} , 16 \text{ km})\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q3-3-jet">Q3.3 其他因素影響 jet 的速度</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question 4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-4">Answer 4</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Q2.1 <span class="math notranslate nohighlight">\(KE\)</span> of Exact Primitive Equations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q4-ke-of-exact-primitive-equations-frac-dw-dt-0">Q4 <span class="math notranslate nohighlight">\(KE\)</span> of Exact Primitive Equations <span class="math notranslate nohighlight">\(\frac{Dw}{Dt}=0\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question 5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-5">Answer 5</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Q1.1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q5">Q5</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6">Question 6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-6">Answer 6</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">已知與假設</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q5-1-proof">Q5.1 proof</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q5-2-discuss-the-error">Q5.2 discuss the error</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="advanced-atmospheric-dynamics-hw-2">
+<h1>Advanced Atmospheric Dynamics Hw 2<a class="headerlink" href="#advanced-atmospheric-dynamics-hw-2" title="Link to this heading">#</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="p">:</span><span class="n">葉品辰</span>
+<span class="n">ID</span><span class="p">:</span><span class="n">r14229017</span>
+<span class="n">date</span><span class="p">:</span> <span class="mf">2026.04.06</span>
+</pre></div>
+</div>
+<section id="note">
+<h2>Note<a class="headerlink" href="#note" title="Link to this heading">#</a></h2>
+<p>The vector momentum equation as derived with minimum assumptions is</p>
+<div class="math notranslate nohighlight">
+\[\frac{D\mathbf{V}}{Dt} + 2\boldsymbol{\Omega} \times \mathbf{V} = -\frac{1}{\rho} \nabla_{\mathbf{z}} p - \mathbf{g} + \nu \nabla^2 \mathbf{V}\]</div>
+<p>The component equations in spherical coordinates (longitude <span class="math notranslate nohighlight">\(\lambda\)</span>, latitude <span class="math notranslate nohighlight">\(\phi\)</span> , and vertical distance <span class="math notranslate nohighlight">\(r\)</span>) without the viscous term are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{Du}{Dt} -&amp; \left( 2\Omega + \frac{u}{r \cos \phi} \right) (v \sin \phi - w \cos \phi) &amp;=&amp; -\frac{1}{\rho r \cos \phi} \frac{\partial p}{\partial \lambda} \tag{1.1} \\
+\frac{Dv}{Dt} +&amp; \left( 2\Omega + \frac{u}{r \cos \phi} \right) u \sin \phi + \frac{vw}{r} &amp;=&amp; -\frac{1}{\rho r} \frac{\partial p}{\partial \phi} \tag{1.2} \\
+\frac{Dw}{Dt} -&amp; \left( 2\Omega + \frac{u}{r \cos \phi} \right) u \cos \phi - \frac{v^2}{r} &amp;=&amp; -\frac{1}{\rho} \frac{\partial p}{\partial r} - g, \tag{1.3}
+\end{gather*}\end{split}\]</div>
+<p>where the material derivative in <span class="math notranslate nohighlight">\((1)\)</span> can be expressed as</p>
+<div class="math notranslate nohighlight">
+\[\frac{D}{Dt} = \frac{\partial}{\partial t} + \frac{u}{r \cos \phi} \frac{\partial}{\partial \lambda} + \frac{v}{r} \frac{\partial}{\partial \phi} + w \frac{\partial}{\partial r} \]</div>
+<p>The above equations are called the <strong>Nonhydrostatic Primitive Equations</strong> or <strong>The Exact Primitive Equations</strong>. They are not widely used at present. For large scale numerical weather prediction and general circulation modeling two approximations are made <strong>The Traditional Approximation</strong> and <strong>The Quasi-static Approximation</strong>. The Traditional Approximation involves an approximation to the metric expression while The Quasi-static Approximation involves an approximation to the vertical equation. With the ”traditional” approximation <span class="math notranslate nohighlight">\(z \ll a\)</span> ( <span class="math notranslate nohighlight">\(a \sim 6371 \text{km}\)</span> , the earth radius), the above component equations can be written as</p>
+<div class="math notranslate nohighlight">
+\[\frac{Du}{Dt} - \frac{uv \tan \phi}{a} = -\frac{1}{\rho a \cos \phi} \frac{\partial p}{\partial \lambda} + 2\Omega v \sin \phi, \tag{2.1}\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{Dv}{Dt} + \frac{u^2 \tan \phi}{a} = -\frac{1}{\rho a} \frac{\partial p}{\partial \phi} - 2\Omega u \sin \phi, \tag{2.2}\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{Dw}{Dt} = -\frac{1}{\rho} \frac{\partial p}{\partial z} - g, \tag{2.3}\]</div>
+<p>where the material derivative in <span class="math notranslate nohighlight">\((2)\)</span> can be expressed as</p>
+<div class="math notranslate nohighlight">
+\[\frac{D}{Dt} = \frac{\partial}{\partial t} + \frac{u}{a \cos \phi} \frac{\partial}{\partial \lambda} + \frac{v}{a} \frac{\partial}{\partial \phi} + w \frac{\partial}{\partial z}\]</div>
+<p>The quasi-static approximation involves the neglect of <span class="math notranslate nohighlight">\(\frac{Dw}{Dt}\)</span> in <span class="math notranslate nohighlight">\((2.3)\)</span>. When the <span class="math notranslate nohighlight">\(\frac{Dw}{Dt}\)</span> is omitted in <span class="math notranslate nohighlight">\((2.3)\)</span> , we have the so called “Quasi-static Primitive Equations”. The Quasi-static Primitive Equations are widely used in the present NWP models and general circulation models.</p>
+<section id="id1">
+<h3>簡單來說:<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<section id="vector-momentum-equation">
+<h4>1. 向量動量方程式 (Vector Momentum Equation)<a class="headerlink" href="#vector-momentum-equation" title="Link to this heading">#</a></h4>
+<p>這是基於最少假設推導出的方程式</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\frac{DV}{Dt}+2\Omega\times V=-\frac{1}{\rho}\nabla_{z}p-g+\nu\nabla^{2}V\)</span></p></li>
+</ul>
+</section>
+<section id="nonhydrostatic-primitive-equations-exact-primitive-equations">
+<h4>2. 非靜力原始方程式 (Nonhydrostatic Primitive Equations) / 精確原始方程式 (Exact Primitive Equations)<a class="headerlink" href="#nonhydrostatic-primitive-equations-exact-primitive-equations" title="Link to this heading">#</a></h4>
+<p>這是球座標下省略黏滯項 (viscous term) 的分量方程式</p>
+<ul class="simple">
+<li><p><strong>分量公式</strong>：</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\frac{Du}{Dt}-(2\Omega+\frac{u}{r~cos~\phi})(v~sin~\phi-w~cos~\phi)=-\frac{1}{\rho}\frac{\partial p}{r~cos~\phi\partial\lambda}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{Dv}{Dt}+(2\Omega+\frac{u}{r~cos~\phi})u~sin~\phi+\frac{vw}{r}=-\frac{1}{\rho}\frac{\partial p}{r\partial\phi}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{Dw}{Dt}-(2\Omega+\frac{u}{r~cos~\phi})u~cos~\phi-\frac{v^{2}}{r}=-\frac{1}{\rho}\frac{\partial p}{\partial r}-g\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>對應的全導數 (Material Derivative)</strong>：</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\frac{D}{Dt}=\frac{\partial}{\partial t}+\frac{u}{r~cos~\phi}\frac{\partial}{\partial\lambda}+\frac{v}{r}\frac{\partial}{\partial\phi}+w\frac{\partial}{\partial r}\)</span></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="traditional-approximation-equations">
+<h4>3. 傳統近似方程式 (Traditional Approximation Equations)<a class="headerlink" href="#traditional-approximation-equations" title="Link to this heading">#</a></h4>
+<p>引入了 <span class="math notranslate nohighlight">\(z&lt;&lt;a\)</span> (<span class="math notranslate nohighlight">\(a\)</span> 為地球半徑) 的度規表達式近似 (metric expression)</p>
+<ul class="simple">
+<li><p><strong>分量公式</strong>：</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\frac{Du}{Dt}-\frac{uv~tan~\phi}{a}=-\frac{1}{\rho}\frac{\partial p}{a~cos~\phi\partial\lambda}+2\Omega v~sin~\phi\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{Dv}{Dt}+\frac{u^{2}tan~\phi}{a}=-\frac{1}{\rho}\frac{\partial p}{a\partial\phi}-2\Omega u~sin~\phi\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{Dw}{Dt}=-\frac{1}{\rho}\frac{\partial p}{\partial z}-g\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>對應的全導數 (Material Derivative)</strong>：</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\frac{D}{Dt}=\frac{\partial}{\partial t}+\frac{u}{a~cos~\phi}\frac{\partial}{\partial\lambda}+\frac{v}{a}\frac{\partial}{\partial\phi}+w\frac{\partial}{\partial z}\)</span></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="quasi-static-primitive-equations">
+<h4><strong>4. 準靜力原始方程式 (Quasi-static Primitive Equations)</strong><a class="headerlink" href="#quasi-static-primitive-equations" title="Link to this heading">#</a></h4>
+<p>這是針對垂直方程式進行近似的結果，具體作法是在採用「傳統近似」的方程式中忽略垂直方向方程式裡的 <span class="math notranslate nohighlight">\(Dw/Dt\)</span> 項， <strong>NWP常用這個😊</strong></p>
+<ul class="simple">
+<li><p><strong>分量公式</strong>：</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\frac{Du}{Dt}-\frac{uv~tan~\phi}{a}=-\frac{1}{\rho}\frac{\partial p}{a~cos~\phi\partial\lambda}+2\Omega v~sin~\phi\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{Dv}{Dt}+\frac{u^{2}tan~\phi}{a}=-\frac{1}{\rho}\frac{\partial p}{a\partial\phi}-2\Omega u~sin~\phi\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(0=-\frac{1}{\rho}\frac{\partial p}{\partial z}-g\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>對應的全導數 (Material Derivative)</strong>：</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\frac{D}{Dt}=\frac{\partial}{\partial t}+\frac{u}{a~cos~\phi}\frac{\partial}{\partial\lambda}+\frac{v}{a}\frac{\partial}{\partial\phi}+w\frac{\partial}{\partial z}\)</span></p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="question-1">
+<h2>Question 1<a class="headerlink" href="#question-1" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Prove that <span class="math notranslate nohighlight">\((1.1)\)</span> can be written as the angular momentum principle</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\frac{D}{Dt} [(\Omega r \cos \phi + u) r \cos \phi] = -\frac{1}{\rho} \frac{\partial p}{\partial \lambda}, \tag{3}\]</div>
+<ol class="arabic simple" start="2">
+<li><p>Prove that <span class="math notranslate nohighlight">\((2.1)\)</span> can be written as the angular momentum principle</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\frac{D}{Dt} [(\Omega a \cos \phi + u) a \cos \phi] = -\frac{1}{\rho} \frac{\partial p}{\partial \lambda}. \tag{4}\]</div>
+<ol class="arabic simple" start="3">
+<li><p>Discuss how the conservation principle in <span class="math notranslate nohighlight">\((4)\)</span> is a slightly distorted form of the exact principle <span class="math notranslate nohighlight">\((3)\)</span></p></li>
+</ol>
+</section>
+<section id="answer-1">
+<h2>Answer 1<a class="headerlink" href="#answer-1" title="Link to this heading">#</a></h2>
+<section id="assumptions-preliminaries">
+<h3>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><strong>【已知 1】 球面座標全導數：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \frac{D \lambda }{Dt} &amp;=&amp;  \frac{u}{r\cos\phi}\\
+    \frac{D \phi }{Dt} &amp;=&amp;  \frac{v}{r}\\
+    \frac{D r }{Dt} &amp;=&amp;  w\\
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>【已知 2】 微積分✨1.1：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \frac{D}{Dt}[ur\cos\phi] &amp;=&amp; \frac{Du}{Dt} r\cos\phi + u \frac{D r}{Dt} \cos\phi + ur \frac{D \cos\phi}{Dt} \\
+    \frac{D}{Dt}[ur\cos\phi]&amp;\overset{\text{已知 1}}{=}&amp; \frac{Du}{Dt} r\cos\phi + u w \cos\phi - ur \sin\phi \frac{D \phi}{Dt} \\
+    \frac{D}{Dt}[ur\cos\phi]&amp;\overset{\text{已知 1}}{=}&amp; \frac{Du}{Dt} r\cos\phi + u w \cos\phi - ur \sin\phi \frac{v}{r} \\
+    \frac{D}{Dt}[ur\cos\phi]&amp;=&amp; \frac{Du}{Dt} r\cos\phi - u(v\sin\phi - w\cos\phi)\\
+    \frac{Du}{Dt} r\cos\phi &amp;=&amp; \frac{D}{Dt}[ur\cos\phi]  + u(v\sin\phi - w\cos\phi)\\
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>【已知 3】 微積分✨✨1.1：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \frac{D}{Dt} [(\Omega r \cos \phi + u) r \cos \phi] &amp;=&amp; \frac{D}{Dt}[\Omega r^2\cos^2\phi] + \frac{D}{Dt}[ur\cos\phi] \\
+    \frac{D}{Dt} [(\Omega r \cos \phi + u) r \cos \phi] - \frac{D}{Dt}[ur\cos\phi] &amp;=&amp; \frac{D}{Dt}[\Omega r^2\cos^2\phi] \\
+    \frac{D}{Dt} [(\Omega r \cos \phi + u) r \cos \phi] - \frac{D}{Dt}[ur\cos\phi] &amp;=&amp; \Omega 2r\frac{Dr}{Dt}\cos^2\phi + \Omega r^2 \cdot 2\cos\phi(-\sin\phi)\frac{D\phi}{Dt}\\
+    \frac{D}{Dt} [(\Omega r \cos \phi + u) r \cos \phi] - \frac{D}{Dt}[ur\cos\phi] &amp;\overset{\text{已知 1}}{=}&amp; \Omega 2rw\cos^2\phi - \Omega r^2 \cdot 2\cos\phi \sin\phi \frac{v}{r}\\
+    \frac{D}{Dt} [(\Omega r \cos \phi + u) r \cos \phi] - \frac{D}{Dt}[ur\cos\phi] &amp;=&amp; 2\Omega r\cos\phi(w\cos\phi - v\sin\phi)\\
+    \frac{D}{Dt} [(\Omega r \cos \phi + u) r \cos \phi] - \frac{D}{Dt}[ur\cos\phi] &amp;=&amp;-2\Omega r\cos\phi(v\sin\phi - w\cos\phi)\\
+    \frac{D}{Dt}[ur\cos\phi] &amp;=&amp;\frac{D}{Dt} [(\Omega r \cos \phi + u) r \cos \phi] +2\Omega r\cos\phi(v\sin\phi - w\cos\phi)\\
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>【已知 4】 微積分✨1.2：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \frac{D}{Dt}[ua\cos\phi] &amp;=&amp; \frac{Du}{Dt} a\cos\phi + u \frac{D a}{Dt} \cos\phi + ua \frac{D \cos\phi}{Dt} \\
+    \frac{D}{Dt}[ua\cos\phi]&amp;\overset{\text{已知 1}}{=}&amp; \frac{Du}{Dt} a\cos\phi + 0 - ua \sin\phi \frac{D \phi}{Dt} \\
+    \frac{D}{Dt}[ua\cos\phi]&amp;\overset{\text{已知 1}}{=}&amp; \frac{Du}{Dt} a\cos\phi - ua \sin\phi \frac{v}{a} \\
+    \frac{D}{Dt}[ua\cos\phi]&amp;=&amp; \frac{Du}{Dt} a\cos\phi - uv\sin\phi \\
+    \frac{Du}{Dt} a\cos\phi &amp;=&amp; \frac{D}{Dt}[ua\cos\phi]  + uv\sin\phi \\
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>【已知 5】 微積分✨✨1.2：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \frac{D}{Dt} [(\Omega a \cos \phi + u) a \cos \phi] &amp;=&amp; \frac{D}{Dt}[\Omega a^2\cos^2\phi] + \frac{D}{Dt}[ua\cos\phi] \\
+    \frac{D}{Dt} [(\Omega a \cos \phi + u) a \cos \phi] - \frac{D}{Dt}[ua\cos\phi] &amp;=&amp; \frac{D}{Dt}[\Omega a^2\cos^2\phi] \\
+    \frac{D}{Dt} [(\Omega a \cos \phi + u) a \cos \phi] - \frac{D}{Dt}[ua\cos\phi] &amp;=&amp; \Omega 2a\frac{Da}{Dt}\cos^2\phi + \Omega a^2 \cdot 2\cos\phi(-\sin\phi)\frac{D\phi}{Dt}\\
+    \frac{D}{Dt} [(\Omega a \cos \phi + u) a \cos \phi] - \frac{D}{Dt}[ua\cos\phi] &amp;\overset{\text{已知 1}}{=}&amp; 0- \Omega a^2 \cdot 2\cos\phi \sin\phi \frac{v}{a}\\
+    \frac{D}{Dt} [(\Omega a \cos \phi + u) a \cos \phi] - \frac{D}{Dt}[ua\cos\phi] &amp;=&amp; -2\Omega av\cos\phi \sin\phi\\
+    \frac{D}{Dt}[ua\cos\phi] &amp;=&amp;\frac{D}{Dt} [(\Omega a \cos \phi + u) a \cos \phi] +2\Omega av\cos\phi \sin\phi\\
+    \end{gather*}\end{split}\]</div>
+</li>
+</ul>
+</section>
+<section id="q1-1">
+<h3>Q1.1<a class="headerlink" href="#q1-1" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{Du}{Dt} - \left( 2\Omega + \frac{u}{r \cos \phi} \right) (v \sin \phi - w \cos \phi) &amp;\overset{(1.1)}{=}&amp; -\frac{1}{\rho r \cos \phi} \frac{\partial p}{\partial \lambda} \\
+r \cos \phi\frac{Du}{Dt} -  r \cos \phi\left( 2\Omega + \frac{u}{r \cos \phi} \right) (v \sin \phi - w \cos \phi) &amp;=&amp; -\frac{1}{\rho} \frac{\partial p}{\partial \lambda} \\
+r \cos \phi\frac{Du}{Dt} -  r \cos \phi\left( 2\Omega + \frac{u}{r \cos \phi} \right) (v \sin \phi - w \cos \phi) &amp;=&amp; -\frac{1}{\rho} \frac{\partial p}{\partial \lambda} \\
+\frac{D}{Dt}[ur\cos\phi] + u(v\sin\phi - w\cos\phi) -  r \cos \phi\left( 2\Omega + \frac{u}{r \cos \phi} \right) (v \sin \phi - w \cos \phi) &amp;\overset{\text{已知 2}}{=}&amp; -\frac{1}{\rho} \frac{\partial p}{\partial \lambda} \\
+\frac{D}{Dt}[ur\cos\phi] -  r \cos \phi 2\Omega  (v \sin \phi - w \cos \phi) &amp;=&amp; -\frac{1}{\rho} \frac{\partial p}{\partial \lambda} \\
+\frac{D}{Dt} [(\Omega r \cos \phi + u) r \cos \phi] +2\Omega r\cos\phi(v\sin\phi - w\cos\phi)  -  r \cos \phi 2\Omega  (v \sin \phi - w \cos \phi) &amp;\overset{\text{已知 3}}{=}&amp; -\frac{1}{\rho} \frac{\partial p}{\partial \lambda} \\
+\frac{D}{Dt} [(\Omega r \cos \phi + u) r \cos \phi]  &amp;=&amp; -\frac{1}{\rho} \frac{\partial p}{\partial \lambda} \\
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="q1-2">
+<h3>Q1.2<a class="headerlink" href="#q1-2" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{Du}{Dt} - \frac{uv \tan \phi}{a} &amp;\overset{(2.1)}{=}&amp; -\frac{1}{\rho a \cos \phi} \frac{\partial p}{\partial \lambda} + 2\Omega v \sin \phi\\
+a\cos\phi\frac{Du}{Dt} - uv\sin\phi &amp;=&amp; -\frac{1}{\rho}\frac{\partial p}{\partial\lambda} + 2\Omega a v\sin\phi\cos\phi\\
+a\cos\phi\frac{Du}{Dt} - uv\sin\phi - 2\Omega a v\sin\phi\cos\phi &amp;=&amp; -\frac{1}{\rho}\frac{\partial p}{\partial\lambda}\\
+\frac{D}{Dt}[ua\cos\phi]  + uv\sin\phi - uv\sin\phi - 2\Omega a v\sin\phi\cos\phi &amp;\overset{\text{已知 4}}{=}&amp; -\frac{1}{\rho}\frac{\partial p}{\partial\lambda}\\
+\frac{D}{Dt}[ua\cos\phi]  - 2\Omega a v\sin\phi\cos\phi &amp;=&amp; -\frac{1}{\rho}\frac{\partial p}{\partial\lambda}\\
+\frac{D}{Dt} [(\Omega a \cos \phi + u) a \cos \phi] +2\Omega av\cos\phi \sin\phi  - 2\Omega a v\sin\phi\cos\phi &amp;\overset{\text{已知 5}}{=}&amp; -\frac{1}{\rho}\frac{\partial p}{\partial\lambda}\\
+\frac{D}{Dt} [(\Omega a \cos \phi + u) a \cos \phi]  &amp;=&amp; -\frac{1}{\rho}\frac{\partial p}{\partial\lambda}\\
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="q1-3-4-is-distorted-form-of-3">
+<h3>Q1.3 <span class="math notranslate nohighlight">\((4)\)</span> Is Distorted Form of <span class="math notranslate nohighlight">\((3)\)</span><a class="headerlink" href="#q1-3-4-is-distorted-form-of-3" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>在精確的物理世界 <span class="math notranslate nohighlight">\((3)\)</span></strong>：</p>
+<ul>
+<li><p>角動量的定義中包含了實際到地心的距離 <span class="math notranslate nohighlight">\(r\)</span>。如果一個空氣區塊純粹作垂直上升運動（<span class="math notranslate nohighlight">\(w &gt; 0\)</span>，所以 <span class="math notranslate nohighlight">\(r\)</span> 變大），即便它沒有南北移動（<span class="math notranslate nohighlight">\(v = 0\)</span>），它的絕對旋轉半徑也變大了。為了守恆，它的東向風速（緯向風速 <span class="math notranslate nohighlight">\(u\)</span>）就必須隨之調整減少。</p></li>
+</ul>
+</li>
+<li><p><strong>在傳統近似的世界 <span class="math notranslate nohighlight">\((4)\)</span></strong>：</p>
+<ul>
+<li><p>為了簡化計算，公式將原本的距離變數 <span class="math notranslate nohighlight">\(r\)</span> 強制替換成了常數 <span class="math notranslate nohighlight">\(a\)</span> ，也就是假設流體不管怎麼上下運動，它距離地心的距離「永遠一樣」。結果就是：當空氣區塊純粹垂直上升時，因為數學公式中半徑 <span class="math notranslate nohighlight">\(a\)</span> 不變，系統不會強制改變它的東西向風速 <span class="math notranslate nohighlight">\(u\)</span></p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="question-2">
+<h2>Question 2<a class="headerlink" href="#question-2" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Derive the kinetic energy principle from the exact primitive equations <span class="math notranslate nohighlight">\((1.1) –(1.3) \)</span></p></li>
+<li><p>Derive the kinetic energy principle from the traditional approximation equations <span class="math notranslate nohighlight">\((2.1)–(2.3)\)</span></p></li>
+</ol>
+</section>
+<section id="answer-2">
+<h2>Answer 2<a class="headerlink" href="#answer-2" title="Link to this heading">#</a></h2>
+<section id="id2">
+<h3>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><strong>【已知 1】 總動能 <span class="math notranslate nohighlight">\(KE\)</span>：</strong></p>
+<div class="math notranslate nohighlight">
+\[K = \frac{1}{2}(u^2+v^2+w^2)\]</div>
+</li>
+<li><p><strong>【已知 2】<span class="math notranslate nohighlight">\(x\)</span> 方向 <span class="math notranslate nohighlight">\((1.1)\)</span> 式同乘 <span class="math notranslate nohighlight">\(u\)</span> ：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \frac{Du}{Dt} - \left(2\Omega+\frac{1}{r\cos\phi}\right)(v\sin\phi-w\cos\phi) &amp;\overset{\text{(1.1)}}{=}&amp; -\frac{1}{\rho r\cos\phi}\frac{\partial p}{\partial\lambda}\\
+    u\frac{Du}{Dt} - u\left(2\Omega+\frac{u}{r\cos\phi}\right)(v\sin\phi-w\cos\phi) &amp;=&amp; -\frac{u}{\rho r\cos\phi}\frac{\partial p}{\partial\lambda}
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>【已知 3】<span class="math notranslate nohighlight">\(y\)</span> 方向 <span class="math notranslate nohighlight">\((1.2)\)</span> 式同乘 <span class="math notranslate nohighlight">\(v\)</span> ：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \frac{Dv}{Dt} + \left(2\Omega+\frac{u}{r\cos\phi}\right)u\sin\phi + \frac{vw}{r}  &amp;\overset{\text{(1.2)}}{=}&amp; -\frac{1}{\rho r}\frac{\partial p}{\partial\phi}\\
+    v\frac{Dv}{Dt} + v\left(2\Omega+\frac{u}{r\cos\phi}\right)u\sin\phi + \frac{v^2w}{r} &amp;=&amp; -\frac{v}{\rho r}\frac{\partial p}{\partial\phi}
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>【已知 4】<span class="math notranslate nohighlight">\(z\)</span> 方向 <span class="math notranslate nohighlight">\((1.3)\)</span> 式同乘 <span class="math notranslate nohighlight">\(w\)</span> ：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \frac{Dw}{Dt} - \left(2\Omega+\frac{u}{r\cos\phi}\right)u\cos\phi - \frac{v^2}{r} &amp;\overset{\text{(1.3)}}{=}&amp; -\frac{1}{\rho}\frac{\partial p}{\partial r} - g\\
+    w\frac{Dw}{Dt} - w\left(2\Omega+\frac{u}{r\cos\phi}\right)u\cos\phi - \frac{wv^2}{r} &amp;=&amp; -\frac{w}{\rho}\frac{\partial p}{\partial r} - gw
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>【已知 5】<span class="math notranslate nohighlight">\(x\)</span> 方向 <span class="math notranslate nohighlight">\((2.1)\)</span> 式同乘 <span class="math notranslate nohighlight">\(u\)</span>：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \frac{Du}{Dt} - \frac{uv\tan\phi}{a} &amp;\overset{\text{(2.1)}}{=}&amp; -\frac{1}{\rho a\cos\phi}\frac{\partial p}{\partial\lambda} + 2\Omega v\sin\phi\\
+    u\frac{Du}{Dt} - \frac{u^2v\tan\phi}{a} &amp;=&amp; -\frac{u}{\rho a\cos\phi}\frac{\partial p}{\partial\lambda} + 2\Omega uv\sin\phi
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>【已知 6】<span class="math notranslate nohighlight">\(y\)</span> 方向 <span class="math notranslate nohighlight">\((2.2)\)</span> 式同乘 <span class="math notranslate nohighlight">\(v\)</span>：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \frac{Dv}{Dt} + \frac{u^2\tan\phi}{a} &amp;\overset{\text{(2.2)}}{=}&amp; -\frac{1}{\rho a}\frac{\partial p}{\partial\phi} - 2\Omega u\sin\phi\\
+    v\frac{Dv}{Dt} + \frac{vu^2\tan\phi}{a} &amp;=&amp; -\frac{v}{\rho a}\frac{\partial p}{\partial\phi} - 2\Omega uv\sin\phi
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>【已知 7】<span class="math notranslate nohighlight">\(z\)</span> 方向 <span class="math notranslate nohighlight">\((2.3)\)</span> 式同乘 <span class="math notranslate nohighlight">\(w\)</span>：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \frac{Dw}{Dt} &amp;\overset{\text{(2.3)}}{=}&amp; -\frac{1}{\rho}\frac{\partial p}{\partial z} - g\\
+    w\frac{Dw}{Dt} &amp;=&amp; -\frac{w}{\rho}\frac{\partial p}{\partial z} - gw
+    \end{gather*}\end{split}\]</div>
+</li>
+</ul>
+</section>
+<section id="q2-1-ke-of-exact-primitive-equations">
+<h3>Q2.1 <span class="math notranslate nohighlight">\(KE\)</span> of Exact Primitive Equations<a class="headerlink" href="#q2-1-ke-of-exact-primitive-equations" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{D KE}{Dt} &amp;\overset{\text{已知 1}}{=}&amp;&amp; \frac{D }{Dt}\left[ \frac{1}{2}(u^2+v^2+w^2) \right]\\
+&amp;=&amp;&amp; u\frac{Du }{Dt}+ v\frac{D v}{Dt} + w\frac{D w}{Dt}\\
+&amp;\overset{\text{已知 2,3,4}}{=}&amp;&amp; -\frac{u}{\rho r\cos\phi}\frac{\partial p}{\partial\lambda} +  u\left(2\Omega+\frac{u}{r\cos\phi}\right)(v\sin\phi-w\cos\phi)\\
+&amp;&amp;+&amp;-\frac{v}{\rho r}\frac{\partial p}{\partial\phi} -  v\left(2\Omega+\frac{u}{r\cos\phi}\right)u\sin\phi - \frac{v^2w}{r}\\
+&amp;&amp;+&amp;-\frac{w}{\rho}\frac{\partial p}{\partial r} - gw +w\left(2\Omega+\frac{u}{r\cos\phi}\right)u\cos\phi + \frac{wv^2}{r}\\
+&amp;=&amp;&amp;-\frac{1}{\rho}\left(\frac{u}{r\cos\phi}\frac{\partial p}{\partial\lambda} + \frac{v}{r}\frac{\partial p}{\partial\phi} + w\frac{\partial p}{\partial r}\right) - gw
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="q2-2-ke-of-traditional-approximation-equations">
+<h3>Q2.2 <span class="math notranslate nohighlight">\(KE\)</span> of Traditional Approximation Equations<a class="headerlink" href="#q2-2-ke-of-traditional-approximation-equations" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{D KE}{Dt} &amp;\overset{\text{已知 1}}{=}&amp;&amp; \frac{D }{Dt}\left[ \frac{1}{2}(u^2+v^2+w^2) \right]\\
+&amp;=&amp;&amp; u\frac{Du }{Dt}+ v\frac{D v}{Dt} + w\frac{D w}{Dt}\\
+&amp;\overset{\text{已知 5,6,7}}{=}&amp;&amp; -\frac{u}{\rho a\cos\phi}\frac{\partial p}{\partial\lambda} + 2\Omega uv\sin\phi + \frac{u^2v\tan\phi}{a}\\
+&amp;&amp;+&amp;-\frac{v}{\rho a}\frac{\partial p}{\partial\phi} - 2\Omega uv\sin\phi - \frac{vu^2\tan\phi}{a}\\
+&amp;&amp;+&amp;-\frac{w}{\rho}\frac{\partial p}{\partial z} - gw\\
+&amp;=&amp;&amp;-\frac{1}{\rho}\left(\frac{u}{a\cos\phi}\frac{\partial p}{\partial\lambda} + \frac{v}{a}\frac{\partial p}{\partial\phi} + w\frac{\partial p}{\partial z}\right) - gw
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><strong>注意到</strong> 即使我們做了 <strong>「傳統近似」</strong> ，拿掉了某些項並把 <span class="math notranslate nohighlight">\(r\)</span> 換成了 <span class="math notranslate nohighlight">\(a\)</span>，方程式在數學結構上仍然保證了「科氏力與離心力不作功」這個核心的物理與能量守恆原則，傳統近似在NWP 在簡化運算的同時沒有破壞能量守恆 😎🎉</p></li>
+</ul>
+</section>
+</section>
+<section id="question-3">
+<h2>Question 3<a class="headerlink" href="#question-3" title="Link to this heading">#</a></h2>
+<p>Consider the formation of the <strong>subtropical jet</strong> in the <strong>Hadley circulation</strong> .The mean position of the subtropical jet is around <span class="math notranslate nohighlight">\(30^\circ \text{N}\)</span> and typical speed is around <span class="math notranslate nohighlight">\(60 \sim 70 \text{ m s}^{-1}\)</span>.</p>
+<ol class="arabic simple">
+<li><p>For zonally symmetric, inviscid flow, <code class="docutils literal notranslate"><span class="pre">compute</span> <span class="pre">the</span> <span class="pre">zonal</span> <span class="pre">wind</span></code> of a parcel which has risen, at the equator, from the ocean surface to a height of <span class="math notranslate nohighlight">\(16 \text{ km}\)</span> above sea level. Assume the zonal velocity was <span class="math notranslate nohighlight">\(u = 0\)</span> at sea level. Next assume this parcel moves poleward, at <span class="math notranslate nohighlight">\(16 \text{ km}\)</span> height, to <span class="math notranslate nohighlight">\(30^\circ \text{N}\)</span>. What is its <code class="docutils literal notranslate"><span class="pre">zonal</span> <span class="pre">velocity</span> <span class="pre">at</span> <span class="pre">this</span> <span class="pre">latitude</span></code>?</p></li>
+<li><p>Perform the calculations based on both <span class="math notranslate nohighlight">\((3)\)</span> and <span class="math notranslate nohighlight">\((4)\)</span>. Since almost all present NWP models and general circulation models use the <strong>traditional approximation</strong> and thus have the approximate angular momentum principle <span class="math notranslate nohighlight">\((4)\)</span>, <code class="docutils literal notranslate"><span class="pre">how</span> <span class="pre">large</span> <span class="pre">are</span> <span class="pre">the</span> <span class="pre">zonal</span> <span class="pre">wind</span> <span class="pre">errors</span></code> in the jet due to the traditional approximation in such models?</p></li>
+<li><p>What <code class="docutils literal notranslate"><span class="pre">other</span> <span class="pre">process(es)</span></code> may make the observed jet speed smaller than the speed produced by the conservation of angular momentum?</p></li>
+</ol>
+<section id="id3">
+<h3>已知與假設<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><strong>【假設 1】理想假設 (Ideal)</strong></p>
+<ul class="simple">
+<li><p>緯向對稱 (zonally symmetric) : <span class="math notranslate nohighlight">\(\frac{\partial p}{\partial\lambda}=0\)</span></p></li>
+<li><p>無黏滯力 (inviscid flow)</p></li>
+</ul>
+</li>
+<li><p><strong>【假設 2】題目假設</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(u(0^\circ \text{N} , 0 \text{ km}) =0\)</span></p></li>
+<li></li>
+</ul>
+</li>
+<li><p><strong>【已知 1】角動量精確版基於公式 (3)</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \frac{D}{Dt} [(\Omega r \cos \phi + u) r \cos \phi] &amp;\overset{(3)}{=}&amp; -\frac{1}{\rho} \frac{\partial p}{\partial \lambda}\\
+    \frac{D}{Dt} [(\Omega r \cos \phi + u) r \cos \phi] &amp;\overset{\text{假設 1}}{=}&amp; 0\\
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>【已知 2】角動量近似版基於公式 (4)</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \frac{D}{Dt} [(\Omega a \cos \phi + u) a \cos \phi] &amp;\overset{(4)}{=}&amp; -\frac{1}{\rho} \frac{\partial p}{\partial \lambda}\\
+    \frac{D}{Dt} [(\Omega a \cos \phi + u) a \cos \phi] &amp;\overset{\text{假設 1}}{=}&amp; 0\\
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>【已知 3】一些常數</strong></p>
+<ul class="simple">
+<li><p>地球半徑 <span class="math notranslate nohighlight">\(a \sim 6371000 \text{m}\)</span></p></li>
+<li><p>地球自轉角頻率 <span class="math notranslate nohighlight">\(\Omega \sim 7.292\times 10^{-5} \text{s}^{-1}\)</span></p></li>
+<li></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="q3-1a-zonal-wind-at-u-0-circ-text-n-16-text-km">
+<h3>Q3.1a zonal wind at <span class="math notranslate nohighlight">\(u(0^\circ \text{N} , 16 \text{ km})\)</span><a class="headerlink" href="#q3-1a-zonal-wind-at-u-0-circ-text-n-16-text-km" title="Link to this heading">#</a></h3>
+<section id="id4">
+<h4>對於 精確版<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{D}{Dt} [(\Omega r \cos \phi + u) r \cos \phi] &amp;\overset{\text{已知 1}}{=}&amp; 0\\
+\left. (\Omega r \cos \phi + u) r \cos \phi \right|_{(0^\circ \text{N} , 0 \text{ km})} &amp;=&amp; \left. (\Omega r \cos \phi + u) r \cos \phi \right|_{(0^\circ \text{N} , 16 \text{ km})} \\
+(\Omega a \cos 0^\circ + u(0^\circ \text{N} , 0 \text{ km})) a \cos 0^\circ  &amp;=&amp;  (\Omega (a+16 \text{ km}) \cos 0^\circ + u(0^\circ \text{N} , 16 \text{ km})) (a+16 \text{ km}) \cos 0^\circ \\
+\Omega a^2  &amp;\overset{\text{假設 2}}{=}&amp;  (\Omega (a+16 \text{ km}) + u(0^\circ \text{N} , 16 \text{ km})) (a+16 \text{ km})  \\
+\frac{\Omega a^2}{ (a+16 \text{ km})}-\Omega (a+16 \text{ km})  &amp;=&amp;   u(0^\circ \text{N} , 16 \text{ km})  \\
+\frac{ 7.292\times 10^{-5} \text{s}^{-1} (6371 \text{ km})^2}{ (6371 \text{ km}+16 \text{ km})}- 7.292\times 10^{-5} \text{s}^{-1} (6371 \text{ km}+16 \text{ km})   &amp;\overset{\text{已知 3}}{=}&amp;  u(0^\circ \text{N} , 16 \text{ km})  \\
+-0.00233 \text{ km}\cdot \text{ s}^{-1}&amp;\approx&amp;  u(0^\circ \text{N} , 16 \text{ km})  \\
+-2.33 \text{ m}\cdot \text{ s}^{-1}&amp;=&amp;  u(0^\circ \text{N} , 16 \text{ km})  \\
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="id5">
+<h4>對於 近似版<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{D}{Dt} [(\Omega a \cos \phi + u) a \cos \phi] &amp;\overset{\text{已知 1}}{=}&amp; 0\\
+\left. (\Omega a \cos \phi + u) a \cos \phi \right|_{(0^\circ \text{N} , 0 \text{ km})} &amp;=&amp; \left. (\Omega a \cos \phi + u) a \cos \phi \right|_{(0^\circ \text{N} , 16 \text{ km})} \\
+(\Omega a \cos 0^\circ + u(0^\circ \text{N} , 0 \text{ km})) a \cos 0^\circ  &amp;=&amp;  (\Omega a \cos 0^\circ + u(0^\circ \text{N} , 16 \text{ km})) a \cos 0^\circ \\
+\Omega a^2  &amp;\overset{\text{假設 2}}{=}&amp;  (\Omega a+ u(0^\circ \text{N} , 16 \text{ km})) a  \\
+\frac{\Omega a^2}{ a}-\Omega a  &amp;=&amp;   u(0^\circ \text{N} , 16 \text{ km})  \\
+0  &amp;=&amp;   u(0^\circ \text{N} , 16 \text{ km})  \\
+\end{gather*}\end{split}\]</div>
+</section>
+</section>
+<section id="q3-1b-zonal-wind-at-u-30-circ-text-n-16-text-km">
+<h3>Q3.1b zonal wind at <span class="math notranslate nohighlight">\(u(30^\circ \text{N} , 16 \text{ km})\)</span><a class="headerlink" href="#q3-1b-zonal-wind-at-u-30-circ-text-n-16-text-km" title="Link to this heading">#</a></h3>
+<section id="id6">
+<h4>對於 精確版<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{D}{Dt} [(\Omega r \cos \phi + u) r \cos \phi] &amp;\overset{\text{已知 1}}{=}&amp; 0\\
+\left. (\Omega r \cos \phi + u) r \cos \phi \right|_{(0^\circ \text{N} , 0 \text{ km})} &amp;=&amp; \left. (\Omega r \cos \phi + u) r \cos \phi \right|_{(30^\circ \text{N} , 16 \text{ km})} \\
+(\Omega a \cos 0^\circ + u(0^\circ \text{N} , 0 \text{ km})) a \cos 0^\circ  &amp;=&amp;  (\Omega (a+16 \text{ km}) \cos 30^\circ + u(30^\circ \text{N} , 16 \text{ km})) (a+16 \text{ km}) \cos 30^\circ \\
+\Omega a^2  &amp;\overset{\text{假設 2}}{=}&amp;  (\Omega (a+16 \text{ km}) \frac{\sqrt{3}}{2} + u(30^\circ \text{N} , 16 \text{ km})) (a+16 \text{ km}) \frac{\sqrt{3}}{2} \\
+\frac{\Omega a^2}{ (a+16 \text{ km}) \frac{\sqrt{3}}{2}}-\Omega (a+16 \text{ km}) \frac{\sqrt{3}}{2} &amp;=&amp;   u(30^\circ \text{N} , 16 \text{ km})  \\
+\frac{ 7.292\times 10^{-5} \text{s}^{-1} (6371 \text{ km})^2}{ (6371 \text{ km}+16 \text{ km}) \frac{\sqrt{3}}{2}}- 7.292\times 10^{-5} \text{s}^{-1} (6371 \text{ km}+16 \text{ km})\frac{\sqrt{3}}{2}   &amp;\overset{\text{已知 3}}{=}&amp;  u(30^\circ \text{N} , 16 \text{ km})  \\
+0.1318 \text{ km}\cdot \text{ s}^{-1}&amp;\approx&amp;  u(30^\circ \text{N} , 16 \text{ km})  \\
+131.8 \text{ m}\cdot \text{ s}^{-1}&amp;=&amp;  u(30^\circ \text{N} , 16 \text{ km})  \\
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="id7">
+<h4>對於 近似版<a class="headerlink" href="#id7" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{D}{Dt} [(\Omega a \cos \phi + u) a \cos \phi] &amp;\overset{\text{已知 1}}{=}&amp; 0\\
+\left. (\Omega a \cos \phi + u) a \cos \phi \right|_{(0^\circ \text{N} , 0 \text{ km})} &amp;=&amp; \left. (\Omega a \cos \phi + u) a \cos \phi \right|_{(30^\circ \text{N} , 16 \text{ km})} \\
+(\Omega a \cos 0^\circ + u(0^\circ \text{N} , 0 \text{ km})) a \cos 0^\circ  &amp;=&amp;  (\Omega a \cos 30^\circ + u(30^\circ \text{N} , 16 \text{ km})) a \cos 30^\circ \\
+\Omega a^2  &amp;\overset{\text{假設 2}}{=}&amp;  (\Omega a \frac{\sqrt{3}}{2} + u(30^\circ \text{N} , 16 \text{ km})) a \frac{\sqrt{3}}{2} \\
+\frac{\Omega a^2}{ a \frac{\sqrt{3}}{2}}-\Omega a \frac{\sqrt{3}}{2} &amp;=&amp;   u(30^\circ \text{N} , 16 \text{ km})  \\
+\Omega a \left(\frac{2}{\sqrt{3}}-\frac{\sqrt{3}}{2}  \right) &amp;\overset{\text{已知 3}}{=}&amp;  u(30^\circ \text{N} , 16 \text{ km})  \\
+7.292\times 10^{-5} \text{s}^{-1} \cdot  6371 \text{ km} \left(\frac{2}{\sqrt{3}}-\frac{\sqrt{3}}{2}  \right) &amp;\overset{\text{已知 3}}{=}&amp;  u(30^\circ \text{N} , 16 \text{ km})  \\
+0.1341 \text{ km}\cdot \text{ s}^{-1}&amp;\approx&amp;  u(30^\circ \text{N} , 16 \text{ km})  \\
+134.1 \text{ m}\cdot \text{ s}^{-1}&amp;=&amp;  u(30^\circ \text{N} , 16 \text{ km})  \\
+\end{gather*}\end{split}\]</div>
+</section>
+</section>
+<section id="q3-2-zonal-wind-errors-at-u-30-circ-text-n-16-text-km">
+<h3>Q3.2 zonal wind errors at <span class="math notranslate nohighlight">\(u(30^\circ \text{N} , 16 \text{ km})\)</span><a class="headerlink" href="#q3-2-zonal-wind-errors-at-u-30-circ-text-n-16-text-km" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+u_{\text{Traditional Approximation}}(30^\circ \text{N} , 16 \text{ km}) - u_{\text{Exact Primitive}}(30^\circ \text{N} , 16 \text{ km})  &amp;\overset{\text{Q3.1b}}{=}&amp; 131.8\text{ m}\cdot \text{ s}^{-1} -134.1 \text{ m}\cdot \text{ s}^{-1}\\
+&amp;=&amp; 2.3 \text{ m}\cdot \text{ s}^{-1}\\
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="q3-3-jet">
+<h3>Q3.3 其他因素影響 jet 的速度<a class="headerlink" href="#q3-3-jet" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>理論計算出來約 <span class="math notranslate nohighlight">\(130\text{ m}\cdot \text{ s}^{-1}\)</span></p>
+<ul>
+<li><p>假設 <strong>緯向對稱且無黏滯</strong></p></li>
+</ul>
+</li>
+<li><p>實際觀測到的噴流只有 <span class="math notranslate nohighlight">\(60 \sim 70 \text{ m}\cdot \text{ s}^{-1}\)</span></p>
+<ol class="arabic simple">
+<li><p><strong>壓不穩定性與中緯度氣旋 (Baroclinic Eddies)</strong>：真實的大氣是 3D 且充滿擾動的，當噴流的風速切變過大時會產生波動和渦旋（就像天氣圖上的高低壓系統），這些渦旋會把動量往極地或是向下傳遞，相當於把這團空氣的角動量「偷走」了</p></li>
+<li><p><strong>摩擦力與湍流混合</strong>：儘管高空摩擦力很小，但空氣塊在移動過程中仍然會與周遭流速較慢的空氣發生混合導致動量損耗，公式右邊的 <span class="math notranslate nohighlight">\(\frac{\partial p}{\partial\lambda}\)</span> 實際上並不等於 0</p></li>
+</ol>
+</li>
+</ul>
+</section>
+</section>
+<section id="question-4">
+<h2>Question 4<a class="headerlink" href="#question-4" title="Link to this heading">#</a></h2>
+<p>In an effort to gain more accuracy in the climate model, some reserachers have approximated <span class="math notranslate nohighlight">\((1.3)\)</span> by the hydrostatic equation <span class="math notranslate nohighlight">\(\frac{Dw}{Dt}=0\)</span> but have left <span class="math notranslate nohighlight">\((1.1)\)</span> and <span class="math notranslate nohighlight">\((1.2)\)</span> unchanged. Discuss why this is a bad idea.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{Du}{Dt}-\left(2\Omega+\frac{u}{r\cos\phi}\right)(v\sin\phi-w\cos\phi)&amp;=&amp;-\frac{1}{\rho}\frac{\partial p}{r\cos\phi\partial\lambda} \\
+\frac{Dv}{Dt}+\left(2\Omega+\frac{u}{r\cos\phi}\right)u\sin\phi+\frac{vw}{r}&amp;=&amp;-\frac{1}{\rho}\frac{\partial p}{r\partial\phi} \\
+0&amp;=&amp;-\frac{1}{\rho}\frac{\partial p}{\partial r}-g\\
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="answer-4">
+<h2>Answer 4<a class="headerlink" href="#answer-4" title="Link to this heading">#</a></h2>
+<p>Question 2 中 <span class="math notranslate nohighlight">\(\frac{Dw}{Dt}\)</span> 提供科氏力項與離心力項，若假設 <span class="math notranslate nohighlight">\(\frac{Dw}{Dt}=0\)</span> 則會有一些項無法消除導致動能 <span class="math notranslate nohighlight">\(KE\)</span> 不守恆。在數學上無法抵消對應到物理上就是：科氏力與度規離心力開始對空氣區塊作功了，虛假能量來源會隨著時間不斷累積導致模型的動能無限放大，最後數值發散。</p>
+<section id="id8">
+<h3>Q2.1 <span class="math notranslate nohighlight">\(KE\)</span> of Exact Primitive Equations<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{D KE}{Dt} &amp;\overset{\text{Q2 已知 1}}{=}&amp;&amp; \frac{D }{Dt}\left[ \frac{1}{2}(u^2+v^2+w^2) \right]\\
+&amp;=&amp;&amp; u\frac{Du }{Dt}+ v\frac{D v}{Dt} + w\frac{D w}{Dt}\\
+&amp;\overset{\text{Q2 已知 2,3,4}}{=}&amp;&amp; -\frac{u}{\rho r\cos\phi}\frac{\partial p}{\partial\lambda} +  u\left(2\Omega+\frac{u}{r\cos\phi}\right)(v\sin\phi-w\cos\phi)\\
+&amp;&amp;+&amp;-\frac{v}{\rho r}\frac{\partial p}{\partial\phi} -  v\left(2\Omega+\frac{u}{r\cos\phi}\right)u\sin\phi - \frac{v^2w}{r}\\
+&amp;&amp;+&amp;-\frac{w}{\rho}\frac{\partial p}{\partial r} - gw +w\left(2\Omega+\frac{u}{r\cos\phi}\right)u\cos\phi + \frac{wv^2}{r}\\
+&amp;=&amp;&amp;-\frac{1}{\rho}\left(\frac{u}{r\cos\phi}\frac{\partial p}{\partial\lambda} + \frac{v}{r}\frac{\partial p}{\partial\phi} + w\frac{\partial p}{\partial r}\right) - gw
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="q4-ke-of-exact-primitive-equations-frac-dw-dt-0">
+<h3>Q4 <span class="math notranslate nohighlight">\(KE\)</span> of Exact Primitive Equations <span class="math notranslate nohighlight">\(\frac{Dw}{Dt}=0\)</span><a class="headerlink" href="#q4-ke-of-exact-primitive-equations-frac-dw-dt-0" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{D KE}{Dt} &amp;\overset{\text{Q2 已知 1}}{=}&amp;&amp; \frac{D }{Dt}\left[ \frac{1}{2}(u^2+v^2+w^2) \right]\\
+&amp;=&amp;&amp; u\frac{Du }{Dt}+ v\frac{D v}{Dt} + w\frac{D w}{Dt}\\
+&amp;\overset{\text{Q2 已知 2,3,4}}{=}&amp;&amp; -\frac{u}{\rho r\cos\phi}\frac{\partial p}{\partial\lambda} +  u\left(2\Omega+\frac{u}{r\cos\phi}\right)(v\sin\phi-w\cos\phi)\\
+&amp;&amp;+&amp;-\frac{v}{\rho r}\frac{\partial p}{\partial\phi} -  v\left(2\Omega+\frac{u}{r\cos\phi}\right)u\sin\phi - \frac{v^2w}{r}\\
+&amp;=&amp;&amp;-\frac{1}{\rho}\left(\frac{u}{r\cos\phi}\frac{\partial p}{\partial\lambda} + \frac{v}{r}\frac{\partial p}{\partial\phi} + w\frac{\partial p}{\partial r}\right) - gw -u\left(2\Omega+\frac{u}{r\cos\phi}\right)w\cos\phi- \frac{v^2w}{r}
+\end{gather*}\end{split}\]</div>
+</section>
+</section>
+<section id="question-5">
+<h2>Question 5<a class="headerlink" href="#question-5" title="Link to this heading">#</a></h2>
+<p>Some researchers have approximated <span class="math notranslate nohighlight">\((1.1)–(1.3)\)</span> by simply replacing <span class="math notranslate nohighlight">\(r\)</span> by <span class="math notranslate nohighlight">\(a\)</span> (earth radius) (see Holton’s book, page 37–38, equations <span class="math notranslate nohighlight">\((2.19)–(2.21)\)</span>). Note that this is a different approximation than <span class="math notranslate nohighlight">\((1.1)–(1.3)\)</span>. Discuss why this is a bad idea.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{Du}{Dt}-\left(2\Omega+\frac{u}{a\cos\phi}\right)(v\sin\phi-w\cos\phi)&amp;=&amp;-\frac{1}{\rho}\frac{\partial p}{a\cos\phi\partial\lambda} \\
+a\cos\phi\frac{Du}{Dt} - (2\Omega a\cos\phi+u)(v\sin\phi-w\cos\phi) &amp;=&amp; -\frac{1}{\rho}\frac{\partial p}{\partial\lambda} \\
+a\cos\phi\frac{Du}{Dt} - v\sin\phi(2\Omega a\cos\phi+u) + w\cos\phi(2\Omega a\cos\phi+u) &amp;=&amp; -\frac{1}{\rho}\frac{\partial p}{\partial\lambda}\\
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="answer-5">
+<h2>Answer 5<a class="headerlink" href="#answer-5" title="Link to this heading">#</a></h2>
+<p>單純把 <span class="math notranslate nohighlight">\(r\)</span> 換成常數 <span class="math notranslate nohighlight">\(a\)</span> 會讓 <span class="math notranslate nohighlight">\(\frac{Dr}{Dt}= \frac{Da}{Dt}=0\)</span> ，也就是說Question 1 證明的角動量會不守恒會多出 <span class="math notranslate nohighlight">\(a \cos \phi\left( 2\Omega + \frac{u}{a \cos \phi} \right) ( w \cos \phi)\)</span>，這代表每當大氣中有垂直風速 (<span class="math notranslate nohighlight">\(w \neq 0\)</span>) 產生時，這團空氣就會憑空獲得或失去角動量！</p>
+<ul>
+<li><p><strong>【Q1 已知 2】 微積分✨1.1：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \frac{D}{Dt}[ur\cos\phi] &amp;=&amp; \frac{Du}{Dt} r\cos\phi + u \frac{D r}{Dt} \cos\phi + ur \frac{D \cos\phi}{Dt} \\
+    \frac{D}{Dt}[ur\cos\phi]&amp;\overset{\text{Q1 已知 1}}{=}&amp; \frac{Du}{Dt} r\cos\phi + u w \cos\phi - ur \sin\phi \frac{D \phi}{Dt} \\
+    \frac{D}{Dt}[ur\cos\phi]&amp;\overset{\text{Q1 已知 1}}{=}&amp; \frac{Du}{Dt} r\cos\phi + u w \cos\phi - ur \sin\phi \frac{v}{r} \\
+    \frac{D}{Dt}[ur\cos\phi]&amp;=&amp; \frac{Du}{Dt} r\cos\phi - u(v\sin\phi - w\cos\phi)\\
+    \frac{Du}{Dt} r\cos\phi &amp;=&amp; \frac{D}{Dt}[ur\cos\phi]  + u(v\sin\phi - w\cos\phi)\\
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>【Q1 已知 3】 微積分✨✨1.1：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \frac{D}{Dt} [(\Omega r \cos \phi + u) r \cos \phi] &amp;=&amp; \frac{D}{Dt}[\Omega r^2\cos^2\phi] + \frac{D}{Dt}[ur\cos\phi] \\
+    \frac{D}{Dt} [(\Omega r \cos \phi + u) r \cos \phi] - \frac{D}{Dt}[ur\cos\phi] &amp;=&amp; \frac{D}{Dt}[\Omega r^2\cos^2\phi] \\
+    \frac{D}{Dt} [(\Omega r \cos \phi + u) r \cos \phi] - \frac{D}{Dt}[ur\cos\phi] &amp;=&amp; \Omega 2r\frac{Dr}{Dt}\cos^2\phi + \Omega r^2 \cdot 2\cos\phi(-\sin\phi)\frac{D\phi}{Dt}\\
+    \frac{D}{Dt} [(\Omega r \cos \phi + u) r \cos \phi] - \frac{D}{Dt}[ur\cos\phi] &amp;\overset{\text{Q1 已知 1}}{=}&amp; \Omega 2rw\cos^2\phi - \Omega r^2 \cdot 2\cos\phi \sin\phi \frac{v}{r}\\
+    \frac{D}{Dt} [(\Omega r \cos \phi + u) r \cos \phi] - \frac{D}{Dt}[ur\cos\phi] &amp;=&amp; 2\Omega r\cos\phi(w\cos\phi - v\sin\phi)\\
+    \frac{D}{Dt} [(\Omega r \cos \phi + u) r \cos \phi] - \frac{D}{Dt}[ur\cos\phi] &amp;=&amp;-2\Omega r\cos\phi(v\sin\phi - w\cos\phi)\\
+    \frac{D}{Dt}[ur\cos\phi] &amp;=&amp;\frac{D}{Dt} [(\Omega r \cos \phi + u) r \cos \phi] +2\Omega r\cos\phi(v\sin\phi - w\cos\phi)\\
+    \end{gather*}\end{split}\]</div>
+</li>
+</ul>
+<section id="id9">
+<h3>Q1.1<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{Du}{Dt} - \left( 2\Omega + \frac{u}{r \cos \phi} \right) (v \sin \phi - w \cos \phi) &amp;\overset{(1.1)}{=}&amp; -\frac{1}{\rho r \cos \phi} \frac{\partial p}{\partial \lambda} \\
+r \cos \phi\frac{Du}{Dt} -  r \cos \phi\left( 2\Omega + \frac{u}{r \cos \phi} \right) (v \sin \phi - w \cos \phi) &amp;=&amp; -\frac{1}{\rho} \frac{\partial p}{\partial \lambda} \\
+\frac{D}{Dt}[ur\cos\phi] + u(v\sin\phi - w\cos\phi) -  r \cos \phi\left( 2\Omega + \frac{u}{r \cos \phi} \right) (v \sin \phi - w \cos \phi) &amp;\overset{\text{Q1 已知 2}}{=}&amp; -\frac{1}{\rho} \frac{\partial p}{\partial \lambda} \\
+\frac{D}{Dt}[ur\cos\phi] -  r \cos \phi 2\Omega  (v \sin \phi - w \cos \phi) &amp;=&amp; -\frac{1}{\rho} \frac{\partial p}{\partial \lambda} \\
+\frac{D}{Dt} [(\Omega r \cos \phi + u) r \cos \phi] +2\Omega r\cos\phi(v\sin\phi - w\cos\phi)  -  r \cos \phi 2\Omega  (v \sin \phi - w \cos \phi) &amp;\overset{\text{Q1 已知 3}}{=}&amp; -\frac{1}{\rho} \frac{\partial p}{\partial \lambda} \\
+\frac{D}{Dt} [(\Omega r \cos \phi + u) r \cos \phi]  &amp;=&amp; -\frac{1}{\rho} \frac{\partial p}{\partial \lambda} \\
+\end{gather*}\end{split}\]</div>
+<ul>
+<li><p><strong>【Q5 已知 2】 微積分✨1.1：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \frac{D}{Dt}[ua\cos\phi] &amp;=&amp; \frac{Du}{Dt} a\cos\phi + u \frac{D a}{Dt} \cos\phi + ua \frac{D \cos\phi}{Dt} \\
+    \frac{D}{Dt}[ua\cos\phi]&amp;\overset{\text{Q1 已知 1}}{=}&amp; \frac{Du}{Dt} a\cos\phi + u 0 \cos\phi - ua \sin\phi \frac{D \phi}{Dt} \\
+    \frac{D}{Dt}[ua\cos\phi]&amp;\overset{\text{Q1 已知 1}}{=}&amp; \frac{Du}{Dt} a\cos\phi - ua \sin\phi \frac{v}{a} \\
+    \frac{D}{Dt}[ua\cos\phi]&amp;=&amp; \frac{Du}{Dt} a\cos\phi - uv\sin\phi \\
+    \frac{Du}{Dt} a\cos\phi &amp;=&amp; \frac{D}{Dt}[ua\cos\phi]  + uv\sin\phi \\
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>【Q5 已知 3】 微積分✨✨1.1：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \frac{D}{Dt} [(\Omega a \cos \phi + u) a \cos \phi] &amp;=&amp; \frac{D}{Dt}[\Omega a^2\cos^2\phi] + \frac{D}{Dt}[ua\cos\phi] \\
+    \frac{D}{Dt} [(\Omega a \cos \phi + u) a \cos \phi] - \frac{D}{Dt}[ua\cos\phi] &amp;=&amp; \frac{D}{Dt}[\Omega a^2\cos^2\phi] \\
+    \frac{D}{Dt} [(\Omega a \cos \phi + u) a \cos \phi] - \frac{D}{Dt}[ua\cos\phi] &amp;=&amp; \Omega 2a\frac{Da}{Dt}\cos^2\phi + \Omega a^2 \cdot 2\cos\phi(-\sin\phi)\frac{D\phi}{Dt}\\
+    \frac{D}{Dt} [(\Omega a \cos \phi + u) a \cos \phi] - \frac{D}{Dt}[ua\cos\phi] &amp;\overset{\text{已知 1}}{=}&amp; \Omega 2a0\cos^2\phi - \Omega a^2 \cdot 2\cos\phi \sin\phi \frac{v}{a}\\
+    \frac{D}{Dt} [(\Omega a \cos \phi + u) a \cos \phi] - \frac{D}{Dt}[ua\cos\phi] &amp;=&amp;- 2\Omega av\cos\phi\sin\phi\\
+    \frac{D}{Dt} [(\Omega a \cos \phi + u) a \cos \phi] - \frac{D}{Dt}[ua\cos\phi] &amp;=&amp;- 2\Omega av\cos\phi\sin\phi \\
+    \frac{D}{Dt}[ua\cos\phi] &amp;=&amp;\frac{D}{Dt} [(\Omega a \cos \phi + u) a \cos \phi] + 2\Omega av\cos\phi\sin\phi\\
+    \end{gather*}\end{split}\]</div>
+</li>
+</ul>
+</section>
+<section id="q5">
+<h3>Q5<a class="headerlink" href="#q5" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{Du}{Dt} - \left( 2\Omega + \frac{u}{a \cos \phi} \right) (v \sin \phi - w \cos \phi) &amp;\overset{(1.1 \text{改})}{=}&amp; -\frac{1}{\rho a \cos \phi} \frac{\partial p}{\partial \lambda} \\
+a \cos \phi\frac{Du}{Dt} -  a \cos \phi\left( 2\Omega + \frac{u}{a \cos \phi} \right) (v \sin \phi - w \cos \phi) &amp;=&amp; -\frac{1}{\rho} \frac{\partial p}{\partial \lambda} \\
+\frac{D}{Dt}[ua\cos\phi] + uv\sin\phi -  a \cos \phi\left( 2\Omega + \frac{u}{a \cos \phi} \right) (v \sin \phi - w \cos \phi) &amp;\overset{\text{Q5 已知 2}}{=}&amp; -\frac{1}{\rho} \frac{\partial p}{\partial \lambda} \\
+\frac{D}{Dt}[ua\cos\phi] +  a \cos \phi\left( 2\Omega + \frac{u}{a \cos \phi} \right) ( w \cos \phi) - 2a v\Omega \cos \phi   \sin \phi &amp;=&amp; -\frac{1}{\rho} \frac{\partial p}{\partial \lambda} \\
+\frac{D}{Dt} [(\Omega a \cos \phi + u) a \cos \phi] + 2\Omega av\cos\phi\sin\phi +  a \cos \phi\left( 2\Omega + \frac{u}{a \cos \phi} \right) ( w \cos \phi) - 2a v\Omega \cos \phi   \sin \phi &amp;\overset{\text{Q5 已知 3}}{=}&amp; -\frac{1}{\rho} \frac{\partial p}{\partial \lambda} \\
+\frac{D}{Dt} [(\Omega a \cos \phi + u) a \cos \phi] +  a \cos \phi\left( 2\Omega + \frac{u}{a \cos \phi} \right) ( w \cos \phi)   &amp;=&amp; -\frac{1}{\rho} \frac{\partial p}{\partial \lambda} \\
+\end{gather*}\end{split}\]</div>
+</section>
+</section>
+<section id="question-6">
+<h2>Question 6<a class="headerlink" href="#question-6" title="Link to this heading">#</a></h2>
+<p>If a radius <span class="math notranslate nohighlight">\(a\)</span> spherical planet is covered with a homogeneous fluid with depath <span class="math notranslate nohighlight">\(h\)</span> and density <span class="math notranslate nohighlight">\(\rho\)</span> .</p>
+<ol class="arabic simple">
+<li><p>Show that the surface pressure in hydrostatic balance is</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[p = \rho g h \left( 1 + \frac{h}{a} + \frac{1}{3} \frac{h^2}{a^2} \right)\]</div>
+<p>Note that the pressure is not the typical hydrostatic <span class="math notranslate nohighlight">\(\rho g h\)</span> value. The atmospheric pressure or the geopotential height is often calculated with the hydrotatic balance, <code class="docutils literal notranslate"><span class="pre">discuss</span> <span class="pre">the</span> <span class="pre">error</span></code> involved when the spherical geometry of earth is considered.</p>
+</section>
+<section id="answer-6">
+<h2>Answer 6<a class="headerlink" href="#answer-6" title="Link to this heading">#</a></h2>
+<section id="id10">
+<h3>已知與假設<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><strong>【已知 1】球體積公式</strong></p>
+<div class="math notranslate nohighlight">
+\[V=\frac{4}{3}\pi r^3\]</div>
+</li>
+<li><p><strong>【已知 2】二項式展開 (Binomial Expansion)</strong></p>
+<div class="math notranslate nohighlight">
+\[(x+y)^3 = x^3 + 3x^2y + 3xy^2 + y^3\]</div>
+</li>
+<li><p><strong>【已知 3】地球上的空氣體積</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    V &amp;\overset{\text{已知 1}}{=}&amp; \frac{4}{3}\pi(a+h)^3 - \frac{4}{3}\pi a^3\\
+    &amp;\overset{\text{已知 2}}{=}&amp;\frac{4}{3}\pi (a^3 + 3a^2h + 3ah^2 + h^3 - a^3)\\
+    &amp;=&amp;\frac{4}{3}\pi \cdot 3a^2h \left(1 + \frac{3ah^2}{3a^2h} + \frac{h^3}{3a^2h}\right)\\
+    &amp;=&amp;4\pi a^2 h \left(1 + \frac{h}{a} + \frac{1}{3}\frac{h^2}{a^2}\right)
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>【已知 3】球面積公式</strong></p>
+<div class="math notranslate nohighlight">
+\[A = 4\pi a^2\]</div>
+</li>
+</ul>
+</section>
+<section id="q5-1-proof">
+<h3>Q5.1 proof<a class="headerlink" href="#q5-1-proof" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+p &amp;\overset{\text{已知 1}}{=}&amp; \frac{W}{A} \\
+&amp;=&amp;\frac{ M \cdot g }{A}\\
+&amp;=&amp;\frac{ \rho \cdot V \cdot g }{A}\\
+&amp;\overset{\text{已知 3}}{=}&amp;\frac{ \rho \cdot 4\pi a^2 h \left(1 + \frac{h}{a} + \frac{1}{3}\frac{h^2}{a^2}\right) \cdot g }{A}\\
+&amp;\overset{\text{已知 4}}{=}&amp;\frac{ \rho \cdot 4\pi a^2 h \left(1 + \frac{h}{a} + \frac{1}{3}\frac{h^2}{a^2}\right) \cdot g }{4\pi a^2}\\
+&amp;=&amp; \rho gh \left(1 + \frac{h}{a} + \frac{1}{3}\frac{h^2}{a^2}\right)
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="q5-2-discuss-the-error">
+<h3>Q5.2 discuss the error<a class="headerlink" href="#q5-2-discuss-the-error" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{p_{\text{normal}} - p_{\text{exact}}}{p_{\text{normal}}} &amp;=&amp; \frac{\rho gh - \left(\rho gh + \rho gh\left(\frac{h}{a}\right) + \rho gh\left(\frac{1}{3}\frac{h^2}{a^2}\right)\right)}{\rho gh}\\
+&amp;=&amp; - \left(\frac{h}{a}\right) - \left(\frac{1}{3}\frac{h^2}{a^2}\right)\\
+&amp;=&amp; - \frac{10}{6371} - \frac{1}{3}(0.00157)^2 \\
+&amp;\approx&amp; - 0.00157 -  0.0000008 &amp;\approx&amp; -0.00157
+\end{gather*}\end{split}\]</div>
+<p>這個誤差幾乎可以忽略</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./homework\hw2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../hw1/hw1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Advanced Atmospheric Dynamics Hw 1</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#note">Note</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">簡單來說:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-momentum-equation">1. 向量動量方程式 (Vector Momentum Equation)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nonhydrostatic-primitive-equations-exact-primitive-equations">2. 非靜力原始方程式 (Nonhydrostatic Primitive Equations) / 精確原始方程式 (Exact Primitive Equations)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#traditional-approximation-equations">3. 傳統近似方程式 (Traditional Approximation Equations)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#quasi-static-primitive-equations"><strong>4. 準靜力原始方程式 (Quasi-static Primitive Equations)</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-1">Answer 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-1">Q1.1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-2">Q1.2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-3-4-is-distorted-form-of-3">Q1.3 <span class="math notranslate nohighlight">\((4)\)</span> Is Distorted Form of <span class="math notranslate nohighlight">\((3)\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-2">Answer 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-1-ke-of-exact-primitive-equations">Q2.1 <span class="math notranslate nohighlight">\(KE\)</span> of Exact Primitive Equations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-2-ke-of-traditional-approximation-equations">Q2.2 <span class="math notranslate nohighlight">\(KE\)</span> of Traditional Approximation Equations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question 3</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">已知與假設</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q3-1a-zonal-wind-at-u-0-circ-text-n-16-text-km">Q3.1a zonal wind at <span class="math notranslate nohighlight">\(u(0^\circ \text{N} , 16 \text{ km})\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">對於 精確版</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">對於 近似版</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q3-1b-zonal-wind-at-u-30-circ-text-n-16-text-km">Q3.1b zonal wind at <span class="math notranslate nohighlight">\(u(30^\circ \text{N} , 16 \text{ km})\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">對於 精確版</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">對於 近似版</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q3-2-zonal-wind-errors-at-u-30-circ-text-n-16-text-km">Q3.2 zonal wind errors at <span class="math notranslate nohighlight">\(u(30^\circ \text{N} , 16 \text{ km})\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q3-3-jet">Q3.3 其他因素影響 jet 的速度</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question 4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-4">Answer 4</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Q2.1 <span class="math notranslate nohighlight">\(KE\)</span> of Exact Primitive Equations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q4-ke-of-exact-primitive-equations-frac-dw-dt-0">Q4 <span class="math notranslate nohighlight">\(KE\)</span> of Exact Primitive Equations <span class="math notranslate nohighlight">\(\frac{Dw}{Dt}=0\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question 5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-5">Answer 5</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Q1.1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q5">Q5</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6">Question 6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-6">Answer 6</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">已知與假設</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q5-1-proof">Q5.1 proof</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q5-2-discuss-the-error">Q5.2 discuss the error</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC YE
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -191,6 +191,7 @@
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../homework/homework.html">homework</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../homework/hw1/hw1.html">Advanced Atmospheric Dynamics Hw 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../homework/hw2/hw2.html">Advanced Atmospheric Dynamics Hw 2</a></li>
 </ul>
 </details></li>
 </ul>
@@ -433,26 +434,27 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">6.1 幾何設定與總流阻方程式</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">6.2 尋求最佳分叉角度</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">假設與已知</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">推導</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">6.3 物理與生物的印證</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">6.3 物理與生物的印證</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-momentum-equations-in-a-rotating-frame">七a、 旋轉座標系中的動量方程式 (Momentum Equations in a Rotating Frame)</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d">壹、 2D 圓柱座標系下的動量推導 (局部渦旋/颱風系統)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">1. 變數與方程式定義</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#momentum-equations-in-a-rotating-frame">7. 旋轉座標系中的動量方程式 (Momentum Equations in a Rotating Frame)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-2d">7a. 2D 圓柱座標系下的動量推導 (局部渦旋/颱風系統)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-1">7a.1 變數與方程式定義</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#material-derivative-of-unit-vectors">2. 單位向量的物質導數 (Material Derivative of Unit Vectors)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">3. 動力方程式的完全展開</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">4. 兩個極端特例的物理意義</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">貳、 3D 球座標系下的動量方程式 (全球氣候與環流模式)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d">貳、 3D 球座標系下的動量方程式 (全球氣候與環流模式)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#primitive-equations">參、 傳統近似與原始方程式 (Primitive Equations)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">1. 我們可以丟掉什麼？</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">1. 我們可以丟掉什麼？</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hydrostatic-approximation">2. 靜力平衡 (Hydrostatic Approximation)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">3. 大氣數值模式的基石</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">3. 大氣數值模式的基石</a></li>
 </ul>
 </li>
 </ul>
@@ -464,19 +466,19 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spherical-coordinates">3. 球面座標系 (Spherical Coordinates) - 適用於全球環流模式</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">壹、 2D 圓柱座標系下的動量推導 (局部渦旋/颱風系統)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">1. 單位向量的物質導數</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">2. 動力方程式展開與 RHS 結合</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">壹、 2D 圓柱座標系下的動量推導 (局部渦旋/颱風系統)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">1. 單位向量的物質導數</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">2. 動力方程式展開與 RHS 結合</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">貳、 3D 球座標系下的動量方程式 (全球氣候模式)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">參、 傳統近似與原始方程式 (Primitive Equations)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">貳、 3D 球座標系下的動量方程式 (全球氣候模式)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">參、 傳統近似與原始方程式 (Primitive Equations)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-2">七b-2</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-p">一、 破解向量的幻象：為什麼 <span class="math notranslate nohighlight">\(\nabla P\)</span> 長得不一樣？</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#x-y-z">二、 為什麼課堂上都用直角座標系 (<span class="math notranslate nohighlight">\(x, y, z\)</span>)？有限制嗎？</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">1. 這是在做什麼？</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">2. 這有什麼限制嗎？</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id28">3. 什麼時候「必須」用到 3D 球座標系？</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">1. 這是在做什麼？</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">2. 這有什麼限制嗎？</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">3. 什麼時候「必須」用到 3D 球座標系？</a></li>
 </ul>
 </li>
 </ul>
@@ -856,11 +858,14 @@ dI &amp;= 4k r_0^3 \, dr_0 \\
 </section>
 <section id="circuit-analogy">
 <h3>5.4 跨領域類比：流體與電路 (Circuit Analogy)<a class="headerlink" href="#circuit-analogy" title="Link to this heading">#</a></h3>
-<p>我們可以將複雜的流體公式改寫成國中學過的歐姆定律形式：
-$<span class="math notranslate nohighlight">\(\Delta V = I \cdot R_{\text{electric}}\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(\Delta P = I \cdot R_{\text{fluid}}\)</span>$</p>
-<p>移項觀察 Poiseuille’s Law，可定義出「流阻 (Fluid Resistance)」：
-$<span class="math notranslate nohighlight">\(R_{\text{fluid}} = \frac{8 \ell \mu}{\pi r_0^4}\)</span>$</p>
+<p>我們可以將複雜的流體公式改寫成國中學過的歐姆定律形式：</p>
+<div class="math notranslate nohighlight">
+\[\Delta V = I \cdot R_{\text{electric}}\]</div>
+<div class="math notranslate nohighlight">
+\[\Delta P = I \cdot R_{\text{fluid}}\]</div>
+<p>移項觀察 Poiseuille’s Law，可定義出「流阻 (Fluid Resistance)」：</p>
+<div class="math notranslate nohighlight">
+\[R_{\text{fluid}} = \frac{8 \ell \mu}{\pi r_0^4}\]</div>
 <p>這與電阻定律 <span class="math notranslate nohighlight">\(R_{\text{electric}} = \rho_e \frac{\ell}{A} \propto \frac{\ell}{r^2}\)</span> 概念如出一轍。</p>
 <blockquote>
 <div><p><strong>💡 生物醫學類比：</strong></p>
@@ -911,6 +916,9 @@ $<span class="math notranslate nohighlight">\(
 </ul>
 </li>
 </ul>
+</section>
+<section id="id14">
+<h4>推導<a class="headerlink" href="#id14" title="Link to this heading">#</a></h4>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{gather*}
@@ -923,8 +931,8 @@ $<span class="math notranslate nohighlight">\(
 \end{gather*}\end{split}\]</div>
 </section>
 </section>
-<section id="id14">
-<h3>6.3 物理與生物的印證<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
+<section id="id15">
+<h3>6.3 物理與生物的印證<a class="headerlink" href="#id15" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>破水管類比 (<span class="math notranslate nohighlight">\(\theta \rightarrow \frac{\pi}{2}\)</span>)</strong>：若主管破了一個小洞噴水，支管半徑 <span class="math notranslate nohighlight">\(r_2 \ll r_1\)</span>。此時 <span class="math notranslate nohighlight">\(\frac{r_2^4}{r_1^4} \approx 0\)</span>，即 <span class="math notranslate nohighlight">\(\cos\theta = 0\)</span>，解得 <span class="math notranslate nohighlight">\(\theta = 90^\circ\)</span>。這完美吻合了我們在日常生活中看到破水管的水會「垂直」噴出的現象。</p></li>
 <li><p><strong>樹枝的生長模型修正</strong>：雖然樹木在演化中也服從流動阻力最小的力學原則，但正如筆記所洞見的，生物體並非純粹的管線。植物的<strong>向光性 (Phototropism)</strong> 會為了爭取更多陽光而強行改變枝條的生長角度，因此在建立真實的生物物理模型時，這項因素必須被視為額外的權重加入修正。</p></li>
@@ -932,13 +940,13 @@ $<span class="math notranslate nohighlight">\(
 </section>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="a-momentum-equations-in-a-rotating-frame">
-<h1>七a、 旋轉座標系中的動量方程式 (Momentum Equations in a Rotating Frame)<a class="headerlink" href="#a-momentum-equations-in-a-rotating-frame" title="Link to this heading">#</a></h1>
-<section id="d">
-<h2>壹、 2D 圓柱座標系下的動量推導 (局部渦旋/颱風系統)<a class="headerlink" href="#d" title="Link to this heading">#</a></h2>
+<section class="tex2jax_ignore mathjax_ignore" id="momentum-equations-in-a-rotating-frame">
+<h1>7. <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Coordinate_System/spherical_coordinate_transformation_momentum_equation.html">旋轉座標系中的動量方程式 (Momentum Equations in a Rotating Frame)</a><a class="headerlink" href="#momentum-equations-in-a-rotating-frame" title="Link to this heading">#</a></h1>
+<section id="a-2d">
+<h2>7a. 2D 圓柱座標系下的動量推導 (局部渦旋/颱風系統)<a class="headerlink" href="#a-2d" title="Link to this heading">#</a></h2>
 <p>在探討像颱風這樣的局部旋轉系統時，使用圓柱座標系 (Cylindrical coordinates) 遠比直角座標系方便。</p>
-<section id="id15">
-<h3>1. 變數與方程式定義<a class="headerlink" href="#id15" title="Link to this heading">#</a></h3>
+<section id="a-1">
+<h3>7a.1 變數與方程式定義<a class="headerlink" href="#a-1" title="Link to this heading">#</a></h3>
 <p>首先定義我們的出發點——水平旋轉座標系下的動量方程式：
 $<span class="math notranslate nohighlight">\(
 \frac{D \vec{V}}{Dt} + f \hat{k} \times \vec{V} = -\frac{1}{\rho} \nabla P
@@ -1009,8 +1017,8 @@ $<span class="math notranslate nohighlight">\(
 </section>
 </section>
 <hr class="docutils" />
-<section id="id18">
-<h2>貳、 3D 球座標系下的動量方程式 (全球氣候與環流模式)<a class="headerlink" href="#id18" title="Link to this heading">#</a></h2>
+<section id="d">
+<h2>貳、 3D 球座標系下的動量方程式 (全球氣候與環流模式)<a class="headerlink" href="#d" title="Link to this heading">#</a></h2>
 <p>當我們離開局部的颱風，放眼整個地球時，我們必須將方程式搬到 3D 的球面座標系上。這段推導是 Holton 教科書裡的藝術品。</p>
 <ul class="simple">
 <li><p><strong>座標定義</strong>：緯度 <span class="math notranslate nohighlight">\(\phi\)</span>，地球半徑 <span class="math notranslate nohighlight">\(R\)</span>，地球自轉角速度 <span class="math notranslate nohighlight">\(\Omega\)</span>。</p></li>
@@ -1036,8 +1044,8 @@ $<span class="math notranslate nohighlight">\(
 <section id="primitive-equations">
 <h2>參、 傳統近似與原始方程式 (Primitive Equations)<a class="headerlink" href="#primitive-equations" title="Link to this heading">#</a></h2>
 <p>數學很美，但大自然給了我們簡化的權利。地球半徑 <span class="math notranslate nohighlight">\(a \approx 6371 \text{ km}\)</span>，而對流層厚度大約只有 <span class="math notranslate nohighlight">\(10 \text{ km}\)</span>。相對於地球，大氣層就像蘋果皮一樣薄。這引出了我們在數值天氣預報中最重要的「<strong>淺水近似 (Shallow Fluid Approximation / Traditional Approximation)</strong>」。</p>
-<section id="id19">
-<h3>1. 我們可以丟掉什麼？<a class="headerlink" href="#id19" title="Link to this heading">#</a></h3>
+<section id="id18">
+<h3>1. 我們可以丟掉什麼？<a class="headerlink" href="#id18" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong><span class="math notranslate nohighlight">\(R \approx a\)</span> 近似</strong>：因為高度變化太小，所有分母的變動半徑 <span class="math notranslate nohighlight">\(R\)</span> 都直接用地球常數半徑 <span class="math notranslate nohighlight">\(a\)</span> 取代。</p></li>
 <li><p><strong>忽略垂直相關的微小項</strong>：因為大氣很扁平，垂直風速 <span class="math notranslate nohighlight">\(w\)</span> 遠小於水平風速 <span class="math notranslate nohighlight">\(u, v\)</span>（<span class="math notranslate nohighlight">\(w \ll u, v\)</span>）。</p>
@@ -1056,8 +1064,8 @@ $<span class="math notranslate nohighlight">\(
 0 = -\frac{1}{\rho} \frac{\partial P}{\partial z} - g
 \)</span>$</p>
 </section>
-<section id="id20">
-<h3>3. 大氣數值模式的基石<a class="headerlink" href="#id20" title="Link to this heading">#</a></h3>
+<section id="id19">
+<h3>3. 大氣數值模式的基石<a class="headerlink" href="#id19" title="Link to this heading">#</a></h3>
 <p>經過傳統近似的大刀闊斧，我們最終得到了全世界所有大型天氣模式（從傳統的 GFS、WRF 到你感興趣的 AI 模型如 Pangu-Weather、GraphCast）底層所遵循的**「原始方程式 (Primitive Equations)」**：</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1129,22 +1137,23 @@ $<span class="math notranslate nohighlight">\(
 </section>
 </section>
 <hr class="docutils" />
-<section id="id21">
-<h2>壹、 2D 圓柱座標系下的動量推導 (局部渦旋/颱風系統)<a class="headerlink" href="#id21" title="Link to this heading">#</a></h2>
+<section id="id20">
+<h2>壹、 2D 圓柱座標系下的動量推導 (局部渦旋/颱風系統)<a class="headerlink" href="#id20" title="Link to this heading">#</a></h2>
 <p>當我們使用帶有下標的變數 <span class="math notranslate nohighlight">\((u_r, u_\lambda)\)</span> 來取代原本的 <span class="math notranslate nohighlight">\((u, v)\)</span>，單位向量微分的邏輯就會變得非常清晰。</p>
-<section id="id22">
-<h3>1. 單位向量的物質導數<a class="headerlink" href="#id22" title="Link to this heading">#</a></h3>
-<p>因為質點繞著中心旋轉，它眼中的單位向量 <span class="math notranslate nohighlight">\(\hat{r}\)</span> (正前方) 與 <span class="math notranslate nohighlight">\(\hat{\lambda}\)</span> (正左方) 會隨時間改變：
-$<span class="math notranslate nohighlight">\(
+<section id="id21">
+<h3>1. 單位向量的物質導數<a class="headerlink" href="#id21" title="Link to this heading">#</a></h3>
+<p>因為質點繞著中心旋轉，它眼中的單位向量 <span class="math notranslate nohighlight">\(\hat{r}\)</span> (正前方) 與 <span class="math notranslate nohighlight">\(\hat{\lambda}\)</span> (正左方) 會隨時間改變：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{aligned}
 \frac{D \hat{r}}{Dt} &amp;= \frac{u_\lambda}{r} \hat{\lambda} \\
 \frac{D \hat{\lambda}}{Dt} &amp;= -\frac{u_\lambda}{r} \hat{r}
 \end{aligned}
-\)</span>$
-<em>(推導邏輯：旋轉造成的方向改變率，等於切向速度除以旋轉半徑)</em></p>
+\end{split}\]</div>
+<p><em>(推導邏輯：旋轉造成的方向改變率，等於切向速度除以旋轉半徑)</em></p>
 </section>
-<section id="id23">
-<h3>2. 動力方程式展開與 RHS 結合<a class="headerlink" href="#id23" title="Link to this heading">#</a></h3>
+<section id="id22">
+<h3>2. 動力方程式展開與 RHS 結合<a class="headerlink" href="#id22" title="Link to this heading">#</a></h3>
 <p>將二維向量 <span class="math notranslate nohighlight">\(\vec{V} = u_r \hat{r} + u_\lambda \hat{\lambda}\)</span> 代入總加速度 <span class="math notranslate nohighlight">\(\frac{D \vec{V}}{Dt}\)</span>，並展開科氏力 <span class="math notranslate nohighlight">\(f \hat{k} \times \vec{V}\)</span>，我們將 <span class="math notranslate nohighlight">\(\hat{r}\)</span> 與 <span class="math notranslate nohighlight">\(\hat{\lambda}\)</span> 方向的項分別整理，並直接等化對應的 RHS：</p>
 <p><strong>【徑向方程式 (Radial, <span class="math notranslate nohighlight">\(\hat{r}\)</span> 方向)】</strong>
 $<span class="math notranslate nohighlight">\(
@@ -1163,8 +1172,8 @@ $<span class="math notranslate nohighlight">\(
 </section>
 </section>
 <hr class="docutils" />
-<section id="id24">
-<h2>貳、 3D 球座標系下的動量方程式 (全球氣候模式)<a class="headerlink" href="#id24" title="Link to this heading">#</a></h2>
+<section id="id23">
+<h2>貳、 3D 球座標系下的動量方程式 (全球氣候模式)<a class="headerlink" href="#id23" title="Link to this heading">#</a></h2>
 <p>現在我們換到地球尺度的球座標系，變數切換為 <span class="math notranslate nohighlight">\((u_\lambda, u_\phi, u_z)\)</span>。
 老師筆記中的「絕對角速度係數」是由地球自轉 <span class="math notranslate nohighlight">\(2\Omega\)</span> 與空氣相對地球的旋轉 <span class="math notranslate nohighlight">\(\frac{u_\lambda}{R \cos\phi}\)</span> 疊加而成的。</p>
 <p>我們把所有的 RHS 完全寫出來，這就是完整的大尺度動量方程式：</p>
@@ -1178,8 +1187,8 @@ $<span class="math notranslate nohighlight">\(
 \end{split}\]</div>
 </section>
 <hr class="docutils" />
-<section id="id25">
-<h2>參、 傳統近似與原始方程式 (Primitive Equations)<a class="headerlink" href="#id25" title="Link to this heading">#</a></h2>
+<section id="id24">
+<h2>參、 傳統近似與原始方程式 (Primitive Equations)<a class="headerlink" href="#id24" title="Link to this heading">#</a></h2>
 <p>套用大氣科學中最著名的「淺水近似 (Traditional Approximation)」：因為大氣太薄了，我們把 <span class="math notranslate nohighlight">\(R\)</span> 換成常數 <span class="math notranslate nohighlight">\(a\)</span> (地球半徑)，並丟掉所有垂直速度 <span class="math notranslate nohighlight">\(u_z\)</span> 乘上微小項的部分，以及垂直方程式中微小的科氏力分量。</p>
 <p>最終化簡，我們得到了數值模式 (如 WRF 或 AI 氣象模型) 真正拿來計算的核心——<strong>原始方程式</strong>：</p>
 <div class="math notranslate nohighlight">
@@ -1224,8 +1233,8 @@ $<span class="math notranslate nohighlight">\(\frac{\partial P}{\partial (\text{
 <section id="x-y-z">
 <h3>二、 為什麼課堂上都用直角座標系 (<span class="math notranslate nohighlight">\(x, y, z\)</span>)？有限制嗎？<a class="headerlink" href="#x-y-z" title="Link to this heading">#</a></h3>
 <p>你在課堂上看到老師幾乎都用 <span class="math notranslate nohighlight">\(\text{RHS}_x = -\frac{1}{\rho} \frac{\partial P}{\partial x} + F_x\)</span>，是因為老師在不知不覺中，幫你們掛上了一個大氣科學中最佛心的外掛：<strong>「局部直角座標系近似 (Local Cartesian Approximation)」</strong>，這包含了著名的 <span class="math notranslate nohighlight">\(f\)</span>-plane 或 <span class="math notranslate nohighlight">\(\beta\)</span>-plane 近似。</p>
-<section id="id26">
-<h4>1. 這是在做什麼？<a class="headerlink" href="#id26" title="Link to this heading">#</a></h4>
+<section id="id25">
+<h4>1. 這是在做什麼？<a class="headerlink" href="#id25" title="Link to this heading">#</a></h4>
 <p>想像你拿一張平坦的 A4 畫紙，貼在地球表面的某個緯度 <span class="math notranslate nohighlight">\(\phi_0\)</span> 上（例如貼在台灣上空）。</p>
 <ul class="simple">
 <li><p>我們定義 <span class="math notranslate nohighlight">\(x\)</span> 是向東的實體距離，<span class="math notranslate nohighlight">\(y\)</span> 是向北的實體距離。</p></li>
@@ -1234,16 +1243,16 @@ $<span class="math notranslate nohighlight">\(\frac{\partial P}{\partial (\text{
 </ul>
 <p>這就是為什麼在探討「颱風動力學」、「斜壓不穩定」、「羅斯貝波」的基礎理論時，我們一律用 <span class="math notranslate nohighlight">\(x, y, z\)</span>。如果不這麼做，方程式裡會塞滿 <span class="math notranslate nohighlight">\(\sin\phi\)</span> 和 <span class="math notranslate nohighlight">\(\cos\phi\)</span> 加上非線性項，人類根本無法在黑板上求出解析解 (Analytical solution)。</p>
 </section>
-<section id="id27">
-<h4>2. 這有什麼限制嗎？<a class="headerlink" href="#id27" title="Link to this heading">#</a></h4>
+<section id="id26">
+<h4>2. 這有什麼限制嗎？<a class="headerlink" href="#id26" title="Link to this heading">#</a></h4>
 <p>有，非常嚴格的限制！<strong>當天氣系統的尺度大到可以「感受到地球是圓的」時，直角座標系就會崩潰。</strong></p>
 <ul class="simple">
 <li><p><strong>局部尺度 (Mesoscale/Synoptic scale, <span class="math notranslate nohighlight">\(L &lt; 2000\)</span> km)</strong>：例如單一颱風、鋒面、雷暴雲。用局部直角座標系 <span class="math notranslate nohighlight">\(x, y, z\)</span> 非常完美，誤差極小。</p></li>
 <li><p><strong>行星尺度 (Planetary scale, <span class="math notranslate nohighlight">\(L \sim 10000\)</span> km)</strong>：例如超長波、全球季風環流、或者是跨越半個地球的遙相關機制。這時候地球的曲率 <span class="math notranslate nohighlight">\(R \cos\phi\)</span> 會有劇烈變化，你如果繼續用 <span class="math notranslate nohighlight">\(x, y, z\)</span>，算出來的能量傳遞和波速會完全錯掉。</p></li>
 </ul>
 </section>
-<section id="id28">
-<h4>3. 什麼時候「必須」用到 3D 球座標系？<a class="headerlink" href="#id28" title="Link to this heading">#</a></h4>
+<section id="id27">
+<h4>3. 什麼時候「必須」用到 3D 球座標系？<a class="headerlink" href="#id27" title="Link to this heading">#</a></h4>
 <p>答案是：<strong>運行全球數值天氣模式 (Global NWP Models) 的時候！</strong></p>
 <p>當我們不靠手算，而是把大氣動力學交給超級電腦時，例如傳統的 GFS 模型，或是近年極度強大的資料驅動 AI 模型（像是 Pangu-Weather、GraphCast），它們的訓練資料與底層邏輯是覆蓋整個地球的。</p>
 <ul class="simple">
@@ -1364,26 +1373,27 @@ $<span class="math notranslate nohighlight">\(\frac{\partial P}{\partial (\text{
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">6.1 幾何設定與總流阻方程式</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">6.2 尋求最佳分叉角度</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">假設與已知</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">推導</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">6.3 物理與生物的印證</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">6.3 物理與生物的印證</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-momentum-equations-in-a-rotating-frame">七a、 旋轉座標系中的動量方程式 (Momentum Equations in a Rotating Frame)</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d">壹、 2D 圓柱座標系下的動量推導 (局部渦旋/颱風系統)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">1. 變數與方程式定義</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#momentum-equations-in-a-rotating-frame">7. 旋轉座標系中的動量方程式 (Momentum Equations in a Rotating Frame)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-2d">7a. 2D 圓柱座標系下的動量推導 (局部渦旋/颱風系統)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-1">7a.1 變數與方程式定義</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#material-derivative-of-unit-vectors">2. 單位向量的物質導數 (Material Derivative of Unit Vectors)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">3. 動力方程式的完全展開</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">4. 兩個極端特例的物理意義</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">貳、 3D 球座標系下的動量方程式 (全球氣候與環流模式)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d">貳、 3D 球座標系下的動量方程式 (全球氣候與環流模式)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#primitive-equations">參、 傳統近似與原始方程式 (Primitive Equations)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">1. 我們可以丟掉什麼？</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">1. 我們可以丟掉什麼？</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hydrostatic-approximation">2. 靜力平衡 (Hydrostatic Approximation)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">3. 大氣數值模式的基石</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">3. 大氣數值模式的基石</a></li>
 </ul>
 </li>
 </ul>
@@ -1395,19 +1405,19 @@ $<span class="math notranslate nohighlight">\(\frac{\partial P}{\partial (\text{
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spherical-coordinates">3. 球面座標系 (Spherical Coordinates) - 適用於全球環流模式</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">壹、 2D 圓柱座標系下的動量推導 (局部渦旋/颱風系統)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">1. 單位向量的物質導數</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">2. 動力方程式展開與 RHS 結合</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">壹、 2D 圓柱座標系下的動量推導 (局部渦旋/颱風系統)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">1. 單位向量的物質導數</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">2. 動力方程式展開與 RHS 結合</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">貳、 3D 球座標系下的動量方程式 (全球氣候模式)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">參、 傳統近似與原始方程式 (Primitive Equations)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">貳、 3D 球座標系下的動量方程式 (全球氣候模式)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">參、 傳統近似與原始方程式 (Primitive Equations)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-2">七b-2</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nabla-p">一、 破解向量的幻象：為什麼 <span class="math notranslate nohighlight">\(\nabla P\)</span> 長得不一樣？</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#x-y-z">二、 為什麼課堂上都用直角座標系 (<span class="math notranslate nohighlight">\(x, y, z\)</span>)？有限制嗎？</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">1. 這是在做什麼？</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">2. 這有什麼限制嗎？</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id28">3. 什麼時候「必須」用到 3D 球座標系？</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">1. 這是在做什麼？</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">2. 這有什麼限制嗎？</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">3. 什麼時候「必須」用到 3D 球座標系？</a></li>
 </ul>
 </li>
 </ul>
