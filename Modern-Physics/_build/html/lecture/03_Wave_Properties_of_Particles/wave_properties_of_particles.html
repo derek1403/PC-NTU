@@ -194,6 +194,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../homework/hw2/hw2.html">Modern Physics Hw 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../homework/hw3/hw3.html">Modern Physics Hw 3</a></li>
 
+<li class="toctree-l2"><a class="reference internal" href="../../homework/hw4/hw4.html">Modern Physics Hw 4</a></li>
 </ul>
 </details></li>
 </ul>
@@ -403,7 +404,11 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#describing-a-wave">3.2 描述波 (Describing a Wave)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-velocity">德布羅依相速度 (Phase Velocity)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">數學定義</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-velocity">德布羅依相速度 (Phase Velocity)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">證明</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-and-group-velocities">3.3 相速度與群速度 (Phase and Group Velocities)</a><ul class="nav section-nav flex-column">
@@ -413,7 +418,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#particle-in-a-box">3.5 箱子中的粒子 (Particle in a Box)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uncertainty-principle">3.6 測不準原理 (Uncertainty Principle)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">數學推導：傅立葉轉換與高斯波包</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">數學推導：傅立葉轉換與高斯波包</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wave-packet-spreading">波包擴散 (Wave Packet Spreading) 與色散關係</a></li>
 </ul>
 </li>
@@ -482,7 +487,7 @@ E^2 - (m_0 c^2)^2 &amp;=&amp; (pc)^2 \\
 <div class="math notranslate nohighlight">
 \[\Rightarrow p =\sqrt{\gamma^2 -1} m_0 c  =  \frac{\sqrt{E^2 - (m_0 c^2)^2}}{c} = \frac{\sqrt{{KE}^2+2KE \cdot E_0}}{c} = \gamma m_0 v = \frac{h}{\lambda} \tag{3.2}\]</div>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\gamma\)</span> : 勞侖茲因子 (Lorentz factor)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\gamma\)</span> : <a class="reference external" href="https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/01_Relativity/relativity.html#lorentz-transformation">勞侖茲因子 (Lorentz factor)</a></p></li>
 <li><p><span class="math notranslate nohighlight">\(v\)</span> : 物體速度 (Velocity)，<span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(m_0\)</span> : 物體靜止質量 (Rest mass)，<span class="math notranslate nohighlight">\([\text{kg}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(c\)</span> : 真空中光速 (Speed of light)，<span class="math notranslate nohighlight">\(c \approx 3 \times 10^8 \text{ m}\cdot\text{s}^{-1}\)</span></p></li>
@@ -563,70 +568,213 @@ KE  &amp;=&amp; 617 \text{ MeV} \\
 <hr class="docutils" />
 <section id="describing-a-wave">
 <h2>3.2 描述波 (Describing a Wave)<a class="headerlink" href="#describing-a-wave" title="Link to this heading">#</a></h2>
-<p>一個向 <span class="math notranslate nohighlight">\(+x\)</span> 方向傳播的簡諧波一般表達式為：
-$<span class="math notranslate nohighlight">\(y(x,t) = A\cos\left[2\pi \nu \left(t - \frac{x}{v_p}\right)\right]\)</span>$
-為了數學上的簡潔，我們定義：</p>
-<ul class="simple">
+<section id="id3">
+<h3>數學定義<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<ul>
 <li><p>角頻率 <span class="math notranslate nohighlight">\(\omega \overset{\text{def}}{=} 2\pi \nu\)</span></p></li>
 <li><p>波數 <span class="math notranslate nohighlight">\(k \overset{\text{def}}{=} \frac{2\pi}{\lambda} = \frac{\omega}{v_p}\)</span></p></li>
+<li><p>一個向 <span class="math notranslate nohighlight">\(+x\)</span> 方向傳播的簡諧波一般表達式為：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    y(x,t) &amp;=&amp; A\cos\left(2\pi \nu \left(t - \frac{x}{v_p}\right)\right)\\
+    y(x,t) &amp;=&amp; A\cos(\omega t - kx)
+    \end{gather*}\end{split}\]</div>
+</li>
 </ul>
-<p>因此波函數可寫為：
-$<span class="math notranslate nohighlight">\(y(x,t) = A\cos(\omega t - kx)\)</span>$</p>
+</section>
 <section id="phase-velocity">
 <h3>德布羅依相速度 (Phase Velocity)<a class="headerlink" href="#phase-velocity" title="Link to this heading">#</a></h3>
-<p>單一頻率波浪的「波峰」前進的速度稱為相速度 <span class="math notranslate nohighlight">\(v_p\)</span>。
-$<span class="math notranslate nohighlight">\(v_p = \nu \lambda = \left(\frac{E}{h}\right) \left(\frac{h}{p}\right) = \frac{E}{p} = \frac{\gamma m_0 c^2}{\gamma m_0 v} = \frac{c^2}{v}\)</span>$</p>
-<blockquote>
-<div><p><strong>老師的解說：相速度超越光速 (<span class="math notranslate nohighlight">\(v_p &gt; c\)</span>) 違反相對論嗎？</strong>
-你的筆記中問到了這個重點。相對論說「攜帶能量或資訊的物體速度不能超過 <span class="math notranslate nohighlight">\(c\)</span>」。
-<strong>相速度 <span class="math notranslate nohighlight">\(v_p\)</span> 只是數學上「純粹正弦波波峰」移動的速率。</strong> 一個從 <span class="math notranslate nohighlight">\(-\infty\)</span> 到 <span class="math notranslate nohighlight">\(+\infty\)</span> 完美重複的正弦波，是處處存在的，它沒有開頭也沒有結尾，因此<strong>無法用來傳遞任何資訊（像是摩斯密碼）</strong>。
-<strong>物理類比：</strong> 想像你拿著一支超強雷射筆，從地球掃過月球表面。你轉動手腕的速度很快，導致月球上的「雷射紅點」移動速度超越了光速。這違反相對論嗎？沒有，因為紅點只是光子打在月球上的幾何投影位置，你不能利用這個紅點從月球的A點傳送訊息到B點。相速度超越光速也是同樣的幾何假象。</p>
-</div></blockquote>
+<ul>
+<li><p><strong>【定義 1】 <a class="reference external" href="https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/03_Wave_Properties_of_Particles/wave_properties_of_particles.html#de-broglie-wave">德布羅依波 (De Broglie Wave)</a>  ：</strong></p>
+<div class="math notranslate nohighlight">
+\[\lambda \overset{\text{def}}{=} \frac{h}{p}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\lambda\)</span> : 德布羅依波長 (de Broglie wavelength) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(h\)</span> : 普朗克常數 (Planck’s constant) <span class="math notranslate nohighlight">\(h \approx 6.626 \times 10^{-34} \text{ J}\cdot\text{s} \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p\)</span> : 物體動量 (Momentum) <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 2】 <a class="reference external" href="https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/02_Particle_Properties_of_Waves/particle_properties_of_waves.html#einsteins-photon-hypothesis">愛因斯坦的光量子假說</a>  ：</strong></p>
+<div class="math notranslate nohighlight">
+\[E \overset{\text{def}}{=} h\nu\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(E\)</span> : 總能量 (Total Energy)  <span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(h\)</span> : 普朗克常數 (Planck’s constant) <span class="math notranslate nohighlight">\(h \approx 6.626 \times 10^{-34} \text{ J}\cdot\text{s} \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\nu\)</span> : 光子的頻率  <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/01_Relativity/relativity.html#mass-and-energy">總能量 (Total Energy)</a>  ：</strong></p>
+<div class="math notranslate nohighlight">
+\[E = \gamma m_0 c^2\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(E\)</span> : 總能量 (Total Energy)  <span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\gamma\)</span> : <a class="reference external" href="https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/01_Relativity/relativity.html#lorentz-transformation">勞侖茲因子 (Lorentz factor)</a></p></li>
+<li><p><span class="math notranslate nohighlight">\(m_0\)</span> : 物體靜止質量 (Rest mass)，<span class="math notranslate nohighlight">\([\text{kg}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c\)</span> : 真空中光速 (Speed of light)，<span class="math notranslate nohighlight">\(c \approx 3 \times 10^8 \text{ m}\cdot\text{s}^{-1}\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 2】 <a class="reference external" href="https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/01_Relativity/relativity.html#relativistic-momentum">相對論動量 (Relativistic Momentum)</a>  ：</strong></p>
+<div class="math notranslate nohighlight">
+\[p = \gamma m_0 v \]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(p\)</span> : 物體動量 (Momentum) <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\gamma\)</span> : <a class="reference external" href="https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/01_Relativity/relativity.html#lorentz-transformation">勞侖茲因子 (Lorentz factor)</a></p></li>
+<li><p><span class="math notranslate nohighlight">\(m_0\)</span> : 物體靜止質量 (Rest mass)，<span class="math notranslate nohighlight">\([\text{kg}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(v\)</span> : 物體速度 (Velocity)，<span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+</ul>
+</li>
+</ul>
+<section id="id4">
+<h4>證明<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<p>單一頻率波浪的「波峰」前進的速度稱為相速度 <span class="math notranslate nohighlight">\(v_p\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+v_p &amp;=&amp; \nu \lambda \\
+&amp;\overset{\text{定義 1,2}}{=}&amp; \left(\frac{E}{h}\right) \left(\frac{h}{p}\right) \\
+&amp;=&amp; \frac{E}{p} \\
+&amp;\overset{\text{已知 1,2}}{=}&amp; \frac{\gamma m_0 c^2}{\gamma m_0 v} \\
+&amp;=&amp; \frac{c^2}{v}
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><strong>相速度超越光速 (<span class="math notranslate nohighlight">\(v_p &gt; c\)</span>) 違反相對論嗎？</strong></p>
+<ul>
+<li><p>相對論說「攜帶能量或資訊的物體速度不能超過 <span class="math notranslate nohighlight">\(c\)</span>」。</p></li>
+<li><p><strong>相速度 <span class="math notranslate nohighlight">\(v_p\)</span> 只是數學上「純粹正弦波波峰」移動的速率。</strong> 一個從 <span class="math notranslate nohighlight">\(-\infty\)</span> 到 <span class="math notranslate nohighlight">\(+\infty\)</span> 完美重複的正弦波，是處處存在的，它沒有開頭也沒有結尾，因此<strong>無法用來傳遞任何資訊</strong></p></li>
+</ul>
+</li>
+</ul>
+</section>
 </section>
 </section>
 <hr class="docutils" />
 <section id="phase-and-group-velocities">
 <h2>3.3 相速度與群速度 (Phase and Group Velocities)<a class="headerlink" href="#phase-and-group-velocities" title="Link to this heading">#</a></h2>
-<p>真正的粒子（如電子）存在於局部的空間中，而不是像純粹正弦波那樣延伸到無限遠。因此，粒子必須被描述為一個<strong>波包 (Wave packet) 或波群 (Wave group)</strong>，這是由許多不同頻率、不同波數的波疊加而成的。</p>
+<p>真正的粒子（如電子）存在於局部的空間中，而不是像純粹正弦波那樣延伸到無限遠。因此，粒子必須被描述為一個<strong>波包 (Wave packet) 或波群 (Wave group)</strong>，這是由許多不同頻率、不同波數的波疊加而成的。群速度的本質，就是當兩個（或多個）頻率相近的波疊加時，它們產生的「干涉包絡線」的移動速度</p>
 <section id="beat">
 <h3>節拍 (Beat) 與波群速度推導<a class="headerlink" href="#beat" title="Link to this heading">#</a></h3>
-<blockquote>
-<div><p><strong>老師的解說：你提到「完全不知道這邊在說什麼，應由淺入深」。</strong>
-讓我一步步為你推導。群速度的本質，就是當兩個（或多個）頻率相近的波疊加時，它們產生的「干涉包絡線」的移動速度。</p>
-</div></blockquote>
-<p>假設有兩個振幅相同、但頻率和波數略有差異的波：
-$<span class="math notranslate nohighlight">\(y_1 = A\cos(\omega t - kx)\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(y_2 = A\cos[(\omega + \Delta \omega)t - (k + \Delta k)x]\)</span>$</p>
-<p>根據三角函數和差化積公式：<span class="math notranslate nohighlight">\(\cos \alpha + \cos \beta = 2 \cos \left(\frac{\alpha + \beta}{2}\right) \cos \left(\frac{\alpha - \beta}{2}\right)\)</span>。
-我們將 <span class="math notranslate nohighlight">\(y_1\)</span> 的括號內視為 <span class="math notranslate nohighlight">\(\beta\)</span>，<span class="math notranslate nohighlight">\(y_2\)</span> 的括號內視為 <span class="math notranslate nohighlight">\(\alpha\)</span>：
-$<span class="math notranslate nohighlight">\(\alpha + \beta = (2\omega + \Delta \omega)t - (2k + \Delta k)x\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(\alpha - \beta = \Delta \omega t - \Delta k x\)</span>$</p>
-<p>代入相加：
-$<span class="math notranslate nohighlight">\(y = y_1 + y_2 = 2A \cos \left[ \frac{(2\omega + \Delta \omega)t - (2k + \Delta k)x}{2} \right] \cos \left[ \frac{\Delta \omega t - \Delta k x}{2} \right]\)</span>$</p>
-<p>當 <span class="math notranslate nohighlight">\(\Delta \omega \ll \omega\)</span> 且 <span class="math notranslate nohighlight">\(\Delta k \ll k\)</span> 時，前面那一項的 <span class="math notranslate nohighlight">\(2\omega + \Delta \omega \approx 2\omega\)</span>。
-$<span class="math notranslate nohighlight">\(y \approx \underbrace{2A \cos \left( \frac{\Delta \omega}{2} t - \frac{\Delta k}{2} x \right)}_{\text{振幅調變（包絡線）}} \cdot \underbrace{\cos(\omega t - kx)}_{\text{載波（高頻震盪）}}\)</span>$</p>
+<ul>
+<li><p><strong>【假設 1】 假設有兩個振幅相同、但頻率和波數略有差異的波 ：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  y_1 &amp;=&amp; A\cos(\omega t - kx)\\
+  y_2 &amp;=&amp; A\cos[(\omega + \Delta \omega)t - (k + \Delta k)x]
+  \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>【已知 1】 和差化積 ：</strong></p>
+<div class="math notranslate nohighlight">
+\[\cos \alpha + \cos \beta = 2 \cos \left(\frac{\alpha + \beta}{2}\right) \cos \left(\frac{\alpha - \beta}{2}\right)\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(y_1\)</span> 的括號內視為 <span class="math notranslate nohighlight">\(\beta\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y_2\)</span> 的括號內視為 <span class="math notranslate nohighlight">\(\alpha\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha + \beta = (2\omega + \Delta \omega)t - (2k + \Delta k)x\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha - \beta = \Delta \omega t - \Delta k x\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 2】 近似 ：</strong></p>
+<div class="math notranslate nohighlight">
+\[2\omega + \Delta \omega \approx 2\omega\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\Delta \omega \ll \omega\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Delta k \ll k\)</span></p></li>
+</ul>
+</li>
+</ul>
+<p><strong>兩個波疊加的表現：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+y &amp;=&amp; y_1 + y_2 \\
+&amp;\overset{\text{已知 1}}{=}&amp; 2A \cos \left( \frac{(2\omega + \Delta \omega)t - (2k + \Delta k)x}{2} \right) \cos \left( \frac{\Delta \omega t - \Delta k x}{2} \right)\\
+&amp;\overset{\text{已知 2}}{\approx}&amp; \underbrace{2A \cos \left( \frac{\Delta \omega}{2} t - \frac{\Delta k}{2} x \right)}_{\text{振幅調變（包絡線）}} \cdot \underbrace{\cos(\omega t - kx)}_{\text{載波（高頻震盪）}}
+\end{gather*}\end{split}\]</div>
 <p><strong>物理意義：</strong></p>
 <ol class="arabic simple">
 <li><p>後面的 <span class="math notranslate nohighlight">\(\cos(\omega t - kx)\)</span> 是原本的高頻波，它的移動速度是<strong>相速度</strong> <span class="math notranslate nohighlight">\(v_p = \frac{\omega}{k}\)</span>。</p></li>
-<li><p>前面的 <span class="math notranslate nohighlight">\(2A \cos(\dots)\)</span> 形成了一個巨大的「封包」（包絡線），這個封包就是粒子的實體。這個封包移動的速度，就是<strong>群速度</strong>。從括號內的相位可知，群速度為：
-$<span class="math notranslate nohighlight">\(v_g = \frac{\Delta \omega / 2}{\Delta k / 2} = \frac{\Delta \omega}{\Delta k}\)</span>$</p></li>
+<li><p>前面的 <span class="math notranslate nohighlight">\(2A \cos \left( \frac{\Delta \omega}{2} t - \frac{\Delta k}{2} x \right)\)</span> 形成了一個巨大的「封包」（包絡線），這個封包就是粒子的實體，這個封包移動的速度就是 <strong>群速度</strong> ，從括號內的相位可知，群速度為：</p></li>
 </ol>
-<p>當我們考慮連續的頻率分佈時，取極限就得到了群速度的嚴格定義：
-$<span class="math notranslate nohighlight">\(v_g \overset{\text{def}}{=} \frac{d\omega}{dk}\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+v_g &amp;=&amp; \frac{\Delta \omega / 2}{\Delta k / 2} &amp;=&amp; \frac{\Delta \omega}{\Delta k}\\
+v_g &amp;\overset{\text{def}}{=}&amp; \frac{d\omega}{dk}
+\end{gather*}\end{split}\]</div>
 </section>
 <section id="v-g-v">
 <h3>證明：物質波的群速度等於粒子真實速度 (<span class="math notranslate nohighlight">\(v_g = v\)</span>)<a class="headerlink" href="#v-g-v" title="Link to this heading">#</a></h3>
-<p>根據相對論，粒子的能量與動量為：
-$<span class="math notranslate nohighlight">\(E = \gamma m_0 c^2 = \frac{m_0 c^2}{\sqrt{1 - \frac{v^2}{c^2}}} \implies \omega = \frac{E}{\hbar} = \frac{m_0 c^2}{\hbar\sqrt{1 - \frac{v^2}{c^2}}}\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(p = \gamma m_0 v = \frac{m_0 v}{\sqrt{1 - \frac{v^2}{c^2}}} \implies k = \frac{p}{\hbar} = \frac{m_0 v}{\hbar\sqrt{1 - \frac{v^2}{c^2}}}\)</span>$</p>
-<p>利用微積分連鎖律 <span class="math notranslate nohighlight">\(v_g = \frac{d\omega}{dk} = \frac{d\omega/dv}{dk/dv}\)</span>：
-$<span class="math notranslate nohighlight">\(\frac{d\omega}{dv} = \frac{m_0 c^2}{\hbar} \left(-\frac{1}{2}\right)\left(1-\frac{v^2}{c^2}\right)^{-3/2} \left(-\frac{2v}{c^2}\right) = \frac{m_0 v}{\hbar(1-v^2/c^2)^{3/2}}\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(\frac{dk}{dv} = \frac{m_0}{\hbar} \left[ \left(1-\frac{v^2}{c^2}\right)^{-1/2} + v\left(-\frac{1}{2}\right)\left(1-\frac{v^2}{c^2}\right)^{-3/2}\left(-\frac{2v}{c^2}\right) \right] = \frac{m_0}{\hbar(1-v^2/c^2)^{3/2}}\)</span><span class="math notranslate nohighlight">\(
-兩式相除：
-\)</span><span class="math notranslate nohighlight">\(v_g = \frac{d\omega / dv}{dk / dv} = v\)</span><span class="math notranslate nohighlight">\(
-**結論：波包整體的移動速度（群速度）完美對應了粒子在巨觀世界中被測量到的運動速度 \)</span>v<span class="math notranslate nohighlight">\(。**
-且由先前可知 \)</span>v_p = c^2/v<span class="math notranslate nohighlight">\(，故有優美的關係式：
-\)</span><span class="math notranslate nohighlight">\(v_p \cdot v_g = c^2\)</span>$</p>
+<ul>
+<li><p><strong>【定義 1】 數學上波的關鍵變數 ：</strong></p>
+<ul class="simple">
+<li><p>角頻率 <span class="math notranslate nohighlight">\(\omega \overset{\text{def}}{=} 2\pi \nu\)</span></p></li>
+<li><p>波數 <span class="math notranslate nohighlight">\(k \overset{\text{def}}{=} \frac{2\pi}{\lambda} = \frac{\omega}{v_p}\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 2】 群波 ：</strong></p>
+<div class="math notranslate nohighlight">
+\[v_g \overset{\text{def}}{=} \frac{d\omega}{dk}\]</div>
+</li>
+<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/02_Particle_Properties_of_Waves/particle_properties_of_waves.html#einsteins-photon-hypothesis">愛因斯坦的光量子假說</a>  ：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  E &amp;\overset{\text{def}}{=}&amp; h\nu \\
+  E &amp;\overset{\text{定義 1}}{=}&amp; h\frac{\omega}{2\pi} \\
+  \frac{ 2\pi E}{h} &amp;=&amp; \omega \\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(E\)</span> : 總能量 (Total Energy)  <span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(h\)</span> : 普朗克常數 (Planck’s constant) <span class="math notranslate nohighlight">\(h \approx 6.626 \times 10^{-34} \text{ J}\cdot\text{s} \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\nu\)</span> : 光子的頻率  <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 2】 <a class="reference external" href="https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/03_Wave_Properties_of_Particles/wave_properties_of_particles.html#de-broglie-wave">德布羅依波 (De Broglie Wave)</a>  ：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \lambda &amp;\overset{\text{def}}{=}&amp; \frac{h}{p}\\
+  frac{2\pi}{k} &amp;\overset{\text{定義 1}}{=}&amp; \frac{h}{p}\\
+  k &amp;=&amp; \frac{2\pi p}{h}\\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\lambda\)</span> : 德布羅依波長 (de Broglie wavelength) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(h\)</span> : 普朗克常數 (Planck’s constant) <span class="math notranslate nohighlight">\(h \approx 6.626 \times 10^{-34} \text{ J}\cdot\text{s} \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p\)</span> : 物體動量 (Momentum) <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 3】 <a class="reference external" href="https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/01_Relativity/relativity.html#mass-and-energy">總能量 (Total Energy)</a>  ：</strong></p>
+<div class="math notranslate nohighlight">
+\[E = \gamma m_0 c^2\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(E\)</span> : 總能量 (Total Energy)  <span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\gamma\)</span> : <a class="reference external" href="https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/01_Relativity/relativity.html#lorentz-transformation">勞侖茲因子 (Lorentz factor)</a></p></li>
+<li><p><span class="math notranslate nohighlight">\(m_0\)</span> : 物體靜止質量 (Rest mass)，<span class="math notranslate nohighlight">\([\text{kg}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c\)</span> : 真空中光速 (Speed of light)，<span class="math notranslate nohighlight">\(c \approx 3 \times 10^8 \text{ m}\cdot\text{s}^{-1}\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 4】 <a class="reference external" href="https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/01_Relativity/relativity.html#relativistic-momentum">相對論動量 (Relativistic Momentum)</a>  ：</strong></p>
+<div class="math notranslate nohighlight">
+\[p = \gamma m_0 v \]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(p\)</span> : 物體動量 (Momentum) <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\gamma\)</span> : <a class="reference external" href="https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/01_Relativity/relativity.html#lorentz-transformation">勞侖茲因子 (Lorentz factor)</a></p></li>
+<li><p><span class="math notranslate nohighlight">\(m_0\)</span> : 物體靜止質量 (Rest mass)，<span class="math notranslate nohighlight">\([\text{kg}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(v\)</span> : 物體速度 (Velocity)，<span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+</ul>
+</li>
+</ul>
+<p><strong>proof</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+v_g &amp;\overset{\text{定義 2}}{=}&amp; \frac{d\omega}{dk}\\
+&amp;=&amp; \frac{\quad \frac{d\omega}{dv}\quad}{\frac{dk}{dv} }\\
+&amp;\overset{\text{已知 1,2}}{=}&amp;\frac{\quad\frac{d}{dv}\left[\frac{E}{\hbar} \right]\quad}{\frac{d}{dv}\left[\frac{p}{\hbar} \right] }\\
+&amp;=&amp;\frac{\quad\frac{d}{dv}\left[E \right]\quad}{\frac{d}{dv}\left[p \right] }\\
+&amp;\overset{\text{已知 3,4}}{=}&amp;\frac{\quad\frac{d}{dv}\left[\gamma m_0 c^2 \right]\quad}{\frac{d}{dv}\left[\gamma m_0 v \right] }\\
+&amp;=&amp;\frac{\quad\frac{d}{dv}\left[\frac{ c^2}{\sqrt{1 - \frac{v^2}{c^2}}} \right]\quad}{\frac{d}{dv}\left[\frac{ v}{\sqrt{1 - \frac{v^2}{c^2}}} \right] }\\
+&amp;=&amp;\frac{\quad  c^2 \left(-\frac{1}{2}\right)\left(1-\frac{v^2}{c^2}\right)^{-3/2} \left(-\frac{2v}{c^2}\right) \quad}{\quad \left[ \left(1-\frac{v^2}{c^2}\right)^{-1/2} + v\left(-\frac{1}{2}\right)\left(1-\frac{v^2}{c^2}\right)^{-3/2}\left(-\frac{2v}{c^2}\right) \right] \quad}\\
+&amp;=&amp;\frac{\quad \frac{ v}{(1-v^2/c^2)^{3/2}} \quad}{\frac{1}{(1-v^2/c^2)^{3/2}}}\\
+&amp;=&amp;v\\
+\end{gather*}\end{split}\]</div>
+<p><strong>結論：</strong></p>
+<ul class="simple">
+<li><p>波包整體的移動速度（群速度）完美對應了粒子在巨觀世界中被測量到的運動速度 <span class="math notranslate nohighlight">\(v\)</span></p></li>
+<li><p>且由先前可知 <span class="math notranslate nohighlight">\(v_p = c^2/v\)</span>，故有優美的關係式：<span class="math notranslate nohighlight">\(v_p \cdot v_g = c^2\)</span></p></li>
+</ul>
 <hr class="docutils" />
 <p><strong>例題 3.3 電子的相速度與群速度</strong>
 <strong>題目：</strong> 一個電子的德布羅依波長為 <span class="math notranslate nohighlight">\(2 \text{ pm} = 2.00 \times 10^{-12} \text{ m}\)</span>，求出其動能和德布羅依波的相速度與群速度。</p>
@@ -687,8 +835,8 @@ $<span class="math notranslate nohighlight">\(L = n \frac{\lambda}{2} \implies \
 <section id="uncertainty-principle">
 <h2>3.6 測不準原理 (Uncertainty Principle)<a class="headerlink" href="#uncertainty-principle" title="Link to this heading">#</a></h2>
 <p>1927年，海森堡提出測不準原理：<strong>不可能同時絕對精準地知道一個粒子的位置與動量。</strong> 這不是測量儀器不夠好的問題，而是物質波本質上的數學限制。</p>
-<section id="id3">
-<h3>數學推導：傅立葉轉換與高斯波包<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<section id="id5">
+<h3>數學推導：傅立葉轉換與高斯波包<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <p>一個局部的波包 <span class="math notranslate nohighlight">\(\Psi(x)\)</span> 可以看作是無限多個不同波數 <span class="math notranslate nohighlight">\(k\)</span> 的完美正弦波的疊加，這正是傅立葉轉換：
 $<span class="math notranslate nohighlight">\(\Psi(x) = \int_{-\infty}^{\infty} g(k) e^{ikx} \, dk\)</span>$</p>
 <ul class="simple">
@@ -839,7 +987,11 @@ $<span class="math notranslate nohighlight">\(\Delta E \ge \frac{\hbar}{2\Delta 
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#describing-a-wave">3.2 描述波 (Describing a Wave)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-velocity">德布羅依相速度 (Phase Velocity)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">數學定義</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-velocity">德布羅依相速度 (Phase Velocity)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">證明</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-and-group-velocities">3.3 相速度與群速度 (Phase and Group Velocities)</a><ul class="nav section-nav flex-column">
@@ -849,7 +1001,7 @@ $<span class="math notranslate nohighlight">\(\Delta E \ge \frac{\hbar}{2\Delta 
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#particle-in-a-box">3.5 箱子中的粒子 (Particle in a Box)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uncertainty-principle">3.6 測不準原理 (Uncertainty Principle)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">數學推導：傅立葉轉換與高斯波包</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">數學推導：傅立葉轉換與高斯波包</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wave-packet-spreading">波包擴散 (Wave Packet Spreading) 與色散關係</a></li>
 </ul>
 </li>
