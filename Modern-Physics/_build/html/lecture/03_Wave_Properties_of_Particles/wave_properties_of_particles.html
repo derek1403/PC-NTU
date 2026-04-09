@@ -186,7 +186,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../00_Introduction/introduction.html">Modern Physics - Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../01_Relativity/relativity.html">Modern Physics - Relativity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../02_Particle_Properties_of_Waves/particle_properties_of_waves.html">Modern Physics - Particle Properties of Waves</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Modern Physics - Wave Properties of Particles</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">近代物理學 - 粒子的波特性 (Modern Physics - Wave Properties of Particles)</a></li>
+
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../homework/homework.html">homework hardword</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -392,6 +393,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">近代物理學 - 粒子的波特性 (Modern Physics - Wave Properties of Particles)</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#de-broglie-wave">3.1 德布羅依波 (De Broglie Wave)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">光子與粒子的動量</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">例題：巨觀與微觀的物質波</a><ul class="nav section-nav flex-column">
@@ -414,16 +416,48 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-and-group-velocities">3.3 相速度與群速度 (Phase and Group Velocities)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#beat">節拍 (Beat) 與波群速度推導</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#v-g-v">證明：物質波的群速度等於粒子真實速度 (<span class="math notranslate nohighlight">\(v_g = v\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><strong>例題 3.3 電子的相速度與群速度</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">已知與假設</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#particle-in-a-box">3.5 箱子中的粒子 (Particle in a Box)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#particle-diffraction">3.4 粒子繞射 (Particle Diffraction)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">古典與量子的預測差異</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bragg-diffraction">原理解釋：布拉格繞射 (Bragg Diffraction)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">例題3.4：戴文生-基瑪實驗的完美吻合</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#particle-in-a-box">3.5 箱子中的粒子 (Particle in a Box)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9"><strong>例題 3.5 宏觀與微觀的量子效應差異</strong></a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uncertainty-principle">3.6 測不準原理 (Uncertainty Principle)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">數學推導：傅立葉轉換與高斯波包</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-derivation-the-fourier-transform-of-a-gaussian-is-a-gaussian">數學推導：高斯函數的傅立葉轉換仍是高斯函數 (Mathematical Derivation: The Fourier Transform of a Gaussian is a Gaussian)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">證明目標</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">證明</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">💡 直觀比喻與物理意義：測不準原理的數學根源</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">數學推導：從傅立葉極限到海森堡測不準原理</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">證明目標</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">證明過程</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-frac-1-2">第一步：波函數寬度 <span class="math notranslate nohighlight">\(\to\)</span> 機率密度寬度 (解開 <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span> 的秘密)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">第二步：計算高斯波包的物理不確定度極小值</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#k-p">第三步：將波數 <span class="math notranslate nohighlight">\(k\)</span> 轉換為動量 <span class="math notranslate nohighlight">\(p\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ge">第四步：推廣至所有可能狀態 (解開 <span class="math notranslate nohighlight">\(\ge\)</span> 的秘密)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wave-packet-spreading">波包擴散 (Wave Packet Spreading) 與色散關係</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applying-the-uncertainty-principle">3.7 測不準原理應用 (Applying the Uncertainty Principle)</a></li>
 </ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -775,89 +809,364 @@ v_g &amp;\overset{\text{定義 2}}{=}&amp; \frac{d\omega}{dk}\\
 <li><p>波包整體的移動速度（群速度）完美對應了粒子在巨觀世界中被測量到的運動速度 <span class="math notranslate nohighlight">\(v\)</span></p></li>
 <li><p>且由先前可知 <span class="math notranslate nohighlight">\(v_p = c^2/v\)</span>，故有優美的關係式：<span class="math notranslate nohighlight">\(v_p \cdot v_g = c^2\)</span></p></li>
 </ul>
-<hr class="docutils" />
-<p><strong>例題 3.3 電子的相速度與群速度</strong>
-<strong>題目：</strong> 一個電子的德布羅依波長為 <span class="math notranslate nohighlight">\(2 \text{ pm} = 2.00 \times 10^{-12} \text{ m}\)</span>，求出其動能和德布羅依波的相速度與群速度。</p>
-<blockquote>
-<div><p><strong>老師的解說：解答你對 <span class="math notranslate nohighlight">\((pc)^2\)</span> 的疑惑</strong>
-你問：一直把 <span class="math notranslate nohighlight">\((pc)^2\)</span> 和 <span class="math notranslate nohighlight">\(KE\)</span> 搞混。
-請記住核心公式：<strong><span class="math notranslate nohighlight">\(E^2 = E_0^2 + (pc)^2\)</span></strong>。這是一個直角三角形的畢氏定理關係！
-斜邊是總能量 <span class="math notranslate nohighlight">\(E\)</span>，一股是靜止能量 <span class="math notranslate nohighlight">\(E_0 = m_0 c^2\)</span>，另一股是「動量對應的能量」<span class="math notranslate nohighlight">\(pc\)</span>。
-而動能 <span class="math notranslate nohighlight">\(KE\)</span> 的定義是「總能扣掉靜止能」，也就是 <span class="math notranslate nohighlight">\(KE = E - E_0\)</span>（也就是斜邊減掉其中一股）。
-<span class="math notranslate nohighlight">\((pc)^2\)</span> 不是動能！在非相對論極限下，<span class="math notranslate nohighlight">\(KE \approx p^2 / 2m\)</span>，但在高能下這不成立。正確的流程永遠是：算出 <span class="math notranslate nohighlight">\(pc\)</span> <span class="math notranslate nohighlight">\(\rightarrow\)</span> 算出總能 <span class="math notranslate nohighlight">\(E\)</span> <span class="math notranslate nohighlight">\(\rightarrow\)</span> 算出動能 <span class="math notranslate nohighlight">\(KE = E - E_0\)</span>。</p>
-</div></blockquote>
-<p><strong>計算步驟：</strong>
-<strong>(a) 第一個步驟為計算電子的 <span class="math notranslate nohighlight">\(pc\)</span></strong>
-$<span class="math notranslate nohighlight">\(pc = \frac{hc}{\lambda} = \frac{1240 \text{ eV}\cdot\text{nm}}{0.002 \text{ nm}} = 6.20 \times 10^5 \text{ eV} = 620 \text{ keV}\)</span><span class="math notranslate nohighlight">\(
-電子的靜止能量為 \)</span>E_0 = m_e c^2 \approx 511 \text{ keV}<span class="math notranslate nohighlight">\(。
-利用能量三角形求總能量 \)</span>E<span class="math notranslate nohighlight">\(：
-\)</span><span class="math notranslate nohighlight">\(E = \sqrt{E_0^2 + (pc)^2} = \sqrt{(511 \text{ keV})^2 + (620 \text{ keV})^2} = 803 \text{ keV}\)</span><span class="math notranslate nohighlight">\(
-動能 \)</span>KE<span class="math notranslate nohighlight">\( 為總能量減去靜止能量：
-\)</span><span class="math notranslate nohighlight">\(KE = E - E_0 = 803 \text{ keV} - 511 \text{ keV} = 292 \text{ keV}\)</span>$</p>
-<p><strong>(b) 計算速度</strong>
-由 <span class="math notranslate nohighlight">\(E = \gamma E_0 = \frac{E_0}{\sqrt{1 - v^2/c^2}}\)</span> 移項可得：
-$<span class="math notranslate nohighlight">\(v = c\sqrt{1 - \left(\frac{E_0}{E}\right)^2} = c\sqrt{1 - \left(\frac{511}{803}\right)^2} \approx 0.771c\)</span>$</p>
+</section>
+<section id="id5">
+<h3><strong>例題 3.3 電子的相速度與群速度</strong><a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p><strong>題目：</strong> 一個電子的德布羅依波長為 <span class="math notranslate nohighlight">\(2 \text{ pm} = 2.00 \times 10^{-12} \text{ m}\)</span>，電子的靜止能量為 <span class="math notranslate nohighlight">\(E_0 = m_e c^2 \approx 511 \text{ keV}\)</span> ，求出其動能 <span class="math notranslate nohighlight">\(KE\)</span> 和德布羅依波的相速度 <span class="math notranslate nohighlight">\(v_{\text{p}}\)</span> 與群速度 <span class="math notranslate nohighlight">\(v_{\text{g}}\)</span></p>
+<section id="id6">
+<h4>已知與假設<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
+<ul>
+<li><p><strong>【定義 1】 <a class="reference external" href="https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/01_Relativity/relativity.html#mass-and-energy">動能</a>：</strong></p>
+<div class="math notranslate nohighlight">
+\[E = KE + E_0 \]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(E\)</span> : 總能量 (Total Energy)，<span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(KE\)</span> : 動能 (Kinetic Energy)，<span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(E_0\)</span> : 靜止能量 (Rest Energy) <span class="math notranslate nohighlight">\(E_0 = m_0c^2\)</span> ，<span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/01_Relativity/relativity.html#energy-and-momentum">物體的能量與動量關係式</a>：</strong></p>
+<div class="math notranslate nohighlight">
+\[E^2 = (m_0 c^2)^2 + (pc)^2 \]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(E\)</span> : 總能量 (Total Energy) <span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m_0\)</span> : 物體靜止質量 (Rest mass)，<span class="math notranslate nohighlight">\([\text{kg}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c\)</span> : 真空中光速 (Speed of light)，<span class="math notranslate nohighlight">\(c \approx 3 \times 10^8 \text{ m}\cdot\text{s}^{-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p\)</span> : 物體動量 ，<span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 2】 <a class="reference external" href="https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/03_Wave_Properties_of_Particles/wave_properties_of_particles.html#de-broglie-wave">德布羅依波 (De Broglie Wave)</a>  ：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \lambda &amp;\overset{\text{def}}{=}&amp; \frac{h}{p}\\
+  frac{2\pi}{k} &amp;\overset{\text{定義 1}}{=}&amp; \frac{h}{p}\\
+  k &amp;=&amp; \frac{2\pi p}{h}\\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\lambda\)</span> : 德布羅依波長 (de Broglie wavelength) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(h\)</span> : 普朗克常數 (Planck’s constant) <span class="math notranslate nohighlight">\(h \approx 6.626 \times 10^{-34} \text{ J}\cdot\text{s} \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p\)</span> : 物體動量 (Momentum) <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 3】 <a class="reference external" href="https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/01_Relativity/relativity.html#mass-and-energy">總能能</a>：</strong></p>
+<div class="math notranslate nohighlight">
+\[E = \gamma m_0 c^2 \]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(E\)</span> : 總能量 (Total Energy)，<span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\gamma\)</span> : <a class="reference external" href="https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/01_Relativity/relativity.html#lorentz-transformation">勞侖茲因子 (Lorentz factor)</a></p></li>
+<li><p><span class="math notranslate nohighlight">\(m_0\)</span> : 物體靜止質量 (Rest mass)，<span class="math notranslate nohighlight">\([\text{kg}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c\)</span> : 真空中光速 (Speed of light)，<span class="math notranslate nohighlight">\(c \approx 3 \times 10^8 \text{ m}\cdot\text{s}^{-1}\)</span></p></li>
+</ul>
+</li>
+</ul>
+<p><strong>(a) 計算電子的 <span class="math notranslate nohighlight">\(KE\)</span></strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+KE &amp;\overset{\text{定義 1}}{=}&amp; E - E_0 \\
+&amp;\overset{\text{已知 1}}{=}&amp; \sqrt{E_0^2 + (pc)^2} - E_0 \\
+&amp;\overset{\text{已知 2}}{=}&amp; \sqrt{E_0^2 + (\frac{h}{\lambda} c)^2} - E_0 \\
+&amp;\overset{\text{ex 3.3}}{=}&amp; \sqrt{(511 \text{ keV})^2 + (\frac{6.626 \times 10^{-34} \text{ J}\cdot\text{s}}{2.00 \times 10^{-12} \text{ m}} \times 3 \times 10^8 \text{ m}\cdot\text{s}^{-1}  \frac{1 \text{ eV}}{1.602\times 10^{-19} \text{ J}})^2} - 511 \text{ keV} \\
+&amp;=&amp; 803 \text{ keV} - 511 \text{ keV} \\
+&amp;=&amp; 292 \text{ keV}
+\end{gather*}\end{split}\]</div>
+<p><strong>(b) 計算速度</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+E &amp;\overset{\text{已知 3}}{=}&amp;  \gamma E_0 \\
+E &amp;\overset{\text{已知 3}}{=}&amp; \frac{E_0}{\sqrt{1 - v^2/c^2}}\\
+\left(\frac{E_0}{E}\right)^2 &amp;=&amp;1-\frac{v^2}{c^2}\\
+v &amp;=&amp; c\sqrt{1 - \left(\frac{E_0}{E}\right)^2} \\
+v &amp;=&amp; c\sqrt{1 - \left(\frac{511}{803}\right)^2} \\
+&amp;\approx&amp; 0.771c
+\end{gather*}\end{split}\]</div>
 <ul class="simple">
 <li><p><strong>群速度 (粒子實際速度)：</strong> <span class="math notranslate nohighlight">\(v_g = v = 0.771c\)</span></p></li>
 <li><p><strong>相速度 (波峰虛擬速度)：</strong> <span class="math notranslate nohighlight">\(v_p = \frac{c^2}{v} = \frac{c^2}{0.771c} \approx 1.30c\)</span></p></li>
 </ul>
 </section>
 </section>
+</section>
 <hr class="docutils" />
+<section id="particle-diffraction">
+<h2>3.4 粒子繞射 (Particle Diffraction)<a class="headerlink" href="#particle-diffraction" title="Link to this heading">#</a></h2>
+<p>在德布羅依提出物質波假說的三後（1927年），美國的戴文生 (Clinton Davisson)、基瑪 (Lester Germer) 和英國的湯姆森 (G.P. Thomson) 透過實驗無意間證實了這個理論。他們因此獲得了諾貝爾物理學獎。</p>
+<section id="id7">
+<h3>古典與量子的預測差異<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<p>如果把電子當作純粹的「粒子」（像是一顆微小的彈珠）打在鎳 (Nickel) 晶體表面上：</p>
+<ul class="simple">
+<li><p><strong>古典物理的預測：</strong> 電子撞擊到凹凸不平的原子陣列後，會像彈珠打到石頭路一樣，產生<strong>漫射 (Diffuse scattering)</strong>，隨機反彈到各個方向。散射強度應該只跟角度有一點點關係，且與電子的能量（速度）無關。</p></li>
+<li><p><strong>實驗的真實結果：</strong> 散射出來的電子並沒有均勻分佈，而是在特定的角度出現了「強度極大值」。這種特定的強度分佈，與 X 射線（電磁波）打在晶體上產生的<strong>繞射圖樣 (Diffraction pattern)</strong> 完全一樣！</p></li>
+</ul>
+<p><img alt="" src="../../_images/Davisson-Germer_Experiment_Schematic_and_Data_Plots.png" /></p>
+</section>
+<section id="bragg-diffraction">
+<h3>原理解釋：<a class="reference external" href="https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/02_Particle_Properties_of_Waves/particle_properties_of_waves.html#braggs-law">布拉格繞射 (Bragg Diffraction)</a><a class="headerlink" href="#bragg-diffraction" title="Link to this heading">#</a></h3>
+<p>晶體中的原子排列是非常規則的，可以視為一層一層的平行平面（稱為晶格面），當電子「波」入射到這些平面時發生反射，相鄰兩層平面反射出來的波會存在一個<strong>光程差 (Path difference)</strong>，當這個光程差剛好等於波長的整數倍時，波峰與波峰相疊，就會產生<strong>建設性干涉 (Constructive interference)</strong>，我們就會在那個角度偵測到大量的電子。</p>
+<p>這個現象由<strong>布拉格定律 (Bragg’s Law)</strong> 描述：</p>
+<div class="math notranslate nohighlight">
+\[n\lambda = 2d \sin \theta\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 繞射級數 (Order of diffraction)，必須為正整數 <span class="math notranslate nohighlight">\(1, 2, 3, \dots\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda\)</span> : 入射波的波長 <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(d\)</span> : 晶體相鄰晶格面之間的垂直距離 (Lattice spacing) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\theta\)</span> : 入射波與晶格平面的夾角（掠射角）</p></li>
+</ul>
+</section>
+<section id="id8">
+<h3>例題3.4：戴文生-基瑪實驗的完美吻合<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<p><strong>題目：</strong> 在戴文生與基瑪的實驗中，他們將電子通過 <span class="math notranslate nohighlight">\(V = 54 \text{ V}\)</span> 的電壓加速，打在鎳晶體上。已知鎳晶體的某個晶格面間距為 <span class="math notranslate nohighlight">\(d = 0.091 \text{ nm}\)</span>，且實驗發現電子在掠射角 <span class="math notranslate nohighlight">\(\phi = 65^\circ\)</span> 時產生了一階 (<span class="math notranslate nohighlight">\(n=1\)</span>) 的繞射極大值，電子的靜止能量為 <span class="math notranslate nohighlight">\(E_0 = m_e c^2 \approx 511 \text{ keV}\)</span>。請分別用 (a) 布拉格定律測量結果，與 (b) 德布羅依物質波理論，計算電子的波長，並比較兩者。</p>
+<p><strong>(a) 由實驗測量結果（布拉格定律）計算波長：</strong>
+利用觀測到的干涉角度與晶格間距：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\lambda_{\text{exp}} &amp;=&amp; \frac{2d \sin \phi}{n} \\
+&amp;=&amp; \frac{2(0.091 \text{ nm}) \sin(65^\circ)}{1} \\
+&amp;=&amp; 0.165 \text{ nm}
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>這代表從實驗的「波動干涉現象」來看，這束電子的波長是 <span class="math notranslate nohighlight">\(0.165 \text{ nm}\)</span>。</p></li>
+</ul>
+<p><strong>(b) 由理論（德布羅依關係式）計算波長：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\lambda_{\text{th}} &amp;=&amp; \frac{h}{p} \\
+&amp;\overset{\text{(3.2)}}{=}&amp; \frac{h}{\frac{\sqrt{{KE}^2+2KE \cdot E_0}}{c}} \\
+&amp;=&amp; \frac{6.626 \times 10^{-34} \text{ J}\cdot \text{s}}{\frac{\sqrt{{(54 \text{ eV})}^2+2 \times (54 \text{ eV}) \cdot 511 \text{ keV}}}{3 \times 10^8 \text{m/s}}}   \\
+&amp;\approx&amp; 0.167 \text{ nm}
+\end{gather*}\end{split}\]</div>
+<p><strong>物理討論：</strong> 理論計算出來的德布羅依波長 (<span class="math notranslate nohighlight">\(0.167 \text{ nm}\)</span>) 與實驗測量出來的繞射波長 (<span class="math notranslate nohighlight">\(0.165 \text{ nm}\)</span>) 幾乎完全吻合！這個驚人的實驗結果，鐵證如山地宣告了：<strong>電子確實具有波動性，且其波長完美遵從 <span class="math notranslate nohighlight">\(\lambda = h/p\)</span> 的定律。</strong></p>
+</section>
+</section>
 <section id="particle-in-a-box">
 <h2>3.5 箱子中的粒子 (Particle in a Box)<a class="headerlink" href="#particle-in-a-box" title="Link to this heading">#</a></h2>
 <p>當粒子被限制在特定空間中，其波動性會導致「能量量子化」(Energy Quantization)。</p>
 <p><strong>邊界條件的物理意義：</strong>
 如果一個粒子被困在一個寬度為 <span class="math notranslate nohighlight">\(L\)</span> 的堅硬箱子裡，由於粒子無法穿透箱壁，因此在牆壁上以及箱子外找到粒子的機率必須為零。這意味著波函數在牆壁處必須為零（即 <span class="math notranslate nohighlight">\(\Psi(0) = \Psi(L) = 0\)</span>）。
-這就像是在兩端固定的吉他弦上產生<strong>駐波 (Standing wave)</strong>，能穩定存在的波，其半波長的整數倍必須剛好等於箱子寬度：
-$<span class="math notranslate nohighlight">\(L = n \frac{\lambda}{2} \implies \lambda_n = \frac{2L}{n} \quad (n = 1, 2, 3, \dots)\)</span><span class="math notranslate nohighlight">\(
-將德布羅依關係式 \)</span>\lambda = h/p<span class="math notranslate nohighlight">\( 轉換為動量 \)</span>p = h/\lambda = \frac{nh}{2L}<span class="math notranslate nohighlight">\(。
-因為箱內沒有位能，粒子的總能即為動能（非相對論情況 \)</span>E = p^2/2m<span class="math notranslate nohighlight">\(）：
-\)</span><span class="math notranslate nohighlight">\(E_n = \frac{p^2}{2m} = \frac{(nh/2L)^2}{2m} = \frac{n^2 h^2}{8mL^2} \quad (n = 1, 2, 3, \dots)\)</span>$</p>
-<p><strong>公式變數解釋：</strong></p>
+這就像是在兩端固定的吉他弦上產生<strong>駐波 (Standing wave)</strong>，能穩定存在的波，其半波長的整數倍必須剛好等於箱子寬度：</p>
+<div class="math notranslate nohighlight">
+\[L = n \frac{\lambda}{2} \implies \lambda_n = \frac{2L}{n} \quad (n = 1, 2, 3, \dots)\]</div>
+<p>將德布羅依關係式 <span class="math notranslate nohighlight">\(\lambda = h/p\)</span> 轉換為動量 <span class="math notranslate nohighlight">\(p = h/\lambda = \frac{nh}{2L}\)</span>。因為箱內沒有位能，粒子的總能即為動能（非相對論情況 <span class="math notranslate nohighlight">\(E = p^2/2m\)</span>）：</p>
+<div class="math notranslate nohighlight">
+\[E_n = \frac{p^2}{2m} = \frac{(nh/2L)^2}{2m} = \frac{n^2 h^2}{8mL^2} \quad (n = 1, 2, 3, \dots)\]</div>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(E_n\)</span>：第 <span class="math notranslate nohighlight">\(n\)</span> 個能階的能量 <span class="math notranslate nohighlight">\([\text{J}]\)</span> 或 <span class="math notranslate nohighlight">\([\text{eV}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(n\)</span>：主量子數 <span class="math notranslate nohighlight">\([\text{dimensionless}]\)</span>，必須為正整數。</p></li>
+<li><p><span class="math notranslate nohighlight">\(h\)</span> : 普朗克常數 (Planck’s constant) <span class="math notranslate nohighlight">\(h \approx 6.626 \times 10^{-34} \text{ J}\cdot\text{s} \)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(m\)</span>：粒子質量 <span class="math notranslate nohighlight">\([\text{kg}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(L\)</span>：箱子寬度（一維位能井長度） <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
 </ul>
-<p><strong>例題 3.5 宏觀與微觀的量子效應差異</strong>
-<em>(結合你筆記中的兩個例子)</em></p>
+<section id="id9">
+<h3><strong>例題 3.5 宏觀與微觀的量子效應差異</strong><a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p><strong>微觀：<span class="math notranslate nohighlight">\(0.1 \text{ nm}\)</span> 箱中的電子</strong> (原子尺度)
-代入質量 <span class="math notranslate nohighlight">\(m_e = 9.1 \times 10^{-31} \text{ kg}\)</span>，寬度 <span class="math notranslate nohighlight">\(L = 1.0 \times 10^{-10} \text{ m}\)</span>，計算得基態 (<span class="math notranslate nohighlight">\(n=1\)</span>) 能量約為 <span class="math notranslate nohighlight">\(38 \text{ eV}\)</span>。能階間距很大 (<span class="math notranslate nohighlight">\(152 \text{ eV}, 342 \text{ eV}\dots\)</span>)，能量呈明顯不連續階梯狀。</p></li>
-<li><p><strong>巨觀：<span class="math notranslate nohighlight">\(10 \text{ cm}\)</span> 箱中的 <span class="math notranslate nohighlight">\(10 \text{ g}\)</span> 彈珠</strong> (日常尺度)
-代入質量 <span class="math notranslate nohighlight">\(10^{-2} \text{ kg}\)</span>，寬度 <span class="math notranslate nohighlight">\(0.1 \text{ m}\)</span>，計算得基態能量約為 <span class="math notranslate nohighlight">\(5.5 \times 10^{-64} \text{ J}\)</span>。如果彈珠以極慢的 <span class="math notranslate nohighlight">\(1/3 \text{ m/s}\)</span> 滾動，對應的量子數 <span class="math notranslate nohighlight">\(n \sim 10^{30}\)</span>！相鄰能階的能量差小到任何儀器都測不出來，看起來就像是連續的。
-<strong>物理知識點回顧：</strong> 這完美展現了玻耳的<strong>對應原理 (Correspondence Principle)</strong>：在巨觀極限下（量子數 <span class="math notranslate nohighlight">\(n\)</span> 極大，或尺寸 <span class="math notranslate nohighlight">\(L\)</span> 極大，或質量 <span class="math notranslate nohighlight">\(m\)</span> 極大），量子力學的預測會平滑地過渡到古典牛頓力學的結果。</p></li>
+<li><p><strong>微觀：<span class="math notranslate nohighlight">\(0.1 \text{ nm}\)</span> 箱中的電子</strong> (原子尺度)</p>
+<ul>
+<li><p>質量 <span class="math notranslate nohighlight">\(m_e = 9.1 \times 10^{-31} \text{ kg}\)</span></p></li>
+<li><p>寬度 <span class="math notranslate nohighlight">\(L = 1.0 \times 10^{-10} \text{ m}\)</span></p></li>
+<li><p>計算得基態 (<span class="math notranslate nohighlight">\(n=1\)</span>) 能量約為 <span class="math notranslate nohighlight">\(38 \text{ eV}\)</span></p></li>
+<li><p>能階間距很大 (<span class="math notranslate nohighlight">\(152 \text{ eV}, 342 \text{ eV}\dots\)</span>)，能量呈明顯不連續階梯狀。</p></li>
 </ul>
+</li>
+<li><p><strong>巨觀：<span class="math notranslate nohighlight">\(10 \text{ cm}\)</span> 箱中的 <span class="math notranslate nohighlight">\(10 \text{ g}\)</span> 彈珠</strong> (日常尺度)</p>
+<ul>
+<li><p>質量 <span class="math notranslate nohighlight">\(m = 10^{-2} \text{ kg}\)</span></p></li>
+<li><p>寬度 <span class="math notranslate nohighlight">\(L = 0.1 \text{ m}\)</span></p></li>
+<li><p>計算得基態能量約為 <span class="math notranslate nohighlight">\(E_1 = \frac{1^2 \times ( 6.626 \times 10^{-34} \text{ J}\cdot\text{s})^2}{8 \times 10^{-2} \text{ kg} \times (0.1 \text{ m})^2} = 5.5 \times 10^{-64} \text{ J}\)</span></p></li>
+<li><p>如果彈珠以極慢的 <span class="math notranslate nohighlight">\(1 \text{ m/s}\)</span> 滾動，對應的量子數 <span class="math notranslate nohighlight">\(n \sim 10^{30}\)</span>！相鄰能階的能量差小到任何儀器都測不出來，看起來就像是連續的</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>物理解釋：</strong> 這完美展現了玻耳的<strong>對應原理 (Correspondence Principle)</strong>：在巨觀極限下（量子數 <span class="math notranslate nohighlight">\(n\)</span> 極大，或尺寸 <span class="math notranslate nohighlight">\(L\)</span> 極大，或質量 <span class="math notranslate nohighlight">\(m\)</span> 極大），量子力學的預測會平滑地過渡到古典牛頓力學的結果。</p>
+</section>
 </section>
 <hr class="docutils" />
 <section id="uncertainty-principle">
 <h2>3.6 測不準原理 (Uncertainty Principle)<a class="headerlink" href="#uncertainty-principle" title="Link to this heading">#</a></h2>
 <p>1927年，海森堡提出測不準原理：<strong>不可能同時絕對精準地知道一個粒子的位置與動量。</strong> 這不是測量儀器不夠好的問題，而是物質波本質上的數學限制。</p>
-<section id="id5">
-<h3>數學推導：傅立葉轉換與高斯波包<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
-<p>一個局部的波包 <span class="math notranslate nohighlight">\(\Psi(x)\)</span> 可以看作是無限多個不同波數 <span class="math notranslate nohighlight">\(k\)</span> 的完美正弦波的疊加，這正是傅立葉轉換：
-$<span class="math notranslate nohighlight">\(\Psi(x) = \int_{-\infty}^{\infty} g(k) e^{ikx} \, dk\)</span>$</p>
+<section id="mathematical-derivation-the-fourier-transform-of-a-gaussian-is-a-gaussian">
+<h3>數學推導：高斯函數的傅立葉轉換仍是高斯函數 (Mathematical Derivation: The Fourier Transform of a Gaussian is a Gaussian)<a class="headerlink" href="#mathematical-derivation-the-fourier-transform-of-a-gaussian-is-a-gaussian" title="Link to this heading">#</a></h3>
+</section>
+<section id="id10">
+<h3>證明目標<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<p>證明一個空間中的高斯波包函數 <span class="math notranslate nohighlight">\(f(x)\)</span>，經過傅立葉變換後，其在波數（動量）空間的頻譜 <span class="math notranslate nohighlight">\(g(k)\)</span> 依然保持高斯函數的形式，且兩者的標準差存在反比關係。</p>
+<div class="math notranslate nohighlight">
+\[g(k) = N\sigma_x e^{-\frac{k^2}{2\sigma_k^2}}\]</div>
+</section>
+<hr class="docutils" />
+<section id="assumptions-preliminaries">
+<h3>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><strong>【已知 1】 高斯分布函數 (Gaussian Function)：</strong> $<span class="math notranslate nohighlight">\(f(x) = N \cdot e^{-\frac{(x-\mu)^2}{2\sigma_x^2}}\)</span>$</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(g(k)\)</span> 代表在波數 <span class="math notranslate nohighlight">\(k\)</span> 上的權重分佈（頻譜）。</p></li>
+<li><p><span class="math notranslate nohighlight">\(f(x)\)</span> : 空間中的波函數 (Wave function)</p></li>
+<li><p><span class="math notranslate nohighlight">\(N\)</span> : 波的振幅常數 (Amplitude constant)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mu\)</span> : 波包的中心位置 (Mean / Center position) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\sigma_x\)</span> : 空間分布的標準差，即位置的不確定度 (Standard deviation in position) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
 </ul>
-<blockquote>
-<div><p><strong>老師的解說：證明高斯函數的傅立葉轉換仍是高斯函數</strong>
-你在筆記中問到「須證明」。這是一個非常優美的數學性質。
-假設空間中的波包是一個標準差為 <span class="math notranslate nohighlight">\(\sigma_x\)</span> 的高斯函數：
-$<span class="math notranslate nohighlight">\(\Psi(x) = N \exp\left(-\frac{x^2}{2\sigma_x^2}\right)\)</span><span class="math notranslate nohighlight">\(
-其傅立葉轉換 \)</span>g(k)<span class="math notranslate nohighlight">\( 為：
-\)</span><span class="math notranslate nohighlight">\(g(k) \propto \int_{-\infty}^{\infty} \exp\left(-\frac{x^2}{2\sigma_x^2}\right) e^{-ikx} \, dx = \int_{-\infty}^{\infty} \exp\left(-\frac{x^2}{2\sigma_x^2} - ikx\right) \, dx\)</span><span class="math notranslate nohighlight">\(
-我們在指數部位「配方 (Completing the square)」：
-\)</span><span class="math notranslate nohighlight">\(-\frac{1}{2\sigma_x^2} \left( x^2 + 2i\sigma_x^2 kx \right) = -\frac{1}{2\sigma_x^2} \left[ (x + i\sigma_x^2 k)^2 - (i\sigma_x^2 k)^2 \right] = -\frac{(x + i\sigma_x^2 k)^2}{2\sigma_x^2} - \frac{\sigma_x^2 k^2}{2}\)</span><span class="math notranslate nohighlight">\(
-積分中只與 \)</span>x<span class="math notranslate nohighlight">\( 有關的部分會積出一個常數，剩下與 \)</span>k<span class="math notranslate nohighlight">\( 有關的部分會被提出來：
-\)</span><span class="math notranslate nohighlight">\(g(k) \propto \exp\left(-\frac{\sigma_x^2 k^2}{2}\right)\)</span><span class="math notranslate nohighlight">\(
-這依然是一個高斯函數！若我們將其標準差定義為 \)</span>\sigma_k<span class="math notranslate nohighlight">\(，則 \)</span>\sigma_k^2 = \frac{1}{\sigma_x^2}<span class="math notranslate nohighlight">\(，也就是 \)</span>\sigma_x \sigma_k = 1<span class="math notranslate nohighlight">\(。
-結合動量 \)</span>p = \hbar k<span class="math notranslate nohighlight">\(，所以 \)</span>\Delta p = \hbar \Delta k<span class="math notranslate nohighlight">\(。因此：
-\)</span><span class="math notranslate nohighlight">\(\Delta x \Delta p = \hbar (\sigma_x \sigma_k) = \hbar\)</span><span class="math notranslate nohighlight">\(
-（註：嚴格定義下方差為 \)</span>\Delta x = \sigma_x / \sqrt{2}<span class="math notranslate nohighlight">\( 時，極限值即為 \)</span>\hbar / 2$）。</p>
-</div></blockquote>
+</li>
+<li><p><strong>【假設 1】 波包位於原點 (Wave Packet Centered at Origin)：</strong> 為了簡化推導過程中的相位偏移，我們假設波包的中心點對齊座標原點。</p>
+<div class="math notranslate nohighlight">
+\[\mu = 0 \implies f(x) = N \cdot e^{-\frac{x^2}{2\sigma_x^2}}\]</div>
+</li>
+<li><p><strong>【已知 2】 傅立葉變換 (Fourier Transform)：</strong> 在量子力學中，空間函數轉換到波數空間的標準定義為：</p>
+<div class="math notranslate nohighlight">
+\[g(k) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} f(x) e^{-ikx} \, dx\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(g(k)\)</span> : 波數空間的頻譜函數 (Momentum space wave function)</p></li>
+<li><p><span class="math notranslate nohighlight">\(k\)</span> : 波數 (Wavenumber)，與動量成正比 <span class="math notranslate nohighlight">\(p = \hbar k\)</span> <span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{1}{\sqrt{2\pi}}\)</span> : 傅立葉變換的歸一化常數 (Normalization constant)</p></li>
+<li><p><span class="math notranslate nohighlight">\(i\)</span> : 虛數單位 (Imaginary unit)，<span class="math notranslate nohighlight">\(i^2 = -1\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 3】 配方法 (Completing the Square)：</strong> 對於一元二次多項式，可以透過配方湊成完全平方式：</p>
+<div class="math notranslate nohighlight">
+\[Ax^2 + Bx = A\left(x + \frac{B}{2A}\right)^2 - \frac{B^2}{4A}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(A = -\frac{1}{2\sigma_x^2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(B = - ik\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 4】 高斯積分 (Gaussian Integral)：</strong> 已知一個標準的無限範圍高斯積分公式為恆等式（<span class="math notranslate nohighlight">\(\alpha\)</span> 為大於零的常數，<span class="math notranslate nohighlight">\(\beta\)</span> 可為複數）：</p>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^{\infty} e^{-\alpha (x+\beta)^2} \, dx = \sqrt{\frac{\pi}{\alpha}}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\alpha = \frac{1}{2\sigma_x^2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta = i\sigma_x^2 k\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 1】 波數的標準差 ：</strong></p>
+<div class="math notranslate nohighlight">
+\[\sigma_k \overset{\text{def}}{=} \frac{1}{\sigma_x}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\sigma_x\)</span> : 空間分布的標準差，即位置的不確定度 (Standard deviation in position) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\sigma_k\)</span> : 頻譜分布的標準差，即動量的不確定度 (Standard deviation in wavenumber) <span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id11">
+<h3>證明<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<p>我們從傅立葉變換的定義出發，將高斯函數代入，目標是透過嚴謹的積分運算，證明積出來的結果仍然具有高斯函數的特徵。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+g(k) &amp;\overset{\text{已知 2}}{=}&amp; \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} f(x) e^{-ikx} \, dx \\
+g(k) &amp;\overset{\text{假設 1}}{=}&amp; \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} \left( N \cdot e^{-\frac{x^2}{2\sigma_x^2}} \right) e^{-ikx} \, dx \\
+g(k) &amp;=&amp; \frac{N}{\sqrt{2\pi}} \int_{-\infty}^{\infty} e^{-\frac{x^2}{2\sigma_x^2} - ikx} \, dx \\
+g(k) &amp;\overset{\text{已知 3}}{=}&amp; \frac{N}{\sqrt{2\pi}} \int_{-\infty}^{\infty} e^{-\frac{1}{2\sigma_x^2} \left(x + i\sigma_x^2 k\right)^2 - \frac{\sigma_x^2 k^2}{2}} \, dx \\
+g(k) &amp;=&amp; \frac{N}{\sqrt{2\pi}} e^{-\frac{\sigma_x^2 k^2}{2}} \int_{-\infty}^{\infty} e^{-\frac{1}{2\sigma_x^2} \left(x + i\sigma_x^2 k\right)^2} \, dx \\
+g(k) &amp;\overset{\text{已知 4}}{=}&amp;  \frac{N}{\sqrt{2\pi}} e^{-\frac{\sigma_x^2 k^2}{2}} \left( \sqrt{2\pi}\sigma_x \right) \\
+g(k) &amp;=&amp; N\sigma_x e^{-\frac{\sigma_x^2 k^2}{2}} \\
+g(k) &amp;=&amp; N\sigma_x e^{-\frac{k^2}{2\left(\frac{1}{\sigma_x}\right)^2}} \\
+g(k) &amp;\overset{\text{定義 1}}{=}&amp;  N\sigma_x e^{-\frac{k^2}{2\sigma_k^2}} 
+\end{gather*}\end{split}\]</div>
+<p>得證！<span class="math notranslate nohighlight">\(g(k)\)</span> 確實是一個以 <span class="math notranslate nohighlight">\(k=0\)</span> 為中心，標準差為 <span class="math notranslate nohighlight">\(\sigma_k\)</span> 的高斯函數。</p>
+</section>
+<hr class="docutils" />
+<section id="id12">
+<h3>💡 直觀比喻與物理意義：測不準原理的數學根源<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
+<p>這段純數學的推導，其實直接揭示了量子力學中最深刻的秘密。</p>
+<p>觀察我們最後定義的標準差關係式：
+$<span class="math notranslate nohighlight">\(\sigma_k = \frac{1}{\sigma_x} \implies \sigma_x \sigma_k = 1\)</span>$</p>
+<ul class="simple">
+<li><p><strong><span class="math notranslate nohighlight">\(\sigma_x\)</span> (位置的寬度)</strong>：代表我們對粒子「位置」的不確定程度。如果 <span class="math notranslate nohighlight">\(\sigma_x\)</span> 很小，波包很窄，代表位置很確定。</p></li>
+<li><p><strong><span class="math notranslate nohighlight">\(\sigma_k\)</span> (波數的寬度)</strong>：波數 <span class="math notranslate nohighlight">\(k\)</span> 直接對應到動量 (<span class="math notranslate nohighlight">\(p = \hbar k\)</span>)。<span class="math notranslate nohighlight">\(\sigma_k\)</span> 就代表組成這個波包所需要的「頻率成分」有多複雜。如果 <span class="math notranslate nohighlight">\(\sigma_k\)</span> 很大，代表動量極度不確定。</p></li>
+</ul>
+<p>因為兩者相乘等於一個常數 <span class="math notranslate nohighlight">\(1\)</span>，這是一個嚴格的數學反比關係。這意味著：<strong>當你試圖把粒子在空間中捏得越小（<span class="math notranslate nohighlight">\(\sigma_x \to 0\)</span>），你在數學上就必須動用無限多種頻率的波（<span class="math notranslate nohighlight">\(\sigma_k \to \infty\)</span>）才能疊加出這個形狀。</strong></p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id13">
+<h1>數學推導：從傅立葉極限到海森堡測不準原理<a class="headerlink" href="#id13" title="Link to this heading">#</a></h1>
+<p>(Mathematical Derivation: From Fourier Limit to Heisenberg Uncertainty Principle)</p>
+<section id="id14">
+<h2>證明目標<a class="headerlink" href="#id14" title="Link to this heading">#</a></h2>
+<p>證明由傅立葉變換的高斯標準差關係 <span class="math notranslate nohighlight">\(\sigma_x \sigma_k = 1\)</span>，結合德布羅依關係式，可以推導出物理上的海森堡測不準原理 <span class="math notranslate nohighlight">\(\Delta x \Delta p \ge \frac{\hbar}{2}\)</span>。</p>
+</section>
+<hr class="docutils" />
+<section id="id15">
+<h2>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#id15" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>【已知 1】 物質波與波數之關係 (De Broglie &amp; Wavenumber Relations)：</strong> 你已經提到的已知條件。</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\lambda = \frac{h}{p}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(k = \frac{2\pi}{\lambda}\)</span></p></li>
+<li><p>結合兩者可得動量 <span class="math notranslate nohighlight">\(p\)</span> 與波數 <span class="math notranslate nohighlight">\(k\)</span> 的直接關係：
+$<span class="math notranslate nohighlight">\(k = \frac{2\pi}{(h/p)} = \frac{2\pi p}{h} \implies p = \left(\frac{h}{2\pi}\right)k\)</span>$</p></li>
+</ul>
+</li>
+<li><p><strong>【定義 1】 約化普朗克常數 (Reduced Planck Constant, <span class="math notranslate nohighlight">\(\hbar\)</span>)：</strong>
+為了書寫方便，物理學界將 <span class="math notranslate nohighlight">\(\frac{h}{2\pi}\)</span> 定義為一個新的常數。
+$<span class="math notranslate nohighlight">\(\hbar \overset{\text{def}}{=} \frac{h}{2\pi}\)</span>$</p>
+<ul>
+<li><p>代入【已知 1】，可得物理學中最常用的動量與波數關係式：
+$<span class="math notranslate nohighlight">\(p = \hbar k\)</span>$</p></li>
+</ul>
+</li>
+<li><p><strong>【定義 2】 物理上的「不確定度」 (Physical Uncertainty, <span class="math notranslate nohighlight">\(\Delta x\)</span> 與 <span class="math notranslate nohighlight">\(\Delta k\)</span>)：</strong>
+這是解開 <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span> 謎團的最關鍵定義！
+在量子力學中，粒子的位置不確定度 <span class="math notranslate nohighlight">\(\Delta x\)</span> <strong>不是</strong>波函數 <span class="math notranslate nohighlight">\(\Psi(x)\)</span> 本身的標準差 <span class="math notranslate nohighlight">\(\sigma_x\)</span>，而是粒子出現的**「機率密度函數」 <span class="math notranslate nohighlight">\(P(x) = |\Psi(x)|^2\)</span>** 的標準差。
+同樣地，波數的不確定度 <span class="math notranslate nohighlight">\(\Delta k\)</span> 是頻譜機率密度 <span class="math notranslate nohighlight">\(P(k) = |g(k)|^2\)</span> 的標準差。</p></li>
+<li><p><strong>【已知 2】 數學上的傅立葉極限定理 (Fourier Uncertainty Limit)：</strong>
+數學定理指出，對於<strong>任何形狀</strong>的函數（不論是方形、三角形還是奇形怪狀），其空間寬度與頻譜寬度的乘積，必定存在一個絕對的下限。
+而我們前面證明過的**「高斯函數」，正是全宇宙唯一能達到這個「最小值」下限的完美波形**。</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="id16">
+<h2>證明過程<a class="headerlink" href="#id16" title="Link to this heading">#</a></h2>
+<section id="to-frac-1-2">
+<h3>第一步：波函數寬度 <span class="math notranslate nohighlight">\(\to\)</span> 機率密度寬度 (解開 <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span> 的秘密)<a class="headerlink" href="#to-frac-1-2" title="Link to this heading">#</a></h3>
+<p>在前一個證明中，我們已知高斯波函數為 <span class="math notranslate nohighlight">\(\Psi(x) = N e^{-\frac{x^2}{2\sigma_x^2}}\)</span>，其數學標準差為 <span class="math notranslate nohighlight">\(\sigma_x\)</span>。
+現在，我們來計算物理上的機率密度函數 <span class="math notranslate nohighlight">\(P(x)\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+P(x) &amp;\overset{\text{定義 2}}{=}&amp; |\Psi(x)|^2 = \left( N e^{-\frac{x^2}{2\sigma_x^2}} \right)^2 \\
+P(x) &amp;=&amp; N^2 e^{-\frac{2x^2}{2\sigma_x^2}} = N^2 e^{-\frac{x^2}{\sigma_x^2}} 
+\end{gather*}\end{split}\]</div>
+<p>為了看出這個機率密度的標準差（即物理不確定度 <span class="math notranslate nohighlight">\(\Delta x\)</span>），我們將其重新整理成標準的高斯分布格式 <span class="math notranslate nohighlight">\(e^{-\frac{x^2}{2(\Delta x)^2}}\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[\begin{gather*}
+P(x) &amp;=&amp; N^2 e^{-\frac{x^2}{2\left(\frac{\sigma_x}{\sqrt{2}}\right)^2}} 
+\end{gather*}\]</div>
+<p>由此可知，機率密度的標準差 <span class="math notranslate nohighlight">\(\Delta x\)</span> 與原本波函數的標準差 <span class="math notranslate nohighlight">\(\sigma_x\)</span> 差了一個 <span class="math notranslate nohighlight">\(\sqrt{2}\)</span> 倍：
+$<span class="math notranslate nohighlight">\(\Delta x = \frac{\sigma_x}{\sqrt{2}}\)</span>$</p>
+<p>同理，對於波數空間的機率密度 <span class="math notranslate nohighlight">\(P(k) = |g(k)|^2\)</span>，其波數不確定度為：
+$<span class="math notranslate nohighlight">\(\Delta k = \frac{\sigma_k}{\sqrt{2}}\)</span>$</p>
+</section>
+<section id="id17">
+<h3>第二步：計算高斯波包的物理不確定度極小值<a class="headerlink" href="#id17" title="Link to this heading">#</a></h3>
+<p>我們將前一個證明得到的數學結論 <span class="math notranslate nohighlight">\(\sigma_x \sigma_k = 1\)</span>，代入物理的機率寬度中：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\Delta x \Delta k &amp;=&amp; \left(\frac{\sigma_x}{\sqrt{2}}\right) \left(\frac{\sigma_k}{\sqrt{2}}\right) \\
+\Delta x \Delta k &amp;=&amp; \frac{\sigma_x \sigma_k}{2} \\
+\Delta x \Delta k &amp;=&amp; \frac{1}{2}
+\end{gather*}\end{split}\]</div>
+<p><strong>（這就是公式中那個神秘的 <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span> 真正的數學來源！因為我們把波函數「平方」變成了機率，導致鐘型曲線變窄了。）</strong></p>
+</section>
+<section id="k-p">
+<h3>第三步：將波數 <span class="math notranslate nohighlight">\(k\)</span> 轉換為動量 <span class="math notranslate nohighlight">\(p\)</span><a class="headerlink" href="#k-p" title="Link to this heading">#</a></h3>
+<p>由 【已知 1】與【定義 1】可知 <span class="math notranslate nohighlight">\(p = \hbar k\)</span>。因為常數相乘不改變分佈形狀，動量的標準差（不確定度）會直接等於波數的不確定度乘上 <span class="math notranslate nohighlight">\(\hbar\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[\begin{gather*}
+\Delta p = \hbar \Delta k \implies \Delta k = \frac{\Delta p}{\hbar}
+\end{gather*}\]</div>
+<p>將此關係代入第二步的結論中：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\Delta x \left(\frac{\Delta p}{\hbar}\right) &amp;=&amp; \frac{1}{2} \\
+\Delta x \Delta p &amp;=&amp; \frac{\hbar}{2}
+\end{gather*}\end{split}\]</div>
+<p>這代表：<strong>如果你能製造出一個完美的「高斯形狀」粒子波包，它測出來的不確定度乘積就會剛好等於 <span class="math notranslate nohighlight">\(\frac{\hbar}{2}\)</span>。</strong></p>
+</section>
+<section id="ge">
+<h3>第四步：推廣至所有可能狀態 (解開 <span class="math notranslate nohighlight">\(\ge\)</span> 的秘密)<a class="headerlink" href="#ge" title="Link to this heading">#</a></h3>
+<p>大自然中粒子的波函數不一定都是完美的高斯形狀（例如電子被關在方型箱子裡，它的波函數是 <span class="math notranslate nohighlight">\(\sin\)</span> 函數）。</p>
+<p>根據【已知 2】，高斯波包已經是極限（最小值）了。因此，任何其他非高斯形狀的波函數，其不確定度乘積都只會比高斯波包更大、更發散。</p>
+<p>因此，對於宇宙中<strong>任意</strong>的粒子狀態，我們必須將等號改為大於等於：</p>
+<div class="math notranslate nohighlight">
+\[\Delta x \Delta p \ge \frac{\hbar}{2}\]</div>
+<p><strong>得證！</strong></p>
+<hr class="docutils" />
 <p><strong>測不準關係式：</strong>
 $<span class="math notranslate nohighlight">\(\Delta x \Delta p \ge \frac{\hbar}{2}\)</span><span class="math notranslate nohighlight">\(
 其中 \)</span>\hbar = \frac{h}{2\pi} \approx 1.054 \times 10^{-34} \text{ J}\cdot\text{s}$，稱為約化普朗克常數。</p>
@@ -975,6 +1284,7 @@ $<span class="math notranslate nohighlight">\(\Delta E \ge \frac{\hbar}{2\Delta 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">近代物理學 - 粒子的波特性 (Modern Physics - Wave Properties of Particles)</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#de-broglie-wave">3.1 德布羅依波 (De Broglie Wave)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">光子與粒子的動量</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">例題：巨觀與微觀的物質波</a><ul class="nav section-nav flex-column">
@@ -997,16 +1307,48 @@ $<span class="math notranslate nohighlight">\(\Delta E \ge \frac{\hbar}{2\Delta 
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-and-group-velocities">3.3 相速度與群速度 (Phase and Group Velocities)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#beat">節拍 (Beat) 與波群速度推導</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#v-g-v">證明：物質波的群速度等於粒子真實速度 (<span class="math notranslate nohighlight">\(v_g = v\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><strong>例題 3.3 電子的相速度與群速度</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">已知與假設</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#particle-in-a-box">3.5 箱子中的粒子 (Particle in a Box)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#particle-diffraction">3.4 粒子繞射 (Particle Diffraction)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">古典與量子的預測差異</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bragg-diffraction">原理解釋：布拉格繞射 (Bragg Diffraction)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">例題3.4：戴文生-基瑪實驗的完美吻合</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#particle-in-a-box">3.5 箱子中的粒子 (Particle in a Box)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9"><strong>例題 3.5 宏觀與微觀的量子效應差異</strong></a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uncertainty-principle">3.6 測不準原理 (Uncertainty Principle)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">數學推導：傅立葉轉換與高斯波包</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-derivation-the-fourier-transform-of-a-gaussian-is-a-gaussian">數學推導：高斯函數的傅立葉轉換仍是高斯函數 (Mathematical Derivation: The Fourier Transform of a Gaussian is a Gaussian)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">證明目標</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">證明</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">💡 直觀比喻與物理意義：測不準原理的數學根源</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">數學推導：從傅立葉極限到海森堡測不準原理</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">證明目標</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">證明過程</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-frac-1-2">第一步：波函數寬度 <span class="math notranslate nohighlight">\(\to\)</span> 機率密度寬度 (解開 <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span> 的秘密)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">第二步：計算高斯波包的物理不確定度極小值</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#k-p">第三步：將波數 <span class="math notranslate nohighlight">\(k\)</span> 轉換為動量 <span class="math notranslate nohighlight">\(p\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ge">第四步：推廣至所有可能狀態 (解開 <span class="math notranslate nohighlight">\(\ge\)</span> 的秘密)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wave-packet-spreading">波包擴散 (Wave Packet Spreading) 與色散關係</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applying-the-uncertainty-principle">3.7 測不準原理應用 (Applying the Uncertainty Principle)</a></li>
 </ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>
