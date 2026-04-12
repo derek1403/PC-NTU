@@ -1,0 +1,880 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>近代物理學 - 原子結構 (Modern Physics - Atomic Structure) &#8212; Modern Physics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lecture/04_Atomic_Structure/atomic_structure copy';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Modern Physics - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Modern Physics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    近代物理 (Modern Physics) 課程筆記
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lecture.html">lecture.md</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00_Introduction/introduction.html">Modern Physics - Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_Relativity/relativity.html">Modern Physics - Relativity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_Particle_Properties_of_Waves/particle_properties_of_waves.html">Modern Physics - Particle Properties of Waves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_Wave_Properties_of_Particles/wave_properties_of_particles.html">Modern Physics - Wave Properties of Particles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="atomic_structure.html">Modern Physics - Atomic Structure</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../homework/homework.html">homework hardword</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../homework/hw1/hw1.html">Modern Physics Hw 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../homework/hw2/hw2.html">Modern Physics Hw 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../homework/hw3/hw3.html">Modern Physics Hw 3</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../homework/hw4/hw4.html">Modern Physics Hw 4</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flecture/04_Atomic_Structure/atomic_structure copy.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/lecture/04_Atomic_Structure/atomic_structure copy.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>近代物理學 - 原子結構 (Modern Physics - Atomic Structure)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-nuclear-atom">4.1 核原子 (The Nuclear Atom)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pf">pf</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electron-orbits">4.2 電子軌道 Electron Orbits</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">例題 4.2</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#atomic-spectra">4.3 原子光譜 (Atomic Spectra)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-bohr-atom">4.4 波耳原子 (The Bohr Atom)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-levels">能階 (Energy Levels )</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">角動量</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectra">光譜 Spectra</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correspondence-principle">4.5 對應原理 Correspondence Principle</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">古典</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">量子</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nuclear-motion">4.6 原子核運動 Nuclear Motion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#atomic-excitation">4.7 原子激發 Atomic Excitation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">雷射</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#three-level-laser">Three Level Laser</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a">(4階段)A</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="modern-physics-atomic-structure">
+<h1>近代物理學 - 原子結構 (Modern Physics - Atomic Structure)<a class="headerlink" href="#modern-physics-atomic-structure" title="Link to this heading">#</a></h1>
+<p><strong>日期:</strong> 2026.03.31</p>
+<section id="the-nuclear-atom">
+<h2>4.1 核原子 (The Nuclear Atom)<a class="headerlink" href="#the-nuclear-atom" title="Link to this heading">#</a></h2>
+<p>JJ湯姆生1898年說:核大小&gt;&gt;電子大小</p>
+<p>拉賽福</p>
+<ol class="arabic simple">
+<li><p>推翻水果蛋糕模型</p></li>
+<li><p>正電在小區域(原子核)</p></li>
+<li><p>data follow 方程式</p></li>
+<li><p>核 10^-15 m 、 rho ~2.4*10^17 kg/m^3 ~ 中子星</p></li>
+<li></li>
+</ol>
+<p>拉塞福散射公式(Rutherford Scattering Formula)</p>
+<div class="math notranslate nohighlight">
+\[N(\theta) = \frac{N_i nt Z^2 e^4}{(8\pi\epsilon_0)^2 r^2 KE^2 \sin^4(\theta/2)}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(N(\theta)\)</span> = number of <span class="math notranslate nohighlight">\(\alpha\)</span> particles per unit area reaching the screen at a scattering angle <span class="math notranslate nohighlight">\(\theta\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(N_i\)</span> = total number of <span class="math notranslate nohighlight">\(\alpha\)</span> particles reaching the screen</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> = number of atoms per unit volume in the foil</p></li>
+<li><p><span class="math notranslate nohighlight">\(Z\)</span> = atomic number of the foil atoms</p></li>
+<li><p><span class="math notranslate nohighlight">\(r\)</span> = distance between the screen and the foil</p></li>
+<li><p><span class="math notranslate nohighlight">\(KE\)</span> = kinetic energy of the <span class="math notranslate nohighlight">\(\alpha\)</span> particles</p></li>
+<li><p><span class="math notranslate nohighlight">\(t\)</span> = foil thickness</p></li>
+</ul>
+<section id="pf">
+<h3>pf<a class="headerlink" href="#pf" title="Link to this heading">#</a></h3>
+<p>\Delta \mathbf{p} = \mathbf{p}<em>2 - \mathbf{p}<em>1 = \int \mathbf{F} , dt \quad (4.24)
+\Delta p = 2mv \sin \frac{\theta}{2} \quad (4.25)
+\left| \int \mathbf{F} , dt \right| = \int F \cos \phi , dt \quad (4.26)
+2mv \sin \frac{\theta}{2} = \int</em>{-(\pi-\theta)/2}^{+(\pi-\theta)/2} F \cos \phi \frac{dt}{d\phi} , d\phi \quad (4.27)
+2mv^2 b \sin \frac{\theta}{2} = \int</em>{-(\pi-\theta)/2}^{+(\pi-\theta)/2} Fr^2 \cos \phi , d\phi \quad (4.28)</p>
+<p>\cot \frac{\theta}{2} = \frac{4\pi\epsilon_0 KE}{Ze^2} b</p>
+<p>\textbf{截面積} \quad \sigma = \pi b^2</p>
+<p>f = \pi nt \left( \frac{Ze^2}{4\pi\epsilon_0 KE} \right)^2 \cot^2 \frac{\theta}{2}</p>
+<p>df = -\pi nt \left( \frac{Ze^2}{4\pi\epsilon_0 KE} \right)^2 \cot \frac{\theta}{2} \csc^2 \frac{\theta}{2} d\theta</p>
+<p>Head-on collision</p>
+<div class="math notranslate nohighlight">
+\[KE_{\text{initial}} = PE = \left( \frac{1}{4\pi\epsilon_0} \right) \left( \frac{2Ze^2}{R} \right)\]</div>
+<p>實驗上是 剛好燒壞靶材的前一刻的動能
+跑到裡面剛好沒有動能</p>
+<p>原子核的尺寸</p>
+<div class="math notranslate nohighlight">
+\[R = \frac{2Ze^2}{4\pi\epsilon_0 KE_{\text{initial}}}\]</div>
+<p><strong>例題4.1</strong>
+求出能量為7.7 MeV的 粒子束入射到厚度為3*10^7m 的金箔時，散射角大於 的比例</p>
+<p>n = \frac{\text{atoms}}{\text{m}^3} = \frac{\text{mass} / \text{m}^3}{\text{mass} / \text{atom}}</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+n &amp;= \frac{1.93 \times 10^4 \text{ kg/m}^3}{(197 \text{ u/atom})(1.66 \times 10^{-27} \text{ kg/u})} \\
+&amp;= 5.90 \times 10^{28} \text{ atoms/m}^3
+\end{aligned}\end{split}\]</div>
+<p>f=7*10^-5</p>
+<p>大約只有0.007% 。一個這麼薄的金箔對於α粒子來說幾乎是透明的</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="electron-orbits">
+<h2>4.2 電子軌道 Electron Orbits<a class="headerlink" href="#electron-orbits" title="Link to this heading">#</a></h2>
+<p>Force Balance</p>
+<p><span class="math notranslate nohighlight">\(F_c = F_e\)</span></p>
+<p><span class="math notranslate nohighlight">\(\frac{mv^2}{r} = \frac{1}{4\pi\epsilon_0} \frac{e^2}{r^2}\)</span></p>
+<p>Electron Speed</p>
+<p><span class="math notranslate nohighlight">\(v_e = \frac{e}{\sqrt{4\pi\epsilon_0 mr}}\)</span></p>
+<ul class="simple">
+<li><p>Kinetic Energy KE = 1/2 mv2</p></li>
+<li><p>Potential Energy PE = - e^2 / 4πε0r</p></li>
+<li><p>E = PE + KE = e^2 / 8πε0r - e^2 / 4πε0r</p></li>
+<li><p>氫原子的總能量</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(E = -\frac{e^2}{8\pi\epsilon_0 r}\)</span></p></li>
+</ul>
+</li>
+</ul>
+<p>和古典行星模型不一樣的地方是電子軌道模型有帶電會減速，會輻射出能量</p>
+<section id="id1">
+<h3>例題 4.2<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>實驗顯示需要13.6 eV的能量才能將氫原子的質子和電子分離；也就是說，它的總能量為 E = -13.6eV。求出氫原子的軌道半徑和電子速度。</p>
+<div class="math notranslate nohighlight">
+\[r= -\frac{e^2}{8\pi \epsilon_0 r} \sim 5.3*10^-11 m\]</div>
+<div class="math notranslate nohighlight">
+\[v = \frac{e}{\sqrt{4\pi \epsilon_0 mr}} \sim 2.2*10^6 m/s\]</div>
+<p>計算v = 2*10^7m/s 的 alpha 粒子</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\lambda = \frac{h}{mv} &amp;= \frac{6.63 \times 10^{-34} \text{ J} \cdot \text{s}}{(6.6 \times 10^{-27} \text{ kg})(2.0 \times 10^7 \text{ m/s})} \\
+&amp;= 5.0 \times 10^{-15} \text{ m}
+\end{aligned}\end{split}\]</div>
+<p>可以大概當作粒子(古典仍然適用)</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="atomic-spectra">
+<h2>4.3 原子光譜 (Atomic Spectra)<a class="headerlink" href="#atomic-spectra" title="Link to this heading">#</a></h2>
+<p>百年前的實驗</p>
+<p>萊曼系、巴莫、…帕申、布萊克、方德</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{\lambda} = R \left( \frac{1}{2^2} - \frac{1}{n^2} \right) \quad n = 3, 4, 5, \dots\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{1}{\lambda} = R \left( \frac{1}{1^2} - \frac{1}{n^2} \right) \quad n =  3, 4, 5, \dots\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{1}{\lambda} = R \left( \frac{1}{3^2} - \frac{1}{n^2} \right) \quad n =  4, 5, \dots\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{1}{\lambda} = R \left( \frac{1}{4^2} - \frac{1}{n^2} \right) \quad n =  5,6 \dots\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{1}{\lambda} = R \left( \frac{1}{5^2} - \frac{1}{n^2} \right) \quad n = 6,7 \dots\]</div>
+<p>雷德堡常數 R = 1.097* 10^7 m^-1 =0.01097 nm^-1</p>
+<p>光譜是元素的指紋，現在仍然在使用，看材料的種類
+光譜不連續代表原子內能量不連續
+放射光譜不一定嚴格等於吸收光譜，通常吸收光譜都比放射多</p>
+</section>
+<hr class="docutils" />
+<section id="the-bohr-atom">
+<h2>4.4 波耳原子 (The Bohr Atom)<a class="headerlink" href="#the-bohr-atom" title="Link to this heading">#</a></h2>
+<p>質子(r~10^-15m)應有波動性，假設行星模型正確</p>
+<p>電子速度應該是:
+<span class="math notranslate nohighlight">\(v = \frac{e}{\sqrt{4\pi\epsilon_0 mr}}\)</span></p>
+<p>電子在H+的原子核環繞的德布羅伊波應該是:
+<span class="math notranslate nohighlight">\(\lambda = \frac{h}{e} \sqrt{\frac{4\pi\epsilon_0 r}{m}}\)</span></p>
+<p>要使能量不消失(Stable)擇要形成 <strong>駐波</strong></p>
+<p><span class="math notranslate nohighlight">\(n \lambda =2\pi r_n  n=1,2,3,...\)</span></p>
+<ul class="simple">
+<li><p>n是量子數</p></li>
+<li><p>\lambda 是波長</p></li>
+<li><p>r_n 是軌道半徑</p></li>
+</ul>
+<p>可以得到</p>
+<p><span class="math notranslate nohighlight">\(r_n = \frac{n^2 h^2 \epsilon_0}{\pi m e^2} \quad n = 1, 2, 3, \dots\)</span></p>
+<p>波爾原子: 在r_n上電子才有stable structure</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(r_n\)</span>：第 <span class="math notranslate nohighlight">\(n\)</span> 個能階的軌道半徑。</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span>：主量子數（Principal quantum number）。</p></li>
+<li><p><span class="math notranslate nohighlight">\(h\)</span>：普朗克常數。</p></li>
+<li><p><span class="math notranslate nohighlight">\(\epsilon_0\)</span>：真空電容率。</p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span>：電子質量。</p></li>
+<li><p><span class="math notranslate nohighlight">\(e\)</span>：基本電荷。</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(a_0 = r1 = 5.292*10^-11m\)</span></p>
+<p><span class="math notranslate nohighlight">\(rn=n^2 a_0\)</span></p>
+<section id="energy-levels">
+<h3>能階 (Energy Levels )<a class="headerlink" href="#energy-levels" title="Link to this heading">#</a></h3>
+<p>仍假設行星正確 (那不正確會怎麼樣??)</p>
+<div class="math notranslate nohighlight">
+\[E = -\frac{e^2}{8\pi\epsilon_0 r} \]</div>
+<div class="math notranslate nohighlight">
+\[r_n = \frac{n^2 h^2 \epsilon_0}{\pi m e^2} \quad n = 1, 2, 3, \dots\]</div>
+<div class="math notranslate nohighlight">
+\[E_n = -\frac{me^4}{8\epsilon_0^2 h^2} \left( \frac{1}{n^2} \right) = \frac{E_1}{n^2} \quad n = 1, 2, 3, \dots\]</div>
+<div class="math notranslate nohighlight">
+\[E_1 = -2.18 \times 10^{-18} \text{ J} = -13.6 \text{ eV} \]</div>
+<p>能階公式 (
+)：這是將軌道半徑
+代入總能量公式
+後推導出的結果。它說明了電子的能量是量子化的，且與
+成反比。
+時，氫原子的能量為</p>
+<p>(為什麼在這裡就沒有假設行星正確了嗎?)</p>
+<p>。這也是將電子從基態完全游離所需的最小能量（游離能）。負號意義：能量為負值表示電子處於被原子核束縛的狀態。</p>
+</section>
+<section id="id2">
+<h3>角動量<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(nvr=nh/2pi\)</span></p>
+</section>
+<section id="spectra">
+<h3>光譜 Spectra<a class="headerlink" href="#spectra" title="Link to this heading">#</a></h3>
+<p>初始能量- 最終能量 =光子能量</p>
+<div class="math notranslate nohighlight">
+\[E_i-E_f = h\nu\]</div>
+<p>氫光譜</p>
+<p><span class="math notranslate nohighlight">\(\frac{1}{\lambda} = -\frac{E_1}{ch} \left( \frac{1}{n_f^2} - \frac{1}{n_i^2} \right)
+\)</span></p>
+<p><strong>例題4.4.1</strong></p>
+<p>一個電子和一個基態的氫原子相撞並且將它激發到 的受激態。在這個非彈性碰撞（動能不守恆）中，氫原子獲得多少能量？</p>
+<div class="math notranslate nohighlight">
+\[\Delta E = E_f - E_i = \frac{E_1}{n_f^2} - \frac{E_1}{n_i^2} = E_1 \left( \frac{1}{n_f^2} - \frac{1}{n_i^2} \right)\]</div>
+<div class="math notranslate nohighlight">
+\[\Delta E = -13.6 \left( \frac{1}{3^2} - \frac{1}{1^2} \right) \text{ eV} = 12.1 \text{ eV}\]</div>
+<p><strong>例題4.4.2</strong>
+在實驗室裡已經可以製造出處於高量子數狀態的氫原子並且可在太空中觀察到，這些氫原子稱為雷德堡原子(Rydberg atom)。(a) 求出一個半徑為0.0100 mm的波耳軌道氫原子量子數。(b) 在這個狀態下的氫原子能量為何？</p>
+<p>(a)  <span class="math notranslate nohighlight">\(r_n = 1.00 \times 10^{-5} \text{ m} , \quad n = \sqrt{\frac{r_n}{a_0}} = \sqrt{\frac{1.00 \times 10^{-5} \text{ m}}{5.29 \times 10^{-11} \text{ m}}} = 435\)</span></p>
+<p>(b) <span class="math notranslate nohighlight">\(E_n = \frac{E_1}{n^2} = \frac{-13.6 \text{ eV}}{(435)^2} = -7.19 \times 10^{-5} \text{ eV}\)</span></p>
+<ul class="simple">
+<li><p>物理解釋: 雷德堡原子明顯地非常脆弱且容易被游離，這也是為什麼在自然的情況下，只有接近真空的空間才可以發現它們的存在。雷德堡原子光譜分布範圍至無線電波頻率，它們的存在便是透過無線電望遠鏡所觀測到的資料而確定的。</p></li>
+</ul>
+<p><strong>例題4.4.3</strong></p>
+<p>求出氫原子巴默系光譜中最長的波長，且對應到<span class="math notranslate nohighlight">\(H_a\)</span>的譜線。</p>
+<p><span class="math notranslate nohighlight">\(\frac{1}{\lambda} = R \left( \frac{1}{n_f^2} - \frac{1}{n_i^2} \right) = R \left( \frac{1}{2^2} - \frac{1}{3^2} \right) = 0.139R\)</span></p>
+<p><span class="math notranslate nohighlight">\(\lambda = \frac{1}{0.139R} = \frac{1}{0.139(1.097 \times 10^7 \text{ m}^{-1})} = 6.56 \times 10^{-7} \text{ m} = 656 \text{ nm}\)</span></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="correspondence-principle">
+<h2>4.5 對應原理 Correspondence Principle<a class="headerlink" href="#correspondence-principle" title="Link to this heading">#</a></h2>
+<p>量子數越大時，量子物理越接近古典物理</p>
+<section id="id3">
+<h3>古典<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(Electron Speed: \)</span>v = \frac{e}{\sqrt{4\pi\epsilon_0 mr}}<span class="math notranslate nohighlight">\(
+\)</span>Frequency: <span class="math notranslate nohighlight">\(f = v / 2\pi r\)</span>
+<span class="math notranslate nohighlight">\(r_n = \frac{n^2 h^2 \epsilon_0}{\pi m e^2} \quad n = 1, 2, 3, \dots\)</span>
+Frequency of Revolution: <span class="math notranslate nohighlight">\(f = \frac{me^4}{8\epsilon_0^2 h^3} \left( \frac{2}{n^3} \right) = \frac{-E_1}{h} \left( \frac{2}{n^3} \right)\)</span></p>
+</section>
+</section>
+<section id="id4">
+<h2>量子<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+1/ \lambda = E1/ch (1/nf^2-1/ni^2)\\
+=E1/ch(1/(n-p)^2-1/n^2)\\
+=-E1/h ((2np-p^2)/(n^2(n-p)^2))\\
+(n \ll p) = -e1/n 2np/n^4 = -E1/n 2p/n^3\end{split}\]</div>
+<p>p=1 時 量子=古典</p>
+<p><strong>例題4.5</strong>
+(a) 求出 n = 1 和 n = 2 的波耳軌道旋轉頻率。(b) 當電子由n = 2 的軌道落到 n = 1 的軌道時，放出的光子頻率為何？(c)電子落到較低能階並放出光子之前停留在受激態的時間大約為 10-8 秒。在這段時間內，電子在 n = 2 的波耳軌道上轉了幾圈？</p>
+<p>(a)
+f_1 = \frac{-E_1}{h} \left( \frac{2}{1^3} \right) = \left( \frac{2.18 \times 10^{-18} \text{ J}}{6.63 \times 10^{-34} \text{ J} \cdot \text{s}} \right)(2) = 6.58 \times 10^{15} \text{ rev/s}</p>
+<p>f_2 = \frac{-E_1}{h} \left( \frac{2}{2^3} \right) = \frac{f_1}{8} = 0.823 \times 10^{15} \text{ rev/s}</p>
+<blockquote>
+<div><p>rev是什麼單位?一圈? 這樣寫好嗎?或者是標準嗎</p>
+</div></blockquote>
+<p>(b)
+\nu = -\frac{E_1}{h} \left( \frac{1}{n_f^2} - \frac{1}{n_i^2} \right) = \left( \frac{2.18 \times 10^{-18} \text{ J}}{6.63 \times 10^{-34} \text{ J} \cdot \text{s}} \right) \left( \frac{1}{1^2} - \frac{1}{2^2} \right) = 2.88 \times 10^{15} \text{ Hz}</p>
+<p>(c)
+N = f_2 \Delta t = (8.23 \times 10^{14} \text{ rev/s})(1.00 \times 10^{-8} \text{ s}) = 8.23 \times 10^6 \text{ rev}</p>
+</section>
+<hr class="docutils" />
+<section id="nuclear-motion">
+<h2>4.6 原子核運動 Nuclear Motion<a class="headerlink" href="#nuclear-motion" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>原子核質量影響光譜線的波長，原子核越重這個效應越不明顯</p></li>
+<li><p>兩種粒子質量越接近放出的光能量越小</p></li>
+</ul>
+<p>減縮質量
+<span class="math notranslate nohighlight">\(m' = \frac{mM}{m + M}\)</span></p>
+<p>考慮原子核運動後修正的能階
+<span class="math notranslate nohighlight">\(E'_n = -\frac{m'e^4}{8\epsilon_0^2 h^2} \left( \frac{1}{n^2} \right) = \left( \frac{m'}{m} \right) \left( \frac{E_1}{n^2} \right) = \frac{m'}{m} E_n\)</span></p>
+<p>這導致修正後的能階 <span class="math notranslate nohighlight">\(E_n'\)</span> 比原來的 <span class="math notranslate nohighlight">\(E_n\)</span> 稍微淺（絕對值變小）一點。
+這個修正成功解釋了同位素位移（例如氫與氘的光譜差異）</p>
+<p><strong>例題4.6.1</strong> 氫原子
+在氫原子中，電子質量為 <span class="math notranslate nohighlight">\(m\)</span>，原子核（質子）質量為 <span class="math notranslate nohighlight">\(M\)</span>。根據實驗測量：</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(m \approx 9.109 \times 10^{-31} \text{ kg}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(M \approx 1.672 \times 10^{-27} \text{ kg}\)</span></p></li>
+<li><p>質子與電子的質量比 <span class="math notranslate nohighlight">\(M/m \approx 1836.15\)</span></p></li>
+</ul>
+<p>計算過程
+減縮質量 <span class="math notranslate nohighlight">\(m'\)</span> 與電子質量 <span class="math notranslate nohighlight">\(m\)</span> 的比例公式為：
+$<span class="math notranslate nohighlight">\(\frac{m'}{m} = \frac{\frac{mM}{m+M}}{m} = \frac{M}{m+M}\)</span><span class="math notranslate nohighlight">\( 
+將分子分母同除以 \)</span>m<span class="math notranslate nohighlight">\(：
+\)</span><span class="math notranslate nohighlight">\(\frac{m'}{m} = \frac{M/m}{1 + M/m}\)</span><span class="math notranslate nohighlight">\( 
+代入數值：
+\)</span><span class="math notranslate nohighlight">\(\frac{m'}{m} = \frac{1836.15}{1 + 1836.15} = \frac{1836.15}{1837.15} \approx \mathbf{0.99945}\)</span>$</p>
+<p>物理意義</p>
+<ul class="simple">
+<li><p>誤差極小：這個比例非常接近 <span class="math notranslate nohighlight">\(1\)</span>（誤差僅約 <span class="math notranslate nohighlight">\(0.05\%\)</span>），這說明波耳模型假設原子核靜止不動是一個非常好的近似。</p></li>
+<li><p>能階修正：修正後的能階 <span class="math notranslate nohighlight">\(E'_n\)</span> 會是原本的 <span class="math notranslate nohighlight">\(0.99945\)</span> 倍。雖然差異很小，但在高解析度的光譜實驗中是可以觀察到的。</p></li>
+<li><p>同位素對比：如果是氘原子（原子核含一個質子一個中子，<span class="math notranslate nohighlight">\(M \approx 3670m\)</span>），其 <span class="math notranslate nohighlight">\(m'/m\)</span> 約為 <span class="math notranslate nohighlight">\(0.99973\)</span>。氫與氘之間這微小的比例差異，就是發現氘（重氫）的關鍵證據。</p></li>
+</ul>
+<p><strong>例題4.6.2</strong><br />
+<strong>正電子「原子」</strong> 為一個正電子(positron)和一個電子相互繞行的系統。試比較正電子原子的光譜線波長與一般氫原子光譜線的波長。</p>
+<p>m’ = \frac{mM}{m + M} = \frac{m^2}{2m} = \frac{m}{2}</p>
+<p>E’_n = \left( \frac{m’}{m} \right) \frac{E_1}{n^2} = \frac{E_1}{2n^2}</p>
+<p>這表示雷德堡常數在正電子原子中為一般氫原子的一半。因此正電子原子光譜線所有的波長均為氫原子光譜線波長的兩倍</p>
+<p><strong>例題4.6.3</strong></p>
+<p>渺是一種不穩定的基本粒子，質量為電子質量(me)的207倍，帶一單位的正電或負電，一個負渺(mu )可以被一個原子核攫取而形成一個渺原子。(a) 一個質子攫取一個負渺。求出這個原子的第一波耳軌道半徑。(b) 求出這個原子的游離能</p>
+<p>(a)
+<span class="math notranslate nohighlight">\(m' = \frac{mM}{m + M} = \frac{(207m_e)(1836m_e)}{207m_e + 1836m_e} = 186m_e\)</span></p>
+<p><span class="math notranslate nohighlight">\(r'_1 = \left( \frac{m}{m'} \right) r_1 = \left( \frac{m_e}{186m_e} \right) a_0 = 2.85 \times 10^{-13} \text{ m}\)</span></p>
+<p>(b)
+E’_1 = \left( \frac{m’}{m} \right) E_1 = 186E_1 = -2.53 \times 10^3 \text{ eV} = -2.53 \text{ keV}</p>
+<ul class="simple">
+<li><p>渺比電子靠近質子，大約為 186 倍，因此一個包含渺的氫原子會遠小於一般的氫原子</p></li>
+<li><p>能量與質量成正比 (E 整比 m)。因為緲子系統的減縮質量是電子的 186 倍，所以其能階能量也是原本的 186 倍。</p></li>
+<li><p>光子能量位於 X 射線 甚至 gamma 射線 區域，而非可見光或紫外光。</p></li>
+</ul>
+</section>
+<section id="atomic-excitation">
+<h2>4.7 原子激發 Atomic Excitation<a class="headerlink" href="#atomic-excitation" title="Link to this heading">#</a></h2>
+<p>原子如何吸收和釋放能量</p>
+<ol class="arabic simple">
+<li><p>熱碰撞</p></li>
+<li><p>電子游離</p></li>
+<li><p>光子放射游離</p></li>
+</ol>
+<p>然後就會放光或放熱</p>
+<p>###　<strong>法朗克－赫茲實驗</strong></p>
+<p>水銀蒸氣的臨界電位</p>
+<ul class="simple">
+<li><p>空缺的地方是被氣體吸收了 (剛好對應到軌道的越遷能量)</p></li>
+<li><p>吸光和吸電子是一樣的</p></li>
+</ul>
+<section id="id5">
+<h3>雷射<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>單色光</p></li>
+<li><p>同調性(相位相同)</p></li>
+<li><p>不會色散</p></li>
+<li><p>能量強</p></li>
+</ul>
+<section id="three-level-laser">
+<h4>Three Level Laser<a class="headerlink" href="#three-level-laser" title="Link to this heading">#</a></h4>
+<p>在產生輻射以前，原子相對於一般能階而言，在亞穩態能階可以停留較長的時間。</p>
+<p>然後有一束光過來h nu就把亞穩太的h nu一起放出來了</p>
+</section>
+<section id="a">
+<h4>(4階段)A<a class="headerlink" href="#a" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Optical pumping: Ruby Laser</p></li>
+<li><p>氦氖雷射</p></li>
+</ul>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lecture\04_Atomic_Structure"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-nuclear-atom">4.1 核原子 (The Nuclear Atom)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pf">pf</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electron-orbits">4.2 電子軌道 Electron Orbits</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">例題 4.2</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#atomic-spectra">4.3 原子光譜 (Atomic Spectra)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-bohr-atom">4.4 波耳原子 (The Bohr Atom)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-levels">能階 (Energy Levels )</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">角動量</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectra">光譜 Spectra</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correspondence-principle">4.5 對應原理 Correspondence Principle</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">古典</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">量子</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nuclear-motion">4.6 原子核運動 Nuclear Motion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#atomic-excitation">4.7 原子激發 Atomic Excitation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">雷射</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#three-level-laser">Three Level Laser</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a">(4階段)A</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC YE
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
