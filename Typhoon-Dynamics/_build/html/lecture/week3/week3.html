@@ -1,0 +1,1033 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Typhoon-Dynamics - Week 3 &#8212; Typhoon Dynamics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lecture/week3/week3';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="homework" href="../../homework/homework.html" />
+    <link rel="prev" title="Typhoon-Dynamics - Week 2" href="../week2/week2.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Typhoon Dynamics - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Typhoon Dynamics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../lecture.html">lecture</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../week2/week2.html">Typhoon-Dynamics - Week 2</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Typhoon-Dynamics - Week 3</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../homework/homework.html">homework</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../homework/hw1/hw1.html">Typhoon Dynamics Hw 1</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../homework/hw2/hw2.html">Typhoon Dynamics Hw 2</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flecture/week3/week3.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/lecture/week3/week3.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Typhoon-Dynamics - Week 3</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">一、 準平衡動力與颱風環流基礎 (00:01:26~00:09:00)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quasi-balance"><strong>1. 為什麼要談「準平衡 (Quasi-balance)」？</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#primary-circulation"><strong>2. 颱風的骨架：主環流 (Primary Circulation)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#secondary-circulation"><strong>3. 颱風的靈魂：次環流 (Secondary Circulation)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>4. 系統的共生關係</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gradient-wind-balance-rossby-number">二、 Gradient Wind Balance 與 Rossby number</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">推導</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#r-o-ll-1">當 <span class="math notranslate nohighlight">\(R_o \ll 1\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#r-o-gg-1">當 <span class="math notranslate nohighlight">\(R_o \gg 1\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#r-o-sim-1">當 <span class="math notranslate nohighlight">\(R_o \sim 1\)</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">三、 軸對稱颱風模型的方程式</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">變數的主次</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">四、 熱力風平衡與次環流方程式</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eliassen-transverse-equation-in-x-y-z-grid-x-y-z">Eliassen Transverse Equation in x-y-z grid (次環流方程式 x-y-z座標)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">證明目標</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">證明</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">五、 橢圓判別式定理</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pv">六、 位渦 (PV) 的物理意義與分佈</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rho-a-rho-c-rho-b-2-left-f-frac-2v-r-right-left-frac-rho-0-g-theta-0-right-pv"><strong>1. 數學與物理的完美對接：<span class="math notranslate nohighlight">\((\rho A)(\rho C) - (\rho B)^2 = \left(f+\frac{2v}{r}\right)  \left(\frac{\rho_0 g}{\theta_0}\right) PV\)</span></strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#npz"><strong>2. 物理意義：剛性與資訊的 .npz 壓縮檔</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11"><strong>3. 次環流的阻力與摩擦力破壞</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">這張時序圖將整堂課的脈絡切分出來了。目前看下來，你想先從前面「圓錐曲線定理與橢圓方程式的數學推導」開始往下挖，還是想先探討後面「茶壺實驗與邊界層摩擦力」的物理直觀呢？</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="typhoon-dynamics-week-3">
+<h1>Typhoon-Dynamics - Week 3<a class="headerlink" href="#typhoon-dynamics-week-3" title="Link to this heading">#</a></h1>
+<p><strong>日期:</strong> 2026.03.11</p>
+<section id="id1">
+<h2>一、 準平衡動力與颱風環流基礎 (00:01:26~00:09:00)<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="quasi-balance">
+<h3><strong>1. 為什麼要談「準平衡 (Quasi-balance)」？</strong><a class="headerlink" href="#quasi-balance" title="Link to this heading">#</a></h3>
+<p>在物理學中，如果一個系統達到完美的「平衡」，它就會保持靜止或是等速直線運動，什麼事都不會發生。但颱風是一個劇烈狂暴、不斷發展且移動的氣象系統，它絕對不是完美的平衡體。</p>
+<p>然而，大氣科學家發現颱風在絕大部分的空間和時間裡 <strong>非常接近</strong> 平衡狀態（垂直方向極度接近靜力平衡，水平方向極度接近梯度風平衡），大自然允許系統出現微小的偏差，我們稱之為「<strong>準平衡狀態</strong>」。這堂課後續所有複雜的偏微分方程式，其實都不是為了描述那 90% 的無聊平衡，而是為了解析那 <strong>10% 破壞平衡的微小擾動</strong>。</p>
+</section>
+<section id="primary-circulation">
+<h3><strong>2. 颱風的骨架：主環流 (Primary Circulation)</strong><a class="headerlink" href="#primary-circulation" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>角色：</strong> 系統的「慣性」與「儲能庫」</p></li>
+<li><p><strong>特徵：</strong> 由極強的水平切線風 (<span class="math notranslate nohighlight">\(v\)</span>) 構成，也就是我們在雲圖上看到那團巨大、逆時針高速旋轉的氣流。</p></li>
+<li><p><strong>運作機制：</strong> 氣壓梯度力（向內吸）與科氏力加離心力（向外甩）在這裡達成 <strong>梯度風平衡</strong>，主環流主導了颱風絕大部分的動能，它就像是一個高速旋轉的巨大陀螺本體，極度抗拒任何改變它狀態的外力。</p></li>
+</ul>
+</section>
+<section id="secondary-circulation">
+<h3><strong>3. 颱風的靈魂：次環流 (Secondary Circulation)</strong><a class="headerlink" href="#secondary-circulation" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>角色：</strong> 系統的「調節器」與「引擎傳動軸」</p></li>
+<li><p><strong>特徵：</strong> 隱藏在強大旋轉背後的微弱環流，它由徑向風 (<span class="math notranslate nohighlight">\(u\)</span>) 與垂直風 (<span class="math notranslate nohighlight">\(w\)</span>) 組成，空氣從 <strong>海面底層吸入（內流輻合）</strong>、在眼牆猛烈爬升（上升氣流）、最後在對流層頂部向外散開（外流輻散）</p></li>
+<li><p><strong>運作機制：</strong> 當海面的「摩擦力」讓底層風速變慢，或是眼牆的「潛熱釋放」讓核心變熱時，主環流的完美平衡就被打破了。大自然為了解決這個危機，被迫啟動了次環流，次環流的任務就是透過重新分配質量與熱量，努力把系統拉回新的平衡狀態。在這個過程中，底層的內流順便把源源不絕的水氣（燃料）送進了中心，反而讓颱風越長越大。</p></li>
+</ul>
+</section>
+<section id="id2">
+<h3><strong>4. 系統的共生關係</strong><a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>我們可以把颱風想像成一個正在騎行腳踏車的人：</p>
+<ul class="simple">
+<li><p><strong>主環流</strong>是那兩個高速轉動的輪子，因為角動量與慣性使得讓整台車保持直立不倒</p></li>
+<li><p><strong>次環流</strong>則是騎車的人緊握龍頭的雙手，路面總有坑洞、側邊總有強風（破壞平衡的摩擦力與熱源），雙手必須隨時微微轉動龍頭來微調重心（調節機制）</p></li>
+</ul>
+<p>如果沒有龍頭的微調，腳踏車遇到坑洞一定會摔倒；同樣地，如果沒有次環流不斷地調節與輸送水氣，颱風的主環流很快就會因為摩擦力消耗殆盡而消散。這兩者缺一不可，共同維持了這個巨大風暴的生命週期。</p>
+</section>
+</section>
+<section id="gradient-wind-balance-rossby-number">
+<h2>二、 Gradient Wind Balance 與 Rossby number<a class="headerlink" href="#gradient-wind-balance-rossby-number" title="Link to this heading">#</a></h2>
+<section id="assumptions-preliminaries">
+<h3>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.html">梯度風平衡 (Gradient Wind Balance)</a>：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \frac{v^{2}}{r} + fv &amp;\overset{\text{已知 1}}{=}&amp; \frac{1}{\rho} \frac{\partial P}{\partial r}\\
+  v^{2} + rfv &amp;=&amp; \frac{r}{\rho} \frac{\partial P}{\partial r}\\
+  v &amp;=&amp;  \frac{-rf \pm \sqrt{(rf)^2 + 4r(\frac{1}{\rho}\frac{\partial p}{\partial r})}}{2} \\
+  \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>【定義 1】 Rossby number：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  R_o &amp;\overset{\text{def}}{=}&amp; \frac{\text{慣性力 (Inertial force)}}{\text{科氏力 (Coriolis force)}}  \\
+  &amp;=&amp; \frac{\text{離心力 (Inertial force)}}{\text{科氏力 (Coriolis force)}} \\
+  &amp;=&amp; \frac{v^2/r}{fv} \\
+  &amp;=&amp; \frac{v}{fr}  &amp;=&amp; \frac{U}{fL}\\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(U\)</span> : Characteristic velocity of the fluid (e.g., wind speed, ocean current).  <span class="math notranslate nohighlight">\([\text{m} \cdot \text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(L\)</span> : Characteristic horizontal length scale (e.g., diameter of a storm).  <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f\)</span> : Coriolis frequency , <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p>圓周運動下慣性力的表現形式完全由曲率產生的離心力來代表</p></li>
+<li></li>
+</ul>
+</li>
+<li><p><strong>【已知 2】 選擇 地轉平衡、旋衡風平衡、梯度風平衡：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \frac{v^2}{r} + fv &amp;\overset{\text{已知 1}}{=}&amp; \frac{1}{\rho}\frac{\partial p}{\partial r} \\
+  \frac{v^2/r}{fv} + \frac{fv}{fv} &amp;=&amp; \frac{\frac{1}{\rho}\frac{\partial p}{\partial r}}{fv} \\
+  R_o + 1 &amp;\overset{\text{定義 1}}{=}&amp; \frac{\frac{1}{\rho}\frac{\partial p}{\partial r}}{fv} \\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>地轉平衡 <span class="math notranslate nohighlight">\((R_o \ll 1)\)</span> : 科氏力佔絕對優勢，大自然選擇用科氏力去抵抗氣壓梯度力 (<span class="math notranslate nohighlight">\(fv \approx \text{PGF}\)</span>)，像是溫帶氣旋、鋒面系統、海洋的洋流，風速不快且範圍極大（半徑 <span class="math notranslate nohighlight">\(r\)</span> 很大）</p></li>
+<li><p>旋衡風平衡 <span class="math notranslate nohighlight">\((R_o \gg 1)\)</span> : 離心力佔絕對優勢。大自然選擇用離心力去抵抗氣壓梯度力 (<span class="math notranslate nohighlight">\(\frac{v^2}{r} \approx \text{PGF}\)</span>)，像是颱風核心</p></li>
+<li><p>梯度風平衡 <span class="math notranslate nohighlight">\((R_o \sim 1)\)</span> : 離心力與科氏力旗鼓相當，兩者都不能忽略，像是颱風外圍</p></li>
+</ul>
+</li>
+<li><p><strong>【定義 2】 <span class="math notranslate nohighlight">\(v_g\)</span> 地轉風 ：</strong></p>
+<div class="math notranslate nohighlight">
+\[f v_g \overset{\text{def}}{=} \frac{1}{\rho}\frac{\partial p}{\partial r}\]</div>
+</li>
+<li><p><strong>【已知 3】 颱風的 <span class="math notranslate nohighlight">\(R_o\)</span> ：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  R_{o,\text{Eyewall}} &amp;\overset{\text{已知 3}}{=}&amp;\frac{v_{\text{Eyewall}}}{fr_{\text{Eyewall}}} \\
+  &amp;=&amp;  \frac{50\text{ m/s}}{(5 \times 10^{-5}\text{ s}^{-1}) \times (5 \times 10^4 \text{ m})} \\
+  &amp;=&amp; 20
+  \end{gather*}
+  \quad , \quad
+  \begin{gather*}
+  R_{o,\text{Outer}} &amp;\overset{\text{已知 3}}{=}&amp;\frac{v_{\text{Outer}}}{fr_{\text{Outer}}} \\
+  &amp;=&amp;  \frac{15\text{ m/s}}{(5 \times 10^{-5}\text{ s}^{-1}) \times (5 \times 10^5 \text{ m})} \\
+  &amp;=&amp; 0.6
+  \end{gather*}  
+  \end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f = 2\Omega \sin\phi \approx 2 \times (7.29 \times 10^{-5} \text{ s}^{-1} ) \times \sin(20^\circ) \approx 5 \times 10^{-5} \text{ s}^{-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(r_{\text{Eyewall}} = 50 \text{ km}\)</span> 、 <span class="math notranslate nohighlight">\(r_{\text{Outer}} = 500 \text{ km}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(v_{\text{Eyewall}} = 50 \text{ m/s}\)</span> 、 <span class="math notranslate nohighlight">\(v_{\text{Outer}} = 15 \text{ m/s}\)</span></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id3">
+<h3>推導<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<section id="r-o-ll-1">
+<h4>當 <span class="math notranslate nohighlight">\(R_o \ll 1\)</span><a class="headerlink" href="#r-o-ll-1" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+R_o + 1 &amp;\overset{\text{已知 2}}{=}&amp; \frac{\frac{1}{\rho}\frac{\partial p}{\partial r}}{fv} \\
+1 &amp;\overset{R_o \ll 1}{=}&amp;  \frac{\frac{1}{\rho}\frac{\partial p}{\partial r}}{fv} \\
+fv &amp;=&amp;  \frac{1}{\rho}\frac{\partial p}{\partial r} \\
+fv &amp;\overset{\text{定義 2}}{=}&amp; f v_g \\
+v &amp;=&amp; v_g \\
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><strong>物理意義</strong>： 當羅斯貝數極小時可以使用地轉平衡（Geostrophic Balance），也就是代表旋轉造成的「離心力」微乎其微，可以被忽略不計，此時大氣的運動完全由「科氏力」與「氣壓梯度力」互相抗衡，實際風速就等於地轉風速。</p></li>
+</ul>
+</section>
+<section id="r-o-gg-1">
+<h4>當 <span class="math notranslate nohighlight">\(R_o \gg 1\)</span><a class="headerlink" href="#r-o-gg-1" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+R_o + 1 &amp;\overset{\text{已知 2}}{=}&amp; \frac{\frac{1}{\rho}\frac{\partial p}{\partial r}}{fv} \\
+R_o &amp;\overset{R_o \gg 1}{=}&amp;  \frac{\frac{1}{\rho}\frac{\partial p}{\partial r}}{fv} \\
+fv R_o  &amp;=&amp;  \frac{1}{\rho}\frac{\partial p}{\partial r} \\
+fv \frac{v}{fr}  &amp;\overset{\text{定義 1}}{=}&amp; \frac{1}{\rho}\frac{\partial p}{\partial r} \\
+\frac{v^2}{r} &amp;=&amp; \frac{1}{\rho}\frac{\partial p}{\partial r}  \\
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><strong>物理意義</strong>： 當羅斯貝數極大時可以使用旋衡平衡（Cyclostrophic Balance），也就是代表「離心力」佔了絕對主導地位，而地球自轉帶來的「科氏力」相較之下微不足道，此時是純粹依靠「離心力」來抵抗向內的「氣壓梯度力」。</p></li>
+<li><p>根據 <strong>【已知 3】</strong> 颱風約 <span class="math notranslate nohighlight">\(50 \text{ km}\)</span> 就是 <span class="math notranslate nohighlight">\(R_o \gg 1\)</span></p></li>
+</ul>
+</section>
+<section id="r-o-sim-1">
+<h4>當 <span class="math notranslate nohighlight">\(R_o \sim 1\)</span><a class="headerlink" href="#r-o-sim-1" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+R_o + 1 &amp;\overset{\text{已知 2}}{=}&amp; \frac{\frac{1}{\rho}\frac{\partial p}{\partial r}}{fv} \\
+fv R_o + fv &amp;=&amp;  \frac{\frac{1}{\rho}\frac{\partial p}{\partial r}}{fv} \\
+\frac{v^{2}}{r} + fv &amp;\overset{\text{定義 1}}{=}&amp; \frac{1}{\rho} \frac{\partial P}{\partial r} \\
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><strong>物理意義</strong>： 這是完整的梯度風平衡（Gradient Wind Balance）。當羅斯貝數接近 1 時，代表「離心力」與「科氏力」勢均力敵，誰也不能被當作誤差忽略掉。這兩者必須聯手，共同與「氣壓梯度力」達成三方動態平衡。</p></li>
+<li><p>根據 <strong>【已知 3】</strong> 颱風約 <span class="math notranslate nohighlight">\(500 \text{ km}\)</span> 就是 <span class="math notranslate nohighlight">\(R_o \sim 1\)</span></p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="id4">
+<h2>三、 軸對稱颱風模型的方程式<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>我們用圓柱座標系統 <span class="math notranslate nohighlight">\((r, \lambda, z)\)</span> 來描述颱風，這些方程式描述了流體的基本物理守恆定律：</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\frac{v^{2}}{r}+fv=\frac{\partial\phi}{\partial r}\)</span></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>變數</strong></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(v\)</span>：切線風速 (Tangential wind speed) <span class="math notranslate nohighlight">\([\text{m} \cdot \text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(r\)</span>：徑向距離 (Radial distance) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f\)</span>：科氏參數 (Coriolis parameter) <span class="math notranslate nohighlight">\(\sim 10^{-5}[\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi\)</span>：重力位勢 / 動力氣壓 (Geopotential / Kinematic pressure) <span class="math notranslate nohighlight">\([\text{m}^2 \cdot \text{s}^{-2}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>意義：</strong> 這是徑向（向內/向外）的 <strong><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Gradient_Wind_Balance.html">梯度風平衡 (Gradient Wind Balance)</a></strong> ，它表示離心力 (<span class="math notranslate nohighlight">\(\frac{v^2}{r}\)</span>)、科氏力 (<span class="math notranslate nohighlight">\(fv\)</span>) 與氣壓梯度力 (<span class="math notranslate nohighlight">\(\frac{\partial\phi}{\partial r}\)</span>) 達到完美的動態平衡</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p><span class="math notranslate nohighlight">\(\frac{\partial v}{\partial t}+u(f+\zeta)+w\frac{\partial v}{\partial z}=X\)</span></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>變數</strong></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(v\)</span>：切線風速 (Tangential wind speed) <span class="math notranslate nohighlight">\([\text{m} \cdot \text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(t\)</span>：時間 (Time) <span class="math notranslate nohighlight">\([\text{s}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(u\)</span>：徑向風速 (Radial wind speed) <span class="math notranslate nohighlight">\([\text{m} \cdot \text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f\)</span>：科氏參數 (Coriolis parameter) <span class="math notranslate nohighlight">\(\sim 10^{-5}[\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\zeta\)</span>：相對渦度 (Relative vorticity) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(w\)</span>：垂直風速 (Vertical wind speed) <span class="math notranslate nohighlight">\([\text{m} \cdot \text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z\)</span>：垂直高度 (Vertical height) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(X\)</span>：動量強迫 / 摩擦力 (Momentum forcing / Friction) <span class="math notranslate nohighlight">\([\text{m} \cdot \text{s}^{-2}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>意義：</strong> 這是切線方向的 <strong><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Tangentialr_Momentum_Equation.html">軸對稱切線動量方程式 (Axisymmetric Tangential Momentum Equation)</a></strong> ，描述切線風速 <span class="math notranslate nohighlight">\(v\)</span> 隨時間的變化，是由於徑向風 <span class="math notranslate nohighlight">\(u\)</span> 與垂直風 <span class="math notranslate nohighlight">\(w\)</span> 帶來了不同區域的角動量，加上外界摩擦力 <span class="math notranslate nohighlight">\(X\)</span> 所導致 。</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p><span class="math notranslate nohighlight">\(\frac{\partial\phi}{\partial z}=\frac{g}{\theta_{0}}\theta\)</span></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>變數</strong></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\phi\)</span>：重力位勢 / 動力氣壓 (Geopotential / Kinematic pressure) <span class="math notranslate nohighlight">\([\text{m}^2 \cdot \text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z\)</span>：垂直高度 (Vertical height) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(g\)</span>：重力加速度 (Gravitational acceleration) <span class="math notranslate nohighlight">\(9.81[\text{m} \cdot \text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\theta_{0}\)</span>：參考態位溫 (Reference potential temperature) <span class="math notranslate nohighlight">\(\sim 300[\text{K}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\theta\)</span>：雷諾分解後的位溫擾動 (Potential temperature) <span class="math notranslate nohighlight">\([\text{K}]\)</span> ，通常都 <span class="math notranslate nohighlight">\(1\text{K} \sim 5\text{K} \)</span> 這種order，不是 <span class="math notranslate nohighlight">\(300\text{K}\)</span> 這種order</p></li>
+</ul>
+</li>
+<li><p><strong>意義：</strong> 這是垂直方向的 <strong><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Hydrostatic_Balance_for_Perturbations.html">擾動場的流體靜力平衡 (Hydrostatic Balance for Perturbationse)</a></strong> ，表示垂直氣壓梯度力與重力（這裡用位溫 <span class="math notranslate nohighlight">\(\theta\)</span> 形式表示的浮力）互相抵銷</p></li>
+</ul>
+<ol class="arabic simple" start="4">
+<li><p><span class="math notranslate nohighlight">\(\frac{\partial\rho ru}{r\partial r}+\frac{\partial\rho w}{\partial z}=0\)</span></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>變數</strong></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\rho\)</span>：空氣密度 (Air density) <span class="math notranslate nohighlight">\(\sim 1[\text{kg} \cdot \text{m}^{-3}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(r\)</span>：徑向距離 (Radial distance) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(u\)</span>：徑向風速 (Radial wind speed) <span class="math notranslate nohighlight">\([\text{m} \cdot \text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(w\)</span>：垂直風速 (Vertical wind speed) <span class="math notranslate nohighlight">\([\text{m} \cdot \text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z\)</span>：垂直高度 (Vertical height) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>意義：</strong> 這是 <strong><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Continuity_Equation.html">軸對稱連續方程式 (Axisymmetric Continuity Equation)</a></strong> 確保流體質量守恆，有空氣輻合進來就必須有空氣上升或下降流出</p></li>
+</ul>
+<ol class="arabic simple" start="5">
+<li><p><span class="math notranslate nohighlight">\(\frac{\partial\theta}{\partial t}+u\frac{\partial\theta}{\partial r}+w\frac{\partial\theta}{\partial z}=\frac{\theta}{T}\frac{Q}{c_{p}}\)</span></p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>變數</strong></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\theta\)</span>：位溫 (Potential temperature) <span class="math notranslate nohighlight">\([\text{K}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(t\)</span>：時間 (Time) <span class="math notranslate nohighlight">\([\text{s}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(u\)</span>：徑向風速 (Radial wind speed) <span class="math notranslate nohighlight">\([\text{m} \cdot \text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(w\)</span>：垂直風速 (Vertical wind speed) <span class="math notranslate nohighlight">\([\text{m} \cdot \text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(r\)</span>：徑向距離 (Radial distance) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z\)</span>：垂直高度 (Vertical height) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(T\)</span>：絕對溫度 (Absolute temperature) <span class="math notranslate nohighlight">\([\text{K}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Q\)</span>：非絕熱加熱率 (Diabatic heating rate) <span class="math notranslate nohighlight">\([\text{W} \cdot \text{kg}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c_{p}\)</span>：等壓比熱 (Specific heat at constant pressure) <span class="math notranslate nohighlight">\(1004[\text{J} \cdot \text{kg}^{-1} \cdot \text{K}^{-1}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>意義：</strong> 這是 <strong><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Thermodynamic_Energy_Equation.html">軸對稱熱力學能量方程式 (Axisymmetric Thermodynamic Energy Equation)</a></strong> 描述溫度的變化是由於冷暖空氣的平流，以及外界的非絕熱加熱 <span class="math notranslate nohighlight">\(Q\)</span>（例如水氣凝結放熱）所造成 。</p></li>
+</ul>
+<section id="id5">
+<h3>變數的主次<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p><strong>主環流變數：</strong> <span class="math notranslate nohighlight">\(v\)</span> (切線風)、<span class="math notranslate nohighlight">\(\phi\)</span> (重力位勢)、<span class="math notranslate nohighlight">\(\theta\)</span> (位溫):它們是颱風的主要結構，通常處於水平是梯度風與垂直是靜力平衡</p>
+<p><strong>次環流變數：</strong> <span class="math notranslate nohighlight">\(u\)</span> (徑向風)、<span class="math notranslate nohighlight">\(w\)</span> (垂直風):它們相對微弱，負責在主環流失去平衡時進行調整。</p>
+</section>
+</section>
+<section id="id6">
+<h2>四、 熱力風平衡與次環流方程式<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<p>5 條基礎方程式（徑向動量、切線動量、靜力平衡、質量連續、熱力學能量），就像是蓋房子的基本建材：鋼筋、水泥、磚塊、水管，它們描述了自然界 <strong>最基礎的</strong> 守恆定律（質量守恆、能量守恆、動量守恆）。</p>
+<ul class="simple">
+<li><p>如果我今天問你：「當地震來的時候，這棟大樓會怎麼搖晃？」你盯著一塊磚塊（例如：靜力平衡方程式），或是盯著一根鋼筋（例如：梯度風方程式），是絕對看不出整棟大樓會怎麼晃動的，因為這 5 條方程式是「各自獨立」且「微觀」的。我們需要一個透過 <strong>熱力風平衡</strong> 連結 <strong>靜力平衡（垂直）</strong> 與 <strong>梯度風平衡（水平）</strong>，搭建一個「風速的垂直切變」跟「水平的溫度梯度」之間的橋樑。</p></li>
+<li><p>如果我今天問你：「這棟大樓和那棟大樓抵抗搖晃的能力差別？」，我們可以 <strong>定義</strong> 出 <span class="math notranslate nohighlight">\(A, B, C\)</span> 當作大樓的「避震器係數」，<span class="math notranslate nohighlight">\(A\)</span> (靜力穩定度)： 垂直方向避震器的硬度。<span class="math notranslate nohighlight">\(C\)</span> (慣性穩定度)： 水平方向避震器的硬度。<span class="math notranslate nohighlight">\(B\)</span> (斜壓性)： 避震器傾斜的程度。</p></li>
+</ul>
+<p>透過基礎的方程式<a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Secondary_Circulation_Coefficients.html">可以推導出 <span class="math notranslate nohighlight">\(\rho A , \rho B , \rho C \)</span></a> ，這些變數決定了流體抵抗變形的能力（恢復力），我們統稱為「穩定度參數」。可以想像成空間中三個方向的彈簧，決定了次環流被擠壓的形狀。</p>
+<p><img alt="" src="../../_images/Eliassen_Transverse_Equation1.png" /></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\rho A \overset{\text{def}}{=} \frac{g}{\theta_{0}}\frac{\partial\theta}{\partial z}\)</span></p>
+<ul>
+<li><p><strong>意義：</strong> <span class="math notranslate nohighlight">\(A\)</span> 代表<strong>靜力穩定度 (Static Stability)</strong> ，數值越高越能抵抗流體「垂直運動」的能力</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\rho B \overset{\text{def}}{=} -\frac{g}{\theta_{0}}\frac{\partial\theta}{\partial r}=-(f+\frac{2v}{r})\frac{\partial v}{\partial z}\)</span></p>
+<ul>
+<li><p><strong>意義：</strong> <span class="math notranslate nohighlight">\(B\)</span> 代表<strong>斜壓性 (Baroclinicity)</strong> 或熱力風垂直風切 ，它連接著徑向的溫度梯度與垂直的風速變化，代表大氣的傾斜程度。數值越高越能抵抗流體「純垂直運動」和「純水平運動」的能力，強迫流體必須沿著某個「特定的傾斜角度」滑動</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\rho C \overset{\text{def}}{=} (f+\frac{2v}{r})(f+\frac{\partial rv}{r\partial r})\)</span></p>
+<ul>
+<li><p><strong>意義：</strong> <span class="math notranslate nohighlight">\(C\)</span> 代表<strong>慣性穩定度 (Inertial Stability)</strong> ，數值越高越能抵抗流體「水平運動」的能力</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>如何影響次環流形狀？</strong>
+因為連續方程式的關係，我們可以用一個流函數 <span class="math notranslate nohighlight">\(\psi\)</span> 來代表次環流，它在空間中會形成一個封閉的橢圓形狀</p>
+<ol class="arabic simple">
+<li><p><strong>當 <span class="math notranslate nohighlight">\(A \gg C\)</span>（靜力穩定度主宰）：</strong> 垂直方向的「彈簧」很硬，很難上下走。所以次環流會被壓扁，形成<strong>水平拉長、垂直範圍小</strong>的橢圓</p></li>
+<li><p><strong>當 <span class="math notranslate nohighlight">\(C \gg A\)</span>（慣性穩定度主宰）：</strong> 水平方向的「彈簧」很硬，很難往內外走。所以次環流會變成<strong>垂直拉長、水平被限制</strong>的橢圓</p></li>
+<li><p><strong>參數 <span class="math notranslate nohighlight">\(B\)</span> 的影響：</strong> 它相當於一個交叉項，會造成這個次環流橢圓發生<strong>傾斜 (Tilt)</strong></p></li>
+</ol>
+<section id="eliassen-transverse-equation-in-x-y-z-grid-x-y-z">
+<h3>Eliassen Transverse Equation in x-y-z grid (次環流方程式 x-y-z座標)<a class="headerlink" href="#eliassen-transverse-equation-in-x-y-z-grid-x-y-z" title="Link to this heading">#</a></h3>
+<section id="id7">
+<h4>證明目標<a class="headerlink" href="#id7" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\frac{\partial}{\partial y}\left[ A\frac{\partial \psi}{\partial y} + B\frac{\partial \psi}{\partial z} \right] + \frac{\partial}{\partial z}\left[ B\frac{\partial \psi}{\partial y} + C\frac{\partial \psi}{\partial z} \right] = \frac{\partial J}{\partial y} + \frac{\partial F}{\partial z}\]</div>
+<p>也可以在<a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Eliassen_Transverse_Equation.html">圓柱上證明</a>這件事情 <span class="math notranslate nohighlight">\(\frac{\partial}{\partial r}\left[ \frac{A}{r}\frac{\partial \psi}{\partial r} + \frac{B}{r}\frac{\partial \psi}{\partial z} \right] + \frac{\partial}{\partial z}\left[ \frac{B}{r}\frac{\partial \psi}{\partial r} + \frac{C}{r}\frac{\partial \psi}{\partial z} \right] = \frac{\partial J}{\partial r} - \frac{\partial F}{\partial z}\)</span></p>
+</section>
+<section id="id8">
+<h4>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#id8" title="Link to this heading">#</a></h4>
+<ul>
+<li><p><strong>【已知 1】 沿鋒面動量方程式 (Along-front Momentum)</strong>：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \frac{\partial u}{\partial t} + v\frac{\partial u}{\partial y} + w\frac{\partial u}{\partial z} - fv &amp;=&amp; X \\
+    \frac{\partial u}{\partial t} &amp;=&amp; - v\frac{\partial u}{\partial y} - w\frac{\partial u}{\partial z} +fv +X \\
+    \frac{\partial u}{\partial t} &amp;=&amp; - v \left( \frac{\partial u}{\partial y} - f  \right) - w\frac{\partial u}{\partial z} +X \\
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>【已知 2】 跨鋒面地轉平衡 (Geostrophic Balance)</strong>：
+（因為 <span class="math notranslate nohighlight">\(x\)</span> 方向無梯度，地轉風完全在 <span class="math notranslate nohighlight">\(u\)</span> 方向）</p>
+<div class="math notranslate nohighlight">
+\[fu = -\frac{\partial \phi}{\partial y}\]</div>
+</li>
+<li><p><strong>【已知 3】 流體靜力平衡 (Hydrostatic Balance)</strong>：</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial \phi}{\partial z} = \frac{g}{\theta_0}\theta'\]</div>
+</li>
+<li><p><strong>【已知 4】 熱力學方程式 (Thermodynamic Equation)</strong>：</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial \theta}{\partial t} + v\frac{\partial \theta}{\partial y} + w\frac{\partial \theta}{\partial z} = \frac{\theta}{T}\frac{Q}{c_p}\]</div>
+</li>
+<li><p><strong>【已知 5】 2D 連續方程式 (Continuity Equation)</strong>：</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial(\rho v)}{\partial y} + \frac{\partial(\rho w)}{\partial z} = 0\]</div>
+</li>
+<li><p><strong>【已知 6】 偏導數交換律 (Schwarz’s Theorem)</strong>：</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial}{\partial y}\left[ \frac{\partial^2\phi}{\partial t\partial z} \right] = \frac{\partial}{\partial z}\left[ \frac{\partial^2\phi}{\partial t\partial y} \right]\]</div>
+</li>
+<li><p><strong>【定義 1】 次環流流線函數 (<span class="math notranslate nohighlight">\(\psi\)</span>)</strong>：</p>
+<p>為了自動滿足【已知 5】，我們定義：</p>
+<div class="math notranslate nohighlight">
+\[\rho v \overset{\text{def}}{=} -\frac{\partial \psi}{\partial z} \quad , \quad \rho w \overset{\text{def}}{=} \frac{\partial \psi}{\partial y}\]</div>
+</li>
+<li><p><strong>【定義 2】 穩定度結構參數 (<span class="math notranslate nohighlight">\(A, B, C\)</span>)</strong>：</p>
+<div class="math notranslate nohighlight">
+\[\rho A \overset{\text{def}}{=} \frac{g}{\theta_0}\frac{\partial\theta}{\partial z}\]</div>
+<div class="math notranslate nohighlight">
+\[\rho B \overset{\text{def}}{=} -\frac{g}{\theta_0}\frac{\partial\theta}{\partial r} = -\left(f+\frac{2v}{r}\right)\frac{\partial v}{\partial z}\]</div>
+<div class="math notranslate nohighlight">
+\[\rho C \overset{\text{def}}{=} \left(f+\frac{2v}{r}\right)(f+\zeta)\]</div>
+</li>
+<li><p><strong>【定義 3】 動力與熱力強迫項 (Forcing Terms, <span class="math notranslate nohighlight">\(F, J\)</span>)：</strong></p>
+<div class="math notranslate nohighlight">
+\[F \overset{\text{def}}{=} \left(f+\frac{2v}{r}\right)X\]</div>
+<div class="math notranslate nohighlight">
+\[J \overset{\text{def}}{=} \frac{g}{\theta_0}\frac{\theta}{T}\frac{Q}{c_p}\]</div>
+</li>
+<li><p><strong>【已知 7】熱力演變 (Thermal Tendency)</strong>：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \frac{\partial^2 \phi}{\partial t \partial z} &amp;=&amp; \frac{\partial}{\partial t}\left[\frac{\partial \phi}{\partial z} \right]\\
+  \frac{\partial^2 \phi}{\partial t \partial z} &amp;\overset{\text{已知 3}}{=}&amp; \frac{\partial}{\partial t}\left[ \frac{g}{\theta_0}\theta' \right]\\
+  \frac{\partial^2 \phi}{\partial t \partial z} &amp;=&amp; \frac{g}{\theta_0} \frac{\partial \theta'}{\partial t} \\
+  \frac{\partial^2 \phi}{\partial t \partial z} &amp;=&amp; \frac{g}{\theta_0} \frac{\partial \theta}{\partial t}  \\
+  \frac{\partial^2 \phi}{\partial t \partial z} &amp;\overset{\text{已知 4}}{=}&amp; \frac{g}{\theta_0} \left( -v\frac{\partial \theta}{\partial y} - w\frac{\partial \theta}{\partial z} + \frac{\theta}{T}\frac{Q}{c_p} \right) \\
+  \frac{\partial^2 \phi}{\partial t \partial z} &amp;\overset{\text{定義 2,3}}{=}&amp; -v(-\rho B) - w(\rho A) + J \\
+  \frac{\partial^2 \phi}{\partial t \partial z} &amp;=&amp; v\rho B - w\rho A + J \\
+  \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>【已知 8】動力演變 (Momentum Tendency)</strong>：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \frac{\partial^2 \phi}{\partial t \partial y} &amp;=&amp; \frac{\partial}{\partial t} \left[\frac{\partial \phi}{\partial y}\right] \\
+  \frac{\partial^2 \phi}{\partial t \partial y} &amp;\overset{\text{已知 2}}{=}&amp; \frac{\partial}{\partial t}\left[-fu \right] \\
+  \frac{\partial^2 \phi}{\partial t \partial y} &amp;=&amp; -f\frac{\partial u}{\partial t} \\
+  \frac{\partial^2 \phi}{\partial t \partial y} &amp;\overset{\text{已知 1}}{=}&amp; -f \left[ -v\left( \frac{\partial u}{\partial y} - f \right) - w\frac{\partial u}{\partial z} + X \right]\\
+  \frac{\partial^2 \phi}{\partial t \partial y} &amp;=&amp; -v \cdot f\left( f - \frac{\partial u}{\partial y} \right) + w \cdot f\frac{\partial u}{\partial z} - fX \\
+  \frac{\partial^2 \phi}{\partial t \partial y} &amp;\overset{\text{定義 2,3}}{=}&amp; -v\rho C + w\rho B - F 
+  \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>【定義 4】 notation of Eliassen Transverse Equation in Cylindrical Corordnate</strong>：</p>
+<div class="math notranslate nohighlight">
+\[ \mathcal{L}[\cdot] = \frac{\partial}{\partial y}\left[ A\frac{\partial [\cdot]}{\partial y} + B\frac{\partial [\cdot]}{\partial z} \right] + \frac{\partial}{\partial z}\left[ B\frac{\partial [\cdot]}{\partial y} + C\frac{\partial [\cdot]}{\partial z} \right]\]</div>
+</li>
+</ul>
+</section>
+<section id="id9">
+<h4>證明<a class="headerlink" href="#id9" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{\partial}{\partial y}\left[ \frac{\partial^2 \phi}{\partial t \partial z} \right]&amp;=&amp; \frac{\partial}{\partial z}\left[  \frac{\partial^2 \phi}{\partial t \partial y} \right]\\
+\frac{\partial}{\partial y}\left[ v\rho B - w\rho A + J \right] &amp;\overset{\text{已知 7,8}}{=}&amp; \frac{\partial}{\partial z}\left[ -v\rho C + w\rho B - F \right]\\
+\frac{\partial}{\partial y}\left[ v\rho B - w\rho A \right] + \frac{\partial}{\partial z}\left[ v\rho C - w\rho B \right] &amp;=&amp; -\frac{\partial J}{\partial y} - \frac{\partial F}{\partial z}\\
+\frac{\partial}{\partial y}\left[ -\frac{\partial \psi}{\partial z} B - \frac{\partial \psi}{\partial y} A \right] + \frac{\partial}{\partial z}\left[ -\frac{\partial \psi}{\partial z} C - \frac{\partial \psi}{\partial y} B \right] &amp;\overset{\text{定義 1}}{=}&amp; -\frac{\partial J}{\partial y} - \frac{\partial F}{\partial z}\\
+\frac{\partial}{\partial y}\left[ A\frac{\partial \psi}{\partial y} + B\frac{\partial \psi}{\partial z} \right] + \frac{\partial}{\partial z}\left[ B\frac{\partial \psi}{\partial y} + C\frac{\partial \psi}{\partial z} \right] &amp;=&amp; \frac{\partial J}{\partial y} + \frac{\partial F}{\partial z}\\
+\mathcal{L}[\psi] &amp;\overset{\text{定義 2}}{=}&amp; \frac{\partial J}{\partial y} + \frac{\partial F}{\partial z} \\
+\end{gather*}\end{split}\]</div>
+</section>
+</section>
+</section>
+<section id="id10">
+<h2>五、 橢圓判別式定理<a class="headerlink" href="#id10" title="Link to this heading">#</a></h2>
+<p>次環流偏微分方程式 <span class="math notranslate nohighlight">\(A \frac{\partial^2 \psi}{\partial r^2} + 2B \frac{\partial^2 \psi}{\partial r \partial z} + C \frac{\partial^2 \psi}{\partial z^2} = Q\)</span> 若滿足 <span class="math notranslate nohighlight">\(AC - B^2 &gt; 0\)</span> 在數學分類上就屬於「橢圓型偏微分方程 (Elliptic PDE)」，衡量穩定度的方式可以使用<a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Stability_Matrix.html">Axisymmetric Stability Matrix</a></p>
+<ol class="arabic simple">
+<li><p>橢圓型 PDE 的特性：「彈簧床效應」(局部且封閉)</p>
+<ul class="simple">
+<li><p>當系統滿足 <span class="math notranslate nohighlight">\(AC - B^2 &gt; 0\)</span> 時，代表內部有一股強大的「恢復力」（也就是 <span class="math notranslate nohighlight">\(A\)</span> 和 <span class="math notranslate nohighlight">\(C\)</span>）</p></li>
+<li><p>如果你在眼牆釋放潛熱（強迫項 <span class="math notranslate nohighlight">\(Q\)</span>），這就像是在一張拉緊的彈簧床上用力往下壓，彈簧床會凹陷但變形只會侷限在壓下去的周圍，並且形成一個「封閉的變形圈」</p></li>
+<li><p><strong>在颱風中</strong>： 這個封閉的變形圈，就是一個完整的次環流（底層流入 <span class="math notranslate nohighlight">\(\rightarrow\)</span> 眼牆上升 <span class="math notranslate nohighlight">\(\rightarrow\)</span> 高層流出 <span class="math notranslate nohighlight">\(\rightarrow\)</span> 外圍下沉），這是一個完美的閉合調節圈，能將底層的水氣精準地送進眼牆，成為颱風持續燃燒的完美燃料輸送帶。</p></li>
+</ul>
+</li>
+<li><p>雙曲型 PDE 的特性：「水波效應」(發散且無法閉合)</p>
+<ul class="simple">
+<li><p>如果今天大氣的狀態變成 <span class="math notranslate nohighlight">\(AC - B^2 &lt; 0\)</span>，會發生什麼事？直覺上會以為偏微分方程「突變」成了雙曲型（波動方程式）。但嚴格來說是 <strong>方程式直接失效了</strong></p></li>
+<li><p>Sawyer-Eliassen 方程式是一個「診斷方程」，推導它的前提是大自然跟我們簽訂了一份合約：假設系統隨時處於熱中性風與梯度風平衡。當 <span class="math notranslate nohighlight">\(AC - B^2 &lt; 0\)</span> 時，代表大自然單方面撕毀了平衡合約，既然系統不再平衡，S-E 方程式就作廢了，我們必須退回到最原始、保留了時間變化的「原始方程式 (Primitive Equations)」去求解。</p></li>
+<li><p>在颱風中： 如果大氣變成這樣，眼牆釋放的熱量會激發出「重力慣性波 (Gravity-Inertia Waves)」。能量與水氣會像水波一樣向四面八方輻散逃逸，根本無法形成一個在眼牆附近上下循環的閉合迴圈，沒有了這個輸送帶，颱風很快就會因為燃料耗盡而死亡。</p></li>
+</ul>
+</li>
+</ol>
+<ul class="simple">
+<li><p>穩定的颱風： 颱風旋轉極快、慣性穩定度 <span class="math notranslate nohighlight">\(C\)</span> 非常巨大，因此 <span class="math notranslate nohighlight">\(AC\)</span> 輕輕鬆鬆就能大於 <span class="math notranslate nohighlight">\(B^2\)</span>，系統超級穩定、次環流完美閉合。</p></li>
+<li><p>系統的洩壓閥 (對稱性不穩定)： 如果今天有極強的環境風切讓破壞力遽增，導致 <span class="math notranslate nohighlight">\(B^2 &gt; AC\)</span>。這時系統的剛性拉不住撕裂力，大氣就會發生大名鼎鼎的「對稱性不穩定 (Symmetric Instability)」。<strong>但大自然並不喜歡不穩定，它不會任由颱風直接瓦解！作為應對，大氣會立刻激發出「傾斜對流 (Slantwise Convection)」作為系統的洩壓閥</strong>。大自然透過這些傾斜的上升雲帶快速消耗掉多餘的不穩定能量，強迫內部參數重新回到 <span class="math notranslate nohighlight">\(AC - B^2 &gt; 0\)</span> 的穩定狀態。</p></li>
+</ul>
+</section>
+<section id="pv">
+<h2>六、 位渦 (PV) 的物理意義與分佈<a class="headerlink" href="#pv" title="Link to this heading">#</a></h2>
+<section id="rho-a-rho-c-rho-b-2-left-f-frac-2v-r-right-left-frac-rho-0-g-theta-0-right-pv">
+<h3><strong>1. 數學與物理的完美對接：<span class="math notranslate nohighlight">\((\rho A)(\rho C) - (\rho B)^2 = \left(f+\frac{2v}{r}\right)  \left(\frac{\rho_0 g}{\theta_0}\right) PV\)</span></strong><a class="headerlink" href="#rho-a-rho-c-rho-b-2-left-f-frac-2v-r-right-left-frac-rho-0-g-theta-0-right-pv" title="Link to this heading">#</a></h3>
+<p>我們在<a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Axisymmetric_Stability_Matrix.html">數學上證明了</a>系統必須滿足 <span class="math notranslate nohighlight">\(AC - B^2 &gt; 0\)</span> 才能維持閉合的橢圓型偏微分方程。但在大氣動力學中，這三個參數對應著：<span class="math notranslate nohighlight">\(A\)</span> (靜力穩定度)、<span class="math notranslate nohighlight">\(C\)</span> (慣性穩定度)、<span class="math notranslate nohighlight">\(B\)</span> (斜壓性)。
+根據 Ertel 位渦定理的數學推導，將絕對渦度向量與位溫梯度向量做內積展開後，我們驚訝地發現：正壓項的乘積剛好是 <span class="math notranslate nohighlight">\(AC\)</span>，而斜壓項的內積剛好對應 <span class="math notranslate nohighlight">\(-B^2\)</span>，這意味著：<strong><a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Fluid_Dynamics_in_Cylindrical_Coordinates/Relation_between_Axisymmetric_Structural_Parameters_and_PV.html">數學判別式 <span class="math notranslate nohighlight">\(AC - B^2\)</span> 的本質，直接正比於大氣的位渦 (<span class="math notranslate nohighlight">\(\text{PV}\)</span>)！</a></strong></p>
+</section>
+<section id="npz">
+<h3><strong>2. 物理意義：剛性與資訊的 .npz 壓縮檔</strong><a class="headerlink" href="#npz" title="Link to this heading">#</a></h3>
+<p>位渦大於零，代表流體具有強大的 <strong>「剛性」</strong> ，就像高速旋轉的陀螺難以被推倒。在颱風眼牆附近，空氣同時具有極強的旋轉（高 <span class="math notranslate nohighlight">\(C\)</span>）與強烈的成層（高 <span class="math notranslate nohighlight">\(A\)</span>），因此這裡的位渦數值爆表。這使得眼牆區的大氣變得像是一堵「看不見的剛體牆壁」，任何試圖從水平方向穿透這面牆的氣流，都會被強大的慣性穩定度給彈開。</p>
+<p>同時，根據<strong>位渦反演原則 (PV Invertibility)</strong>，位渦就像是大氣狀態的高效 <code class="docutils literal notranslate"><span class="pre">.npz</span></code> 壓縮檔。只要系統滿足動力平衡條件，我們就能從這團高資訊密度的 PV 矩陣中，完美解碼還原出整個颱風的風場與溫度場。</p>
+</section>
+<section id="id11">
+<h3><strong>3. 次環流的阻力與摩擦力破壞</strong><a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>眼牆上升的空氣到了高層，面臨往內或往外的選擇。中心是極高位渦的「鐵牆」，外圍是低位渦的鬆散區，氣流自然選擇「阻力最小路徑」向外輻散。</p></li>
+<li><p>但在低層海面，情況完全不同，<strong>表面摩擦力並不是消耗位渦，而是直接打破了力學平衡。</strong> 摩擦力使得風速減慢，導致向外的離心力與科氏力大減，無力抵抗中心強大的向內氣壓梯度力。空氣被迫往中心輻合，補足了次環流的最底層迴圈。</p></li>
+</ul>
+<p>這就是位渦的空間分佈與邊界層摩擦力，如何共同指揮著次環流，維持著颱風這個巨大熱機的運轉。</p>
+<p><strong>CISK 理論與摩擦力的雙重角色 (01:15:39~01:28:00)</strong></p>
+<ul class="simple">
+<li><p>回顧傳統的 CISK (第二類條件性不穩定) 理論，說明邊界層輻合如何帶動對流加熱，使系統持續增強。</p></li>
+<li><p>點出摩擦力是雙面刃：它既會消耗颱風的動能，卻又是激發輻合、輸送水氣的關鍵。</p></li>
+<li><p>就像是燃燒柴火，摩擦力看似是在消耗能量，但正是它把新的柴火（水氣）推入中心，讓火越燒越旺。</p></li>
+</ul>
+<p><strong>角動量守恆與茶壺實驗 (01:35:17~01:41:48)</strong></p>
+<ul class="simple">
+<li><p>解釋颱風增強的根本原理是「絕對角動量守恆」，流體向內收縮時旋轉必定加快。</p></li>
+<li><p>引入經典的「茶壺實驗 (Tea leaf paradox)」來作為底層內流的類比。</p></li>
+<li><p>杯底摩擦力減慢了水流，離心力減弱，但向內的氣壓梯度力不變，導致底層茶葉與水流向中心聚集。</p></li>
+</ul>
+</section>
+</section>
+<section id="id12">
+<h2>這張時序圖將整堂課的脈絡切分出來了。目前看下來，你想先從前面「圓錐曲線定理與橢圓方程式的數學推導」開始往下挖，還是想先探討後面「茶壺實驗與邊界層摩擦力」的物理直觀呢？<a class="headerlink" href="#id12" title="Link to this heading">#</a></h2>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lecture\week3"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../week2/week2.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Typhoon-Dynamics - Week 2</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../homework/homework.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">homework</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">一、 準平衡動力與颱風環流基礎 (00:01:26~00:09:00)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quasi-balance"><strong>1. 為什麼要談「準平衡 (Quasi-balance)」？</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#primary-circulation"><strong>2. 颱風的骨架：主環流 (Primary Circulation)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#secondary-circulation"><strong>3. 颱風的靈魂：次環流 (Secondary Circulation)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>4. 系統的共生關係</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gradient-wind-balance-rossby-number">二、 Gradient Wind Balance 與 Rossby number</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">推導</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#r-o-ll-1">當 <span class="math notranslate nohighlight">\(R_o \ll 1\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#r-o-gg-1">當 <span class="math notranslate nohighlight">\(R_o \gg 1\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#r-o-sim-1">當 <span class="math notranslate nohighlight">\(R_o \sim 1\)</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">三、 軸對稱颱風模型的方程式</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">變數的主次</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">四、 熱力風平衡與次環流方程式</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eliassen-transverse-equation-in-x-y-z-grid-x-y-z">Eliassen Transverse Equation in x-y-z grid (次環流方程式 x-y-z座標)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">證明目標</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">證明</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">五、 橢圓判別式定理</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pv">六、 位渦 (PV) 的物理意義與分佈</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rho-a-rho-c-rho-b-2-left-f-frac-2v-r-right-left-frac-rho-0-g-theta-0-right-pv"><strong>1. 數學與物理的完美對接：<span class="math notranslate nohighlight">\((\rho A)(\rho C) - (\rho B)^2 = \left(f+\frac{2v}{r}\right)  \left(\frac{\rho_0 g}{\theta_0}\right) PV\)</span></strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#npz"><strong>2. 物理意義：剛性與資訊的 .npz 壓縮檔</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11"><strong>3. 次環流的阻力與摩擦力破壞</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">這張時序圖將整堂課的脈絡切分出來了。目前看下來，你想先從前面「圓錐曲線定理與橢圓方程式的數學推導」開始往下挖，還是想先探討後面「茶壺實驗與邊界層摩擦力」的物理直觀呢？</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC YE
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

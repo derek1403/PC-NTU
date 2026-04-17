@@ -7,6 +7,7 @@ chapters:
 - file: lecture/lecture.md
   sections:      # <--- 代表下面的檔案都屬於它
     - file: lecture/week2/week2.ipynb
+    - file: lecture/week3/week3.ipynb
 - file: homework/homework.md
   sections:
     - file: homework/hw1/hw1.ipynb
