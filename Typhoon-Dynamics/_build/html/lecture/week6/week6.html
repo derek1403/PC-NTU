@@ -1,0 +1,736 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Typhoon-Dynamics - Week 6 &#8212; Typhoon Dynamics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lecture/week6/week6';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Typhoon Dynamics - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Typhoon Dynamics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lecture.html">lecture</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../week2/week2.html">Typhoon-Dynamics - Week 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week3/week3.html">Typhoon-Dynamics - Week 3</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../homework/homework.html">homework</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../homework/hw1/hw1.html">Typhoon Dynamics Hw 1</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../homework/hw2/hw2.html">Typhoon Dynamics Hw 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../homework/hw3/hw3.html">Typhoon Dynamics Hw 3</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flecture/week6/week6.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/lecture/week6/week6.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Typhoon-Dynamics - Week 6</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">仔細觀察</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pvu">200PVU的動力</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#puv">200PUV 動力</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#axisymmetric-bl-flow-on-an-f-palne">Axisymmetric BL flow on an f-palne</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="typhoon-dynamics-week-6">
+<h1>Typhoon-Dynamics - Week 6<a class="headerlink" href="#typhoon-dynamics-week-6" title="Link to this heading">#</a></h1>
+<p><strong>日期:</strong> 2026.04.01</p>
+<p>是觀測、是模擬要搞清楚
+做什麼假設要寫清楚、
+模擬解析度要講</p>
+<p>200PVU</p>
+<p>Ooyama 2層的淺水方程+邊界層 描述TC:對稱
+張庭宇的論文 一層淺水+邊界層 描述TC</p>
+<p>不對稱的動力考慮到wavenumber1 wavenumber2</p>
+<p>Ooyama :</p>
+<ul class="simple">
+<li><p>對流和TC會互相幫助，而不是相互競爭能量。兩層模式:會有積雲參數化的問題(無法直接解析潛熱)</p>
+<ul>
+<li><p>參數化的意義:每一朵積雲不一定能夠處理，但是合起來的效果可以被診斷出來(積雲1km可以被100km的颱風內部控制住)</p></li>
+</ul>
+</li>
+<li><p>邊界層摩擦的重要性</p></li>
+<li><p>海契交互作用的重要:沒有海洋就沒有颱風</p></li>
+<li><p>TC是軸對稱動力</p></li>
+<li><p>主次環流的開山始祖</p>
+<ul>
+<li><p>颱風是平衡動力</p>
+<ul>
+<li><p>梯度風平衡</p></li>
+<li><p>Ranking vortex :  <span class="math notranslate nohighlight">\(v = v_m (r/r_m) at r&lt;rm\)</span></p></li>
+</ul>
+</li>
+<li><p>主環流繞著軸向<a class="reference internal" href="#%5Bpic/view.png%5D"><span class="xref myst">pic</span></a></p></li>
+<li></li>
+</ul>
+</li>
+<li><p>1967年Ostlund 用氚(同位素)追蹤出來颱風的都是海洋裡蒸發出來的。(同位素定年?)</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">小補充:</span> <span class="pre">現在可以高解析到500m~100m</span> <span class="pre">(LES)</span></code></p>
+<p>QG中</p>
+<ul class="simple">
+<li><p>tendency equation :平衡的東西怎麼變化</p></li>
+<li><p>omega equation : 一個平衡轉到另一個平衡中間要做的調整 (次環流)</p></li>
+</ul>
+<p>ranking vortex<span class="math notranslate nohighlight">\(v = v_m (r/r_m)^a at r&lt;rm\)</span>  可以計算渦度</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(a=0.5\)</span></p>
+<ul>
+<li><p>渦度從高處緩慢下降，到rm後平穩下降</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(a=1\)</span></p>
+<ul>
+<li><p>渦度從固定，到rm後平穩下降</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(a=2\)</span></p>
+<ul>
+<li><p>渦度從低處緩慢上升，到rm後平穩下降</p></li>
+</ul>
+</li>
+</ul>
+<p>Ooyama 結果 :</p>
+<ul class="simple">
+<li><p>TC生成時氣壓不斷下降、風速增加</p></li>
+<li><p>若把海洋關掉TC直接崩潰</p></li>
+</ul>
+<p>我們知道次環流的形狀、rossby deformation 和rossbt hight 由PV，也就是AC-B^2來控制</p>
+<section id="id1">
+<h2>仔細觀察<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>Dvorak technique 是從衛星雲圖看TC強度的方法</p>
+<p>刺激了2019陳柏孚的AI辨識衛星雲圖的 DSAT論文</p>
+<p>海水重要，新時代衛星能夠量測海水下OHC也提供很多insight</p>
+<p>垂直風切普遍情況對颱風不利，但是怎麼和中尺度颱風交互</p>
+<p>從大尺度的變數似乎看不出為什麼會RI(突然變強)，重點在CE(同心眼牆)、vortex rossby wave(不對稱動力)</p>
+<ul class="simple">
+<li><p>wave mean flow interaction (波動和平均流的交互):使的熱通量可以傳遞 <span class="math notranslate nohighlight">\(\bar{w'T'}\)</span> 傳送熱量、 <span class="math notranslate nohighlight">\(-\frac{\partial \bar{u_g' v_g'}}{\partial y}\)</span> 改變平均流</p></li>
+<li><p>對於TC就可以用wave mean flow interaction的觀點，眼牆外渦度小、眼牆渦度大、眼牆內渦度小:在渦度的梯度介面上所以叫渦漩的羅士比波</p></li>
+<li><p>利用這個不對稱動力了解對稱動力</p></li>
+</ul>
+<p>颱風路徑預報幾乎已經被google模式做得非常準確，但是強度還有能夠努力的空間</p>
+</section>
+<section id="pvu">
+<h2>200PVU的動力<a class="headerlink" href="#pvu" title="Link to this heading">#</a></h2>
+<p><span class="math notranslate nohighlight">\(1 \text{PUV} = -10\text{m}\text{s}^{-2} 10^{-4} \text{s}^{-1} \frac{-10\text{K}}{100\text{hPa}} = 10^{-6} m^{2} s^{-1} K kg^{-1}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\text{ PVU} = 10^{-6} \text{ m}^2 \text{K kg}^{-1} \text{s}^{-1}\]</div>
+<div class="math notranslate nohighlight">
+\[\text{m}^2 \text{K kg}^{-1} \text{s}^{-1} = \frac{\text{s}^{-1}}{\text{kg} / (\text{m}^2 \text{K})} = \frac{\text{vorticity units}}{\text{pseudo-density units}}\]</div>
+<ul class="simple">
+<li><p>跟穩定度</p></li>
+<li><p>科式力有關係</p></li>
+</ul>
+<p>局部區域有可能可以達到200PVU</p>
+<ul class="simple">
+<li><p>(2019) MWR：Diagnosis of the Dynamic Efficiency of Latent Heat Release and the Rapid Intensification of Supertyphoon Haiyan (2013)</p></li>
+<li><p>(2020) JAS：Potential Vorticity Mixing and Rapid Intensification in the Numerically Simulated Supertyphoon Haiyan (2013)</p></li>
+<li><p>(2021) JAS：Reply to “Comments on ‘Potential Vorticity Mixing and Rapid Intensification in the Numerically Simulated Supertyphoon Haiyan (2013)</p></li>
+<li><p>當大尺度條件都一樣 RI is more likely to occur in an intense TC. (Shu et al. 2012)</p></li>
+<li><p>颱風是 中尺度 (~100km)機器，但是能量來於大尺度(~1000km)，當這個颱風比較強應該是內部有特殊的東西(雙眼牆)，但大尺度一樣重要</p></li>
+</ul>
+<p>Martinez et al. 2019 JAS [pic]</p>
+<ul class="simple">
+<li><p>下圖黑色箭頭可以看到次環流</p></li>
+<li><p>白線是對流</p></li>
+<li><p>中心位渦很大</p></li>
+<li><p>眼牆和最大上升沒有重和，最大上升處再眼牆之外，在這個對流處的底層發現200PVU，在往內位渦就又變小了</p></li>
+<li><p>位渦塔:最大上升和位渦最大處重疊</p></li>
+</ul>
+<p>Hausman et al. (2006)</p>
+<ul class="simple">
+<li><p>解析度很高(0.5km) 、對稱模式(沒有wavenumber n 或 wave mean flow interaction)、非靜力平衡模式</p></li>
+<li><p>貼近眼牆的外側對流看到250PVU</p></li>
+<li><p>沒有考慮不對稱對流</p></li>
+<li><p>看圖，對流在r-z圖中呈現45度角</p></li>
+<li><p>a narrow, leaning tower in which the value of PV can reach several hundred potential vorticity unit.” (Hausman et al. 2006) : 也就是 Large w and large ζ coupled“ (Tsujino and Kuo 2020)</p></li>
+</ul>
+<p>Carry Emanum</p>
+<ul class="simple">
+<li><p>颱風會達到stead state，達到一個強度後就不會更強了(MPI)</p></li>
+<li><p>但是從數學上會從2~3PVU到10PVU 再到200PVU(跨越兩個尺度)就可以大概認定是exp增長(應該吧)，可能需要別的證據來證明是不是真的有最大上限</p></li>
+</ul>
+<p>從數學上看公式</p>
+<div class="math notranslate nohighlight">
+\[\frac{DP}{Dt} = P \left( \frac{\partial \dot{\theta}}{\partial \theta} \right)_{\vec{\zeta}}\]</div>
+<ul class="simple">
+<li><p>加熱被雲微物理、熱力學所限制</p></li>
+<li><p>P沒有被限制，所以可以是指數成長的形式</p></li>
+<li><p>P一定要和 <span class="math notranslate nohighlight">\(\left( \frac{\partial \dot{\theta}}{\partial \theta} \right)_{\vec{\zeta}}\)</span> 在空間上耦合再一起TC才會強大</p>
+<ul>
+<li><p>就像渦度變大要和輻和綁再一起<span class="math notranslate nohighlight">\( \frac{D\zeta}{Dt} = -\zeta \nabla \cdot \vec{v}\)</span></p></li>
+<li><p>Hank  and  Schuber : 加熱要加在慣性穩定的地方 ，也就是加熱要加在渦度大的地方、加熱要加在位渦大的地方 TC才變得更強 Large w and large ζ coupled (Tsujino and Kuo 2020)</p></li>
+</ul>
+</li>
+</ul>
+<p>茶壺實驗知道</p>
+<ul class="simple">
+<li><p>對流要夠強，如果不夠強則強對流上升到一半就向外輻散了</p></li>
+</ul>
+</section>
+<section id="puv">
+<h2>200PUV 動力<a class="headerlink" href="#puv" title="Link to this heading">#</a></h2>
+<section id="axisymmetric-bl-flow-on-an-f-palne">
+<h3>Axisymmetric BL flow on an f-palne<a class="headerlink" href="#axisymmetric-bl-flow-on-an-f-palne" title="Link to this heading">#</a></h3>
+<p>假設:</p>
+<ul class="simple">
+<li><p>沒有 <span class="math notranslate nohighlight">\(w \frac{\partial}{\partial z}\)</span></p></li>
+<li><p>軸對稱</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\frac{\partial v}{\partial t} = -\left( f + \frac{\partial rv}{r \partial r} \right) u + F_{ric}\]</div>
+<ul class="simple">
+<li><p>如果有內流(<span class="math notranslate nohighlight">\(u&lt;0\)</span>) 渦度是正的 ，所以 <span class="math notranslate nohighlight">\(v\)</span> 要增加</p></li>
+<li></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\frac{\partial u}{\partial t} + u \frac{\partial u}{\partial r} = \left( fv + \frac{v^2}{r} - \frac{1}{\rho} \frac{\partial p}{\partial r} \right) + F_{ric}\]</div>
+<ul class="simple">
+<li><p>如果梯度風被破壞會產生內流</p></li>
+<li><p><span class="math notranslate nohighlight">\(u \frac{\partial u}{\partial r}\)</span> 如果考慮非線性動力(不能夠忽略u’ ) [pic u 的低平率變高屏綠，造成不連續]</p>
+<ul>
+<li><p>因為大尺度非線性過程會把梯度變得很尖銳(fft後看就散布在各個頻率上)也有到 小尺度   所以有enegy cascade。流體力學中會自發地把梯度變的尖銳</p>
+<ul>
+<li><p>風升 也是一個例子</p></li>
+<li><p>割離低壓</p></li>
+<li><p>化學關心:反映產率正比於介面，也就是梯度大小反映介面多少(反應速度逼近於0、介面逼近無限大)</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><span class="math notranslate nohighlight">\(\frac{\partial u}{\partial t} + u \frac{\partial u}{\partial r} = 0 \)</span> 如果考慮非線性動力 [pic u 變化]
+初始給一個hyperbolic tangen 初始非常平滑，隨時間積分變得非常尖銳</p>
+<p><span class="math notranslate nohighlight">\(\frac{\partial u}{\partial t} + u \frac{\partial u}{\partial r} = 0\)</span></p>
+<p><span class="math notranslate nohighlight">\(u(r,0) = f(x) = u_0 - \Delta u \tan^{-1} (\frac{r-r_0}{h})\)</span></p>
+<p><span class="math notranslate nohighlight">\(u(r,t) = u_0 - \Delta u \tan^{-1} (\frac{r - ut - r_0}{h})\)</span></p>
+<p><span class="math notranslate nohighlight">\(\frac{\partial u}{\partial r} = - \frac{\Delta u}{h} \frac{1 - t \frac{\partial u}{\partial r}}{1 + (\frac{r - r_0 - ut}{h})^2}\)</span></p>
+<p><span class="math notranslate nohighlight">\((\frac{\partial u}{\partial x})_{x = x_0 + \bar{u}t} = -(1 - t (\frac{\partial u}{\partial x})_{x = x_0 + \bar{u}t})\)</span></p>
+<p><span class="math notranslate nohighlight">\((\frac{\partial u}{\partial r})_{r = r_0 + u_0 t} = \frac{-1}{t - \frac{h}{\Delta u}} \rightarrow -\infty, \quad \text{as } t \rightarrow \frac{h}{\Delta u}\)</span></p>
+<p>在有限的時間內可以達到不連續，會發生</p>
+<ul class="simple">
+<li><p>弱的颱風這個現象不明顯</p></li>
+</ul>
+<p>Hurricane Hugo (1989)  觀測!! [pic HH1989]</p>
+<ul class="simple">
+<li><p>紅色代表在400m(近地表)觀測到的、藍色代表2.6km(高空)</p></li>
+<li><p>雖然是某一個角度的觀測，但是可以假設很軸對稱</p></li>
+<li><p>從紅線來看</p>
+<ul>
+<li><p>在8km處有20m/s的上升速度</p>
+<ul>
+<li><p>因為這個以後都不准飛飛機在TC</p></li>
+<li><p>8km以內的 u 平均 8m/s 、8km以外的u平均 -20m/s ，代表強烈輻和、很不連續、和w重和、有shock(數值模是碰到都不好過因為 超音速)</p></li>
+<li><p>8km以內的 v 平均 20m/s 、8km以外的v平均 80m/s ，這一環渦度很大，因為風切渦度大<span class="math notranslate nohighlight">\(\frac{\partial v}{\partial r}\)</span>， <span class="math notranslate nohighlight">\(\zeta = \frac{1}{r} \frac{\partial (rv)}{\partial r} - \frac{1}{r} \frac{\partial u}{\partial \theta}\)</span></p></li>
+<li><p>v的下降可以用u和zeta看出來 <span class="math notranslate nohighlight">\(\frac{\partial v}{\partial t} = -u(f + \zeta)\)</span> ，而此位置的w也很大</p></li>
+</ul>
+</li>
+<li><p>因為沒有考慮 <span class="math notranslate nohighlight">\(w \frac{\partial}{\partial z}\)</span> (?) 、且是否真的軸對稱 是個問題，但是和目前的想法吻合</p></li>
+<li><p>會發生在強颱風，若颱風不能在有限的時間內讓U有shock，這個可能是有200PVU的徵兆，但是在本次觀測中沒有特別去觀測驗證這個想法</p></li>
+<li></li>
+</ul>
+</li>
+<li><p>從藍線來看 (高空)</p>
+<ul>
+<li><p>內部渦度小 外部渦度大 :代表有位渦環</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">邊界層渦度大的地方</span></code> 在 <code class="docutils literal notranslate"><span class="pre">高空渦度大(風速最大)的地方</span></code> 的 <code class="docutils literal notranslate"><span class="pre">內部</span></code></p></li>
+<li><p>上面的v很大轉得很快向鋼體，R方向都進不去，只能從邊界層上來(邊界層有摩擦 spiral in )。中層(高空)加熱效率很好，因為對流都在渦度上或內[pic Martinez 2019 JAS]</p></li>
+<li></li>
+</ul>
+</li>
+</ul>
+<p>Hausman et al. (2006) 的模式</p>
+<ul class="simple">
+<li><p>對稱</p></li>
+<li><p>也有看到這個 u shock和對流w重和造成 v變小且有PV環，</p></li>
+</ul>
+<p>颱風內部的主要環流是有可能指數成長的</p>
+<ul class="simple">
+<li><p>並不代表對流會指數成長</p></li>
+<li><p>PV和 <span class="math notranslate nohighlight">\(\dot\theta \)</span> 綁在一起從觀測上看到的就是這件事情(u shock和對流w重和造成 v變小且有PV環)</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lecture\week6"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">仔細觀察</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pvu">200PVU的動力</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#puv">200PUV 動力</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#axisymmetric-bl-flow-on-an-f-palne">Axisymmetric BL flow on an f-palne</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC YE
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
