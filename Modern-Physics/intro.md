@@ -25,7 +25,7 @@ tags: ["Modern Physics", "Quantum Mechanics", "Relativity"]
 - [x] **1. [Relativity (相對論)](./lecture/01_Relativity/relativity.ipynb)**
 - [x] **2. [Particle Properties of Waves (波的粒子性質)](./lecture/02_Particle_Properties_of_Waves/particle_properties_of_waves.html)**
 - [x] **3. [Wave Properties of Particles (粒子的波動性質)](https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/03_Wave_Properties_of_Particles/wave_properties_of_particles.html)**
-- [ ] **4. Atomic Structure (原子結構)**
+- [x] **4. [Atomic Structure (原子結構)](https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/04_Atomic_Structure/atomic_structure.html)**
 - [ ] **5. Quantum Mechanics (量子力學)**
 - [ ] **6. Quantum Theory of the Hydrogen Atom (氫原子的量子理論)**
 - [ ] **7. Many-Electron Atoms (多電子原子)**
