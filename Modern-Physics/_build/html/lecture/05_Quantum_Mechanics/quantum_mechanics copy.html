@@ -1,0 +1,1282 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>近代物理學 - 量子力學 (Modern Physics - Quantum Mechanics) &#8212; Modern Physics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lecture/05_Quantum_Mechanics/quantum_mechanics copy';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Modern Physics - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Modern Physics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    近代物理 (Modern Physics) 課程筆記
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lecture.html">lecture.md</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00_Introduction/introduction.html">Modern Physics - Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_Relativity/relativity.html">Modern Physics - Relativity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_Particle_Properties_of_Waves/particle_properties_of_waves.html">Modern Physics - Particle Properties of Waves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_Wave_Properties_of_Particles/wave_properties_of_particles.html">Modern Physics - Wave Properties of Particles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04_Atomic_Structure/atomic_structure.html">Modern Physics - Atomic Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quantum_mechanics.html">Modern Physics - Quantum Mechanics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../homework/homework.html">homework hardword</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../homework/hw1/hw1.html">Modern Physics Hw 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../homework/hw2/hw2.html">Modern Physics Hw 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../homework/hw3/hw3.html">Modern Physics Hw 3</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../homework/hw4/hw4.html">Modern Physics Hw 4</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flecture/05_Quantum_Mechanics/quantum_mechanics copy.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/lecture/05_Quantum_Mechanics/quantum_mechanics copy.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>近代物理學 - 量子力學 (Modern Physics - Quantum Mechanics)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">5.1 量子力學</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">量子力學和古典力學的差異</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">量子力學基本規則</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-dependent-schrodingers-equation-time-dependent-form">5.2 薛丁格方程式：Time dependent (Schrödinger’s Equation: Time-Dependent Form)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">薛丁格方程式的有效性</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">線性與疊加</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">期望值</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7"><strong>例題 5.2：</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operators">5.3 運算子 Operators</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">實際操作</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schrodingers-equation-steady-state-form">5.4 薛丁格方程式：穩態型式 Schrödinger’s Equation: Steady-State Form</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9"><strong>例題 5.4：</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#particle-in-a-box">5.5 箱子中的粒子 Particle in a Box</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10"><strong>例題 5.5.1：</strong> 粒子在基態 在位置的出現機率</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#l-x"><strong>例題 5.5.2：</strong> 求出在寬 L 的箱中，粒子位置的期望值〈x〉</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">動量</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-potential-well">5.6 有限位能井 (Finite Potential Well)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tunnel-effect">5.7 穿隧效應 (Tunnel Effect)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12"><strong>例題 5.7：</strong> 穿隧機率</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#harmonic-oscillator">5.8 諧振子 (Harmonic Oscillator)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13"><strong>例題 5.8：</strong></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="modern-physics-quantum-mechanics">
+<h1>近代物理學 - 量子力學 (Modern Physics - Quantum Mechanics)<a class="headerlink" href="#modern-physics-quantum-mechanics" title="Link to this heading">#</a></h1>
+<p><strong>日期:</strong> 2026.04.07</p>
+<section id="id1">
+<h2>5.1 量子力學<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>應該有更基礎的理論可以說明前面提到的實驗和觀測 (二元性、量子化)</p>
+<section id="id2">
+<h3>量子力學和古典力學的差異<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>古典:</p>
+<ul class="simple">
+<li><p>一個粒子知道 <span class="math notranslate nohighlight">\(x_0 , P_0 , F(t)\)</span> 則可以知道 <span class="math notranslate nohighlight">\(x(t) , P(t)\)</span></p></li>
+<li><p>在日常可行</p></li>
+</ul>
+<p>近代物理</p>
+<ul class="simple">
+<li><p>相對論:</p>
+<ul>
+<li><p>v 小 m 小 ， <span class="math notranslate nohighlight">\(v \to c\)</span></p></li>
+</ul>
+</li>
+<li><p>量子:</p>
+<ul>
+<li><p>所有東西都是機率</p></li>
+<li><p>古典力學為量子力學的近似</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id3">
+<h3>量子力學基本規則<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>波函數 <span class="math notranslate nohighlight">\(\Psi\)</span></p></li>
+<li><p>在那個位子和時間發現物體的機率 <span class="math notranslate nohighlight">\(\Psi \Psi^*\)</span></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\Psi , \Psi^* \in \mathbb{C}\)</span> 是共軛負數</p></li>
+<li><p>例如 <span class="math notranslate nohighlight">\(\Psi= A+Bi\)</span> 則 <span class="math notranslate nohighlight">\(\Psi^*=A-Bi\)</span></p></li>
+</ul>
+</li>
+<li><p>歸一化條件（Normalization Condition） <span class="math notranslate nohighlight">\(\int_{-\infty}^{\infty} |\Psi|^2 dV = 1\)</span></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(|\Psi|^2\)</span> 是 機率密度</p></li>
+<li><p><span class="math notranslate nohighlight">\(dV\)</span> 體積微元</p></li>
+<li><p><span class="math notranslate nohighlight">\(= 1\)</span> 代表全空間找到粒子的總機率為 100%。</p></li>
+</ul>
+</li>
+<li><p>波函數 <span class="math notranslate nohighlight">\(\Psi\)</span> 本身和其對空間的一階微分要連續而且有單一值</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\Psi\)</span> 本身要和 <span class="math notranslate nohighlight">\(\frac{d}{dt} [\Psi]\)</span> <span class="math notranslate nohighlight">\(\frac{d}{dx} [\Psi]\)</span> 要連續且唯一</p>
+<ul>
+<li><p>因為要符合波動方程式 <span class="math notranslate nohighlight">\(\frac{\partial^2 y}{\partial x^2} = \frac{1}{v^2} \frac{\partial^2 y}{\partial t^2}\)</span></p></li>
+<li><p>只要一接微分連續就可，二街微分不需要連續(一般理想的位能井都不會連續)，但要可積分</p></li>
+<li><p>波函數不連續：意味著粒子在A點出現的機率與緊鄰的B點有巨大的斷層，這會導致機率流變成無窮大（粒子瞬間移動），這違反了因果律。</p></li>
+<li><p>一階微分不連續：這代表動量在瞬間發生無窮大的改變。在現實中，任何力場（位能）都有一個緩衝的空間，所以微分項通常是平滑的。</p></li>
+<li><p>物理世界真的連續嗎?</p>
+<ul>
+<li><p>廣義相對論與時空的「平滑性」:廣義相對論認為時空是連續且可微的「流形」（Manifold）。這意味著你可以無限地分割空間，且在任何一點都能定義切平面（微分）。</p>
+<ul>
+<li><p>危機：當我們把大量的質量壓縮到極小空間時（如黑洞中心或大霹靂初期），時空曲率會趨向無窮大（奇異點）。這顯示廣義相對論這套「連續」的語言在極限下失效了，我們需要一種更底層的物理架構。</p></li>
+</ul>
+</li>
+<li><p>量子引力中的「時空量子化」: 許多量子引力理論認為，時空並非如絲綢般連續，而是像織布一樣，由細小的「纖維」編織而成：</p>
+<ul>
+<li><p>圈量子重力（Loop Quantum Gravity, LQG）：這是最直接挑戰連續性的理論。它預言空間本身是量子化的，存在最小的體積與面積單位。在普朗克尺度下，你無法再往下分割，這就像電腦螢幕的像素，遠看連續，近看則是一個個點。</p></li>
+<li><p>弦論（String Theory）：雖然弦論在數學上仍使用連續背景，但它認為基本的物理實體不是「點」，而是「弦」。因為弦有最小長度（普朗克長度），我們無法探測比弦更小的尺度，這在實際上為空間的「連續分割」設定了一個天花板。</p></li>
+</ul>
+</li>
+<li><p>非交換幾何（Non-commutative Geometry）:有一些觀點認為，在極小尺度下，座標 x和y 可能不滿足乘法交換律（類似量子力學中的位置與動量）。如果 xy \ne yx ，那麼「點」的概念就消失了。在這種尺度下，空間不再是點的集合，而是一種模糊的幾何結構，連續性自然無從談起。</p></li>
+<li><p>物理直覺的挑戰：全像原理</p>
+<ul>
+<li><p>全像原理（Holographic Principle） 認為，一個區域內的所有資訊可以編碼在其邊界表面上。這暗示了資訊量是有限的（離散的），而非無限的（連續的）。如果資訊是離散的，那麼承載資訊的時空背景也很難是絕對連續的。</p></li>
+</ul>
+</li>
+<li><p>總結觀點</p>
+<ul>
+<li><p>雖然我們目前還沒有直接的實驗證據（因為普朗克尺度太小，目前的對撞機根本測不到），但物理學界的共識趨向於：連續性只是巨觀下的錯覺。</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>機率 <span class="math notranslate nohighlight">\(P_{x_1 x_2} = \int_{x_1}^{x_2} |\Psi|^2 dx\)</span> 是「歸一化」公式的局部應用</p>
+<ul>
+<li><p>P_{x_1 x_2}：表示從<span class="math notranslate nohighlight">\(x_1\)</span>到<span class="math notranslate nohighlight">\(x_2\)</span>的機率，<span class="math notranslate nohighlight">\(x_1, x_2\)</span>作為下標</p></li>
+<li><p><span class="math notranslate nohighlight">\(dx\)</span>：對位置<span class="math notranslate nohighlight">\(x\)</span>進行積分</p></li>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>波動方程式通解</p>
+<p><span class="math notranslate nohighlight">\(y = F \left( t \pm \frac{x}{v} \right)\)</span></p>
+<p><span class="math notranslate nohighlight">\(y = Ae^{-i\omega(t - x/v)}\)</span></p>
+<p><span class="math notranslate nohighlight">\(y = A \cos \omega \left( t - \frac{x}{v} \right) - iA \sin \omega \left( t - \frac{x}{v} \right)\)</span></p>
+</section>
+</section>
+<section id="time-dependent-schrodingers-equation-time-dependent-form">
+<h2>5.2 薛丁格方程式：Time dependent (Schrödinger’s Equation: Time-Dependent Form)<a class="headerlink" href="#time-dependent-schrodingers-equation-time-dependent-form" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\Psi &amp;=&amp; Ae^{-(i/\omega)(t-\frac{x}{v})}\\
+\Psi &amp;=&amp; Ae^{-2\pi i(\nu t-\frac{x}{\lambda})}\\
+\Psi &amp;=&amp; Ae^{-(i/\hbar)(Et - px)}\\
+\end{gather*}\end{split}\]</div>
+<p>(怎麼來的?)</p>
+<p>對空間微分的部分</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{\partial^2 \Psi}{\partial x^2} &amp;=&amp; -\frac{1}{\hbar^2} E\Psi\\
+p^2\Psi &amp;=&amp; -\hbar^2 \frac{\partial^2 \Psi}{\partial x^2}\\
+\end{gather*}\end{split}\]</div>
+<p>對時間微分的部分</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{\partial^2 \Psi}{\partial x^2} &amp;=&amp; -\frac{i}{\hbar} p^2\Psi\\
+E\Psi &amp;=&amp; -\frac{\hbar}{i} \frac{\partial \Psi}{\partial t}\\
+\end{gather*}\end{split}\]</div>
+<p>總能量 = 動能 + 位能</p>
+<p><span class="math notranslate nohighlight">\(E = \frac{p^2}{2m} + U(x, t)\)</span></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(U(x, t)\)</span> 有可能是庫倫力、SHM的位能 ，看系統決定</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[E\Psi = \frac{p^2\Psi}{2m} + U\Psi \]</div>
+<ul class="simple">
+<li><p>一維的時間相依型薛丁格方程式  <span class="math notranslate nohighlight">\(i\hbar \frac{\partial \Psi}{\partial t} = -\frac{\hbar^2}{2m} \frac{\partial^2 \Psi}{\partial x^2} + U\Psi \)</span></p>
+<ul>
+<li><p>3維度的情況 <span class="math notranslate nohighlight">\(i\hbar \frac{\partial \Psi}{\partial t} = -\frac{\hbar^2}{2m} \left( \frac{\partial^2 \Psi}{\partial x^2} + \frac{\partial^2 \Psi}{\partial y^2} + \frac{\partial^2 \Psi}{\partial z^2} \right) + U\Psi \)</span></p></li>
+</ul>
+</li>
+</ul>
+<section id="id4">
+<h3>薛丁格方程式的有效性<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>薛丁格方程式無法從其他物理基本原理中導出，因為它本身就是一個基本原理 (太牽強了吧?總有一個會長這樣的原因吧?)</p>
+<p>由很多實驗推論、歸納、驗證出來的結論</p>
+<p>穩定態和平衡態的區別</p>
+<ul class="simple">
+<li><p>穩定:f 不是function of t</p></li>
+<li><p>平衡:net不改變</p></li>
+</ul>
+</section>
+<section id="id5">
+<h3>線性與疊加<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>波函數相加 <span class="math notranslate nohighlight">\(|\Phi_1+\Phi_2|^2\)</span>，而非機率<span class="math notranslate nohighlight">\(|\Phi_1|^2 + |\Phi_2|^2\)</span>。</p>
+<p>a雙狹縫實驗的安排。b 只有狹縫 1 開啟時螢幕上的電子強度。c 只有狹縫 2 開啟時螢幕上的電子強度。d 將 b 與 c 強度相加的結果。e 開啟狹縫 1 及狹縫 2 實際上螢幕的強度。波函數 <span class="math notranslate nohighlight">\(\Psi_1\)</span> 和 <span class="math notranslate nohighlight">\(\Psi_2\)</span> 相加可得到螢幕上的結果，而不是 <span class="math notranslate nohighlight">\(|\Psi_1|^2\)</span> 與 <span class="math notranslate nohighlight">\(|\Psi_2|^2\)</span> 相加。</p>
+<p>因為是線性的(這邊數學上的線性不是指f(x+y)=f(x)+f(y))，舉例</p>
+<p>這是線性的</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(t^x i x^{100} \frac{\partial \Psi}{\partial t} = t \ln x^t \frac{\partial \Psi}{\partial x} +U \Phi\)</span></p></li>
+</ul>
+<p>這不是線性的</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\frac{\partial \Psi}{\partial t} =  \frac{\partial^2 \Psi}{\partial x^2} + U\Psi +C\)</span> ，因為那個C</p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{\partial \Psi^2}{\partial t} =  \frac{\partial^2 \Psi}{\partial x^2} + U\Psi \)</span> ，因為那個平方</p></li>
+</ul>
+<p>簡單來說</p>
+</section>
+<section id="id6">
+<h3>期望值<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<p>對於一群粒子的分布，位置的平均值</p>
+<div class="math notranslate nohighlight">
+\[\bar{x} = \frac{N_1 x_1 + N_2 x_2 + N_3 x_3 + \cdots}{N_1 + N_2 + N_3 + \cdots} = \frac{\sum N_i x_i}{\sum N_i}\]</div>
+<p>對於單一粒子</p>
+<ul class="simple">
+<li><p>每個位置的機率</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(P_i = |\Psi_i|^2 dx\)</span></p>
+<ul class="simple">
+<li><p>位置的期望值(找到位置的平均位置)，不是<strong>眾數 (Mode)</strong>，因為有可能左邊很多右邊也很多平均起來在中間，但是中間完全沒有出現過</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(\langle x \rangle = \frac{\int_{-\infty}^{\infty} x |\Psi|^2 dx}{\int_{-\infty}^{\infty} |\Psi|^2 dx} =  \int_{-\infty}^{\infty} x |\Psi|^2 dx\)</span></p>
+<p><span class="math notranslate nohighlight">\(\langle G(x) \rangle = \int_{-\infty}^{\infty} G(x) |\Psi|^2 dx\)</span></p>
+<ul class="simple">
+<li><p>物理量不一定(機率很小)是x 的函數</p></li>
+</ul>
+<section id="id7">
+<h4><strong>例題 5.2：</strong><a class="headerlink" href="#id7" title="Link to this heading">#</a></h4>
+<p><strong>題目：</strong> 一個限制於 x 軸上的粒子，在x=0 與x=1 之間的波函數 <span class="math notranslate nohighlight">\(\Phi=ax\)</span> ；在其他位置時則為<span class="math notranslate nohighlight">\(\Phi=0\)</span> 。(a) 求 出粒子在x=0.45 與x=0.55 之間出現的機率。(b) 求出粒子位置的期望值。</p>
+<p>(a)
+$<span class="math notranslate nohighlight">\(\begin{gather*}
+\int_{x_1}^{x_2} |\Psi|^2 dx &amp;=&amp; a^2 \int_{0.45}^{0.55} x^2 dx \\
+&amp;=&amp; a^2 \left[ \frac{x^3}{3} \right]_{0.45}^{0.55} \\
+&amp;=&amp; 0.0251a^2\\
+\end{gather*}\)</span>$</p>
+<p>(b)
+$<span class="math notranslate nohighlight">\(\begin{gather*}
+\langle x \rangle &amp;=&amp; \int_{0}^{1} x |\Psi|^2 dx \\
+&amp;=&amp; a^2 \int_{0}^{1} x^3 dx \\
+&amp;=&amp; a^2 \left[ \frac{x^4}{4} \right]_{0}^{1} \\
+&amp;=&amp; \frac{a^2}{4}
+\end{gather*}\)</span>$</p>
+<p><strong>【物理知識回顧】</strong>
+原子吸收能量的途徑不只有吸收光子，還可以透過與其他粒子的碰撞（例如電子）來吸收動能並躍遷至高能階。這正是法朗克-赫茲實驗的核心原理。</p>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="operators">
+<h2>5.3 運算子 Operators<a class="headerlink" href="#operators" title="Link to this heading">#</a></h2>
+<p><span class="math notranslate nohighlight">\(\Psi = Ae^{-(i/\hbar)(Et - px)}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\frac{\partial \Psi}{\partial x} = \frac{i}{\hbar} p \Psi\)</span></p>
+<p><span class="math notranslate nohighlight">\(\frac{\partial \Psi}{\partial t} = - \frac{i}{\hbar} E \Psi\)</span></p>
+<p>可以得到</p>
+<p><span class="math notranslate nohighlight">\(p \Psi = \frac{\hbar}{i} \frac{\partial}{\partial x} \Psi\)</span></p>
+<p><span class="math notranslate nohighlight">\(E \Psi = i\hbar \frac{\partial}{\partial t} \Psi\)</span></p>
+<p>所以就定義 運算子。當運算子碰到 <span class="math notranslate nohighlight">\(\Phi\)</span>，就可以的到 運算子\hat下面的東西*<span class="math notranslate nohighlight">\(\Phi\)</span></p>
+<p><span class="math notranslate nohighlight">\(\hat{p} \overset{\text{def}}{=} \frac{\hbar}{i} \frac{\partial}{\partial x}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\hat{E}\overset{\text{def}}{=}  i\hbar \frac{\partial}{\partial t}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\hat{E} \overset{\text{def}}{=} \hat{\text{KE}} + \hat{U}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\hat{\text{KE}} \overset{\text{def}}{=} \frac{\hat{p}^2}{2m} = \frac{1}{2m} \left( \frac{\hbar}{i} \frac{\partial}{\partial x} \right)^2 = -\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2}\)</span></p>
+<p>組合後可以變成剛剛eqution的operator</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+i\hbar \frac{\partial}{\partial t} &amp;=&amp; -\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + U\\
+i\hbar \frac{\partial \Psi}{\partial t}&amp;=&amp;  -\frac{\hbar^2}{2m} \frac{\partial^2 \Psi}{\partial x^2} + U\Psi\\
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>總能</p></li>
+<li><p>動能</p></li>
+<li><p>位能</p></li>
+<li><p>透過這樣的組合我們不用知道 G(x)這個物理量本身對x的關係(通常我們都不知道)，只要知道他的算子 <span class="math notranslate nohighlight">\(\hat{G}\)</span>就可以操作了</p></li>
+</ul>
+<section id="id8">
+<h3>實際操作<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\langle p \rangle &amp;=&amp; \int_{-\infty}^{\infty} \Psi^* \hat{p} \Psi dx \\
+&amp;=&amp;\int_{-\infty}^{\infty} \Psi^* \left( \frac{\hbar}{i} \frac{\partial}{\partial x} \right) \Psi dx \\
+&amp;=&amp; \frac{\hbar}{i} \int_{-\infty}^{\infty} \Psi^* \frac{\partial \Psi}{\partial x} dx \\
+\end{gather*}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\langle E \rangle &amp;=&amp; \int_{-\infty}^{\infty} \Psi^* \hat{E} \Psi dx \\
+&amp;=&amp; \int_{-\infty}^{\infty} \Psi^* \left( i\hbar \frac{\partial}{\partial t} \right) \Psi dx \\
+&amp;=&amp; i\hbar \int_{-\infty}^{\infty} \Psi^* \frac{\partial \Psi}{\partial t} dx
+\end{gather*}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{gather*}
+\langle G(x, t) \rangle = \int_{-\infty}^{\infty} \Psi^* \hat{G} \Psi dx
+\end{gather*}\]</div>
+<p>物理意義: 在相同的量子態 <span class="math notranslate nohighlight">\(\Psi \)</span> 下，重複測量物理量 <span class="math notranslate nohighlight">\(G\)</span> 無數次後得到的平均值。</p>
+<p>. 為什麼一定要是 <span class="math notranslate nohighlight">\(\int \Psi^* \hat{G} \Psi \, dx\)</span>？在量子力學中，物理量（如位置、動量、能量）並不是簡單的數值，而是算符（通常包含微分）。<span class="math notranslate nohighlight">\(\Psi \)</span> 是「被操作者」：算符 <span class="math notranslate nohighlight">\(\^{G}\)</span> 必須作用在波函數 <span class="math notranslate nohighlight">\(\Psi \)</span> 上才有意義。就像 <span class="math notranslate nohighlight">\(\frac{d}{dx}\)</span> 必須寫在 <span class="math notranslate nohighlight">\(x^{2}\)</span> 前面（即 <span class="math notranslate nohighlight">\(\frac{d}{dx}x^2\)</span>），不能寫成 <span class="math notranslate nohighlight">\(x^2 \frac{d}{dx}\)</span>。<span class="math notranslate nohighlight">\(\Psi ^{*}\)</span> 的角色：為了讓計算結果是一個實數（物理測量值必須是實數），我們需要利用複數共軛 <span class="math notranslate nohighlight">\(\Psi ^{*}\)</span> 與原函數 <span class="math notranslate nohighlight">\(\Psi \)</span> 相乘（類似向量內積的概念）。</p>
+<p>如果交換順序會怎麼樣？如果我們隨便調換位置，例如寫成 <span class="math notranslate nohighlight">\(\int \hat{G} (\Psi^* \Psi) \, dx\)</span> 或 <span class="math notranslate nohighlight">\(\int \Psi \Psi^* \hat{G} \, dx\)</span>：數學錯誤：如果 <span class="math notranslate nohighlight">\(\^{G}\)</span> 是動量算符 <span class="math notranslate nohighlight">\(\hat{p} = -i\hbar \frac{\partial}{\partial x}\)</span>，它會去微分它後面的所有東西。在 <span class="math notranslate nohighlight">\(\int \Psi^* \hat{G} \Psi \, dx\)</span> 中，它只微分 <span class="math notranslate nohighlight">\(\Psi \)</span>。如果你寫成 <span class="math notranslate nohighlight">\(\int \hat{G} (\Psi^* \Psi) \, dx\)</span>，它會同時微分 <span class="math notranslate nohighlight">\(\Psi ^{*}\)</span> 和 <span class="math notranslate nohighlight">\(\Psi \)</span>，根據微分的乘法法則（Product rule），這會多出多餘的項，算出來的結果會完全錯誤。複數問題：隨便交換順序通常會導致結果變成複數，而現實世界中你不可能量測到一個「長度是 <span class="math notranslate nohighlight">\(3 + 2i\)</span> 公尺」的距離。</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="schrodingers-equation-steady-state-form">
+<h2>5.4 薛丁格方程式：穩態型式 Schrödinger’s Equation: Steady-State Form<a class="headerlink" href="#schrodingers-equation-steady-state-form" title="Link to this heading">#</a></h2>
+<p>本徵值及本徵函數</p>
+<div class="math notranslate nohighlight">
+\[\Psi = Ae^{-(i/\hbar)(Et-px)} = Ae^{-(iE/\hbar)t} e^{(ip/\hbar)x} = \psi e^{-(iE/\hbar)t}\]</div>
+<div class="math notranslate nohighlight">
+\[i\hbar \frac{\partial \Psi}{\partial t} = -\frac{\hbar^2}{2m} \frac{\partial^2 \Psi}{\partial x^2} + U\Psi\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{\partial^2 \psi}{\partial x^2} + \frac{2m}{\hbar^2}(E - U)\psi = 0\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{\partial^2 \psi}{\partial x^2} + \frac{\partial^2 \psi}{\partial y^2} + \frac{\partial^2 \psi}{\partial z^2} + \frac{2m}{\hbar^2}(E - U)\psi = 0\]</div>
+<p>本徵的意思是 hat 放的operator 會變成數字</p>
+<p><span class="math notranslate nohighlight">\(\hat{G}\psi_n = G_n\psi_n\)</span></p>
+<ul class="simple">
+<li><p>這個 <span class="math notranslate nohighlight">\(G_n\)</span>就是數字(純量)</p></li>
+<li><p>這在數學上的意思是：當算符 <span class="math notranslate nohighlight">\(\^{G}\)</span> 作用在特定的函數 <span class="math notranslate nohighlight">\(\psi _{n}\)</span> 上時，結果居然只是把這個函數縮放了 <span class="math notranslate nohighlight">\(G_{n}\)</span> 倍，而函數本身的形狀完全沒變。這時候，我們稱 <span class="math notranslate nohighlight">\(G_{n}\)</span> 是這個系統可能的觀測值</p></li>
+</ul>
+<p>漢彌爾頓運算子 定義</p>
+<p><span class="math notranslate nohighlight">\(\hat{H} \overset{\text{def}}{=} -\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + U\)</span></p>
+<ul class="simple">
+<li><p>它代表的是系統的總能量算符（動能 + 位能）。你可以把它想像成一個「能量處理機」。</p></li>
+</ul>
+<p>薛丁格方程式
+<span class="math notranslate nohighlight">\(\hat{H}\psi_n = E_n\psi_n\)</span></p>
+<p>薛丁格方程式 (<span class="math notranslate nohighlight">\(\hat{H}\psi_n = E_n\psi_n\)</span>)：這是最著名的應用。當你把「能量處理機」作用在波函數上，吐出來的縮放倍率 <span class="math notranslate nohighlight">\(E_{n}\)</span> 就是該量子態下的能量等級。這也說明了為什麼能量是「一份一份」的（量子化），因為只有特定的 <span class="math notranslate nohighlight">\(\psi _{n}\)</span> 才能滿足這個等號。</p>
+<ul class="simple">
+<li><p>只有H作用在上面的形式才叫薛丁格方程式</p></li>
+<li><p>En能量量子化</p></li>
+</ul>
+<section id="id9">
+<h3><strong>例題 5.4：</strong><a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<p><strong>題目：</strong> 運算子 <span class="math notranslate nohighlight">\( d^2/dx^2 \)</span> 的本徵函數是 <span class="math notranslate nohighlight">\( \psi = e^{2x} \)</span>。求出對應的本徵值。</p>
+<p><span class="math notranslate nohighlight">\(\hat{G} = d^2/dx^2 \)</span>
+<span class="math notranslate nohighlight">\(\hat{G}\psi = \frac{d^2}{dx^2}(e^{2x}) = \frac{d}{dx} \left[ \frac{d}{dx}(e^{2x}) \right] = \frac{d}{dx}(2e^{2x}) = 4e^{2x} \)</span>
+<span class="math notranslate nohighlight">\(\hat{G}\psi = 4\psi\)</span>
+<span class="math notranslate nohighlight">\(G = 4\)</span></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>量</p></th>
+<th class="head"><p>運算子</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>位置 <span class="math notranslate nohighlight">\(x\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(x\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>線性動量 <span class="math notranslate nohighlight">\(p\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{\hbar}{i} \frac{\partial}{\partial x}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>位能 <span class="math notranslate nohighlight">\(U(x)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(U(x)\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>動能 <span class="math notranslate nohighlight">\(KE = \frac{p^2}{2m}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(-\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>總能量 <span class="math notranslate nohighlight">\(E\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(i\hbar \frac{\partial}{\partial t}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>總能量（漢彌爾頓形式）<span class="math notranslate nohighlight">\(H\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(-\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + U(x)\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="particle-in-a-box">
+<h2>5.5 箱子中的粒子 Particle in a Box<a class="headerlink" href="#particle-in-a-box" title="Link to this heading">#</a></h2>
+<p>箱子的意思是在這之外的位能都無限大，所以不可能有粒子跑出去
+位能設定 (<span class="math notranslate nohighlight">\(U=0\)</span>)：假設粒子在箱子內部（<span class="math notranslate nohighlight">\(0 &lt; x &lt; L\)</span>）是完全自由的，不受任何力作用。
+邊界條件 (<span class="math notranslate nohighlight">\(\Psi = 0 \text{ at } x=0, L\)</span>)：這是這題最重要的假設。它代表箱子的牆壁是無限堅固且高大的，粒子絕對跑不出去。</p>
+<ul class="simple">
+<li><p>這導致了 <span class="math notranslate nohighlight">\(B=0\)</span>（因為 <span class="math notranslate nohighlight">\(\cos(0) \neq 0\)</span>）。</p></li>
+<li><p>這也導致了 <span class="math notranslate nohighlight">\(\frac{\sqrt{2mE}}{\hbar}L = n\pi\)</span>（因為在 <span class="math notranslate nohighlight">\(L\)</span> 處也要是零）。</p></li>
+</ul>
+<p>量子數限制 ((n=1, 2, 3, \dots$)：</p>
+<ul class="simple">
+<li><p>(n<span class="math notranslate nohighlight">\( 必須是整數才能形成駐波，\(n\)</span> 不能為 (0$ 則是因為粒子必須存在（機率不能全為零）。</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\frac{d^2 \psi}{dx^2} + \frac{2m}{\hbar^2} E\psi = 0\]</div>
+<div class="math notranslate nohighlight">
+\[- \text{箱子中的粒子} \quad E_n = \frac{n^2 \pi^2 \hbar^2}{2mL^2} \quad n = 1, 2, 3, \dots\]</div>
+<ul class="simple">
+<li><p>不曉得怎麼來的</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\text{波函數} \quad \psi_n = A \sin \frac{\sqrt{2mE_n}}{\hbar} x\]</div>
+<p>那些是最基本的? 那些是題目的假設條件?
+不含時薛丁格方程式</p>
+<div class="math notranslate nohighlight">
+\[\frac{d^2 \psi}{dx^2} + \frac{2m}{\hbar^2} E\psi = 0\]</div>
+<ul class="simple">
+<li><p>假設 <span class="math notranslate nohighlight">\(U=0\)</span></p></li>
+<li></li>
+</ul>
+<p>二階微分方程的通解</p>
+<p><span class="math notranslate nohighlight">\(\psi'' + k^2\psi = 0\)</span></p>
+<div class="math notranslate nohighlight">
+\[\psi = A \sin \frac{\sqrt{2mE}}{\hbar} x + B \cos \frac{\sqrt{2mE}}{\hbar} x\]</div>
+<p>BC:
+$<span class="math notranslate nohighlight">\( \Psi = 0 \text{ for } x = 0 \text{ and } L \Rightarrow \frac{\sqrt{2mE}}{\hbar} L = n\pi \quad n = 1, 2, 3, \dots\)</span>$</p>
+<ol class="arabic simple">
+<li><p>基本原理告訴你粒子像「波」一樣擺動（(\sin, \cos$）</p></li>
+<li><p>假設條件就像是在琴弦的兩端打結（固定在 (0$ ，讓它只能產生特定頻率的「駐波」。</p></li>
+</ol>
+<p>波函數的歸一化（Normalization）過程。目的是求出常數 (A<span class="math notranslate nohighlight">\( 的數值，確保粒子在箱子內出現的總機率等於 \(1\)</span></p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}
+\psi_n = A \sin \frac{n\pi x}{L} \\\int_{-\infty}^{\infty} |\psi_n|^2 dx = \int_{0}^{L} |\psi_n|^2 dx = A^2 \int_{0}^{L} \sin^2 \left( \frac{n\pi x}{L} \right) dx\\= \frac{A^2}{2} \left[ \int_{0}^{L} dx - \int_{0}^{L} \cos \left( \frac{2n\pi x}{L} \right) dx \right]\\= \frac{A^2}{2} \left[ x - \left( \frac{L}{2n\pi} \right) \sin \frac{2n\pi x}{L} \right]_0^L = A^2 \left( \frac{L}{2} \right) \\\int_{-\infty}^{\infty} |\psi_n|^2 dx = 1\\A = \sqrt{\frac{2}{L}} \quad (5.45)\\\psi_n = \sqrt{\frac{2}{L}} \sin \frac{n\pi x}{L} \quad n = 1, 2, 3, \dots\end{aligned}\end{align} \]</div>
+<p>箱中的粒子
+<span class="math notranslate nohighlight">\(\psi_n = \sqrt{\frac{2}{L}} \sin \frac{n\pi x}{L} \quad n = 1, 2, 3, \dots\)</span></p>
+<section id="id10">
+<h3><strong>例題 5.5.1：</strong> 粒子在基態 在位置的出現機率<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<p>求出陷在邊長為 L 的箱中粒子在基態和第一受激態時，出現在0.45L 和 0.55L 之間的機率。</p>
+<p>第 n 個態的粒子在  x 1到 x 2內出現的機率為</p>
+<div class="math notranslate nohighlight">
+\[P_{x_1, x_2} = \int_{x_1}^{x_2} |\psi_n|^2 dx = \frac{2}{L} \int_{x_1}^{x_2} \sin^2 \frac{n\pi x}{L} dx = \left[ \frac{x}{L} - \frac{1}{2n\pi} \sin \frac{2n\pi x}{L} \right]_{x_1}^{x_2}
+= 0.198\]</div>
+<p>相當於古典理論所預測機率的兩倍。對於第一受激態來說，代入 n=2則得到</p>
+<p>P=0.0065</p>
+<p>物理意義:所求的部分占箱子寬度的十分之一，且位於箱子的中央（圖 5.6）。古典的想法認為粒子會有 10% 的時間出現在此區域。量子力學則做了相當不 同的預測，認為結果應該與粒子狀態的量子數有關</p>
+<p>大部分真實情況都得用電腦解，能用手解的都是理想情況</p>
+</section>
+<section id="l-x">
+<h3><strong>例題 5.5.2：</strong> 求出在寬 L 的箱中，粒子位置的期望值〈x〉<a class="headerlink" href="#l-x" title="Link to this heading">#</a></h3>
+<p>求出在寬 L 的箱中，粒子位置的期望值〈x〉</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}
+\langle x \rangle = \int_{-\infty}^{\infty} x |\psi|^2 dx = \frac{2}{L} \int_{0}^{L} x \sin^2 \frac{n\pi x}{L} dx\\= \frac{2}{L} \left[ \frac{x^2}{4} - \frac{x \sin(2n\pi x/L)}{4n\pi/L} - \frac{\cos(2n\pi x/L)}{8(n\pi/L)^2} \right]_0^L
+\end{aligned}\end{align} \]</div>
+<p>因為 (\sin n\pi = 0, \cos 2n\pi = 1<span class="math notranslate nohighlight">\(，且 \(\cos 0 = 1\)</span>，得到對所有的 (n<span class="math notranslate nohighlight">\( 而言，\(x\)</span> 的期望值為
+$ \langle x \rangle = \frac{2}{L} \left( \frac{L^2}{4} \right) = \frac{L}{2} ]</p>
+<p>此結果代表所有量子態下粒子的平均位置在箱子中央。這與實際在 (L/2<span class="math notranslate nohighlight">\( 的位置上 \(n = 2, 4, 6, \dots\)</span> 態時 (|\psi|^2 = 0<span class="math notranslate nohighlight">\( 並不衝突，因為 \(\langle x \rangle\)</span> 是一個平均值，而不是機率，所以它反應了 (|\psi|^2$ 對稱於箱子的中央。</p>
+<p>物理意義: 不論粒子在哪一個能階 (n<span class="math notranslate nohighlight">\(，位置的期望值永遠是 \(L/2\)</span>（箱子的正中央）。這非常直觀，因為波函數的機率分佈 (|\psi|^2$ 對箱子中心是對稱的，所以長期測量的平均值一定會落在中間。</p>
+</section>
+<section id="id11">
+<h3>動量<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(\psi_n = \sqrt{\frac{2}{L}} \sin \frac{n\pi x}{L} \quad n = 1, 2, 3, \dots\)</span></p>
+<ul class="simple">
+<li><p>注意! 這個不是薛丁格方程式</p></li>
+</ul>
+<p>動量 operator</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat{p}\psi_n = p_n \psi_n\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{p} = \frac{\hbar}{i} \frac{d}{dx}\)</span></p></li>
+</ul>
+<p>箱子中粒子的動量本徵函數</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( \psi_n^+ = \frac{1}{2i} \sqrt{\frac{2}{L}} e^{in\pi x/L}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( \psi_n^- = \frac{1}{2i} \sqrt{\frac{2}{L}} e^{-in\pi x/L} \)</span></p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="finite-potential-well">
+<h2>5.6 有限位能井 (Finite Potential Well)<a class="headerlink" href="#finite-potential-well" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[\frac{d^2 \psi}{dx^2} + \frac{2m}{\hbar^2} (E-U)\psi = 0\]</div>
+<p>波函數穿透牆，始能接降低</p>
+<p><span class="math notranslate nohighlight">\(\frac{d^2 \psi}{dx^2} - a^2 \psi = 0 \quad \text{for } x &lt; 0, x &gt; L\)</span></p>
+<p><span class="math notranslate nohighlight">\(a = \frac{\sqrt{2m(U - E)}}{\hbar}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\psi_{\text{I}} = Ce^{ax} + De^{-ax}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\psi_{\text{III}} = Fe^{ax} + Ge^{-ax}\)</span></p>
+<p>(\psi) has to be finite everywhere therefore</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\psi_{\text{I}} = Ce^{ax} \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\psi_{\text{III}} = Ge^{-ax} \)</span></p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(\psi_{\text{II}} = A \sin \frac{\sqrt{2mE}}{\hbar} x + B \cos \frac{\sqrt{2mE}}{\hbar} x\)</span></p>
+<p>因為 phi 和 dphi/dx 練續 可解ABCG</p>
+</section>
+<hr class="docutils" />
+<section id="tunnel-effect">
+<h2>5.7 穿隧效應 (Tunnel Effect)<a class="headerlink" href="#tunnel-effect" title="Link to this heading">#</a></h2>
+<p>一個沒有足夠能量可以跨越電位障的粒子仍有可能穿隧電位障</p>
+<p>近似穿隧機率</p>
+<div class="math notranslate nohighlight">
+\[T = e^{-2k_2 L}\]</div>
+<div class="math notranslate nohighlight">
+\[k_2 = \frac{\sqrt{2m(U - E)}}{\hbar}\]</div>
+<p>證明</p>
+<ol class="arabic simple">
+<li><p>分段薛丁格方程式與解這是將空間分為三層（入射區、障礙區、穿透區）的波函數解：</p></li>
+</ol>
+<p>第一區 (x &lt; 0) 與 第三區 (x &gt; L)</p>
+<p>\frac{d^2 \psi_{\text{I}}}{dx^2} + \frac{2m}{\hbar^2} E \psi_{\text{I}} = 0 \implies \psi_{\text{I}} = Ae^{ik_1 x} + Be^{-ik_1 x}</p>
+<p>第二區 (0 &lt; x &lt; L, 障礙區)
+\frac{d^2 \psi_{\text{II}}}{dx^2} + \frac{2m}{\hbar^2} (E - U) \psi_{\text{II}} = 0 \implies \psi_{\text{II}} = Ce^{-k_2 x} + De^{k_2 x}</p>
+<p>定義波數
+k_1 = \frac{\sqrt{2mE}}{\hbar}, \quad k_2 = \frac{\sqrt{2m(U - E)}}{\hbar}</p>
+<ol class="arabic simple" start="2">
+<li><p>邊界條件 (Boundary Conditions)為了求出係數，必須要求波函數及其斜率在 (x=0) 和 (x=L) 處連續：</p></li>
+</ol>
+<p>x = 0 處
+A + B = C + D
+ik_1 A - ik_1 B = -k_2 C + k_2 D</p>
+<p>x = L 處
+Ce^{-k_2 L} + De^{k_2 L} = Fe^{ik_1 L}
+-k_2 Ce^{-k_2 L} + k_2 De^{k_2 L} = ik_1 Fe^{ik_1 L}</p>
+<ol class="arabic simple" start="3">
+<li><p>穿隧機率 (T) 的精確解與近似解</p></li>
+</ol>
+<p>精確穿隧機率
+T = \left[ 1 + \frac{1}{4} \left( \frac{k_1}{k_2} + \frac{k_2}{k_1} \right)^2 \sinh^2(k_2 L) \right]^{-1} \approx \left[ \frac{16}{4 + (k_2/k_1)^2} \right] e^{-2k_2 L}</p>
+<p>參數關係
+\left( \frac{k_2}{k_1} \right)^2 = \frac{2m(U - E)/\hbar^2}{2mE/\hbar^2} = \frac{U}{E} - 1</p>
+<p>最終簡化近似
+T \approx e^{-2k_2 L}</p>
+<p>\frac{d^2 \psi_{\text{I}}}{dx^2} + \frac{2m}{\hbar^2} E \psi_{\text{I}} = 0</p>
+<p>\frac{d^2 \psi_{\text{III}}}{dx^2} + \frac{2m}{\hbar^2} E \psi_{\text{III}} = 0</p>
+<p>\psi_{\text{I}} = Ae^{ik_1 x} + Be^{-ik_1 x}</p>
+<p>\psi_{\text{III}} = Fe^{ik_1 x} + Ge^{-ik_1 x}</p>
+<p>k_1 = \frac{\sqrt{2mE}}{\hbar} = \frac{p}{\hbar} = \frac{2\pi}{\lambda}</p>
+<p>\psi_{\text{I}+} = Ae^{ik_1 x}</p>
+<p>\psi_{\text{I}-} = Be^{-ik_1 x}</p>
+<p>\psi_{\text{I}} = \psi_{\text{I}+} + \psi_{\text{I}-}</p>
+<p>\psi_{\text{III}+} = Fe^{ik_1 x}</p>
+<p>\psi_{\text{III}} = \psi_{\text{III}+} = Fe^{ik_1 x}</p>
+<p>T = \frac{|\psi_{\text{III}+}|^2 v_{\text{III}+}}{|\psi_{\text{I}+}|^2 v_{\text{I}+}} = \frac{FF^* v_{\text{III}+}}{AA^* v_{\text{I}+}}</p>
+<p>\frac{d^2 \psi_{\text{II}}}{dx^2} + \frac{2m}{\hbar^2}(E - U)\psi_{\text{II}} = \frac{d^2 \psi_{\text{II}}}{dx^2} - \frac{2m}{\hbar^2}(U - E)\psi_{\text{II}} = 0</p>
+<p>\psi_{\text{II}} = Ce^{-k_2 x} + De^{k_2 x}</p>
+<p>k_2 = \frac{\sqrt{2m(U - E)}}{\hbar}</p>
+<p>\left.
+\begin{aligned}
+\psi_{\text{I}} &amp;= \psi_{\text{II}} \
+\frac{d\psi_{\text{I}}}{dx} &amp;= \frac{d\psi_{\text{II}}}{dx}
+\end{aligned}
+\right} x = 0</p>
+<ul class="simple">
+<li><p>x = L \text{ 處的邊界條件 } \quad
+\left.
+\begin{aligned}
+\psi_{\text{II}} &amp;= \psi_{\text{III}} \
+\frac{d\psi_{\text{II}}}{dx} &amp;= \frac{d\psi_{\text{III}}}{dx}
+\end{aligned}
+\right} x = L</p></li>
+</ul>
+<p>A + B = C + D</p>
+<p>ik_1 A - ik_1 B = -k_2 C + k_2 D</p>
+<p>Ce^{-k_2 L} + De^{k_2 L} = Fe^{ik_1 L}</p>
+<p>-k_2 Ce^{-k_2 L} + k_2 De^{k_2 L} = ik_1 Fe^{ik_1 L}</p>
+<p>\left( \frac{A}{F} \right) = \left[ \frac{1}{2} + \frac{i}{4} \left( \frac{k_2}{k_1} - \frac{k_1}{k_2} \right) \right] e^{(ik_1 + k_2)L} + \left[ \frac{1}{2} - \frac{i}{4} \left( \frac{k_2}{k_1} - \frac{k_1}{k_2} \right) \right] e^{(ik_1 - k_2)L}</p>
+<p>\frac{k_2}{k_1} - \frac{k_1}{k_2} \approx \frac{k_2}{k_1}</p>
+<p>\left( \frac{A}{F} \right) = \left( \frac{1}{2} + \frac{ik_2}{4k_1} \right) e^{(ik_1 + k_2)L}</p>
+<p>\left( \frac{A}{F} \right)^* = \left( \frac{1}{2} - \frac{ik_2}{4k_1} \right) e^{(-ik_1 + k_2)L}</p>
+<ul class="simple">
+<li><p>\text{ 穿隧機率 } T = \frac{FF^* v_{\text{III}+}}{AA^* v_{\text{I}+}} = \left( \frac{AA^<em>}{FF^</em>} \right)^{-1} = \left[ \frac{16}{4 + (k_2/k_1)^2} \right] e^{-2k_2 L}</p></li>
+</ul>
+<p>\left( \frac{k_2}{k_1} \right)^2 = \frac{2m(U - E)/\hbar^2}{2mE/\hbar^2} = \frac{U}{E} - 1</p>
+<ul class="simple">
+<li><p>\text{ 近似穿隧機率 } \quad T = e^{-2k_2 L}</p></li>
+</ul>
+<section id="id12">
+<h3><strong>例題 5.7：</strong> 穿隧機率<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
+<p>具有能量 1.0 eV 和 2.0 eV 的電子射向 10.0 eV，寬 0.5nm 的障。(a) 求它們個別的穿隧機率。(b) 如果障的寬度加倍會有怎樣的影響？</p>
+<p>(a) 對於 1.0 eV 的電子而言</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\begin{split}
+k_2 = \frac{\sqrt{2m(U - E)}}{\hbar} \\
+= \frac{\sqrt{(2)(9.1 \times 10^{-31} \text{ kg})[(10.0 - 1.0) \text{ eV}](1.6 \times 10^{-19} \text{ J/eV})}}{1.054 \times 10^{-34} \text{ J} \cdot \text{s}} \\
+= 1.6 \times 10^{10} \text{ m}^{-1}\end{split}\\L = 0.50 \text{ nm} = 5.0 \times 10^{-10} \text{ m}\\2k_2L = (2)(1.6 \times 10^{10} \text{ m}^{-1})(5.0 \times 10^{-10} \text{ m}) = 16
+\end{aligned}\end{align} \]</div>
+<p>近似的穿隧機率為
+<span class="math notranslate nohighlight">\(T_1 = e^{-2k_2 L} = e^{-16} = 1.1 \times 10^{-7}\)</span></p>
+<p>平均每八百九十萬個 1.0 eV 的電子會有一個可以穿隧過 10 eV 的能障。2.0 eV 電子的計算相似，可以得到<span class="math notranslate nohighlight">\(T_2 = 2.4 \times 10^{-7}\)</span>
+這些電子有兩倍的機率可以穿隧障。</p>
+<p>(b) 如果障的寬度加倍變成 1.0 nm，穿隧的機率變成</p>
+<p><span class="math notranslate nohighlight">\(T_1' = 1.3 \times 10^{-14}\)</span></p>
+<p><span class="math notranslate nohighlight">\(T_2' = 5.1 \times 10^{-14}\)</span></p>
+<p>物理意義: 明顯地 T 對於障寬度的變化比對粒子能量的改變來得敏感</p>
+<p>這個結果 (1.1 \times 10^{-7}) 告訴我們，在目前的設定下（勢壘高度 (10.0 \text{ eV})、電子能量 (1.0 \text{ eV})、寬度 (0.5 \text{ nm})），電子穿透過去的可能性大約是千萬分之一。雖然這個數字看起來很小，但在量子尺度的實驗中，這是一個可以被觀測到的顯著效應。如果這是在古典物理世界，機率會是絕對的 0。</p>
+<p>如果我們把牆壁的厚度 (L) 增加一倍（變成 (1.0 \text{ nm})），指數項會從 (16) 變成 (32)，那麼穿隧機率會變成 (e^{-32} \approx 1.2 \times 10^{-14})，機率直接縮小了一千萬倍！這展示了為什麼穿隧效應對「距離」極其敏感。</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="harmonic-oscillator">
+<h2>5.8 諧振子 (Harmonic Oscillator)<a class="headerlink" href="#harmonic-oscillator" title="Link to this heading">#</a></h2>
+<p>其能階為相等間隔
+(什麼意思?)</p>
+<p>分子的振動：</p>
+<ol class="arabic simple">
+<li><p>運動方程：描述了一個物體受到的力與位移成正比，且方向相反（虎克定律）。
+虎克定律
+F = -kx</p></li>
+</ol>
+<p>\frac{d^2x}{dt^2} + \frac{k}{m}x = 0</p>
+<p>x = A \cos (2\pi \nu t + \phi)</p>
+<ol class="arabic simple" start="2">
+<li><p>頻率 (\nu )：這是系統的自然頻率。在量子力學中，能量會與這個頻率掛鉤（(E = (n + 1/2)h\nu)）。</p></li>
+</ol>
+<p>\nu = \frac{1}{2\pi} \sqrt{\frac{k}{m}}</p>
+<ol class="arabic simple" start="3">
+<li><p>位能 (U(x) = \frac{1}{2}kx^2)：這是一個拋物線形狀的位能井。與之前的「方井」不同，這裡的牆壁不是垂直的，而是平滑彎曲的。
+U(x) = -\int_{0}^{x} F(x) dx = k \int_{0}^{x} x dx = \frac{1}{2}kx^2</p></li>
+</ol>
+<p>去因次化 (Non-dimensionalization)</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\frac{d^2\psi}{dx^2} + \frac{2m}{\hbar^2} \left( E - \frac{1}{2}kx^2 \right)\psi = 0\\y = \left( \frac{1}{\hbar} \sqrt{km} \right)^{1/2} x = \sqrt{\frac{2\pi m \nu}{\hbar}} x\\\alpha = \frac{2E}{\hbar} \sqrt{\frac{m}{k}} = \frac{2E}{h\nu}\\\frac{d^2\psi}{dy^2} + (\alpha - y^2)\psi = 0\end{aligned}\end{align} \]</div>
+<p>最後一行是一個標準的微分方程 它的解會涉及到 Hermite 多項式 ，只有在 α = 2n + 1會有解</p>
+<p>從這個簡化後的方程式可以推導出，為了讓波函數在無窮遠處趨近於零，(\alpha ) 必須等於某些特定的數值（即 (\alpha = 2n + 1)）。這就是為什麼能量 (E) 必須是 (h\nu) 的半整數倍。</p>
+<p>諧振子的能階</p>
+<ul class="simple">
+<li><p>E_n = (n + \frac{1}{2}) h \nu \quad n = 0, 1, 2, \dots</p></li>
+<li><p>E_0 = \frac{1}{2} h \nu</p></li>
+<li><p>零點能量 (Zero-Point Energy)：這是量子力學與古典力學最大的不同。在古典力學中，物體最低能量可以是 0（靜止在原點）。但在量子力學中，當 (n=0) 時，能量依然有 (E_0 = \frac{1}{2}h\nu)。這代表粒子永遠不會停止振動，即使在絕對零度下也是如此。這也符合不確定性原理：如果粒子靜止，位置和動量就同時確定了，這是被禁止的。</p></li>
+<li><p>等間距能階：你會發現相鄰能階的差值 (\Delta E) 永遠等於 (h\nu)。這與之前的「無限深位能井」（能量與 (n^{2}) 成正比）不同。在諧振子模型中，能量是等距跳階的，這在分子振動光譜（紅外光譜）的研究中極其重要。</p></li>
+</ul>
+<p>波函數 諧振子</p>
+<div class="math notranslate nohighlight">
+\[\psi_n = \left( \frac{2mv}{\hbar} \right)^{1/4} (2^n n!)^{-1/2} H_n(y) e^{-y^2/2}\]</div>
+<ol class="arabic simple">
+<li><p>歸一化係數 (\left(\frac{2mv}{\hbar }\right)^{1/4}(2^{n}n!)^{-1/2})
+這串複雜的常數是為了確保粒子在空間中出現的總機率等於 (1)。其中包含階乘 (n!)，這與能階的高低有關。</p></li>
+<li><p>Hermite polynomial
+(H_n(y))：這是公式的「骨架」，決定了波函數在中間區域如何震盪。當 (n=0) 時，(H_0(y) = 1)。當 (n=1) 時，(H_1(y) = 2y)。隨階數 (n) 增加，波函數的節點（Node）也會隨之增加。</p></li>
+<li><p>高斯衰減項 (e^{-y^{2}/2})：
+這是公式的「包絡線」。它確保當粒子遠離平衡位置時（(y) 很大時），波函數會快速趨近於零，代表粒子被束縛在位能井內。</p></li>
+</ol>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>n</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(H_n(y)\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\alpha_n\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(E_n\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{1}{2}h\nu\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p><span class="math notranslate nohighlight">\(2y\)</span></p></td>
+<td><p>3</p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{3}{2}h\nu\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p><span class="math notranslate nohighlight">\(4y^2 - 2\)</span></p></td>
+<td><p>5</p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{5}{2}h\nu\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p><span class="math notranslate nohighlight">\(8y^3 - 12y\)</span></p></td>
+<td><p>7</p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{7}{2}h\nu\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p><span class="math notranslate nohighlight">\(16y^4 - 48y^2 + 12\)</span></p></td>
+<td><p>9</p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{9}{2}h\nu\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p><span class="math notranslate nohighlight">\(32y^5 - 160y^3 + 120y\)</span></p></td>
+<td><p>11</p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{11}{2}h\nu\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="id13">
+<h3><strong>例題 5.8：</strong><a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
+<p>求出諧振子前兩個態的期望值〈x 〉，動量期望值 <P>、位置的平方期望值 (\langle y^2 \rangle)（這通常用來計算不確定性 (\Delta x)）</p>
+<p>(a)位置</p>
+<div class="math notranslate nohighlight">
+\[\langle x \rangle = \int_{-\infty}^{\infty} x |\psi|^2 dx\]</div>
+<p>\psi_0 = \left( \frac{2m\nu}{\hbar} \right)^{1/4} e^{-y^2/2}</p>
+<ul class="simple">
+<li><p>基態 (\psi _{0}) (Ground State)：</p></li>
+<li><p>這是一個單純的高斯函數（鐘形曲線）。</p></li>
+<li><p>特性：函數在全區域都沒有穿過零點（無節點），機率最高的地方就在中心點 (y=0)
+\psi_1 = \left( \frac{2m\nu}{\hbar} \right)^{1/4} \left( \frac{1}{2} \right)^{1/2} (2y) e^{-y^2/2}</p></li>
+<li><p>多了一個 ((2y)) 項，這就是第一階厄米多項式 (H_1(y))。</p></li>
+<li><p>特性：這是一個奇函數。在 (y=0) 處，波函數剛好等於 (0)（稱為節點 Node）。</p></li>
+<li><p>這意味著粒子在第一激發態時，絕對不會出現在中心平衡位置。</p></li>
+</ul>
+<p>n = 0: \quad \int_{-\infty}^{\infty} y|\psi_0|^2 dy = \int_{-\infty}^{\infty} ye^{-y^2} dy = -\left[ \frac{1}{2}e^{-y^2} \right]_{-\infty}^{\infty} = 0</p>
+<ul class="simple">
+<li><p>在 (n=0) 的情況中，積分項是 (ye^{-y^{2}})。當 (y \to \pm \infty) 時，(e^{-y^{2}}) 衰減得極快，導致上限與下限代入後都是 (0)，相減結果自然是 (0)。</p></li>
+</ul>
+<p>n = 1: \quad \int_{-\infty}^{\infty} y|\psi_1|^2 dy = \int_{-\infty}^{\infty} y^3e^{-y^2} dy = -\left[ \left( \frac{1}{4} + \frac{y^2}{2} \right) e^{-y^2} \right]_{-\infty}^{\infty} = 0</p>
+<ul class="simple">
+<li><p>在 (n=1) 的情況中，雖然裡面變成了 (y^{3})（因為 (\psi _{1}) 包含了一個 (y)，平方後變 (y^{2})，再乘以期望值公式裡的 (y) 變成 (y^{3})），但同樣因為指數衰減項 (e^{-y^{2}}) 的主導，最後結果依舊是 (0)。</p></li>
+</ul>
+<p>(b) 動量</p>
+<p>\hat{p} = \frac{\hbar}{i} \frac{d}{dx} \quad (\text{動量算符})</p>
+<p>\langle p \rangle = \int_{-\infty}^{\infty} \psi_0^* \left( \frac{\hbar}{i} \frac{d}{dx} \right) \psi_0 dx</p>
+<p>\text{由於 } \psi_0 \propto e^{-y^2/2} \text{，其微分為：}
+\frac{d}{dy}(e^{-y^2/2}) = -y e^{-y^2/2}</p>
+<p>\langle p \rangle \propto \frac{\hbar}{i} \int_{-\infty}^{\infty} (e^{-y^2/2}) (-y e^{-y^2/2}) dy = \frac{\hbar}{i} \int_{-\infty}^{\infty} -y e^{-y^2} dy</p>
+<p>\text{因為 } -y e^{-y^2} \text{ 是奇函數，在對稱區間積分結果為：}
+\langle p \rangle = 0</p>
+<p>雖然期望值是 0，但這並不代表動量是 0。如果你去算動量的平方期望值 (\langle p^2 \rangle)，結果就會是一個大於 0 的數值，這代表粒子確實有動能，只是平均方向抵銷了。</p>
+<p>(c)不確定性</p>
+<p>\text{已知基態波函數為：}
+\psi_0(y) = \left( \frac{1}{\pi} \right)^{1/4} e^{-y^2/2} \quad (\text{已歸一化形式})</p>
+<p>\langle y^2 \rangle = \int_{-\infty}^{\infty} \psi_0^* y^2 \psi_0 dy</p>
+<p>\langle y^2 \rangle = \int_{-\infty}^{\infty} \left( \frac{1}{\pi} \right)^{1/2} e^{-y^2/2} \cdot y^2 \cdot e^{-y^2/2} dy</p>
+<p>\langle y^2 \rangle = \frac{1}{\sqrt{\pi}} \int_{-\infty}^{\infty} y^2 e^{-y^2} dy</p>
+<p>\text{代入高斯積分公式 } \int_{-\infty}^{\infty} y^2 e^{-y^2} dy = \frac{\sqrt{\pi}}{2} \text{：}</p>
+<p>\langle y^2 \rangle = \frac{1}{\sqrt{\pi}} \cdot \frac{\sqrt{\pi}}{2} = \frac{1}{2}</p>
+<ul class="simple">
+<li><p>非零結果：與 (\langle y \rangle = 0) 不同，(\langle y^2 \rangle) 的結果是 (1/2)。這告訴我們，雖然平均位置在原點，但粒子並非靜止，而是「散開」在原點附近的</p></li>
+<li><p>不確定性：由於 (\langle y \rangle = 0)，位置的不確定性（標準差）直接就是 (\Delta y = \sqrt{\langle y^2 \rangle - \langle y \rangle^2} = \sqrt{1/2})。</p></li>
+<li><p>能量連結：在諧振子中，平均位能 (\langle U \rangle) 正比於 (\langle y^2 \rangle)。這個結果 (1/2) 剛好對應到基態能量 (E_0 = \frac{1}{2}h\nu) 中的那一半（另一半由動能貢獻）。</p></li>
+</ul>
+<p>物理意義: 明顯地 T 對於障寬度的變化比對粒子能量的改變來得敏感</p>
+<ul class="simple">
+<li><p>(\psi _{0}) 是偶函數（左右對稱）</p></li>
+<li><p>。(\psi _{1}) 是奇函數（左右反對稱，但平方後的機率密度依賴對稱）。</p></li>
+<li><p>這再次呼應了我們之前的討論：不論是 (\psi _{0}) 還是 (\psi _{1})，它們的機率分佈 (|\psi|^2) 都是對稱的，所以平均位置 (\langle x \rangle) 都會是 0。</p></li>
+</ul>
+<p>要計算無因次單位下的 <span class="math notranslate nohighlight">\(\langle p^2 \rangle\)</span> 並推導出不確定性原理的最小值，我們可以延續基態波函數 <span class="math notranslate nohighlight">\(\psi_0(y) = (\pi)^{-1/4} e^{-y^2/2}\)</span> 的推導。</p>
+<ol class="arabic simple">
+<li><p>計算 <span class="math notranslate nohighlight">\(\langle p^2 \rangle\)</span>
+在無因次單位系統中，動量算符簡化為 <span class="math notranslate nohighlight">\(\hat{p} = -i \frac{d}{dy}\)</span>（這裡我們設定 <span class="math notranslate nohighlight">\(\hbar=1\)</span> 以方便觀察結構）。因此 <span class="math notranslate nohighlight">\(\hat{p}^2 = (-i \frac{d}{dy})^2 = -\frac{d^2}{dy^2}\)</span>。
+第一步：計算二階微分
+對 <span class="math notranslate nohighlight">\(\psi_0 = C e^{-y^2/2}\)</span> 進行兩次微分：</p></li>
+</ol>
+<ul class="simple">
+<li><p>一階微分：<span class="math notranslate nohighlight">\(\frac{d}{dy} e^{-y^2/2} = -y e^{-y^2/2}\)</span></p></li>
+<li><p>二階微分：<span class="math notranslate nohighlight">\(\frac{d^2}{dy^2} e^{-y^2/2} = \frac{d}{dy}(-y e^{-y^2/2}) = (-1 + y^2) e^{-y^2/2}\)</span></p></li>
+</ul>
+<p>第二步：代入期望值積分
+$<span class="math notranslate nohighlight">\(\langle p^2 \rangle = \int_{-\infty}^{\infty} \psi_0^* \left( -\frac{d^2}{dy^2} \right) \psi_0 dy\)</span><span class="math notranslate nohighlight">\( \)</span><span class="math notranslate nohighlight">\(\langle p^2 \rangle = \int_{-\infty}^{\infty} \psi_0^* \left( 1 - y^2 \right) \psi_0 dy\)</span><span class="math notranslate nohighlight">\( \)</span><span class="math notranslate nohighlight">\(\langle p^2 \rangle = \int \psi_0^* \psi_0 dy - \int \psi_0^* y^2 \psi_0 dy\)</span>$
+第三步：利用已知結果</p>
+<ul class="simple">
+<li><p>第一個積分是波函數的歸一化，等於 1。</p></li>
+<li><p>第二個積分是我們剛才算過的 <span class="math notranslate nohighlight">\(\langle y^2 \rangle = \mathbf{1/2}\)</span>。</p></li>
+<li><p>所以：<span class="math notranslate nohighlight">\(\langle p^2 \rangle = 1 - 1/2 = \mathbf{1/2}\)</span>。</p></li>
+</ul>
+<p>推導海森堡不確定性最小值
+根據不確定性的定義，標準差（不確定度）為：</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\Delta y = \sqrt{\langle y^2 \rangle - \langle y \rangle^2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Delta p = \sqrt{\langle p^2 \rangle - \langle p \rangle^2}\)</span></p></li>
+</ul>
+<p>我們已知對於諧振子基態：<span class="math notranslate nohighlight">\(\langle y \rangle = 0\)</span> 且 <span class="math notranslate nohighlight">\(\langle p \rangle = 0\)</span>。
+因此：</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\Delta y = \sqrt{1/2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Delta p = \sqrt{1/2}\)</span></p></li>
+</ul>
+<p>乘積計算：
+$<span class="math notranslate nohighlight">\(\Delta y \cdot \Delta p = \sqrt{1/2} \cdot \sqrt{1/2} = \mathbf{\frac{1}{2}}\)</span><span class="math notranslate nohighlight">\( 
+若我們換回帶有物理單位（包含 \)</span>\hbar<span class="math notranslate nohighlight">\(）的真實單位，這個結果就是：
+\)</span><span class="math notranslate nohighlight">\(\Delta x \cdot \Delta p_x = \mathbf{\frac{\hbar}{2}}\)</span>$</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lecture\05_Quantum_Mechanics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">5.1 量子力學</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">量子力學和古典力學的差異</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">量子力學基本規則</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-dependent-schrodingers-equation-time-dependent-form">5.2 薛丁格方程式：Time dependent (Schrödinger’s Equation: Time-Dependent Form)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">薛丁格方程式的有效性</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">線性與疊加</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">期望值</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7"><strong>例題 5.2：</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operators">5.3 運算子 Operators</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">實際操作</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schrodingers-equation-steady-state-form">5.4 薛丁格方程式：穩態型式 Schrödinger’s Equation: Steady-State Form</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9"><strong>例題 5.4：</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#particle-in-a-box">5.5 箱子中的粒子 Particle in a Box</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10"><strong>例題 5.5.1：</strong> 粒子在基態 在位置的出現機率</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#l-x"><strong>例題 5.5.2：</strong> 求出在寬 L 的箱中，粒子位置的期望值〈x〉</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">動量</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-potential-well">5.6 有限位能井 (Finite Potential Well)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tunnel-effect">5.7 穿隧效應 (Tunnel Effect)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12"><strong>例題 5.7：</strong> 穿隧機率</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#harmonic-oscillator">5.8 諧振子 (Harmonic Oscillator)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13"><strong>例題 5.8：</strong></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC YE
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

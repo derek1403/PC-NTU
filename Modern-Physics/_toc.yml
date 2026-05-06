@@ -14,6 +14,8 @@ chapters:
       title: Modern Physics - Wave Properties of Particles
     - file: lecture/04_Atomic_Structure/atomic_structure.ipynb
       title: Modern Physics - Atomic Structure
+    - file: lecture/05_Quantum_Mechanics/quantum_mechanics.ipynb
+      title: Modern Physics - Quantum Mechanics
 - file: homework/homework.md
   sections:
     - file: homework/hw1/hw1.ipynb
