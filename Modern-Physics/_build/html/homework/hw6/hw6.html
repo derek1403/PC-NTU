@@ -1,0 +1,1033 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Modern Physics Hw 6 &#8212; Modern Physics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'homework/hw6/hw6';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Modern Physics - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Modern Physics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    近代物理 (Modern Physics) 課程筆記
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lecture/lecture.html">lecture.md</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Introduction/introduction.html">Modern Physics - Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Relativity/relativity.html">Modern Physics - Relativity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/02_Particle_Properties_of_Waves/particle_properties_of_waves.html">Modern Physics - Particle Properties of Waves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/03_Wave_Properties_of_Particles/wave_properties_of_particles.html">Modern Physics - Wave Properties of Particles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/04_Atomic_Structure/atomic_structure.html">Modern Physics - Atomic Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/05_Quantum_Mechanics/quantum_mechanics.html">Modern Physics - Quantum Mechanics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../homework.html">homework hardword</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../hw1/hw1.html">Modern Physics Hw 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hw2/hw2.html">Modern Physics Hw 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hw3/hw3.html">Modern Physics Hw 3</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../hw4/hw4.html">Modern Physics Hw 4</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fhomework/hw6/hw6.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/homework/hw6/hw6.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Modern Physics Hw 6</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-answer">Question 1 - Answer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">比較 <strong>波爾</strong> 與 <strong>量子力學</strong> 的氫原子中基態電子角動量</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-answer">Question 2 - Answer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">已知與假設</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-a">proof(a)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solve-b">solve(b)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solve-c">solve(c)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solve-d">solve(d)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-answer">Question 3 - Answer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">已知與假設</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compute">compute</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">物理觀察</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question 4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4-answer">Question 4 - Answer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">可躍遷後的能階</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question 5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5-answer">Question 5 - Answer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">已知與假設</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proof">proof</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="modern-physics-hw-6">
+<h1>Modern Physics Hw 6<a class="headerlink" href="#modern-physics-hw-6" title="Link to this heading">#</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="p">:</span><span class="n">葉品辰</span>
+<span class="n">ID</span><span class="p">:</span><span class="n">r14229017</span>
+<span class="n">date</span><span class="p">:</span> <span class="mf">2026.05.07</span>
+</pre></div>
+</div>
+<section id="question-1">
+<h2>Question 1<a class="headerlink" href="#question-1" title="Link to this heading">#</a></h2>
+<p>Compare the angular momentum of a ground-state electron in the Bohr model of the hydrogen atom with its value in the quantum theory.</p>
+</section>
+<section id="question-1-answer">
+<h2>Question 1 - Answer<a class="headerlink" href="#question-1-answer" title="Link to this heading">#</a></h2>
+<section id="assumptions-preliminaries">
+<h3>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/03_Wave_Properties_of_Particles/wave_properties_of_particles.html#de-broglie-wave">德布羅依波 (De Broglie Wave)</a>  ：</strong></p>
+<div class="math notranslate nohighlight">
+\[\lambda \overset{\text{def}}{=} \frac{h}{p}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\lambda\)</span> : 德布羅依波長 (de Broglie wavelength) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(h\)</span> : 普朗克常數 (Planck’s constant) <span class="math notranslate nohighlight">\(h \approx 6.626 \times 10^{-34} \text{ J}\cdot\text{s} \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p\)</span> : 物體動量 (Momentum) <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda_{c}\)</span>  :  一個光子的波長，這個光子擁有的能量剛好等同於一個靜止質量 <span class="math notranslate nohighlight">\(\lambda_c = \frac{h}{m_0c}\)</span> <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 2】 量子化條件（駐波條件）  ：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{gather*}
+  n\lambda &amp;=&amp; 2\pi r_{n} 
+  \end{gather*}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 主量子數 (Principal quantum number) <span class="math notranslate nohighlight">\(n = 1, 2, 3, \dots\)</span> [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda\)</span> : 德布羅依波長 (de Broglie wavelength) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(r_n\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 能階的軌道半徑 <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【假設 1】 動量方向與半徑方向垂直  ：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \mathbf{L} &amp;=&amp; \mathbf{r} \times \mathbf{p} \\
+  L &amp;\overset{\mathbf{r} \perp \mathbf{p}}{=}&amp; rp \\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathbf{L}\)</span> : 角動量向量 (Angular momentum vector) <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}^2\cdot\text{s}^{-1}]\)</span> 或 <span class="math notranslate nohighlight">\([\text{J}\cdot\text{s}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{r}\)</span> : 位置向量 (Position vector) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{p}\)</span> : 動量向量 (Momentum vector) <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(L, r, p\)</span> : 對應上述向量的純量大小 (Magnitudes)</p></li>
+</ul>
+</li>
+<li><p><strong>【已知 3】 波耳模型中的角動量公式  ：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  n\lambda &amp;\overset{\text{已知 2}}{=}&amp; 2\pi r_{n} \\ 
+  n\frac{h}{p_n} &amp;\overset{\text{已知 1}}{=}&amp; 2\pi r_{n} \\
+  n \frac{h}{2\pi} &amp;=&amp;  r_{n} p_n \\
+  n \hbar &amp;\overset{\text{假設 1}}{=}&amp; L_n \\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(r\)</span> : 軌道半徑 <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda\)</span> : 德布羅依波長 (de Broglie wavelength) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(h\)</span> : 普朗克常數 (Planck’s constant) <span class="math notranslate nohighlight">\(h \approx 6.626 \times 10^{-34} \text{ J}\cdot\text{s} \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hbar\)</span> : 約化普朗克常數 <span class="math notranslate nohighlight">\(\hbar \approx 1.054 \times 10^{-34}\text{ J}\cdot\text{s}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p\)</span> : 物體動量 (Momentum) <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(L\)</span> : 角動量 (Angular momentum) <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}^2\cdot\text{s}^{-1}] ,[\text{J}\cdot\text{s}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 4】 角量子數（azimuthal quantum number）  ：</strong></p>
+<div class="math notranslate nohighlight">
+\[L = \sqrt{l(l+1)}\hbar\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(l = 0 , 1 , \ldots , n-1\)</span> ，基態的情況 <span class="math notranslate nohighlight">\(l=0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(L\)</span> : 軌道角動量大小 (Magnitude of orbital angular momentum) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{s}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(l\)</span> : 角量子數 (Azimuthal/Orbital quantum number) <span class="math notranslate nohighlight">\(l = 0, 1, 2, \dots, n-1\)</span> [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hbar\)</span> : 約化普朗克常數 (Reduced Planck constant) <span class="math notranslate nohighlight">\(\hbar \approx 1.054 \times 10^{-34}\text{ J}\cdot\text{s}\)</span></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id1">
+<h3>比較 <strong>波爾</strong> 與 <strong>量子力學</strong> 的氫原子中基態電子角動量<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>波爾</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  L_n  &amp;\overset{\text{已知 3}}{=}&amp; n \hbar \\ 
+  L_1 &amp;\overset{n=1}{=}&amp; \hbar \\
+  \end{gather*}\end{split}\]</div>
+<ol class="arabic simple" start="2">
+<li><p>量子力學</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  L &amp;\overset{\text{已知 4}}{=}&amp; \sqrt{l(l+1)}\hbar \\ 
+  \left. L \right|_{l=0}  &amp;\overset{n,l=1,0}{=}&amp; 0 \\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><strong>波耳模型的盲點（行星類比）</strong>： 波耳假定電子必須要在一個二維平面的「圓周軌道」上跑動，如果電子沒有角動量（也就是不轉了）就會受到原子核的庫侖引力吸引，直接 <strong>墜毀</strong> 在原子核上，所以波耳模型中電子必須保持一個非零的最小角動量（<span class="math notranslate nohighlight">\(\hbar\)</span>）來維持軌道。</p></li>
+<li><p><strong>量子力學的真相（雲霧類比）</strong>： 在量子力學中基態（<span class="math notranslate nohighlight">\(\text{1s}\)</span> 軌域）的電子不再是小鋼珠，而是一團包圍著原子核的 <strong>機率雲</strong> ，這團 <span class="math notranslate nohighlight">\(\text{1s}\)</span> 機率雲呈現完美對稱的球體、這團雲霧平均地分佈在原子核周圍，並沒有朝任何特定方向旋轉或流動的趨勢，既然沒有整體的旋轉趨勢，它的淨角動量自然就是 <span class="math notranslate nohighlight">\(0\)</span> 了，這也證明了波耳模型將電子視為經典粒子的侷限性。</p></li>
+</ul>
+</section>
+</section>
+<section id="question-2">
+<h2>Question 2<a class="headerlink" href="#question-2" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>(a) What is Schrödinger’s equation for a particle of mass <span class="math notranslate nohighlight">\(m\)</span> that is constrained to move in a circle of radius <span class="math notranslate nohighlight">\(R\)</span>, so that <span class="math notranslate nohighlight">\(\psi\)</span> depends only on <span class="math notranslate nohighlight">\(\phi\)</span>?</p></li>
+<li><p>(b) Solve this equation for <span class="math notranslate nohighlight">\(\psi\)</span> and evaluate the normalization constant. (Hint: Review the solution of Schrödinger’s equation for the hydrogen atom.)</p></li>
+<li><p>(c) Find the possible energies of the particle.</p></li>
+<li><p>(d) Find the possible angular momenta of the particle.</p></li>
+</ul>
+</section>
+<section id="question-2-answer">
+<h2>Question 2 - Answer<a class="headerlink" href="#question-2-answer" title="Link to this heading">#</a></h2>
+<section id="id2">
+<h3>已知與假設<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><strong>【已知 1】<a class="reference external" href="https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/05_Quantum_Mechanics/quantum_mechanics.html#schrodingers-equation-steady-state-form">一維不含時薛丁格方程式 (1D Time-Independent Schrödinger Equation)</a>:</strong></p>
+<div class="math notranslate nohighlight">
+\[\frac{d^2 \psi}{dx^2} + \frac{2m}{\hbar^2}(E - U(x))\psi = 0\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\psi(x)\)</span> : 一維波函數的空間部分 <span class="math notranslate nohighlight">\([\text{m}^{-1/2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> : 粒子的質量 (Mass of the particle) <span class="math notranslate nohighlight">\([\text{kg}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(E\)</span> : 系統的總能量常數 <span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(U(x)\)</span> : 位能的空間分布 <span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hbar\)</span>: 約化普朗克常數 (Reduced Planck Constant)， <span class="math notranslate nohighlight">\(\hbar \approx 1.054 \times 10^{-34} \text{J}\cdot \text{s} \)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 2】 座標轉換（從直線到圓周）:</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  s &amp;=&amp; R\theta \\
+  ds &amp;=&amp; R \, d\theta \\
+  \frac{d}{ds} &amp;=&amp; \frac{1}{R}\frac{d}{d\theta} \\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(s\)</span> 圓弧長度 <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(R\)</span> 半徑 <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\theta\)</span> 圓心角</p></li>
+</ul>
+</li>
+<li><p><strong>【假設 1】 自由粒子-位能 <span class="math notranslate nohighlight">\(U(\theta)\)</span> 處處相等:</strong></p>
+<div class="math notranslate nohighlight">
+\[U(\theta) \overset{\text{let}}{=} 0\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(U\)</span> 位能 <span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\theta\)</span> 圓心角</p></li>
+</ul>
+</li>
+<li><p><strong>【假設 2】圓環上週期性邊界條件 (Periodic boundary condition):</strong></p>
+<div class="math notranslate nohighlight">
+\[\psi(\theta) = \psi(\theta + 2\pi)\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\psi(x)\)</span> : 一維波函數的空間部分 <span class="math notranslate nohighlight">\([\text{m}^{-1/2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\theta\)</span> 圓心角</p></li>
+</ul>
+</li>
+<li><p><strong>【假設 3】亞變數 <span class="math notranslate nohighlight">\(k\)</span> :</strong></p>
+<div class="math notranslate nohighlight">
+\[k^2 \overset{\text{let}}{=} \frac{2mR^2 E}{\hbar^2}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(m\)</span>：粒子的質量 <span class="math notranslate nohighlight">\([\text{kg}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(E\)</span> : 系統的總能量常數 <span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hbar\)</span>: 約化普朗克常數 (Reduced Planck Constant)， <span class="math notranslate nohighlight">\(\hbar \approx 1.054 \times 10^{-34} \text{J}\cdot \text{s} \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(R\)</span>：系統的特徵尺度（如球形位能井半徑或區域邊界），<span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 3】波函數 <span class="math notranslate nohighlight">\(\psi(\theta) = C e^{ik\theta}\)</span> 的週期性邊界條件關係式 :</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  &amp;\psi(\theta) &amp;\overset{\text{假設 2}}{=}&amp; \psi(\theta + 2\pi)  \\
+  &amp;C e^{ik\theta} &amp;=&amp; C e^{ik(\theta + 2\pi)}  \\
+  &amp;1 &amp;=&amp; e^{i 2\pi k} \\
+  &amp;1 &amp;=&amp; \cos(2\pi k) + i\sin(2\pi k) \\
+  \Rightarrow &amp;k &amp;=&amp; 0, \pm 1, \pm 2, \dots \\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>求解 <span class="math notranslate nohighlight">\(\psi(\theta) = C e^{ik\theta}\)</span> 的情況</p></li>
+<li><p><span class="math notranslate nohighlight">\(k \in \mathbb{Z}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\psi(\theta)\)</span> : 在角度 <span class="math notranslate nohighlight">\(\theta\)</span> 的波函數 (Wave function) <span class="math notranslate nohighlight">\([\text{rad}^{-1/2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\theta\)</span> : 角位置座標 (Angular coordinate) <span class="math notranslate nohighlight">\([\text{rad}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(C\)</span> : 未知的常數係數 (Constant coefficient) <span class="math notranslate nohighlight">\([\text{rad}^{-1/2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(k\)</span> : 亞變數 [無單位]</p></li>
+</ul>
+</li>
+<li><p><strong>【已知 4】<a class="reference external" href="https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/05_Quantum_Mechanics/quantum_mechanics.html#fundamental-rules-of-quantum-mechanics">歸一化（Normalization）</a>波函數 <span class="math notranslate nohighlight">\(\psi(\theta) = C e^{ik\theta}\)</span> 的機率密度 :</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  1&amp;=&amp;\int_{0}^{2\pi} |\psi(\theta)|^2 \, d\theta  \\
+  1&amp;=&amp;\int_{0}^{2\pi} |C e^{ik\theta}|^2 \, d\theta  \\
+  1&amp;=&amp;|C|^2 \int_{0}^{2\pi}  |e^{ik\theta}|^2\, d\theta \\
+  1&amp;=&amp;|C|^2 \int_{0}^{2\pi}  \left(e^{ik\theta}  e^{-ik\theta} \right)\, d\theta \\
+  1&amp;=&amp;|C|^2 \int_{0}^{2\pi}  1\, d\theta \\
+  1&amp;=&amp; |C|^2 \times (2\pi) \\
+  \frac{1}{\sqrt{2\pi}} &amp;=&amp; C \\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>求解 <span class="math notranslate nohighlight">\(\psi(\theta) = C e^{ik\theta}\)</span> 的情況</p></li>
+<li><p><span class="math notranslate nohighlight">\(1\)</span> : 總機率 (Total probability)，代表粒子必然存在於系統中 [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\int_{0}^{2\pi} \dots d\theta\)</span> : 對整個圓環一圈進行定積分 (Definite integral over a full circle)</p></li>
+<li><p><span class="math notranslate nohighlight">\(|\psi(\theta)|^2\)</span> : 機率密度 (Probability density) <span class="math notranslate nohighlight">\([\text{rad}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(C\)</span> : 歸一化常數 (Normalization constant)，確保總機率為 1 的縮放因子 <span class="math notranslate nohighlight">\([\text{rad}^{-1/2}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 1】繞著 Z 軸（垂直於圓環平面）旋轉的系統，角動量算符 <span class="math notranslate nohighlight">\(\hat{L_z}\)</span> 的定義 :</strong></p>
+<div class="math notranslate nohighlight">
+\[\hat{L_z} \overset{\text{def}}{=} -i\hbar \frac{d}{d\theta}\]</div>
+</li>
+</ul>
+</section>
+<section id="proof-a">
+<h3>proof(a)<a class="headerlink" href="#proof-a" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{d^2 \psi}{dx^2} + \frac{2m}{\hbar^2}(E - U(x))\psi &amp;\overset{\text{已知 1}}{=}&amp; 0 \\
+\frac{d^2 \psi}{ds^2} + \frac{2m}{\hbar^2}(E - U(s))\psi &amp;=&amp; 0 \\
+\frac{d^2 \psi}{ds^2} + \frac{2m}{\hbar^2} E \psi &amp;\overset{\text{假設 1}}{=}&amp; 0 \\
+\frac{1}{R^2}\frac{d^2 \psi }{d\theta^2} + \frac{2m}{\hbar^2} E \psi &amp;\overset{\text{已知 2}}{=}&amp; 0 \\
+\frac{d^2 \psi}{d\theta^2} + \frac{2mR^2}{\hbar^2}E\psi &amp;=&amp; 0
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="solve-b">
+<h3>solve(b)<a class="headerlink" href="#solve-b" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+&amp;\frac{d^2 \psi}{d\theta^2} + \frac{2mR^2}{\hbar^2}E\psi &amp;\overset{\text{Q2(a)}}{=}&amp; 0 \\
+&amp;\frac{d^2 \psi}{d\theta^2} + k^2 \psi &amp;\overset{\text{假設 3}}{=}&amp; 0 \\
+\overset{\text{ODE}}{\Rightarrow} &amp;\psi(\theta) &amp;=&amp; C e^{ik\theta} \\
+&amp;\psi(\theta) &amp;\overset{\text{已知 3,4}}{=}&amp; \frac{1}{\sqrt{2\pi}} e^{ik\theta} &amp;\quad (k = 0, \pm 1, \pm 2, \dots)\\
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="solve-c">
+<h3>solve(c)<a class="headerlink" href="#solve-c" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+k^2 &amp;\overset{\text{假設 3}}{=}&amp;  \frac{2mR^2 E}{\hbar^2} \\
+E &amp;=&amp; \frac{k^2 \hbar^2}{2mR^2} &amp;\quad (k = 0, \pm 1, \pm 2, \dots)\\
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>因為 <span class="math notranslate nohighlight">\(k\)</span> 是整數，所以能量 <span class="math notranslate nohighlight">\(E\)</span> 不能是連續的任意值，只能是一階一階往上跳的 <strong>階梯</strong></p></li>
+</ul>
+</section>
+<section id="solve-d">
+<h3>solve(d)<a class="headerlink" href="#solve-d" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+&amp;\hat{L_z} \psi &amp;\overset{\text{定義 1}}{=}&amp;  -i\hbar \frac{d}{d\theta}  \psi \\
+&amp;\hat{L_z} \psi &amp;=&amp; -i\hbar \frac{d}{d\theta} \left[ \frac{1}{\sqrt{2\pi}} e^{ik\theta} \right]\\
+&amp;\hat{L_z} \psi &amp;=&amp;  -i\hbar (ik) \left( \frac{1}{\sqrt{2\pi}} e^{ik\theta} \right) \\
+&amp;\hat{L_z} \psi &amp;=&amp;  -i^2 k\hbar \psi \\
+&amp;\hat{L_z} \psi &amp;=&amp; k\hbar \psi \\
+\Rightarrow&amp;L_z  &amp;=&amp; k\hbar &amp;\quad (k = 0, \pm 1, \pm 2, \dots)\\
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>因為 <span class="math notranslate nohighlight">\(k\)</span> 是整數，所以 <span class="math notranslate nohighlight">\(z\)</span> 方向的角動量 <span class="math notranslate nohighlight">\(L_z\)</span> 不能是連續的任意值，只能是一階一階往上跳的 <strong>階梯</strong></p></li>
+</ul>
+</section>
+</section>
+<section id="question-3">
+<h2>Question 3<a class="headerlink" href="#question-3" title="Link to this heading">#</a></h2>
+<p>Find the percentage difference between <span class="math notranslate nohighlight">\(L\)</span> and the maximum value of <span class="math notranslate nohighlight">\(L_z\)</span> for an atomic electron in <span class="math notranslate nohighlight">\(\text{p}\)</span> , <span class="math notranslate nohighlight">\(\text{d}\)</span> , and <span class="math notranslate nohighlight">\(\text{f}\)</span> states.</p>
+</section>
+<section id="question-3-answer">
+<h2>Question 3 - Answer<a class="headerlink" href="#question-3-answer" title="Link to this heading">#</a></h2>
+<section id="id3">
+<h3>已知與假設<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><strong>【已知 1】 總角動量大小：</strong></p>
+<div class="math notranslate nohighlight">
+\[L = \sqrt{l(l+1)}\hbar\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(L\)</span> : 總軌道角動量大小 (Magnitude of total orbital angular momentum) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{s}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(l\)</span> : 角量子數 (Azimuthal quantum number) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hbar\)</span> : 約化普朗克常數 (Reduced Planck constant) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{s}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 2】z 軸方向的角動量:</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+   L_z &amp;=&amp; m_l \hbar \\
+   \text{MAX} (L_{z}) &amp;=&amp; \text{MAX} (m_l\hbar) \\
+   \text{MAX} (L_{z}) &amp;=&amp; l\hbar \\
+   \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(m_l \in \{-l, -l+1, \dots, l-1, l \}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(L_z\)</span> : 角動量在 z 軸的分量 (z-component of angular momentum) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{s}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m_l\)</span> : 磁量子數 (Magnetic quantum number) <span class="math notranslate nohighlight">\(m_l = -l, -(l-1), \dots, 0, \dots, +l\)</span> [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(l\)</span> : 角量子數 (Azimuthal quantum number) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hbar\)</span> : 約化普朗克常數 (Reduced Planck constant) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{s}]\)</span></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="compute">
+<h3>compute<a class="headerlink" href="#compute" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\text{Percentage Difference} &amp;=&amp; \frac{L - L_{z,\text{max}}}{L} \times 100\% \\
+&amp;=&amp; \left( 1 - \frac{L_{z,\text{max}}}{L} \right) \times 100\% \\
+&amp;\overset{\text{已知 1,2}}{=}&amp; \left( 1 - \frac{l\hbar}{\sqrt{l(l+1)}\hbar} \right) \times 100\% \\
+&amp;=&amp; \left( 1 - \frac{l}{\sqrt{l(l+1)}} \right) \times 100\% \\
+&amp;=&amp; \left( 1 - \sqrt{\frac{l^2}{l(l+1)}} \right) \times 100\% \\
+&amp;=&amp; \left( 1 - \sqrt{\frac{l}{l+1}} \right) \times 100\% \\
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\text{p}\)</span> states ， <span class="math notranslate nohighlight">\(l = 1\)</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\text{Percentage Difference}_{\text{p}} &amp;=&amp; \left( 1 - \sqrt{\frac{l}{l+1}} \right) \times 100\%  \\
+&amp;=&amp; \left( 1 - \sqrt{\frac{1}{1+1}} \right) \times 100\% \\
+&amp;\approx&amp; (1 - 0.7071) \times 100\% \\
+&amp;=&amp; 29.3\%
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\text{d}\)</span> states ， <span class="math notranslate nohighlight">\(l = 2\)</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\text{Percentage Difference}_{\text{d}} &amp;=&amp; \left( 1 - \sqrt{\frac{l}{l+1}} \right) \times 100\%  \\
+&amp;=&amp; \left( 1 - \sqrt{\frac{2}{2+1}} \right) \times 100\% \\
+&amp;\approx&amp; (1 - 0.8165) \times 100\% \\
+&amp;=&amp; 18.4\%
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\text{f}\)</span> states ， <span class="math notranslate nohighlight">\(l = 3\)</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\text{Percentage Difference}_{\text{f}} &amp;=&amp; \left( 1 - \sqrt{\frac{l}{l+1}} \right) \times 100\%  \\
+&amp;=&amp; \left( 1 - \sqrt{\frac{3}{3+1}} \right) \times 100\% \\
+&amp;\approx&amp; (1 - 0.8660) \times 100\% \\
+&amp;=&amp; 13.4\%
+\end{gather*}\end{split}\]</div>
+<section id="id4">
+<h4>物理觀察<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<p><strong>當角量子數 <span class="math notranslate nohighlight">\(l\)</span> 越來越大時，百分比差異越來越小。</strong></p>
+<p>物理學中 <strong>對應原理 (Correspondence Principle)</strong> 說 <strong>當量子數極大時，量子系統的行為會越來越趨近於古典物理系統</strong> ，當 <span class="math notranslate nohighlight">\(l\)</span> 趨近於無限大時，角動量向量就會越來越貼近 z 軸，量子力學造成的「進動錐角」效應就越來越微乎其微了！</p>
+</section>
+</section>
+</section>
+<section id="question-4">
+<h2>Question 4<a class="headerlink" href="#question-4" title="Link to this heading">#</a></h2>
+<p>A hydrogen atom is in the <span class="math notranslate nohighlight">\(\text{4p}\)</span> state (<span class="math notranslate nohighlight">\(n_i=4 , l_i=2\)</span>). To what state or states can it go by radiating a photon in an allowed transition?</p>
+</section>
+<section id="question-4-answer">
+<h2>Question 4 - Answer<a class="headerlink" href="#question-4-answer" title="Link to this heading">#</a></h2>
+<section id="id5">
+<h3>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><strong>【已知 1】 選擇定則 (Selection Rules)  ：</strong></p>
+<div class="math notranslate nohighlight">
+\[\Delta l = \pm 1\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\Delta l\)</span> : 角量子數的變化量 (Change in azimuthal quantum number) [無單位]</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id6">
+<h3>可躍遷後的能階<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<p>在氫原子中，相同主量子數 <span class="math notranslate nohighlight">\(n\)</span> 的軌域能量皆相同，沒有能量差就無法發光躍遷，所以 <span class="math notranslate nohighlight">\(n_f = 1,2,3\)</span></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(l_f = 0\)</span> (s 軌域)： 因為主量子數 <span class="math notranslate nohighlight">\(n\)</span> 只要大於 <span class="math notranslate nohighlight">\(l\)</span> 即可，所以在 <span class="math notranslate nohighlight">\(n_f &lt; 4\)</span> 的條件下，<span class="math notranslate nohighlight">\(n_f\)</span> 可以是 <span class="math notranslate nohighlight">\(1, 2, 3\)</span>，對應出 <span class="math notranslate nohighlight">\(\text{1s}, \text{2s}, \text{3s}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(l_f = 2\)</span> (d 軌域)： 主量子數必須嚴格大於角量子數（<span class="math notranslate nohighlight">\(n &gt; l\)</span>），所以 <span class="math notranslate nohighlight">\(n_f\)</span> 必須大於 <span class="math notranslate nohighlight">\(2\)</span>，在可能的選項 <span class="math notranslate nohighlight">\(1, 2, 3\)</span> 之中，只有 <span class="math notranslate nohighlight">\(n_f = 3\)</span> 對應出 <span class="math notranslate nohighlight">\(\text{3d}\)</span></p></li>
+</ul>
+<p>所以可能的軌域是  <span class="math notranslate nohighlight">\(\text{1s}, \text{2s}, \text{3s}\)</span> , <span class="math notranslate nohighlight">\(\text{3d}\)</span></p>
+</section>
+</section>
+<section id="question-5">
+<h2>Question 5<a class="headerlink" href="#question-5" title="Link to this heading">#</a></h2>
+<p>In the Bohr model of the hydrogen atom (<span class="math notranslate nohighlight">\(z_{\text{p}}\)</span> = 1), what is the magnitude of the orbital magnetic moment of an electron in the nth energy level?</p>
+</section>
+<section id="question-5-answer">
+<h2>Question 5 - Answer<a class="headerlink" href="#question-5-answer" title="Link to this heading">#</a></h2>
+<section id="id7">
+<h3>已知與假設<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><strong>【定義 1】 古典電磁學的磁矩 :</strong></p>
+<div class="math notranslate nohighlight">
+\[\mu \overset{\text{def}}{=} I A\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mu\)</span> : 磁矩 (Magnetic dipole moment) <span class="math notranslate nohighlight">\([\text{A}\cdot\text{m}^2] , [\text{J}\cdot\text{T}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(I\)</span> : 電流 (Electric current) <span class="math notranslate nohighlight">\([\text{A}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(A\)</span> : 線圈所圍繞的面積 (Area of the current loop) <span class="math notranslate nohighlight">\([\text{m}^2]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 1】 電流就是單位時間內通過的電荷量 :</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  I &amp;=&amp; \frac{e}{T} \\
+  &amp;=&amp; \frac{ev}{2\pi r}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(I\)</span> : 電流 (Electric current) <span class="math notranslate nohighlight">\([\text{A}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(e\)</span> : 基本電荷 (Elementary charge) <span class="math notranslate nohighlight">\(e \approx 1.602 \times 10^{-19} \text{ C}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(T\)</span> : 電子繞行一圈的時間/週期 (Period) <span class="math notranslate nohighlight">\(T = \frac{2\pi r}{v} \text{ [s]}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(v\)</span> : 電子的切線速率 (Tangential speed of electron) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(r\)</span> : 軌道半徑 (Orbital radius) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 2】 軌道面積 :</strong></p>
+<div class="math notranslate nohighlight">
+\[A = \pi r^2\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(A\)</span> : 圓形軌道的面積 (Area of the circular orbit) <span class="math notranslate nohighlight">\([\text{m}^2]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(r\)</span> : 軌道半徑 (Orbital radius) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 3】角動量 :</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  L &amp;=&amp; m_e v r \\
+  &amp;=&amp; n\hbar
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(L\)</span> : 角動量 (Angular momentum) <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}^2\cdot\text{s}^{-1}]\)</span> 或 <span class="math notranslate nohighlight">\([\text{J}\cdot\text{s}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m_e\)</span> : 電子的靜止質量 (Electron mass) <span class="math notranslate nohighlight">\(m_e \approx 9.109 \times 10^{-31} \text{ kg}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(v\)</span> : 電子的切線速率 (Tangential speed) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(r\)</span> : 軌道半徑 (Orbital radius) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 主量子數 (Principal quantum number) <span class="math notranslate nohighlight">\(n = 1, 2, 3, \dots\)</span> [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hbar\)</span> : 約化普朗克常數 (Reduced Planck constant) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{s}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 2】波耳磁元 (Bohr magneton)<span class="math notranslate nohighlight">\(\mu_B\)</span> :</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{gather*}
+  \mu_B \overset{\text{def}}{=} \frac{e\hbar}{2m_e}
+  \end{gather*}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mu_B\)</span> : 波耳磁元 (Bohr magneton) <span class="math notranslate nohighlight">\(\mu_B \approx 9.274 \times 10^{-24} \text{ J}\cdot\text{T}^{-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(e\)</span> : 基本電荷 (Elementary charge) <span class="math notranslate nohighlight">\([\text{C}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hbar\)</span> : 約化普朗克常數 (Reduced Planck constant) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{s}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m_e\)</span> : 電子質量 (Electron mass) <span class="math notranslate nohighlight">\([\text{kg}]\)</span></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="proof">
+<h3>proof<a class="headerlink" href="#proof" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\mu &amp;\overset{\text{定義 1}}{=}&amp; IA \\
+&amp;\overset{\text{已知 1,2}}{=}&amp; \left(\frac{ev}{2\pi r}\right) (\pi r^2) \\
+&amp;=&amp; \frac{evr}{2} \\
+&amp;\overset{\text{已知 3}}{=}&amp; \frac{e}{2} \left(\frac{n\hbar}{m_e}\right) \\
+&amp;=&amp; n \left(\frac{e\hbar}{2m_e}\right) \\
+&amp;\overset{\text{定義 2}}{=}&amp; n \mu_B
+\end{gather*}\end{split}\]</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./homework\hw6"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-answer">Question 1 - Answer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">比較 <strong>波爾</strong> 與 <strong>量子力學</strong> 的氫原子中基態電子角動量</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-answer">Question 2 - Answer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">已知與假設</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-a">proof(a)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solve-b">solve(b)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solve-c">solve(c)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solve-d">solve(d)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-answer">Question 3 - Answer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">已知與假設</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compute">compute</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">物理觀察</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question 4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4-answer">Question 4 - Answer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">可躍遷後的能階</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question 5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5-answer">Question 5 - Answer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">已知與假設</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proof">proof</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC YE
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
