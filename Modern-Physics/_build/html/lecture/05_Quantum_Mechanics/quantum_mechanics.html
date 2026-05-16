@@ -646,9 +646,9 @@ document.write(`
   \frac{\partial \Psi}{\partial x} &amp;\overset{\text{已知 5}}{=}&amp; \frac{\partial}{\partial x} \left[ Ae^{-\frac{i}{\hbar}(Et - px)} \right]\\
   \frac{\partial \Psi}{\partial x}&amp;=&amp; \left( \frac{i}{\hbar}p \right) Ae^{-\frac{i}{\hbar}(Et - px)} \\
   \frac{\partial \Psi}{\partial x}&amp;\overset{\text{已知 5}}{=}&amp; \left( \frac{i}{\hbar}p \right) \Psi \\
-  \\ \\ \\ \\
-  \end{gather*}  \quad , \quad
-  \begin{gather*}
+  \end{gather*}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
   \frac{\partial^2 \Psi}{\partial x^2} &amp;=&amp; \frac{\partial}{\partial x} \left[ \frac{\partial \Psi}{\partial x} \right] \\
   \frac{\partial^2 \Psi}{\partial x^2}&amp;=&amp; \frac{\partial}{\partial x} \left[ \frac{i}{\hbar}p \Psi \right] \\
   \frac{\partial^2 \Psi}{\partial x^2}&amp;=&amp; \left( \frac{i}{\hbar}p \right)^2 \Psi \\
@@ -1950,7 +1950,7 @@ T_1 &amp;=&amp; e^{-2 k_2 L} \\
 <section id="id19">
 <h3>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#id19" title="Link to this heading">#</a></h3>
 <ul>
-<li><p>**【已知 1】 虎克定律與古典運動方程式：**描述一個物體受到的回復力與其偏離平衡位置的位移成正比，且方向相反 (<span class="math notranslate nohighlight">\(F = -kx\)</span>)。根據牛頓第二定律 (<span class="math notranslate nohighlight">\(F = ma\)</span>)，可列出運動方程式：</p>
+<li><p><strong>【已知 1】 虎克定律與古典運動方程式：</strong> 描述一個物體受到的回復力與其偏離平衡位置的位移成正比，且方向相反 (<span class="math notranslate nohighlight">\(F = -kx\)</span>)。根據牛頓第二定律 (<span class="math notranslate nohighlight">\(F = ma\)</span>)，可列出運動方程式：</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{gather*}
   m \frac{d^2x}{dt^2} &amp;=&amp; -kx \\
@@ -2059,7 +2059,7 @@ T_1 &amp;=&amp; e^{-2 k_2 L} \\
   \sqrt{\frac{\hbar}{m\omega}} dy &amp;=&amp; dx \\
   \end{gather*}\end{split}\]</div>
 </li>
-<li><p>**【已知 5】 厄米特多項式的正交歸一性 (Orthogonality of Hermite Polynomials)：**純數學的高階微積分定理，帶有高斯權重的厄米特多項式平方積分</p>
+<li><p><strong>【已知 5】 厄米特多項式的正交歸一性 (Orthogonality of Hermite Polynomials)：</strong> 純數學的高階微積分定理，帶有高斯權重的厄米特多項式平方積分</p>
 <div class="math notranslate nohighlight">
 \[\int_{-\infty}^{\infty} H_n^2(y) e^{-y^2} dy = \sqrt{\pi} 2^n n!\]</div>
 </li>
@@ -2094,11 +2094,12 @@ T_1 &amp;=&amp; e^{-2 k_2 L} \\
 \beta \frac{d^2\psi}{dy^2} + \left(\frac{2mE}{\hbar^2}  - \beta  y^2   \right)\psi &amp;\overset{\text{推導 1(b)}}{=}&amp; 0 \\
 \frac{d^2\psi}{dy^2} + \left( \frac{2mE}{\beta\hbar^2} - y^2 \right)\psi &amp;=&amp; 0 \\
 \frac{d^2\psi}{dy^2} + \left( \alpha - y^2 \right)\psi &amp;\overset{\text{定義 4}}{=}&amp; 0 \\
-\end{gather*}\\
-\begin{gather*}
-\overset{\text{已知 4}}{\Rightarrow} &amp;\left\{\begin{matrix} \psi_n(y)&amp;=&amp; H_n(y)e^{-\frac{y^2}{2}}  \\  \alpha &amp;=&amp; 2n+1 \end{matrix}\right.    ,\quad n=0,1,2,\dots \\
-\overset{\text{定義 4}}{\Rightarrow} &amp;\left\{\begin{matrix} \psi_n(y) &amp;=&amp; \left( \frac{2m\nu}{\hbar} \right)^{1/4} \frac{1}{\sqrt{2^n n!}} H_n(y) e^{-y^2/2}  \\  \alpha &amp;=&amp; 2n+1 \end{matrix}\right.    ,\quad n=0,1,2,\dots \\
-\overset{\text{已知 6}}{\Rightarrow} &amp;\left\{\begin{matrix} \psi_n(y) &amp;=&amp; \underbrace{ \left( \frac{2m\nu}{\hbar} \right)^{1/4} \frac{1}{\sqrt{2^n n!}} }_{\text{1. 歸一化常數}} \times \underbrace{ H_n(y) }_{\text{2. 核心震盪項}} \times \underbrace{ e^{-y^2/2} }_{\text{3. 邊界衰減項}}  \\  \alpha &amp;=&amp; 2n+1 \end{matrix}\right.    ,\quad n=0,1,2,\dots \\
+\end{gather*}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\overset{\text{已知 4}}{\Rightarrow} &amp;\left\{\begin{matrix} \psi_n(y)&amp;=&amp; H_n(y)e^{-\frac{y^2}{2}}  \\  \alpha &amp;=&amp; 2n+1 \end{matrix}\right.    &amp;,\quad n=0,1,2,\dots \\
+\overset{\text{定義 4}}{\Rightarrow} &amp;\left\{\begin{matrix} \psi_n(y) &amp;=&amp; \left( \frac{2m\nu}{\hbar} \right)^{1/4} \frac{1}{\sqrt{2^n n!}} H_n(y) e^{-y^2/2}  \\  \alpha &amp;=&amp; 2n+1 \end{matrix}\right.    &amp;,\quad n=0,1,2,\dots \\
+\overset{\text{已知 6}}{\Rightarrow} &amp;\left\{\begin{matrix} \psi_n(y) &amp;=&amp; \underbrace{ \left( \frac{2m\nu}{\hbar} \right)^{1/4} \frac{1}{\sqrt{2^n n!}} }_{\text{1. 歸一化常數}} \times \underbrace{ H_n(y) }_{\text{2. 核心震盪項}} \times \underbrace{ e^{-y^2/2} }_{\text{3. 邊界衰減項}}  \\  \alpha &amp;=&amp; 2n+1 \end{matrix}\right.   &amp; ,\quad n=0,1,2,\dots \\
 \end{gather*}\end{split}\]</div>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\psi\)</span> : 系統的波函數，<span class="math notranslate nohighlight">\([\text{m}^{-1/2}]\)</span>（在一維情況下）</p></li>
