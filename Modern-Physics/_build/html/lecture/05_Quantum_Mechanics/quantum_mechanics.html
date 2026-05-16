@@ -422,19 +422,32 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#particle-in-a-box">5.5 一維無限深位能井：箱子中的粒子 (Particle in a Box)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">波函數與能階推導</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10"><strong>例題 5.5.1：粒子在特定區域的出現機率</strong></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11"><strong>例題 5.5.2：粒子位置的期望值</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10"><strong>波函數</strong> 和 <strong>能階</strong> 推導</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11"><strong>波函數</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-levels"><strong>量子化能階 (Energy Levels)：</strong></a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12"><strong>例題 5.5.1：粒子在特定區域的出現機率</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13"><strong>例題 5.5.2：粒子位置的期望值</strong></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-potential-well">5.6 有限深位能井 (Finite Potential Well)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-potential-well">5.6 一維有限深位能井 (Finite Potential Well)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">波函數證明</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tunnel-effect">5.7 穿隧效應 (Tunnel Effect)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">穿隧機率精確解推導</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13"><strong>例題 5.7：穿隧機率的極端敏感性</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">穿隧機率推導</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18"><strong>例題 5.7：穿隧機率的極端敏感性</strong></a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#harmonic-oscillator">5.8 諧振子 (Harmonic Oscillator)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-dimensionalization">薛丁格方程式的去因次化推導 (Non-dimensionalization)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">能階與波函數</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21"><strong>例題 5.8：諧振子狀態的期望值與不確定性</strong></a></li>
 </ul>
 </li>
 </ul>
@@ -873,12 +886,12 @@ E \psi  &amp;=&amp; -\frac{\hbar^2}{2m} \frac{d^2 \psi}{dx^2}  + U\psi \\
 <li><p><span class="math notranslate nohighlight">\(\psi_n\)</span> 稱為算符 <span class="math notranslate nohighlight">\(\hat{G}\)</span> 的<strong>本徵函數 (Eigenfunction)</strong>。</p></li>
 <li><p><span class="math notranslate nohighlight">\(G_n\)</span> 稱為對應的<strong>本徵值 (Eigenvalue)</strong>，即物理測量上的確定數值。這解釋了量子力學中「量子化 (一份一份)」的來源：只有特定的波函數形狀（<span class="math notranslate nohighlight">\(\psi_n\)</span>）能滿足這項等式，因此只會得到對應的特定觀測值（<span class="math notranslate nohighlight">\(G_n\)</span>）。</p></li>
 </ul>
-<p>我們定義<strong>漢彌爾頓算符 (Hamiltonian operator)</strong> <span class="math notranslate nohighlight">\(\hat{H}\)</span> 為系統總能（動能加位能）的算符。不含時薛丁格方程式即可極簡略為標準的本徵值方程形式<span class="math notranslate nohighlight">\(\hat{H}\psi_n = E_n\psi_n\)</span></p>
+<p>我們定義<strong>漢彌爾頓算符 (Hamiltonian operator)</strong> <span class="math notranslate nohighlight">\(\hat{H}\)</span> 為系統總能（動能加位能）的算符，不含時薛丁格方程式即可極簡略為標準的本徵值方程形式<span class="math notranslate nohighlight">\(\hat{H}\psi_n = E_n\psi_n\)</span></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{gather*}
 &amp;\frac{d^2 \psi}{dx^2} + \frac{2m}{\hbar^2}(E - U(x))\psi &amp;=&amp; 0 \\
 &amp;E\psi &amp;=&amp; -\frac{\hbar^2}{2m} \frac{d^2 \psi}{dx^2} + U(x)\psi \\
-\hat{H} \overset{\text{def}}{=}&amp; E\psi &amp;=&amp;\left( -\frac{\hbar^2}{2m} \frac{d^2}{dx^2} + U(x) \right) \psi \\
+\hat{H}\psi \overset{\text{def}}{=}&amp; E\psi &amp;=&amp;\left( -\frac{\hbar^2}{2m} \frac{d^2}{dx^2} + U(x) \right) \psi \\
 &amp;\hat{H}\psi_n &amp;=&amp; E_n\psi_n
 \end{gather*}\end{split}\]</div>
 <p>在量子力學系統（如位能井或原子）能滿足這個方程式的解通常是離散的，只有特定的波函數形狀才能成立並對應到特定的能量值，為了標示這些不同的 <strong>量子態</strong> 物理學家會加上標註下標 <span class="math notranslate nohighlight">\(n\)</span>（代表第 <span class="math notranslate nohighlight">\(n\)</span> 個能階與對應的波函數），最終寫成我們熟知的標準形式 <span class="math notranslate nohighlight">\(\hat{H}\psi_n = E_n\psi_n\)</span> 。透過這個過程，我們就把一個看起來複雜的二階微分方程式，完美包裝成了線性代數中最優雅的本徵值方程式：算符 <span class="math notranslate nohighlight">\(\hat{H}\)</span> 作用在函數 <span class="math notranslate nohighlight">\(\psi_n\)</span> 上，等於該函數自己乘上一個常數 <span class="math notranslate nohighlight">\(E_n\)</span>，這代表當我們將「總能量算符 <span class="math notranslate nohighlight">\(\hat{H}\)</span>」作用於系統特定的穩態波函數 <span class="math notranslate nohighlight">\(\psi_n\)</span> 時，即可得到該系統特定且離散的「能階 <span class="math notranslate nohighlight">\(E_n\)</span>」。</p>
@@ -930,223 +943,1335 @@ E \psi  &amp;=&amp; -\frac{\hbar^2}{2m} \frac{d^2 \psi}{dx^2}  + U\psi \\
 <hr class="docutils" />
 <section id="particle-in-a-box">
 <h2>5.5 一維無限深位能井：箱子中的粒子 (Particle in a Box)<a class="headerlink" href="#particle-in-a-box" title="Link to this heading">#</a></h2>
-<p>這是一個最基礎但能完美展現「量子化」來源的系統模型。假設一個質量為 <span class="math notranslate nohighlight">\(m\)</span> 的粒子被困在寬度為 <span class="math notranslate nohighlight">\(L\)</span> 的一維堅硬箱子中。</p>
-<p><strong>已知與假設 (Assumptions &amp; Preliminaries)：</strong></p>
-<ol class="arabic simple">
-<li><p><strong>內部自由粒子：</strong> 在箱子內部 (<span class="math notranslate nohighlight">\(0 &lt; x &lt; L\)</span>)，粒子不受力，位能設定為 <span class="math notranslate nohighlight">\(U = 0\)</span>。</p></li>
-<li><p><strong>無限高位能牆：</strong> 在箱子外部 (<span class="math notranslate nohighlight">\(x \le 0\)</span> 與 <span class="math notranslate nohighlight">\(x \ge L\)</span>)，位能 <span class="math notranslate nohighlight">\(U = \infty\)</span>。這導致粒子絕對不可能出現在箱外，因此外部波函數為 <span class="math notranslate nohighlight">\(\Psi = 0\)</span>。</p></li>
-<li><p><strong>邊界條件 (Boundary Conditions)：</strong> 由於波函數必須連續，因此在邊界處波函數必須為零：
-$<span class="math notranslate nohighlight">\(\psi(0) = 0, \quad \psi(L) = 0\)</span>$</p></li>
-</ol>
-<section id="id9">
-<h3>波函數與能階推導<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
-<p>在箱內 (<span class="math notranslate nohighlight">\(U=0\)</span>)，不含時薛丁格方程式為：
-$<span class="math notranslate nohighlight">\(\begin{gather*}
-\frac{d^2 \psi}{dx^2} + \frac{2m}{\hbar^2} E\psi &amp;=&amp; 0 \\
-\frac{d^2 \psi}{dx^2} + k^2 \psi &amp;=&amp; 0
-\end{gather*}\)</span><span class="math notranslate nohighlight">\(
-其中定義了波數 (Wave number) \)</span>k \overset{\text{def}}{=} \frac{\sqrt{2mE}}{\hbar}<span class="math notranslate nohighlight">\(。這是一個標準的二階常微分方程式（簡諧振動的形式），其通解為：
-\)</span><span class="math notranslate nohighlight">\(\psi(x) = A \sin kx + B \cos kx\)</span>$</p>
-<p><strong>代入邊界條件：</strong></p>
-<ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(\psi(0) = A \sin(0) + B \cos(0) = B = 0\)</span>。因此解簡化為 <span class="math notranslate nohighlight">\(\psi(x) = A \sin kx\)</span>。</p></li>
-<li><p><span class="math notranslate nohighlight">\(\psi(L) = A \sin kL = 0\)</span>。因為粒子必須存在，所以振幅 <span class="math notranslate nohighlight">\(A\)</span> 不能為零，這要求 <span class="math notranslate nohighlight">\(\sin kL = 0\)</span>，意味著 <span class="math notranslate nohighlight">\(kL\)</span> 必須是 <span class="math notranslate nohighlight">\(\pi\)</span> 的整數倍：
-$<span class="math notranslate nohighlight">\(kL = n\pi \quad (n = 1, 2, 3, \dots)\)</span><span class="math notranslate nohighlight">\(
-*(註：\)</span>n \neq 0<span class="math notranslate nohighlight">\(，因為若 \)</span>n=0$，波函數全為零，代表粒子不存在)*</p></li>
-</ol>
-<p><strong>求得量子化能階 (Energy Levels)：</strong>
-將 <span class="math notranslate nohighlight">\(k = \frac{n\pi}{L}\)</span> 代回 <span class="math notranslate nohighlight">\(k\)</span> 的定義式 <span class="math notranslate nohighlight">\(\frac{\sqrt{2mE}}{\hbar} = \frac{n\pi}{L}\)</span> 並將兩邊平方整理：</p>
+<p>這是一個最基礎但能完美展現「量子化」來源的系統模型，假設一個質量為 <span class="math notranslate nohighlight">\(m\)</span> 的粒子被困在寬度為 <span class="math notranslate nohighlight">\(L\)</span> 的一維堅硬箱子中。</p>
+<p><strong>波函數</strong></p>
 <div class="math notranslate nohighlight">
-\[E_n = \frac{n^2 \pi^2 \hbar^2}{2mL^2} \quad n = 1, 2, 3, \dots\]</div>
+\[\begin{split}
+\psi_n(x) = 
+\left\{\begin{matrix}
+0 &amp;\quad x \le 0  \\
+\sqrt{\frac{2}{L}} \sin\left(\frac{n\pi x}{L}\right) &amp;\quad 0 \le x \le L &amp; \quad n = 1, 2, 3, \dots \\
+0 &amp;\quad x \ge 0  \\
+\end{matrix}\right.
+\end{split}\]</div>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(E_n\)</span> : 箱中粒子處於第 <span class="math notranslate nohighlight">\(n\)</span> 能階的總能量 <span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(L\)</span> : 一維箱子的寬度 <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(n\)</span> : 主量子數 <span class="math notranslate nohighlight">\([\text{dimensionless}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\psi_n(x)\)</span> : 處於第 <span class="math notranslate nohighlight">\(n\)</span> 能階的定態一維波函數 (Wave Function of the <span class="math notranslate nohighlight">\(n\)</span>-th state)， <span class="math notranslate nohighlight">\([\text{m}^{-1/2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x\)</span> : 粒子在箱中的空間位置座標 (Position)， <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> : 粒子質量 (Mass)， <span class="math notranslate nohighlight">\([\text{kg}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(L\)</span> : 一維箱子的寬度 (Width of the box)， <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 主量子數 (Principal Quantum Number)， <span class="math notranslate nohighlight">\(n = 1, 2, 3, \dots\)</span> <span class="math notranslate nohighlight">\([\text{dimensionless}]\)</span></p></li>
 </ul>
-<p><strong>求得波函數並歸一化 (Normalization)：</strong>
-目前我們得到波函數的雛形 <span class="math notranslate nohighlight">\(\psi_n(x) = A \sin\left(\frac{n\pi x}{L}\right)\)</span>。為了求出常數 <span class="math notranslate nohighlight">\(A\)</span>，我們應用歸一化條件：全空間找到粒子的總機率為 1。</p>
+<p><strong>量子化能階 (Energy Levels)：</strong></p>
+<div class="math notranslate nohighlight">
+\[
+E_n = \frac{n^2 \pi^2 \hbar^2}{2mL^2}  \quad n = 1, 2, 3, \dots 
+\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(E_{n}\)</span> : 箱中粒子處於第 <span class="math notranslate nohighlight">\(n\)</span> 能階的定態總能量 (Energy of the <span class="math notranslate nohighlight">\(n\)</span>-th level)， <span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(L\)</span> : 一維箱子的寬度 (Width of the box)， <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 主量子數 (Principal Quantum Number)， <span class="math notranslate nohighlight">\([\text{dimensionless}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> : 粒子質量 (Mass)， <span class="math notranslate nohighlight">\([\text{kg}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hbar \)</span> : 約化普朗克常數 (Reduced Planck Constant)， <span class="math notranslate nohighlight">\(\hbar \approx 1.054 \times 10^{-34} \text{J}\cdot \text{s}\)</span></p></li>
+</ul>
+<p><img alt="" src="../../_images/Particle_in_a_Box_One-Dimensional_Infinite_Potential_Well.png" /></p>
+<section id="id9">
+<h3>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><strong>【假設 1】 無限高位能牆 ：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  U(x) = 
+  \left\{\begin{matrix}
+  \infty &amp;\quad x \le 0  \\
+  0 &amp;\quad 0 \le x \le L  \\
+  \infty &amp;\quad x \ge 0  \\
+  \end{matrix}\right.
+  \end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(U(x)\)</span>: 系統的位能隨x的函數 (Potential Energy)，<span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p>粒子絕對不可能出現在箱外，因此外部波函數為 <span class="math notranslate nohighlight">\(\Psi = 0\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【假設 2】 邊界條件 (Boundary Conditions) ：</strong></p>
+<div class="math notranslate nohighlight">
+\[\psi(0) = 0, \quad \psi(L) = 0\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\psi(x)\)</span> : 一維波函數的空間部分 <span class="math notranslate nohighlight">\([\text{m}^{-1/2}]\)</span></p></li>
+<li><p>由於波函數必須連續，因此在邊界處波函數必須為零</p></li>
+</ul>
+</li>
+<li><p><strong>【已知 1】 不含時薛丁格方程式 (Schrödinger’s Equation: Steady-State Form) ：</strong></p>
+<div class="math notranslate nohighlight">
+\[\frac{d^2 \psi}{dx^2} + \frac{2m}{\hbar^2}(E - U(x))\psi = 0\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\psi(x)\)</span> : 一維波函數的空間部分 <span class="math notranslate nohighlight">\([\text{m}^{-1/2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(E\)</span> : 系統的總能量常數 <span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(U(x)\)</span> : 位能的空間分布 <span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hbar\)</span>: 約化普朗克常數 (Reduced Planck Constant)， <span class="math notranslate nohighlight">\(\hbar \approx 1.054 \times 10^{-34} \text{J}\cdot \text{s} \)</span></p></li>
+<li><p>三維形式則為：<span class="math notranslate nohighlight">\(\frac{\partial^2 \psi}{\partial x^2} + \frac{\partial^2 \psi}{\partial y^2} + \frac{\partial^2 \psi}{\partial z^2} + \frac{2m}{\hbar^2}(E - U)\psi = 0\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 1】 亞變數:二階常微分方程式(簡諧振動的形式)的波數 (Wave number) <span class="math notranslate nohighlight">\(k\)</span> ：</strong></p>
+<div class="math notranslate nohighlight">
+\[k \overset{\text{def}}{=} \frac{\sqrt{2mE}}{\hbar}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(m\)</span>: 粒子質量 (Mass)，<span class="math notranslate nohighlight">\([\text{kg}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(E\)</span> : 系統的總能量常數 <span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hbar\)</span>: 約化普朗克常數 (Reduced Planck Constant)， <span class="math notranslate nohighlight">\(\hbar \approx 1.054 \times 10^{-34} \text{J}\cdot \text{s} \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(k\)</span> : 波數 (Wave number)，<span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 2】 二階常微分方程式(ODE)通解：</strong></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{gather*}
-\int_{-\infty}^{\infty} |\psi_n|^2 dx &amp;=&amp; 1 \\
-\int_{0}^{L} A^2 \sin^2 \left( \frac{n\pi x}{L} \right) dx &amp;=&amp; 1 \\
-\frac{A^2}{2} \int_{0}^{L} \left[ 1 - \cos \left( \frac{2n\pi x}{L} \right) \right] dx &amp;=&amp; 1 \\
-\frac{A^2}{2} \left[ x - \frac{L}{2n\pi} \sin \left( \frac{2n\pi x}{L} \right) \right]_0^L &amp;=&amp; 1 \\
-\frac{A^2}{2} \left( L - 0 \right) &amp;=&amp; 1 \\
-A^2 \frac{L}{2} &amp;=&amp; 1 \quad \implies \quad A = \sqrt{\frac{2}{L}}
-\end{gather*}\end{split}\]</div>
-<p>最終得到<strong>箱子中粒子的標準波函數</strong>：
-$<span class="math notranslate nohighlight">\(\psi_n(x) = \sqrt{\frac{2}{L}} \sin \left( \frac{n\pi x}{L} \right) \quad n = 1, 2, 3, \dots\)</span>$</p>
-<section id="id10">
-<h4><strong>例題 5.5.1：粒子在特定區域的出現機率</strong><a class="headerlink" href="#id10" title="Link to this heading">#</a></h4>
-<p><strong>題目：</strong> 求出陷在寬度為 <span class="math notranslate nohighlight">\(L\)</span> 的一維位能井中的粒子，在基態 (<span class="math notranslate nohighlight">\(n=1\)</span>) 與第一受激態 (<span class="math notranslate nohighlight">\(n=2\)</span>) 時，出現在 <span class="math notranslate nohighlight">\(0.45L\)</span> 和 <span class="math notranslate nohighlight">\(0.55L\)</span> 之間的機率。</p>
-<p><strong>解答：</strong>
-第 <span class="math notranslate nohighlight">\(n\)</span> 個態的粒子在 <span class="math notranslate nohighlight">\(x_1\)</span> 到 <span class="math notranslate nohighlight">\(x_2\)</span> 內出現的機率為：
-$<span class="math notranslate nohighlight">\(\begin{gather*}
-P_{x_1, x_2} &amp;=&amp; \int_{x_1}^{x_2} |\psi_n|^2 dx = \frac{2}{L} \int_{x_1}^{x_2} \sin^2 \left( \frac{n\pi x}{L} \right) dx \\
-&amp;=&amp; \frac{2}{L} \int_{x_1}^{x_2} \frac{1 - \cos(2n\pi x/L)}{2} dx \\
-&amp;=&amp; \frac{1}{L} \left[ x - \frac{L}{2n\pi} \sin \left( \frac{2n\pi x}{L} \right) \right]_{x_1}^{x_2} \\
-&amp;=&amp; \left[ \frac{x}{L} - \frac{1}{2n\pi} \sin \left( \frac{2n\pi x}{L} \right) \right]_{0.45L}^{0.55L}
-\end{gather*}\)</span>$</p>
-<p>對於基態 (<span class="math notranslate nohighlight">\(n=1\)</span>)：
-$<span class="math notranslate nohighlight">\(\begin{gather*}
-P_1 &amp;=&amp; \left( 0.55 - \frac{1}{2\pi} \sin(1.1\pi) \right) - \left( 0.45 - \frac{1}{2\pi} \sin(0.9\pi) \right) \\
-&amp;=&amp; 0.10 - \frac{1}{2\pi} (-0.3090 - 0.3090) \\
-&amp;=&amp; 0.10 + \frac{0.618}{2\pi} \\
-&amp;\approx&amp; 0.10 + 0.0984 = 0.1984 \quad (19.8\%)
-\end{gather*}\)</span>$</p>
-<p>對於第一受激態 (<span class="math notranslate nohighlight">\(n=2\)</span>)：
-$<span class="math notranslate nohighlight">\(\begin{gather*}
-P_2 &amp;=&amp; \left( 0.55 - \frac{1}{4\pi} \sin(2.2\pi) \right) - \left( 0.45 - \frac{1}{4\pi} \sin(1.8\pi) \right) \\
-&amp;=&amp; 0.10 - \frac{1}{4\pi} (0.5878 - (-0.5878)) \\
-&amp;=&amp; 0.10 - \frac{1.1756}{4\pi} \\
-&amp;\approx&amp; 0.10 - 0.0935 = 0.0065 \quad (0.65\%)
-\end{gather*}\)</span>$</p>
-<p><strong>【物理知識回顧】</strong>
-所計算的區間佔據箱子寬度的十分之一，且位居正中央。古典力學認為粒子在箱內做均勻反彈，所以在此區間出現的機率理應是 <span class="math notranslate nohighlight">\(10\%\)</span>。然而，量子力學的計算顯示基態粒子在中央的機率高達近 <span class="math notranslate nohighlight">\(20\%\)</span>，而第一受激態（因為 <span class="math notranslate nohighlight">\(L/2\)</span> 處恰好是波節 Node）出現機率銳減至不到 <span class="math notranslate nohighlight">\(1\%\)</span>。這彰顯了微觀下機率與狀態量子數的強烈關聯性。</p>
+  &amp;\frac{d^2 \psi}{dx^2} + k^2 \psi &amp;=&amp; 0 \\
+  \Rightarrow &amp; \psi &amp;=&amp; A \sin(kx) + B \cos(kx) \\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\psi(x)\)</span> : 一維波函數的空間部分 <span class="math notranslate nohighlight">\([\text{m}^{-1/2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(k\)</span> : 波數 (Wave number)，<span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(A,B\)</span> : 待定常數（或振幅係數），<span class="math notranslate nohighlight">\([\text{m}^{-1/2}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 3】 依照邊界條件求出ODE待定常數：</strong></p>
+<ul class="simple">
+<li><p>(a)</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \psi(x) &amp;\overset{\text{已知 2}}{=}&amp; A \sin(kx) + B \cos(kx) \\
+  \psi(0) &amp;=&amp; A \sin(k \times 0) + B \cos(k \times 0) \\
+  0 &amp;\overset{\text{假設 2}}{=}&amp; A \sin(0) + B \cos(0) \\
+  0 &amp;=&amp; B \\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(b)</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  &amp;\psi(x) &amp;\overset{\text{已知 2}}{=}&amp; A \sin(kx) + B \cos(kx) \\
+  &amp;\psi(x) &amp;\overset{\text{已知 3(a)}}{=}&amp; A \sin(kx) + 0 \cos(kx) \\
+  &amp;\psi(x) &amp;=&amp; A \sin(kx) \\
+  &amp;\psi(L) &amp;=&amp; A \sin(k L)\\
+  &amp;0 &amp;\overset{\text{假設 2}}{=}&amp; A \sin(kL)\\
+  &amp;0 &amp;=&amp; \sin(kL) \\
+  \Rightarrow &amp; kL &amp;=&amp; n \pi &amp; \quad n = 1, 2, 3, \dots \\
+  &amp; k  &amp;=&amp; \frac{n \pi}{L}  &amp; \quad n = 1, 2, 3, \dots \\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\psi(x)\)</span> : 一維波函數的空間部分 <span class="math notranslate nohighlight">\([\text{m}^{-1/2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(k\)</span> : 波數 (Wave number)，<span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(A,B\)</span> : 待定常數（或振幅係數），<span class="math notranslate nohighlight">\([\text{m}^{-1/2}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 4】 倍角公式（Double Angle Formula）：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \sin^2(x) &amp;=&amp; \frac{1 - \cos(2x)}{2} \\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>再本次證明中 <span class="math notranslate nohighlight">\(\frac{n\pi x}{L}\)</span> 為該公式中的 <span class="math notranslate nohighlight">\(x\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 5】 波函數歸一化 (Normalization)：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \int_{-\infty}^{\infty} |\psi_n|^2 dx &amp;=&amp; 1 \\
+  \int_{-\infty}^{0} |\psi_n|^2 dx + \int_{0}^{L} |\psi_n|^2 dx +\int_{L}^{\infty} |\psi_n|^2 dx &amp;=&amp; 1 \\
+  0 + \int_{0}^{L} |\psi_n|^2 dx +0 &amp;\overset{\text{假設 1}}{=}&amp; 1 \\
+  \int_{0}^{L} A^2 \sin^2 \left( \frac{n\pi x}{L} \right) dx &amp;=&amp; 1 \\
+  \frac{A^2}{2} \int_{0}^{L} \left[ 1 - \cos \left( \frac{2n\pi x}{L} \right) \right] dx  &amp;\overset{\text{已知 4}}{=}&amp; 1 \\
+  \frac{A^2}{2} \left[ x - \frac{L}{2n\pi} \sin \left( \frac{2n\pi x}{L} \right) \right]_0^L &amp;=&amp; 1 \\
+  \frac{A^2}{2} \left( L - 0 \right) &amp;=&amp; 1 \\
+  A^2 \frac{L}{2} &amp;=&amp; 1 \quad \\
+  A &amp;=&amp; \sqrt{\frac{2}{L}}
+  \end{gather*}\end{split}\]</div>
+</li>
+</ul>
 </section>
+<section id="id10">
+<h3><strong>波函數</strong> 和 <strong>能階</strong> 推導<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
 <section id="id11">
-<h4><strong>例題 5.5.2：粒子位置的期望值</strong><a class="headerlink" href="#id11" title="Link to this heading">#</a></h4>
+<h4><strong>波函數</strong><a class="headerlink" href="#id11" title="Link to this heading">#</a></h4>
+<p>討論不是無限位能的波函數區域，並假設亞變數 <span class="math notranslate nohighlight">\(k\)</span> 解ODE並帶入邊界條件，解出該區的波函數：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+&amp;\frac{d^2 \psi}{dx^2} + \frac{2m}{\hbar^2}(E - U(x))\psi &amp;\overset{\text{已知 1}}{=}&amp; 0 \\
+&amp;\left. \frac{d^2 \psi}{dx^2} + \frac{2m}{\hbar^2} E\psi \right|_{0\le x \le L}&amp;\overset{\text{假設 1}}{=}&amp; 0 \\
+&amp;\left. \frac{d^2 \psi}{dx^2} + k^2 \psi \right|_{0\le x \le L}&amp;\overset{\text{定義 1}}{=}&amp; 0 \\
+\overset{\text{已知 2}}{\Rightarrow} &amp; \left. \psi(x) \right|_{0\le x \le L} &amp;=&amp; A \sin(kx) + B \cos(kx) \\
+&amp; \left. \psi(x) \right|_{0\le x \le L} &amp;\overset{\text{已知 3(a)}}{=}&amp; A \sin\left(kx\right)  \\
+&amp; \left. \psi_n(x) \right|_{0\le x \le L} &amp;\overset{\text{已知 3(b)}}{=}&amp; A \sin\left(\frac{n\pi x}{L}\right)  &amp; \quad n = 1, 2, 3, \dots\\
+&amp; \left. \psi_n(x) \right|_{0\le x \le L} &amp;\overset{\text{已知 5}}{=}&amp; \sqrt{\frac{2}{L}} \sin\left(\frac{n\pi x}{L}\right)  &amp; \quad n = 1, 2, 3, \dots\\
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\psi(x)\)</span> : 一維波函數的空間部分 (Spatial Wave Function)， <span class="math notranslate nohighlight">\([\text{m}^{-1/2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\psi_n(x)\)</span> : 處於第 <span class="math notranslate nohighlight">\(n\)</span> 能階的定態一維波函數 (Wave Function of the <span class="math notranslate nohighlight">\(n\)</span>-th state)， <span class="math notranslate nohighlight">\([\text{m}^{-1/2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x\)</span> : 粒子在箱中的空間位置座標 (Position)， <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> : 粒子質量 (Mass)， <span class="math notranslate nohighlight">\([\text{kg}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hbar \)</span> : 約化普朗克常數 (Reduced Planck Constant)， <span class="math notranslate nohighlight">\(\hbar \approx 1.054 \times 10^{-34} \text{J}\cdot \text{s}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(E\)</span> : 系統的總能量常數 (Total Energy)， <span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(U(x)\)</span> : 位能的空間分布 (Potential Energy Profile)， <span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(k\)</span> : 波數 (Wave number)， <span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(A, B\)</span> : 待定之微分方程式通解常數係數 (Constants of Integration)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\sqrt{\frac{2}{L}}\)</span> : 經過波函數歸一化 (Normalization) 後求得的振幅係數， <span class="math notranslate nohighlight">\([\text{m}^{-1/2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(L\)</span> : 一維箱子的寬度 (Width of the box)， <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 主量子數 (Principal Quantum Number)， <span class="math notranslate nohighlight">\(n = 1, 2, 3, \dots\)</span> <span class="math notranslate nohighlight">\([\text{dimensionless}]\)</span>（無單位）</p></li>
+</ul>
+</section>
+<section id="energy-levels">
+<h4><strong>量子化能階 (Energy Levels)：</strong><a class="headerlink" href="#energy-levels" title="Link to this heading">#</a></h4>
+<p>將 <span class="math notranslate nohighlight">\(k = \frac{n\pi}{L}\)</span> 代回 <span class="math notranslate nohighlight">\(k\)</span> 的定義式 <span class="math notranslate nohighlight">\(\frac{\sqrt{2mE}}{\hbar} = \frac{n\pi}{L}\)</span> 並將兩邊平方整理：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+k &amp;\overset{\text{定義 1}}{=}&amp; \frac{\sqrt{2mE}}{\hbar} \\
+\frac{n \pi}{L} &amp;\overset{\text{已知 3(b)}}{=}&amp; \frac{\sqrt{2mE_n}}{\hbar} &amp; \quad n = 1, 2, 3, \dots \\
+E_n &amp;=&amp; \frac{n^2 \pi^2 \hbar^2}{2mL^2} &amp; \quad n = 1, 2, 3, \dots \\
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(E_{n}\)</span> : 箱中粒子處於第 <span class="math notranslate nohighlight">\(n\)</span> 能階的定態總能量 (Energy of the <span class="math notranslate nohighlight">\(n\)</span>-th level)， <span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(L\)</span> : 一維箱子的寬度 (Width of the box)， <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 主量子數 (Principal Quantum Number)， <span class="math notranslate nohighlight">\([\text{dimensionless}]\)</span>（無單位）</p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> : 粒子質量 (Mass)， <span class="math notranslate nohighlight">\([\text{kg}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(k\)</span> : 波數 (Wave number)， <span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(E\)</span> : 系統的總能量常數 (Total Energy)， <span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hbar \)</span> : 約化普朗克常數 (Reduced Planck Constant)， <span class="math notranslate nohighlight">\(\hbar \approx 1.054 \times 10^{-34} \text{J}\cdot \text{s}\)</span></p></li>
+</ul>
+</section>
+</section>
+<section id="id12">
+<h3><strong>例題 5.5.1：粒子在特定區域的出現機率</strong><a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
+<p><strong>題目：</strong> 求出陷在寬度為 <span class="math notranslate nohighlight">\(L\)</span> 的一維位能井中的粒子，在基態 (<span class="math notranslate nohighlight">\(n=1\)</span>) 與第一受激態 (<span class="math notranslate nohighlight">\(n=2\)</span>) 時，出現在 <span class="math notranslate nohighlight">\(0.45L\)</span> 和 <span class="math notranslate nohighlight">\(0.55L\)</span> 之間的機率。</p>
+<p><strong>解答：</strong></p>
+<ul class="simple">
+<li><p>第 <span class="math notranslate nohighlight">\(n\)</span> 個態的粒子在 <span class="math notranslate nohighlight">\(x_1\)</span> 到 <span class="math notranslate nohighlight">\(x_2\)</span> 內出現的機率為：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+P_{x_1, x_2} &amp;\overset{\text{ch 5.1}}{=}&amp; \int_{x_1}^{x_2} |\psi_n|^2 dx \\
+&amp;\overset{\text{ch 5.5}}{=}&amp; \frac{2}{L} \int_{x_1}^{x_2} \sin^2 \left( \frac{n\pi x}{L} \right) dx \\
+&amp;=&amp; \frac{2}{L} \int_{x_1}^{x_2} \frac{1 - \cos(2\frac{n\pi x}{L})}{2} dx \\
+&amp;=&amp; \frac{1}{L} \left[ x - \frac{L}{2n\pi} \sin \left( \frac{2n\pi x}{L} \right) \right]_{x_1}^{x_2} \\
+&amp;=&amp; \left[ \frac{x}{L} - \frac{1}{2n\pi} \sin \left( \frac{2n\pi x}{L} \right) \right]_{0.45L}^{0.55L} \\
+&amp;=&amp; \left( 0.55 - \frac{1}{2 n\pi } \sin(1.1n\pi ) \right) - \left( 0.45 - \frac{1}{2n\pi} \sin(0.9n\pi) \right) \\
+&amp;=&amp; 0.10 - \frac{1}{2n\pi} ( \sin(1.1n\pi ) - \sin(0.9n\pi)) \\
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>對於基態 (<span class="math notranslate nohighlight">\(n=1\)</span>)：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+P_1 &amp;=&amp; \left. 0.10 - \frac{1}{2n\pi} ( \sin(1.1n\pi ) - \sin(0.9n\pi)) \right|_{n=1} \\
+&amp;\approx&amp; 0.10 - \frac{1}{2\pi} (-0.3090 - 0.3090) \\
+&amp;=&amp; 0.10 + \frac{0.618}{2\pi} \\
+&amp;\approx&amp; 0.10 + 0.0984 \\
+&amp;=&amp; 0.1984 \quad (19.8\%)
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>對於第一受激態 (<span class="math notranslate nohighlight">\(n=2\)</span>)：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+P_2 &amp;=&amp; \left. 0.10 - \frac{1}{2n\pi} ( \sin(1.1n\pi ) - \sin(0.9n\pi)) \right|_{n=2} \\
+&amp;\approx&amp; 0.10 - \frac{1}{4\pi} (0.5878 - (-0.5878)) \\
+&amp;=&amp; 0.10 - \frac{1.1756}{4\pi} \\
+&amp;\approx&amp; 0.10 - 0.0935 \\
+&amp;=&amp; 0.0065 \quad (0.65\%)
+\end{gather*}\end{split}\]</div>
+<p><strong>【物理知識回顧】</strong></p>
+<p>所計算的區間佔據箱子寬度的十分之一，且位居正中央。古典力學認為粒子在箱內做均勻反彈，所以在此區間出現的機率理應是 <span class="math notranslate nohighlight">\(10\%\)</span>。然而，量子力學的計算顯示基態粒子在中央的機率高達近 <span class="math notranslate nohighlight">\(20\%\)</span>，而第一受激態（因為 <span class="math notranslate nohighlight">\(L/2\)</span> 處恰好是波節 Node）出現機率銳減至不到 <span class="math notranslate nohighlight">\(1\%\)</span>。這彰顯了微觀下機率與狀態量子數的強烈關聯性。</p>
+</section>
+<section id="id13">
+<h3><strong>例題 5.5.2：粒子位置的期望值</strong><a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
 <p><strong>題目：</strong> 求出在寬度為 <span class="math notranslate nohighlight">\(L\)</span> 的一維箱中，粒子位置的期望值 <span class="math notranslate nohighlight">\(\langle x \rangle\)</span>。</p>
-<p><strong>解答：</strong>
-$<span class="math notranslate nohighlight">\(\begin{gather*}
-\langle x \rangle &amp;=&amp; \int_{-\infty}^{\infty} x |\psi|^2 dx \\
+<p><strong>解答：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\langle x \rangle &amp;=&amp; \int_{-\infty}^{\infty} x |\psi_n|^2 dx \\
 &amp;=&amp; \frac{2}{L} \int_{0}^{L} x \sin^2 \left( \frac{n\pi x}{L} \right) dx \\
-&amp;=&amp; \frac{2}{L} \left[ \frac{x^2}{4} - \frac{x \sin(2n\pi x/L)}{4n\pi/L} - \frac{\cos(2n\pi x/L)}{8(n\pi/L)^2} \right]_0^L
-\end{gather*}\)</span><span class="math notranslate nohighlight">\(
-代入上下限 \)</span>L<span class="math notranslate nohighlight">\( 與 \)</span>0<span class="math notranslate nohighlight">\(：
-由於 \)</span>\sin(2n\pi) = 0<span class="math notranslate nohighlight">\(、\)</span>\sin(0) = 0<span class="math notranslate nohighlight">\( 且 \)</span>\cos(2n\pi) = 1<span class="math notranslate nohighlight">\(、\)</span>\cos(0) = 1<span class="math notranslate nohighlight">\(，可得：
-\)</span><span class="math notranslate nohighlight">\(\begin{gather*}
-\langle x \rangle &amp;=&amp; \frac{2}{L} \left[ \left( \frac{L^2}{4} - 0 - \frac{1}{8(n\pi/L)^2} \right) - \left( 0 - 0 - \frac{1}{8(n\pi/L)^2} \right) \right] \\
+&amp;=&amp; \frac{2}{L} \left[ \frac{x^2}{4} - \frac{x \sin(2n\pi x/L)}{4n\pi/L} - \frac{\cos(2n\pi x/L)}{8(n\pi/L)^2} \right]_0^L \\
+&amp;=&amp; \frac{2}{L} \left( \left(\frac{L^2}{4} - \frac{L \sin(2n\pi L/L)}{4n\pi/L} - \frac{\cos(2n\pi L/L)}{8(n\pi/L)^2}\right) -  \left( \frac{0^2}{4} - \frac{0 \sin(2n\pi 0/L)}{4n\pi/L} - \frac{\cos(2n\pi 0/L)}{8(n\pi/L)^2}\right) \right) \\
+&amp;=&amp; \frac{2}{L} \left( \left( \frac{L^2}{4} - 0 - \frac{1}{8(n\pi/L)^2} \right) - \left( 0 - 0 - \frac{1}{8(n\pi/L)^2} \right) \right) \\
 &amp;=&amp; \frac{2}{L} \left( \frac{L^2}{4} \right) \\
 &amp;=&amp; \frac{L}{2}
-\end{gather*}\)</span>$</p>
-<p><strong>【物理知識回顧】</strong>
-不論粒子處於哪一個能階 <span class="math notranslate nohighlight">\(n\)</span>，其平均位置 <span class="math notranslate nohighlight">\(\langle x \rangle\)</span> 永遠落在箱子的正中央 <span class="math notranslate nohighlight">\(L/2\)</span>。這非常直觀，因為 <span class="math notranslate nohighlight">\(\sin^2\)</span> 代表的機率密度分佈以箱子中心為絕對對稱軸，長期觀測的幾何平均自然就落在中點。</p>
-<p><strong>【動量期望值的特別說明】</strong>
-值得注意的是，上述的 <span class="math notranslate nohighlight">\(\psi_n\)</span> <strong>不是</strong>動量算符的本徵態。依據尤拉公式 <span class="math notranslate nohighlight">\(\sin \theta = (e^{i\theta} - e^{-i\theta})/2i\)</span>，該駐波實際上是兩道行進波（向右動量 <span class="math notranslate nohighlight">\(+p\)</span> 與向左動量 <span class="math notranslate nohighlight">\(-p\)</span>）的疊加：
-$<span class="math notranslate nohighlight">\(\psi_n = \frac{1}{2i} \sqrt{\frac{2}{L}} e^{in\pi x/L} - \frac{1}{2i} \sqrt{\frac{2}{L}} e^{-in\pi x/L}\)</span><span class="math notranslate nohighlight">\(
-這導致動量的期望值 \)</span>\langle p \rangle<span class="math notranslate nohighlight">\( 在這個系統中恆為 \)</span>0$（向左與向右的機率相互抵消）。</p>
-</section>
+\end{gather*}\end{split}\]</div>
+<p><strong>【物理知識回顧】</strong></p>
+<p>不論粒子處於哪一個能階 <span class="math notranslate nohighlight">\(n\)</span>，其平均位置 <span class="math notranslate nohighlight">\(\langle x \rangle\)</span> 永遠落在箱子的正中央 <span class="math notranslate nohighlight">\(L/2\)</span>。這非常直觀，因為 <span class="math notranslate nohighlight">\(\sin^2\)</span> 代表的機率密度分佈以箱子中心為絕對對稱軸，長期觀測的幾何平均自然就落在中點。</p>
+<p><strong>【動量期望值的特別說明】</strong></p>
+<p>值得注意的是，上述的 <span class="math notranslate nohighlight">\(\psi_n\)</span> <strong>不是</strong>動量算符的本徵態。依據尤拉公式 <span class="math notranslate nohighlight">\(\sin \theta = \frac{1}{2i} (e^{i\theta} - e^{-i\theta})\)</span>，該駐波實際上是兩道行進波（向右動量 <span class="math notranslate nohighlight">\(+p\)</span> 與向左動量 <span class="math notranslate nohighlight">\(-p\)</span>）的疊加：</p>
+<div class="math notranslate nohighlight">
+\[\psi_n = \frac{1}{2i} \sqrt{\frac{2}{L}} e^{in\pi x/L} - \frac{1}{2i} \sqrt{\frac{2}{L}} e^{-in\pi x/L}\]</div>
+<p>這導致動量的期望值 <span class="math notranslate nohighlight">\(\langle p \rangle\)</span> 在這個系統中恆為 <span class="math notranslate nohighlight">\(0\)</span>（向左與向右的機率相互抵消）。</p>
 </section>
 </section>
 <hr class="docutils" />
 <section id="finite-potential-well">
-<h2>5.6 有限深位能井 (Finite Potential Well)<a class="headerlink" href="#finite-potential-well" title="Link to this heading">#</a></h2>
-<p>若箱子的牆壁高度不是無限大，而是有限的位能 <span class="math notranslate nohighlight">\(U_0\)</span>。當粒子的總能量 <span class="math notranslate nohighlight">\(E &lt; U_0\)</span> 時，雖然古典力學依然認為粒子被困在井中，但量子力學容許波函數「滲透」定位能壁內。</p>
-<p>將空間分為三區：</p>
+<h2>5.6 一維有限深位能井 (Finite Potential Well)<a class="headerlink" href="#finite-potential-well" title="Link to this heading">#</a></h2>
+<p>若箱子的牆壁高度不是無限大，而是有限的位能 <span class="math notranslate nohighlight">\(U_0\)</span>。當粒子的總能量 <span class="math notranslate nohighlight">\(E &lt; U_0\)</span> 時，雖然古典力學依然認為粒子被困在井中，但量子力學容許波函數「滲透」定位能壁內。我們將空間分為三個區域來討論。</p>
+<p><strong>分區波函數通解</strong>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\psi_n(x) = \left\{\begin{matrix} 
+\frac{k_n}{\sqrt{k_n^{2}+a_n^{2}}}\sqrt{\frac{2}{L+\frac{2}{a_n}}}  e^{a_nx} &amp;\quad x &lt; 0  \\ 
+\frac{a_n}{\sqrt{k_n^{2}+a_n^{2}}}\sqrt{\frac{2}{L+\frac{2}{a_n}}} \left(\sin(k_nx) +  \cos(k_nx)\right) &amp;\quad 0 \le x \le L  \\ 
+\frac{k_n}{\sqrt{k_n^{2}+a_n^{2}}}\sqrt{\frac{2}{L+\frac{2}{a_n}}} e^{-a_n(x-L)} &amp;\quad x &gt; L \end{matrix}\right.  \quad , \quad n = 1, 2, 3, \dots
+\end{split}\]</div>
 <ul class="simple">
-<li><p><strong>第一區 (<span class="math notranslate nohighlight">\(x &lt; 0\)</span>):</strong> <span class="math notranslate nohighlight">\(U = U_0\)</span></p></li>
-<li><p><strong>第二區 (<span class="math notranslate nohighlight">\(0 &lt; x &lt; L\)</span>):</strong> <span class="math notranslate nohighlight">\(U = 0\)</span></p></li>
-<li><p><strong>第三區 (<span class="math notranslate nohighlight">\(x &gt; L\)</span>):</strong> <span class="math notranslate nohighlight">\(U = U_0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\psi_n(x)\)</span> : 一維波函數的空間部分 (Spatial Wave Function)， <span class="math notranslate nohighlight">\([\text{m}^{-1/2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x\)</span> : 粒子在箱中的空間位置座標 (Position)， <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(L\)</span> : 一維箱子的寬度 (Width of the box)， <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(k_n\)</span> : 中央井內（區 II）的波數 (Wave number) <span class="math notranslate nohighlight">\(k \overset{\text{def}}{=} \frac{\sqrt{2mE}}{\hbar}\)</span>， <span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a_n\)</span> : 外部區域（區 I 與 III）的衰減常數 (Decay constant) <span class="math notranslate nohighlight">\(a \overset{\text{def}}{=} \frac{\sqrt{2m(U_0 - E)}}{\hbar}\)</span>， <span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 主量子數 (Principal Quantum Number)，應滿足 <span class="math notranslate nohighlight">\(\tan(kL) = \frac{2ak}{k^2 - a^2}\)</span> ， <span class="math notranslate nohighlight">\([\text{dimensionless}]\)</span></p></li>
 </ul>
-<p>在外部區域（區 I 與 III），薛丁格方程為：
-$<span class="math notranslate nohighlight">\(\begin{gather*}
-\frac{d^2 \psi}{dx^2} + \frac{2m}{\hbar^2} (E - U_0)\psi &amp;=&amp; 0 \\
-\frac{d^2 \psi}{dx^2} - a^2 \psi &amp;=&amp; 0 \quad \left( \text{其中 } a = \frac{\sqrt{2m(U_0 - E)}}{\hbar} \right)
-\end{gather*}\)</span><span class="math notranslate nohighlight">\(
-因為 \)</span>U_0 &gt; E<span class="math notranslate nohighlight">\(，\)</span>a<span class="math notranslate nohighlight">\( 是一個實數常數。此微分方程的通解為指數函數：
-\)</span><span class="math notranslate nohighlight">\(\begin{gather*}
-\psi_{\text{I}} &amp;=&amp; C e^{ax} + D e^{-ax} \\
-\psi_{\text{III}} &amp;=&amp; F e^{ax} + G e^{-ax}
-\end{gather*}\)</span>$</p>
-<p><strong>物理合理性篩選 (Finite everywhere):</strong>
-波函數在無窮遠處不能發散至無限大（否則機率為無限大無法歸一化）。</p>
+<p><strong>量子化能階 (Energy Levels) 的定性結果：</strong></p>
+<p>由於波函數可以向外滲透，這意味著粒子活動的「有效箱寬度」變大了。根據德布羅意波長與能量的關係，這會導致有限位能井內的能階 <span class="math notranslate nohighlight">\(E_n\)</span> 比無限深位能井來得低，精確的 <span class="math notranslate nohighlight">\(E_n\)</span> 需透過解超越方程式（Transcendental equations）求得，也就是找這兩條線<span class="math notranslate nohighlight">\(\tan(kL)\)</span> , <span class="math notranslate nohighlight">\(\frac{2ak}{k^2 - a^2}\)</span> 有交點的地方，無法寫成簡單的代數公式。</p>
+<section id="id14">
+<h3>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><strong>【假設 1】 有限高位能牆 (Finite Potential Wall)</strong>：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}U(x) = 
+  \left\{\begin{matrix}
+  U_0 &amp;\quad x &lt; 0  \\
+  0 &amp;\quad 0 \le x \le L  \\
+  U_0 &amp;\quad x &gt; L  \\
+  \end{matrix}\right.\end{split}\]</div>
 <ul class="simple">
-<li><p>在第一區 (<span class="math notranslate nohighlight">\(x \to -\infty\)</span>)，若保留 <span class="math notranslate nohighlight">\(D e^{-ax}\)</span> 會發散，故 <span class="math notranslate nohighlight">\(D = 0\)</span>，留下 <span class="math notranslate nohighlight">\(\psi_{\text{I}} = C e^{ax}\)</span>。</p></li>
-<li><p>在第三區 (<span class="math notranslate nohighlight">\(x \to +\infty\)</span>)，若保留 <span class="math notranslate nohighlight">\(F e^{ax}\)</span> 會發散，故 <span class="math notranslate nohighlight">\(F = 0\)</span>，留下 <span class="math notranslate nohighlight">\(\psi_{\text{III}} = G e^{-ax}\)</span>。</p></li>
+<li><p><span class="math notranslate nohighlight">\(U(x)\)</span>: 系統的位能隨x的函數 (Potential Energy)，<span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(U_0\)</span>: 位能井的深度（高度）且 <span class="math notranslate nohighlight">\(E&lt;U_0\)</span> ，<span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
 </ul>
-<p>在中央井內（區 II，與無限深位能井相同）：
-$<span class="math notranslate nohighlight">\(\psi_{\text{II}} = A \sin \left( \frac{\sqrt{2mE}}{\hbar} x \right) + B \cos \left( \frac{\sqrt{2mE}}{\hbar} x \right)\)</span>$</p>
-<p>最後，藉由在邊界 <span class="math notranslate nohighlight">\(x=0\)</span> 與 <span class="math notranslate nohighlight">\(x=L\)</span> 處，波函數 <span class="math notranslate nohighlight">\(\psi\)</span> 及其一階導數 <span class="math notranslate nohighlight">\(d\psi/dx\)</span> 必須連續的四大條件，便可聯立解出所有常數，並得出粒子的能階。因為波函數可以稍微滲透牆壁，實際上的有效箱寬度變大了，導致有限位能井內的能階 <span class="math notranslate nohighlight">\(E_n\)</span> 會比無限深位能井來得低。</p>
+</li>
+<li><p><strong>【假設 2】 物理合理性篩選 (Finite Everywhere)：</strong> 波函數在無窮遠處不能發散至無限大，否則機率為無限大，無法完成歸一化。</p>
+<div class="math notranslate nohighlight">
+\[\psi(x) \to 0 \quad \text{as} \quad x \to \pm \infty\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\psi(x)\)</span> : 一維波函數的空間部分 <span class="math notranslate nohighlight">\([\text{m}^{-1/2}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【假設 3】 邊界連續性條件 (Continuity Conditions)：</strong> 波函數 <span class="math notranslate nohighlight">\(\psi(x)\)</span> 及其一階導數 <span class="math notranslate nohighlight">\(\frac{d\psi}{dx}\)</span> 在任何邊界（<span class="math notranslate nohighlight">\(x=0\)</span> 與 <span class="math notranslate nohighlight">\(x=L\)</span>）都必須是連續的。</p>
+<div class="math notranslate nohighlight">
+\[\lim_{\delta x  \to 0^+}   \psi(x+\delta x) = \psi(x)\]</div>
+<div class="math notranslate nohighlight">
+\[\lim_{\delta x  \to 0^+}   \frac{d\psi(x+\delta x)}{dx} = \frac{d\psi(x)}{dx}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\psi(x)\)</span> : 一維波函數的空間部分 <span class="math notranslate nohighlight">\([\text{m}^{-1/2}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 1】 不含時薛丁格方程式 (Schrödinger’s Equation: Steady-State Form) ：</strong></p>
+<div class="math notranslate nohighlight">
+\[\frac{d^2 \psi}{dx^2} + \frac{2m}{\hbar^2}(E - U(x))\psi = 0\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\psi(x)\)</span> : 一維波函數的空間部分 <span class="math notranslate nohighlight">\([\text{m}^{-1/2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(E\)</span> : 系統的總能量常數 <span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(U(x)\)</span> : 位能的空間分布 <span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hbar\)</span>: 約化普朗克常數 (Reduced Planck Constant)， <span class="math notranslate nohighlight">\(\hbar \approx 1.054 \times 10^{-34} \text{J}\cdot \text{s} \)</span></p></li>
+<li><p>三維形式則為：<span class="math notranslate nohighlight">\(\frac{\partial^2 \psi}{\partial x^2} + \frac{\partial^2 \psi}{\partial y^2} + \frac{\partial^2 \psi}{\partial z^2} + \frac{2m}{\hbar^2}(E - U)\psi = 0\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 1】 中央井內（區 II）亞變數:二階常微分方程式(簡諧振動的形式)的波數 (Wave number) <span class="math notranslate nohighlight">\(k\)</span> ：</strong></p>
+<div class="math notranslate nohighlight">
+\[k \overset{\text{def}}{=} \frac{\sqrt{2mE}}{\hbar}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(m\)</span>: 粒子質量 (Mass)，<span class="math notranslate nohighlight">\([\text{kg}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(E\)</span> : 系統的總能量常數 <span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hbar\)</span>: 約化普朗克常數 (Reduced Planck Constant)， <span class="math notranslate nohighlight">\(\hbar \approx 1.054 \times 10^{-34} \text{J}\cdot \text{s} \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(k\)</span> : 波數 (Wave number)，<span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 2】 外部區域（區 I 與 III）亞變數:衰減常數 <span class="math notranslate nohighlight">\(a\)</span>：</strong></p>
+<div class="math notranslate nohighlight">
+\[a \overset{\text{def}}{=} \frac{\sqrt{2m(U_0 - E)}}{\hbar}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(m\)</span>: 粒子質量 (Mass)，<span class="math notranslate nohighlight">\([\text{kg}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(E\)</span> : 系統的總能量常數 <span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(U_0\)</span> : 位能井的高度，<span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hbar\)</span>: 約化普朗克常數 (Reduced Planck Constant)， <span class="math notranslate nohighlight">\(\hbar \approx 1.054 \times 10^{-34} \text{J}\cdot \text{s} \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span> : 衰減常數 (Decay Constant)，<span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
+<li><p>因為 <span class="math notranslate nohighlight">\(U_0 &gt; E\)</span>，所以 <span class="math notranslate nohighlight">\(U_0 - E\)</span> 為正值，保證 <span class="math notranslate nohighlight">\(a\)</span> 是一個實數常數。</p></li>
+</ul>
+</li>
+<li><p><strong>【已知 2】 二階常微分方程式(ODE)通解：</strong></p>
+<ul class="simple">
+<li><p>(a)</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  &amp;\frac{d^2 \psi}{dx^2} + k^2 \psi &amp;=&amp; 0 \\
+  \Rightarrow &amp; \psi_{\text{II}} &amp;=&amp; A \sin(kx) + B \cos(kx) \\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(b)</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  &amp;\frac{d^2 \psi}{dx^2} + a^2 \psi &amp;=&amp; 0 \\
+  \Rightarrow &amp; \psi_{\text{out}} &amp;=&amp; c_1 e^{ax} + c_2 e^{-ax} \\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\psi(x)\)</span> : 一維波函數的空間部分 <span class="math notranslate nohighlight">\([\text{m}^{-1/2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(k\)</span> : 波數 (Wave number)，<span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(A,B,c_1,c_2\)</span> : 待定常數，<span class="math notranslate nohighlight">\([\text{m}^{-1/2}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 3】 帶入邊界條件並使常數有物理合理性：</strong></p>
+<ul class="simple">
+<li><p>(a)對於在 <span class="math notranslate nohighlight">\(\text{I}\)</span> 區的波函數 在負無窮遠處不能發散至無限大</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \psi_{\text{I}}(x) &amp;=&amp; C e^{ax} + D e^{-ax} \\
+  \lim_{ x  \to -\infty}  \psi_{\text{I}}(x)  &amp;=&amp; \lim_{ x  \to -\infty} \left(C e^{ax} + D e^{-ax} \right) \\
+  0 &amp;\overset{\text{假設 2}}{=}&amp; \lim_{ x  \to -\infty} \left(C e^{ax} + D e^{-ax} \right)\\
+  0 &amp;=&amp; \lim_{ x  \to -\infty} C e^{ax} + \lim_{ x  \to -\infty} D e^{-ax} \\
+  0 &amp;=&amp; 0 + \lim_{ x  \to -\infty} D e^{-ax} \\
+  D &amp;=&amp; 0
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(b)</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \psi_{\text{III}}(x) &amp;=&amp; F e^{ax} + G e^{-ax} \\
+  \lim_{ x  \to \infty}  \psi_{\text{III}}(x)  &amp;=&amp; \lim_{ x  \to \infty} \left(F e^{ax} + G e^{-ax} \right) \\
+  0 &amp;\overset{\text{假設 2}}{=}&amp; \lim_{ x  \to \infty} \left(F e^{ax} + G e^{-ax} \right)\\
+  0 &amp;=&amp; \lim_{ x  \to \infty} F e^{ax} + \lim_{ x  \to \infty} G e^{-ax} \\
+  0 &amp;=&amp;  \lim_{ x  \to \infty} F e^{ax} + 0\\
+  F &amp;=&amp; 0
+  \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>【已知 4】 在邊界 <span class="math notranslate nohighlight">\(x=0\)</span> 處的連續性推導：</strong></p>
+<ul class="simple">
+<li><p><strong>(a) 波函數值連續：</strong></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \psi_{\text{I}}(0) &amp;\overset{\text{假設 3}}{=}&amp; \psi_{\text{II}}(0) \\
+  \left.C e^{ax} \right|_{x=0}&amp;=&amp; \left. (A \sin(k x) + B \cos(k x)) \right|_{x=0} \\
+  C e^{a(0)} &amp;\overset{x=0}{=}&amp; A \sin(k \times 0) + B \cos(k \times 0) \\
+  C \cdot 1 &amp;=&amp; A \cdot 0 + B \cdot 1 \\
+  C &amp;=&amp; B
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><strong>(b) 一階導數連續：</strong></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \frac{d\psi_{\text{I}}}{dx} &amp;\overset{\text{假設 3}}{=}&amp;  \frac{d\psi_{\text{II}}}{dx} \\
+  \left.\frac{d}{dx}\left[C e^{ax} \right]\right|_{x=0} &amp;=&amp; \left.\frac{d}{dx}\left[A \sin(k x) + B \cos(k x) \right] \right|_{x=0}\\
+  \left.aC e^{ax} \right|_{x=0}&amp;=&amp;\left. (kA \cos(kx) - kB \sin(kx) )\right|_{x=0}\\
+  aC e^{a(0)} &amp;\overset{x=0}{=}&amp; kA \cos(0) - kB \sin(0) \\
+  aC &amp;=&amp; kA \\
+  aB &amp;\overset{\text{已知 4(a)}}{=}&amp; kA \\
+  A &amp;=&amp; \frac{a}{k}B
+  \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>【已知 5】 在邊界 <span class="math notranslate nohighlight">\(x=L\)</span> 處的連續性推導：</strong></p>
+<ul class="simple">
+<li><p><strong>(a) 波函數值連續：</strong></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \psi_{\text{II}}(L) &amp;\overset{\text{假設 3}}{=}&amp; \psi_{\text{III}}(L) \\
+  \left. A \sin(k x) + B \cos(k x) \right|_{x=L} &amp;=&amp; \left. G e^{-ax}\right|_{x=L} \\
+  A \sin(k L) + B \cos(k L) &amp;\overset{x=L}{=}&amp; G e^{-aL} \\
+  G &amp;=&amp; e^{aL} (A \sin(k L) + B \cos(k L))\\
+  G &amp;\overset{\text{已知 4(b)}}{=}&amp; e^{aL} (\frac{a}{k}B \sin(k L) + B \cos(k L))\\ 
+  G &amp;=&amp; e^{aL}B (\frac{a}{k} \sin(k L) +  \cos(k L))\\ 
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><strong>(b) 一階導數連續：</strong></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \frac{d\psi_{\text{II}}}{dx} &amp;\overset{\text{假設 3}}{=}&amp;  \frac{d\psi_{\text{III}}}{dx} \\
+  \left.\frac{d}{dx}\left[A \sin(k x) + B \cos(k x) \right]\right|_{x=L} &amp;=&amp; \left.\frac{d}{dx}\left[G e^{-aL} \right] \right|_{x=L}\\
+  \left.(kA \cos(kx) - kB \sin(kx)) \right|_{x=L}&amp;=&amp;\left. -aG e^{-ax} \right|_{x=L}\\
+  kA \cos(kL) - kB \sin(kL) &amp;\overset{x=L}{=}&amp; -aG e^{-aL}  \\
+  G &amp;=&amp; e^{aL}\frac{k}{-a}( A \cos(kL) - B \sin(kL)) \\
+  G &amp;\overset{\text{已知 4(b)}}{=}&amp; -e^{aL}\frac{k}{a}( \frac{a}{k} B\cos(kL) -  B\sin(kL)) \\
+  G &amp;=&amp; -e^{aL}\frac{k}{a}B( \frac{a}{k} \cos(kL) -  \sin(kL)) \\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><strong>(c) 超越方程式 (Transcendental Equation) 能量量子化（Quantization）</strong></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  &amp;\frac{G}{G} &amp;\overset{\text{已知 5(a)(b)}}{=}&amp; -\frac{e^{aL} B(\frac{a}{k} \sin(k L) +  \cos(k L))}{e^{aL}\frac{k}{a}B( \frac{a}{k} \cos(kL) -  \sin(kL))} \\
+  &amp;-1 &amp;=&amp; \frac{\frac{a}{k}\sin(k L) + \cos(k L) }{\cos(k L)- \frac{k}{a} \sin(kL)} \\
+  &amp;-\cos(k L) + \frac{k}{a} \sin(kL) &amp;=&amp;  \frac{a}{k}\sin(k L) + \cos(k L) \\
+  &amp;(\frac{k}{a} - \frac{a}{k})\sin(kL) &amp;=&amp; 2 \cos(k L) \\
+  &amp;\frac{\sin(kL)}{\cos(k L)} &amp;=&amp; \frac{2}{\frac{k}{a} - \frac{a}{k}}  \\
+  &amp;\tan(kL) &amp;=&amp; \frac{2ak}{k^2 - a^2}  &amp; \Rightarrow &amp; \left\{\begin{matrix}\sin(kL)  &amp;=&amp; \frac{2ak}{k^2+a^2} \\ \cos(kL)  &amp;=&amp; \frac{k^2-a^2}{k^2+a^2} \\ \end{matrix}\right. \\
+  \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>【已知 6】 三角函數倍角公式 (Double Angle Formulas)：</strong></p>
+<ul class="simple">
+<li><p>(a)</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\sin^2(\theta) = \frac{1 - \cos(2\theta)}{2} \]</div>
+<ul class="simple">
+<li><p>(b)</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\cos^2(\theta) = \frac{1 + \cos(2\theta)}{2} \]</div>
+<ul class="simple">
+<li><p>(c)</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[2\sin(\theta)\cos(\theta) = \sin(2\theta)\]</div>
+</li>
+<li><p><strong>【已知 7】歸一化推導:每個區域準備：</strong></p>
+<ol class="arabic simple">
+<li><p>第一區積分 (<span class="math notranslate nohighlight">\(I_1\)</span>：左側牆壁內的滲透)</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  I_1 &amp;=&amp; \int_{-\infty}^{0} (\psi_{\text{I}}(x))^2 dx \\
+  &amp;=&amp; \int_{-\infty}^{0} (B e^{ax})^2 dx \\
+  &amp;=&amp; B^2 \int_{-\infty}^{0} e^{2ax} dx \\
+  &amp;=&amp; B^2 \left. \frac{1}{2a} e^{2ax} \right|^{-\infty}_{0} \\
+  &amp;=&amp; B^2 \left( \frac{1}{2a} e^{0} - \frac{1}{2a} \lim_{x \to -\infty} e^{2ax} \right) \\
+  &amp;=&amp; B^2 \left( \frac{1}{2a} \cdot 1 - 0 \right) \\
+  &amp;=&amp; \frac{B^2}{2a}
+  \end{gather*}\end{split}\]</div>
+<ol class="arabic simple" start="2">
+<li><p>第三區積分 (<span class="math notranslate nohighlight">\(I_3\)</span>：右側牆壁內的滲透)</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  I_3 &amp;=&amp; \int_{L}^{\infty} (\psi_{\text{III}}(x))^2 dx \\
+  &amp;=&amp; \int_{L}^{\infty} (Be^{-a(x-L)})^2 dx \\
+  &amp;=&amp; B^2   \int_{L}^{\infty} e^{-2a(x-L)} dx \\
+  &amp;\underset{du = dx}{\overset{u \overset{\text{let}}{=} x-L}{=}}&amp; B^2  \int_{0}^{\infty} e^{-2au} du \\
+  &amp;=&amp; B^2 \left[ \frac{-1}{2a} e^{-2au} \right]_{0}^{\infty} \\
+  &amp;=&amp; B^2  \left( 0 - \left( \frac{-1}{2a} e^{0} \right) \right) \\
+  &amp;=&amp; B^2  \left( \frac{1}{2a} \right) \\
+  &amp;=&amp; \frac{B^2}{2a} \\
+  \end{gather*}\end{split}\]</div>
+<ol class="arabic simple" start="3">
+<li><p>第二區積分 (<span class="math notranslate nohighlight">\(I_2\)</span>：中央位能井內的震盪)</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  I_2 &amp;=&amp; \int_{0}^{L} \left( \psi_{\text{II}}(x) \right)^2 dx \\
+  &amp;=&amp; \int_{0}^{L} B^2 \left( \frac{a}{k} \sin(kx) + \cos(kx) \right)^2 dx \\
+  &amp;=&amp; B^2 \int_{0}^{L} \left[ \frac{a^2}{k^2} \sin^2(kx) + \frac{2a}{k} \sin(kx)\cos(kx) + \cos^2(kx) \right] dx \\
+  &amp;\overset{\text{已知 6(a)(b)(c)}}{=}&amp; B^2 \int_{0}^{L} \left[ \frac{a^2}{k^2} \left( \frac{1 - \cos(2kx)}{2} \right) + \frac{a}{k} \sin(2kx) + \left( \frac{1 + \cos(2kx)}{2} \right) \right] dx \\
+  &amp;=&amp; B^2 \int_{0}^{L} \left[ \left( \frac{a^2}{2k^2} + \frac{1}{2} \right) + \left( \frac{1}{2} - \frac{a^2}{2k^2} \right) \cos(2kx) + \frac{a}{k} \sin(2kx) \right] dx \\
+  &amp;=&amp; B^2 \int_{0}^{L} \left[ \frac{a^2+k^2}{2k^2} + \frac{k^2-a^2}{2k^2} \cos(2kx) + \frac{a}{k} \sin(2kx) \right] dx \\
+  &amp;=&amp; B^2 \left[ \frac{a^2+k^2}{2k^2}x + \frac{k^2-a^2}{2k^2} \left( \frac{\sin(2kx)}{2k} \right) + \frac{a}{k} \left( \frac{-\cos(2kx)}{2k} \right) \right]_0^L \\
+  &amp;=&amp; B^2 \left[ \frac{a^2+k^2}{2k^2}x + \frac{k^2-a^2}{4k^3} \sin(2kx) - \frac{a}{2k^2} \cos(2kx) \right]_0^L \\
+  &amp;=&amp; B^2 \left[ \left[ \frac{a^2+k^2}{2k^2}L + \frac{k^2-a^2}{4k^3} \sin(2kL) - \frac{a}{2k^2} \cos(2kL) \right] - \left[ 0 + 0 - \frac{a}{2k^2} \cos(0) \right] \right) \\
+  &amp;=&amp; B^2 \left( \frac{a^2+k^2}{2k^2}L + \frac{k^2-a^2}{4k^3} \sin(2kL) + \frac{a}{2k^2} \left( 1 - \cos(2kL) \right) \right) \\
+  &amp;\overset{\text{已知 6(a)(c)}}{=}&amp; B^2 \left( \frac{a^2+k^2}{2k^2}L + \frac{k^2-a^2}{4k^3} 2\sin(kL)\cos(kL) + \frac{a}{2k^2} 2\sin^2(kL) \right) \\
+  &amp;\overset{\text{已知 5(c)}}{=}&amp; B^2 \left( \frac{a^2+k^2}{2k^2}L + \frac{k^2-a^2}{4k^3} 2\frac{2ak}{k^2+a^2}\frac{k^2-a^2}{k^2+a^2} + \frac{a}{2k^2} 2 \left(\frac{2ak}{k^2+a^2} \right)^2 \right) \\
+  &amp;=&amp; B^2 \left( \frac{a^2+k^2}{2k^2}L + \frac{k^{2}-a^{2}}{4k^{3}}\left(\frac{4ak(k^{2}-a^{2})}{(k^{2}+a^{2})^{2}}\right)+\frac{a}{2k^{2}}\left(\frac{8a^{2}k^{2}}{(k^{2}+a^{2})^{2}}\right) \right) \\
+  &amp;=&amp; B^2 \left( \frac{a^2+k^2}{2k^2}L + \frac{a(k^{2}-a^{2})^{2}}{k^{2}(k^{2}+a^{2})^{2}}+\frac{4a^{3}k^{2}}{k^{2}(k^{2}+a^{2})^{2}} \right) \\
+  &amp;=&amp; B^2 \left( \frac{a^2+k^2}{2k^2}L + \frac{a(k^{4}-2a^{2}k^{2}+a^{4}+4a^{2}k^{2})}{k^{2}(k^{2}+a^{2})^{2}} \right) \\
+  &amp;=&amp; B^2 \left( \frac{a^2+k^2}{2k^2}L + \frac{a(k^{2}+a^{2})^{2}}{k^{2}(k^{2}+a^{2})^{2}} \right) \\
+  &amp;=&amp; B^2 \left( \frac{a^2+k^2}{2k^2}L + \frac{a}{k^{2}} \right) \\
+  \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>【已知 8】 波函數歸一化 (Normalization)：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \int_{-\infty}^{\infty} |\psi(x)|^2 dx &amp;=&amp; 1 \\
+  \int_{-\infty}^{0} \psi_{\text{I}}^2 dx + \int_{0}^{L} \psi_{\text{II}}^2 dx + \int_{L}^{\infty} \psi_{\text{III}}^2 dx &amp;=&amp; 1 \\
+  I_1 + I_2 + I_3 &amp;=&amp; 1 \\
+  \frac{B^2}{2a} + \left(B^2 \left[ \frac{a^2+k^2}{2k^2}L + \frac{a}{k^{2}} \right]\right) + \frac{B^2}{2a}  &amp;\overset{\text{已知 7}}{=}&amp; 1 \\
+  \frac{B^2}{2a} + \left(B^2 \left[ \frac{a^2+k^2}{2k^2}L + \frac{a}{k^{2}} \right]\right) + \frac{B^2}{2a}  &amp;\overset{\text{已知 7}}{=}&amp; 1 \\
+  \frac{B^{2}}{a}+B^{2}\left[\frac{a^{2}+k^{2}}{2k^{2}}L+\frac{a}{k^{2}}\right]&amp;=&amp;1 \\
+  B^{2}\left[\frac{1}{a}+\frac{a}{k^{2}}+\frac{a^{2}+k^{2}}{2k^{2}}L\right]&amp;=&amp;1 \\
+  B^{2}\left[\frac{k^{2}+a^{2}}{ak^{2}}+\frac{k^{2}+a^{2}}{2k^{2}}L\right]&amp;=&amp;1 \\
+  B^{2}\cdot \frac{k^{2}+a^{2}}{2k^{2}}\left[\frac{2}{a}+L\right]&amp;=&amp;1 \\
+  B^{2}&amp;=&amp;\frac{2k^{2}}{(k^{2}+a^{2})\left(L+\frac{2}{a}\right)}  \\
+  B&amp;=&amp;\frac{k}{\sqrt{k^{2}+a^{2}}}\sqrt{\frac{2}{L+\frac{2}{a}}}  \\
+  \end{gather*}\end{split}\]</div>
+</li>
+</ul>
 </section>
-<hr class="docutils" />
+<section id="id15">
+<h3>波函數證明<a class="headerlink" href="#id15" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>第一區 (區 I, <span class="math notranslate nohighlight">\(x &lt; 0\)</span>)：</strong></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+&amp; \frac{d^2 \psi}{dx^2} + \frac{2m}{\hbar^2}(E - U(x))\psi &amp;\overset{\text{已知 1}}{=}&amp; 0 \\
+\overset{\text{區 I}}{\Rightarrow} &amp; \frac{d^2 \psi_{\text{I}}}{dx^2} + \frac{2m}{\hbar^2} (E-U(x)) \psi_{\text{I}} &amp;=&amp; 0 \\
+&amp; \frac{d^2 \psi_{\text{I}}}{dx^2} + \frac{2m}{\hbar^2} (E-U_0) \psi_{\text{I}} &amp;\overset{\text{假設 1}}{=}&amp; 0 \\
+&amp; \frac{d^2 \psi_{\text{I}}}{dx^2} + a^2 \psi_{\text{I}} &amp;\overset{\text{定義 2}}{=}&amp; 0 \\
+&amp;\psi_{\text{I}}(x) &amp;\overset{\text{已知 2(b)}}{=}&amp; C e^{ax} + D e^{-ax} \\
+&amp;\psi_{\text{I}}(x) &amp;\overset{\text{已知 3(a)}}{=}&amp; C e^{ax} \\
+&amp;\psi_{\text{I}}(x) &amp;\overset{\text{已知 4(a)}}{=}&amp; B e^{ax} \\
+&amp;\psi_{\text{I}}(x) &amp;\overset{\text{已知 8}}{=}&amp; \frac{k}{\sqrt{k^{2}+a^{2}}}\sqrt{\frac{2}{L+\frac{2}{a}}}  e^{ax} \\
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><strong>第三區 (區 III, <span class="math notranslate nohighlight">\(x &gt; L\)</span>)：</strong></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+&amp; \frac{d^2 \psi}{dx^2} + \frac{2m}{\hbar^2}(E - U(x))\psi &amp;\overset{\text{已知 1}}{=}&amp; 0 \\
+\overset{\text{區 III}}{\Rightarrow} &amp; \frac{d^2 \psi_{\text{III}}}{dx^2} + \frac{2m}{\hbar^2} (E-U(x)) \psi_{\text{III}} &amp;=&amp; 0 \\
+&amp; \frac{d^2 \psi_{\text{III}}}{dx^2} + \frac{2m}{\hbar^2} (E-U_0) \psi_{\text{III}} &amp;\overset{\text{假設 1}}{=}&amp; 0 \\
+&amp; \frac{d^2 \psi_{\text{III}}}{dx^2} + a^2 \psi_{\text{III}} &amp;\overset{\text{定義 2}}{=}&amp; 0 \\
+&amp;\psi_{\text{III}}(x) &amp;\overset{\text{已知 2(b)}}{=}&amp; F e^{ax} + G e^{-ax} \\
+&amp;\psi_{\text{III}}(x) &amp;\overset{\text{已知 3(b)}}{=}&amp; G e^{-ax} \\
+&amp;\psi_{\text{III}}(x) &amp;\overset{\text{已知 5(a)}}{=}&amp;  e^{aL} B(\frac{a}{k} \sin(k L) +  \cos(k L)) e^{-ax} \\
+&amp;\psi_{\text{III}}(x) &amp;=&amp; B(\frac{a}{k} \sin(k L) +  \cos(k L)) e^{-a(x-L)} \\
+&amp;\psi_{\text{III}}(x) &amp;\overset{\text{已知 5(c)}}{=}&amp; B\left( \frac{a}{k} \frac{2ak}{k^2+a^2} + \frac{k^2-a^2}{k^2+a^2} \right) e^{-a(x-L)} \\
+&amp;\psi_{\text{III}}(x) &amp;=&amp; B\left(\frac{2a^2}{k^2+a^2} + \frac{k^2-a^2}{k^2+a^2} \right) e^{-a(x-L)} \\
+&amp;\psi_{\text{III}}(x) &amp;=&amp; B\left(\frac{2a^2+k^2-a^2}{k^2+a^2} \right) e^{-a(x-L)} \\
+&amp;\psi_{\text{III}}(x) &amp;=&amp; B\left(\frac{a^2+k^2}{k^2+a^2} \right) e^{-a(x-L)} \\
+&amp;\psi_{\text{III}}(x) &amp;=&amp; Be^{-a(x-L)} \\
+&amp;\psi_{\text{III}}(x) &amp;\overset{\text{已知 8}}{=}&amp; \frac{k}{\sqrt{k^{2}+a^{2}}}\sqrt{\frac{2}{L+\frac{2}{a}}} e^{-a(x-L)} \\
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><strong>第二區 (區 II, <span class="math notranslate nohighlight">\(0 \le x \le L\)</span>)：</strong></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+&amp;\frac{d^2 \psi}{dx^2} + \frac{2m}{\hbar^2}(E - U(x))\psi &amp;\overset{\text{已知 1}}{=}&amp; 0 \\
+\overset{\text{區 II}}{\Rightarrow} &amp; \frac{d^2 \psi_{\text{II}}}{dx^2} + \frac{2m}{\hbar^2} (E - U(x))\psi_{\text{II}} &amp;=&amp; 0 \\
+&amp; \frac{d^2 \psi_{\text{II}}}{dx^2} + \frac{2m}{\hbar^2} E\psi_{\text{II}} &amp;\overset{\text{假設 1}}{=}&amp; 0 \\
+&amp; \frac{d^2 \psi_{\text{II}}}{dx^2} + k^2 \psi_{\text{II}} &amp;\overset{\text{定義 1}}{=}&amp; 0 \\
+&amp;  \psi_{\text{II}}(x)  &amp;\overset{\text{已知 2}}{=}&amp; A \sin(kx) + B \cos(kx) \\
+&amp;  \psi_{\text{II}}(x)  &amp;\overset{\text{已知 4(b)}}{=}&amp; \frac{a}{k}B \sin(kx) + B \cos(kx) \\
+&amp;  \psi_{\text{II}}(x)  &amp;=&amp; \frac{a}{k}B \left(\sin(kx) +  \cos(kx)\right) \\
+&amp;  \psi_{\text{II}}(x)  &amp;\overset{\text{已知 8}}{=}&amp; \frac{a}{k}\frac{k}{\sqrt{k^{2}+a^{2}}}\sqrt{\frac{2}{L+\frac{2}{a}}} \left(\sin(kx) +  \cos(kx)\right) \\
+&amp;  \psi_{\text{II}}(x)  &amp;=&amp; \frac{a}{\sqrt{k^{2}+a^{2}}}\sqrt{\frac{2}{L+\frac{2}{a}}} \left(\sin(kx) +  \cos(kx)\right) \\
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>合併 <strong>第一區、第二區、第三區</strong></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\psi(x) &amp;=&amp; \left\{\begin{matrix} \psi_{\text{I}} &amp;\quad x &lt; 0  \\ \psi_{\text{II}} &amp;\quad 0 \le x \le L  \\ \psi_{\text{III}} &amp;\quad x &gt; L \end{matrix}\right.  \\
+\psi(x) &amp;=&amp; \left\{\begin{matrix} 
+\frac{k}{\sqrt{k^{2}+a^{2}}}\sqrt{\frac{2}{L+\frac{2}{a}}}  e^{ax} &amp;\quad x &lt; 0  \\ 
+\frac{a}{\sqrt{k^{2}+a^{2}}}\sqrt{\frac{2}{L+\frac{2}{a}}} \left(\sin(kx) +  \cos(kx)\right) &amp;\quad 0 \le x \le L  \\ 
+\frac{k}{\sqrt{k^{2}+a^{2}}}\sqrt{\frac{2}{L+\frac{2}{a}}} e^{-a(x-L)} &amp;\quad x &gt; L \end{matrix}\right.  \\
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\psi(x)\)</span> : 系統的一維定態波函數， <span class="math notranslate nohighlight">\([\text{m}^{-1/2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(k\)</span> : 內部波數，與粒子動能有關， <span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span> : 外部衰減常數，決定了波函數「滲透」牆壁的深度 (Penetration depth, 通常定義為 <span class="math notranslate nohighlight">\(\delta = \frac{1}{a}\)</span>)， <span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
+</ul>
+</section>
+</section>
 <section id="tunnel-effect">
 <h2>5.7 穿隧效應 (Tunnel Effect)<a class="headerlink" href="#tunnel-effect" title="Link to this heading">#</a></h2>
 <p>量子力學中最違反直覺的現象之一：若粒子能量 <span class="math notranslate nohighlight">\(E\)</span> 小於位能障壁高度 <span class="math notranslate nohighlight">\(U\)</span>，在古典力學中粒子會被 <span class="math notranslate nohighlight">\(100\%\)</span> 彈回；但在量子力學中，因為波函數在障壁內是以指數衰減而非瞬間歸零，只要牆壁夠薄，波函數就有機會在另一端「穿透」出來，使粒子具備非零的機率跨越障壁。</p>
-<section id="id12">
-<h3>穿隧機率精確解推導<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
-<p>給定一個高度為 <span class="math notranslate nohighlight">\(U\)</span>，寬度為 <span class="math notranslate nohighlight">\(L\)</span>（從 <span class="math notranslate nohighlight">\(x=0\)</span> 到 <span class="math notranslate nohighlight">\(x=L\)</span>）的位能障壁。</p>
-<p><strong>1. 分區薛丁格方程式與解：</strong></p>
-<ul class="simple">
-<li><p><strong>第一區 (入射區 <span class="math notranslate nohighlight">\(x &lt; 0\)</span>, <span class="math notranslate nohighlight">\(U=0\)</span>):</strong>
-$<span class="math notranslate nohighlight">\(\frac{d^2 \psi_{\text{I}}}{dx^2} + \frac{2m}{\hbar^2} E \psi_{\text{I}} = 0\)</span><span class="math notranslate nohighlight">\(
-  定義入射波數 \)</span>k_1 = \frac{\sqrt{2mE}}{\hbar}<span class="math notranslate nohighlight">\(，通解包含入射波（\)</span>e^{ik_1 x}<span class="math notranslate nohighlight">\(）與反射波（\)</span>e^{-ik_1 x}<span class="math notranslate nohighlight">\(）：
-  \)</span><span class="math notranslate nohighlight">\(\psi_{\text{I}} = A e^{ik_1 x} + B e^{-ik_1 x}\)</span>$</p></li>
-<li><p><strong>第二區 (障礙區 <span class="math notranslate nohighlight">\(0 &lt; x &lt; L\)</span>, <span class="math notranslate nohighlight">\(U &gt; E\)</span>):</strong>
-$<span class="math notranslate nohighlight">\(\frac{d^2 \psi_{\text{II}}}{dx^2} + \frac{2m}{\hbar^2} (E - U) \psi_{\text{II}} = 0\)</span><span class="math notranslate nohighlight">\(
-  定義衰減係數 \)</span>k_2 = \frac{\sqrt{2m(U - E)}}{\hbar}<span class="math notranslate nohighlight">\(，通解為實數指數形式：
-  \)</span><span class="math notranslate nohighlight">\(\psi_{\text{II}} = C e^{-k_2 x} + D e^{k_2 x}\)</span>$</p></li>
-<li><p><strong>第三區 (穿透區 <span class="math notranslate nohighlight">\(x &gt; L\)</span>, <span class="math notranslate nohighlight">\(U=0\)</span>):</strong>
-$<span class="math notranslate nohighlight">\(\frac{d^2 \psi_{\text{III}}}{dx^2} + \frac{2m}{\hbar^2} E \psi_{\text{III}} = 0\)</span><span class="math notranslate nohighlight">\(
-  因為障礙物後方沒有其他東西反射它，我們只保留向右行進的穿透波：
-  \)</span><span class="math notranslate nohighlight">\(\psi_{\text{III}} = F e^{ik_1 x}\)</span>$</p></li>
-</ul>
-<p><strong>2. 連續邊界條件 (Boundary Conditions):</strong>
-在 <span class="math notranslate nohighlight">\(x = 0\)</span> 處波與斜率連續：
-$<span class="math notranslate nohighlight">\(\begin{gather*}
-\psi_{\text{I}}(0) &amp;=&amp; \psi_{\text{II}}(0) \implies A + B = C + D \\
-\psi_{\text{I}}'(0) &amp;=&amp; \psi_{\text{II}}'(0) \implies ik_1 A - ik_1 B = -k_2 C + k_2 D
-\end{gather*}\)</span>$</p>
-<p>在 <span class="math notranslate nohighlight">\(x = L\)</span> 處波與斜率連續：
-$<span class="math notranslate nohighlight">\(\begin{gather*}
-\psi_{\text{II}}(L) &amp;=&amp; \psi_{\text{III}}(L) \implies C e^{-k_2 L} + D e^{k_2 L} = F e^{ik_1 L} \\
-\psi_{\text{II}}'(L) &amp;=&amp; \psi_{\text{III}}'(L) \implies -k_2 C e^{-k_2 L} + k_2 D e^{k_2 L} = ik_1 F e^{ik_1 L}
-\end{gather*}\)</span>$</p>
-<p><strong>3. 穿隧機率 (Transmission Probability) <span class="math notranslate nohighlight">\(T\)</span> 求解：</strong>
-穿隧機率定義為穿透波強度（機率流）除以入射波強度。在速度相同的情況下，此為振幅平方比：
-$<span class="math notranslate nohighlight">\(T = \frac{|\psi_{\text{III}+}|^2 v_{\text{III}+}}{|\psi_{\text{I}+}|^2 v_{\text{I}+}} = \frac{FF^*}{AA^*} = \left| \frac{F}{A} \right|^2\)</span>$</p>
-<p>透過上述四大方程式進行繁瑣的代數消去 <span class="math notranslate nohighlight">\(B, C, D\)</span> 之後，可得到精確的穿隧率公式：
-$<span class="math notranslate nohighlight">\(T = \left[ 1 + \frac{1}{4} \left( \frac{k_1}{k_2} + \frac{k_2}{k_1} \right)^2 \sinh^2(k_2 L) \right]^{-1}\)</span>$</p>
-<p><strong>4. 寬障壁的近似解：</strong>
-通常實驗中障壁不會極度薄（即 <span class="math notranslate nohighlight">\(k_2 L \gg 1\)</span>），此時 <span class="math notranslate nohighlight">\(\sinh(k_2 L) \approx \frac{1}{2} e^{k_2 L}\)</span>，公式大幅簡化：
-$<span class="math notranslate nohighlight">\(\begin{gather*}
-T &amp;\approx&amp; \left[ \frac{1}{4} \left( \frac{k_1^2 + k_2^2}{k_1 k_2} \right)^2 \left( \frac{1}{2} e^{k_2 L} \right)^2 \right]^{-1} \\
-&amp;=&amp; \left[ \frac{16 k_1^2 k_2^2}{(k_1^2 + k_2^2)^2} \right] e^{-2k_2 L}
-\end{gather*}\)</span>$
-而最前端的中括號因子數量級通常落在1附近，真正決定穿隧機率數量級的「主宰項」是後方的指數衰減，故最終常用的<strong>近似穿隧機率</strong>為：</p>
 <div class="math notranslate nohighlight">
-\[T \approx e^{-2k_2 L}\]</div>
-<p>其中：
-$<span class="math notranslate nohighlight">\(k_2 = \frac{\sqrt{2m(U - E)}}{\hbar}\)</span>$</p>
+\[T \approx  e^{-2k_{2}L} \]</div>
+<section id="id16">
+<h3>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#id16" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><strong>【假設 1】 有限寬度位能障壁 (Finite Potential Barrier) ：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  U(x) = \left\{\begin{matrix}
+  0 &amp;\quad x &lt; 0 \quad (\text{區 I}) \\
+  U_0 &amp;\quad 0 \le x \le L \quad (\text{區 II}) \\
+  0 &amp;\quad x &gt; L \quad (\text{區 III}) \\
+  \end{matrix}\right. 
+  \end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(U(x)\)</span>: 系統的位能隨x的函數 (Potential Energy)，<span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(U_0\)</span>: 位能井的高度，且已知 <span class="math notranslate nohighlight">\(U &gt; E\)</span>，<span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【假設 2】 物理合理性邊界篩選 (No Return Wave from Infinity)：</strong> 在障壁後方（區 III）的空間中，因為沒有其他障礙物會再次反射波函數，所以我們認定不存在向左行進的波。</p>
+<div class="math notranslate nohighlight">
+\[\psi_{\text{III}^-}(x) = 0\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\psi(x)\)</span> : 一維波函數的空間部分 <span class="math notranslate nohighlight">\([\text{m}^{-1/2}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【假設 3】 邊界連續性條件 (Continuity Conditions)：</strong> 波函數 <span class="math notranslate nohighlight">\(\psi(x)\)</span> 及其一階導數 <span class="math notranslate nohighlight">\(\frac{d\psi}{dx}\)</span> 在任何邊界（<span class="math notranslate nohighlight">\(x=0\)</span> 與 <span class="math notranslate nohighlight">\(x=L\)</span>）都必須是連續的。</p>
+<div class="math notranslate nohighlight">
+\[\lim_{\delta x  \to 0^+}   \psi(x+\delta x) = \psi(x)\]</div>
+<div class="math notranslate nohighlight">
+\[\lim_{\delta x  \to 0^+}   \frac{d\psi(x+\delta x)}{dx} = \frac{d\psi(x)}{dx}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\psi(x)\)</span> : 一維波函數的空間部分 <span class="math notranslate nohighlight">\([\text{m}^{-1/2}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 1】 不含時薛丁格方程式 (Schrödinger’s Equation: Steady-State Form) ：</strong></p>
+<div class="math notranslate nohighlight">
+\[\frac{d^2 \psi}{dx^2} + \frac{2m}{\hbar^2}(E - U(x))\psi = 0\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\psi(x)\)</span> : 一維波函數的空間部分 <span class="math notranslate nohighlight">\([\text{m}^{-1/2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(E\)</span> : 系統的總能量常數 <span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(U(x)\)</span> : 位能的空間分布 <span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hbar\)</span>: 約化普朗克常數 (Reduced Planck Constant)， <span class="math notranslate nohighlight">\(\hbar \approx 1.054 \times 10^{-34} \text{J}\cdot \text{s} \)</span></p></li>
+<li><p>三維形式則為：<span class="math notranslate nohighlight">\(\frac{\partial^2 \psi}{\partial x^2} + \frac{\partial^2 \psi}{\partial y^2} + \frac{\partial^2 \psi}{\partial z^2} + \frac{2m}{\hbar^2}(E - U)\psi = 0\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 1】 自由傳播區（區 I、III）亞變數：入射波數 <span class="math notranslate nohighlight">\(k_1\)</span>：</strong></p>
+<div class="math notranslate nohighlight">
+\[k_1 \overset{\text{def}}{=} \frac{\sqrt{2mE}}{\hbar}\]</div>
+</li>
+<li><p><strong>【定義 2】 障礙區（區 II）亞變數：衰減係數 <span class="math notranslate nohighlight">\(k_2\)</span>：</strong>
+ 
+$<span class="math notranslate nohighlight">\(k_2 \overset{\text{def}}{=} \frac{\sqrt{2m(U_0 - E)}}{\hbar}\)</span>$</p>
+<ul class="simple">
+<li><p>因為 <span class="math notranslate nohighlight">\(U_0 &gt; E\)</span>，所以 <span class="math notranslate nohighlight">\(U_0 - E\)</span> 為正值，保證 <span class="math notranslate nohighlight">\(k_2\)</span> 是一個實數</p></li>
+</ul>
+</li>
+<li><p><strong>【定義 3】 穿隧機率 (Transmission Probability) <span class="math notranslate nohighlight">\(T\)</span>：</strong>  定義為穿透波強度（機率流）除以入射波強度。在穿透區與入射區位能相同（速度相同）的情況下，即為波函數振幅的絕對值平方比：</p>
+<div class="math notranslate nohighlight">
+\[T \overset{\text{def}}{=} \frac{|\psi_{\text{III}+}|^2 v_{\text{III}+}}{|\psi_{\text{I}+}|^2 v_{\text{I}+}}  \]</div>
+</li>
+<li><p><strong>【假設 4】 能量守恆 (Continuity Conditions)：</strong> 波函數 <span class="math notranslate nohighlight">\(\psi(x)\)</span> 及其一階導數 <span class="math notranslate nohighlight">\(\frac{d\psi}{dx}\)</span> 在任何邊界（<span class="math notranslate nohighlight">\(x=0\)</span> 與 <span class="math notranslate nohighlight">\(x=L\)</span>）都必須是連續的。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  E_{\text{I}+} &amp;=&amp; E_{\text{III}+} \\
+  K_{\text{I}+} + U_{\text{I}+} &amp;=&amp; K_{\text{II}+} + U_{\text{III}+} \\
+  K_{\text{I}+} + 0 &amp;\overset{\text{假設 1}}{=}&amp; K_{\text{II}+} + 0 \\
+  v_{\text{I}+} &amp;=&amp; v_{\text{III}+} \\
+  \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>【已知 0】 雙曲函數 (Hyperbolic Functions) 定義與恆等式：</strong></p>
+<ul class="simple">
+<li><p>(a) <span class="math notranslate nohighlight">\(\cosh(x) = \frac{e^x + e^{-x}}{2}\)</span></p></li>
+<li><p>(b) <span class="math notranslate nohighlight">\(\sinh(x) = \frac{e^x - e^{-x}}{2}\)</span></p></li>
+<li><p>(c) <span class="math notranslate nohighlight">\(\cosh^2(x) - \sinh^2(x) = 1\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 2】 二階常微分方程式(ODE)通解：</strong></p>
+<ul class="simple">
+<li><p>(a)</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  &amp;\frac{d^2 \psi}{dx^2} + k^2 \psi &amp;=&amp; 0 \\
+  \Rightarrow &amp; \psi &amp;=&amp; A \sin(kx) + B \cos(kx) \\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(b) 如果 <span class="math notranslate nohighlight">\(k^2&gt;0\)</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  &amp;\frac{d^2 \psi}{dx^2} + k^2 \psi &amp;=&amp; 0 \\
+  \Rightarrow &amp; \psi_{\text{out}} &amp;=&amp; c_1 e^{kx} + c_2 e^{-kx} \\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(c) 如果 <span class="math notranslate nohighlight">\(k^2&lt;0\)</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  &amp;\frac{d^2 \psi}{dx^2} + k^2 \psi &amp;=&amp; 0 \\
+  \Rightarrow &amp; \psi_{\text{II}} &amp;=&amp; c_1 e^{ikx} + c_2 e^{-ikx} \\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\psi(x)\)</span> : 一維波函數的空間部分 <span class="math notranslate nohighlight">\([\text{m}^{-1/2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(k\)</span> : 波數 (Wave number)，<span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(A,B,c_1,c_2\)</span> : 待定常數，<span class="math notranslate nohighlight">\([\text{m}^{-1/2}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 3】 波函數：</strong></p>
+<ul class="simple">
+<li><p><strong>(a) 第一區 (區 I, <span class="math notranslate nohighlight">\(x &lt; 0\)</span>)：</strong></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  &amp; \frac{d^2 \psi}{dx^2} + \frac{2m}{\hbar^2}(E - U(x))\psi &amp;\overset{\text{已知 1}}{=}&amp; 0 \\
+  \overset{\text{區 I}}{\Rightarrow} &amp; \frac{d^2 \psi_{\text{I}}}{dx^2} + \frac{2m}{\hbar^2} (E-U(x)) \psi_{\text{I}} &amp;=&amp; 0 \\
+  &amp; \frac{d^2 \psi_{\text{I}}}{dx^2} + \frac{2m}{\hbar^2} E \psi_{\text{I}} &amp;\overset{\text{假設 1}}{=}&amp; 0 \\
+  &amp; \frac{d^2 \psi_{\text{I}}}{dx^2} + k_1^2 \psi_{\text{I}} &amp;\overset{\text{定義 2}}{=}&amp; 0 \\
+  &amp;\psi_{\text{I}}(x) &amp;\overset{\text{已知 2(b)}}{=}&amp; A e^{k_1x} + B e^{-k_1x} \\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><strong>(a’) 第一區向右的波</strong></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\psi_{\text{I+}}(x) \overset{\text{已知 2(b)}}{=} A e^{k_1x}  \]</div>
+<ul class="simple">
+<li><p><strong>(b)第二區 (區 II, <span class="math notranslate nohighlight">\(0 \le x \le L\)</span>)：</strong></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  &amp;\frac{d^2 \psi}{dx^2} + \frac{2m}{\hbar^2}(E - U(x))\psi &amp;\overset{\text{已知 1}}{=}&amp; 0 \\
+  \overset{\text{區 II}}{\Rightarrow} &amp; \frac{d^2 \psi_{\text{II}}}{dx^2} + \frac{2m}{\hbar^2} (E - U(x))\psi_{\text{II}} &amp;=&amp; 0 \\
+  &amp; \frac{d^2 \psi_{\text{II}}}{dx^2} + \frac{2m}{\hbar^2} (E - U_0)\psi_{\text{II}} &amp;\overset{\text{假設 1}}{=}&amp; 0 \\
+  &amp; \frac{d^2 \psi_{\text{II}}}{dx^2} + k_2^2 \psi_{\text{II}} &amp;\overset{\text{定義 1}}{=}&amp; 0 \\
+  &amp;  \psi_{\text{II}}(x)  &amp;\overset{\text{已知 2}}{=}&amp; D e^{ik_2x} + C e^{-ik_2x} \\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><strong>(c) 第三區 (區 III, <span class="math notranslate nohighlight">\(x &gt; L\)</span>)：</strong></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  &amp; \frac{d^2 \psi}{dx^2} + \frac{2m}{\hbar^2}(E - U(x))\psi &amp;\overset{\text{已知 1}}{=}&amp; 0 \\
+  \overset{\text{區 III}}{\Rightarrow} &amp; \frac{d^2 \psi_{\text{III}}}{dx^2} + \frac{2m}{\hbar^2} (E-U(x)) \psi_{\text{III}} &amp;=&amp; 0 \\
+  &amp; \frac{d^2 \psi_{\text{III}}}{dx^2} + \frac{2m}{\hbar^2} E \psi_{\text{III}} &amp;\overset{\text{假設 1}}{=}&amp; 0 \\
+  &amp; \frac{d^2 \psi_{\text{III}}}{dx^2} + k_1^2 \psi_{\text{III}} &amp;\overset{\text{定義 2}}{=}&amp; 0 \\
+  &amp;\psi_{\text{III}}(x) &amp;\overset{\text{已知 2(b)}}{=}&amp; F e^{k_1x} + G e^{-k_1x} \\
+  &amp;\psi_{\text{III}}(x) &amp;\overset{\text{假設 2}}{=}&amp; F e^{k_1x} + 0 e^{-k_1x} \\
+  &amp;\psi_{\text{III}}(x) &amp;\overset{\text{假設 2}}{=}&amp; F e^{k_1x}  \\
+  \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>【已知 4】 在邊界 <span class="math notranslate nohighlight">\(x=0\)</span> 處的連續性推導：</strong></p>
+<ul class="simple">
+<li><p>(a) 波函數值連續：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \psi_{\text{I}}(0) &amp;\overset{\text{假設 3}}{=}&amp; \psi_{\text{II}}(0) \\
+  \left. (A e^{ik_1 x} + B e^{-ik_1 x}) \right|_{x=0} &amp;\overset{\text{已知 3(a)(b)}}{=}&amp; \left. (C e^{-k_2 x} + D e^{k_2 x}) \right|_{x=0} \\
+  A + B &amp;=&amp; C + D 
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(b) 一階導數連續：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \frac{d\psi_{\text{I}}(0)}{dx} &amp;\overset{\text{假設 3}}{=}&amp;  \frac{d\psi_{\text{II}}(0)}{dx} \\
+  \left.\frac{d}{dx}\left[ A e^{ik_1 x} + B e^{-ik_1 x}  \right]\right|_{x=0} &amp;=&amp; \left. \frac{d}{dx} \left[ C e^{-k_2 x} + D e^{k_2 x}  \right]\right|_{x=0}\\
+  \left. (ik_1 A e^{ik_1 x} - ik_1 B e^{-ik_1 x}) \right|_{x=0} &amp;=&amp; \left. (-k_2 C e^{-k_2 x} + k_2 D e^{k_2 x}) \right|_{x=0} \\
+  ik_1(A - B) &amp;=&amp; k_2(D - C) 
+  \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>【已知 5】 在邊界 <span class="math notranslate nohighlight">\(x=L\)</span> 處的連續性推導：</strong></p>
+<ul class="simple">
+<li><p>(a) 波函數值連續：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \psi_{\text{II}}(L) &amp;\overset{\text{假設 3}}{=}&amp; \psi_{\text{III}}(L) \\
+  \left. (C e^{-k_2 x} + D e^{k_2 x}) \right|_{x=L} &amp;\overset{\text{已知 3(b)(c)}}{=}&amp; \left. (F e^{ik_1 x}) \right|_{x=L} \\
+  C e^{-k_2 L} + D e^{k_2 L} &amp;=&amp; F e^{ik_1 L} \\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(b) 一階導數連續：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \frac{d\psi_{\text{II}}}{dx} &amp;\overset{\text{假設 3}}{=}&amp;  \frac{d\psi_{\text{III}}}{dx} \\
+  \left.\frac{d}{dx}\left[ C e^{-k_2 x} + D e^{k_2 x}  \right]\right|_{x=L} &amp;=&amp; \left. \frac{d}{dx} \left[ F e^{ik_1 x}  \right]\right|_{x=L}\\
+  \left. (-k_2 C e^{-k_2 x} + k_2 D e^{k_2 x}) \right|_{x=L} &amp;=&amp; \left. (ik_1 F e^{ik_1 x}) \right|_{x=L} \\
+  -k_2 C e^{-k_2 L} + k_2 D e^{k_2 L} &amp;=&amp; ik_1 F e^{ik_1 L}
+  \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>【已知 6】 代數消去法求出 <span class="math notranslate nohighlight">\(A\)</span> 和 <span class="math notranslate nohighlight">\(F\)</span> 的關係：</strong></p>
+<ul class="simple">
+<li><p>(a) 求出 <span class="math notranslate nohighlight">\(D\)</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}k_2 \times \text{已知 5(a)} + \text{已知 5(b)} \\
+  \begin{gather*}
+  k_2\left( C e^{-k_2 L} + k_2 D e^{k_2 L}\right) + \left(-k_2 C e^{-k_2 L} + k_2 D e^{k_2 L}\right) &amp;=&amp; k_2 \left(F e^{ik_1 L}\right)+ \left(ik_1 F e^{ik_1 L}\right) \\
+  2k_2 D e^{k_2 L} &amp;=&amp;  (k_2 + ik_1) F e^{ik_1 L}\\
+  D &amp;=&amp; \frac{k_2 + ik_1}{2k_2} F e^{(ik_1 - k_2)L}\\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(b) 求出 <span class="math notranslate nohighlight">\(C\)</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  k_2 \times \text{已知 5(a)} - \text{已知 5(b)} \\
+  \begin{gather*}
+  k_2\left( C e^{-k_2 L} + k_2 D e^{k_2 L}\right) - \left(-k_2 C e^{-k_2 L} + k_2 D e^{k_2 L}\right) &amp;=&amp; k_2 \left(F e^{ik_1 L}\right)- \left(ik_1 F e^{ik_1 L}\right) \\
+  2k_2 C e^{-k_2 L} &amp;=&amp; (k_2 - ik_1) F e^{ik_1 L} \\
+  C &amp;=&amp; \frac{k_2 - ik_1}{2k_2} F e^{(ik_1 + k_2)L}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(c) 消除 <span class="math notranslate nohighlight">\(B,C,D\)</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  ik_1(A - B) &amp;\overset{\text{已知 4(b)}}{=}&amp; k_2(D - C) \\
+  A - B &amp;=&amp;  \frac{k_2}{ik_1}(D - C) \\
+  A - B &amp;=&amp; -i\frac{k_2}{k_1}(D - C) \\
+  (A + B) + (A - B) &amp;\overset{\text{已知 4(a)}}{=}&amp; (C + D) - i\frac{k_2}{k_1}(D - C) \\
+  2A &amp;=&amp; C\left(1 + i\frac{k_2}{k_1}\right) + D\left(1 - i\frac{k_2}{k_1}\right) \\
+  2A &amp;=&amp; C\left(\frac{k_1 + ik_2}{k_1}\right) + D\left(\frac{k_1 - ik_2}{k_1}\right) \\
+  2A &amp;\overset{\text{已知 6(a)(b)}}{=}&amp; \left[ \frac{k_2 - ik_1}{2k_2} F e^{(ik_1 + k_2)L} \right] \left(\frac{k_1 + ik_2}{k_1}\right) + \left[ \frac{k_2 + ik_1}{2k_2} F e^{(ik_1 - k_2)L} \right] \left(\frac{k_1 - ik_2}{k_1}\right) \\
+  2A &amp;=&amp; \frac{F e^{ik_1 L}}{2k_1 k_2} \left[ (k_2 - ik_1)(k_1 + ik_2)e^{k_2 L} + (k_2 + ik_1)(k_1 - ik_2)e^{-k_2 L} \right]\\
+  2A &amp;=&amp; \frac{F e^{ik_1 L}}{2k_1 k_2} \left[ (k_1 k_2 + ik_2^2 - ik_1^2 + k_1 k_2)e^{k_2 L} + (k_1 k_2 + ik_1^2 - ik_2^2 + k_1 k_2)e^{-k_2 L} \right]\\
+  2A &amp;=&amp; \frac{F e^{ik_1 L}}{2k_1 k_2} \left[ (2k_1 k_2 - i(k_1^2 - k_2^2))e^{k_2 L} + (2k_1 k_2 + i(k_1^2 - k_2^2))e^{-k_2 L} \right] \\
+  2A &amp;=&amp; F e^{ik_1 L} \left[ (e^{k_2 L} + e^{-k_2 L}) - i\frac{k_1^2 - k_2^2}{2k_1 k_2}(e^{k_2 L} - e^{-k_2 L}) \right] \\
+  \frac{A}{F} &amp;=&amp; \frac{1}{2}e^{ik_1 L} \left[ (e^{k_2 L} + e^{-k_2 L}) - i\frac{k_1^2 - k_2^2}{2k_1 k_2}(e^{k_2 L} - e^{-k_2 L}) \right] \\
+  \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>【假設 5】 「寬障壁」近似條件 (Wide Barrier Approximation)：</strong>  位能障壁不能「薄到可以忽略不計」</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  k_2 L \gg 1 \\
+  e^{k_2 L} \gg e^{-k_2 L} \\
+  \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>【已知 7】 主宰項法則近似 (Dominant Term Approximation)</strong> 當 <span class="math notranslate nohighlight">\(a\gg 1\)</span></p>
+<div class="math notranslate nohighlight">
+\[ 1+a \approx a\]</div>
+</li>
+<li><p><strong>【已知 8】 數量級化簡</strong> 當 <span class="math notranslate nohighlight">\(a\gg 1\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  T \approx \underbrace{\left[ \frac{16k_1^2 k_2^2}{(k_1^2 + k_2^2)^2} \right]}_{\text{前置係數 (Pre-exponential factor)}} \times \underbrace{e^{-2k_2 L}}_{\text{指數衰減主宰項}} \\
+  \approx e^{-2k_2 L}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\frac{16k_1^2 k_2^2}{(k_1^2 + k_2^2)^2} \)</span> 的order在 <span class="math notranslate nohighlight">\(10^0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(e^{-2k_2 L}\)</span>  的order在 <span class="math notranslate nohighlight">\(10^-10\)</span></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id17">
+<h3>穿隧機率推導<a class="headerlink" href="#id17" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+T &amp;\overset{\text{定義 3}}{=}&amp; \frac{|\psi_{\text{III}+}|^2 v_{\text{III}+}}{|\psi_{\text{I}+}|^2 v_{\text{I}+}}  \\
+T &amp;\overset{\text{假設 4}}{=}&amp; \frac{|\psi_{\text{III}+}|^2 }{|\psi_{\text{I}+}|^2 }  \\
+T &amp;\overset{\text{已知 3(a')(c)}}{=}&amp; \frac{|F e^{ik_1 x}|^2 }{|A e^{ik_1 x}|^2 }  \\
+T &amp;=&amp; \frac{(F e^{ik_1 x})(F e^{ik_1 x})^* }{(A e^{ik_1 x})(A e^{ik_1 x})^* }  \\
+T &amp;=&amp; \frac{(F e^{ik_1 x})(F^* e^{-ik_1 x}) }{(A e^{ik_1 x})(A^* e^{-ik_1 x}) }  \\
+T &amp;=&amp; \frac{FF^* }{AA^* } \\
+T &amp;=&amp; \left[\frac{ AA^*}{FF^* } \right]^{-1}  \\
+T &amp;\overset{\text{已知 6(c)}}{=}&amp; \left[\frac{1}{2} e^{ik_1 L} \left( (e^{k_2 L} + e^{-k_2 L}) - i\frac{k_1^2 - k_2^2}{2k_1 k_2}(e^{k_2 L} - e^{-k_2 L}) \right) \cdot \frac{1}{2}e^{ik_1 L} \left( (e^{k_2 L} + e^{-k_2 L}) - i\frac{k_1^2 - k_2^2}{2k_1 k_2}(e^{k_2 L} - e^{-k_2 L}) \right)^* \right]^{-1} \\
+T &amp;=&amp; 4\left[e^{ik_1 L} \left( (e^{k_2 L} + e^{-k_2 L}) - i\frac{k_1^2 - k_2^2}{2k_1 k_2}(e^{k_2 L} - e^{-k_2 L}) \right) \cdot e^{-ik_1 L} \left( (e^{k_2 L} + e^{-k_2 L}) + i\frac{k_1^2 - k_2^2}{2k_1 k_2}(e^{k_2 L} - e^{-k_2 L}) \right) \right]^{-1} \\
+T &amp;=&amp; 4\left[ \left( (e^{k_2 L} + e^{-k_2 L}) - i\frac{k_1^2 - k_2^2}{2k_1 k_2}(e^{k_2 L} - e^{-k_2 L}) \right) \cdot  \left( (e^{k_2 L} + e^{-k_2 L}) + i\frac{k_1^2 - k_2^2}{2k_1 k_2}(e^{k_2 L} - e^{-k_2 L}) \right) \right]^{-1} \\
+T &amp;=&amp; 4\left[ \left(e^{k_{2}L}+e^{-k_{2}L}\right)^{2}+\left(\frac{k_{1}^{2}-k_{2}^{2}}{2k_{1}k_{2}}\right)^{2}\left(e^{k_{2}L}-e^{-k_{2}L}\right)^{2}\right]^{-1} \\
+T &amp;=&amp; 4\left[ \left(e^{k_{2}L}-e^{-k_{2}L}\right)^{2}+4(e^{k_{2}L}\cdot e^{-k_{2}L})+\left(\frac{k_{1}^{2}-k_{2}^{2}}{2k_{1}k_{2}}\right)^{2}\left(e^{k_{2}L}-e^{-k_{2}L}\right)^{2}\right]^{-1} \\
+T &amp;=&amp; 4\left[ \left(e^{k_{2}L}-e^{-k_{2}L}\right)^{2}+4+\left(\frac{k_{1}^{2}-k_{2}^{2}}{2k_{1}k_{2}}\right)^{2}\left(e^{k_{2}L}-e^{-k_{2}L}\right)^{2}\right]^{-1} \\
+T &amp;=&amp; 4\left[ 4+\left[1+\left(\frac{k_{1}^{2}-k_{2}^{2}}{2k_{1}k_{2}}\right)^{2}\right]\left(e^{k_{2}L}-e^{-k_{2}L}\right)^{2}\right]^{-1} \\
+T &amp;=&amp; 4\left[ 4+\left[1+\frac{k_{1}^{4}-2k_{1}^{2}k_{2}^{2}+k_{2}^{4}}{4k_{1}^2k_{2}^2}\right]\left(e^{k_{2}L}-e^{-k_{2}L}\right)^{2}\right]^{-1} \\
+T &amp;=&amp; 4\left[ 4+\frac{k_{1}^{4}+2k_{1}^{2}k_{2}^{2}+k_{2}^{4}}{4k_{1}^2k_{2}^2}\left(e^{k_{2}L}-e^{-k_{2}L}\right)^{2}\right]^{-1} \\
+T &amp;=&amp; 4\left[ 4+\frac{(k_{1}^{2}+k_{2}^{2})^2}{4k_{1}^2k_{2}^2}\left(e^{k_{2}L}-e^{-k_{2}L}\right)^{2}\right]^{-1} \\
+T &amp;=&amp; \left[ 1+\frac{(k_{1}^{2}+k_{2}^{2})^2}{16k_{1}^2k_{2}^2}\left(e^{k_{2}L}-e^{-k_{2}L}\right)^{2}\right]^{-1} \\
+T &amp;\overset{\text{假設 5}}{\approx}&amp;  \left[ 1+\frac{(k_{1}^{2}+k_{2}^{2})^2}{16k_{1}^2k_{2}^2}\left(e^{k_{2}L}-0\right)^{2}\right]^{-1} \\
+T &amp;\overset{\text{已知 7}}{\approx}&amp;  \left[ \frac{(k_{1}^{2}+k_{2}^{2})^2}{16k_{1}^2k_{2}^2}e^{2k_{2}L}\right]^{-1} \\
+T &amp;=&amp;  \frac{16k_{1}^2k_{2}^2}{(k_{1}^{2}+k_{2}^{2})^2}e^{-2k_{2}L} \\
+T &amp;\overset{\text{已知 8}}{\approx}&amp;  e^{-2k_{2}L} \\
+\end{gather*}\end{split}\]</div>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(T\)</span> : 穿隧機率 <span class="math notranslate nohighlight">\([\text{dimensionless}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(U\)</span> : 位能障壁高度 <span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(U_0\)</span> : 位能障壁高度 <span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(E\)</span> : 粒子入射總能量 <span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(k_2\)</span> : 衰減係數 <span class="math notranslate nohighlight">\(k_2 = \frac{\sqrt{2m(U_0 - E)}}{\hbar}\)</span>， <span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(L\)</span> : 位能障壁寬度 <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
 </ul>
-<section id="id13">
-<h4><strong>例題 5.7：穿隧機率的極端敏感性</strong><a class="headerlink" href="#id13" title="Link to this heading">#</a></h4>
-<p><strong>題目：</strong> 具有能量 <span class="math notranslate nohighlight">\(1.0\text{ eV}\)</span> 和 <span class="math notranslate nohighlight">\(2.0\text{ eV}\)</span> 的電子射向高達 <span class="math notranslate nohighlight">\(10.0\text{ eV}\)</span>、寬 <span class="math notranslate nohighlight">\(0.5\text{ nm}\)</span> 的位能障壁。(a) 求它們個別的穿隧機率。(b) 如果障壁的寬度加倍，會有怎樣的影響？電子質量 <span class="math notranslate nohighlight">\(m_e = 9.1 \times 10^{-31}\text{ kg}\)</span>，約化普朗克常數 <span class="math notranslate nohighlight">\(\hbar = 1.054 \times 10^{-34}\text{ J}\cdot\text{s}\)</span>。</p>
-<p><strong>解答：</strong></p>
-<p>(a) 對於 <span class="math notranslate nohighlight">\(1.0\text{ eV}\)</span> 的電子：
-首先計算障壁內的衰減波數 <span class="math notranslate nohighlight">\(k_2\)</span>：
-$<span class="math notranslate nohighlight">\(\begin{gather*}
-k_2 &amp;=&amp; \frac{\sqrt{2m(U - E)}}{\hbar} \\
-&amp;=&amp; \frac{\sqrt{2(9.1 \times 10^{-31} \text{ kg})[(10.0 - 1.0) \text{ eV}](1.6 \times 10^{-19} \text{ J/eV})}}{1.054 \times 10^{-34} \text{ J}\cdot\text{s}} \\
-&amp;\approx&amp; 1.6 \times 10^{10} \text{ m}^{-1}
-\end{gather*}\)</span>$</p>
-<p>計算指數項：
-$<span class="math notranslate nohighlight">\(\begin{gather*}
-L &amp;=&amp; 0.50 \text{ nm} = 5.0 \times 10^{-10} \text{ m} \\
-2k_2 L &amp;=&amp; 2(1.6 \times 10^{10} \text{ m}^{-1})(5.0 \times 10^{-10} \text{ m}) \\
-&amp;=&amp; 16
-\end{gather*}\)</span>$</p>
-<p>近似穿隧機率為：
-$<span class="math notranslate nohighlight">\(T_1 = e^{-2k_2 L} = e^{-16} \approx 1.1 \times 10^{-7}\)</span>$</p>
-<p>（平均每八百九十萬個電子會有一個成功穿隧）</p>
-<p>對 <span class="math notranslate nohighlight">\(2.0\text{ eV}\)</span> 電子套用相同計算：
-可以得到 <span class="math notranslate nohighlight">\(2k_2 L \approx 15.24\)</span>
-$<span class="math notranslate nohighlight">\(T_2 = e^{-15.24} \approx 2.4 \times 10^{-7}\)</span>$
-提升粒子的能量使得穿透機率提升了約兩倍多。</p>
-<p>(b) 障壁寬度加倍（<span class="math notranslate nohighlight">\(L = 1.0\text{ nm}\)</span>）：
-此時 <span class="math notranslate nohighlight">\(2k_2 L\)</span> 直接翻倍：
-$<span class="math notranslate nohighlight">\(\begin{gather*}
-T_1' &amp;=&amp; e^{-32} \approx 1.3 \times 10^{-14} \\
-T_2' &amp;=&amp; e^{-30.48} \approx 5.1 \times 10^{-14}
-\end{gather*}\)</span>$</p>
-<p><strong>【物理知識回顧】</strong>
-在 <span class="math notranslate nohighlight">\(1.0\text{ eV}\)</span> 的條件下，原本百萬分之一機率可觀測到的穿隧現象，僅僅因為把障壁厚度加厚了 <span class="math notranslate nohighlight">\(0.5\text{ nm}\)</span>（約只有幾個原子的寬度），穿透機率就發生了雪崩式暴跌，縮小了一千萬倍！這展現了穿隧效應對於「距離 <span class="math notranslate nohighlight">\(L\)</span>」具有指數級的極端敏感性。這項特質被科學家完美利用發明了<strong>掃描式穿隧電子顯微鏡 (STM)</strong>，藉由偵測微小的穿隧電流變化，就能達到觀測單個原子表面起伏的超級解析度。</p>
 </section>
+<section id="id18">
+<h3><strong>例題 5.7：穿隧機率的極端敏感性</strong><a class="headerlink" href="#id18" title="Link to this heading">#</a></h3>
+<p><strong>題目：</strong> 具有能量 <span class="math notranslate nohighlight">\(1.0\text{ eV}\)</span> 和 <span class="math notranslate nohighlight">\(2.0\text{ eV}\)</span> 的電子射向高達 <span class="math notranslate nohighlight">\(10.0\text{ eV}\)</span>、寬 <span class="math notranslate nohighlight">\(0.5\text{ nm}\)</span> 的位能障壁。電子質量 <span class="math notranslate nohighlight">\(m_e = 9.1 \times 10^{-31}\text{ kg}\)</span>，約化普朗克常數 <span class="math notranslate nohighlight">\(\hbar = 1.054 \times 10^{-34}\text{ J}\cdot\text{s}\)</span>。</p>
+<p>(a) 求它們個別的穿隧機率。</p>
+<p>(b) 如果障壁的寬度加倍，會有怎樣的影響？</p>
+<p><strong>解答：</strong></p>
+<ul class="simple">
+<li><p>(a) 對於 <span class="math notranslate nohighlight">\(1.0\text{ eV}\)</span> 的電子和 <span class="math notranslate nohighlight">\(2.0\text{ eV}\)</span> 的電子近似穿隧機率為：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+T_1 &amp;=&amp; e^{-2 k_2 L} \\
+&amp;=&amp; e^{-2 \frac{\sqrt{2m_e(U - E)}}{\hbar} L} \\
+&amp;=&amp; e^{-2 \frac{\sqrt{2\times 9.1 \times 10^{-31}\text{ kg} (10.0\text{ eV} - 1.0\text{ eV})}}{1.054 \times 10^{-34}\text{ J}\cdot\text{s}} \times 0.5\times 10^{-9}\text{ m}} \\
+&amp;=&amp; e^{-15.36} \\
+&amp;\approx&amp; 2.13 \times 10^{-7}\\
+\end{gather*}\end{split}\]</div>
+<p>對於 <span class="math notranslate nohighlight">\(1.0\text{ eV}\)</span> 的電子平均每八百九十萬個電子會有一個成功穿隧 <span class="math notranslate nohighlight">\(10.0\text{ eV}\)</span>、寬 <span class="math notranslate nohighlight">\(0.5\text{ nm}\)</span> 的位能障壁。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+T_1 &amp;=&amp; e^{-2 k_2 L} \\
+&amp;=&amp; e^{-2 \frac{\sqrt{2m_e(U - E)}}{\hbar} L} \\
+&amp;=&amp; e^{-2 \frac{\sqrt{2\times 9.1 \times 10^{-31}\text{ kg} (10.0\text{ eV} - 2.0\text{ eV})}}{1.054 \times 10^{-34}\text{ J}\cdot\text{s}} \times 0.5\times 10^{-9}\text{ m}} \\
+&amp;=&amp; e^{-14.48} \\
+&amp;\approx&amp; 5.14 \times 10^{-7}\\
+\end{gather*}\end{split}\]</div>
+<p>粒子能量變成兩倍使得穿透機率提升了約兩倍多。</p>
+<ul class="simple">
+<li><p>(b) 障壁寬度加倍（<span class="math notranslate nohighlight">\(L = 1.0\text{ nm}\)</span>）：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+T_1 &amp;=&amp; e^{-2 k_2 L} \\
+&amp;=&amp; e^{-2 \frac{\sqrt{2m_e(U - E)}}{\hbar} L} \\
+&amp;=&amp; e^{-2 \frac{\sqrt{2\times 9.1 \times 10^{-31}\text{ kg} (10.0\text{ eV} - 1.0\text{ eV})}}{1.054 \times 10^{-34}\text{ J}\cdot\text{s}} \times 1 \times 10^{-9}\text{ m}} \\
+&amp;=&amp; e^{-30.72} \\
+&amp;\approx&amp; 4.56 \times 10^{-14}\\
+\end{gather*}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+T_1 &amp;=&amp; e^{-2 k_2 L} \\
+&amp;=&amp; e^{-2 \frac{\sqrt{2m_e(U - E)}}{\hbar} L} \\
+&amp;=&amp; e^{-2 \frac{\sqrt{2\times 9.1 \times 10^{-31}\text{ kg} (10.0\text{ eV} - 2.0\text{ eV})}}{1.054 \times 10^{-34}\text{ J}\cdot\text{s}} \times 1 \times 10^{-9}\text{ m}} \\
+&amp;=&amp; e^{-28.96} \\
+&amp;\approx&amp; 2.64 \times 10^{-13}\\
+\end{gather*}\end{split}\]</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>障壁寬度 <span class="math notranslate nohighlight">\(L\)</span></p></th>
+<th class="head"><p>能量差 <span class="math notranslate nohighlight">\((V_0 - E)\)</span></p></th>
+<th class="head"><p>指數部分的值</p></th>
+<th class="head"><p>穿隧機率 <span class="math notranslate nohighlight">\(T \approx e^{\text{值}}\)</span></p></th>
+<th class="head"><p>穿隧機率（科學記號）</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0.5 nm</p></td>
+<td><p>9.0 eV (<span class="math notranslate nohighlight">\(10.0 - 1.0\)</span>)</p></td>
+<td><p><span class="math notranslate nohighlight">\(-15.36\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(e^{-15.36}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(2.13 \times 10^{-7}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>0.5 nm</p></td>
+<td><p>8.0 eV (<span class="math notranslate nohighlight">\(10.0 - 2.0\)</span>)</p></td>
+<td><p><span class="math notranslate nohighlight">\(-14.48\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(e^{-14.48}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(5.14 \times 10^{-7}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>1.0 nm</p></td>
+<td><p>9.0 eV (<span class="math notranslate nohighlight">\(10.0 - 1.0\)</span>)</p></td>
+<td><p><span class="math notranslate nohighlight">\(-30.72\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(e^{-30.72}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(4.56 \times 10^{-14}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>1.0 nm</p></td>
+<td><p>8.0 eV (<span class="math notranslate nohighlight">\(10.0 - 2.0\)</span>)</p></td>
+<td><p><span class="math notranslate nohighlight">\(-28.96\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(e^{-28.96}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(2.64 \times 10^{-13}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>【物理知識回顧】</strong></p>
+<p>在 <span class="math notranslate nohighlight">\(1.0\text{ eV}\)</span> 的條件下，原本百萬分之一機率可觀測到的穿隧現象，僅僅因為把障壁厚度加厚了 <span class="math notranslate nohighlight">\(0.5\text{ nm}\)</span>（約只有幾個原子的寬度），穿透機率就發生了雪崩式暴跌，縮小了一千萬倍！這展現了穿隧效應對於「距離 <span class="math notranslate nohighlight">\(L\)</span>」具有指數級的極端敏感性。這項特質被科學家完美利用發明了<strong>掃描式穿隧電子顯微鏡 (STM)</strong>，藉由偵測微小的穿隧電流變化，就能達到觀測單個原子表面起伏的超級解析度。</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="harmonic-oscillator">
+<h2>5.8 諧振子 (Harmonic Oscillator)<a class="headerlink" href="#harmonic-oscillator" title="Link to this heading">#</a></h2>
+<p>在物理學中，任何在平衡點附近作微小振動的系統（例如雙原子分子的振動、晶體晶格的熱振動），都可以利用泰勒展開式將位能局部近似為一個拋物線。這使得「諧振子」成為量子力學中少數能夠得到精確解析解，且應用極為廣泛的基礎模型。與之前討論的「有限深位能井」（垂直且陡峭的牆壁）不同，諧振子的位能牆壁是平滑彎曲的。</p>
+<section id="id19">
+<h3>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#id19" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>**【已知 1】 虎克定律與古典運動方程式：**描述一個物體受到的回復力與其偏離平衡位置的位移成正比，且方向相反 (<span class="math notranslate nohighlight">\(F = -kx\)</span>)。根據牛頓第二定律 (<span class="math notranslate nohighlight">\(F = ma\)</span>)，可列出運動方程式：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  m \frac{d^2x}{dt^2} &amp;=&amp; -kx \\
+  \frac{d^2x}{dt^2} + \frac{k}{m}x &amp;=&amp; 0
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>其古典解為一個簡諧運動 <span class="math notranslate nohighlight">\(x(t) = A \cos (\omega t + \phi)\)</span></p></li>
+<li></li>
+</ul>
+</li>
+<li><p><strong>【定義 1】 系統自然角頻率 <span class="math notranslate nohighlight">\(\omega\)</span>：</strong></p>
+<div class="math notranslate nohighlight">
+\[\omega \overset{\text{def}}{=} \sqrt{\frac{k}{m}}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(k\)</span> : 力常數 (Force constant)，<span class="math notranslate nohighlight">\([\text{N/m}]\)</span> 或 <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> : 粒子質量，<span class="math notranslate nohighlight">\([\text{kg}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\omega\)</span> : 角頻率 (Angular frequency)，<span class="math notranslate nohighlight">\([\text{rad/s}]\)</span>，與一般頻率的關係為 <span class="math notranslate nohighlight">\(\nu = \frac{\omega}{2\pi}\)</span> <span class="math notranslate nohighlight">\([\text{Hz}]\)</span>。這也意味著我們可以將力常數代換為 <span class="math notranslate nohighlight">\(k = m\omega^2\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 2】 古典諧振子的位能場 (Potential Energy)：</strong> 位能定義為保守力作負功，給定平衡點 <span class="math notranslate nohighlight">\(x=0\)</span> 處位能為零：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  U(x) &amp;=&amp; -\int_{0}^{x} F(x') dx' \\
+  &amp;=&amp; -\int_{0}^{x} (-kx') dx' \\
+  &amp;=&amp; \frac{1}{2}kx^2 \\
+  &amp;\overset{\text{定義 1}}{=}&amp; \frac{1}{2}m\omega^2 x^2
+  \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>【已知 3】 不含時薛丁格方程式 (Schrödinger’s Equation: Steady-State Form) ：</strong></p>
+<div class="math notranslate nohighlight">
+\[\frac{d^2 \psi}{dx^2} + \frac{2m}{\hbar^2}(E - U(x))\psi = 0\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\psi(x)\)</span> : 一維波函數的空間部分 <span class="math notranslate nohighlight">\([\text{m}^{-1/2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(E\)</span> : 系統的總能量常數 <span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(U(x)\)</span> : 位能的空間分布 <span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hbar\)</span>: 約化普朗克常數 (Reduced Planck Constant)， <span class="math notranslate nohighlight">\(\hbar \approx 1.054 \times 10^{-34} \text{J}\cdot \text{s} \)</span></p></li>
+<li><p>三維形式則為：<span class="math notranslate nohighlight">\(\frac{\partial^2 \psi}{\partial x^2} + \frac{\partial^2 \psi}{\partial y^2} + \frac{\partial^2 \psi}{\partial z^2} + \frac{2m}{\hbar^2}(E - U)\psi = 0\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 2】 定義空間縮放常數 <span class="math notranslate nohighlight">\(\beta\)</span> ：</strong> 我們觀察方程式中 <span class="math notranslate nohighlight">\(x^2\)</span> 的係數，定義一個輔助常數 <span class="math notranslate nohighlight">\(\beta\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \beta &amp;\overset{\text{def}}{=}&amp; \frac{\sqrt{mk}}{\hbar} \\
+  &amp;=&amp; \frac{m\omega}{\hbar} 
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 空間縮放常數  <span class="math notranslate nohighlight">\([\text{m}^{-2}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 3】 定義無因次變數 <span class="math notranslate nohighlight">\(y\)</span>：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  y &amp;\overset{\text{def}}{=}&amp; \sqrt{\beta} x \\
+  &amp;=&amp; \left( \frac{m\omega}{\hbar} \right)^{1/2} x 
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(y\)</span> 無因次變數 <span class="math notranslate nohighlight">\([\text{dimensionless}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 1】 空間微分算子的連鎖律轉換 (Chain Rule)：</strong>  根據微積分連鎖律，我們需要把對 <span class="math notranslate nohighlight">\(x\)</span> 的微分換成對 <span class="math notranslate nohighlight">\(y\)</span> 的微分。</p>
+<ul class="simple">
+<li><p>(a)一階微分</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \frac{d\psi}{dx} &amp;=&amp; \frac{d\psi}{dy} \frac{dy}{dx} \\
+  &amp;=&amp; \frac{d\psi}{dy} \frac{d}{dx}[\sqrt{\beta}x] \\
+  &amp;=&amp; \sqrt{\beta} \frac{d\psi}{dy}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(b)二階微分：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \frac{d^2\psi}{dx^2} &amp;=&amp; \frac{d}{dx} \left[ \sqrt{\beta} \frac{d\psi}{dy} \right] \\
+  &amp;=&amp; \sqrt{\beta} \frac{d}{dx} \left[ \frac{d\psi}{dy} \right] \\
+  &amp;=&amp; \sqrt{\beta} \frac{d}{dy} \left[ \frac{d\psi}{dx} \right] \\
+  &amp;\overset{\text{推導 1(a)}}{=}&amp; \sqrt{\beta} \frac{d}{dy} \left[ \sqrt{\beta} \frac{d\psi}{dy} \right] \\
+  &amp;=&amp; \sqrt{\beta} \sqrt{\beta}\frac{d}{dy} \left[  \frac{d\psi}{dy} \right] \\
+  &amp;=&amp; \beta \frac{d^2\psi}{dy^2}
+  \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>【定義 4】 無因次能量參數 <span class="math notranslate nohighlight">\(\alpha\)</span>：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \alpha &amp;\overset{\text{def}}{=}&amp; \frac{2mE}{\beta\hbar^2} \\
+  &amp;=&amp; \frac{2mE}{(\frac{m\omega}{\hbar})\hbar^2} \\
+  &amp;=&amp; \frac{2E}{\hbar\omega}
+  \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>【已知 4】 ODE通解且在<span class="math notranslate nohighlight">\(\infty\)</span>處不發散：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  &amp;\frac{d^2\psi}{dy^2} + \left( \alpha - y^2 \right)\psi &amp;=&amp; 0 
+  \end{gather*} \\
+  \Rightarrow \left\{\begin{matrix} \psi(y)&amp;=&amp; H_n(y)e^{-\frac{y^2}{2}}  \\  \alpha &amp;=&amp; 2n+1 \end{matrix}\right.    ,\quad n=0,1,2,\dots
+  \end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(H_n(y)\)</span> 埃爾米特多項式 (Hermite Polynomials)</p></li>
+</ul>
+</li>
+<li><p><strong>【推導 2】 空間變數代換：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  y &amp;\overset{\text{定義 3}}{=}&amp; \left( \frac{m\omega}{\hbar} \right)^{1/2} x \\ 
+  \sqrt{\frac{\hbar}{m\omega}} dy &amp;=&amp; dx \\
+  \end{gather*}\end{split}\]</div>
+</li>
+<li><p>**【已知 5】 厄米特多項式的正交歸一性 (Orthogonality of Hermite Polynomials)：**純數學的高階微積分定理，帶有高斯權重的厄米特多項式平方積分</p>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^{\infty} H_n^2(y) e^{-y^2} dy = \sqrt{\pi} 2^n n!\]</div>
+</li>
+<li><p><strong>【已知 6】 機率歸一化條件：</strong> 全空間積分必須為 1，注意這裡是對真實的空間座標 <span class="math notranslate nohighlight">\(x\)</span> 積分。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \int_{-\infty}^{\infty} |\psi_n(x)|^2 dx &amp;=&amp; 1 \\
+  \int_{-\infty}^{\infty} \left| N_n H_n(y) e^{-y^2/2} \right|^2 dx &amp;=&amp; 1 \\
+  N_n^2 \int_{-\infty}^{\infty} H_n^2(y) e^{-y^2} \left( \sqrt{\frac{\hbar}{m\omega}} dy \right) &amp;\overset{\text{推導 2}}{=}&amp; 1 \\
+  N_n^2 \sqrt{\frac{\hbar}{m\omega}} \int_{-\infty}^{\infty} H_n^2(y) e^{-y^2} dy &amp;=&amp; 1 \\
+  N_n^2 \sqrt{\frac{\hbar}{m\omega}} \left( \sqrt{\pi} 2^n n! \right) &amp;\overset{\text{已知 5}}{=}&amp; 1 \\
+  N_n^2 &amp;=&amp; \sqrt{\frac{m\omega}{\pi\hbar}} \frac{1}{2^n n!} \\
+  N_n &amp;=&amp; \left( \frac{m\omega}{\pi\hbar} \right)^{1/4} \frac{1}{\sqrt{2^n n!}}\\
+  N_n &amp;\overset{\text{定義 1}}{=}&amp; \left( \frac{m(2\pi\nu)}{\pi\hbar} \right)^{1/4} \frac{1}{\sqrt{2^n n!}}\\
+  N_n &amp;=&amp; \left( \frac{2m\nu}{\hbar} \right)^{1/4} \frac{1}{\sqrt{2^n n!}}\\
+  \end{gather*}\end{split}\]</div>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="non-dimensionalization">
+<h3>薛丁格方程式的去因次化推導 (Non-dimensionalization)<a class="headerlink" href="#non-dimensionalization" title="Link to this heading">#</a></h3>
+<p>將諧振子的位能 <span class="math notranslate nohighlight">\(U(x) = \frac{1}{2}kx^2\)</span> 代入薛丁格方程式中，我們得到一個帶有變數係數 <span class="math notranslate nohighlight">\(x^2\)</span> 的二階常微分方程式：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{d^2 \psi}{dx^2} + \frac{2m}{\hbar^2}(E - U(x))\psi &amp;\overset{\text{已知 3}}{=}&amp; 0 \\
+\frac{d^2\psi}{dx^2} + \frac{2m}{\hbar^2} \left( E - \frac{1}{2}m\omega^2 x^2  \right)\psi &amp;\overset{\text{已知 2}}{=}&amp; 0 \\
+\frac{d^2\psi}{dx^2} + \left(\frac{2mE}{\hbar^2}  - \frac{m^2\omega^2}{\hbar^2} x^2  \right)\psi &amp;=&amp; 0 \\
+\frac{d^2\psi}{dx^2} + \left(\frac{2mE}{\hbar^2}  - \beta^2 x^2  \right)\psi &amp;\overset{\text{定義 2}}{=}&amp; 0 \\
+\frac{d^2\psi}{dx^2} + \left(\frac{2mE}{\hbar^2}  - \beta^2 \left( \frac{y}{\sqrt{\beta}} \right)^2  \right)\psi &amp;\overset{\text{定義 3}}{=}&amp; 0 \\
+\frac{d^2\psi}{dx^2} + \left(\frac{2mE}{\hbar^2}  - \beta  y^2   \right)\psi &amp;=&amp; 0 \\
+\beta \frac{d^2\psi}{dy^2} + \left(\frac{2mE}{\hbar^2}  - \beta  y^2   \right)\psi &amp;\overset{\text{推導 1(b)}}{=}&amp; 0 \\
+\frac{d^2\psi}{dy^2} + \left( \frac{2mE}{\beta\hbar^2} - y^2 \right)\psi &amp;=&amp; 0 \\
+\frac{d^2\psi}{dy^2} + \left( \alpha - y^2 \right)\psi &amp;\overset{\text{定義 4}}{=}&amp; 0 \\
+\end{gather*}\\
+\begin{gather*}
+\overset{\text{已知 4}}{\Rightarrow} &amp;\left\{\begin{matrix} \psi_n(y)&amp;=&amp; H_n(y)e^{-\frac{y^2}{2}}  \\  \alpha &amp;=&amp; 2n+1 \end{matrix}\right.    ,\quad n=0,1,2,\dots \\
+\overset{\text{定義 4}}{\Rightarrow} &amp;\left\{\begin{matrix} \psi_n(y) &amp;=&amp; \left( \frac{2m\nu}{\hbar} \right)^{1/4} \frac{1}{\sqrt{2^n n!}} H_n(y) e^{-y^2/2}  \\  \alpha &amp;=&amp; 2n+1 \end{matrix}\right.    ,\quad n=0,1,2,\dots \\
+\overset{\text{已知 6}}{\Rightarrow} &amp;\left\{\begin{matrix} \psi_n(y) &amp;=&amp; \underbrace{ \left( \frac{2m\nu}{\hbar} \right)^{1/4} \frac{1}{\sqrt{2^n n!}} }_{\text{1. 歸一化常數}} \times \underbrace{ H_n(y) }_{\text{2. 核心震盪項}} \times \underbrace{ e^{-y^2/2} }_{\text{3. 邊界衰減項}}  \\  \alpha &amp;=&amp; 2n+1 \end{matrix}\right.    ,\quad n=0,1,2,\dots \\
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\psi\)</span> : 系統的波函數，<span class="math notranslate nohighlight">\([\text{m}^{-1/2}]\)</span>（在一維情況下）</p></li>
+<li><p><span class="math notranslate nohighlight">\(E\)</span> : 系統總能量，<span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(k\)</span> : 諧振子力常數，<span class="math notranslate nohighlight">\([\text{N/m}]\)</span> 或 <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> : 粒子質量，<span class="math notranslate nohighlight">\([\text{kg}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\nu\)</span> : 系統經典自然頻率，<span class="math notranslate nohighlight">\([\text{Hz}]\)</span> 或 <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\omega\)</span> : 系統自然角頻率，<span class="math notranslate nohighlight">\(\omega = 2\pi\nu\)</span>，<span class="math notranslate nohighlight">\([\text{rad/s}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hbar\)</span> : 約化普朗克常數，<span class="math notranslate nohighlight">\(\hbar = \frac{h}{2\pi} \approx 1.054 \times 10^{-34} \text{ J}\cdot\text{s}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y\)</span> : 轉換後的無因次空間變數，<span class="math notranslate nohighlight">\([\text{dimensionless}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha\)</span> : 轉換後的無因次能量參數，<span class="math notranslate nohighlight">\([\text{dimensionless}]\)</span></p></li>
+</ul>
+<ol class="arabic simple">
+<li><p><strong>歸一化係數</strong> <span class="math notranslate nohighlight">\(\left( \frac{2m\nu}{\hbar} \right)^{1/4} (2^n n!)^{-1/2}\)</span>：確保粒子在全空間出現的總機率積分為 <span class="math notranslate nohighlight">\(1\)</span>。</p></li>
+<li><p><strong>厄米多項式 (Hermite Polynomial)</strong> <span class="math notranslate nohighlight">\(H_n(y)\)</span>：公式的「骨架」。決定了波函數在位能井內部如何震盪交錯。隨著階數 <span class="math notranslate nohighlight">\(n\)</span> 增加，波函數穿過零點的節點（Node）數目也會等於 <span class="math notranslate nohighlight">\(n\)</span>。</p></li>
+<li><p><strong>高斯衰減項</strong> <span class="math notranslate nohighlight">\(e^{-y^2/2}\)</span>：公式的「包絡線」。確保當粒子遠離平衡位置進入古典禁區時，波函數會快速收斂至零，代表粒子被穩固地束縛在位能井內。</p></li>
+</ol>
+<p><strong>前幾階厄米多項式與對應物理量表：</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>量子數 <span class="math notranslate nohighlight">\(n\)</span></p></th>
+<th class="head"><p>厄米多項式 <span class="math notranslate nohighlight">\(H_n(y)\)</span></p></th>
+<th class="head"><p>無因次參數 <span class="math notranslate nohighlight">\(\alpha_n\)</span></p></th>
+<th class="head"><p>系統能階 <span class="math notranslate nohighlight">\(E_n\)</span></p></th>
+<th class="head"><p>函數對稱性 (Parity)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{1}{2}h\nu\)</span></p></td>
+<td><p>偶函數 (Even)</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(2y\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(3\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{3}{2}h\nu\)</span></p></td>
+<td><p>奇函數 (Odd)</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(2\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(4y^2 - 2\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(5\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{5}{2}h\nu\)</span></p></td>
+<td><p>偶函數 (Even)</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(3\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(8y^3 - 12y\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(7\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{7}{2}h\nu\)</span></p></td>
+<td><p>奇函數 (Odd)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="id20">
+<h3>能階與波函數<a class="headerlink" href="#id20" title="Link to this heading">#</a></h3>
+<p>上述的標準微分方程在數學上只有當 <span class="math notranslate nohighlight">\(\psi\)</span> 在無窮遠處收斂（即不發散至無限大）時才有物理意義的解。數學推導指出，這要求參數 <span class="math notranslate nohighlight">\(\alpha\)</span> 必須為奇數 <span class="math notranslate nohighlight">\(\alpha = 2n + 1 , n = 0, 1, 2, \dots\)</span> ，將 <span class="math notranslate nohighlight">\(\alpha\)</span> 的定義代回，即可得到量子諧振子的<strong>能階公式</strong>：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\alpha &amp;\overset{\text{定義 4}}{=}&amp; \frac{2E}{\hbar\omega} \\
+\frac{2E_n}{h\nu} &amp;\overset{\text{定義 1}}{=}&amp; 2n + 1 &amp;,\quad n = 0, 1, 2, \dots\\
+E_n &amp;=&amp; \left( n + \frac{1}{2} \right) h\nu &amp;,\quad n = 0, 1, 2, \dots
+\end{gather*}\end{split}\]</div>
+<p><strong>能階的重要特性：</strong></p>
+<ol class="arabic simple">
+<li><p><strong>零點能量 (Zero-Point Energy)：</strong></p></li>
+</ol>
+<p>量子力學與古典力學最大的不同在於，當系統處於最低能階的基態 (<span class="math notranslate nohighlight">\(n=0\)</span>) 時，其能量並非為零，而是 <span class="math notranslate nohighlight">\(E_0 = \frac{1}{2}h\nu\)</span>。</p>
+<ul class="simple">
+<li><p><strong>物理意義：</strong> 粒子永遠不會停止振動，即使在絕對零度下亦然。這完美符合海森堡不確定性原理：如果粒子完全靜止停在原點（<span class="math notranslate nohighlight">\(\Delta x = 0, \Delta p = 0\)</span>），這將被自然界所禁止。</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p><strong>相等間隔能階 (Equidistant Energy Levels)：</strong></p></li>
+</ol>
+<p>所謂的「相等間隔」，意思是相鄰兩個能階之間的能量差 <span class="math notranslate nohighlight">\(\Delta E\)</span> 是一個恆定的常數：</p>
+<div class="math notranslate nohighlight">
+\[\Delta E = E_{n+1} - E_n = \left( n + 1 + \frac{1}{2} \right) h\nu - \left( n + \frac{1}{2} \right) h\nu = h\nu\]</div>
+<ul class="simple">
+<li><p><strong>物理意義：</strong> 與「無限深位能井」（能量與 <span class="math notranslate nohighlight">\(n^2\)</span> 成正比，間距越來越大）不同，諧振子每躍遷一階，吸收或釋放的光子頻率都恰好是系統的自然頻率 <span class="math notranslate nohighlight">\(\nu\)</span>。這在分子振動光譜（如紅外光譜分析）中是極其關鍵的特性。</p></li>
+</ul>
+</section>
+<section id="id21">
+<h3><strong>例題 5.8：諧振子狀態的期望值與不確定性</strong><a class="headerlink" href="#id21" title="Link to this heading">#</a></h3>
+<p><strong>題目：</strong>
+已知諧振子基態 (<span class="math notranslate nohighlight">\(n=0\)</span>) 與第一受激態 (<span class="math notranslate nohighlight">\(n=1\)</span>) 的無因次波函數分別為：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\psi_0 &amp;=&amp; \left( \frac{1}{\pi} \right)^{1/4} e^{-y^2/2} \\
+\psi_1 &amp;=&amp; \left( \frac{1}{\pi} \right)^{1/4} \sqrt{2} y e^{-y^2/2}
+\end{gather*}\end{split}\]</div>
+<p>請分別求出前兩個態的位置期望值 <span class="math notranslate nohighlight">\(\langle x \rangle\)</span>、動量期望值 <span class="math notranslate nohighlight">\(\langle p \rangle\)</span>。並透過計算位置平方的期望值 <span class="math notranslate nohighlight">\(\langle y^2 \rangle\)</span> 與動量平方的期望值 <span class="math notranslate nohighlight">\(\langle p^2 \rangle\)</span>，證明基態諧振子滿足海森堡不確定性原理的理論最小值。</p>
+<p><strong>解答：</strong></p>
+<p><strong>(a) 位置的期望值 <span class="math notranslate nohighlight">\(\langle x \rangle\)</span></strong></p>
+<p>由於 <span class="math notranslate nohighlight">\(x\)</span> 與 <span class="math notranslate nohighlight">\(y\)</span> 成正比，只需判斷 <span class="math notranslate nohighlight">\(\langle y \rangle\)</span> 的積分結果。</p>
+<div class="math notranslate nohighlight">
+\[\langle y \rangle = \int_{-\infty}^{\infty} y |\psi_n|^2 dy\]</div>
+<ul class="simple">
+<li><p><strong>基態 (<span class="math notranslate nohighlight">\(n=0\)</span>)：</strong></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\langle y \rangle_0 &amp;=&amp; \int_{-\infty}^{\infty} y \left( \frac{1}{\sqrt{\pi}} e^{-y^2} \right) dy \\
+&amp;=&amp; \frac{1}{\sqrt{\pi}} \int_{-\infty}^{\infty} y \left(  e^{-y^2} \right) dy \\
+&amp;=&amp; 0
+\end{gather*}\end{split}\]</div>
+<p>因為 <span class="math notranslate nohighlight">\(e^{-y^2}\)</span> 是偶函數，乘上 <span class="math notranslate nohighlight">\(y\)</span> 後變成奇函數。奇函數在對稱區間 <span class="math notranslate nohighlight">\([-\infty, \infty]\)</span> 的積分必為 <span class="math notranslate nohighlight">\(0\)</span>。因此 <span class="math notranslate nohighlight">\(\langle x \rangle = 0\)</span>。</p>
+<ul class="simple">
+<li><p><strong>第一受激態 (<span class="math notranslate nohighlight">\(n=1\)</span>)：</strong></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\langle y \rangle_1 &amp;=&amp; \int_{-\infty}^{\infty} y \left( \frac{2}{\sqrt{\pi}} y^2 e^{-y^2} \right) dy \\
+&amp;=&amp; \frac{2}{\sqrt{\pi}} \int_{-\infty}^{\infty} y^3 e^{-y^2} dy\\
+&amp;=&amp; 0
+\end{gather*}\end{split}\]</div>
+<p>這依然是一個奇函數的對稱積分，結果同樣為 <span class="math notranslate nohighlight">\(0\)</span>。因此 <span class="math notranslate nohighlight">\(\langle x \rangle = 0\)</span>。</p>
+<p><strong>(b) 動量的期望值 <span class="math notranslate nohighlight">\(\langle p \rangle\)</span> (以基態為例)</strong></p>
+<p>利用動量算符 <span class="math notranslate nohighlight">\(\hat{p}_y = -i \frac{d}{dy}\)</span> 計算無因次動量的期望值：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\langle p_y \rangle &amp;=&amp; \int_{-\infty}^{\infty} \psi_0^* \left( -i \frac{d}{dy} \right) \psi_0 dy \\
+&amp;=&amp; -i \left( \frac{1}{\sqrt{\pi}} \right) \int_{-\infty}^{\infty} e^{-y^2/2} \left( -y e^{-y^2/2} \right) dy \\
+&amp;=&amp; i \left( \frac{1}{\sqrt{\pi}} \right) \int_{-\infty}^{\infty} y e^{-y^2} dy\\
+&amp;=&amp; i \left( \frac{1}{\sqrt{\pi}} \right) 0\\
+&amp;=&amp; 0\\
+\end{gather*}\end{split}\]</div>
+<p>物理動量 <span class="math notranslate nohighlight">\(\langle p \rangle = 0\)</span></p>
+<p><strong>(c) 不確定性原理驗證 (<span class="math notranslate nohighlight">\(\langle x^2 \rangle\)</span> 與 <span class="math notranslate nohighlight">\(\langle p^2 \rangle\)</span>)</strong></p>
+<ul class="simple">
+<li><p><strong>計算 <span class="math notranslate nohighlight">\(\langle y^2 \rangle\)</span></strong></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\langle y^2 \rangle &amp;=&amp; \int_{-\infty}^{\infty} \psi_0^* y^2 \psi_0 dy \\
+&amp;=&amp; \frac{1}{\sqrt{\pi}} \int_{-\infty}^{\infty} y^2 e^{-y^2} dy \\
+&amp;=&amp; \frac{1}{\sqrt{\pi}} \left( \frac{\sqrt{\pi}}{2} \right) \\
+&amp;=&amp; \frac{1}{2}
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><strong>計算 <span class="math notranslate nohighlight">\(\langle p_y^2 \rangle\)</span></strong></p></li>
+</ul>
+<p>動量平方的無因次算符為 <span class="math notranslate nohighlight">\(\hat{p}_y^2 = -\frac{d^2}{dy^2}\)</span>。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\langle p_y^2 \rangle &amp;=&amp; \int_{-\infty}^{\infty} \psi_0^* \hat{p}_y^2 \psi_0 dy \\
+&amp;=&amp; \int_{-\infty}^{\infty} \psi_0^* \left( -\frac{d^2}{dy^2} \right) \psi_0 dy \\
+&amp;=&amp; \int_{-\infty}^{\infty} \psi_0^* \left( -\frac{d^2}{dy^2} \left[\psi_0 \right]\right)  dy \\
+&amp;=&amp; \int_{-\infty}^{\infty} \psi_0^* \left( -\frac{d^2}{dy^2} \left[e^{-y^2/2} \right]\right)  dy \\
+&amp;=&amp; \int_{-\infty}^{\infty} \psi_0^* \left( -\frac{d}{dy} \left[-y e^{-y^2/2}\right]\right)  dy \\
+&amp;=&amp; \int_{-\infty}^{\infty} \psi_0^* \left( -(-1 + y^2) e^{-y^2/2}\right)  dy \\
+&amp;=&amp; \int_{-\infty}^{\infty} \psi_0^* (1 - y^2) \psi_0 dy \\
+&amp;=&amp; \int_{-\infty}^{\infty} |\psi_0|^2 dy - \int_{-\infty}^{\infty} y^2 |\psi_0|^2 dy \\
+&amp;=&amp; 1 - \langle y^2 \rangle \\
+&amp;=&amp; 1 - \frac{1}{2} \\
+&amp;=&amp; \frac{1}{2}
+\end{gather*}\end{split}\]</div>
+<p><strong>轉換為物理單位並求不確定性</strong></p>
+<p>已知代換關係 <span class="math notranslate nohighlight">\(x = \sqrt{\frac{\hbar}{m\omega}} y\)</span>，因此 <span class="math notranslate nohighlight">\(\Delta x = \sqrt{\langle x^2 \rangle} = \sqrt{\frac{\hbar}{m\omega} \langle y^2 \rangle} = \sqrt{\frac{\hbar}{2m\omega}}\)</span></p>
+<p>動量算符的代換為 <span class="math notranslate nohighlight">\(\hat{p}_x = \sqrt{\hbar m\omega} \hat{p}_y\)</span>，因此 <span class="math notranslate nohighlight">\(\Delta p = \sqrt{\langle p_x^2 \rangle} = \sqrt{\hbar m\omega \langle p_y^2 \rangle} = \sqrt{\frac{\hbar m\omega}{2}}\)</span>。</p>
+<p>計算兩者的乘積：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\Delta x \cdot \Delta p &amp;=&amp; \left( \sqrt{\frac{\hbar}{2m\omega}} \right) \left( \sqrt{\frac{\hbar m\omega}{2}} \right) \\
+&amp;=&amp; \frac{\hbar}{2}
+\end{gather*}\end{split}\]</div>
+<p><strong>【物理知識回顧】</strong></p>
+<ol class="arabic simple">
+<li><p><strong>對稱性與期望值：</strong> 不論是偶函數的基態或奇函數的受激態，其機率密度 <span class="math notranslate nohighlight">\(|\psi|^2\)</span> 均為偶函數（左右對稱）。這使得粒子平均位置 <span class="math notranslate nohighlight">\(\langle x \rangle\)</span> 與平均動量 <span class="math notranslate nohighlight">\(\langle p \rangle\)</span> 永遠為零。</p></li>
+<li><p><strong>零點振動的實質：</strong> 雖然平均動量為零，但 <span class="math notranslate nohighlight">\(\langle p^2 \rangle &gt; 0\)</span>，代表粒子確實具有動能，只是向左與向右運動的機率互相抵銷。</p></li>
+<li><p><strong>量子極限：</strong> 海森堡不確定性原理規定 <span class="math notranslate nohighlight">\(\Delta x \Delta p \ge \hbar/2\)</span>。透過上述嚴謹計算，我們證明了<strong>量子諧振子的基態（高斯波包）正是自然界中唯一能夠完美達到不確定性「絕對下限 <span class="math notranslate nohighlight">\(\hbar/2\)</span>」的特殊狀態</strong>，這是量子力學中極為優美且深刻的結論。</p></li>
+</ol>
 </section>
 </section>
 </section>
@@ -1242,19 +2367,32 @@ T_2' &amp;=&amp; e^{-30.48} \approx 5.1 \times 10^{-14}
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#particle-in-a-box">5.5 一維無限深位能井：箱子中的粒子 (Particle in a Box)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">波函數與能階推導</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10"><strong>例題 5.5.1：粒子在特定區域的出現機率</strong></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11"><strong>例題 5.5.2：粒子位置的期望值</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10"><strong>波函數</strong> 和 <strong>能階</strong> 推導</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11"><strong>波函數</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-levels"><strong>量子化能階 (Energy Levels)：</strong></a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12"><strong>例題 5.5.1：粒子在特定區域的出現機率</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13"><strong>例題 5.5.2：粒子位置的期望值</strong></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-potential-well">5.6 有限深位能井 (Finite Potential Well)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-potential-well">5.6 一維有限深位能井 (Finite Potential Well)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">波函數證明</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tunnel-effect">5.7 穿隧效應 (Tunnel Effect)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">穿隧機率精確解推導</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13"><strong>例題 5.7：穿隧機率的極端敏感性</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">穿隧機率推導</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18"><strong>例題 5.7：穿隧機率的極端敏感性</strong></a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#harmonic-oscillator">5.8 諧振子 (Harmonic Oscillator)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-dimensionalization">薛丁格方程式的去因次化推導 (Non-dimensionalization)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">能階與波函數</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21"><strong>例題 5.8：諧振子狀態的期望值與不確定性</strong></a></li>
 </ul>
 </li>
 </ul>
