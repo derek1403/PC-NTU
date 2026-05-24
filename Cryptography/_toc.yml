@@ -11,6 +11,5 @@ chapters:
   sections:      # <--- 代表下面的檔案都屬於它
     - file: lecture/Algebra/Abstract_Algebra/Group.ipynb
       title: Cryptography - Group
-- file: homework/homework.md
-  sections:
-    - file: homework/Cryptography_2026_Assignment.ipynb
+- file: homework/Cryptography_2026_Assignment.ipynb
+
