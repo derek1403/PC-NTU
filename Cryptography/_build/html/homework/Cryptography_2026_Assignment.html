@@ -1,0 +1,1275 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Cryptography 2026 Assignment &#8212; Cryptography</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'homework/Cryptography_2026_Assignment';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Cryptography - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Cryptography - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lecture/lecture.html">123</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../lecture/Algebra/Abstract_Algebra/Group.html">Cryptography - Group</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fhomework/Cryptography_2026_Assignment.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/homework/Cryptography_2026_Assignment.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Cryptography 2026 Assignment</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6-4"><strong>Question 6.4.</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6-4-answer"><strong>Question 6.4. - Answer</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">開算</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#t-text-rsa-3072">1. 估計 <span class="math notranslate nohighlight">\(t_{\text{RSA-3072}}\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#t-text-rsa-15360">2. 估計 <span class="math notranslate nohighlight">\(t_{\text{RSA-15360}}\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ras-3072rsa-15360ecc-t-text-ecc">3. 估計與RAS-3072、RSA-15360同等安全防禦等級的ECC用時 <span class="math notranslate nohighlight">\(t_{\text{ECC}}\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rsaecc">4. 簡述RSA和ECC在安全級別和運算時間的關係</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6-10"><strong>Question 6.10.</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6-10-answer"><strong>Question 6.10. - Answer</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">開算</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-4-n-7">1. <span class="math notranslate nohighlight">\(a = 4, n = 7\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-5-n-12">2. <span class="math notranslate nohighlight">\(a = 5, n = 12\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-6-n-13">3. <span class="math notranslate nohighlight">\(a = 6, n = 13\)</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7-12"><strong>Question 7.12.</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7-12-answer"><strong>Question 7.12. - Answer</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">開證</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#proof">1. proof</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rsa">2. 基於 RSA 的攻擊邏輯步驟</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">現行RSA的防禦手段</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7-16"><strong>Question 7.16.</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7-16-answer"><strong>Question 7.16. - Answer</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solve-d">1. solve <span class="math notranslate nohighlight">\(d\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-d">2. 知道所有參數去計算 <span class="math notranslate nohighlight">\(d\)</span> 驗證與旁通通道攻擊得到的 <span class="math notranslate nohighlight">\(d\)</span> 是否相同</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8-8"><strong>Question 8.8.</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8-8-answer"><strong>Question 8.8. - Answer</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a">1. 私鑰 <span class="math notranslate nohighlight">\(a\)</span> 應該擁有的最大值是多少？</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#session-key">2. 計算「對話金鑰（Session Key）」平均需要多少時間</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alpha">3. 比較 <strong>平方運算</strong> 和 <strong>乘法運算</strong> 在使用小 <span class="math notranslate nohighlight">\(\alpha\)</span> 的加速</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8-16"><strong>Question 8.16.</strong></a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="cryptography-2026-assignment">
+<h1>Cryptography 2026 Assignment<a class="headerlink" href="#cryptography-2026-assignment" title="Link to this heading">#</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="p">:</span><span class="n">葉品辰</span>
+<span class="n">ID</span><span class="p">:</span><span class="n">r14229017</span>
+<span class="n">date</span><span class="p">:</span> <span class="mf">2026.06.02</span> <span class="ow">or</span> <span class="mf">2026.06.16</span> 
+</pre></div>
+</div>
+<section id="question-6-4">
+<h2><strong>Question 6.4.</strong><a class="headerlink" href="#question-6-4" title="Link to this heading">#</a></h2>
+<p>In public-key cryptography, the desired security level directly influences the performance of the respective algorithm (cf. Section 6.2.4). We now analyze the relationship between security levels(安全級別) and run time(執行時間).</p>
+<p>Assume that a web server for an online shop can use either RSA or ECC for signature generation. Furthermore, assume that signature generation for RSA-1024 and ECC-160 takes <span class="math notranslate nohighlight">\(15.7\text{ ms}\)</span> and <span class="math notranslate nohighlight">\(1.3\text{ ms}\)</span>, respectively.</p>
+<ol class="arabic simple">
+<li><p>Determine the increase in run time for signature generation if the security level for RSA is increased from <span class="math notranslate nohighlight">\(1024\)</span> bits to <span class="math notranslate nohighlight">\(3072\)</span> bits.</p></li>
+<li><p>How does the run time of RSA increase from <span class="math notranslate nohighlight">\(1024\)</span> bits to <span class="math notranslate nohighlight">\(15,360\)</span> bits?</p></li>
+<li><p>Determine these numbers for the respective security levels of ECC.</p></li>
+<li><p>Describe the difference between RSA and ECC when increasing the security level.</p></li>
+</ol>
+</section>
+<section id="question-6-4-answer">
+<h2><strong>Question 6.4. - Answer</strong><a class="headerlink" href="#question-6-4-answer" title="Link to this heading">#</a></h2>
+<section id="assumptions-preliminaries">
+<h3>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><strong>【已知 1】 RSA和ECC的金鑰長度的計算複雜度估計：</strong></p>
+<div class="math notranslate nohighlight">
+\[ T \sim O(k^3) \]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(T\)</span> : 計算時間複雜度 (Computational time complexity)</p></li>
+<li><p><span class="math notranslate nohighlight">\(O(k^3)\)</span> : 大 <span class="math notranslate nohighlight">\(O\)</span> 符號 (Big O notation)，表示演算法執行時間隨輸入規模增長的漸近上界</p></li>
+<li><p><span class="math notranslate nohighlight">\(k\)</span> : 金鑰長度位元數 (Key length in bits)</p></li>
+</ul>
+</li>
+<li><p><strong>【已知 2】 <a class="reference external" href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-57pt1r5.pdf#page=66.33">NIST 安全級別對照表</a>：</strong></p>
+<p><img alt="" src="../_images/Table_2_Comparable_security_strengths_of_symmetric_block_cipher_and_asymmetric-key_algorithms.png" /></p>
+<ol class="arabic simple">
+<li><p>基礎級別（80-bit 系統安全）：RSA-1024 <span class="math notranslate nohighlight">\(\cong\)</span> ECC-160</p></li>
+<li><p>中階級別（128-bit 系統安全）：RSA-3072 <span class="math notranslate nohighlight">\(\cong\)</span> ECC-256</p></li>
+<li><p>高階級別（256-bit 系統安全）：RSA-15360 <span class="math notranslate nohighlight">\(\cong\)</span> ECC-512</p></li>
+</ol>
+</li>
+</ul>
+</section>
+<section id="id1">
+<h3>開算<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<section id="t-text-rsa-3072">
+<h4>1. 估計 <span class="math notranslate nohighlight">\(t_{\text{RSA-3072}}\)</span><a class="headerlink" href="#t-text-rsa-3072" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{t_{\text{RSA-3072}}}{t_{\text{RSA-1024}}} &amp;\overset{\text{已知 1}}{=}&amp; \frac{O(k^3_{\text{RSA-3072}})}{O(k^3_{\text{RSA-1024}})} \\
+t_{\text{RSA-3072}} &amp;=&amp; \frac{O(k^3_{\text{RSA-3072}})}{O(k^3_{\text{RSA-1024}})} t_{\text{RSA-1024}}\\
+t_{\text{RSA-3072}} &amp;=&amp; \frac{3072^3}{1024^3} t_{\text{RSA-1024}}\\
+t_{\text{RSA-3072}} &amp;=&amp;   27 \cdot t_{\text{RSA-1024}}\\
+t_{\text{RSA-3072}} &amp;\overset{\text{Q 6.4}}{=}&amp;  27 \cdot  15.7\text{ ms}\\
+t_{\text{RSA-3072}} &amp;=&amp; 423.9 \text{ ms} \\
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="t-text-rsa-15360">
+<h4>2. 估計 <span class="math notranslate nohighlight">\(t_{\text{RSA-15360}}\)</span><a class="headerlink" href="#t-text-rsa-15360" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{t_{\text{RSA-15360}}}{t_{\text{RSA-1024}}} &amp;\overset{\text{已知 1}}{=}&amp; \frac{O(k^3_{\text{RSA-15360}})}{O(k^3_{\text{RSA-1024}})} \\
+t_{\text{RSA-15360}} &amp;=&amp;\frac{O(k^3_{\text{RSA-15360}})}{O(k^3_{\text{RSA-1024}})} t_{\text{RSA-1024}} \\
+t_{\text{RSA-15360}} &amp;=&amp; \frac{15360^3}{1024^3}  t_{\text{RSA-1024}}\\
+t_{\text{RSA-15360}} &amp;=&amp;   3375  \cdot t_{\text{RSA-1024}}\\
+t_{\text{RSA-15360}} &amp;\overset{\text{Q 6.4}}{=}&amp;  3375 \cdot 15.7\text{ ms}\\
+t_{\text{RSA-15360}} &amp;=&amp; 52987.5 \text{ ms} \\
+t_{\text{RSA-15360}} &amp;\approx&amp; 52.99 \text{ s} \\
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="ras-3072rsa-15360ecc-t-text-ecc">
+<h4>3. 估計與RAS-3072、RSA-15360同等安全防禦等級的ECC用時 <span class="math notranslate nohighlight">\(t_{\text{ECC}}\)</span><a class="headerlink" href="#ras-3072rsa-15360ecc-t-text-ecc" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>RSA-3072 <span class="math notranslate nohighlight">\(\overset{\text{已知 2}}{\cong}\)</span> ECC-256</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{t_{\text{ECC-256}}}{t_{\text{ECC-160}}} &amp;\overset{\text{已知 1}}{=}&amp; \frac{O(k^3_{\text{ECC-256}})}{O(k^3_{\text{ECC-160}})} \\
+t_{\text{ECC-256}} &amp;=&amp; \frac{O(k^3_{\text{ECC-256}})}{O(k^3_{\text{ECC-160}})} t_{\text{ECC-160}}\\
+t_{\text{ECC-256}} &amp;=&amp; \frac{256^3}{160^3} t_{\text{ECC-160}}\\
+t_{\text{ECC-256}} &amp;=&amp; \frac{2^9}{5^3} \cdot t_{\text{ECC-160}}\\
+t_{\text{ECC-256}} &amp;\overset{\text{Q 6.4}}{=}&amp;  \frac{2^9}{5^3} \cdot  1.3\text{ ms}\\
+t_{\text{ECC-256}} &amp;=&amp; 5.3248 \text{ ms} \\
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>RSA-15360 <span class="math notranslate nohighlight">\(\overset{\text{已知 2}}{\cong}\)</span> ECC-512</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{t_{\text{ECC-512}}}{t_{\text{ECC-160}}} &amp;\overset{\text{已知 1}}{=}&amp; \frac{O(k^3_{\text{512}})}{O(k^3_{\text{ECC-160}})} \\
+t_{\text{ECC-512}} &amp;=&amp; \frac{O(k^3_{\text{ECC-512}})}{O(k^3_{\text{ECC-160}})} t_{\text{ECC-160}}\\
+t_{\text{ECC-512}} &amp;=&amp; \frac{512^3}{160^3} t_{\text{ECC-160}}\\
+t_{\text{ECC-512}} &amp;=&amp; \frac{2^12}{5^3} \cdot t_{\text{ECC-160}}\\
+t_{\text{ECC-512}} &amp;\overset{\text{Q 6.4}}{=}&amp;  \frac{2^12}{5^3} \cdot  1.3\text{ ms}\\
+t_{\text{ECC-512}} &amp;=&amp; 42.5984 \text{ ms} \\
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="rsaecc">
+<h4>4. 簡述RSA和ECC在安全級別和運算時間的關係<a class="headerlink" href="#rsaecc" title="Link to this heading">#</a></h4>
+<p>當安全級別（Security Level）提升時 ，RSA 為了維持同等防禦力，其金鑰長度必須大幅度增長導致其基於 <span class="math notranslate nohighlight">\(O(k^3)\)</span> 複雜度的簽章運算時間急遽上升（例如從毫秒級暴增至數十秒），會對系統效能造成嚴重的效能瓶頸。而 ECC 得益於其底層數學結構（橢圓曲線離散對數問題）的優勢，金鑰長度只需平緩增長即可提供極高的安全防護，這使得 ECC 在高安全級別的需求下依然能保持極短的金鑰長度與極快的運算時間（維持在數十毫秒內）對系統效能的衝擊極小，遠比 RSA 更適合現代高效能系統。</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>系統安全級別 (防禦力)</p></th>
+<th class="head text-left"><p>RSA 金鑰長度</p></th>
+<th class="head text-left"><p>RSA 執行時間</p></th>
+<th class="head text-left"><p>ECC 金鑰長度</p></th>
+<th class="head text-left"><p>ECC 執行時間</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>基礎 (80-bit)</p></td>
+<td class="text-left"><p>1024 <span class="math notranslate nohighlight">\(\text{ bits}\)</span></p></td>
+<td class="text-left"><p>15.7 <span class="math notranslate nohighlight">\(\text{ ms}\)</span></p></td>
+<td class="text-left"><p>160 <span class="math notranslate nohighlight">\(\text{ bits}\)</span></p></td>
+<td class="text-left"><p>1.3 <span class="math notranslate nohighlight">\(\text{ ms}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>中階 (128-bit)</p></td>
+<td class="text-left"><p>3072 <span class="math notranslate nohighlight">\(\text{ bits}\)</span></p></td>
+<td class="text-left"><p>424 <span class="math notranslate nohighlight">\(\text{ ms}\)</span></p></td>
+<td class="text-left"><p>256 <span class="math notranslate nohighlight">\(\text{ bits}\)</span></p></td>
+<td class="text-left"><p>5.3 <span class="math notranslate nohighlight">\(\text{ ms}\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>高階 (256-bit)</p></td>
+<td class="text-left"><p>15360 <span class="math notranslate nohighlight">\(\text{ bits}\)</span></p></td>
+<td class="text-left"><p>52988 <span class="math notranslate nohighlight">\(\text{ ms}\)</span></p></td>
+<td class="text-left"><p>512 <span class="math notranslate nohighlight">\(\text{ bits}\)</span></p></td>
+<td class="text-left"><p>42.6 <span class="math notranslate nohighlight">\(\text{ ms}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+</section>
+<section id="question-6-10">
+<h2><strong>Question 6.10.</strong><a class="headerlink" href="#question-6-10" title="Link to this heading">#</a></h2>
+<p>Compute the inverse <span class="math notranslate nohighlight">\(a^{-1} \bmod n\)</span> with Fermat’s Theorem (if applicable) or Euler’s Theorem:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(a = 4, n = 7\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a = 5, n = 12\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a = 6, n = 13\)</span></p></li>
+</ol>
+</section>
+<section id="question-6-10-answer">
+<h2><strong>Question 6.10. - Answer</strong><a class="headerlink" href="#question-6-10-answer" title="Link to this heading">#</a></h2>
+<section id="id2">
+<h3>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><strong>【已知 1】 尤拉定理（Euler’s Theorem）：</strong>  如果 <span class="math notranslate nohighlight">\(a\)</span> 和 <span class="math notranslate nohighlight">\(n\)</span> 互質（最大公因數 <span class="math notranslate nohighlight">\(\gcd(a,n)=1\)</span>）</p>
+<div class="math notranslate nohighlight">
+\[a^{\phi(n)} \equiv 1 \pmod n\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\phi(n)\)</span> : 尤拉總計函數 (Euler’s totient function)，代表從 1 到 <span class="math notranslate nohighlight">\(n-1\)</span> 中，有多少個整數與 <span class="math notranslate nohighlight">\(n\)</span> 互質</p></li>
+</ul>
+</li>
+<li><p><strong>【已知 2】 費馬小定理（Fermat’s Little Theorem）：</strong> 如果 <span class="math notranslate nohighlight">\(a\)</span> 不能被 <span class="math notranslate nohighlight">\(p\)</span> 整除，即 <span class="math notranslate nohighlight">\(a \not{\equiv } 0 \bmod p\)</span> 或 <span class="math notranslate nohighlight">\(\gcd(a, p) = 1\)</span></p>
+<div class="math notranslate nohighlight">
+\[a^{p-1} \equiv 1 \pmod p\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(p\)</span> : 質數模數 (Prime modulus)</p></li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span> : 任意整數基數 (Base integer)</p></li>
+</ul>
+</li>
+<li><p><strong>【推導 1】 尤拉定理找反元素：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  a^{\phi(n)} &amp;\overset{\text{已知 1}}{\equiv}&amp; 1 \pmod p \\
+  a \cdot a^{\phi(n)-1} &amp;\equiv&amp; 1 \pmod p \\
+  a^{-1} \cdot a \cdot a^{\phi(n)-1} &amp;\equiv&amp; a^{-1} \cdot 1 \pmod p \\
+  a^{\phi(n)-1} &amp;\equiv&amp; a^{-1} \pmod p \\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\phi(n)\)</span> : 尤拉總計函數 (Euler’s totient function)，代表從 1 到 <span class="math notranslate nohighlight">\(n-1\)</span> 中，有多少個整數與 <span class="math notranslate nohighlight">\(n\)</span> 互質</p></li>
+</ul>
+</li>
+<li><p><strong>【推導 2】 費馬小定理找反元素：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  a^{p-1} &amp;\overset{\text{已知 2}}{\equiv}&amp; 1 \pmod p \\
+  a \cdot a^{p-2} &amp;\equiv&amp; 1 \pmod p \\
+  a^{-1} \cdot a \cdot a^{p-2} &amp;\equiv&amp; a^{-1} \cdot 1 \pmod p \\
+  a^{p-2} &amp;\equiv&amp; a^{-1} \pmod p \\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(p\)</span> : 質數模數 (Prime modulus)</p></li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span> : 任意整數基數 (Base integer)</p></li>
+</ul>
+</li>
+<li><p><strong>【已知 3】 尤拉總計函數參考值 <span class="math notranslate nohighlight">\(\phi(n)\)</span> ：</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>十位數 \ 個位</p></th>
+<th class="head text-center"><p>0</p></th>
+<th class="head text-center"><p>1</p></th>
+<th class="head text-center"><p>2</p></th>
+<th class="head text-center"><p>3</p></th>
+<th class="head text-center"><p>4</p></th>
+<th class="head text-center"><p>5</p></th>
+<th class="head text-center"><p>6</p></th>
+<th class="head text-center"><p>7</p></th>
+<th class="head text-center"><p>8</p></th>
+<th class="head text-center"><p>9</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><strong>0+</strong></p></td>
+<td class="text-center"><p>—</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>1</p></td>
+<td class="text-center"><p>2</p></td>
+<td class="text-center"><p>2</p></td>
+<td class="text-center"><p>4</p></td>
+<td class="text-center"><p>2</p></td>
+<td class="text-center"><p>6</p></td>
+<td class="text-center"><p>4</p></td>
+<td class="text-center"><p>6</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>10+</strong></p></td>
+<td class="text-center"><p>4</p></td>
+<td class="text-center"><p>10</p></td>
+<td class="text-center"><p>4</p></td>
+<td class="text-center"><p>12</p></td>
+<td class="text-center"><p>6</p></td>
+<td class="text-center"><p>8</p></td>
+<td class="text-center"><p>8</p></td>
+<td class="text-center"><p>16</p></td>
+<td class="text-center"><p>6</p></td>
+<td class="text-center"><p>18</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><strong>20+</strong></p></td>
+<td class="text-center"><p>8</p></td>
+<td class="text-center"><p>12</p></td>
+<td class="text-center"><p>10</p></td>
+<td class="text-center"><p>22</p></td>
+<td class="text-center"><p>8</p></td>
+<td class="text-center"><p>20</p></td>
+<td class="text-center"><p>12</p></td>
+<td class="text-center"><p>18</p></td>
+<td class="text-center"><p>12</p></td>
+<td class="text-center"><p>28</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>30+</strong></p></td>
+<td class="text-center"><p>8</p></td>
+<td class="text-center"><p>30</p></td>
+<td class="text-center"><p>16</p></td>
+<td class="text-center"><p>20</p></td>
+<td class="text-center"><p>16</p></td>
+<td class="text-center"><p>24</p></td>
+<td class="text-center"><p>12</p></td>
+<td class="text-center"><p>36</p></td>
+<td class="text-center"><p>18</p></td>
+<td class="text-center"><p>24</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><strong>40+</strong></p></td>
+<td class="text-center"><p>16</p></td>
+<td class="text-center"><p>40</p></td>
+<td class="text-center"><p>12</p></td>
+<td class="text-center"><p>42</p></td>
+<td class="text-center"><p>20</p></td>
+<td class="text-center"><p>24</p></td>
+<td class="text-center"><p>22</p></td>
+<td class="text-center"><p>46</p></td>
+<td class="text-center"><p>16</p></td>
+<td class="text-center"><p>42</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>50+</strong></p></td>
+<td class="text-center"><p>20</p></td>
+<td class="text-center"><p>32</p></td>
+<td class="text-center"><p>24</p></td>
+<td class="text-center"><p>52</p></td>
+<td class="text-center"><p>18</p></td>
+<td class="text-center"><p>40</p></td>
+<td class="text-center"><p>24</p></td>
+<td class="text-center"><p>36</p></td>
+<td class="text-center"><p>28</p></td>
+<td class="text-center"><p>58</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><strong>60+</strong></p></td>
+<td class="text-center"><p>16</p></td>
+<td class="text-center"><p>60</p></td>
+<td class="text-center"><p>30</p></td>
+<td class="text-center"><p>36</p></td>
+<td class="text-center"><p>32</p></td>
+<td class="text-center"><p>48</p></td>
+<td class="text-center"><p>20</p></td>
+<td class="text-center"><p>66</p></td>
+<td class="text-center"><p>32</p></td>
+<td class="text-center"><p>44</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>70+</strong></p></td>
+<td class="text-center"><p>24</p></td>
+<td class="text-center"><p>70</p></td>
+<td class="text-center"><p>24</p></td>
+<td class="text-center"><p>72</p></td>
+<td class="text-center"><p>36</p></td>
+<td class="text-center"><p>40</p></td>
+<td class="text-center"><p>36</p></td>
+<td class="text-center"><p>60</p></td>
+<td class="text-center"><p>24</p></td>
+<td class="text-center"><p>78</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><strong>80+</strong></p></td>
+<td class="text-center"><p>32</p></td>
+<td class="text-center"><p>54</p></td>
+<td class="text-center"><p>40</p></td>
+<td class="text-center"><p>82</p></td>
+<td class="text-center"><p>24</p></td>
+<td class="text-center"><p>64</p></td>
+<td class="text-center"><p>42</p></td>
+<td class="text-center"><p>56</p></td>
+<td class="text-center"><p>40</p></td>
+<td class="text-center"><p>88</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>90+</strong></p></td>
+<td class="text-center"><p>24</p></td>
+<td class="text-center"><p>72</p></td>
+<td class="text-center"><p>44</p></td>
+<td class="text-center"><p>60</p></td>
+<td class="text-center"><p>46</p></td>
+<td class="text-center"><p>72</p></td>
+<td class="text-center"><p>32</p></td>
+<td class="text-center"><p>96</p></td>
+<td class="text-center"><p>42</p></td>
+<td class="text-center"><p>60</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\phi(n)\)</span> : 尤拉總計函數 (Euler’s totient function)，代表從 1 到 <span class="math notranslate nohighlight">\(n-1\)</span> 中，有多少個整數與 <span class="math notranslate nohighlight">\(n\)</span> 互質</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id3">
+<h3>開算<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<section id="a-4-n-7">
+<h4>1. <span class="math notranslate nohighlight">\(a = 4, n = 7\)</span><a class="headerlink" href="#a-4-n-7" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+a^{p-2} &amp;\overset{\text{推導 2}}{\equiv}&amp; a^{-1} \pmod p \\
+4^{7-2} &amp;\overset{\text{Q 6.10.1}}{\equiv}&amp; 4^{-1} \pmod 7 \\
+4^{5} &amp;\equiv&amp; 4^{-1} \pmod 7 \\
+4^2 \cdot 4^{3} &amp;\equiv&amp; 4^{-1} \pmod 7 \\
+16 \cdot 4^{3} &amp;\equiv&amp; 4^{-1} \pmod 7 \\
+2 \cdot 4^{3} &amp;\equiv&amp; 4^{-1} \pmod 7 \\
+2 \cdot 4^2 \cdot 4^1 &amp;\equiv&amp; 4^{-1} \pmod 7 \\
+2 \cdot 2 \cdot 4^1 &amp;\equiv&amp; 4^{-1} \pmod 7 \\
+4^2 &amp;\equiv&amp; 4^{-1} \pmod 7 \\
+2 &amp;\equiv&amp; 4^{-1} \pmod 7 \\
+\end{gather*}\end{split}\]</div>
+<p>驗算 <span class="math notranslate nohighlight">\(4 \times 2 = 8  \equiv 1 \pmod 7\)</span></p>
+</section>
+<section id="a-5-n-12">
+<h4>2. <span class="math notranslate nohighlight">\(a = 5, n = 12\)</span><a class="headerlink" href="#a-5-n-12" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+a^{\phi(n)-1} &amp;\overset{\text{推導 1}}{\equiv}&amp; a^{-1} \pmod p \\
+5^{\phi(n)-1} &amp;\overset{\text{Q 6.10.2}}{\equiv}&amp; 5^{-1} \pmod {12} \\
+5^{4-1} &amp;\overset{\text{已知 3}}{\equiv}&amp; 5^{-1} \pmod {12} \\
+5^{3} &amp;\equiv&amp; 5^{-1} \pmod {12} \\
+25 \cdot 5 &amp;\equiv&amp; 5^{-1} \pmod {12} \\
+1 \cdot 5 &amp;\equiv&amp; 5^{-1} \pmod {12} \\
+5 &amp;\equiv&amp; 5^{-1} \pmod {12} \\
+\end{gather*}\end{split}\]</div>
+<p>驗算 <span class="math notranslate nohighlight">\(5 \times 5 = 25  \equiv 1 \pmod {12}\)</span></p>
+</section>
+<section id="a-6-n-13">
+<h4>3. <span class="math notranslate nohighlight">\(a = 6, n = 13\)</span><a class="headerlink" href="#a-6-n-13" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+a^{p-2} &amp;\overset{\text{推導 1}}{\equiv}&amp; a^{-1} \pmod p \\
+6^{13-2} &amp;\overset{\text{Q 6.10.3}}{\equiv}&amp; 6^{-1} \pmod {13} \\
+6^{11} &amp;\equiv&amp; 6^{-1} \pmod {13} \\
+6^2 \cdot 6^{9} &amp;\equiv&amp; 6^{-1} \pmod {13} \\
+36 \cdot 6^{9} &amp;\equiv&amp; 6^{-1} \pmod {13} \\
+-3 \cdot 6^{9} &amp;\equiv&amp; 6^{-1} \pmod {13} \\
+-3 \cdot 6^2 \cdot 6^{7} &amp;\equiv&amp; 6^{-1} \pmod {13} \\
+-3 \cdot -3 \cdot 6^{7} &amp;\equiv&amp; 6^{-1} \pmod {13} \\
+9 \cdot 6^{7} &amp;\equiv&amp; 6^{-1} \pmod {13} \\
+9 \cdot 6^{4} \cdot 6^{3} &amp;\equiv&amp; 6^{-1} \pmod {13} \\
+9 \cdot 9 \cdot 6^{3} &amp;\equiv&amp; 6^{-1} \pmod {13} \\
+9 \cdot -4 \cdot 6^{3} &amp;\equiv&amp; 6^{-1} \pmod {13} \\
+-36 \cdot 6^{3} &amp;\equiv&amp; 6^{-1} \pmod {13} \\
+3 \cdot 6^{3} &amp;\equiv&amp; 6^{-1} \pmod {13} \\
+3 \cdot 6^{2} \cdot 6  &amp;\equiv&amp; 6^{-1} \pmod {13} \\
+3 \cdot -3 \cdot 6  &amp;\equiv&amp; 6^{-1} \pmod {13} \\
+3 \cdot -3 \cdot 6  &amp;\equiv&amp; 6^{-1} \pmod {13} \\
+3 \cdot -18  &amp;\equiv&amp; 6^{-1} \pmod {13} \\
+3 \cdot -5  &amp;\equiv&amp; 6^{-1} \pmod {13} \\
+-15  &amp;\equiv&amp; 6^{-1} \pmod {13} \\
+11  &amp;\equiv&amp; 6^{-1} \pmod {13} \\
+\end{gather*}\end{split}\]</div>
+<p>驗算 <span class="math notranslate nohighlight">\(6 \times 11 = 66  \equiv 1 \pmod {13}\)</span></p>
+</section>
+</section>
+</section>
+<section id="question-7-12">
+<h2><strong>Question 7.12.</strong><a class="headerlink" href="#question-7-12" title="Link to this heading">#</a></h2>
+<p>We now show how an attack with chosen ciphertext can be used to break an RSA encryption.</p>
+<ol class="arabic">
+<li><p>Show that the <em>multiplicative property</em> holds for RSA, i.e., show that the product of two ciphertexts <span class="math notranslate nohighlight">\(y_1\)</span> and <span class="math notranslate nohighlight">\(y_2\)</span> is equal to the encryption of the product of the two respective plaintexts <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span>.</p>
+<p>Under certain circumstances, this property might be exploited by an attacker.</p>
+</li>
+<li><p>Assume Oscar eavesdrops and obtains a ciphertext <span class="math notranslate nohighlight">\(y_1\)</span>, which is the encrypted version of a message <span class="math notranslate nohighlight">\(x_1\)</span> that was sent from Alice to Bob. Oscar would like to know the plaintext <span class="math notranslate nohighlight">\(x_1\)</span>.</p>
+<p>Oscar computes an innocent looking message <span class="math notranslate nohighlight">\(t\)</span>, which he encrypts. We assume that he can obtain the decryption of <em>one</em> ciphertext that he sends to Bob, e.g., by having access to Bob’s computer at a certain point in time. Show how Oscar can construct a ciphertext <span class="math notranslate nohighlight">\(y\)</span> in such a way that he can use its decryption for computing <span class="math notranslate nohighlight">\(x_1\)</span>.</p>
+<p>(吐槽：Oscar在<strong>有 <span class="math notranslate nohighlight">\(y_1\)</span> 想要得到 <span class="math notranslate nohighlight">\(x_1\)</span></strong> 且 <strong>可以獲得一次Bob的計算機一個密文的解密結果</strong> 的情況下，Oscar直接丟<span class="math notranslate nohighlight">\(y_1\)</span>給Bob的計算機不就算出 <span class="math notranslate nohighlight">\(x_1\)</span> ㄌㄇ :3 )</p>
+</li>
+</ol>
+</section>
+<section id="question-7-12-answer">
+<h2><strong>Question 7.12. - Answer</strong><a class="headerlink" href="#question-7-12-answer" title="Link to this heading">#</a></h2>
+<section id="id4">
+<h3>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><strong>【已知 1】 RSA 加密演算法 ：</strong></p>
+<ol class="arabic simple">
+<li><p>明文 <span class="math notranslate nohighlight">\(x_{1}\)</span> 對應 密文 <span class="math notranslate nohighlight">\(y_{1}\)</span></p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[y_{1}\equiv x_{1}^{e} \pmod n\]</div>
+<ol class="arabic simple" start="2">
+<li><p>明文 <span class="math notranslate nohighlight">\(x_{2}\)</span> 對應 密文 <span class="math notranslate nohighlight">\(y_{2}\)</span></p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[y_{2}\equiv x_{2}^{e} \pmod n\]</div>
+<ol class="arabic simple" start="3">
+<li><p>明文 <span class="math notranslate nohighlight">\(x_{1} \cdot x_{2}\)</span> 對應 密文 <span class="math notranslate nohighlight">\(y_{1,2}\)</span></p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[y_{1,2}\equiv \left( x_{1} \cdot x_{2} \right)^{e} \pmod n\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\((e, n)\)</span> : RSA 公鑰對 (RSA public key pair)</p></li>
+<li><p><span class="math notranslate nohighlight">\(e\)</span> : 加密指數 (Encryption exponent)</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : RSA 模數 (RSA modulus)</p></li>
+<li><p><span class="math notranslate nohighlight">\(x_{1}, x_{2}\)</span> : 兩個不同的明文訊息 (Two distinct plaintext messages)</p></li>
+<li><p><span class="math notranslate nohighlight">\(y_{1}, y_{2}\)</span> : 對應上述明文的獨立密文 (Corresponding ciphertexts)</p></li>
+<li><p><span class="math notranslate nohighlight">\(y_{1,2}\)</span> : 兩密文直接相乘所得的複合密文 (Combined ciphertext)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id5">
+<h3>開證<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<section id="proof">
+<h4>1. proof<a class="headerlink" href="#proof" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+y_{1}\cdot y_{2} &amp;\overset{\text{已知 1(1)(2)}}{\equiv}&amp; (x_{1}^{e})\cdot (x_{2}^{e}) \pmod n \\
+y_{1}\cdot y_{2} &amp;\equiv&amp; (x_{1} \cdot x_{2})^{e} \pmod n \\
+y_{1}\cdot y_{2} &amp;\overset{\text{已知 1(3)}}{\equiv}&amp; y_{1,2} \pmod n \\
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="rsa">
+<h4>2. 基於 RSA 的攻擊邏輯步驟<a class="headerlink" href="#rsa" title="Link to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">Oscar</span> <span class="pre">的目標是求出</span> <span class="pre">$x_{1}$，但若直接把</span> <span class="pre">$y_{1}$</span> <span class="pre">丟給</span> <span class="pre">Bob</span> <span class="pre">解密，Bob</span> <span class="pre">會拒絕</span></code></p>
+<ol class="arabic">
+<li><p><strong>Oscar 攔截密文 <span class="math notranslate nohighlight">\(y_{1}\)</span></strong></p>
+<p>Oscar 攔截到 Alice 傳給 Bob 的密文 <span class="math notranslate nohighlight">\(y_{1}\)</span></p>
+<p><strong>此時Oscar知道： 公鑰 <span class="math notranslate nohighlight">\((e, n)\)</span>、密文 <span class="math notranslate nohighlight">\(y_{1}\)</span></strong></p>
+</li>
+<li><p><strong>Oscar 構造偽裝密文 <span class="math notranslate nohighlight">\(y\)</span></strong></p>
+<p>Oscar 任意選擇一個看起來無害的隨機明文 <span class="math notranslate nohighlight">\(t\)</span>（滿足 <span class="math notranslate nohighlight">\(\gcd(t, n) = 1\)</span>），並用 Bob 的公鑰對其加密，得到密文 <span class="math notranslate nohighlight">\(y_{t}\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[y_{t}\equiv t^{e} \pmod n\]</div>
+<p>接著，Oscar 利用第 1 小題的乘法性質，將攔截到的 <span class="math notranslate nohighlight">\(y_{1}\)</span> 與自己生成的 <span class="math notranslate nohighlight">\(y_{t}\)</span> 相乘，構造出一個全新的密文 <span class="math notranslate nohighlight">\(y\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    y&amp;\equiv&amp; y_{1}\cdot y_{t} \pmod n \\
+    &amp;\equiv&amp; y_{1}\cdot t^{e} \pmod n 
+    \end{gather*}\end{split}\]</div>
+</li>
+<li><p>欺騙 Bob 進行解密：</p>
+<p>Oscar 將這個構造出來的密文 <span class="math notranslate nohighlight">\(y\)</span> 送給 Bob，並假裝這是一個正常的訊息請 Bob 解密。Bob 使用他的私鑰 <span class="math notranslate nohighlight">\(d\)</span> 對 <span class="math notranslate nohighlight">\(y\)</span> 進行解密，得到對應的明文 <span class="math notranslate nohighlight">\(x\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[x\equiv y^{d} \pmod n\]</div>
+<p>因為 <span class="math notranslate nohighlight">\(y \equiv (x_1 \cdot t)^e \pmod n\)</span>，所以解密出來的結果必然是：</p>
+<div class="math notranslate nohighlight">
+\[x\equiv x_{1}\cdot t \pmod n \]</div>
+<p><code class="docutils literal notranslate"><span class="pre">(此時</span> <span class="pre">Bob</span> <span class="pre">只會看到一串無意義的隨機數字</span> <span class="pre">$x$，以為解密失敗或只是垃圾訊息，於是將</span> <span class="pre">$x$</span> <span class="pre">回傳給</span> <span class="pre">Oscar)</span></code></p>
+<p><strong>此時Oscar知道： 公鑰 <span class="math notranslate nohighlight">\((e, n)\)</span>、密文 <span class="math notranslate nohighlight">\(y_{1}\)</span>、由明文 <span class="math notranslate nohighlight">\(x_1\)</span> 和Oscar給的隨機數 <span class="math notranslate nohighlight">\(t\)</span> 所相乘的 <span class="math notranslate nohighlight">\(x\)</span></strong></p>
+</li>
+<li><p>還原原始明文 <span class="math notranslate nohighlight">\(x_{1}\)</span>：</p>
+<p>Oscar 拿到 Bob 吐回來的解密結果 <span class="math notranslate nohighlight">\(x\)</span> 後，因為他自己知道當初選用的隨機數 <span class="math notranslate nohighlight">\(t\)</span>，所以他可以輕易計算出 <span class="math notranslate nohighlight">\(t\)</span> 在模 <span class="math notranslate nohighlight">\(n\)</span> 下的反元素 <span class="math notranslate nohighlight">\(t^{-1}\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[t\cdot t^{-1}\equiv 1 \pmod n\]</div>
+<p>最後，Oscar 將 <span class="math notranslate nohighlight">\(x\)</span> 乘以 <span class="math notranslate nohighlight">\(t^{-1}\)</span>，即可神不知鬼不覺地還原出 Alice 的機密明文 <span class="math notranslate nohighlight">\(x_{1}\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    x\cdot t^{-1}&amp;\equiv&amp; (x_{1}\cdot t)\cdot t^{-1} \pmod n\\
+    &amp;\equiv&amp; x_{1} \pmod n
+    \end{gather*}\end{split}\]</div>
+</li>
+</ol>
+</section>
+<section id="id6">
+<h4>現行RSA的防禦手段<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
+<p>現行RSA可以可以確認對方是否知道明文，若不曉得則拒絕回傳來達到保護的目的，具體來說。</p>
+<ul class="simple">
+<li><p>Alice 知道明文 <span class="math notranslate nohighlight">\(x_1\)</span> 所以可以計算出 <span class="math notranslate nohighlight">\(\text{hash}(x_1)\)</span> 。當Bob收到密文 <span class="math notranslate nohighlight">\(y_1\)</span> 並解出 <span class="math notranslate nohighlight">\(x_1\)</span> 後先計算 <span class="math notranslate nohighlight">\(\text{hash}(x_1)\)</span> 看與Alice一起給的 <span class="math notranslate nohighlight">\(\text{hash}(x_1)\)</span> 是否相同</p></li>
+<li><p>Oscar 不知道明文 <span class="math notranslate nohighlight">\(x_1\)</span> 所以不能計算出 <span class="math notranslate nohighlight">\(\text{hash}(x_1 \cdot t)\)</span> 。當Bob收到密文 <span class="math notranslate nohighlight">\(y\)</span> 並解出 <span class="math notranslate nohighlight">\(x\)</span> (也就是 <span class="math notranslate nohighlight">\(x_1 \cdot t\)</span>) 後先計算 <span class="math notranslate nohighlight">\(\text{hash}(x)\)</span> ，預期Oscar應給出 <span class="math notranslate nohighlight">\(\text{hash}(x)\)</span> ，但發現與Oscar一起給的 <span class="math notranslate nohighlight">\(\text{hash}(x_1)\)</span> 不一致，所以認為Oscar應該不知道全部的明文而拒絕回傳相關資訊</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="question-7-16">
+<h2><strong>Question 7.16.</strong><a class="headerlink" href="#question-7-16" title="Link to this heading">#</a></h2>
+<p>Let us now investigate side-channel attacks(側通道攻擊) against RSA. In a simple implementation of RSA without any countermeasures against side-channel leakage, the analysis of the current consumption of the microcontroller in the decryption part directly yields the private exponent.</p>
+<p><img alt="" src="../_images/Section7.9_Fig.7.5_The_power_trace_of_an_RSA_implementation.png" /></p>
+<p>Figure 7.5 in Section 7.9 shows the power consumption of an implementation of the square-and-multiply algorithm(平方乘演算法). If the microcontroller computes a squaring or a multiplication, <strong>the power consumption increases</strong>. Due to the small intervals between the loops, <strong>every iteration can be identified</strong>. Furthermore, for each round <strong>we can identify whether a single squaring (short duration) or a squaring followed by a multiplication (long duration) is being computed</strong>.</p>
+<ol class="arabic simple">
+<li><p>Assume the square-and-multiply algorithm has been implemented such that the exponent is being scanned from left to right. Furthermore, assume that the starting values have been initialized. What is the private exponent <span class="math notranslate nohighlight">\(d\)</span>?</p></li>
+<li><p>This key belongs to the RSA setup with the primes <span class="math notranslate nohighlight">\(p = 67\)</span> and <span class="math notranslate nohighlight">\(q = 103\)</span> and <span class="math notranslate nohighlight">\(e = 257\)</span>. Verify your result. (Note that in practice an attacker wouldn’t know the values of <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(q\)</span>.)</p></li>
+</ol>
+</section>
+<section id="question-7-16-answer">
+<h2><strong>Question 7.16. - Answer</strong><a class="headerlink" href="#question-7-16-answer" title="Link to this heading">#</a></h2>
+<section id="id7">
+<h3>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><strong>【已知 1】 RSA 模反元素計算尤拉函數 <span class="math notranslate nohighlight">\(\phi(n)\)</span> ：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \phi(n) &amp;=&amp; (p-1)(q-1) \\
+  &amp;\overset{\text{Q7.16.2}}{=}&amp; (67-1)(103-1) \\
+  &amp;=&amp; 66 \times 102 \\
+  &amp;=&amp; 6732
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\phi(n)\)</span> : 尤拉總計函數值 (Euler’s totient function value)</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : RSA 模數 (RSA modulus)，滿足 <span class="math notranslate nohighlight">\(n = p \times q \overset{\text{Q7.16.2}}{=} 67 \times 103 = 6901\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p\)</span> : 第一個獨立質數 (First prime number) <span class="math notranslate nohighlight">\(p \overset{\text{Q7.16.2}}{=} 67\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(q\)</span> : 第二個獨立質數 (Second prime number) <span class="math notranslate nohighlight">\(q \overset{\text{Q7.16.2}}{=} 103\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((p-1)(q-1)\)</span> : 當 <span class="math notranslate nohighlight">\(n\)</span> 為兩個相異質數之積時，其尤拉函數的乘法性質展開式</p></li>
+</ul>
+</li>
+<li><p><strong>【已知 2】 擴展歐幾里得演算法-輾轉相除法求最大公因數 ：</strong></p>
+<div class="math notranslate nohighlight">
+\[257 \cdot d \equiv 1 \pmod{6732}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(6732 = 26 \times 257 + 50\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(257 = 5 \times 50 + 7\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(50 = 7 \times 7 + 1\)</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  1 &amp;=&amp; 50 - 7 \times 7 \\
+  &amp;=&amp;  50 - 7 \times (257 - 5 \times 50) \\
+  &amp;=&amp;  36 \times 50 - 7 \times 257\\
+  &amp;=&amp;  36 \times (6732 - 26 \times 257) - 7 \times 257\\
+  &amp;=&amp;  36 \times 6732 - 936 \times 257 - 7 \times 257\\
+  &amp;=&amp;  36 \times 6732 - 943 \times 257\\
+  \end{gather*}\end{split}\]</div>
+</li>
+</ul>
+</section>
+<section id="solve-d">
+<h3>1. solve <span class="math notranslate nohighlight">\(d\)</span><a class="headerlink" href="#solve-d" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+&amp;\text{signal} &amp;=&amp; \left[ \text{S} ,\text{SM} ,\text{SM} ,\text{S} ,\text{SM} ,\text{S} ,\text{S} ,\text{SM} ,\text{SM} ,\text{SM} ,\text{S} ,\text{SM} \right] \\ 
+&amp;\text{signal} &amp;=&amp; (011010011101)_2 \\ 
+\overset{\text{補1(最高有效位元)}}{\Rightarrow}&amp;d &amp;=&amp; (1011010011101)_2  \\
+&amp;d &amp;=&amp; 2^{12} + 2^{10} + 2^9 + 2^7 + 2^4 + 2^3 + 2^2 + 2^0  \\
+&amp;d &amp;=&amp; 4096 + 1024 + 512 + 128 + 16 + 8 + 4 + 1  \\
+&amp;d &amp;=&amp; 5789  \\
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="d-d">
+<h3>2. 知道所有參數去計算 <span class="math notranslate nohighlight">\(d\)</span> 驗證與旁通通道攻擊得到的 <span class="math notranslate nohighlight">\(d\)</span> 是否相同<a class="headerlink" href="#d-d" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+e \cdot d &amp;\equiv&amp; 1 &amp;\pmod{\phi(n)} \\
+257 \cdot d &amp;\overset{\text{Q7.16.2}}{\equiv}&amp; 1 &amp;\pmod{\phi(n)} \\
+257 \cdot d &amp;\overset{\text{已知 1}}{\equiv}&amp; 1 &amp;\pmod{6732} \\
+257 \cdot d &amp;\overset{\text{已知 2}}{\equiv}&amp; 36 \times 6732 - 943 \times 257 &amp;\pmod{6732} \\
+257 \cdot d &amp;\equiv&amp; - 943 \times 257 &amp;\pmod{6732} \\
+d &amp;\equiv&amp; - 943  &amp;\pmod{6732} \\
+d &amp;\equiv&amp; - 943 +6732  &amp;\pmod{6732} \\
+d &amp;\equiv&amp; 5789  &amp;\pmod{6732} \\
+\end{gather*}\end{split}\]</div>
+<p>與旁通道攻擊得到的 <span class="math notranslate nohighlight">\(d\)</span> 一模一樣，這告訴我們現代的密碼學實作一定要加入隨機延遲或是「Dummy Operations（即使是 0 也假裝做一下乘法）」來混淆視聽， <strong>否則數學再安全硬體也會把你出賣</strong></p>
+</section>
+</section>
+<section id="question-8-8">
+<h2><strong>Question 8.8.</strong><a class="headerlink" href="#question-8-8" title="Link to this heading">#</a></h2>
+<p>Given is a Diffie-Hellman Key Exchange（迪菲-赫爾曼金鑰交換, DHKE） algorithm. The modulus <span class="math notranslate nohighlight">\(p\)</span> has <span class="math notranslate nohighlight">\(1024\)</span> bits and <span class="math notranslate nohighlight">\(\alpha\)</span> is a generator of a subgroup where <span class="math notranslate nohighlight">\(\text{ord}(\alpha) \approx 2^{160}\)</span>.</p>
+<ol class="arabic simple">
+<li><p>What is the maximum value that the private keys should have?</p></li>
+<li><p>How long does the computation of the session key take on average if one modular multiplication takes <span class="math notranslate nohighlight">\(700\ \mu\text{s}\)</span> and one modular squaring <span class="math notranslate nohighlight">\(400\ \mu\text{s}\)</span>? Assume that the public keys have already been computed.</p></li>
+<li><p>One well-known acceleration technique for discrete logarithm systems uses short primitive elements. We assume now that <span class="math notranslate nohighlight">\(\alpha\)</span> is such a short element (e.g., a <span class="math notranslate nohighlight">\(16\text{-bit}\)</span> integer). Assume that modular multiplication with <span class="math notranslate nohighlight">\(\alpha\)</span> takes now only <span class="math notranslate nohighlight">\(30\ \mu\text{s}\)</span>. How long does the computation of the public key take now? Why is the time for one modular squaring still the same as above if we apply the square-and-multiply algorithm?</p></li>
+</ol>
+</section>
+<section id="question-8-8-answer">
+<h2><strong>Question 8.8. - Answer</strong><a class="headerlink" href="#question-8-8-answer" title="Link to this heading">#</a></h2>
+<section id="id8">
+<h3>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><strong>【假設 1】 密鑰是隨機生成的 ：</strong>  長度為 <span class="math notranslate nohighlight">\(160 \text{ bits}\)</span> 的密鑰 <span class="math notranslate nohighlight">\(0,1\)</span> 應該是一樣多的</p>
+<ul class="simple">
+<li><p>模平方次數：無論位元是 <span class="math notranslate nohighlight">\(0\)</span> 還是 <span class="math notranslate nohighlight">\(1\)</span>，每前進一個位元都必須執行一次平方:總共需要 <span class="math notranslate nohighlight">\(160\)</span> 次平方</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\text{平方次數} = 160 \]</div>
+<ul class="simple">
+<li><p>模乘次數：只有當位元為 <span class="math notranslate nohighlight">\(1\)</span> 時才需要執行乘法。在隨機金鑰的假設下，每個位元為 <span class="math notranslate nohighlight">\(1\)</span> 的機率平均為 <span class="math notranslate nohighlight">\(0.5\)</span>:總共需要 <span class="math notranslate nohighlight">\(800\)</span> 次平方</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \text{乘法次數} &amp;=&amp; 160 \times 0.5 \\
+  &amp;=&amp;80\\
+  \end{gather*}\end{split}\]</div>
+</li>
+</ul>
+</section>
+<section id="a">
+<h3>1. 私鑰 <span class="math notranslate nohighlight">\(a\)</span> 應該擁有的最大值是多少？<a class="headerlink" href="#a" title="Link to this heading">#</a></h3>
+<p>在迪菲-赫爾曼金鑰交換（DHKE）中，公鑰是由 <span class="math notranslate nohighlight">\(A = \alpha^a \bmod p\)</span> 計算而來</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(a\)</span> 是私鑰</p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha \)</span> 是子群的生成元（Generator）</p></li>
+</ul>
+<p>根據群論的週期性，當次方 <span class="math notranslate nohighlight">\(a\)</span> 超過該子群的階數 <span class="math notranslate nohighlight">\(\text{ord}(\alpha)\)</span> 時，計算出來的結果就會開始重複循環，因此讓私鑰大於子群的階數並不會增加任何密碼學上的安全性，只會浪費計算資源。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+&amp;0 &amp;\le&amp; a&amp;\le&amp; \text{ord}(\alpha )-1 \\
+&amp;0 &amp;\le&amp; a&amp; \overset{\text{Q8.8}}{\le}&amp; 2^{160}-1 \\
+\overset{\text{max}(a)}{\Rightarrow}&amp;  &amp; &amp; a&amp; = &amp; 2^{160}-1 \\
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="session-key">
+<h3>2. 計算「對話金鑰（Session Key）」平均需要多少時間<a class="headerlink" href="#session-key" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\text{Total Time}&amp;=&amp;(\text{平方次數}\times T_{\text{square}})+(\text{乘法次數}\times T_{\text{mult}}) \\
+&amp;\overset{\text{假設 1}}{=}&amp; (160\times T_{\text{square}})+( 80 \times T_{\text{mult}} ) \\
+&amp;\overset{\text{Q8.8.2}}{=}&amp; (160\times 400\ \mu\text{s})+(80 \times  700\ \mu\text{s}) \\
+&amp;=&amp; 120000\ \mu\text{s} \\
+&amp;=&amp; 0.12\text{ s} \\
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="alpha">
+<h3>3. 比較 <strong>平方運算</strong> 和 <strong>乘法運算</strong> 在使用小 <span class="math notranslate nohighlight">\(\alpha\)</span> 的加速<a class="headerlink" href="#alpha" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><strong>平方運算</strong></p>
+<p><span class="math notranslate nohighlight">\(16 \text{ bits} \rightarrow 32 \text{ bits}\rightarrow 64 \text{ bits}\rightarrow 128\text{ bits} \rightarrow 256\text{ bits} \rightarrow 512\text{ bits} \rightarrow 1024\text{ bits}\)</span></p>
+<p>大約只要經過 <span class="math notranslate nohighlight">\(6\)</span> 到 <span class="math notranslate nohighlight">\(7\)</span> 輪的平方運算後就是 <span class="math notranslate nohighlight">\(1024\text{ bits} \times 1024\text{ bits}\)</span> 的運算，時間仍卡會在 <span class="math notranslate nohighlight">\(400\ \mu\text{s}\)</span></p>
+</li>
+<li><p><strong>乘法運算</strong></p>
+<p>無論何時運算都是 <span class="math notranslate nohighlight">\(1024\text{ bits} \times 16\text{ bits}\)</span> 的運算，時間可以大幅下降 <span class="math notranslate nohighlight">\(30\ \mu\text{s}\)</span></p>
+</li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\text{Total Time}&amp;=&amp;(\text{平方次數}\times T_{\text{square}})+(\text{乘法次數}\times T_{\text{mult}}) \\
+&amp;\overset{\text{假設 1}}{=}&amp; (160\times T_{\text{square}})+( 80 \times T_{\text{mult}} ) \\
+&amp;\overset{\text{Q8.8.2,Q8.8.3}}{=}&amp; (160\times 400\ \mu\text{s})+(80 \times  30\ \mu\text{s}) \\
+&amp;=&amp; 66400\ \mu\text{s} \\
+&amp;=&amp; 0.0664\text{ s} \\
+\end{gather*}\end{split}\]</div>
+</section>
+</section>
+<section id="question-8-16">
+<h2><strong>Question 8.16.</strong><a class="headerlink" href="#question-8-16" title="Link to this heading">#</a></h2>
+<p>Given are an Elgamal encryption scheme with public parameters <span class="math notranslate nohighlight">\(k_{pub} = (p, \alpha, \beta)\)</span> and an unknown private key <span class="math notranslate nohighlight">\(k_{pr} = d\)</span>. Due to an erroneous implementation of the random number generator（隨機數產生器,RNG） of the encrypting party, the following relation holds for two temporary keys:</p>
+<div class="math notranslate nohighlight">
+\[k_{M, j+1} \equiv k_{M, j}^2 \pmod p\]</div>
+<p>Given are <span class="math notranslate nohighlight">\(n\)</span> consecutive ciphertexts</p>
+<div class="math notranslate nohighlight">
+\[(k_{E_1}, y_1), (k_{E_2}, y_2), \dots, (k_{E_n}, y_n)\]</div>
+<p>belonging to the plaintexts</p>
+<div class="math notranslate nohighlight">
+\[x_1, x_2, \dots, x_n\]</div>
+<p>Furthermore, the first plaintext <span class="math notranslate nohighlight">\(x_1\)</span> is known (e.g., header information).</p>
+<ol class="arabic simple">
+<li><p>Describe how an attacker can compute the plaintexts <span class="math notranslate nohighlight">\(x_1, x_2, \dots, x_n\)</span> from the given variables.</p></li>
+<li><p>Can an attacker compute the private key <span class="math notranslate nohighlight">\(d\)</span> from the given information? Explain your answer.</p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./homework"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6-4"><strong>Question 6.4.</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6-4-answer"><strong>Question 6.4. - Answer</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">開算</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#t-text-rsa-3072">1. 估計 <span class="math notranslate nohighlight">\(t_{\text{RSA-3072}}\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#t-text-rsa-15360">2. 估計 <span class="math notranslate nohighlight">\(t_{\text{RSA-15360}}\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ras-3072rsa-15360ecc-t-text-ecc">3. 估計與RAS-3072、RSA-15360同等安全防禦等級的ECC用時 <span class="math notranslate nohighlight">\(t_{\text{ECC}}\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rsaecc">4. 簡述RSA和ECC在安全級別和運算時間的關係</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6-10"><strong>Question 6.10.</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6-10-answer"><strong>Question 6.10. - Answer</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">開算</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-4-n-7">1. <span class="math notranslate nohighlight">\(a = 4, n = 7\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-5-n-12">2. <span class="math notranslate nohighlight">\(a = 5, n = 12\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-6-n-13">3. <span class="math notranslate nohighlight">\(a = 6, n = 13\)</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7-12"><strong>Question 7.12.</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7-12-answer"><strong>Question 7.12. - Answer</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">開證</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#proof">1. proof</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rsa">2. 基於 RSA 的攻擊邏輯步驟</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">現行RSA的防禦手段</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7-16"><strong>Question 7.16.</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7-16-answer"><strong>Question 7.16. - Answer</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solve-d">1. solve <span class="math notranslate nohighlight">\(d\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-d">2. 知道所有參數去計算 <span class="math notranslate nohighlight">\(d\)</span> 驗證與旁通通道攻擊得到的 <span class="math notranslate nohighlight">\(d\)</span> 是否相同</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8-8"><strong>Question 8.8.</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8-8-answer"><strong>Question 8.8. - Answer</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a">1. 私鑰 <span class="math notranslate nohighlight">\(a\)</span> 應該擁有的最大值是多少？</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#session-key">2. 計算「對話金鑰（Session Key）」平均需要多少時間</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alpha">3. 比較 <strong>平方運算</strong> 和 <strong>乘法運算</strong> 在使用小 <span class="math notranslate nohighlight">\(\alpha\)</span> 的加速</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8-16"><strong>Question 8.16.</strong></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC YE
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
