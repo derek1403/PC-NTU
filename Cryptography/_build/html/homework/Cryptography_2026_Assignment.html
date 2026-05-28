@@ -1649,6 +1649,7 @@ y_3 &amp;=&amp; s(x_1 - x_3) - y_1 &amp;\bmod{\ p}
 </section>
 <section id="question-9-16-answer">
 <h2><strong>Question 9.16. - Answer</strong><a class="headerlink" href="#question-9-16-answer" title="Link to this heading">#</a></h2>
+<p>這題會有 Latex 超出pdf而看不到的問題，可以到<a class="reference external" href="https://derek1403.github.io/PC-NTU/Cryptography/_build/html/homework/Cryptography_2026_Assignment.html#question-9-16-answer">這裡</a>看到比較完整的回答</p>
 <section id="id15">
 <h3>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#id15" title="Link to this heading">#</a></h3>
 <ul>
@@ -3186,8 +3187,10 @@ d &amp;\overset{\text{已知 3}}{=}&amp; v - \mathbf{s}^T \cdot \mathbf{u} \pmod
 <section id="question-a">
 <h2><strong>Question A</strong><a class="headerlink" href="#question-a" title="Link to this heading">#</a></h2>
 <p>Use the <a class="reference external" href="https://en.wikipedia.org/wiki/RSA_numbers#RSA-768">RSA-768 number</a> as the RSA modulus. Let <span class="math notranslate nohighlight">\(e = 65537\)</span> be the public exponent.</p>
-<p><span class="math notranslate nohighlight">\(\text{RSA-768} = 1230186684530117755130494958384962720772853569595334792197322452151726400507263657518745202199786469389956474942774063845925192557326303453731548268507917026122142913461670429214311602221240479274737794080665351419597459856902143413\)</span></p>
-<p><span class="math notranslate nohighlight">\(\text{RSA-768} = 33478071698956898786044169848212690817704794983713768568912431388982883793878002287614711652531743087737814467999489 \times  36746043666799590428244633799627952632279158164343087642676032283815739666511279233373417143396810270092798736308917\)</span></p>
+<div class="math notranslate nohighlight">
+\[\text{RSA-768} = 1230186684530117755130494958384962720772853569595334792197322452151726400507263657518745202199786469389956474942774063845925192557326303453731548268507917026122142913461670429214311602221240479274737794080665351419597459856902143413\]</div>
+<div class="math notranslate nohighlight">
+\[\text{RSA-768} = 33478071698956898786044169848212690817704794983713768568912431388982883793878002287614711652531743087737814467999489 \times  36746043666799590428244633799627952632279158164343087642676032283815739666511279233373417143396810270092798736308917\]</div>
 <ul class="simple">
 <li><p>(a) What is the corresponding private key <span class="math notranslate nohighlight">\(d\)</span>?</p></li>
 <li><p>(b) Sign the message <span class="math notranslate nohighlight">\(ID\)</span> by <span class="math notranslate nohighlight">\(d\)</span> directly</p></li>
@@ -3197,23 +3200,27 @@ d &amp;\overset{\text{已知 3}}{=}&amp; v - \mathbf{s}^T \cdot \mathbf{u} \pmod
 </section>
 <section id="question-a-answer">
 <h2><strong>Question A - Answer</strong><a class="headerlink" href="#question-a-answer" title="Link to this heading">#</a></h2>
+<p>這題會有 Latex 超出pdf而看不到的問題，可以到<a class="reference external" href="https://derek1403.github.io/PC-NTU/Cryptography/_build/html/homework/Cryptography_2026_Assignment.html#question-a-answer">這裡</a>看到比較完整的回答</p>
 <section id="id40">
 <h3>1. 求出對應的私鑰 <span class="math notranslate nohighlight">\(d\)</span><a class="headerlink" href="#id40" title="Link to this heading">#</a></h3>
 <p>解同餘問題</p>
 <div class="math notranslate nohighlight">
 \[e \cdot d \equiv 1 \pmod{\phi(N)}\]</div>
-<p><span class="math notranslate nohighlight">\(d =
-703813872109751212728960868893055483396831478279095442779477323396386489876250832944220079595968592852532432488202250497425262918616760886811596907743384527001944888359578241816763079495533278518938372814827410628647251148091159553\)</span></p>
+<div class="math notranslate nohighlight">
+\[d =
+703813872109751212728960868893055483396831478279095442779477323396386489876250832944220079595968592852532432488202250497425262918616760886811596907743384527001944888359578241816763079495533278518938372814827410628647251148091159553\]</div>
 </section>
 <section id="d-id">
 <h3>2. 用 <span class="math notranslate nohighlight">\(d\)</span> 對訊息 <span class="math notranslate nohighlight">\(ID\)</span> 進行簽章<a class="headerlink" href="#d-id" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[S \equiv m^d \pmod N\]</div>
-<p><span class="math notranslate nohighlight">\(S_{\text{direct}} = 1178777897313228301461622057410491757150538718739186540899772207158714646407973532077504242864297996896891333187086289982004417653874846313687664545638311765934007209798579018328577563110487091470578071454847803736925873315049242567\)</span></p>
+<div class="math notranslate nohighlight">
+\[S_{\text{direct}} = 1178777897313228301461622057410491757150538718739186540899772207158714646407973532077504242864297996896891333187086289982004417653874846313687664545638311765934007209798579018328577563110487091470578071454847803736925873315049242567\]</div>
 </section>
 <section id="crt">
 <h3>3. 利用中國剩餘定理（CRT）進行簽章<a class="headerlink" href="#crt" title="Link to this heading">#</a></h3>
-<p><span class="math notranslate nohighlight">\(S_{\text{crt}} = 1178777897313228301461622057410491757150538718739186540899772207158714646407973532077504242864297996896891333187086289982004417653874846313687664545638311765934007209798579018328577563110487091470578071454847803736925873315049242567\)</span></p>
+<div class="math notranslate nohighlight">
+\[S_{\text{crt}} = 1178777897313228301461622057410491757150538718739186540899772207158714646407973532077504242864297996896891333187086289982004417653874846313687664545638311765934007209798579018328577563110487091470578071454847803736925873315049242567\]</div>
 <p>直接算 <span class="math notranslate nohighlight">\(m^d \pmod N\)</span> 雖然用演算法加速過了，但因為 <span class="math notranslate nohighlight">\(N\)</span> 實在太大，計算起來還是有點費力。中國剩餘定理（Chinese Remainder Theorem, CRT） 提供了一個「分工合作」的捷徑:與其讓一個工人去扛一個超級重的箱子（模 <span class="math notranslate nohighlight">\(N\)</span> 運算），我們不如請兩個工人，分別去扛兩個只有一半重的箱子（分別模 <span class="math notranslate nohighlight">\(p\)</span> 與模 <span class="math notranslate nohighlight">\(q\)</span>），最後再把它們拼起來。</p>
 <p>實測我這台破電腦( <strong>Intel(R) Core(TM) i7-7700 CPU &#64; 3.60GHz</strong> )這可以讓簽章速度提升約 1.88 倍</p>
 <p>根據費馬小定理（Fermat’s Little Theorem），<span class="math notranslate nohighlight">\(m^{p-1} \equiv 1 \pmod p\)</span>，這表示在模 <span class="math notranslate nohighlight">\(p\)</span> 的世界裡，指數每經過 <span class="math notranslate nohighlight">\((p-1)\)</span> 就會循環一次。因此，我們可以先降維</p>
@@ -3321,7 +3328,7 @@ d &amp;\overset{\text{已知 3}}{=}&amp; v - \mathbf{s}^T \cdot \mathbf{u} \pmod
 d = 
 703813872109751212728960868893055483396831478279095442779477323396386489876250832944220079595968592852532432488202250497425262918616760886811596907743384527001944888359578241816763079495533278518938372814827410628647251148091159553
 
-⏱️ 步驟 (a) 耗時: 0.000081 秒
+⏱️ 步驟 (a) 耗時: 0.000084 秒
 
 ==================================================
 (b) 直接簽章 (Direct Signature)
@@ -3329,7 +3336,7 @@ d =
 S_direct = 
 1178777897313228301461622057410491757150538718739186540899772207158714646407973532077504242864297996896891333187086289982004417653874846313687664545638311765934007209798579018328577563110487091470578071454847803736925873315049242567
 
-⏱️ 步驟 (b) 耗時: 0.001848 秒
+⏱️ 步驟 (b) 耗時: 0.001555 秒
 
 ==================================================
 (c) 利用 CRT 簽章 (CRT Signature)
@@ -3337,11 +3344,11 @@ S_direct =
 S_crt = 
 1178777897313228301461622057410491757150538718739186540899772207158714646407973532077504242864297996896891333187086289982004417653874846313687664545638311765934007209798579018328577563110487091470578071454847803736925873315049242567
 
-⏱️ 步驟 (c) 耗時: 0.000880 秒
+⏱️ 步驟 (c) 耗時: 0.000874 秒
 
 ==================================================
 ✅ 驗證 (b) 與 (c) 結果是否相同: True
-🚀 CRT 加速比: 約 2.10 倍
+🚀 CRT 加速比: 約 1.78 倍
 </pre></div>
 </div>
 </div>
@@ -3365,6 +3372,7 @@ S_crt =
 </section>
 <section id="question-b-answer">
 <h2><strong>Question B - Answer</strong><a class="headerlink" href="#question-b-answer" title="Link to this heading">#</a></h2>
+<p>這題會有 Latex 超出pdf而看不到的問題，可以到<a class="reference external" href="https://derek1403.github.io/PC-NTU/Cryptography/_build/html/homework/Cryptography_2026_Assignment.html#question-b-answer">這裡</a>看到比較完整的回答</p>
 <div class="math notranslate nohighlight">
 \[y^2 \equiv x^3 + 7 \pmod p\]</div>
 <section id="a-q-d-g">
@@ -3372,27 +3380,33 @@ S_crt =
 <ul class="simple">
 <li><p>私鑰</p></li>
 </ul>
-<p><span class="math notranslate nohighlight">\(d (ID) = 14229017\)</span></p>
+<div class="math notranslate nohighlight">
+\[d (ID) = 14229017\]</div>
 <ul class="simple">
 <li><p>公鑰</p></li>
 </ul>
-<p><span class="math notranslate nohighlight">\(Q (x, y) = (\text{0x00bd68515f1248bf35acf0d6b58ef1d2e8b78657c8f0e92a8adec1442b3e5691},\text{ 0x2346cd98a2590a67768ac4a786dd92d7249876b0a125b8ddce94befc6008134d})\)</span></p>
+<div class="math notranslate nohighlight">
+\[Q (x, y) = (\text{0x00bd68515f1248bf35acf0d6b58ef1d2e8b78657c8f0e92a8adec1442b3e5691},\text{ 0x2346cd98a2590a67768ac4a786dd92d7249876b0a125b8ddce94befc6008134d})\]</div>
 </section>
 <section id="b-r-s">
 <h3>(b) 數位簽章 (r, s)<a class="headerlink" href="#b-r-s" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>訊息雜湊</p></li>
 </ul>
-<p><span class="math notranslate nohighlight">\(z =\text{0x4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b}\)</span></p>
+<div class="math notranslate nohighlight">
+\[z =\text{0x4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b}\]</div>
 <ul class="simple">
 <li><p>本次使用的隨機</p></li>
 </ul>
-<p><span class="math notranslate nohighlight">\(k = \text{0x4eb8cfb585bbe5d0904cf7bf41dd63883057ac1a1d760bfb22de158702e7d6c0}\)</span></p>
+<div class="math notranslate nohighlight">
+\[k = \text{0x4eb8cfb585bbe5d0904cf7bf41dd63883057ac1a1d760bfb22de158702e7d6c0}\]</div>
 <ul class="simple">
 <li><p>Signature</p></li>
 </ul>
-<p><span class="math notranslate nohighlight">\(r = \text{0x0ac597b9aa003bda74a0e67d91d67d0331db021a9ff24627ebd75133030d961d}\)</span></p>
-<p><span class="math notranslate nohighlight">\(s = \text{0xb2ecb4f5919c2baad8f2cbdc482e23b4125890f8a485533d13bd9774bf52961a\)</span></p>
+<div class="math notranslate nohighlight">
+\[r = \text{0x0ac597b9aa003bda74a0e67d91d67d0331db021a9ff24627ebd75133030d961d}\]</div>
+<div class="math notranslate nohighlight">
+\[s = \text{0xb2ecb4f5919c2baad8f2cbdc482e23b4125890f8a485533d13bd9774bf52961a}\]</div>
 </section>
 <section id="c">
 <h3>(c) 驗證簽章<a class="headerlink" href="#c" title="Link to this heading">#</a></h3>
@@ -3529,15 +3543,15 @@ S_crt =
 (b) 數位簽章 (r, s)
 ============================================================
 訊息雜湊 z = 0x4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b
-本次使用的隨機 k = 0xec6bd609c9d555f144d2038860e4824f72db017f3bcf38ceaff5ef600a9620e7
-Signature r = 0x9d958ec2d4ae8d7985a6e8e0e9fc70a4176e0921ffa27a3bd3356ee1e28c6657
-Signature s = 0xc39a575d5c6d97b98e18c38ab6b0d0233939ce195752b3bb11ea862a062ec1ae
+本次使用的隨機 k = 0x1fd55d2111103b9cb8947cec452f410d6b73a1b44c13e5c2f3a2707635071107
+Signature r = 0x8afe93522a7bc84145148abf571ca0f4879f826167ed7f317bfeb84b571ed036
+Signature s = 0x613950b48383dd672f8caffba8301e54fb2acb6fec949a8240efad4d373fa827
 
 ============================================================
 (c) 驗證簽章
 ============================================================
-驗證點 x2 座標 = 0x9d958ec2d4ae8d7985a6e8e0e9fc70a4176e0921ffa27a3bd3356ee1e28c6657
-簽章中的 r 座標 = 0x9d958ec2d4ae8d7985a6e8e0e9fc70a4176e0921ffa27a3bd3356ee1e28c6657
+驗證點 x2 座標 = 0x8afe93522a7bc84145148abf571ca0f4879f826167ed7f317bfeb84b571ed036
+簽章中的 r 座標 = 0x8afe93522a7bc84145148abf571ca0f4879f826167ed7f317bfeb84b571ed036
 ✅ 驗證結果: 成功 (Valid)
 </pre></div>
 </div>
