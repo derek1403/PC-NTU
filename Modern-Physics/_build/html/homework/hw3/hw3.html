@@ -28,9 +28,9 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
@@ -50,7 +50,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -837,8 +837,8 @@ d&amp;\approx &amp;6.337 \text{ pm} &amp;=  0.006337 \text{ nm}
 <h1>程式<a class="headerlink" href="#id7" title="Link to this heading">#</a></h1>
 <section id="q4-b">
 <h2>Q4-b<a class="headerlink" href="#q4-b" title="Link to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="c1"># --- 步驟 A: 定義物理常數 ---</span>
 <span class="n">h</span> <span class="o">=</span> <span class="mf">6.626e-34</span>      <span class="c1"># 普朗克常數 (J·s)</span>
@@ -851,7 +851,7 @@ d&amp;\approx &amp;6.337 \text{ pm} &amp;=  0.006337 \text{ nm}
 <span class="n">lambdas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">16</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
 
 <span class="c1"># --- 步驟 C: 定義核心計算函數 ---</span>
-<span class="k">def</span> <span class="nf">calculate_velocities</span><span class="p">(</span><span class="n">m0</span><span class="p">,</span> <span class="n">lambdas</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">calculate_velocities</span><span class="p">(</span><span class="n">m0</span><span class="p">,</span> <span class="n">lambdas</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;計算給定靜止質量與波長陣列下的群速度與相速度&quot;&quot;&quot;</span>
     <span class="c1"># 為了程式碼簡潔與執行效能，先把公式中重複出現的龐大項先算出來</span>
     <span class="n">term</span> <span class="o">=</span> <span class="p">(</span><span class="n">lambdas</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">m0</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">c</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="n">h</span><span class="o">**</span><span class="mi">2</span>
