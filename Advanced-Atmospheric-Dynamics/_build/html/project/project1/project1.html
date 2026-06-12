@@ -402,11 +402,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problems-and-project-1">Problems and Project 1</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">中文版</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>原始的完全可壓縮流體力學偏微分方程組</strong> 轉成 <strong>密度加權的線性化微擾方程組（且分離出非線性強迫項）</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-chinese">中文版 (In chinese)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-the-original-fully-compressible-navier-stokes-equations-to-the-density-weighted-linearized-perturbation-equations-with-isolated-nonlinear-forcing-terms">一、<strong>原始的完全可壓縮流體力學偏微分方程組</strong> 轉成 <strong>密度加權的線性化微擾方程組（且分離出非線性強迫項）</strong> (From the original fully compressible Navier-Stokes equations to the density-weighted linearized perturbation equations (with isolated nonlinear forcing terms))</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-ultimate-goal"><strong>為什麼要花這麼大功夫轉成這樣？（The Ultimate Goal）</strong></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><strong>證明</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>證明</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#a"><strong>2a</strong></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#b"><strong>2b</strong></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#c"><strong>2c</strong></a></li>
@@ -416,8 +416,9 @@ document.write(`
 </li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><strong>流體力學偏微分方程式</strong> 轉成 <strong>線性代數矩陣方程式</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-fluid-dynamics-pdes-to-linear-algebraic-matrix-equations">二、<strong>流體力學偏微分方程式</strong> 轉成 <strong>線性代數矩陣方程式</strong> (From fluid dynamics PDEs to linear algebraic matrix equations.)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">證明</a></li>
 </ul>
 </li>
 </ul>
@@ -554,7 +555,9 @@ c^2 \frac{\partial}{\partial x} &amp; c^2 \frac{\partial}{\partial y} &amp; c^2 
 0 \\
 \nu_{klmn} \\
 0
-\end{pmatrix} e^{i(\bar{k}x + \bar{l}y)} e^{-\Gamma z}, \tag{8a}\end{split}\]</div>
+\end{pmatrix} e^{i(\bar{k}x + \bar{l}y)} e^{-\Gamma z}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[ . \tag{8a}\]</div>
 <p>with the dispersion relationship</p>
 <div class="math notranslate nohighlight">
 \[\nu_{klmn}^2 = c^2 (\bar{k}^2 + \bar{l}^2), \tag{8b}\]</div>
@@ -572,7 +575,9 @@ c^2 \frac{\partial}{\partial x} &amp; c^2 \frac{\partial}{\partial y} &amp; c^2 
 -\frac{(\bar{m}^2 + \Gamma^2)\nu_{klmn}^2}{N^2 - \nu_{klmn}^2} i \sin \bar{m}z \\
 \nu_{klmn} (\bar{m} \cos \bar{m}z - \Gamma \sin \bar{m}z) \\
 \frac{N^2}{g} \frac{(\bar{m}^2 + \Gamma^2)}{N^2 - \nu_{klmn}^2} \nu_{klmn} \sin \bar{m}z
-\end{pmatrix} e^{i(\bar{k}x + \bar{l}y)}, \tag{9b}\end{split}\]</div>
+\end{pmatrix} e^{i(\bar{k}x + \bar{l}y)}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[ . \tag{9b}\]</div>
 <p>Where</p>
 <div class="math notranslate nohighlight">
 \[A_{klmn} = \left( \left( \frac{\bar{m}^2 + \Gamma^2}{N^2 - \nu_{klmn}^2} \right) \left( N^2 (\bar{k}^2 + \bar{l}^2) - \frac{\nu_{klmn}^4}{c^2} \right) \right)^{-\frac{1}{2}}. \tag{9c}\]</div>
@@ -628,10 +633,10 @@ c^2 \frac{\partial}{\partial x} &amp; c^2 \frac{\partial}{\partial y} &amp; c^2 
 <p><em>(Note: The page also includes Figure 6.18: “Dispersion diagram for an isothermal atmosphere. Waves are possible only in the stippled regions and on the line for the Lamb wave…”)</em></p>
 </section>
 </section>
-<section id="id2">
-<h2>中文版<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<section id="id3">
-<h3><strong>原始的完全可壓縮流體力學偏微分方程組</strong> 轉成 <strong>密度加權的線性化微擾方程組（且分離出非線性強迫項）</strong><a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<section id="in-chinese">
+<h2>中文版 (In chinese)<a class="headerlink" href="#in-chinese" title="Link to this heading">#</a></h2>
+<section id="from-the-original-fully-compressible-navier-stokes-equations-to-the-density-weighted-linearized-perturbation-equations-with-isolated-nonlinear-forcing-terms">
+<h3>一、<strong>原始的完全可壓縮流體力學偏微分方程組</strong> 轉成 <strong>密度加權的線性化微擾方程組（且分離出非線性強迫項）</strong> (From the original fully compressible Navier-Stokes equations to the density-weighted linearized perturbation equations (with isolated nonlinear forcing terms))<a class="headerlink" href="#from-the-original-fully-compressible-navier-stokes-equations-to-the-density-weighted-linearized-perturbation-equations-with-isolated-nonlinear-forcing-terms" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{gather*}
 \frac{\partial }{\partial t } \left[ \bar{\rho}^{\frac{1}{2}} u \right] + \frac{\partial }{\partial x} \left[ \bar{\rho}^{\frac{-1}{2}} p' \right]  &amp;=&amp; \bar{\rho}^{\frac{1}{2}} \left(-  (\mathbf{u} \cdot \nabla) u + \frac{\rho'}{\bar{\rho} \rho  } \frac{\partial p'}{\partial x} \right) \tag{2a}\\
@@ -1026,8 +1031,8 @@ c^2 \frac{\partial}{\partial x} &amp; c^2 \frac{\partial}{\partial y} &amp; c^2 
 </li>
 </ul>
 </section>
-<section id="id4">
-<h4><strong>證明</strong><a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<section id="id2">
+<h4><strong>證明</strong><a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
 <section id="a">
 <h5><strong>2a</strong><a class="headerlink" href="#a" title="Link to this heading">#</a></h5>
 <div class="math notranslate nohighlight">
@@ -1128,12 +1133,12 @@ c^2 \frac{\partial}{\partial x} &amp; c^2 \frac{\partial}{\partial y} &amp; c^2 
 </section>
 </section>
 </section>
-<section id="id5">
-<h3><strong>流體力學偏微分方程式</strong> 轉成 <strong>線性代數矩陣方程式</strong><a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<section id="from-fluid-dynamics-pdes-to-linear-algebraic-matrix-equations">
+<h3>二、<strong>流體力學偏微分方程式</strong> 轉成 <strong>線性代數矩陣方程式</strong> (From fluid dynamics PDEs to linear algebraic matrix equations.)<a class="headerlink" href="#from-fluid-dynamics-pdes-to-linear-algebraic-matrix-equations" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
-\[\frac{\partial \tilde{u}}{\partial t} + L\tilde{u} = \tilde{N}\]</div>
-<section id="id6">
-<h4>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
+\[\frac{\partial \tilde{u}}{\partial t} + \mathbf{L} \tilde{u} = \tilde{N}\]</div>
+<section id="id3">
+<h4>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
 <ul>
 <li><p><strong>【已知 1】  密度加權的線性化微擾方程組與非線性強迫項分離（Density-weighted linearized perturbation equations with nonlinear forcing separation） ：</strong></p>
 <ul class="simple">
@@ -1173,7 +1178,94 @@ c^2 \frac{\partial}{\partial x} &amp; c^2 \frac{\partial}{\partial y} &amp; c^2 
 <li><p><span class="math notranslate nohighlight">\(c\)</span> : 本地音速 (Local speed of sound) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
 </ul>
 </li>
+<li><p><strong>【定義 1】 經密度加權的大氣狀態向量（Density-weighted atmospheric state vector） ：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*} 
+  \tilde{u} &amp;\overset{\text{def}}{=}&amp; \begin{bmatrix} U \\[1.5ex] V \\[1.5ex] W \\[1.5ex] P \\[1.5ex] \Pi \\[1.5ex] \end{bmatrix} 
+  &amp;\overset{\text{let}}{=}&amp;  \begin{bmatrix} \bar{\rho}^{\frac{1}{2}} u \\[1.5ex] \bar{\rho}^{\frac{1}{2}} v \\[1.5ex] \bar{\rho}^{\frac{1}{2}} w \\[1.5ex] \bar{\rho}^{\frac{-1}{2}} p' \\[1.5ex] \bar{\rho}^{\frac{-1}{2}}  \left( \rho' - \frac{p'}{c^2}  \right)\\[1.5ex] \end{bmatrix}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\~{\mathbf{u}}\)</span> : 大氣波動狀態向量 (Atmospheric wave state vector)</p></li>
+<li><p><span class="math notranslate nohighlight">\(U, V, W\)</span> : 經密度平方根加權後的 <span class="math notranslate nohighlight">\(x, y, z\)</span> 三軸方向動量型速度分量 <span class="math notranslate nohighlight">\([\text{kg}^{\frac{1}{2}}\cdot\text{m}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(P\)</span> : 經密度倒數平方根加權後的縮放氣壓微擾項 <span class="math notranslate nohighlight">\([\text{kg}^{-\frac{1}{2}}\cdot\text{m}^{\frac{1}{2}}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Pi \)</span> : 經密度倒數平方根加權後的非等熵度量／勢度微擾項 (Non-isentropic perturbation representative) <span class="math notranslate nohighlight">\([\text{kg}^{\frac{1}{2}}\cdot\text{m}^{-3}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(u, v, w, p', \rho'\)</span> : 原始微擾場的速度、氣壓與密度分量</p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar{\rho }\)</span> : 基本背景態密度 <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}^{-3}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c\)</span> : 本地音速 <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
 </ul>
+</li>
+<li><p><strong>【定義 2】 非線性強迫力向量（Nonlinear forcing vector） ：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\tilde{N} \overset{\text{def}}{=} \begin{bmatrix} 
+  \bar{\rho}^{\frac{1}{2}} \left(-  (\mathbf{u} \cdot \nabla) u + \frac{\rho'}{\bar{\rho} \rho  } \frac{\partial p'}{\partial x} \right) \\[2ex] 
+  \bar{\rho}^{\frac{1}{2}} \left(-  (\mathbf{u} \cdot \nabla) v + \frac{\rho'}{\bar{\rho} \rho  }\frac{\partial p'}{\partial y} \right) \\[2ex] 
+  - \bar{\rho}^{\frac{1}{2}} \left( (\mathbf{u} \cdot \nabla) w  +  \frac{\rho'^2}{\rho \bar{\rho} } g +  \frac{\rho'}{\rho \bar{\rho}} \frac{\partial p'}{\partial z}  \right) \\[2ex] 
+  -\bar{\rho}^{\frac{-1}{2}} \left( (\mathbf{u} \cdot \nabla ) p' + c^2  \rho'  \nabla \cdot \mathbf{u} \right) \\[2ex] 
+  -\bar{\rho}^{\frac{-1}{2}} \left( \mathbf{u}\cdot\nabla \rho' -\frac{1}{c^2} \mathbf{u}\cdot\nabla p'  \right) \\[2ex]
+  \end{bmatrix} \end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\tilde{\mathbf{N}}\)</span> : 包含平流與微擾乘積項的五維非線性強迫力向量 (Nonlinear forcing column vector)</p></li>
+<li><p><span class="math notranslate nohighlight">\(g\)</span> : 地表重力加速度常數 <span class="math notranslate nohighlight">\(g \approx 9.80665 \text{ m}\cdot\text{s}^{-2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\rho \)</span> : 瞬時總密度場 <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}^{-3}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c\)</span> : 本地音速 (Local speed of sound) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((\mathbf{u} \cdot \nabla)\)</span> : 三維平流算符 <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 3】 空間微分波動算符矩陣（Spatial differential wave operator matrix） ：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \mathbf{L} \overset{\text{def}}{=} \begin{bmatrix} 
+  0 &amp; 0 &amp; 0 &amp; \frac{\partial}{\partial x} &amp; 0 \\[2ex]
+  0 &amp; 0 &amp; 0 &amp; \frac{\partial}{\partial y} &amp; 0 \\[2ex]
+  0 &amp; 0 &amp; 0 &amp; \left(\frac{\partial}{\partial z} + \Gamma\right) &amp; g \\[2ex]
+  c^2 \frac{\partial}{\partial x} &amp; c^2 \frac{\partial}{\partial y} &amp; c^2 \left(\frac{\partial}{\partial z} - \Gamma\right) &amp; 0 &amp; 0 \\[2ex]
+  0 &amp; 0 &amp; -\frac{N^2}{g} &amp; 0 &amp; 0 \\[2ex]
+  \end{bmatrix}  \end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathbf{L}\)</span> : 封裝空間偏微分與大氣層結常數的 <span class="math notranslate nohighlight">\(5 \times 5\)</span> 矩陣微分算符 (Spatial differential operator matrix)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Gamma \)</span> : 大氣層結修正因子 <span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(N^{2}\)</span> : 浮力頻率平方 <span class="math notranslate nohighlight">\([\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(g\)</span> : 地表重力加速度常數 <span class="math notranslate nohighlight">\(g \approx 9.80665 \text{ m}\cdot\text{s}^{-2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c\)</span> : 本地音速 (Local speed of sound) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{\partial}{\partial x}, \frac{\partial}{\partial y}, \frac{\partial}{\partial z}\)</span> : 各時空空間軸向的偏微分算符 <span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id4">
+<h4>證明<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*} 
+\frac{\partial }{\partial t} \begin{bmatrix} 
+\bar{\rho}^{\frac{1}{2}} u \vphantom{\Bigg|} \\[2ex] 
+\bar{\rho}^{\frac{1}{2}} v \vphantom{\Bigg|} \\[2ex] 
+\bar{\rho}^{\frac{1}{2}} w \vphantom{\Bigg|} \\[2ex] 
+\bar{\rho}^{\frac{-1}{2}} p' \vphantom{\Bigg|} \\[2ex] 
+\bar{\rho}^{\frac{-1}{2}}  \left( \rho' - \frac{p'}{c^2}  \right) \vphantom{\Bigg|} \\[2ex] 
+\end{bmatrix}    
+&amp;+&amp; \begin{bmatrix} 
+0 &amp; 0 &amp; 0 &amp; \frac{\partial}{\partial x} &amp; 0 \vphantom{\Bigg|} \\[2ex]
+0 &amp; 0 &amp; 0 &amp; \frac{\partial}{\partial y} &amp; 0 \vphantom{\Bigg|} \\[2ex]
+0 &amp; 0 &amp; 0 &amp; \left(\frac{\partial}{\partial z} + \Gamma\right) &amp; g \vphantom{\Bigg|} \\[2ex]
+c^2 \frac{\partial}{\partial x} &amp; c^2 \frac{\partial}{\partial y} &amp; c^2 \left(\frac{\partial}{\partial z} - \Gamma\right) &amp; 0 &amp; 0 \vphantom{\Bigg|} \\[2ex]
+0 &amp; 0 &amp; -\frac{N^2}{g} &amp; 0 &amp; 0 \vphantom{\Bigg|} \\[2ex]
+\end{bmatrix}&amp;
+\begin{bmatrix} 
+\bar{\rho}^{\frac{1}{2}} u \vphantom{\Bigg|} \\[2ex] 
+\bar{\rho}^{\frac{1}{2}} v \vphantom{\Bigg|} \\[2ex] 
+\bar{\rho}^{\frac{1}{2}} w \vphantom{\Bigg|} \\[2ex] 
+\bar{\rho}^{\frac{-1}{2}} p' \vphantom{\Bigg|} \\[2ex] 
+\bar{\rho}^{\frac{-1}{2}}  \left( \rho' - \frac{p'}{c^2}  \right) \vphantom{\Bigg|} \\[2ex] 
+\end{bmatrix}
+&amp;\overset{\text{已知 1(a)(b)(c)(d)(e)}}{=}&amp;
+\begin{bmatrix} 
+\bar{\rho}^{\frac{1}{2}} \left(-  (\mathbf{u} \cdot \nabla) u + \frac{\rho'}{\bar{\rho} \rho  } \frac{\partial p'}{\partial x} \right) \vphantom{\Bigg|} \\[2ex] 
+\bar{\rho}^{\frac{1}{2}} \left(-  (\mathbf{u} \cdot \nabla) v + \frac{\rho'}{\bar{\rho} \rho  }\frac{\partial p'}{\partial y} \right) \vphantom{\Bigg|} \\[2ex] 
+- \bar{\rho}^{\frac{1}{2}} \left( (\mathbf{u} \cdot \nabla) w  +  \frac{\rho'^2}{\rho \bar{\rho} } g +  \frac{\rho'}{\rho \bar{\rho}} \frac{\partial p'}{\partial z}  \right) \vphantom{\Bigg|} \\[2ex] 
+-\bar{\rho}^{\frac{-1}{2}} \left( (\mathbf{u} \cdot \nabla ) p' + c^2  \rho'  \nabla \cdot \mathbf{u} \right) \vphantom{\Bigg|} \\[2ex] 
+-\bar{\rho}^{\frac{-1}{2}} \left( \mathbf{u}\cdot\nabla \rho' -\frac{1}{c^2} \mathbf{u}\cdot\nabla p'  \right) \vphantom{\Bigg|} \\[2ex]
+\end{bmatrix} \\
+\frac{\partial \tilde{u}}{\partial t} &amp;+&amp; \mathbf{L} &amp; \tilde{u} &amp;\overset{\text{定義 1,2,3}}{=}&amp; \tilde{N} \\ 
+\end{gather*}\end{split}\]</div>
 </section>
 </section>
 </section>
@@ -1249,11 +1341,11 @@ c^2 \frac{\partial}{\partial x} &amp; c^2 \frac{\partial}{\partial y} &amp; c^2 
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problems-and-project-1">Problems and Project 1</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">中文版</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>原始的完全可壓縮流體力學偏微分方程組</strong> 轉成 <strong>密度加權的線性化微擾方程組（且分離出非線性強迫項）</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-chinese">中文版 (In chinese)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-the-original-fully-compressible-navier-stokes-equations-to-the-density-weighted-linearized-perturbation-equations-with-isolated-nonlinear-forcing-terms">一、<strong>原始的完全可壓縮流體力學偏微分方程組</strong> 轉成 <strong>密度加權的線性化微擾方程組（且分離出非線性強迫項）</strong> (From the original fully compressible Navier-Stokes equations to the density-weighted linearized perturbation equations (with isolated nonlinear forcing terms))</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-ultimate-goal"><strong>為什麼要花這麼大功夫轉成這樣？（The Ultimate Goal）</strong></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><strong>證明</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>證明</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#a"><strong>2a</strong></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#b"><strong>2b</strong></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#c"><strong>2c</strong></a></li>
@@ -1263,8 +1355,9 @@ c^2 \frac{\partial}{\partial x} &amp; c^2 \frac{\partial}{\partial y} &amp; c^2 
 </li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><strong>流體力學偏微分方程式</strong> 轉成 <strong>線性代數矩陣方程式</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-fluid-dynamics-pdes-to-linear-algebraic-matrix-equations">二、<strong>流體力學偏微分方程式</strong> 轉成 <strong>線性代數矩陣方程式</strong> (From fluid dynamics PDEs to linear algebraic matrix equations.)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">證明</a></li>
 </ul>
 </li>
 </ul>
