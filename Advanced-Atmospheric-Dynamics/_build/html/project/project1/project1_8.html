@@ -1,0 +1,753 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>八、三維波動色散方程式之無因次化轉換證明 &#8212; Advanced Atmospheric Dynamics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=4cca277b" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'project/project1/project1_8';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Advanced Atmospheric Dynamics Project 1" href="project1_AllInOne.html" />
+    <link rel="prev" title="七、轉換法中消除混疊之網格點數條件證明" href="project1_7.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Advanced Atmospheric Dynamics - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Advanced Atmospheric Dynamics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lecture/lecture.html">lecture</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/week1/week1.html">Advanced Atmospheric Dynamics - Week 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/week2/week2.html">Advanced Atmospheric Dynamics - Week 2</a></li>
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../homework/homework.html">homework</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../homework/hw1/hw1.html">Advanced Atmospheric Dynamics Hw 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../homework/hw2/hw2.html">Advanced Atmospheric Dynamics Hw 2</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="project_overview.html">Eigenfunctions and eigenvalues of the fully compressible model.</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../project2/project2.html">Advanced Atmospheric Dynamics Project 2</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fproject/project1/project1_8.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/project/project1/project1_8.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>八、三維波動色散方程式之無因次化轉換證明</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">證明</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">數學轉換（無因次化）</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">討論</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">觀察圖表的核心物理意義</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">坐標軸的物理意義</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">每一條線的意義與「量子化」疑問</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">點與點之間的相對關係</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">白色的區域與不存在的波</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code">code</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="id1">
+<h1>八、三維波動色散方程式之無因次化轉換證明<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<p><strong>證明目標：</strong></p>
+<div class="math notranslate nohighlight">
+\[Y^4 - Y^2 \left[ S(X^2 + Z^2 + G^2) + 1 \right] + S X^2 = 0\]</div>
+<section id="assumptions-preliminaries">
+<h2>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong>【已知 1】 三維一般波動色散方程式 (3D wave dispersion relation) ：</strong></p>
+<div class="math notranslate nohighlight">
+\[\frac{\nu^4}{c^2} - \nu^2 \left( \bar{k}^2 + \bar{l}^2 + \bar{m}^2 + \Gamma^2 + \frac{N^2}{c^2} \right) + \left( \bar{k}^2 + \bar{l}^2 \right)N^2 = 0\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\nu \)</span> : 系統的實數固有特徵角頻率 (Real eigenfrequency) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c\)</span> : 本地音速 (Local speed of sound) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar{k}\)</span> : <span class="math notranslate nohighlight">\(x\)</span> 軸方向的水平波數／東西向波數 (Zonal wavenumber) <span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar{l}\)</span> : <span class="math notranslate nohighlight">\(y\)</span> 軸方向的水平波數／南北向波數 (Meridional wavenumber) <span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar{m}\)</span> : <span class="math notranslate nohighlight">\(z\)</span> 軸方向的垂直波數 (Vertical wavenumber) <span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Gamma\)</span> : 大氣層結修正因子 <span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(N\)</span> : 浮力頻率 (Brunt-Väisälä frequency) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 1】 無因次頻率 (Normalized frequency) ：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  Y &amp;\overset{\text{def}}{=}&amp; \frac{\nu}{N} \\
+  \nu &amp;=&amp; YN
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(Y\)</span> : 歸一化無因次波頻 (Normalized dimensionless frequency) [無單位]，代表波動頻率相對於浮力頻率的比值</p></li>
+<li><p><span class="math notranslate nohighlight">\(\nu \)</span> : 系統的實數固有特徵角頻率 (Real eigenfrequency) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(N\)</span> : 浮力頻率 (Brunt-Väisälä frequency) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 2】 無因次水平波數 (Normalized horizontal wavenumber) ：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  X &amp;\overset{\text{def}}{=}&amp; \sqrt{\bar{k}^2 + \bar{l}^2} H_s \\
+  \bar{k}^2 + \bar{l}^2 &amp;=&amp; \frac{X^2}{H_s^2}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(X\)</span> : 歸一化無因次水平波數 (Normalized dimensionless horizontal wavenumber) [無單位]，代表水平波數與大氣特徵高度尺度的乘積</p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar{k}\)</span> : <span class="math notranslate nohighlight">\(x\)</span> 軸方向的水平波數／東西向波數 (Zonal wavenumber) <span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar{l}\)</span> : <span class="math notranslate nohighlight">\(y\)</span> 軸方向的水平波數／南北向波數 (Meridional wavenumber) <span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(H_{s}\)</span> : 等溫大氣標高 (Atmospheric scale height) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 3】 無因次垂直波數 (Normalized vertical wavenumber) ：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  Z &amp;\overset{\text{def}}{=}&amp; \bar{m}H_s \\
+  \bar{m}^2 &amp;=&amp; \frac{Z^2}{H_s^2}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(Z\)</span> : 歸一化無因次垂直波數 (Normalized dimensionless vertical wavenumber) [無單位]，代表垂直波數與大氣垂直尺度的比例關係</p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar{m}\)</span> : <span class="math notranslate nohighlight">\(z\)</span> 軸方向的垂直波數 (Vertical wavenumber) <span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(H_{s}\)</span> : 等溫大氣標高 (Atmospheric scale height) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 4】 無因次大氣層結參數 (Normalized stratification parameter) ：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  G &amp;\overset{\text{def}}{=}&amp; \Gamma H_s \\
+  \Gamma^2 &amp;=&amp; \frac{G^2}{H_s^2}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(G\)</span> : 歸一化無因次大氣層結參數 (Normalized dimensionless stratification parameter) [無單位]，代表密度非均勻性對垂直特徵尺度的修正量</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Gamma \)</span> : 大氣層結修正因子 (Stratification correction factor) <span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(H_{s}\)</span> : 等溫大氣標高 (Atmospheric scale height) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 5】 無因次音速參數 (Normalized sound speed parameter) ：</strong></p>
+<div class="math notranslate nohighlight">
+\[S \overset{\text{def}}{=} \frac{c^2}{N^2 H_s^2}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(S\)</span> : 歸一化無因次音速參數 (Normalized dimensionless sound speed parameter) [無單位]，物理上代表聲波傳播速度與浮力波特徵尺度的比值</p></li>
+<li><p><span class="math notranslate nohighlight">\(c^{2}\)</span> : 本地音速平方 (Speed of sound squared) <span class="math notranslate nohighlight">\([\text{m}^2\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(N^{2}\)</span> : 浮力頻率平方 (Brunt-Väisälä frequency squared) <span class="math notranslate nohighlight">\([\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(H_{s}^{2}\)</span> : 大氣標高的平方 (Atmospheric scale height squared) <span class="math notranslate nohighlight">\([\text{m}^2]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 1】 頻率高次方項代換 ：</strong></p>
+<ul class="simple">
+<li><p>(a) 特徵頻率平方代換：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \nu &amp;\overset{\text{定義 1}}{=}&amp; Y N \\
+  \nu^2 &amp;=&amp; Y^2 N^2
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(b) 特徵頻率四次方代換：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \nu &amp;\overset{\text{定義 1}}{=}&amp; Y N \\
+  \nu^4 &amp;=&amp; Y^4 N^4
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\nu \)</span> : 系統的實數固有特徵角頻率 (Real eigenfrequency) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Y\)</span> : 歸一化無因次波頻 (Normalized dimensionless frequency) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(N\)</span> : 浮力頻率 (Brunt-Väisälä frequency) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id2">
+<h2>證明<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{\nu^4}{c^2} - \nu^2 \left( \bar{k}^2 + \bar{l}^2 + \bar{m}^2 + \Gamma^2 + \frac{N^2}{c^2} \right) + \left( \bar{k}^2 + \bar{l}^2 \right)N^2 &amp;\overset{\text{已知 1}}{=}&amp; 0 \\
+\frac{Y^4 N^4}{c^2} - Y^2 N^2 \left( \frac{X^2}{H_s^2} + \frac{Z^2}{H_s^2} + \frac{G^2}{H_s^2} + \frac{N^2}{c^2} \right) + \left( \frac{X^2}{H_s^2} \right)N^2 &amp;\overset{\text{定義 2,3,4, 推導 1(a)(b)}}{=}&amp; 0 \\
+\frac{Y^4 N^4}{c^2} - Y^2 N^2 \left( \frac{X^2 + Z^2 + G^2}{H_s^2} + \frac{N^2}{c^2} \right) + \frac{X^2 N^2}{H_s^2} &amp;=&amp; 0 \\
+\frac{c^2}{N^4} \left[ \frac{Y^4 N^4}{c^2} - Y^2 N^2 \left( \frac{X^2 + Z^2 + G^2}{H_s^2} + \frac{N^2}{c^2} \right) + \frac{X^2 N^2}{H_s^2} \right] &amp;=&amp; 0 \cdot \frac{c^2}{N^4} \\
+Y^4 - Y^2 \frac{c^2}{N^2} \left( \frac{X^2 + Z^2 + G^2}{H_s^2} + \frac{N^2}{c^2} \right) + X^2 \frac{c^2 N^2}{N^4 H_s^2} &amp;=&amp; 0 \\
+Y^4 - Y^2 \left( \frac{c^2}{N^2 H_s^2}(X^2 + Z^2 + G^2) + \frac{c^2}{N^2}\frac{N^2}{c^2} \right) + \frac{c^2}{N^2 H_s^2} X^2 &amp;=&amp; 0 \\
+Y^4 - Y^2 \left( \frac{c^2}{N^2 H_s^2}(X^2 + Z^2 + G^2) + 1 \right) + \frac{c^2}{N^2 H_s^2} X^2 &amp;=&amp; 0 \\
+Y^4 - Y^2 \left[ S(X^2 + Z^2 + G^2) + 1 \right] + S X^2 &amp;\overset{\text{定義 5}}{=}&amp; 0 \\
+\end{gather*}\end{split}\]</div>
+<p>這是一道非常經典的氣象動力學繪圖題。Gill 的 <em>Atmosphere-Ocean Dynamics</em> 書中 Figure 6-17 展示了這四種波在頻譜空間上的漸近行為與界線。為了用 Python 重現這張圖，我們需要先將你剛才推導出的色散方程式「無因次化（Non-dimensionalize）」。</p>
+</section>
+<section id="id3">
+<h2>數學轉換（無因次化）<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>我們定義三個無因次變數，作為繪圖的 X 軸、Y 軸與不同曲線的參數：</p>
+<ol class="arabic simple">
+<li><p><strong>X 軸（無因次水平波數）：</strong> <span class="math notranslate nohighlight">\(X = \bar{k}H_s\)</span></p></li>
+<li><p><strong>Y 軸（無因次頻率）：</strong> <span class="math notranslate nohighlight">\(Y = \frac{\nu}{N}\)</span></p></li>
+<li><p><strong>曲線參數（無因次垂直波數）：</strong> <span class="math notranslate nohighlight">\(Z = \bar{m}H_s\)</span></p></li>
+</ol>
+<p>將這些變數代入三維波動的色散方程式 <span class="math notranslate nohighlight">\((9a)\)</span>，並引入地球大氣的常數：</p>
+<ul class="simple">
+<li><p>取雙原子氣體絕熱指數 <span class="math notranslate nohighlight">\(\gamma = 1.4\)</span></p></li>
+<li><p>聲速平方與浮力頻率的比例常數：<span class="math notranslate nohighlight">\(S = \frac{c^2}{N^2 H_s^2} = \frac{\gamma^2}{\gamma - 1} \approx 4.9\)</span></p></li>
+<li><p>大氣層結參數：<span class="math notranslate nohighlight">\(G = \Gamma H_s = \frac{1}{\gamma} - 0.5 \approx 0.214\)</span></p></li>
+</ul>
+<p>方程式將化簡為一個漂亮的關於 <span class="math notranslate nohighlight">\(Y^2\)</span> 的一元二次方程式：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+Y^4 - Y^2 \left[ S(X^2 + Z^2 + G^2) + 1 \right] + S X^2 &amp;=&amp; 0 \\
+\end{gather*}\end{split}\]</div>
+<p>而藍姆波 (Lamb wave) 的色散方程式 <span class="math notranslate nohighlight">\((8b)\)</span> 則化簡為：</p>
+<div class="math notranslate nohighlight">
+\[Y = \sqrt{S} X\]</div>
+</section>
+<section id="id4">
+<h2>討論<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>這張圖是探討大氣波動極為核心的<strong>色散關係圖（Dispersion Diagram）</strong>。它視覺化了流體力學方程式在特定邊界條件下，所允許存在的波動狀態。</p>
+<p><img alt="" src="../../_images/Gill_Dispersion_Diagram_Linear_words.png" /></p>
+<section id="id5">
+<h3>觀察圖表的核心物理意義<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>當您執行程式碼後，會看到雙對數圖上呈現非常清晰的界線：</p>
+<ol class="arabic simple">
+<li><p><strong>右下角的浮力波 (Gravity Waves)</strong>：不管水平波數 <span class="math notranslate nohighlight">\(\bar{k}H_s\)</span> 多大，所有低頻點狀虛線最終都會被<strong>灰色虛線 (<span class="math notranslate nohighlight">\(\nu/N = 1\)</span>)</strong> 壓制。這完美印證了我們在第 5 題推導的：環境層結穩定度 <span class="math notranslate nohighlight">\(N\)</span> 是內重力波震盪的最快極限。</p></li>
+<li><p><strong>左上角的聲波 (Acoustic Waves)</strong>：所有的短虛線在向左延伸（極長波）時，都不會掉到 0，而是被<strong>紫色虛線 (<span class="math notranslate nohighlight">\(\nu/N \approx 1.11\)</span>)</strong> 托住，這就是聲學截斷頻率 <span class="math notranslate nohighlight">\(N_A\)</span> 的視覺化證明。</p></li>
+<li><p><strong>貫穿中央的藍姆波 (Lamb Wave)</strong>：這是一條斜率為 1 的直線，代表它是非色散的（波速為常數音速），且其頻率不受 <span class="math notranslate nohighlight">\(N\)</span> 或是 <span class="math notranslate nohighlight">\(N_A\)</span> 的上下限約束，橫跨了整個頻譜。</p></li>
+</ol>
+</section>
+<section id="id6">
+<h3>坐標軸的物理意義<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>X 軸（<span class="math notranslate nohighlight">\(\bar{k}H_s\)</span>）：無因次水平波數</strong>
+這代表波在水平方向上的「空間擁擠程度」。數值越小（靠左），代表水平波長越長（例如跨越數千公里的大尺度天氣系統）；數值越大（靠右），代表水平波長越短（例如幾公里寬的積雨雲或微尺度擾動）。</p></li>
+<li><p><strong>Y 軸（<span class="math notranslate nohighlight">\(\omega/N\)</span>）：無因次頻率</strong>
+這代表波隨時間「震盪的快慢」。它被環境的浮力頻率 <span class="math notranslate nohighlight">\(N\)</span> 給標準化了。數值越大（靠上），波震盪越劇烈；數值越小（靠下），波的變化越緩慢。</p></li>
+</ul>
+</section>
+<section id="id7">
+<h3>每一條線的意義與「量子化」疑問<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>這些線代表什麼？</strong> 每條虛線或點虛線，都代表一個具有特定垂直結構（特定的垂直波數 <span class="math notranslate nohighlight">\(\bar{m}\)</span>）的波，其頻率與水平波長之間的對應關係。</p></li>
+<li><p><strong>是特舉幾條線，還是只有這幾條？</strong> 圖中畫出的 <span class="math notranslate nohighlight">\(mH_s = 0, 0.4, 0.8, 1.2\)</span> 只是「舉例」<strong>。但在封閉的大氣模型中（例如有堅硬的地表與模式頂部），垂直波數 <span class="math notranslate nohighlight">\(\bar{m}\)</span> 確實是</strong>被量子化（Quantized）的！為了滿足上下邊界垂直速度 <span class="math notranslate nohighlight">\(w=0\)</span> 的條件，波的垂直結構只能是半波長的整數倍（即 <span class="math notranslate nohighlight">\(\bar{m} = \frac{n\pi}{L_z}\)</span>）。</p></li>
+<li><p>因此，這張圖實際上存在著無數條離散的曲線（對應 <span class="math notranslate nohighlight">\(n=1, 2, 3...\)</span>），這些密集的離散曲線填滿了整塊灰色的允許區域 。</p></li>
+</ul>
+</section>
+<section id="id8">
+<h3>點與點之間的相對關係<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>同一條線上不同的點：</strong>
+代表具有「相同垂直層數（垂直波長固定）」，但「水平尺度不斷縮放」的同族波動。當水平波數 <span class="math notranslate nohighlight">\(\bar{k}\)</span> 改變時，頻率 <span class="math notranslate nohighlight">\(\omega\)</span> 必須沿著這條線嚴格跟著改變。此外，曲線上任意一點的切線斜率，在物理上精確等於該波的<strong>水平群速度（Horizontal Group Velocity）</strong>，也就是波傳遞能量的速度 。</p></li>
+<li><p><strong>同一個 X 座標不同點：</strong>
+代表我們在看「水平寬度一模一樣」的擾動。沿著垂直線往上下看，會發現它能以多種不同的頻率震盪。高頻對應的是垂直波長不同的聲波，低頻對應的是垂直波長不同的浮力波。</p></li>
+<li><p><strong>同一個 Y 座標不同點：</strong>
+代表我們用一個「固定頻率的節拍器」去擾動大氣。這條水平線會切過許多不同的曲線，意味著同一個震盪頻率，可以激發出多種水平波長與垂直波長組合不同的波，它們會在空間中同時向外傳播並發生干涉。</p></li>
+</ul>
+</section>
+<section id="id9">
+<h3>白色的區域與不存在的波<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<p>圖中沒有被灰色網點覆蓋的白色區域（包含聲波下限與浮力波上限之間的空白帶），被稱為「衰減區（Evanescent Zone）」或「禁帶（Forbidden Zone）」。</p>
+<ul class="simple">
+<li><p><strong>絕對不存在這種 wave 嗎？</strong>
+這取決於您對「存在」的定義。在數學與物理上，<strong>「能夠自由、無損耗向遠方傳遞能量的自由行進波（Freely propagating waves）」在這些白色區域是絕對不存在的</strong> 。</p></li>
+<li><p><strong>物理本質：</strong>
+如果您強行以白色區域內的頻率（例如 <span class="math notranslate nohighlight">\(\omega/N = 1.05\)</span>，介於浮力極限與聲學截斷之間）去震盪空氣，數學解依然存在，但其垂直波數 <span class="math notranslate nohighlight">\(\bar{m}\)</span> 會變成<strong>虛數</strong>。這代表擾動無法形成波動，其振幅會隨空間距離呈「指數型快速衰減（Exponential decay）」。擾動的能量會被困在震源附近，無法像水波一樣輻射出去。</p></li>
+<li><p><strong>特例：</strong>
+您會注意到有一條黑色的實線（藍姆波，Lamb wave）大搖大擺地切過了這塊白色禁區 。這是因為藍姆波是極度特殊的<strong>二維邊界波</strong>（垂直速度為零），它不受三維內部重力波與聲波的頻率極限約束，因此能存在於內部波的禁帶之中。</p></li>
+</ul>
+</section>
+<section id="code">
+<h3>code<a class="headerlink" href="#code" title="Link to this heading">#</a></h3>
+<p>詳細 code 可以參考<a class="reference external" href="https://github.com/derek1403/PC-NTU/blob/main/Advanced-Atmospheric-Dynamics/project/project1/project1_Gill.py">這個</a></p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./project\project1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="project1_7.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">七、轉換法中消除混疊之網格點數條件證明</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="project1_AllInOne.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Advanced Atmospheric Dynamics Project 1</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">證明</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">數學轉換（無因次化）</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">討論</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">觀察圖表的核心物理意義</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">坐標軸的物理意義</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">每一條線的意義與「量子化」疑問</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">點與點之間的相對關係</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">白色的區域與不存在的波</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code">code</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC YE
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

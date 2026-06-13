@@ -1,0 +1,782 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>六、從物理空間轉換至頻譜空間：突破聲波 CFL 條件限制 &#8212; Advanced Atmospheric Dynamics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=4cca277b" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'project/project1/project1_6';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="七、轉換法中消除混疊之網格點數條件證明" href="project1_7.html" />
+    <link rel="prev" title="五、大氣矩陣微分算符 \(\mathbf{L}\) 的特徵解與色散關係推導" href="project1_5.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Advanced Atmospheric Dynamics - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Advanced Atmospheric Dynamics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lecture/lecture.html">lecture</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/week1/week1.html">Advanced Atmospheric Dynamics - Week 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/week2/week2.html">Advanced Atmospheric Dynamics - Week 2</a></li>
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../homework/homework.html">homework</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../homework/hw1/hw1.html">Advanced Atmospheric Dynamics Hw 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../homework/hw2/hw2.html">Advanced Atmospheric Dynamics Hw 2</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="project_overview.html">Eigenfunctions and eigenvalues of the fully compressible model.</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../project2/project2.html">Advanced Atmospheric Dynamics Project 2</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fproject/project1/project1_6.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/project/project1/project1_6.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>六、從物理空間轉換至頻譜空間：突破聲波 CFL 條件限制</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">證明</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">突破音速 CFL 條件限制？</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#detailed-computational-algorithm">實務計算的完整演算法步驟 (Detailed Computational Algorithm)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>【預備階段：初始化】</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#t-to-t-delta-t"><strong>【主迴圈：時間積分 (<span class="math notranslate nohighlight">\(t \to t+\Delta t\)</span>)】</strong></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="cfl">
+<h1>六、從物理空間轉換至頻譜空間：突破聲波 CFL 條件限制<a class="headerlink" href="#cfl" title="Link to this heading">#</a></h1>
+<div class="math notranslate nohighlight">
+\[\hat{u}_{klmn}(t+\Delta t) = \hat{u}_{klmn}(t)e^{-i\nu_{klmn}(\Delta t)} + \int_{t}^{t+\Delta t}\hat{N}_{klmn}(t')e^{i\nu_{klmn}(t' - t - \Delta t)}dt' \tag{14}\]</div>
+<p>方程式 (13) 看起來跟方程式 (4) <span class="math notranslate nohighlight">\(\frac{\partial \tilde{u}}{\partial t} + L\tilde{u} = \tilde{N}\)</span> 長得很像，這<strong>絕對不是巧合</strong>。方程式 (4) 是在「三維物理空間」中的偏微分方程式（PDE），而方程式 (13) 是在「頻譜空間（Spectral Space）」中的常微分方程式（ODE）。</p>
+<p>我們前面之所以要千辛萬苦證明 <span class="math notranslate nohighlight">\(\mathbf{L}\)</span> 是反厄米特算子，就是要保證它解出來的特徵向量 <span class="math notranslate nohighlight">\(\tilde{K}_{klmn}\)</span> 是<strong>互相正交的（Orthogonal）</strong>。有了這組正交基底，我們就可以利用「Galerkin 投影法（Galerkin Projection）」，把物理空間的複雜 PDE，拆解成無限多條獨立的 ODE。</p>
+<section id="assumptions-preliminaries">
+<h2>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong>【已知 1】 物理空間微擾矩陣偏微分方程式 (Matrix PDE in physical space)：</strong></p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial \tilde{u}}{\partial t} + \mathbf{L}\tilde{u} = \tilde{N}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\tilde{u}(x,y,z,t)\)</span> : 物理空間中的三維狀態向量</p></li>
+<li><p><span class="math notranslate nohighlight">\(\tilde{N}(x,y,z,t)\)</span> : 物理空間中的非線性強迫項向量</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{L}\)</span> : 空間微分線性算子</p></li>
+</ul>
+</li>
+<li><p><strong>【已知 2】 算子 <span class="math notranslate nohighlight">\(\mathbf{L}\)</span> 的特徵值問題與正交性 (Eigenvalue problem and Orthogonality)：</strong> 因 <span class="math notranslate nohighlight">\(L\)</span> 為反厄米特算子，其特徵向量形成一組完備且正交的基底。為簡化標示，將四維索引 <span class="math notranslate nohighlight">\((k,l,m,n)\)</span> 簡寫為單一索引 <span class="math notranslate nohighlight">\(\alpha\)</span> 與 <span class="math notranslate nohighlight">\(\beta\)</span></p>
+<ul class="simple">
+<li><p>(a) 特徵值方程式：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\mathbf{L}\tilde{K}_\alpha = i\nu_\alpha \tilde{K}_\alpha\]</div>
+<ul class="simple">
+<li><p>(b) 正交歸一性：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[(\tilde{K}_\alpha, \tilde{K}_\beta) = \delta_{\alpha\beta}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\alpha, \beta\)</span> : 波態的四維索引簡寫，代表特定的波數與頻率組合</p></li>
+<li><p><span class="math notranslate nohighlight">\(\tilde{K}_\alpha(x,y,z)\)</span> : 第 <span class="math notranslate nohighlight">\(\alpha\)</span> 個波態的空間特徵向量</p></li>
+<li><p><span class="math notranslate nohighlight">\(i\nu_\alpha\)</span> : 第 <span class="math notranslate nohighlight">\(\alpha\)</span> 個波態的純虛數特徵值</p></li>
+<li><p><span class="math notranslate nohighlight">\(\delta_{\alpha\beta}\)</span> : 克羅內克函數 (Kronecker delta)，當 <span class="math notranslate nohighlight">\(\alpha=\beta\)</span> 時為 1，否則為 0</p></li>
+</ul>
+</li>
+<li><p><strong>【定義 1】 頻譜展開 (Spectral Expansion)：</strong> 將物理空間的狀態向量與非線性強迫項，展開為特徵基底向量 <span class="math notranslate nohighlight">\(\tilde{K}_\alpha\)</span> 的線性組合。</p>
+<ul class="simple">
+<li><p>(a) 狀態向量展開：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\tilde{u}(x,y,z,t) = \sum_{\alpha} \hat{u}_\alpha(t) \tilde{K}_\alpha(x,y,z)\]</div>
+<ul class="simple">
+<li><p>(b) 非線性項展開：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\tilde{N}(x,y,z,t) = \sum_{\alpha} \hat{N}_\alpha(t) \tilde{K}_\alpha(x,y,z)\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat{u}_\alpha(t)\)</span> : 隨時間變化的波態振幅係數 (Wave amplitude coefficient)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{N}_\alpha(t)\)</span> : 非線性強迫項在特定波態上的投影係數</p></li>
+</ul>
+</li>
+<li><p><strong>【定義 2】 波數索引：</strong> <span class="math notranslate nohighlight">\(k, l, m\)</span> 決定了波的 <strong>長相與大小（空間結構）</strong> ，而 <span class="math notranslate nohighlight">\(n\)</span> 決定了波的 <strong>靈魂與物理性質（波動種類）</strong></p>
+<ul class="simple">
+<li><p>(a) 空間波數索引：<span class="math notranslate nohighlight">\(k, l, m\)</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\bar{k} = \frac{2\pi}{L_x}k\]</div>
+<div class="math notranslate nohighlight">
+\[\bar{l} = \frac{2\pi}{L_y}l\]</div>
+<div class="math notranslate nohighlight">
+\[\bar{m} = \frac{\pi}{L_z}m\]</div>
+<ul class="simple">
+<li><p>(b) 波態 / 頻率索引：<span class="math notranslate nohighlight">\(n\)</span></p>
+<ul>
+<li><p>【特徵根 1】<span class="math notranslate nohighlight">\(n = 1\)</span>：非輻散流 (Non-divergent flow)</p>
+<ul>
+<li><p>對應關係：這是解出 <span class="math notranslate nohighlight">\(\nu_{klm1} = 0\)</span> 的那個根。</p></li>
+<li><p>物理意義：因為頻率為 0，這代表流場完全不隨時間震盪（Steady state）。它對應的是滿足地轉平衡的緩慢天氣系統（如高低壓渦旋）。</p></li>
+</ul>
+</li>
+<li><p>【特徵根 2 &amp; 3】<span class="math notranslate nohighlight">\(n = 2, 3\)</span>：聲波 (Acoustic waves)</p>
+<ul>
+<li><p>對應關係：這是由色散方程式 (9a) 解出來的一對「高頻正負根」</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\nu_{klm2} = +\nu_A\)</span> （向東傳播的三維聲波）</p></li>
+<li><p><span class="math notranslate nohighlight">\(\nu_{klm3} = -\nu_A\)</span> （向西傳播的三維聲波）</p></li>
+</ul>
+</li>
+<li><p>物理意義：即使空間波長 <span class="math notranslate nohighlight">\((k, l, m)\)</span> 跟天氣系統一樣大，只要它按照這個極高的頻率震盪，它就是聲波。它的恢復力是空氣的可壓縮性（彈性）。</p></li>
+</ul>
+</li>
+<li><p>【特徵根 4 &amp; 5】<span class="math notranslate nohighlight">\(n = 4, 5\)</span>：浮力波 / 內重力波 (Buoyancy waves)</p>
+<ul>
+<li><p>對應關係：這是由色散方程式 (9a) 解出來的一對「低頻正負根」</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\nu_{klm4} = +\nu_B\)</span> （向東傳播的浮力波）</p></li>
+<li><p><span class="math notranslate nohighlight">\(\nu_{klm5} = -\nu_B\)</span> （向西傳播的浮力波）</p></li>
+</ul>
+</li>
+<li><p>物理意義：在同一個空間網格 <span class="math notranslate nohighlight">\((k, l, m)\)</span> 上，如果空氣是以低於浮力頻率 <span class="math notranslate nohighlight">\(N\)</span> 的速度上下擺盪，它就是浮力波。</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(k\)</span>：對應 <span class="math notranslate nohighlight">\(x\)</span> 方向（東西向）的波數。決定了水平特徵值</p></li>
+<li><p><span class="math notranslate nohighlight">\(l\)</span>：對應 <span class="math notranslate nohighlight">\(y\)</span> 方向（南北向）的波數。決定了水平特徵值</p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span>：對應 <span class="math notranslate nohighlight">\(z\)</span> 方向（垂直向）的波數。決定了垂直特徵值</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span>：代表了 5 個不同的特徵根 <span class="math notranslate nohighlight">\(n = 1, 2, 3, 4, 5\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 1】純時間的一階常微分方程式：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \frac{\partial \tilde{u}}{\partial t} + \mathbf{L}\tilde{u} &amp;\overset{\text{已知 1}}{=}&amp; \tilde{N} \\
+  \frac{\partial }{\partial t} \left( \sum_{\alpha} \hat{u}_\alpha(t) \tilde{K}_\alpha \right) + \mathbf{L} \left( \sum_{\alpha} \hat{u}_\alpha(t) \tilde{K}_\alpha \right) &amp;\overset{\text{定義 1(a)(b)}}{=}&amp; \sum_{\alpha} \hat{N}_\alpha(t) \tilde{K}_\alpha \\
+  \sum_{\alpha} \left( \frac{d\hat{u}_\alpha(t)}{dt} \tilde{K}_\alpha \right) + \sum_{\alpha} \hat{u}_\alpha(t) \mathbf{L}\tilde{K}_\alpha &amp;=&amp; \sum_{\alpha} \hat{N}_\alpha(t) \tilde{K}_\alpha \\
+  \sum_{\alpha} \left( \frac{d\hat{u}_\alpha(t)}{dt} \tilde{K}_\alpha \right) + \sum_{\alpha} \hat{u}_\alpha(t) (i\nu_\alpha \tilde{K}_\alpha) &amp;\overset{\text{已知 2(a)}}{=}&amp; \sum_{\alpha} \hat{N}_\alpha(t) \tilde{K}_\alpha \\
+  \sum_{\alpha} \left( \frac{d\hat{u}_\alpha(t)}{dt} + i\nu_\alpha \hat{u}_\alpha(t) \right) \tilde{K}_\alpha &amp;=&amp; \sum_{\alpha} \hat{N}_\alpha(t) \tilde{K}_\alpha \\
+  \left( \sum_{\alpha} \left( \frac{d\hat{u}_\alpha(t)}{dt} + i\nu_\alpha \hat{u}_\alpha(t) \right) \tilde{K}_\alpha, \tilde{K}_\beta \right) &amp;=&amp; \left( \sum_{\alpha} \hat{N}_\alpha(t) \tilde{K}_\alpha, \tilde{K}_\beta \right) \\
+  \sum_{\alpha} \left( \frac{d\hat{u}_\alpha(t)}{dt} + i\nu_\alpha \hat{u}_\alpha(t) \right) (\tilde{K}_\alpha, \tilde{K}_\beta) &amp;=&amp; \sum_{\alpha} \hat{N}_\alpha(t) (\tilde{K}_\alpha, \tilde{K}_\beta) \\
+  \sum_{\alpha} \left( \frac{d\hat{u}_\alpha(t)}{dt} + i\nu_\alpha \hat{u}_\alpha(t) \right) \delta_{\alpha\beta} &amp;\overset{\text{已知 2(b)}}{=}&amp; \sum_{\alpha} \hat{N}_\alpha(t) \delta_{\alpha\beta} \\
+  \frac{d\hat{u}_\beta(t)}{dt} + i\nu_\beta \hat{u}_\beta(t) &amp;=&amp; \hat{N}_\beta(t) \\
+  \frac{d\hat{u}_{klmn}(t)}{dt} + i\nu_{klmn}\hat{u}_{klmn}(t)  &amp;=&amp;  \hat{N}_{klmn}(t)
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\tilde{K}_\alpha(x,y,z)\)</span> : 第 <span class="math notranslate nohighlight">\(\alpha\)</span> 個波態的空間特徵向量</p></li>
+<li><p><span class="math notranslate nohighlight">\(i\nu_\alpha\)</span> : 第 <span class="math notranslate nohighlight">\(\alpha\)</span> 個波態的純虛數特徵值</p></li>
+<li><p><span class="math notranslate nohighlight">\(\delta_{\alpha\beta}\)</span> : 克羅內克函數 (Kronecker delta)，當 <span class="math notranslate nohighlight">\(\alpha=\beta\)</span> 時為 1，否則為 0</p></li>
+<li><p><span class="math notranslate nohighlight">\(\tilde{u}\)</span> : 大氣波動狀態向量 (Atmospheric wave state vector) [多元複合單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{L}\)</span> : 空間微分波動算符矩陣 (Spatial differential wave operator matrix) [多元複合單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\tilde{N}\)</span> : 非線性強迫力向量 (Nonlinear forcing vector) [多元複合單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha \)</span> : 空間波動狀態的四維綜合索引簡寫 (Wave mode index alpha)，代表特定的波數與頻率組合 <span class="math notranslate nohighlight">\((k, l, m, n)\)</span> [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta \)</span> : 用於內積投影的測試波動狀態四維綜合索引簡寫 (Wave mode index beta) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{u}_\alpha(t)\)</span> : 隨時間變化的第 <span class="math notranslate nohighlight">\(\alpha \)</span> 個波態的複數振幅係數 (Temporal wave amplitude coefficient for mode alpha) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\tilde{K}_{\alpha }\)</span> : 第 <span class="math notranslate nohighlight">\(\alpha \)</span> 個波態的三維空間特徵結構向量 (Spatial structure eigenvector for mode alpha) [多元複合單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{N}_\alpha(t)\)</span> : 非線性強迫項向量 <span class="math notranslate nohighlight">\(\tilde{N}\)</span> 投影在第 <span class="math notranslate nohighlight">\(\alpha \)</span> 個波態空間特徵向量上的隨時間變化係數 (Nonlinear forcing projection coefficient for mode alpha) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(i\)</span> : 虛數單位 (Imaginary unit, <span class="math notranslate nohighlight">\(i = \sqrt{-1}\)</span>) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\nu_{\alpha }\)</span> : 第 <span class="math notranslate nohighlight">\(\alpha \)</span> 個波態對應的實數固有特徵角頻率 (Real eigenfrequency for mode alpha) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((\cdot, \cdot)\)</span> : 定義於全空間域上的能量權重歸一化空間平均內積 (Energy-weighted spatially averaged inner product)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\tilde{K}_{\beta }\)</span> : 第 <span class="math notranslate nohighlight">\(\beta \)</span> 個波態的三維空間特徵結構向量 (Spatial structure eigenvector for mode beta) [多元複合單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\delta_{\alpha \beta }\)</span> : 克羅內克函數 (Kronecker delta)，當 <span class="math notranslate nohighlight">\(\alpha=\beta\)</span> 時其值為 1，當 <span class="math notranslate nohighlight">\(\alpha \neq \beta\)</span> 時其值為 0 [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{u}_\beta(t)\)</span> : 經內積正交性篩選後，特定第 <span class="math notranslate nohighlight">\(\beta \)</span> 個波態的隨時間變化複數振幅係數 (Temporal wave amplitude coefficient for mode beta) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\nu_{\beta }\)</span> : 特定第 <span class="math notranslate nohighlight">\(\beta \)</span> 個波態對應的實數固有特徵角頻率 (Real eigenfrequency for mode beta) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{N}_\beta(t)\)</span> : 非線性強迫項向量 <span class="math notranslate nohighlight">\(\tilde{N}\)</span> 投影在特定第 <span class="math notranslate nohighlight">\(\beta \)</span> 個波態空間特徵向量上的時間變化係數 (Nonlinear forcing projection coefficient for mode beta) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(k\)</span> : 區分特定波態的 <span class="math notranslate nohighlight">\(x\)</span> 軸方向水平波數索引分量 (Zonal wavenumber index) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(l\)</span> : 區分特定波態的 <span class="math notranslate nohighlight">\(y\)</span> 軸方向水平波數索引分量 (Meridional wavenumber index) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> : 區分特定波態的 <span class="math notranslate nohighlight">\(z\)</span> 軸方向垂直波數索引分量 (Vertical wavenumber index) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 區分特徵方程特徵根類型的分支索引分量 (Eigenfrequency branch index, 如聲波分支、內重力波分支或演變分支) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{u}_{klmn}(t)\)</span> : 由四維指標明確標記的特定大氣波動時變振幅係數 (Explicitly-indexed temporal wave amplitude coefficient) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{N}_{klmn}(t)\)</span> : 由四維指標明確標記的非線性強迫項空間投影時變係數 (Explicitly-indexed nonlinear forcing projection coefficient) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\nu_{klmn}\)</span> : 由四維指標明確標記的大氣波動固有特徵角頻率 (Explicitly-indexed eigenfrequency) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id1">
+<h2>證明<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{d\hat{u}_{klmn}(t)}{dt} + i\nu_{klmn}\hat{u}_{klmn}(t) &amp;\overset{\text{推導 1}}{=}&amp; \hat{N}_{klmn} \\
+e^{i\nu_{klmn}t} \frac{d\hat{u}_{klmn}(t)}{dt} + i\nu_{klmn} e^{i\nu_{klmn}t} \hat{u}_{klmn}(t)  &amp;=&amp;  \hat{N}_{klmn}(t) e^{i\nu_{klmn}t} \\
+\frac{d}{dt} \left[ \hat{u}_{klmn}(t) e^{i\nu_{klmn}t} \right]  &amp;=&amp;  \hat{N}_{klmn}(t) e^{i\nu_{klmn}t} \\
+\int_{t}^{t+\Delta t} \frac{d}{dt'} \left[ \hat{u}_{klmn}(t') e^{i\nu_{klmn}t'} \right] dt'  &amp;=&amp;  \int_{t}^{t+\Delta t} \hat{N}_{klmn}(t') e^{i\nu_{klmn}t'} dt' \\
+\hat{u}_{klmn}(t+\Delta t) e^{i\nu_{klmn}(t+\Delta t)} - \hat{u}_{klmn}(t) e^{i\nu_{klmn}t}  &amp;=&amp; \int_{t}^{t+\Delta t} \hat{N}_{klmn}(t') e^{i\nu_{klmn}t'} dt' \\
+\hat{u}_{klmn}(t+\Delta t) e^{i\nu_{klmn}(t+\Delta t)} &amp;=&amp;  \hat{u}_{klmn}(t) e^{i\nu_{klmn}t} + \int_{t}^{t+\Delta t} \hat{N}_{klmn}(t') e^{i\nu_{klmn}t'} dt' \\
+\hat{u}_{klmn}(t+\Delta t)  &amp;=&amp;  \hat{u}_{klmn}(t) e^{i\nu_{klmn}t} e^{-i\nu_{klmn}(t+\Delta t)} + \int_{t}^{t+\Delta t} \hat{N}_{klmn}(t') e^{i\nu_{klmn}t'} e^{-i\nu_{klmn}(t+\Delta t)} dt' \\
+\hat{u}_{klmn}(t+\Delta t)  &amp;=&amp;  \hat{u}_{klmn}(t)e^{-i\nu_{klmn}(\Delta t)} + \int_{t}^{t+\Delta t}\hat{N}_{klmn}(t')e^{i\nu_{klmn}(t' - t - \Delta t)}dt'
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="id2">
+<h2>突破音速 CFL 條件限制？<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>在常規的大氣數值模式開發中，決定時間步長 <span class="math notranslate nohighlight">\(\Delta t\)</span> 大小的關鍵是 <strong>CFL 條件（Courant-Friedrichs-Lewy condition）</strong>。CFL 條件要求 <span class="math notranslate nohighlight">\(\Delta t \le \frac{\Delta x}{C_{max}}\)</span>，其中 <span class="math notranslate nohighlight">\(C_{max}\)</span> 是系統中「跑得最快的波」的波速。</p>
+<p><strong>方程式 (14) 的突破性意義：</strong></p>
+<ul class="simple">
+<li><p><strong>線性項的「解析解 (Exact Solution)」：</strong> 觀察 (14) 式的第一項 <span class="math notranslate nohighlight">\(\hat{u}_{klmn}(t)e^{-i\nu_{klmn}(\Delta t)}\)</span>。我們並沒有用任何數值差分法去逼近線性算子造成的波動演進，而是直接用微積分算出了它的<strong>精確解析解</strong>。因為是解析的旋轉相位 <span class="math notranslate nohighlight">\(e^{-i\nu_{klmn}\Delta t}\)</span>，無論你的 <span class="math notranslate nohighlight">\(\Delta t\)</span> 設多大，線性快波都絕對不會數值發散，它們只會在複數平面上完美地旋轉。</p></li>
+<li><p><strong>計算重心的轉移：</strong> 透過這個積分因子轉換，數值誤差與不穩定性現在<strong>只來自於對非線性項 <span class="math notranslate nohighlight">\(\hat{N}_{klmn}\)</span> 的數值積分</strong>（即等式右邊第二項的積分式） 。而非線性項代表的是慢速的平流作用與低頻交互作用。</p></li>
+<li><p><strong>結論：</strong> 因為會引發 CFL 不穩定的線性快波已經被數學公式「完美吸收」了，所以新的 CFL 條件不再由音速 <span class="math notranslate nohighlight">\(c\)</span> 決定，而是由流體本身的運動速度 <span class="math notranslate nohighlight">\(U\)</span> 決定。這使得數值模式的時間步長 <span class="math notranslate nohighlight">\(\Delta t\)</span> 可以放大 10 倍甚至更多，大幅提升了數值積分的效率，卻又不會受到線性快波 CFL 限制的阻礙 。</p></li>
+</ul>
+</section>
+<section id="detailed-computational-algorithm">
+<h2>實務計算的完整演算法步驟 (Detailed Computational Algorithm)<a class="headerlink" href="#detailed-computational-algorithm" title="Link to this heading">#</a></h2>
+<section id="id3">
+<h3><strong>【預備階段：初始化】</strong><a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p><strong>1. 初始化物理空間網格與參數</strong></p>
+<ul class="simple">
+<li><p>定義三維網格 <span class="math notranslate nohighlight">\((x, y, z)\)</span> 與時間步長 <span class="math notranslate nohighlight">\(\Delta t\)</span>。</p></li>
+<li><p>給定環境背景態參數：<span class="math notranslate nohighlight">\(\bar{\rho}(z), \Gamma, N^2, c^2\)</span>。</p></li>
+</ul>
+<p><strong>2. 初始化物理空間狀態向量 (Physical State)</strong></p>
+<ul class="simple">
+<li><p>在 <span class="math notranslate nohighlight">\(t=0\)</span> 時刻，取得大氣的初始擾動場：<span class="math notranslate nohighlight">\(u_0, v_0, w_0, p'_0, \rho'_0\)</span>。</p></li>
+<li><p>轉換為密度加權狀態向量 <span class="math notranslate nohighlight">\(\tilde{u}(x,y,z,0)\)</span>：
+<span class="math notranslate nohighlight">\(\tilde{u} = \left( \bar{\rho}^{1/2}u, \bar{\rho}^{1/2}v, \bar{\rho}^{1/2}w, \bar{\rho}^{-1/2}p', \bar{\rho}^{-1/2}(\rho' - \frac{p'}{c^2}) \right)^T\)</span></p></li>
+</ul>
+<p><strong>3. 預先計算頻譜基底與特徵值 (Pre-compute Eigen-structure)</strong></p>
+<ul class="simple">
+<li><p>給定截斷波數上限。對於每一個波數組合 <span class="math notranslate nohighlight">\((k, l, m)\)</span> 與 每一個物理波態 <span class="math notranslate nohighlight">\((n = 1 \dots 5)\)</span>：</p></li>
+<li><p>透過色散方程式 <strong>(8b) 或 (9a)</strong> 解出特徵頻率 <span class="math notranslate nohighlight">\(\nu_{klmn}\)</span>。</p></li>
+<li><p>算出對應的空間特徵向量 <span class="math notranslate nohighlight">\(\tilde{K}_{klmn}(x,y,z)\)</span>。</p></li>
+</ul>
+<p><strong>4. 初始頻譜轉換 (Initial Forward Transform)</strong></p>
+<ul class="simple">
+<li><p>將初始狀態 <span class="math notranslate nohighlight">\(\tilde{u}(x,y,z,0)\)</span> 投影到頻譜空間。透過快速傅立葉轉換 (FFT) 與正交內積，算出 <span class="math notranslate nohighlight">\(t=0\)</span> 時刻的所有波態振幅：
+<span class="math notranslate nohighlight">\(\hat{u}_{klmn}(0) = \iiint \tilde{u}(x,y,z,0) \cdot \tilde{K}_{klmn}^* \, dx dy dz\)</span></p></li>
+</ul>
+</section>
+<section id="t-to-t-delta-t">
+<h3><strong>【主迴圈：時間積分 (<span class="math notranslate nohighlight">\(t \to t+\Delta t\)</span>)】</strong><a class="headerlink" href="#t-to-t-delta-t" title="Link to this heading">#</a></h3>
+<p>以下步驟開始進入迴圈，假設目前時間為 <span class="math notranslate nohighlight">\(t\)</span>，我們已知頻譜空間的振幅 <span class="math notranslate nohighlight">\(\hat{u}_{klmn}(t)\)</span>：</p>
+<p><strong>5. 轉換至物理空間取得 <span class="math notranslate nohighlight">\(\tilde{u}(t)\)</span> (Spectral to Physical)</strong></p>
+<ul class="simple">
+<li><p><em>對應講義 Step (2)</em></p></li>
+<li><p>利用反向傅立葉轉換 (Inverse FFT) 疊加所有的波，算出目前的物理場：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\tilde{u}(x,y,z,t) = \sum_{k,l,m} \sum_{n=1}^5 \hat{u}_{klmn}(t) \tilde{K}_{klmn}(x,y,z)\]</div>
+<p><strong>6. 在物理空間計算非線性強迫項 <span class="math notranslate nohighlight">\(\tilde{N}(t)\)</span> (Evaluate Nonlinearity)</strong></p>
+<ul class="simple">
+<li><p><em>對應講義 Step (3)</em></p></li>
+<li><p>在網格點上，利用算出來的 <span class="math notranslate nohighlight">\(\tilde{u}(t)\)</span> 計算空間梯度與乘積。例如計算平流項 <span class="math notranslate nohighlight">\((u\cdot\nabla)u\)</span> 以及密度的非線性修正。</p></li>
+<li><p>彙整出等號右邊的非線性向量 <span class="math notranslate nohighlight">\(\tilde{N}(x,y,z,t) = (N_1, N_2, N_3, N_4, N_5)^T\)</span>。
+<em>(註：這一步是整個模式運算量最大、最耗時的地方)</em></p></li>
+</ul>
+<p><strong>7. 將非線性項轉換至頻譜空間取得 <span class="math notranslate nohighlight">\(\hat{N}_{klmn}(t)\)</span> (Forward Transform)</strong></p>
+<ul class="simple">
+<li><p><em>對應講義 Step (4)</em></p></li>
+<li><p>將算好的非線性網格資料，再用 FFT 轉回頻譜空間，得到每個波態分配到的非線性強迫力：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\hat{N}_{klmn}(t) = \iiint \tilde{N}(x,y,z,t) \cdot \tilde{K}_{klmn}^* \, dx dy dz\]</div>
+<p><strong>8. 在頻譜空間進行精確時間積分 (Predict in Spectral Space)</strong></p>
+<ul class="simple">
+<li><p><em>對應講義 Step (1)</em></p></li>
+<li><p>利用積分因子方程式 <strong>(14)</strong>，將狀態推進到 <span class="math notranslate nohighlight">\(t+\Delta t\)</span>。</p></li>
+<li><p>實務上，積分號 <span class="math notranslate nohighlight">\(\int_{t}^{t+\Delta t} \dots\)</span> 需要數值離散化。若採用最簡單的指數時間差分歐拉法 (ETD1, 假設 <span class="math notranslate nohighlight">\(\hat{N}\)</span> 在這 <span class="math notranslate nohighlight">\(\Delta t\)</span> 內為常數)，計算公式為：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\hat{u}_{klmn}(t+\Delta t) = \hat{u}_{klmn}(t) \cdot e^{-i\nu_{klmn}\Delta t} + \hat{N}_{klmn}(t) \left[ \frac{1 - e^{-i\nu_{klmn}\Delta t}}{i\nu_{klmn}} \right]\]</div>
+<p><em>(注意：在這裡，無論 <span class="math notranslate nohighlight">\(n=2,3\)</span> 聲波的 <span class="math notranslate nohighlight">\(\nu\)</span> 有多大，指數函數 <span class="math notranslate nohighlight">\(e^{-i\nu\Delta t}\)</span> 的絕對值永遠是 1，只是在複數平面上瘋狂旋轉，完全不會讓數值炸掉！這就是解開 CFL 封印的魔法！)</em></p>
+<p><strong>9. 更新時間，進入下一輪</strong></p>
+<ul class="simple">
+<li><p>將計算出的 <span class="math notranslate nohighlight">\(\hat{u}_{klmn}(t+\Delta t)\)</span> 設為下一輪的已知值。</p></li>
+<li><p>時間 <span class="math notranslate nohighlight">\(t = t + \Delta t\)</span>。</p></li>
+<li><p>回到 <strong>步驟 5</strong> 繼續執行。</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./project\project1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="project1_5.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">五、大氣矩陣微分算符 <span class="math notranslate nohighlight">\(\mathbf{L}\)</span> 的特徵解與色散關係推導</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="project1_7.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">七、轉換法中消除混疊之網格點數條件證明</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">證明</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">突破音速 CFL 條件限制？</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#detailed-computational-algorithm">實務計算的完整演算法步驟 (Detailed Computational Algorithm)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>【預備階段：初始化】</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#t-to-t-delta-t"><strong>【主迴圈：時間積分 (<span class="math notranslate nohighlight">\(t \to t+\Delta t\)</span>)】</strong></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC YE
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

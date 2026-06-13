@@ -1,0 +1,744 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>三、確認算子 \(\mathbf{L}\) 的反厄米特特性 &#8212; Advanced Atmospheric Dynamics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=4cca277b" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'project/project1/project1_3';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="四、確認內積的範數正定性" href="project1_4.html" />
+    <link rel="prev" title="二、流體力學偏微分方程式 轉成 線性代數矩陣方程式 (From fluid dynamics PDEs to linear algebraic matrix equations.)" href="project1_2.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Advanced Atmospheric Dynamics - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Advanced Atmospheric Dynamics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lecture/lecture.html">lecture</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/week1/week1.html">Advanced Atmospheric Dynamics - Week 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/week2/week2.html">Advanced Atmospheric Dynamics - Week 2</a></li>
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../homework/homework.html">homework</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../homework/hw1/hw1.html">Advanced Atmospheric Dynamics Hw 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../homework/hw2/hw2.html">Advanced Atmospheric Dynamics Hw 2</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="project_overview.html">Eigenfunctions and eigenvalues of the fully compressible model.</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../project2/project2.html">Advanced Atmospheric Dynamics Project 2</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fproject/project1/project1_3.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/project/project1/project1_3.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>三、確認算子 \mathbf{L} 的反厄米特特性</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">證明</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="mathbf-l">
+<h1><strong>三、確認算子 <span class="math notranslate nohighlight">\(\mathbf{L}\)</span> 的反厄米特特性</strong><a class="headerlink" href="#mathbf-l" title="Link to this heading">#</a></h1>
+<div class="math notranslate nohighlight">
+\[(\mathbf{L}\tilde{f}, \tilde{g}) = -(\tilde{f}, L\tilde{g})\]</div>
+<p>算子 <span class="math notranslate nohighlight">\(\mathbf{L}\)</span> 在指定內積 <span class="math notranslate nohighlight">\((\cdot , \cdot)\)</span> 下滿足反厄米特（Anti-Hermitian）特性，意即 <span class="math notranslate nohighlight">\((\mathbf{L}\tilde{f}, \tilde{g}) = -(\tilde{f}, \mathbf{L}\tilde{g})\)</span>。這在物理上意味著該系統不存在能量的憑空耗散或產生，是波動得以穩定傳播的數學保證。</p>
+<section id="assumptions-preliminaries">
+<h2>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong>【已知 1】 空間微分波動算符矩陣（Spatial differential wave operator matrix） ：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \mathbf{L} \overset{\text{def}}{=} \begin{bmatrix} 
+  0 &amp; 0 &amp; 0 &amp; \frac{\partial}{\partial x} &amp; 0 \\[2ex]
+  0 &amp; 0 &amp; 0 &amp; \frac{\partial}{\partial y} &amp; 0 \\[2ex]
+  0 &amp; 0 &amp; 0 &amp; \left(\frac{\partial}{\partial z} + \Gamma\right) &amp; g \\[2ex]
+  c^2 \frac{\partial}{\partial x} &amp; c^2 \frac{\partial}{\partial y} &amp; c^2 \left(\frac{\partial}{\partial z} - \Gamma\right) &amp; 0 &amp; 0 \\[2ex]
+  0 &amp; 0 &amp; -\frac{N^2}{g} &amp; 0 &amp; 0 \\[2ex]
+  \end{bmatrix}  \end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathbf{L}\)</span> : 封裝空間偏微分與大氣層結常數的 <span class="math notranslate nohighlight">\(5 \times 5\)</span> 矩陣微分算符 (Spatial differential operator matrix)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Gamma \)</span> : 大氣層結修正因子 <span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(N^{2}\)</span> : 浮力頻率平方 <span class="math notranslate nohighlight">\([\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(g\)</span> : 地表重力加速度常數 <span class="math notranslate nohighlight">\(g \approx 9.80665 \text{ m}\cdot\text{s}^{-2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c\)</span> : 本地音速 (Local speed of sound) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{\partial}{\partial x}, \frac{\partial}{\partial y}, \frac{\partial}{\partial z}\)</span> : 各時空空間軸向的偏微分算符 <span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 1】 測試函數向量與大氣波動邊界條件（Test function vectors and atmospheric wave boundary conditions）  ：</strong></p>
+<ul class="simple">
+<li><p>(a) 五維測試函數向量定義：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  \tilde{f} \overset{\text{let}}{=} \begin{bmatrix}  f_1  \\[2ex] f_2 \\[2ex] f_3 \\[2ex] f_4 \\[2ex] f_5 \\[2ex] \end{bmatrix}  \quad , \quad
+  \tilde{g} \overset{\text{let}}{=} \begin{bmatrix}  g_1  \\[2ex] g_2 \\[2ex] g_3 \\[2ex] g_4 \\[2ex] g_5 \\[2ex] \end{bmatrix}
+  \end{split}\]</div>
+<ul class="simple">
+<li><p>(b) 水平週期性與垂直剛性壁面邊界條件：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left\{\begin{matrix}
+  f_i(0, y, z, t) &amp;=&amp; f_i(L_x, y, z, t) &amp;\quad , \quad i \in \{1, 2, 3, 4, 5\} \\
+  f_i(x, 0, z, t) &amp;=&amp; f_i(x, L_y, z, t) &amp;\quad , \quad i \in \{1, 2, 3, 4, 5\} \\
+  f_3(x, y, 0, t) &amp;=&amp; 0 &amp;\quad (\text{底部 } z=0) \\
+  f_3(x, y, L_z, t) &amp;=&amp; 0 &amp;\quad (\text{頂部 } z=L_z) \\
+  \end{matrix}\right.\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left\{\begin{matrix}
+  g_i(0, y, z, t) &amp;=&amp; g_i(L_x, y, z, t) &amp;\quad , \quad i \in \{1, 2, 3, 4, 5\} \\
+  g_i(x, 0, z, t) &amp;=&amp; g_i(x, L_y, z, t) &amp;\quad , \quad i \in \{1, 2, 3, 4, 5\} \\
+  g_3(x, y, 0, t) &amp;=&amp; 0 &amp;\quad (\text{底部 } z=0) \\
+  g_3(x, y, L_z, t) &amp;=&amp; 0 &amp;\quad (\text{頂部 } z=L_z) \\
+  \end{matrix}\right.\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f_i, g_i\)</span> : 向量中的各個純量分量元素 (Vector component elements)，其物理量綱與【定義 1 (前章)】的大氣狀態向量各元件一一對應</p></li>
+<li><p><span class="math notranslate nohighlight">\(x, y, z\)</span> : 三維空間位置座標 <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(t\)</span> : 時間 <span class="math notranslate nohighlight">\([\text{s}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(L_{x}\)</span> : 系統在 <span class="math notranslate nohighlight">\(x\)</span> 軸方向（東西向）的週期長度 (Domain length in x-direction) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(L_{y}\)</span> : 系統在 <span class="math notranslate nohighlight">\(y\)</span> 軸方向（南北向）的週期長度 (Domain length in y-direction) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(L_{z}\)</span> : 大氣層垂直方向的總厚度／頂部高度 (Domain height in z-direction) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f_3, g_3\)</span> : 對應垂直速度 <span class="math notranslate nohighlight">\(w\)</span> 的函數分量；在頂部與底部為零（即滿足剛性無穿透條件 Rigid non-penetration boundary condition）</p></li>
+</ul>
+</li>
+<li><p><strong>【定義 2】 能量權重空間平均內積（Energy-weighted spatially averaged inner product）  ：</strong></p>
+<div class="math notranslate nohighlight">
+\[ (\tilde{f}, \tilde{g}) \overset{\text{def}}{=} \frac{1}{L_x L_y L_z} \int_{0}^{L_z} \int_{0}^{L_y} \int_{0}^{L_x} \left( f_1 g_1^* + f_2 g_2^* + f_3 g_3^* + \frac{1}{c^2} f_4 g_4^* + \frac{g^2}{N^2} f_5 g_5^* \right) dxdydz \]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\((\mathbf{\tilde{f}}, \mathbf{\tilde{g}})\)</span> : 兩個波動狀態向量在全域空間上的內積值 (Spatially averaged inner product) [多元複合單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(f_{i}\)</span> : 第一個測試函數向量 <span class="math notranslate nohighlight">\(\bar{\mathbf{f}}\)</span> 的第 <span class="math notranslate nohighlight">\(i\)</span> 個純量分量</p></li>
+<li><p><span class="math notranslate nohighlight">\(g_{i}^{*}\)</span> : 第二個測試函數向量 <span class="math notranslate nohighlight">\(\bar{\mathbf{g}}\)</span> 的第 <span class="math notranslate nohighlight">\(i\)</span> 個純量分量的共軛複數 (Complex conjugate)</p></li>
+<li><p><span class="math notranslate nohighlight">\(x, y, z\)</span> : 三維直角空間座標 <span class="math notranslate nohighlight">\([\text{m}]\)</span><span class="math notranslate nohighlight">\(L_x, L_y\)</span> : 水平方向的長度與寬度 <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(L_{z}\)</span> : 垂直方向的大氣總高度 <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{1}{L_{x}L_{y}L_{z}}\)</span> : 空間體積歸一化因子 (Volume normalization factor) <span class="math notranslate nohighlight">\([\text{m}^{-3}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c^{2}\)</span> : 本地音速平方 (Speed of sound squared) <span class="math notranslate nohighlight">\([\text{m}^2\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(g\)</span> : 地表重力加速度常數 <span class="math notranslate nohighlight">\(g \approx 9.80665 \text{ m}\cdot\text{s}^{-2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(N^{2}\)</span> : 浮力頻率平方 / 班特-外薩拉頻率平方 (Brunt-Väisälä frequency squared) <span class="math notranslate nohighlight">\([\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{1}{c^2} f_4 g_4^*\)</span> : 經彈性音速權重調整後的彈性可壓縮位能項 (Compressible potential energy component)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{g^2}{N^2} f_5 g_5^*\)</span> : 經靜力穩定度權重調整後的重力浮力熱力位能項 (Gravitational potential energy component)</p></li>
+</ul>
+</li>
+<li><p><strong>【推導 1】  算符矩陣作用於狀態向量的各分量展開（Component expansion of operator matrix acting on state vectors） ：</strong></p>
+<ul class="simple">
+<li><p>(a) 算符矩陣 <span class="math notranslate nohighlight">\(\mathbf{L}\)</span> 作用於測試向量 <span class="math notranslate nohighlight">\(\bar{\mathbf{f}}\)</span>：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*} 
+  \mathbf{L}\tilde{f} &amp;\overset{\text{已知 1,定義 1(a)}}{=}&amp;  \begin{bmatrix} 
+  0 &amp; 0 &amp; 0 &amp; \frac{\partial}{\partial x} &amp; 0 \\[2ex]
+  0 &amp; 0 &amp; 0 &amp; \frac{\partial}{\partial y} &amp; 0 \\[2ex]
+  0 &amp; 0 &amp; 0 &amp; \left(\frac{\partial}{\partial z} + \Gamma\right) &amp; g \\[2ex]
+  c^2 \frac{\partial}{\partial x} &amp; c^2 \frac{\partial}{\partial y} &amp; c^2 \left(\frac{\partial}{\partial z} - \Gamma\right) &amp; 0 &amp; 0 \\[2ex]
+  0 &amp; 0 &amp; -\frac{N^2}{g} &amp; 0 &amp; 0 \\[2ex]
+  \end{bmatrix}  \begin{bmatrix}  f_1  \\[2ex] f_2 \\[2ex] f_3 \\[2ex] f_4 \\[2ex] f_5 \\[2ex] \end{bmatrix} \\
+  &amp;=&amp; \begin{bmatrix}  \frac{\partial f_4}{\partial x}  \\[2ex]
+  \frac{\partial f_4}{\partial y} \\[2ex] 
+  \left(\frac{\partial}{\partial z} + \Gamma\right)f_4 + g f_5 \\[2ex] 
+  c^2 \left[ \frac{\partial f_1}{\partial x} + \frac{\partial f_2}{\partial y} + \left(\frac{\partial}{\partial z} - \Gamma\right)f_3 \right] \\[2ex] 
+  -\frac{N^2}{g} f_3 \\[2ex] \end{bmatrix}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(b) 算符矩陣 <span class="math notranslate nohighlight">\(\mathbf{L}\)</span> 作用於測試向量 <span class="math notranslate nohighlight">\(\bar{\mathbf{g}}\)</span>：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*} 
+  \mathbf{L}\tilde{g} &amp;\overset{\text{已知 1,定義 1(a)}}{=}&amp;  \begin{bmatrix} 
+  0 &amp; 0 &amp; 0 &amp; \frac{\partial}{\partial x} &amp; 0 \\[2ex]
+  0 &amp; 0 &amp; 0 &amp; \frac{\partial}{\partial y} &amp; 0 \\[2ex]
+  0 &amp; 0 &amp; 0 &amp; \left(\frac{\partial}{\partial z} + \Gamma\right) &amp; g \\[2ex]
+  c^2 \frac{\partial}{\partial x} &amp; c^2 \frac{\partial}{\partial y} &amp; c^2 \left(\frac{\partial}{\partial z} - \Gamma\right) &amp; 0 &amp; 0 \\[2ex]
+  0 &amp; 0 &amp; -\frac{N^2}{g} &amp; 0 &amp; 0 \\[2ex]
+  \end{bmatrix}  \begin{bmatrix}  g_1  \\[2ex] g_2 \\[2ex] g_3 \\[2ex] g_4 \\[2ex] g_5 \\[2ex] \end{bmatrix} \\
+  &amp;=&amp; \begin{bmatrix}  \frac{\partial g_4}{\partial x}  \\[2ex]
+  \frac{\partial g_4}{\partial y} \\[2ex] 
+  \left(\frac{\partial}{\partial z} + \Gamma\right)g_4 + g g_5 \\[2ex] 
+  c^2 \left[ \frac{\partial g_1}{\partial x} + \frac{\partial g_2}{\partial y} + \left(\frac{\partial}{\partial z} - \Gamma\right)g_3 \right] \\[2ex] 
+  -\frac{N^2}{g} g_3 \\[2ex] \end{bmatrix}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathbf{L}\)</span> : 空間微分波動算符矩陣</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{\tilde{f}}, \mathbf{\tilde{g}}\)</span> : 五維測試函數向量<span class="math notranslate nohighlight">\(f_i , g_i\)</span> : 各向量對應之純量分量元素</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Gamma \)</span> : 大氣層結修正因子 <span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(N^{2}\)</span> : 浮力頻率平方 <span class="math notranslate nohighlight">\([\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c^{2}\)</span> : 本地音速平方 <span class="math notranslate nohighlight">\([\text{m}^2\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(g\)</span> : 地表重力加速度常數 <span class="math notranslate nohighlight">\(g \approx 9.80665 \text{ m}\cdot\text{s}^{-2}\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 2】  單維度分部積分與邊界項消去（Single-dimensional integration by parts and boundary term elimination） ：</strong></p>
+<ul class="simple">
+<li><p>(a) <span class="math notranslate nohighlight">\(x\)</span> 方向之 <span class="math notranslate nohighlight">\(f_{4}\)</span> 微分項分部積分：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*} 
+  \int_{0}^{L_x} \frac{\partial f_4}{\partial x}g_1^* \ dx &amp;\overset{\text{IbP}}{=}&amp; \left[ f_4 \cdot g_1^* \right]_{0}^{L_x} -  \int_{0}^{L_x}  \frac{\partial g_1^*}{\partial x} f_4 \ dx \\
+  &amp;=&amp; \left( f_4(L_x) \cdot g_1^*(L_x)  -  f_4(0) \cdot g_1^*(0) \right) -  \int_{0}^{L_x}  \frac{\partial g_1^*}{\partial x} f_4 \ dx \\
+  &amp;\overset{\text{定義 1(b)}}{=}&amp; \left( f_4(0) \cdot g_1^*(0)  -  f_4(0) \cdot g_1^*(0) \right) -  \int_{0}^{L_x}  \frac{\partial g_1^*}{\partial x} f_4 \ dx \\
+  &amp;=&amp; -  \int_{0}^{L_x}  \frac{\partial g_1^*}{\partial x} f_4 \ dx \\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(b) <span class="math notranslate nohighlight">\(y\)</span> 方向之 <span class="math notranslate nohighlight">\(f_{4}\)</span> 微分項分部積分：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*} 
+  \int_{0}^{L_y} \frac{\partial f_4}{\partial y}g_2^* \ dy &amp;\overset{\text{IbP}}{=}&amp; \left[ f_4 \cdot g_2^* \right]_{0}^{L_y} -  \int_{0}^{L_y}  \frac{\partial g_2^*}{\partial y} f_4 \ dy \\
+  &amp;=&amp; \left( f_4(L_y) \cdot g_2^*(L_y)  -  f_4(0) \cdot g_2^*(0) \right) -  \int_{0}^{L_y}  \frac{\partial g_2^*}{\partial y} f_4 \ dy \\
+  &amp;\overset{\text{定義 1(b)}}{=}&amp; \left( f_4(0) \cdot g_2^*(0)  -  f_4(0) \cdot g_2^*(0) \right) -  \int_{0}^{L_y}  \frac{\partial g_2^*}{\partial y} f_4 \ dy \\
+  &amp;=&amp; -  \int_{0}^{L_y}  \frac{\partial g_2^*}{\partial y} f_4 \ dy \\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(c) <span class="math notranslate nohighlight">\(z\)</span> 方向之 <span class="math notranslate nohighlight">\(f_{4}\)</span> 微分項分部積分：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*} 
+  \int_{0}^{L_z} \frac{\partial f_4}{\partial z}g_3^* \ dz &amp;\overset{\text{IbP}}{=}&amp; \left[ f_4 \cdot g_3^* \right]_{0}^{L_z} -  \int_{0}^{L_z}  \frac{\partial g_3^*}{\partial z} f_4 \ dz \\
+  &amp;=&amp; \left( f_4(L_z) \cdot g_3^*(L_z)  -  f_4(0) \cdot g_3^*(0) \right) -  \int_{0}^{L_z}  \frac{\partial g_3^*}{\partial z} f_4 \ dz \\
+  &amp;\overset{\text{定義 1(b)}}{=}&amp; \left( 0 \cdot 0  -  0 \cdot 0 \right) -  \int_{0}^{L_z}  \frac{\partial g_3^*}{\partial z} f_4 \ dz \\
+  &amp;=&amp; -  \int_{0}^{L_z}  \frac{\partial g_3^*}{\partial z} f_4 \ dz \\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(d) <span class="math notranslate nohighlight">\(x\)</span> 方向之 <span class="math notranslate nohighlight">\(f_{1}\)</span> 微分項分部積分：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*} 
+  \int_{0}^{L_x} \frac{\partial f_1}{\partial x}g_4^* \ dx &amp;\overset{\text{IbP}}{=}&amp; \left[ f_1 \cdot g_4^* \right]_{0}^{L_x} -  \int_{0}^{L_x}  \frac{\partial g_4^*}{\partial x} f_1 \ dx \\
+  &amp;=&amp; \left( f_1(L_x) \cdot g_4^*(L_x)  -  f_1(0) \cdot g_4^*(0) \right) -  \int_{0}^{L_x}  \frac{\partial g_4^*}{\partial x} f_1 \ dx \\
+  &amp;\overset{\text{定義 1(b)}}{=}&amp; \left( f_1(0) \cdot g_4^*(0)  -  f_1(0) \cdot g_4^*(0) \right) -  \int_{0}^{L_x}  \frac{\partial g_4^*}{\partial x} f_1 \ dx \\
+  &amp;=&amp; -  \int_{0}^{L_x}  \frac{\partial g_4^*}{\partial x} f_1 \ dx \\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(e) <span class="math notranslate nohighlight">\(y\)</span> 方向之 <span class="math notranslate nohighlight">\(f_{2}\)</span> 微分項分部積分：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*} 
+  \int_{0}^{L_y} \frac{\partial f_2}{\partial y}g_4^* \ dy &amp;\overset{\text{IbP}}{=}&amp; \left[ f_2 \cdot g_4^* \right]_{0}^{L_y} -  \int_{0}^{L_y}  \frac{\partial g_4^*}{\partial y} f_2 \ dy \\
+  &amp;=&amp; \left( f_2(L_y) \cdot g_4^*(L_y)  -  f_2(0) \cdot g_4^*(0) \right) -  \int_{0}^{L_y}  \frac{\partial g_4^*}{\partial y} f_2 \ dy \\
+  &amp;\overset{\text{定義 1(b)}}{=}&amp; \left( f_2(0) \cdot g_4^*(0)  -  f_2(0) \cdot g_4^*(0) \right) -  \int_{0}^{L_y}  \frac{\partial g_4^*}{\partial y} f_2 \ dy \\
+  &amp;=&amp; -  \int_{0}^{L_y}  \frac{\partial g_4^*}{\partial y} f_2 \ dy \\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(f) <span class="math notranslate nohighlight">\(z\)</span> 方向之 <span class="math notranslate nohighlight">\(f_{3}\)</span> 微分項分部積分：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*} 
+  \int_{0}^{L_z} \frac{\partial f_3}{\partial z}g_4^* \ dz &amp;\overset{\text{IbP}}{=}&amp; \left[ f_3 \cdot g_4^* \right]_{0}^{L_z} -  \int_{0}^{L_z}  \frac{\partial g_4^*}{\partial z} f_3 \ dz \\
+  &amp;=&amp; \left( f_3(L_z) \cdot g_4^*(L_z)  -  f_3(0) \cdot g_4^*(0) \right) -  \int_{0}^{L_z}  \frac{\partial g_4^*}{\partial z} f_3 \ dz \\
+  &amp;\overset{\text{定義 1(b)}}{=}&amp; \left( 0 \cdot 0  -  0 \cdot 0 \right) -  \int_{0}^{L_z}  \frac{\partial g_4^*}{\partial z} f_3 \ dz \\
+  &amp;=&amp; -  \int_{0}^{L_z}  \frac{\partial g_4^*}{\partial z} f_3 \ dz \\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\text{IbP}\)</span> : 分部積分法 (Integration by Parts) 算符法則</p></li>
+<li><p><span class="math notranslate nohighlight">\(f_i, g_i\)</span> : 測試函數向量的空間連續分量元素</p></li>
+<li><p><span class="math notranslate nohighlight">\(g_{i}^{*}\)</span> : 測試函數分量的共軛複數 (Complex conjugate)</p></li>
+<li><p><span class="math notranslate nohighlight">\(x, y, z\)</span> : 水平與垂直空間位置座標 <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(L_x, L_y\)</span> : 水平邊界邊長週期特徵長度 <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(L_{z}\)</span> : 垂直域頂部高度 <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id1">
+<h2>證明<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*} 
+(\mathbf{L}\tilde{f}, \tilde{g})  &amp;\overset{\text{定義 2}}{=}&amp; \frac{1}{L_x L_y L_z} \int_{0}^{L_z} \int_{0}^{L_y} \int_{0}^{L_x} \left( (L\tilde{f})_1 g_1^* + (L\tilde{f})_2 g_2^* + (L\tilde{f})_3 g_3^* + \frac{1}{c^2} (L\tilde{f})_4 g_4^* + \frac{g^2}{N^2} (L\tilde{f})_5 g_5^* \right) dxdydz \\
+&amp;\overset{\text{推導 1(a)}}{=}&amp; \frac{1}{L_x L_y L_z} \int_{0}^{L_z} \int_{0}^{L_y} \int_{0}^{L_x} \left( \frac{\partial f_4}{\partial x} g_1^* + \frac{\partial f_4}{\partial y} g_2^* + \left(\left(\frac{\partial}{\partial z} + \Gamma\right)f_4 + g f_5 \right) g_3^* + \frac{1}{c^2} c^2 \left[ \frac{\partial f_1}{\partial x} + \frac{\partial f_2}{\partial y} + \left(\frac{\partial}{\partial z} - \Gamma\right)f_3 \right] g_4^* + \frac{g^2}{N^2} (-\frac{N^2}{g} f_3) g_5^* \right) dxdydz \\
+&amp;=&amp; \frac{1}{L_x L_y L_z} \int_{0}^{L_z} \int_{0}^{L_y} \int_{0}^{L_x} \left( \frac{\partial f_4}{\partial x}g_1^* + \frac{\partial f_4}{\partial y}g_2^* + \frac{\partial f_4}{\partial z}g_3^* + \Gamma f_4 g_3^* + g f_5 g_3^* + \frac{\partial f_1}{\partial x}g_4^* + \frac{\partial f_2}{\partial y}g_4^* + \frac{\partial f_3}{\partial z}g_4^* - \Gamma f_3 g_4^* - g f_3 g_5^* \right) dxdydz \\
+&amp;\overset{\text{推導 2(a)(b)(c)(d)(e)(f)}}{=}&amp; \frac{1}{L_x L_y L_z} \int_{0}^{L_z} \int_{0}^{L_y} \int_{0}^{L_x} \left( -\frac{\partial g_1^*}{\partial x}f_4 - \frac{\partial g_2^*}{\partial y}f_4 - \frac{\partial g_3^*}{\partial z}f_4 + \Gamma f_4 g_3^* + g f_5 g_3^* - \frac{\partial g_4^*}{\partial x}f_1 - \frac{\partial g_4^*}{\partial y}f_2 - \frac{\partial g_4^*}{\partial z}f_3 - \Gamma f_3 g_4^* - g f_3 g_5^*\right) dxdydz \\
+&amp;=&amp; - \frac{1}{L_x L_y L_z} \int_{0}^{L_z} \int_{0}^{L_y} \int_{0}^{L_x}  \left( \frac{\partial g_1^*}{\partial x}f_4 + \frac{\partial g_2^*}{\partial y}f_4 + \frac{\partial g_3^*}{\partial z}f_4 - \Gamma f_4 g_3^* - g f_5 g_3^* + \frac{\partial g_4^*}{\partial x}f_1 + \frac{\partial g_4^*}{\partial y}f_2 + \frac{\partial g_4^*}{\partial z}f_3 + \Gamma f_3 g_4^* + g f_3 g_5^*\right) dxdydz \\
+&amp;=&amp; -\frac{1}{L_x L_y L_z} \int_{0}^{L_z} \int_{0}^{L_y} \int_{0}^{L_x}  \left( \frac{\partial g_4^*}{\partial x}f_1 + \frac{\partial g_4^*}{\partial y}f_2 + \left( \frac{\partial g_4^*}{\partial z} + \Gamma g_4^* + g g_5^* \right) f_3 + \left( \frac{\partial g_1^*}{\partial x} + \frac{\partial g_2^*}{\partial y} + \frac{\partial g_3^*}{\partial z} - \Gamma g_3^* \right) f_4 - g g_3^* f_5 \right) dxdydz \\
+&amp;=&amp; - \frac{1}{L_x L_y L_z} \int_{0}^{L_z} \int_{0}^{L_y} \int_{0}^{L_x}  \left( \frac{\partial g_4^*}{\partial x}f_1 + \frac{\partial g_4^*}{\partial y}f_2 + \left( \left(\frac{\partial}{\partial z} + \Gamma\right)g_4^* + g g_5^* \right) f_3 + \left[ \frac{\partial g_1^*}{\partial x} + \frac{\partial g_2^*}{\partial y} + \left(\frac{\partial}{\partial z} - \Gamma\right)g_3^* \right] f_4 + \frac{g^2}{N^2} (-\frac{N^2}{g} g_3^*) f_5 \right) dxdydz \\
+&amp;\overset{\text{定義 2}}{=}&amp; -(\tilde{f}, \mathbf{L}\tilde{g})
+\end{gather*}\end{split}\]</div>
+<p>證明完畢 ！算子 <span class="math notranslate nohighlight">\(\mathbf{L}\)</span> 在此內積定義下確實是反厄米特（Skew-Hermitian）算子。</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./project\project1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="project1_2.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><strong>二、流體力學偏微分方程式</strong> 轉成 <strong>線性代數矩陣方程式</strong> (From fluid dynamics PDEs to linear algebraic matrix equations.)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="project1_4.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><strong>四、確認內積的範數正定性</strong></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">證明</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC YE
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

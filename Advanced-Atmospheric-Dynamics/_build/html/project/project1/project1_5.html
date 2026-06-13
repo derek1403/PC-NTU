@@ -1,0 +1,978 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>五、大氣矩陣微分算符 \(\mathbf{L}\) 的特徵解與色散關係推導 &#8212; Advanced Atmospheric Dynamics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=4cca277b" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'project/project1/project1_5';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="六、從物理空間轉換至頻譜空間：突破聲波 CFL 條件限制" href="project1_6.html" />
+    <link rel="prev" title="四、確認內積的範數正定性" href="project1_4.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Advanced Atmospheric Dynamics - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Advanced Atmospheric Dynamics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lecture/lecture.html">lecture</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/week1/week1.html">Advanced Atmospheric Dynamics - Week 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/week2/week2.html">Advanced Atmospheric Dynamics - Week 2</a></li>
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../homework/homework.html">homework</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../homework/hw1/hw1.html">Advanced Atmospheric Dynamics Hw 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../homework/hw2/hw2.html">Advanced Atmospheric Dynamics Hw 2</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="project_overview.html">Eigenfunctions and eigenvalues of the fully compressible model.</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../project2/project2.html">Advanced Atmospheric Dynamics Project 2</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fproject/project1/project1_5.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/project/project1/project1_5.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>五、大氣矩陣微分算符 \mathbf{L} 的特徵解與色散關係推導</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">證明</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lamb-waves-dispersion-relationship-hat-w-0">1. 藍姆波色散關係式 (Lamb waves dispersion relationship, 當 <span class="math notranslate nohighlight">\(\hat{w}=0\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acoustic-and-buoyancy-waves-dispersion-relationship-hat-w-neq-0">2. 三維聲波與浮力波色散關係式 (Acoustic and Buoyancy waves dispersion relationship, 當 <span class="math notranslate nohighlight">\(\hat{w} \neq 0\)</span>)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-on-dynamic-characteristics-of-four-flow-fields-and-waves">四種流場與波動的動力學特徵討論(Discussion on Dynamic Characteristics of Four Flow Fields and Waves)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-divergent-flow">1. 非輻散流 (Non-divergent flow)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lamb-waves">2. 藍姆波 (Lamb waves)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acoustic-waves">3. 聲波 (Acoustic waves)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#buoyancy-waves-internal-gravity-waves">4. 浮力波 / 內重力波 (Buoyancy waves / Internal gravity waves)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frequency-ranges">三種流場頻率範圍 (Frequency Ranges)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1. 藍姆波 (Lamb Waves)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2. 聲波 (Acoustic waves)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buoyancy-waves">2. 浮力波 (Buoyancy waves)</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="mathbf-l">
+<h1>五、大氣矩陣微分算符 <span class="math notranslate nohighlight">\(\mathbf{L}\)</span> 的特徵解與色散關係推導<a class="headerlink" href="#mathbf-l" title="Link to this heading">#</a></h1>
+<section id="assumptions-preliminaries">
+<h2>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong>【已知 1】 空間微分波動算符矩陣（Spatial differential wave operator matrix） ：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \mathbf{L} \overset{\text{def}}{=} \begin{bmatrix} 
+  0 &amp; 0 &amp; 0 &amp; \frac{\partial}{\partial x} &amp; 0 \\[2ex]
+  0 &amp; 0 &amp; 0 &amp; \frac{\partial}{\partial y} &amp; 0 \\[2ex]
+  0 &amp; 0 &amp; 0 &amp; \left(\frac{\partial}{\partial z} + \Gamma\right) &amp; g \\[2ex]
+  c^2 \frac{\partial}{\partial x} &amp; c^2 \frac{\partial}{\partial y} &amp; c^2 \left(\frac{\partial}{\partial z} - \Gamma\right) &amp; 0 &amp; 0 \\[2ex]
+  0 &amp; 0 &amp; -\frac{N^2}{g} &amp; 0 &amp; 0 \\[2ex]
+  \end{bmatrix}  \end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathbf{L}\)</span> : 封裝空間偏微分與大氣層結常數的 <span class="math notranslate nohighlight">\(5 \times 5\)</span> 矩陣微分算符 (Spatial differential operator matrix)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Gamma \)</span> : 大氣層結修正因子 <span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(N^{2}\)</span> : 浮力頻率平方 <span class="math notranslate nohighlight">\([\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(g\)</span> : 地表重力加速度常數 <span class="math notranslate nohighlight">\(g \approx 9.80665 \text{ m}\cdot\text{s}^{-2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c\)</span> : 本地音速 (Local speed of sound) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{\partial}{\partial x}, \frac{\partial}{\partial y}, \frac{\partial}{\partial z}\)</span> : 各時空空間軸向的偏微分算符 <span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 1】 空間結構向量 <span class="math notranslate nohighlight">\(\tilde{K}\)</span> ：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\tilde{K} \overset{\text{def}}{=} \begin{bmatrix}  
+  \hat{u}\\[2ex]
+  \hat{v}\\[2ex]
+  \hat{w}\\[2ex]
+  \hat{p}\\[2ex]
+  \hat{b}\\[2ex]
+  \end{bmatrix}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\bar{\mathbf{K}}\)</span> : 大氣三維空間結構特徵向量 (Spatial structure eigenvector)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{u}, \hat{v}, \hat{w}\)</span> : 經密度加權後，在波數空間中的 <span class="math notranslate nohighlight">\(x, y, z\)</span> 三軸方向特徵速度結構函數 <span class="math notranslate nohighlight">\([\text{kg}^{\frac{1}{2}}\cdot\text{m}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{p}\)</span> : 經密度加權後，在波數空間中的特徵氣壓結構函數 <span class="math notranslate nohighlight">\([\text{kg}^{-\frac{1}{2}}\cdot\text{m}^{\frac{1}{2}}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{b}\)</span> : 經密度加權後，在波數空間中的特徵熱力學／浮力結構函數 <span class="math notranslate nohighlight">\([\text{kg}^{\frac{1}{2}}\cdot\text{m}^{-3}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 1】 特徵值分量方程式（Eigenvalue component equations）：</strong> 將算子 <span class="math notranslate nohighlight">\(\mathbf{L}\tilde{K} = i\nu\tilde{K}\)</span> 展開，尋找特徵頻率 <span class="math notranslate nohighlight">\(\nu\)</span> 與空間結構向量 <span class="math notranslate nohighlight">\(\tilde{K} = (\hat{u}, \hat{v}, \hat{w}, \hat{p}, \hat{b})^T\)</span> 的關係。</p>
+<ul class="simple">
+<li><p>(a) 展開 <span class="math notranslate nohighlight">\(\mathbf{L}\tilde{K} = i\nu\tilde{K}\)</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \mathbf{L}\tilde{K} &amp;=&amp; i\nu\tilde{K} \tag{7}\\
+  \begin{bmatrix} 
+  0 &amp; 0 &amp; 0 &amp; \frac{\partial}{\partial x} &amp; 0 \\[2ex]
+  0 &amp; 0 &amp; 0 &amp; \frac{\partial}{\partial y} &amp; 0 \\[2ex]
+  0 &amp; 0 &amp; 0 &amp; \left(\frac{\partial}{\partial z} + \Gamma\right) &amp; g \\[2ex]
+  c^2 \frac{\partial}{\partial x} &amp; c^2 \frac{\partial}{\partial y} &amp; c^2 \left(\frac{\partial}{\partial z} - \Gamma\right) &amp; 0 &amp; 0 \\[2ex]
+  0 &amp; 0 &amp; -\frac{N^2}{g} &amp; 0 &amp; 0 \\[2ex]
+  \end{bmatrix} \begin{bmatrix}   \hat{u}\\[2ex]  \hat{v}\\[2ex]  \hat{w}\\[2ex]  \hat{p}\\[2ex]  \hat{b}\\[2ex]  \end{bmatrix}
+  &amp;\overset{\text{已知 1, 定義 1}}{=}&amp; i\nu \begin{bmatrix}   \hat{u}\\[2ex]  \hat{v}\\[2ex]  \hat{w}\\[2ex]  \hat{p}\\[2ex]  \hat{b}\\[2ex]  \end{bmatrix} \\
+  \begin{bmatrix}   
+  \frac{\partial \hat{p}}{\partial x}\\[2ex]  
+  \frac{\partial \hat{p}}{\partial y}\\[2ex]  
+  \left(\frac{\partial}{\partial z} + \Gamma\right)\hat{p} + g \hat{b}\\[2ex]  
+  c^2 \left( \frac{\partial \hat{u}}{\partial x} + \frac{\partial \hat{v}}{\partial y} + \left(\frac{\partial}{\partial z} - \Gamma\right)\hat{w} \right)\\[2ex]  
+  -\frac{N^2}{g} \hat{w}\\[2ex]   
+  \end{bmatrix} &amp;=&amp; i\nu \begin{bmatrix}   \hat{u}\\[2ex]  \hat{v}\\[2ex]  \hat{w}\\[2ex]  \hat{p}\\[2ex]  \hat{b}\\[2ex]  \end{bmatrix} \\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(b) x 方向動量：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[ \frac{\partial \hat{p}}{\partial x} \overset{\text{已知 1(a)}}{=} i\nu \hat{u}\]</div>
+<ul class="simple">
+<li><p>(c) y 方向動量：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[ \frac{\partial \hat{p}}{\partial y} \overset{\text{已知 1(a)}}{=} i\nu \hat{v}\]</div>
+<ul class="simple">
+<li><p>(d) 垂直方向動量：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[ \left(\frac{\partial}{\partial z} + \Gamma\right)\hat{p} + g \hat{b} \overset{\text{已知 1(a)}}{=} i\nu \hat{w}\]</div>
+<ul class="simple">
+<li><p>(e) 連續方程式（質量守恆）：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[c^2 \left( \frac{\partial \hat{u}}{\partial x} + \frac{\partial \hat{v}}{\partial y} + \left(\frac{\partial}{\partial z} - \Gamma\right)\hat{w} \right) \overset{\text{已知 1(a)}}{=} i\nu \hat{p} \]</div>
+<ul class="simple">
+<li><p>(f) 熱力學方程式（浮力頻率）：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[-\frac{N^2}{g} \hat{w} \overset{\text{已知 1(a)}}{=} i\nu \hat{b}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat{u}, \hat{v}, \hat{w}, \hat{p}, \hat{b}\)</span> : 三維空間上的微擾特徵振幅函數</p></li>
+<li><p><span class="math notranslate nohighlight">\(\nu\)</span> : 系統的實數固有特徵角頻率 (Real eigenfrequency) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(i\)</span> : 虛數單位 <span class="math notranslate nohighlight">\((i = \sqrt{-1})\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Gamma\)</span> : 大氣層結修正因子 <span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(N^{2}\)</span> : 浮力頻率平方 <span class="math notranslate nohighlight">\([\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c^{2}\)</span> : 本地音速平方 <span class="math notranslate nohighlight">\([\text{m}^2\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(g\)</span> : 地表重力加速度常數 <span class="math notranslate nohighlight">\(g \approx 9.80665 \text{ m}\cdot\text{s}^{-2}\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【假設 1】 水平平面波解 (Horizontal plane wave solution)：</strong> 假設大氣水平方向無邊界限制，擾動以平面波形式 <span class="math notranslate nohighlight">\(e^{i (\bar{k}+\bar{l})}\)</span>展開。</p>
+<ul class="simple">
+<li><p>(a) x 方向空間導數：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \frac{\partial}{\partial x} \left[ e^{i (\bar{k}+\bar{l})} \right] &amp;=&amp;  i\bar{k}  \left(e^{i (\bar{k}+\bar{l})} \right ) \\
+  \frac{\partial}{\partial x} &amp;	\Longleftrightarrow &amp; i\bar{k}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(b) y 方向空間導數：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \frac{\partial}{\partial y} \left[ e^{i (\bar{k}+\bar{l})} \right] &amp;=&amp;  i\bar{l}  \left(e^{i (\bar{k}+\bar{l})} \right ) \\
+  \frac{\partial}{\partial y} &amp;	\Longleftrightarrow &amp; i\bar{l}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\bar{k}\)</span> : <span class="math notranslate nohighlight">\(x\)</span> 方向的水平波數 (x-axis Horizontal wavenumbers) <span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar{l}\)</span> : <span class="math notranslate nohighlight">\(y\)</span> 方向的水平波數 (y-axis Horizontal wavenumbers) <span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 2】 水平波數平方 (Horizontal wavenumber squared)：</strong></p>
+<div class="math notranslate nohighlight">
+\[\bar{K}^2 \overset{\text{def}}{=} \bar{k}^2 + \bar{l}^2\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(K^{2}\)</span> : 水平總波數的平方 (Horizontal total wavenumber squared) <span class="math notranslate nohighlight">\([\text{m}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(k\)</span> : <span class="math notranslate nohighlight">\(x\)</span> 軸方向的水平波數 (Zonal wavenumber) <span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(l\)</span> : <span class="math notranslate nohighlight">\(y\)</span> 軸方向的水平波數 (Meridional wavenumber) <span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【假設 2】 垂直邊界與波結構 (Vertical boundary and wave structure)：</strong> 對於一般三維波動（<span class="math notranslate nohighlight">\(\hat{w} \neq 0\)</span>），垂直方向滿足剛體邊界條件，對應的氣壓微擾垂直結構滿足二階特徵導數關係。</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial^2 \hat{p}}{\partial z^2} = -\bar{m}^2 \hat{p}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\bar{m}\)</span> : 垂直方向波數 (Vertical wavenumber) <span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> : 垂直方向波數 (Vertical wavenumber) <span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{p}\)</span> : 經密度加權後的特徵氣壓結構函數</p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{\partial ^{2}\hat{p}}{\partial z^{2}}\)</span> : 特徵氣壓對高度的二階偏導數 <span class="math notranslate nohighlight">\([\text{kg}^{-\frac{1}{2}}\cdot\text{m}^{-\frac{3}{2}}\cdot\text{s}^{-2}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 1】 水平速度與氣壓的代數關係：</strong></p>
+<ul class="simple">
+<li><p>(a)</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  i\nu \hat{u} &amp;\overset{\text{已知 2(b)}}{=}&amp; \frac{\partial \hat{p}}{\partial x} \\
+  i\nu \hat{u} &amp;\overset{\text{假設 1(a)}}{=}&amp; i\bar{k}\hat{p} \\
+  \hat{u} &amp;=&amp; \frac{\bar{k}}{\nu}\hat{p} \\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(b)</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  i\nu \hat{v} &amp;\overset{\text{已知 2(c)}}{=}&amp; \frac{\partial \hat{p}}{\partial y} \\
+  i\nu \hat{v} &amp;\overset{\text{假設 1(b)}}{=}&amp; i\bar{l}\hat{p} \\
+  \hat{v} &amp;=&amp; \frac{\bar{l}}{\nu}\hat{p} \\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat{u}, \hat{v}\)</span> : 經密度加權後的水平特徵速度分量 <span class="math notranslate nohighlight">\([\text{kg}^{\frac{1}{2}}\cdot\text{m}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{p}\)</span> : 經密度加權後的特徵氣壓結構函數 <span class="math notranslate nohighlight">\([\text{kg}^{-\frac{1}{2}}\cdot\text{m}^{\frac{1}{2}}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\nu\)</span> : 系統的實數固有特徵角頻率 <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(k, l\)</span> : 水平方向各空間軸向的波數 <span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 2】 垂直速度與氣壓的連續關係 （Continuity relation between vertical velocity and pressure）：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  i\nu \hat{p} &amp;\overset{\text{已知 2(e)}}{=}&amp; c^2 \left( \frac{\partial \hat{u}}{\partial x} + \frac{\partial \hat{v}}{\partial y} + \left(\frac{\partial}{\partial z} - \Gamma\right)\hat{w} \right) \\
+  i\nu \hat{p} &amp;\overset{\text{假設 1(a)(b)}}{=}&amp; c^2 \left( i\bar{k}\hat{u} + i\bar{l}\hat{v} + \left(\frac{\partial}{\partial z} - \Gamma\right)\hat{w} \right) \\
+  i\nu \hat{p} &amp;\overset{\text{推導 1(a)(b)}}{=}&amp; c^2 \left( i\bar{k}\frac{\bar{k}}{\nu}\hat{p} + i\bar{l}\frac{\bar{l}}{\nu}\hat{p} + \left(\frac{\partial}{\partial z} - \Gamma\right)\hat{w} \right) \\
+  i\nu \hat{p} &amp;=&amp; c^2 \left( i\frac{\bar{k}^2 + \bar{l}^2}{\nu}\hat{p} + \left(\frac{\partial}{\partial z} - \Gamma\right)\hat{w} \right) \\
+  i\nu \hat{p} &amp;\overset{\text{定義 2}}{=}&amp; c^2 \left( i\frac{\bar{K}^2}{\nu}\hat{p} + \left(\frac{\partial}{\partial z} - \Gamma\right)\hat{w} \right) \\
+  i\nu \hat{p} &amp;=&amp; i\frac{c^2 \bar{K}^2}{\nu}\hat{p} + c^2 \left(\frac{\partial}{\partial z} - \Gamma\right)\hat{w} \\
+  c^2 \left(\frac{\partial}{\partial z} - \Gamma\right)\hat{w} &amp;=&amp; i\left( \nu - \frac{c^2 \bar{K}^2}{\nu} \right)\hat{p} \\
+  \left(\frac{\partial}{\partial z} - \Gamma\right)\hat{w} &amp;=&amp; i\left( \frac{\nu^2 - c^2 \bar{K}^2}{c^2 \nu} \right)\hat{p} \\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\nu\)</span> : 系統的實數固有特徵角頻率 (Real eigenfrequency) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{p}\)</span> : 經密度加權後的特徵氣壓結構函數 (Weighted pressure eigenvector) <span class="math notranslate nohighlight">\([\text{kg}^{-\frac{1}{2}}\cdot\text{m}^{\frac{1}{2}}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c^{2}\)</span> : 本地音速平方 (Speed of sound squared) <span class="math notranslate nohighlight">\([\text{m}^2\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{u}\)</span> : 經密度加權後的 <span class="math notranslate nohighlight">\(x\)</span> 軸方向水平特徵速度分量 (Weighted zonal velocity eigenvector) <span class="math notranslate nohighlight">\([\text{kg}^{\frac{1}{2}}\cdot\text{m}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{v}\)</span> : 經密度加權後的 <span class="math notranslate nohighlight">\(y\)</span> 軸方向水平特徵速度分量 (Weighted meridional velocity eigenvector) <span class="math notranslate nohighlight">\([\text{kg}^{\frac{1}{2}}\cdot\text{m}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{w}\)</span> : 經密度加權後的垂直特徵速度結構函數 (Weighted vertical velocity eigenvector) <span class="math notranslate nohighlight">\([\text{kg}^{\frac{1}{2}}\cdot\text{m}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Gamma\)</span> : 大氣層結修正因子 (Stratification correction factor) <span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(k\)</span> : <span class="math notranslate nohighlight">\(x\)</span> 軸方向的水平波數 (Zonal wavenumber) <span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(l\)</span> : <span class="math notranslate nohighlight">\(y\)</span> 軸方向的水平波數 (Meridional wavenumber) <span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(K^{2}\)</span> : 水平總波數平方 (Horizontal total wavenumber squared) <span class="math notranslate nohighlight">\([\text{m}^{-2}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 3】 浮力與垂直速度的代數關係：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  i\nu \hat{b} &amp;\overset{\text{已知 2(f)}}{=}&amp; -\frac{N^2}{g} \hat{w} \\
+  \hat{b} &amp;=&amp; i\frac{N^2}{g\nu}\hat{w} \\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\nu\)</span> : 系統的實數固有特徵角頻率 (Real eigenfrequency) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{b}\)</span> : 經密度加權後的特徵浮力／熱力學結構函數 (Weighted buoyancy eigenvector) <span class="math notranslate nohighlight">\([\text{kg}^{\frac{1}{2}}\cdot\text{m}^{-3}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{w}\)</span> : 經密度加權後的垂直特徵速度結構函數 (Weighted vertical velocity eigenvector) <span class="math notranslate nohighlight">\([\text{kg}^{\frac{1}{2}}\cdot\text{m}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(N^{2}\)</span> : 浮力頻率平方 / 班特-外薩拉頻率平方 (Brunt-Väisälä frequency squared) <span class="math notranslate nohighlight">\([\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(g\)</span> : 地表重力加速度常數 (Standard acceleration of gravity) <span class="math notranslate nohighlight">\(g \approx 9.80665 \text{ m}\cdot\text{s}^{-2}\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 4】 垂直氣壓梯度與垂直速度的動力關係：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  i\nu \hat{w} &amp;\overset{\text{已知 2(d)}}{=}&amp; \left(\frac{\partial}{\partial z} + \Gamma\right)\hat{p} + g \hat{b} \\
+  i\nu \hat{w} &amp;\overset{\text{推導 3}}{=}&amp; \left(\frac{\partial}{\partial z} + \Gamma\right)\hat{p} + g \left( i\frac{N^2}{g\nu}\hat{w} \right) \\
+  i\nu \hat{w} &amp;=&amp; \left(\frac{\partial}{\partial z} + \Gamma\right)\hat{p} + i\frac{N^2}{\nu}\hat{w}  \\
+  \left(\frac{\partial}{\partial z} + \Gamma\right)\hat{p} &amp;=&amp; i\nu \hat{w} - i\frac{N^2}{\nu}\hat{w} \\
+  \left(\frac{\partial}{\partial z} + \Gamma\right)\hat{p} &amp;=&amp; i\left( \frac{\nu^2 - N^2}{\nu} \right)\hat{w} \\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\nu\)</span> : 系統的實數固有特徵角頻率 (Real eigenfrequency) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{w}\)</span> : 經密度加權後的垂直特徵速度結構函數 (Weighted vertical velocity eigenvector) <span class="math notranslate nohighlight">\([\text{kg}^{\frac{1}{2}}\cdot\text{m}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{p}\)</span> : 經密度加權後的特徵氣壓結構函數 (Weighted pressure eigenvector) <span class="math notranslate nohighlight">\([\text{kg}^{-\frac{1}{2}}\cdot\text{m}^{\frac{1}{2}}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{b}\)</span> : 經密度加權後的特徵浮力／熱力學結構函數 (Weighted buoyancy eigenvector) <span class="math notranslate nohighlight">\([\text{kg}^{\frac{1}{2}}\cdot\text{m}^{-3}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Gamma\)</span> : 大氣層結修正因子 (Stratification correction factor) <span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(g\)</span> : 地表重力加速度常數 (Standard acceleration of gravity) <span class="math notranslate nohighlight">\(g \approx 9.80665 \text{ m}\cdot\text{s}^{-2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(N^{2}\)</span> : 浮力頻率平方 / 班特-外薩拉頻率平方 (Brunt-Väisälä frequency squared) <span class="math notranslate nohighlight">\([\text{s}^{-2}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 5】 氣壓微擾的核心垂直結構常微分方程式 (Core vertical structure ODE)：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \left(\frac{\partial}{\partial z} - \Gamma\right) \left[\left(\frac{\partial}{\partial z} + \Gamma\right)\hat{p}\right] &amp;=&amp; \left(\frac{\partial}{\partial z} - \Gamma\right) \left[\left(\frac{\partial}{\partial z} + \Gamma\right)\hat{p}\right] \\
+  \left(\frac{\partial^2}{\partial z^2} - \Gamma^2\right)\hat{p} &amp;=&amp; \left(\frac{\partial}{\partial z} - \Gamma\right) \left[\left(\frac{\partial}{\partial z} + \Gamma\right)\hat{p}\right] \\
+  \left(\frac{\partial^2}{\partial z^2} - \Gamma^2\right)\hat{p} &amp;\overset{\text{推導 4}}{=}&amp; \left(\frac{\partial}{\partial z} - \Gamma\right) \left[ i\left( \frac{\nu^2 - N^2}{\nu} \right)\hat{w} \right] \\
+  \left(\frac{\partial^2}{\partial z^2} - \Gamma^2\right)\hat{p} &amp;=&amp; i\left( \frac{\nu^2 - N^2}{\nu} \right)  \left(\frac{\partial}{\partial z} - \Gamma\right)\hat{w}  \\
+  \left(\frac{\partial^2}{\partial z^2} - \Gamma^2\right)\hat{p} &amp;\overset{\text{推導 2}}{=}&amp; i\left( \frac{\nu^2 - N^2}{\nu} \right) \left( i\left( \frac{\nu^2 - c^2 \bar{K}^2}{c^2 \nu} \right)\hat{p} \right)  \\
+  \left(\frac{\partial^2}{\partial z^2} - \Gamma^2\right)\hat{p} &amp;=&amp; -\left( \frac{(\nu^2 - N^2)(\nu^2 - c^2 \bar{K}^2)}{c^2 \nu^2} \right)\hat{p} \\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\Gamma\)</span> : 大氣層結修正因子 (Stratification correction factor) <span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\nu\)</span> : 系統的實數固有特徵角頻率 (Real eigenfrequency) <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{p}\)</span> : 經密度加權後，在波數空間中的特徵氣壓結構函數 <span class="math notranslate nohighlight">\([\text{kg}^{-\frac{1}{2}}\cdot\text{m}^{\frac{1}{2}}\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(N^{2}\)</span> : 浮力頻率平方 / 班特-外薩拉頻率平方 (Brunt-Väisälä frequency squared) <span class="math notranslate nohighlight">\([\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c^{2}\)</span> : 本地音速平方 (Speed of sound squared) <span class="math notranslate nohighlight">\([\text{m}^2\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(K^{2}\)</span> : 水平總波數平方 (Horizontal total wavenumber squared) <span class="math notranslate nohighlight">\([\text{m}^{-2}]\)</span></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id1">
+<h2>證明<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="lamb-waves-dispersion-relationship-hat-w-0">
+<h3>1. 藍姆波色散關係式 (Lamb waves dispersion relationship, 當 <span class="math notranslate nohighlight">\(\hat{w}=0\)</span>)<a class="headerlink" href="#lamb-waves-dispersion-relationship-hat-w-0" title="Link to this heading">#</a></h3>
+<p>當垂直擾動速度為零（<span class="math notranslate nohighlight">\(\hat{w}=0\)</span>），且氣壓微擾場不為零（<span class="math notranslate nohighlight">\(\hat{p} \neq 0\)</span>）時：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\left(\frac{\partial}{\partial z} - \Gamma\right)\hat{w} &amp;\overset{\text{推導 2}}{=}&amp; i\left( \frac{\nu^2 - c^2 \bar{K}^2}{c^2 \nu} \right)\hat{p} \\
+\left(\frac{\partial}{\partial z} - \Gamma\right)(0) &amp;=&amp; i\left( \frac{\nu^2 - c^2 \bar{K}^2}{c^2 \nu} \right)\hat{p} \\
+0 &amp;=&amp; \frac{\nu^2 - c^2 \bar{K}^2}{c^2 \nu} \\
+\nu^2 - c^2 \bar{K}^2 &amp;=&amp; 0 \\
+\nu^2 &amp;=&amp; c^2 \bar{K}^2 \\
+\nu^2 &amp;\overset{\text{定義 1}}{=}&amp; c^2(\bar{k}^2 + \bar{l}^2) \tag{8b}\\
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="acoustic-and-buoyancy-waves-dispersion-relationship-hat-w-neq-0">
+<h3>2. 三維聲波與浮力波色散關係式 (Acoustic and Buoyancy waves dispersion relationship, 當 <span class="math notranslate nohighlight">\(\hat{w} \neq 0\)</span>)<a class="headerlink" href="#acoustic-and-buoyancy-waves-dispersion-relationship-hat-w-neq-0" title="Link to this heading">#</a></h3>
+<p>對於一般的三維波動，特徵方程式必須滿足垂直波數的二階空間導數特徵關係：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\left(\frac{\partial^2}{\partial z^2} - \Gamma^2\right)\hat{p} &amp;\overset{\text{推導 5}}{=}&amp; -\left( \frac{(\nu^2 - N^2)(\nu^2 - c^2 \bar{K}^2)}{c^2 \nu^2} \right)\hat{p} \\
+\left(-\bar{m}^2 - \Gamma^2\right)\hat{p} &amp;\overset{\text{假設 2}}{=}&amp; -\left( \frac{(\nu^2 - N^2)(\nu^2 - c^2 \bar{K}^2)}{c^2 \nu^2} \right)\hat{p} \\
+\bar{m}^2 + \Gamma^2 &amp;=&amp; \frac{(\nu^2 - N^2)(\nu^2 - c^2 \bar{K}^2)}{c^2 \nu^2} \\
+c^2 \nu^2 \left( \bar{m}^2 + \Gamma^2 \right) &amp;=&amp; \left( \nu^2 - N^2 \right)\left( \nu^2 - c^2 \bar{K}^2 \right) \\
+c^2 \nu^2 \left( \bar{m}^2 + \Gamma^2 \right) &amp;=&amp; \nu^4 - \nu^2 c^2 \bar{K}^2 - \nu^2 N^2 + N^2 c^2 \bar{K}^2 \\
+\nu^4 - \nu^2 c^2 \bar{K}^2 - \nu^2 N^2 - \nu^2 c^2 \left( \bar{m}^2 + \Gamma^2 \right) + N^2 c^2 \bar{K}^2 &amp;=&amp; 0 \\
+\nu^4 - \nu^2 \left[ c^2 \bar{K}^2 + c^2 \bar{m}^2 + c^2 \Gamma^2 + N^2 \right] + c^2 \bar{K}^2 N^2 &amp;=&amp; 0 \\
+\frac{\nu^4}{c^2} - \nu^2 \left( \bar{K}^2 + \bar{m}^2 + \Gamma^2 + \frac{N^2}{c^2} \right) + \bar{K}^2 N^2 &amp;=&amp; 0 \\
+\frac{\nu^4}{c^2} - \nu^2 \left( \bar{k}^2 + \bar{l}^2 + \bar{m}^2 + \Gamma^2 + \frac{N^2}{c^2} \right) + \left( \bar{k}^2 + \bar{l}^2 \right)N^2 &amp;\overset{\text{定義 2}}{=}&amp; 0 \tag{9a}\\
+\end{gather*}\end{split}\]</div>
+<p><strong>特徵方程式的根</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+c^2 \nu^2 \left( \bar{m}^2 + \Gamma^2 \right) &amp;=&amp; \left( \nu^2 - N^2 \right)\left( \nu^2 - c^2 \bar{K}^2 \right) \\
+0 &amp;=&amp; (\nu ^{2})^{2}-\left[N^{2}+c^{2}\bar{K}^{2}+c^{2}\left(\bar{m}^{2}+\Gamma^{2}\right)\right]\nu ^{2}+c^{2}N^{2}\bar{K}^{2} \\
+\nu ^{2} &amp;=&amp; \frac{c^{2}\left(\bar{K}^{2}+\bar{m}^{2}+\Gamma^{2}\right)+N^{2}\pm \sqrt{\left[c^{2}\left(\bar{K}^{2}+\bar{m}^{2}+\Gamma^{2}\right)+N^{2}\right]^{2}-4c^{2}N^{2}\bar{K}^{2}}}{2}  \\
+\nu ^{2} &amp;=&amp; \frac{c^{2}(\bar{K}^{2}+\bar{m}^{2}+\Gamma^{2})+N^{2}\pm \sqrt{\left(c^{2}\bar{K}^{2}-N^{2}\right)^{2}+c^{2}(\bar{m}^{2}+\Gamma^{2})\left[2(c^{2}\bar{K}^{2}+N^{2})+c^{2}(\bar{m}^{2}+\Gamma^{2})\right]}}{2} 
+\end{gather*}\end{split}\]</div>
+</section>
+</section>
+<section id="discussion-on-dynamic-characteristics-of-four-flow-fields-and-waves">
+<h2>四種流場與波動的動力學特徵討論(Discussion on Dynamic Characteristics of Four Flow Fields and Waves)<a class="headerlink" href="#discussion-on-dynamic-characteristics-of-four-flow-fields-and-waves" title="Link to this heading">#</a></h2>
+<section id="non-divergent-flow">
+<h3>1. 非輻散流 (Non-divergent flow)<a class="headerlink" href="#non-divergent-flow" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>動力學特徵</strong>：這對應於特徵頻率為零的解 <span class="math notranslate nohighlight">\(\nu_{klmn}^2 = 0\)</span>，代表一種穩定、不隨時間震盪的狀態 。</p></li>
+<li><p><strong>物理意義</strong>：在流場上表現為水平非輻散流（horizontally non-divergent flow） 。從波動動力學的角度來看，這實際上是內重力波（internal gravity waves）的一種退化狀態（degeneracy），發生在波數向量（wave number vector）完全指向垂直方向的時候 。在旋轉大氣中，這種低頻/零頻的解通常對應於滿足地轉平衡的大尺度渦旋天氣系統（即氣象學中最關心的氣流）。</p></li>
+</ul>
+</section>
+<section id="lamb-waves">
+<h3>2. 藍姆波 (Lamb waves)<a class="headerlink" href="#lamb-waves" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>動力學特徵</strong>：其頻率滿足色散關係式 <span class="math notranslate nohighlight">\(\nu_{klmn}^2 = c^2(\bar{k}^2 + \bar{l}^2)\)</span> 。其傳播速度即為音速，大約為 <span class="math notranslate nohighlight">\(300 \text{ m}\cdot\text{s}^{-1}\)</span> 。</p></li>
+<li><p><strong>物理意義</strong>：藍姆波是一種非常特殊的波動模式 。它最大的特徵是流場的速度在任何地方都平行於地球表面，也就是垂直速度 <span class="math notranslate nohighlight">\(w=0\)</span> 。這意味著它相當於一種僅在水平方向上傳播的二維純聲波。由於沒有垂直運動，它的能量被重力完全束縛在地表附近，不會向高空頻散。</p></li>
+</ul>
+</section>
+<section id="acoustic-waves">
+<h3>3. 聲波 (Acoustic waves)<a class="headerlink" href="#acoustic-waves" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>動力學特徵</strong>：屬於特徵方程式解出的 <strong>高頻正負根</strong> <span class="math notranslate nohighlight">\(\frac{1}{2}\left( c^{2}(\bar{K}^{2}+\bar{m}^{2}+\Gamma^{2})+N^{2} + \sqrt{\left(c^{2}\bar{K}^{2}-N^{2}\right)^{2}+c^{2}(\bar{m}^{2}+\Gamma^{2})\left[2(c^{2}\bar{K}^{2}+N^{2})+c^{2}(\bar{m}^{2}+\Gamma^{2})\right]}\right)\)</span> 。受重力修正後的聲波，其頻率存在一個下限，亦即頻率必須大於聲學截斷頻率（Acoustic cutoff frequency，<span class="math notranslate nohighlight">\(N_A \approx 1.11N\)</span>） 。</p></li>
+<li><p><strong>物理意義</strong>：聲波的主要恢復力是流體的可壓縮性（即彈性氣壓梯度力）。在完全可壓縮模型中，聲波在水平與垂直方向皆可迅速傳播。然而，因為聲波的移動速度極快，在數值天氣預報模式中會嚴格限制計算的時間步長（CFL 條件限制），且聲波本身幾乎不攜帶具有氣象意義的能量，因此在許多大尺度動力模型中，常會透過假設「不可壓縮流」或「滯彈性近似（Anelastic approximation）」將聲波人為濾除。</p></li>
+</ul>
+</section>
+<section id="buoyancy-waves-internal-gravity-waves">
+<h3>4. 浮力波 / 內重力波 (Buoyancy waves / Internal gravity waves)<a class="headerlink" href="#buoyancy-waves-internal-gravity-waves" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>動力學特徵</strong>：屬於特徵方程式解出的 <strong>低頻正負根</strong> <span class="math notranslate nohighlight">\(\frac{1}{2}\left( c^{2}(\bar{K}^{2}+\bar{m}^{2}+\Gamma^{2})+N^{2} - \sqrt{\left(c^{2}\bar{K}^{2}-N^{2}\right)^{2}+c^{2}(\bar{m}^{2}+\Gamma^{2})\left[2(c^{2}\bar{K}^{2}+N^{2})+c^{2}(\bar{m}^{2}+\Gamma^{2})\right]}\right)\)</span> 。與聲波相反，浮力波的頻率存在一個上限，其頻率必須小於浮力頻率（Brunt-Väisälä frequency，<span class="math notranslate nohighlight">\(N\)</span>） 。</p></li>
+<li><p><strong>物理意義</strong>：浮力波的恢復力來自於穩定層結大氣中的重力與浮力。當空氣塊被垂直位移時，由於周遭環境密度的差異而被拉回原位，進而在浮力與重力的交替作用下產生震盪。浮力波在垂直與水平方向上皆可色散能量，對於大氣中的動量傳輸（如地形產生的重力波拖曳）以及晴空亂流的生成具有至關重要的影響。</p></li>
+</ul>
+</section>
+</section>
+<section id="frequency-ranges">
+<h2>三種流場頻率範圍 (Frequency Ranges)<a class="headerlink" href="#frequency-ranges" title="Link to this heading">#</a></h2>
+<p>我們定義水平波數平方為 <span class="math notranslate nohighlight">\(\bar{K}^2 \overset{\text{def}}{=} \bar{k}^2 + \bar{l}^2\)</span> ，波數的物理範圍是：</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(0 \le \bar{K} &lt; \infty\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(0 \le \bar{m} &lt; \infty\)</span></p></li>
+</ul>
+<section id="id2">
+<h3>1. 藍姆波 (Lamb Waves)<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>下限：</strong></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\lim\limits_{\bar{K}^2 \to 0^+}  \nu^2 &amp;\overset{\text{(8b)}}{=}&amp; \lim\limits_{\bar{K}^2 \to 0^+} c^2(\bar{k}^2 + \bar{l}^2) \\
+&amp;\overset{\text{定義 2}}{=}&amp; \lim\limits_{\bar{K}^2 \to 0^+} c^2 \bar{K}^2 \\
+&amp;=&amp; 0^+
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><strong>上限：</strong></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\lim\limits_{\bar{K}^2 \to \infty}  \nu^2 &amp;\overset{\text{(8b)}}{=}&amp; \lim\limits_{\bar{K}^2 \to \infty} c^2(\bar{k}^2 + \bar{l}^2) \\
+&amp;\overset{\text{定義 2}}{=}&amp; \lim\limits_{\bar{K}^2 \to \infty} c^2 \bar{K}^2 \\
+&amp;\rightarrow&amp; \infty
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><strong>頻率範圍：</strong> <span class="math notranslate nohighlight">\(\nu \in (0, \infty)\)</span></p></li>
+</ul>
+</section>
+</section>
+<section id="id3">
+<h2>2. 聲波 (Acoustic waves)<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>下限（聲學截斷頻率 Acoustic Cutoff Frequency）：</strong> 聲波的頻率極小值發生在三維波數皆為零（<span class="math notranslate nohighlight">\(\bar{K} = 0, \bar{m} = 0\)</span>）的時候 。這個最小值被定義為聲學截斷頻率 <span class="math notranslate nohighlight">\(N_A\)</span>。如講義中 Fig 6.18 的說明所述，對於大氣參數，<span class="math notranslate nohighlight">\(N_A \approx 1.11N\)</span> 。</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\nu_{\text{A}}^{2} &amp;=&amp; \frac{1}{2}\left( c^{2}(\bar{K}^{2}+\bar{m}^{2}+\Gamma^{2})+N^{2} +  \sqrt{\left(c^{2}\bar{K}^{2}-N^{2}\right)^{2}+c^{2}(\bar{m}^{2}+\Gamma^{2})\left[2(c^{2}\bar{K}^{2}+N^{2})+c^{2}(\bar{m}^{2}+\Gamma^{2})\right]} \right) \\
+\nu_{\text{A},\text{min}}^{2} &amp;=&amp; \frac{1}{2}\left( c^{2}(0^{2}+0^{2}+\Gamma^{2})+N^{2} +  \sqrt{\left(c^{2}\cdot 0^{2}-N^{2}\right)^{2}+c^{2}(0^{2}+\Gamma^{2})\left[2(c^{2}\cdot 0^{2}+N^{2})+c^{2}(0^{2}+\Gamma^{2})\right]} \right) \\
+\nu_{\text{A},\text{min}}^{2} &amp;=&amp; \frac{1}{2}\left( c^{2}\Gamma^{2}+N^{2} +  \sqrt{N^{4}+c^{2}\Gamma^{2} (2N^{2}+c^{2}\Gamma^{2})} \right) \\
+\nu_{\text{A},\text{min}}^{2} &amp;=&amp; \frac{1}{2}\left( c^{2}\Gamma^{2}+N^{2} +  \sqrt{N^{4}+2c^{2}\Gamma^{2}N^{2}+(c^{2}\Gamma^{2})^{2}} \right) \\
+\nu_{\text{A},\text{min}}^{2} &amp;=&amp; \frac{1}{2}\left( c^{2}\Gamma^{2}+N^{2} +  \sqrt{(N^{2}+c^{2}\Gamma^{2})^{2}} \right) \\
+\nu_{\text{A},\text{min}}^{2} &amp;=&amp; \frac{1}{2}\left( c^{2}\Gamma^{2}+N^{2} +  N^{2}+c^{2}\Gamma^{2} \right) \\
+\nu_{\text{A},\text{min}}^{2} &amp;=&amp; c^{2}\Gamma^{2}+N^{2}  \\
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><strong>上限：</strong> 當波數趨近於無限大時，聲波頻率自然趨近無限大。</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\nu_{\text{A}}^{2} &amp;=&amp; \frac{1}{2}\left( c^{2}(\bar{K}^{2}+\bar{m}^{2}+\Gamma^{2})+N^{2} +  \sqrt{\left(c^{2}\bar{K}^{2}-N^{2}\right)^{2}+c^{2}(\bar{m}^{2}+\Gamma^{2})\left[2(c^{2}\bar{K}^{2}+N^{2})+c^{2}(\bar{m}^{2}+\Gamma^{2})\right]} \right) \\
+\nu_{\text{A},\text{Max}}^{2} &amp;=&amp; \lim\limits_{\bar{K}^2 \to \infty} \lim\limits_{\bar{m}^2 \to \infty} \frac{1}{2}\left( c^{2}(\bar{K}^{2}+\bar{m}^{2}+\Gamma^{2})+N^{2} +  \sqrt{\left(c^{2}\bar{K}^{2}-N^{2}\right)^{2}+c^{2}(\bar{m}^{2}+\Gamma^{2})\left[2(c^{2}\bar{K}^{2}+N^{2})+c^{2}(\bar{m}^{2}+\Gamma^{2})\right]} \right) \\
+&amp;\rightarrow&amp; \infty
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><strong>頻率範圍：</strong> <span class="math notranslate nohighlight">\(\nu_{\text{A}} \in [1.11N, \infty)\)</span> 或寫為 <span class="math notranslate nohighlight">\([N_A, \infty)\)</span></p></li>
+</ul>
+</section>
+<section id="buoyancy-waves">
+<h2>2. 浮力波 (Buoyancy waves)<a class="headerlink" href="#buoyancy-waves" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>下限：</strong> 當水平波數 <span class="math notranslate nohighlight">\(\bar{K} \to 0\)</span>（超長波）時，<span class="math notranslate nohighlight">\(C \to 0\)</span>，此時 <span class="math notranslate nohighlight">\(\nu_B^2 \to 0\)</span>。</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\nu_{\text{B}}^{2} &amp;=&amp; \frac{1}{2}\left( c^{2}(\bar{K}^{2}+\bar{m}^{2}+\Gamma^{2})+N^{2} -  \sqrt{\left(c^{2}\bar{K}^{2}-N^{2}\right)^{2}+c^{2}(\bar{m}^{2}+\Gamma^{2})\left[2(c^{2}\bar{K}^{2}+N^{2})+c^{2}(\bar{m}^{2}+\Gamma^{2})\right]} \right) \\
+\nu_{\text{B}}^{2} &amp;=&amp; \frac{1}{2}\left(c^{2}\left(\bar{K}^{2}+\bar{m}^{2}+\Gamma^{2}\right)+N^{2} - \sqrt{\left[c^{2}\left(\bar{K}^{2}+\bar{m}^{2}+\Gamma^{2}\right)+N^{2}\right]^{2}-4c^{2}N^{2}\bar{K}^{2}}\right) \\
+\nu_{\text{B},\text{min}}^{2} &amp;=&amp; \frac{1}{2}\left(c^{2}\left(0^{2}+\bar{m}^{2}+\Gamma^{2}\right)+N^{2} - \sqrt{\left[c^{2}\left(0^{2}+\bar{m}^{2}+\Gamma^{2}\right)+N^{2}\right]^{2}-4c^{2}N^{2}\cdot 0^{2}}\right) \\
+\nu_{\text{B},\text{min}}^{2} &amp;=&amp; \frac{1}{2}\left(c^{2}\left(\bar{m}^{2}+\Gamma^{2}\right)+N^{2} - \sqrt{\left[c^{2}\left(\bar{m}^{2}+\Gamma^{2}\right)+N^{2}\right]^{2}}\right) \\
+\nu_{\text{B},\text{min}}^{2} &amp;=&amp; \frac{1}{2}\left(c^{2}\left(\bar{m}^{2}+\Gamma^{2}\right)+N^{2} - \left( c^{2}\left(\bar{m}^{2}+\Gamma^{2}\right)+N^{2}\right) \right)\\
+\nu_{\text{B},\text{min}}^{2} &amp;=&amp; 0^+\\
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><strong>上限：</strong> 當 <span class="math notranslate nohighlight">\(\bar{m} \to 0\)</span> 且 <span class="math notranslate nohighlight">\(\bar{K} \to \infty\)</span>（極扁平的擾動）時，可以證明頻率會漸近趨近於浮力頻率 <span class="math notranslate nohighlight">\(N\)</span> 。也就是說，環境的穩定度 <span class="math notranslate nohighlight">\(N\)</span> 是內部重力波震盪的最快極限。</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\nu_{\text{B}}^{2} &amp;=&amp; \frac{1}{2}\left( c^{2}(\bar{K}^{2}+\bar{m}^{2}+\Gamma^{2})+N^{2} -  \sqrt{\left(c^{2}\bar{K}^{2}-N^{2}\right)^{2}+c^{2}(\bar{m}^{2}+\Gamma^{2})\left[2(c^{2}\bar{K}^{2}+N^{2})+c^{2}(\bar{m}^{2}+\Gamma^{2})\right]} \right) \\
+\nu_{\text{B}}^{2} &amp;=&amp; \frac{1}{2}\left(c^{2}\left(\bar{K}^{2}+\bar{m}^{2}+\Gamma^{2}\right)+N^{2} - \sqrt{\left[c^{2}\left(\bar{K}^{2}+\bar{m}^{2}+\Gamma^{2}\right)+N^{2}\right]^{2}-4c^{2}N^{2}\bar{K}^{2}}\right) \\
+\nu_{\text{B},\text{Max}}^{2} &amp;=&amp; \lim\limits_{\bar{K}^2 \to \infty} \lim\limits_{\bar{m}^2 \to 0} \frac{1}{2}\left(c^{2}\left(\bar{K}^{2}+\bar{m}^{2}+\Gamma^{2}\right)+N^{2} - \sqrt{\left[c^{2}\left(\bar{K}^{2}+\bar{m}^{2}+\Gamma^{2}\right)+N^{2}\right]^{2}-4c^{2}N^{2}\bar{K}^{2}}\right)  \\
+\nu_{\text{B},\text{Max}}^{2} &amp;=&amp; \lim\limits_{\bar{K}^2 \to \infty}  \frac{1}{2}\left(c^{2}\left(\bar{K}^{2}+0^{2}+\Gamma^{2}\right)+N^{2} - \sqrt{\left[c^{2}\left(\bar{K}^{2}+0^{2}+\Gamma^{2}\right)+N^{2}\right]^{2}-4c^{2}N^{2}\bar{K}^{2}}\right)  \\
+\nu_{\text{B},\text{Max}}^{2} &amp;=&amp; \lim\limits_{\bar{K}^2 \to \infty}  \frac{1}{2}\left(c^{2}\left(\bar{K}^{2}+\Gamma^{2}\right)+N^{2} - \sqrt{\left[c^{2}\left(\bar{K}^{2}+\Gamma^{2}\right)+N^{2}\right]^{2}-4c^{2}N^{2}\bar{K}^{2}}\right)  \\
+\nu_{\text{B},\text{Max}}^{2} &amp;=&amp; \lim\limits_{\bar{K}^2 \to \infty}  \frac{1}{2}\left(c^{2}\left(\bar{K}^{2}+\Gamma^{2}\right)+N^{2} - \sqrt{\left[\left( c^{2}\left(\bar{K}^{2}+\Gamma^{2}\right)\right)^2+2 c^{2}\left(\bar{K}^{2}+\Gamma^{2}\right)  N^{2}+N^{4}\right]-4c^{2}N^{2}\bar{K}^{2}}\right)  \\
+\nu_{\text{B},\text{Max}}^{2} &amp;=&amp; \lim\limits_{\bar{K}^2 \to \infty}  \frac{1}{2}\left(c^{2}\left(\bar{K}^{2}+\Gamma^{2}\right)+N^{2} - \sqrt{\left[ c^{4}\left(\bar{K}^{4}+2\bar{K}^{2}\Gamma^{2}+\Gamma^{4}\right)+2 c^{2}\left(\bar{K}^{2}+\Gamma^{2}\right)  N^{2}+N^{4}\right]-4c^{2}N^{2}\bar{K}^{2}}\right)  \\
+\nu_{\text{B},\text{Max}}^{2} &amp;=&amp; \lim\limits_{\bar{K}^2 \to \infty}  \frac{1}{2}\left(c^{2}\left(\bar{K}^{2}+\Gamma^{2}\right)+N^{2} - \sqrt{(c^{2}\bar{K}^{2})^{2}+2c^{2}(c^{2}\Gamma^{2}-N^{2})\bar{K}^{2}+(N^{4}+2c^{2}\Gamma^{2}N^{2}+c^{4}\Gamma^{4})}\right)  \\
+\nu_{\text{B},\text{Max}}^{2} &amp;=&amp; \lim\limits_{\bar{K}^2 \to \infty}  \frac{1}{2}\left(c^{2}\left(\bar{K}^{2}+\Gamma^{2}\right)+N^{2} - c^{2}\bar{K}^{2} \sqrt{1+\frac{2(c^{2}\Gamma^{2}-N^{2})}{c^{2}\bar{K}^{2}}+\frac{(N^{4}+2c^{2}\Gamma^{2}N^{2}+c^{4}\Gamma^{4})}{c^{4}\bar{K}^{4}}}\right)  \\
+\nu_{\text{B},\text{Max}}^{2} &amp;\approx&amp; \lim\limits_{\bar{K}^2 \to \infty}  \frac{1}{2}\left(c^{2}\left(\bar{K}^{2}+\Gamma^{2}\right)+N^{2} - c^{2}\bar{K}^{2} \left(1+\frac{1}{2}\frac{2(c^{2}\Gamma^{2}-N^{2})}{c^{2}\bar{K}^{2}}\right) \right)  \\
+\nu_{\text{B},\text{Max}}^{2} &amp;=&amp; \lim\limits_{\bar{K}^2 \to \infty}  \frac{1}{2}\left(c^{2}\left(\bar{K}^{2}+\Gamma^{2}\right)+N^{2} -  \left(c^{2}\bar{K}^{2}+(c^{2}\Gamma^{2}-N^{2})\right) \right)  \\
+\nu_{\text{B},\text{Max}}^{2} &amp;=&amp; \lim\limits_{\bar{K}^2 \to \infty}  \frac{1}{2}\left(c^{2}\bar{K}^{2}+c^{2}\Gamma^{2}+N^{2} -  \left(c^{2}\bar{K}^{2}+c^{2}\Gamma^{2}-N^{2}\right) \right)  \\
+\nu_{\text{B},\text{Max}}^{2} &amp;=&amp; \frac{1}{2}\left(N^{2} +N^{2} \right)  \\
+\nu_{\text{B},\text{Max}}^{2} &amp;=&amp; N^{2}  \\
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><strong>頻率範圍：</strong> <span class="math notranslate nohighlight">\(\nu_{\text{B}} \in (0, N]\)</span></p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./project\project1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="project1_4.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><strong>四、確認內積的範數正定性</strong></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="project1_6.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">六、從物理空間轉換至頻譜空間：突破聲波 CFL 條件限制</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">證明</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lamb-waves-dispersion-relationship-hat-w-0">1. 藍姆波色散關係式 (Lamb waves dispersion relationship, 當 <span class="math notranslate nohighlight">\(\hat{w}=0\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acoustic-and-buoyancy-waves-dispersion-relationship-hat-w-neq-0">2. 三維聲波與浮力波色散關係式 (Acoustic and Buoyancy waves dispersion relationship, 當 <span class="math notranslate nohighlight">\(\hat{w} \neq 0\)</span>)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-on-dynamic-characteristics-of-four-flow-fields-and-waves">四種流場與波動的動力學特徵討論(Discussion on Dynamic Characteristics of Four Flow Fields and Waves)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-divergent-flow">1. 非輻散流 (Non-divergent flow)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lamb-waves">2. 藍姆波 (Lamb waves)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acoustic-waves">3. 聲波 (Acoustic waves)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#buoyancy-waves-internal-gravity-waves">4. 浮力波 / 內重力波 (Buoyancy waves / Internal gravity waves)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frequency-ranges">三種流場頻率範圍 (Frequency Ranges)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1. 藍姆波 (Lamb Waves)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2. 聲波 (Acoustic waves)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buoyancy-waves">2. 浮力波 (Buoyancy waves)</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC YE
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

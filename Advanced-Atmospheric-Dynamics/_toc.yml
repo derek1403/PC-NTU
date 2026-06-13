@@ -1,19 +1,38 @@
-# Table of contents
-# Learn more at https://jupyterbook.org/customize/toc.html
-
 format: jb-book
 root: intro
+
 chapters:
 - file: lecture/lecture.md
-  sections:      # <--- 代表下面的檔案都屬於它
+  sections:
     - file: lecture/week1/week1.ipynb
     - file: lecture/week2/week2.ipynb
+
 - file: homework/homework.md
   sections:
     - file: homework/hw1/hw1.ipynb
     - file: homework/hw2/hw2.ipynb
-    - file: homework/hw3/hw3.ipynb
-- file: project/project.md
+
+
+- file: project/project1/project_overview.ipynb
+  title: "Project 1: 大氣動力學方程轉換與頻譜分析"
   sections:
-    - file: project/project1/project1.ipynb
-    - file: project/project2/project2.ipynb
+    - file: project/project1/project1_1.ipynb
+      title: "1. 線性化微擾方程組轉換"
+    - file: project/project1/project1_2.ipynb
+      title: "2. 偏微分方程轉矩陣方程式"
+    - file: project/project1/project1_3.ipynb
+      title: "3. 算符 L 的反厄米特特性"
+    - file: project/project1/project1_4.ipynb
+      title: "4. 內積的範數正定性"
+    - file: project/project1/project1_5.ipynb
+      title: "5. 特徵解與色散關係推導"
+    - file: project/project1/project1_6.ipynb
+      title: "6. 頻譜空間轉換與 CFL 條件"
+    - file: project/project1/project1_7.ipynb
+      title: "7. 消除混疊之網格點數條件"
+    - file: project/project1/project1_8.ipynb
+      title: "8. 色散方程式之無因次化證明"
+    - file: project/project1/project1_AllInOne.ipynb
+      title: "Project 1: 大氣動力學方程轉換與頻譜分析 (All-in-One)"
+
+- file: project/project2/project2.ipynb

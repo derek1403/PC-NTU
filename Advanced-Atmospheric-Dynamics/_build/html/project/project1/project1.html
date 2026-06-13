@@ -63,8 +63,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'project/project1/project1';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Advanced Atmospheric Dynamics Project 2" href="../project2/project2.html" />
-    <link rel="prev" title="project" href="../project.html" />
+    <link rel="next" title="一、原始的完全可壓縮流體力學偏微分方程組 轉成 密度加權的線性化微擾方程組（且分離出非線性強迫項） (From the original fully compressible Navier-Stokes equations to the density-weighted linearized perturbation equations (with isolated nonlinear forcing terms))" href="project1_1.html" />
+    <link rel="prev" title="Advanced Atmospheric Dynamics Hw 2" href="../../homework/hw2/hw2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -193,14 +193,20 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../homework/homework.html">homework</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../homework/hw1/hw1.html">Advanced Atmospheric Dynamics Hw 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../homework/hw2/hw2.html">Advanced Atmospheric Dynamics Hw 2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../homework/hw3/hw3.html">Advanced Atmospheric Dynamics Hw 3</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../project.html">project</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Advanced Atmospheric Dynamics Project 1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../project2/project2.html">Advanced Atmospheric Dynamics Project 2</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Advanced Atmospheric Dynamics Project 1</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="project1_1.html">project1_1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project1_2.html">project1_2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project1_3.html">project1_3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project1_4.html">project1_4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project1_5.html">project1_5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project1_6.html">project1_6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project1_7.html">project1_7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project1_8.html">project1_8</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="../project2/project2.html">Advanced Atmospheric Dynamics Project 2</a></li>
 </ul>
 
     </div>
@@ -403,22 +409,9 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-chinese">中文版 (In chinese)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-the-original-fully-compressible-navier-stokes-equations-to-the-density-weighted-linearized-perturbation-equations-with-isolated-nonlinear-forcing-terms">一、<strong>原始的完全可壓縮流體力學偏微分方程組</strong> 轉成 <strong>密度加權的線性化微擾方程組（且分離出非線性強迫項）</strong> (From the original fully compressible Navier-Stokes equations to the density-weighted linearized perturbation equations (with isolated nonlinear forcing terms))</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-the-original-fully-compressible-navier-stokes-equations-to-the-density-weighted-linearized-perturbation-equations-with-isolated-nonlinear-forcing-terms"><strong>一、原始的完全可壓縮流體力學偏微分方程組</strong> 轉成 <strong>密度加權的線性化微擾方程組（且分離出非線性強迫項）</strong> (From the original fully compressible Navier-Stokes equations to the density-weighted linearized perturbation equations (with isolated nonlinear forcing terms))</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-ultimate-goal"><strong>為什麼要花這麼大功夫轉成這樣？（The Ultimate Goal）</strong></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>證明</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#a"><strong>2a</strong></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#b"><strong>2b</strong></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#c"><strong>2c</strong></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#d"><strong>2d</strong></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#e"><strong>2e</strong></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-fluid-dynamics-pdes-to-linear-algebraic-matrix-equations">二、<strong>流體力學偏微分方程式</strong> 轉成 <strong>線性代數矩陣方程式</strong> (From fluid dynamics PDEs to linear algebraic matrix equations.)</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">證明</a></li>
 </ul>
 </li>
 </ul>
@@ -636,7 +629,7 @@ c^2 \frac{\partial}{\partial x} &amp; c^2 \frac{\partial}{\partial y} &amp; c^2 
 <section id="in-chinese">
 <h2>中文版 (In chinese)<a class="headerlink" href="#in-chinese" title="Link to this heading">#</a></h2>
 <section id="from-the-original-fully-compressible-navier-stokes-equations-to-the-density-weighted-linearized-perturbation-equations-with-isolated-nonlinear-forcing-terms">
-<h3>一、<strong>原始的完全可壓縮流體力學偏微分方程組</strong> 轉成 <strong>密度加權的線性化微擾方程組（且分離出非線性強迫項）</strong> (From the original fully compressible Navier-Stokes equations to the density-weighted linearized perturbation equations (with isolated nonlinear forcing terms))<a class="headerlink" href="#from-the-original-fully-compressible-navier-stokes-equations-to-the-density-weighted-linearized-perturbation-equations-with-isolated-nonlinear-forcing-terms" title="Link to this heading">#</a></h3>
+<h3><strong>一、原始的完全可壓縮流體力學偏微分方程組</strong> 轉成 <strong>密度加權的線性化微擾方程組（且分離出非線性強迫項）</strong> (From the original fully compressible Navier-Stokes equations to the density-weighted linearized perturbation equations (with isolated nonlinear forcing terms))<a class="headerlink" href="#from-the-original-fully-compressible-navier-stokes-equations-to-the-density-weighted-linearized-perturbation-equations-with-isolated-nonlinear-forcing-terms" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{gather*}
 \frac{\partial }{\partial t } \left[ \bar{\rho}^{\frac{1}{2}} u \right] + \frac{\partial }{\partial x} \left[ \bar{\rho}^{\frac{-1}{2}} p' \right]  &amp;=&amp; \bar{\rho}^{\frac{1}{2}} \left(-  (\mathbf{u} \cdot \nabla) u + \frac{\rho'}{\bar{\rho} \rho  } \frac{\partial p'}{\partial x} \right) \tag{2a}\\
@@ -890,385 +883,11 @@ c^2 \frac{\partial}{\partial x} &amp; c^2 \frac{\partial}{\partial y} &amp; c^2 
 </ul>
 </li>
 </ul>
-<ul>
-<li><p><strong>【推導 1】 倒數密度項的代數拆解（Algebraic decomposition of reciprocal density）：</strong></p>
-<ul class="simple">
-<li><p>(a) 計算基本態倒數與總場倒數之差</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{gather*}
-  \frac{1}{\bar{\rho}} - \frac{1}{\rho} &amp;=&amp;   \frac{\rho - \bar{\rho}}{\bar{\rho} \rho }   \\
-  &amp;\overset{\text{已知 1(b)}}{=}&amp;  \frac{(\bar{\rho} + \rho') - \bar{\rho} }{\bar{\rho} \rho  } \\
-  &amp;=&amp; \frac{\rho'}{\bar{\rho} \rho  } \\
-  \end{gather*}\end{split}\]</div>
-<ul class="simple">
-<li><p>(b) 利用恆等式展開總場倒數密度</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{gather*}
-  \frac{1}{\rho} &amp;=&amp; \frac{1}{\rho} - \frac{1}{\bar{\rho}} + \frac{1}{\bar{\rho}}\\
-  &amp;=&amp; - \left( \frac{1}{\bar{\rho}} - \frac{1}{\rho} \right) + \frac{1}{\bar{\rho}} \\
-  &amp;\overset{\text{推導 1(a)}}{=}&amp; -\left( \frac{\rho'}{\rho \bar{\rho} }  \right) + \frac{1}{\bar{\rho}} \\
-  \end{gather*}\end{split}\]</div>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\rho\)</span> : 瞬時總密度場 (Instantaneous total density field) <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}^{-3}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\bar{\rho}\)</span> : 基本背景態密度 (Basic state density) <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}^{-3}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\rho'\)</span> : 密度的時空微擾項 (Density perturbation variable) <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}^{-3}]\)</span></p></li>
-</ul>
-</li>
-<li><p><strong>【推導 2】 背景態密度垂直梯度公式（Derivation of basic state density vertical gradient） ：</strong></p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{gather*}
-  \frac{d\bar{p}}{dz} &amp;\overset{\text{假設 4}}{=}&amp; -\bar{\rho}g \\
-  \frac{d}{dz}\left[ \bar{\rho} H_s g \right] &amp;\overset{\text{已知 4}}{=}&amp; -\bar{\rho}g \\
-  H_s g \frac{d \bar{\rho}}{dz} &amp;=&amp; -\bar{\rho}g \\
-  \frac{d \bar{\rho}}{d z} &amp;=&amp; -\frac{\bar{\rho}}{H_s} \\
-  \frac{\partial \bar{\rho}}{\partial z} &amp;=&amp; -\frac{\bar{\rho}}{H_s} \\
-  \end{gather*}\end{split}\]</div>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\bar{p}\)</span> : 基本背景態氣壓 (Basic state pressure) <span class="math notranslate nohighlight">\([\text{Pa}],[\text{kg}\cdot\text{m}^{-1}\cdot\text{s}^{-2}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\bar{\rho}\)</span> : 基本背景態密度 (Basic state density) <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}^{-3}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(z\)</span> : 垂直高度座標 (Vertical height coordinate) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(g\)</span> : 地表重力加速度常數 (Standard acceleration of gravity) <span class="math notranslate nohighlight">\(g \approx 9.807 \text{ m}\cdot\text{s}^{-2}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(H_{s}\)</span> : 大氣標高 (Atmospheric scale height) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
-</ul>
-</li>
-<li><p><strong>【推導 3】  氣壓微擾項與密度權重的垂直微分展開（Vertical derivative expansion of pressure perturbation with density weighting） ：</strong></p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{gather*}
-  \frac{\partial}{\partial z}[\bar{\rho}^{\frac{-1}{2}}p'] &amp;=&amp;  \frac{\partial (\bar{\rho}^{\frac{-1}{2}}) }{\partial z} p' + \bar{\rho}^{\frac{-1}{2}} \frac{\partial p'}{\partial z} \\ 
-  \frac{\partial}{\partial z}[\bar{\rho}^{\frac{-1}{2}}p'] &amp;=&amp;  \left(-\frac{1}{2}\bar{\rho}^{\frac{-3}{2}} \frac{\partial \bar{\rho}}{\partial z}   \right)  p' + \bar{\rho}^{\frac{-1}{2}} \frac{\partial p'}{\partial z} \\ 
-  \frac{\partial}{\partial z}[\bar{\rho}^{\frac{-1}{2}}p'] &amp;\overset{\text{推導 2}}{=}&amp; \left(-\frac{1}{2}\bar{\rho}^{\frac{-3}{2}} \left( -\frac{\bar{\rho}}{H_s} \right)   \right)  p' + \bar{\rho}^{\frac{-1}{2}} \frac{\partial p'}{\partial z} \\ 
-  \frac{\partial}{\partial z}[\bar{\rho}^{\frac{-1}{2}}p']  &amp;=&amp;  \frac{1}{2H_s}\bar{\rho}^{\frac{-1}{2}} p'+ \bar{\rho}^{\frac{-1}{2}} \frac{\partial p'}{\partial z}\\ 
-  -\bar{\rho}^{\frac{-1}{2}} \frac{\partial p'}{\partial z}   &amp;=&amp; - \frac{\partial}{\partial z}[\bar{\rho}^{\frac{-1}{2}}p'] + \frac{1}{2H_s}\bar{\rho}^{\frac{-1}{2}} p' \\ 
-  \end{gather*}\end{split}\]</div>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\bar{\rho}\)</span> : 基本背景態密度 (Basic state density) <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}^{-3}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(P'\)</span> : 氣壓的時空微擾項 (Pressure perturbation variable) <span class="math notranslate nohighlight">\([\text{Pa}],[\text{kg}\cdot\text{m}^{-1}\cdot\text{s}^{-2}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(H_{s}\)</span> : 大氣標高 (Atmospheric scale height) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
-</ul>
-</li>
-<li><p><strong>【推導 4】垂直速度項與密度權重的垂直微分展開（Vertical derivative expansion of vertical velocity with density weighting） ：</strong></p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{gather*} 
-  \frac{\partial (\bar{\rho}^{\frac{1}{2}} w )}{\partial z} &amp;=&amp;   \frac{d (\bar{\rho}^{\frac{1}{2}}) }{d z} w  + \bar{\rho}^{\frac{1}{2}} \frac{\partial  w }{\partial z} \\
-  \frac{\partial (\bar{\rho}^{\frac{1}{2}} w )}{\partial z} &amp;=&amp;   \frac{1}{2}  \bar{\rho}^{\frac{-1}{2}} \frac{d \bar{\rho} }{d z} w  + \bar{\rho}^{\frac{1}{2}} \frac{\partial  w }{\partial z} \\
-  \frac{\partial (\bar{\rho}^{\frac{1}{2}} w )}{\partial z} &amp;\overset{\text{推導 2}}{=}&amp;   \frac{1}{2}  \bar{\rho}^{\frac{-1}{2}} \left( - \frac{\bar{\rho}}{H_s} \right) w  + \bar{\rho}^{\frac{1}{2}} \frac{\partial  w }{\partial z} \\
-  \frac{\partial (\bar{\rho}^{\frac{1}{2}} w )}{\partial z} &amp;=&amp;   -\frac{1}{2H_s}  \bar{\rho}^{\frac{1}{2}} w  + \bar{\rho}^{\frac{1}{2}} \frac{\partial  w }{\partial z} \\
-  \frac{\partial (\bar{\rho}^{\frac{1}{2}} w )}{\partial z} &amp;\overset{\text{定義 4}}{=}&amp;  \left( \Gamma - \frac{g}{c^2} \right) \bar{\rho}^{\frac{1}{2}} w  + \bar{\rho}^{\frac{1}{2}} \frac{\partial  w }{\partial z} \\
-  \frac{\partial (\bar{\rho}^{\frac{1}{2}} w )}{\partial z} - \left( \Gamma - \frac{g}{c^2} \right) \bar{\rho}^{\frac{1}{2}} w &amp;=&amp;     \bar{\rho}^{\frac{1}{2}} \frac{\partial  w }{\partial z} \\
-  \end{gather*}\end{split}\]</div>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\bar{\rho}\)</span> : 基本背景態密度 (Basic state density) <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}^{-3}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(w\)</span> : 垂直向速度場（此處主要考慮一階微擾項 <span class="math notranslate nohighlight">\(w'\)</span>） (Vertical velocity) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(H_{s}\)</span> : 大氣標高 (Atmospheric scale height) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\Gamma \)</span> : 大氣密度層結修正因子 (Stratification correction factor) <span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(g\)</span> : 地表重力加速度常數 (Standard acceleration of gravity) <span class="math notranslate nohighlight">\(g \approx 9.807 \text{ m}\cdot\text{s}^{-2}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(c^{2}\)</span> : 本地音速平方 (Speed of sound squared) <span class="math notranslate nohighlight">\([\text{m}^2\cdot\text{s}^{-2}]\)</span></p></li>
-</ul>
-</li>
-<li><p><strong>【推導 5】氣壓物質導數 <span class="math notranslate nohighlight">\(\frac{Dp}{Dt}\)</span> 的線性化拆解（Linearization and decomposition of pressure material derivative） ：</strong></p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{gather*} 
-  \frac{Dp}{Dt} &amp;=&amp;  \frac{\partial p}{\partial t} + u \frac{\partial p}{\partial x} + v \frac{\partial p}{\partial y} + w \frac{\partial p}{\partial z}  \\
-  &amp;\overset{\text{假設 3(a)}}{=}&amp;  \frac{\partial (\bar{p}+p') }{\partial t} + u \frac{\partial (\bar{p}+p')}{\partial x} + v \frac{\partial (\bar{p}+p')}{\partial y} + w \frac{\partial (\bar{p}+p')}{\partial z}  \\
-  &amp;=&amp;  \left( \frac{\partial \bar{p} }{\partial t} +  \frac{\partial p' }{\partial t}  \right)+ u \left( \frac{\partial \bar{p} }{\partial x} +  \frac{\partial p' }{\partial x}  \right) + v \left( \frac{\partial \bar{p} }{\partial y} +  \frac{\partial p' }{\partial y}  \right) + w \left( \frac{\partial \bar{p} }{\partial z} +  \frac{\partial p' }{\partial z}  \right) \\
-  &amp;=&amp;  \left( 0 +  \frac{\partial p' }{\partial t}  \right)+ u \left( 0 +  \frac{\partial p' }{\partial x}  \right) + v \left( 0 +  \frac{\partial p' }{\partial y}  \right) + w \left( \frac{d \bar{p} }{d z} +  \frac{\partial p' }{\partial z}  \right) \\
-  &amp;=&amp;   \frac{\partial p' }{\partial t} + u \frac{\partial p' }{\partial x}   + v\frac{\partial p' }{\partial y}  + w\frac{d \bar{p} }{d z} +  w\frac{\partial p' }{\partial z}\\
-  &amp;=&amp;   \frac{\partial p' }{\partial t} +  (\mathbf{u} \cdot \nabla ) p'  + w\frac{d \bar{p} }{d z} \\
-  &amp;\overset{\text{假設 4}}{=}&amp;   \frac{\partial p' }{\partial t} +  (\mathbf{u} \cdot \nabla ) p'  - w \bar{\rho} g  \\
-  \end{gather*}\end{split}\]</div>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(p\)</span> : 瞬時總氣壓場 (Instantaneous total pressure field) <span class="math notranslate nohighlight">\([\text{Pa}],[\text{kg}\cdot\text{m}^{-1}\cdot\text{s}^{-2}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\bar{p}\)</span> : 基本背景態氣壓，僅為高度 <span class="math notranslate nohighlight">\(z\)</span> 的函數 (Basic state pressure) <span class="math notranslate nohighlight">\([\text{Pa}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(p'\)</span> : 氣壓的時空微擾項 (Pressure perturbation variable) <span class="math notranslate nohighlight">\([\text{Pa}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\mathbf{u}\)</span> : 三維速度向量 <span class="math notranslate nohighlight">\((u, v, w)\)</span> <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(u, v, w\)</span> : 速度場在 <span class="math notranslate nohighlight">\(x, y, z\)</span> 軸方向的分量 (Velocity components) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\bar{\rho}\)</span> : 基本背景態密度 (Basic state density) <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}^{-3}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(g\)</span> : 地表重力加速度常數 (Standard acceleration of gravity) <span class="math notranslate nohighlight">\(g \approx 9.807 \text{ m}\cdot\text{s}^{-2}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\((\mathbf{u} \cdot \nabla ) p'\)</span> : 擾動氣壓的平流項 (Advection of pressure perturbation) <span class="math notranslate nohighlight">\([\text{Pa}\cdot\text{s}^{-1}]\)</span></p></li>
-</ul>
-</li>
-<li><p><strong>【推導 6】密度物質導數 <span class="math notranslate nohighlight">\(\frac{D \rho}{Dt}\)</span> 的線性化拆解（Linearization and decomposition of density material derivative） ：</strong></p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{gather*} 
-  \frac{D\rho}{Dt} &amp;=&amp;  \frac{\partial \rho}{\partial t} + u \frac{\partial \rho}{\partial x} + v \frac{\partial \rho}{\partial y} + w \frac{\partial \rho}{\partial z}  \\
-  &amp;\overset{\text{假設 3(b)}}{=}&amp;  \frac{\partial (\bar{\rho}+\rho') }{\partial t} + u \frac{\partial (\bar{\rho}+\rho')}{\partial x} + v \frac{\partial (\bar{\rho}+\rho')}{\partial y} + w \frac{\partial (\bar{\rho}+\rho')}{\partial z}  \\
-  &amp;=&amp;  \left( \frac{\partial \bar{\rho} }{\partial t} +  \frac{\partial \rho' }{\partial t}  \right)+ u \left( \frac{\partial \bar{\rho} }{\partial x} +  \frac{\partial \rho' }{\partial x}  \right) + v \left( \frac{\partial \bar{\rho} }{\partial y} +  \frac{\partial \rho' }{\partial y}  \right) + w \left( \frac{\partial \bar{\rho} }{\partial z} +  \frac{\partial \rho' }{\partial z}  \right) \\
-  &amp;=&amp;  \left( 0 +  \frac{\partial \rho' }{\partial t}  \right)+ u \left( 0 +  \frac{\partial \rho' }{\partial x}  \right) + v \left( 0 +  \frac{\partial \rho' }{\partial y}  \right) + w \left( \frac{d \bar{\rho} }{d z} +  \frac{\partial \rho' }{\partial z}  \right) \\
-  &amp;=&amp;   \frac{\partial \rho' }{\partial t} + u \frac{\partial \rho' }{\partial x}   + v\frac{\partial \rho' }{\partial y}  + w\frac{d \bar{\rho} }{d z} +  w\frac{\partial \rho' }{\partial z}\\
-  &amp;=&amp;   \frac{\partial \rho' }{\partial t} +  (\mathbf{u} \cdot \nabla ) \rho'  + w\frac{d \bar{\rho} }{d z} \\
-  &amp;\overset{\text{推導 2}}{=}&amp;   \frac{\partial \rho' }{\partial t} +  (\mathbf{u} \cdot \nabla ) \rho'  + w \left( -\frac{\bar{\rho}}{H_s} \right)  \\
-  &amp;=&amp;   \frac{\partial \rho' }{\partial t} +  (\mathbf{u} \cdot \nabla ) \rho'  - w \frac{\bar{\rho}}{H_s}   \\
-  \end{gather*}\end{split}\]</div>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\rho \)</span> : 瞬時總密度場 (Instantaneous total density field) <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}^{-3}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\bar{\rho}\)</span> : 基本背景態密度，僅為高度 <span class="math notranslate nohighlight">\(z\)</span> 的函數 (Basic state density) <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}^{-3}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\rho '\)</span> : 密度的時空微擾項 (Density perturbation variable) <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}^{-3}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\mathbf{u}\)</span> : 三維速度向量 <span class="math notranslate nohighlight">\((u, v, w)\)</span> <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(u, v, w\)</span> : 速度場在 <span class="math notranslate nohighlight">\(x, y, z\)</span> 軸方向的分量 (Velocity components) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(H_{s}\)</span> : 大氣標高 (Atmospheric scale height) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\((\mathbf{u} \cdot \nabla ) \rho'\)</span> : 擾動密度的平流項 (Advection of density perturbation) <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}^{-3}\cdot\text{s}^{-1}]\)</span></p></li>
-</ul>
-</li>
-<li><p><strong>【推導 7】浮力頻率 <span class="math notranslate nohighlight">\(N^2\)</span> 與音速 <span class="math notranslate nohighlight">\(c\)</span> 及標高 <span class="math notranslate nohighlight">\(H_s\)</span> 的恆等式變形（Algebraic identity transformation of buoyancy frequency, speed of sound, and scale height） ：</strong></p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{gather*} 
-  \Gamma &amp;=&amp;  \Gamma  \\
-  \frac{1}{2}\left(\frac{g}{c^2} - \frac{N^2}{g}\right) &amp;\overset{\text{定義 4}}{=}&amp;  \Gamma \\
-  \frac{1}{2}\left(\frac{g}{c^2} - \frac{N^2}{g}\right) &amp;\overset{\text{定義 4}}{=}&amp;  \frac{g}{c^2} - \frac{1}{2H_s} \\
-  \frac{1}{2} \frac{g}{c^2} - \frac{1}{2} \frac{N^2}{g} &amp;=&amp;  \frac{g}{c^2} - \frac{1}{2H_s} \\
-  - \frac{1}{2} \frac{N^2}{g} &amp;=&amp;  \frac{1}{2}\frac{g}{c^2} - \frac{1}{2H_s} \\
-  - \frac{N^2}{g} &amp;=&amp; \frac{g}{c^2} - \frac{1}{H_s} \\
-  \end{gather*}\end{split}\]</div>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\Gamma \)</span> : 大氣密度層結修正因子 (Stratification correction factor) <span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(g\)</span> : 地表重力加速度常數 (Standard acceleration of gravity) <span class="math notranslate nohighlight">\(g \approx 9.807 \text{ m}\cdot\text{s}^{-2}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(c^{2}\)</span> : 本地音速平方 (Speed of sound squared) <span class="math notranslate nohighlight">\([\text{m}^2\cdot\text{s}^{-2}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(N^{2}\)</span> : 浮力頻率平方 / 班特-外薩拉頻率平方 (Brunt-Väisälä frequency squared) <span class="math notranslate nohighlight">\([\text{s}^{-2}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(H_{s}\)</span> : 大氣標高 (Atmospheric scale height) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="id2">
-<h4><strong>證明</strong><a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
-<section id="a">
-<h5><strong>2a</strong><a class="headerlink" href="#a" title="Link to this heading">#</a></h5>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{gather*}
-\frac{\partial u}{\partial t } + (\mathbf{u} \cdot \nabla) u &amp;\overset{\text{已知 1(b)}}{=}&amp; - \frac{1}{\rho} \frac{\partial p}{\partial x} \\ 
-\frac{\partial u}{\partial t } + (\mathbf{u} \cdot \nabla) u &amp;\overset{\text{假設 3(a)}}{=}&amp; - \frac{1}{\rho} \frac{\partial (p+p')}{\partial x} \\ 
-\frac{\partial u}{\partial t } + (\mathbf{u} \cdot \nabla) u &amp;=&amp; - \frac{1}{\rho} \frac{\partial p'}{\partial x} \\ 
-\frac{\partial u}{\partial t } + (\mathbf{u} \cdot \nabla) u &amp;=&amp; \left( - \frac{1}{\bar{\rho}} \frac{\partial p'}{\partial x}  + \frac{1}{\bar{\rho}} \frac{\partial p'}{\partial x} \right)- \frac{1}{\rho} \frac{\partial p'}{\partial x} \\ 
-\frac{\partial u}{\partial t } + \frac{1}{\bar{\rho}} \frac{\partial p'}{\partial x} &amp;=&amp; -  (\mathbf{u} \cdot \nabla) u + \frac{1}{\bar{\rho}} \frac{\partial p'}{\partial x} - \frac{1}{\rho} \frac{\partial p'}{\partial x} \\ 
-\frac{\partial u}{\partial t } + \frac{1}{\bar{\rho}} \frac{\partial p'}{\partial x} &amp;=&amp; -  (\mathbf{u} \cdot \nabla) u + \left(\frac{1}{\bar{\rho}}  - \frac{1}{\rho} \right)\frac{\partial p'}{\partial x} \\ 
-\frac{\partial u}{\partial t } + \frac{1}{\bar{\rho}} \frac{\partial p'}{\partial x} &amp;\overset{\text{推導 1(a)}}{=}&amp; -  (\mathbf{u} \cdot \nabla) u + \left(\frac{\rho'}{\bar{\rho} \rho  } \right)\frac{\partial p'}{\partial x} \\ 
-\bar{\rho}^{\frac{1}{2}} \left(\frac{\partial u}{\partial t } + \frac{1}{\bar{\rho}} \frac{\partial p'}{\partial x} \right) &amp;=&amp; \bar{\rho}^{\frac{1}{2}} \left(-  (\mathbf{u} \cdot \nabla) u + \frac{\rho'}{\bar{\rho} \rho  } \frac{\partial p'}{\partial x} \right)\\ 
-\bar{\rho}^{\frac{1}{2}} \frac{\partial u}{\partial t } + \bar{\rho}^{\frac{-1}{2}} \frac{\partial p'}{\partial x}  &amp;=&amp; \bar{\rho}^{\frac{1}{2}} \left(-  (\mathbf{u} \cdot \nabla) u + \frac{\rho'}{\bar{\rho} \rho  } \frac{\partial p'}{\partial x} \right)\\ 
-\frac{\partial }{\partial t } \left[ \bar{\rho}^{\frac{1}{2}} u \right] + \frac{\partial }{\partial x} \left[ \bar{\rho}^{\frac{-1}{2}} p' \right]  &amp;=&amp; \bar{\rho}^{\frac{1}{2}} \left(-  (\mathbf{u} \cdot \nabla) u + \frac{\rho'}{\bar{\rho} \rho  } \frac{\partial p'}{\partial x} \right)\\ 
-\end{gather*}\end{split}\]</div>
-</section>
-<section id="b">
-<h5><strong>2b</strong><a class="headerlink" href="#b" title="Link to this heading">#</a></h5>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{gather*}
-\frac{\partial v}{\partial t } + (\mathbf{u} \cdot \nabla) v &amp;\overset{\text{已知 1(c)}}{=}&amp; - \frac{1}{\rho} \frac{\partial p}{\partial y} \\ 
-\frac{\partial v}{\partial t } + (\mathbf{u} \cdot \nabla) v &amp;\overset{\text{假設 3(a)}}{=}&amp; - \frac{1}{\rho} \frac{\partial (p+p')}{\partial y} \\ 
-\frac{\partial v}{\partial t } + (\mathbf{u} \cdot \nabla) v &amp;=&amp; - \frac{1}{\rho} \frac{\partial p'}{\partial y} \\ 
-\frac{\partial v}{\partial t } + (\mathbf{u} \cdot \nabla) v &amp;=&amp; \left( - \frac{1}{\bar{\rho}} \frac{\partial p'}{\partial y}  + \frac{1}{\bar{\rho}} \frac{\partial p'}{\partial y} \right)- \frac{1}{\rho} \frac{\partial p'}{\partial y} \\ 
-\frac{\partial v}{\partial t } + \frac{1}{\bar{\rho}} \frac{\partial p'}{\partial y} &amp;=&amp; -  (\mathbf{u} \cdot \nabla) v + \frac{1}{\bar{\rho}} \frac{\partial p'}{\partial y} - \frac{1}{\rho} \frac{\partial p'}{\partial y} \\ 
-\frac{\partial v}{\partial t } + \frac{1}{\bar{\rho}} \frac{\partial p'}{\partial y} &amp;=&amp; -  (\mathbf{u} \cdot \nabla) v + \left(\frac{1}{\bar{\rho}}  - \frac{1}{\rho} \right)\frac{\partial p'}{\partial y} \\ 
-\frac{\partial v}{\partial t } + \frac{1}{\bar{\rho}} \frac{\partial p'}{\partial y} &amp;\overset{\text{推導 1(a)}}{=}&amp; -  (\mathbf{u} \cdot \nabla) v + \left(\frac{\rho'}{\bar{\rho} \rho  } \right)\frac{\partial p'}{\partial y} \\ 
-\bar{\rho}^{\frac{1}{2}} \left(\frac{\partial v}{\partial t } + \frac{1}{\bar{\rho}} \frac{\partial p'}{\partial y} \right) &amp;=&amp; \bar{\rho}^{\frac{1}{2}} \left(-  (\mathbf{u} \cdot \nabla) v + \frac{\rho'}{\bar{\rho} \rho  }\frac{\partial p'}{\partial y} \right)\\ 
-\bar{\rho}^{\frac{1}{2}} \frac{\partial v}{\partial t } + \bar{\rho}^{\frac{-1}{2}} \frac{\partial p'}{\partial y}  &amp;=&amp; \bar{\rho}^{\frac{1}{2}} \left(-  (\mathbf{u} \cdot \nabla) v + \frac{\rho'}{\bar{\rho} \rho  }\frac{\partial p'}{\partial y} \right)\\ 
-\frac{\partial }{\partial t } \left[ \bar{\rho}^{\frac{1}{2}} v \right] + \frac{\partial }{\partial y} \left[ \bar{\rho}^{\frac{-1}{2}} p' \right]  &amp;=&amp; \bar{\rho}^{\frac{1}{2}} \left(-  (\mathbf{u} \cdot \nabla) v + \frac{\rho'}{\bar{\rho} \rho  }\frac{\partial p'}{\partial y} \right)\\ 
-\end{gather*}\end{split}\]</div>
-</section>
-<section id="c">
-<h5><strong>2c</strong><a class="headerlink" href="#c" title="Link to this heading">#</a></h5>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{gather*}
-\frac{\partial w}{\partial t } + (\mathbf{u} \cdot \nabla) w &amp;\overset{\text{已知 1(d)}}{=}&amp; -g - \frac{1}{\rho} \frac{\partial p}{\partial z} \\ 
-\frac{\partial w}{\partial t } + (\mathbf{u} \cdot \nabla) w &amp;\overset{\text{假設 3(a)}}{=}&amp; -g - \frac{1}{\rho} \frac{\partial (\bar{p}+p')}{\partial z} \\ 
-\frac{\partial w}{\partial t } + (\mathbf{u} \cdot \nabla) w &amp;=&amp; -g  - \frac{1}{\rho} \left( \frac{d \bar{p}}{d z} + \frac{\partial p'}{\partial z} \right) \\ 
-\frac{\partial w}{\partial t } + (\mathbf{u} \cdot \nabla) w &amp;\overset{\text{假設 4}}{=}&amp; -g - \frac{1}{\rho} \left( -\bar{\rho}g + \frac{\partial p'}{\partial z} \right) \\
-\frac{\partial w}{\partial t } + (\mathbf{u} \cdot \nabla) w &amp;=&amp; \left( -1 + \frac{\bar{\rho}}{\rho}   \right) g - \frac{1}{\rho} \frac{\partial p'}{\partial z}  \\ 
-\frac{\partial w}{\partial t } + (\mathbf{u} \cdot \nabla) w &amp;=&amp; \left(\frac{-\rho + \bar{\rho}}{\rho}   \right) g - \frac{1}{\rho} \frac{\partial p'}{\partial z}  \\ 
-\frac{\partial w}{\partial t } + (\mathbf{u} \cdot \nabla) w &amp;\overset{\text{假設 3(b)}}{=}&amp; \left(\frac{-(\bar{\rho} + \rho') + \bar{\rho}}{\rho}   \right) g - \frac{1}{\rho} \frac{\partial p'}{\partial z}  \\ 
-\frac{\partial w}{\partial t } + (\mathbf{u} \cdot \nabla) w &amp;=&amp; \left(\frac{-\rho'}{\rho}   \right) g - \frac{1}{\rho} \frac{\partial p'}{\partial z}  \\ 
-\frac{\partial w}{\partial t } + (\mathbf{u} \cdot \nabla) w &amp;\overset{\text{推導 1(b)}}{=}&amp; \left( \left( \frac{-\rho'}{\rho \bar{\rho} }  \right) + \frac{1}{\bar{\rho}} \right)  \left(-\rho' \right) g - \left( \left( \frac{-\rho'}{\rho \bar{\rho} }  \right) + \frac{1}{\bar{\rho}} \right)  \frac{\partial p'}{\partial z}  \\ 
-\frac{\partial w}{\partial t } + (\mathbf{u} \cdot \nabla) w &amp;=&amp;  \frac{\rho'^2}{\rho \bar{\rho} } g  - \frac{\rho'}{\bar{\rho}} g + \frac{\rho'}{\rho \bar{\rho} } \frac{\partial p'}{\partial z}  - \frac{1}{\bar{\rho}}  \frac{\partial p'}{\partial z}  \\
-\frac{\partial w}{\partial t } + (\mathbf{u} \cdot \nabla) w &amp;=&amp;   - \frac{\rho'}{\bar{\rho}} g  - \frac{1}{\bar{\rho}}  \frac{\partial p'}{\partial z} + \frac{\rho'^2}{\rho \bar{\rho} } g  + \frac{\rho'}{\rho \bar{\rho} } \frac{\partial p'}{\partial z}   \\  
-\bar{\rho}^{\frac{1}{2}} \frac{\partial w}{\partial t } + \bar{\rho}^{\frac{1}{2}} (\mathbf{u} \cdot \nabla) w &amp;=&amp; \bar{\rho}^{\frac{1}{2}} \left( - \frac{\rho'}{\bar{\rho}} g  - \frac{1}{\bar{\rho}}  \frac{\partial p'}{\partial z} + \frac{\rho'^2}{\rho \bar{\rho} } g  + \frac{\rho'}{\rho \bar{\rho} } \frac{\partial p'}{\partial z}  \right)\\ 
-\frac{\partial }{\partial t } \left[ \bar{\rho}^{\frac{1}{2}}  w \right] + \bar{\rho}^{\frac{1}{2}} (\mathbf{u} \cdot \nabla) w &amp;=&amp; \bar{\rho}^{\frac{1}{2}} \left( - \frac{\rho'}{\bar{\rho}} g  - \frac{1}{\bar{\rho}}  \frac{\partial p'}{\partial z} + \frac{\rho'^2}{\rho \bar{\rho} } g  + \frac{\rho'}{\rho \bar{\rho} } \frac{\partial p'}{\partial z}  \right) \\
-\frac{\partial }{\partial t } \left[ \bar{\rho}^{\frac{1}{2}}  w \right] + \bar{\rho}^{\frac{1}{2}} (\mathbf{u} \cdot \nabla) w &amp;=&amp;  - \bar{\rho}^{\frac{-1}{2}}\rho' g - \bar{\rho}^{\frac{-1}{2}} \frac{\partial p'}{\partial z}  + \bar{\rho}^{\frac{1}{2}} \left( \frac{\rho'^2}{\rho \bar{\rho} } g +  \frac{\rho'}{\rho \bar{\rho} } \frac{\partial p'}{\partial z}  \right)   \\ 
-\frac{\partial }{\partial t } \left[ \bar{\rho}^{\frac{1}{2}}  w \right] + \bar{\rho}^{\frac{1}{2}} (\mathbf{u} \cdot \nabla) w &amp;=&amp;  - \left( g\bar{\rho}^{\frac{-1}{2}}\left(\rho' - \frac{p'}{c^2}\right)  + g\bar{\rho}^{\frac{-1}{2}}\frac{p'}{c^2}  \right) - \bar{\rho}^{\frac{-1}{2}} \frac{\partial p'}{\partial z}  + \bar{\rho}^{\frac{1}{2}} \left( \frac{\rho'^2}{\rho \bar{\rho} } g +  \frac{\rho'}{\rho \bar{\rho} } \frac{\partial p'}{\partial z}  \right)  \\ 
-\frac{\partial }{\partial t } \left[ \bar{\rho}^{\frac{1}{2}}  w \right] + \bar{\rho}^{\frac{1}{2}} (\mathbf{u} \cdot \nabla) w &amp;=&amp; - g\bar{\rho}^{\frac{-1}{2}}\left(\rho' - \frac{p'}{c^2}\right) - g\bar{\rho}^{\frac{-1}{2}}\frac{p'}{c^2}  - \bar{\rho}^{\frac{-1}{2}} \frac{\partial p'}{\partial z} + \bar{\rho}^{\frac{1}{2}} \left( \frac{\rho'^2}{\rho \bar{\rho} } g +  \frac{\rho'}{\rho \bar{\rho} } \frac{\partial p'}{\partial z}  \right)   \\ 
-\frac{\partial }{\partial t } \left[ \bar{\rho}^{\frac{1}{2}}  w \right] + \bar{\rho}^{\frac{1}{2}} (\mathbf{u} \cdot \nabla) w &amp;\overset{\text{推導 3}}{=}&amp; - g\bar{\rho}^{\frac{-1}{2}}\left(\rho' - \frac{p'}{c^2}\right) - g\bar{\rho}^{\frac{-1}{2}}\frac{p'}{c^2}  + \left( - \frac{\partial}{\partial z}[\bar{\rho}^{\frac{-1}{2}}p'] +  \frac{1}{2H_s}\bar{\rho}^{\frac{-1}{2}}p'  \right) + \bar{\rho}^{\frac{1}{2}} \left( \frac{\rho'^2}{\rho \bar{\rho} } g +  \frac{\rho'}{\rho \bar{\rho} } \frac{\partial p'}{\partial z}  \right)   \\
-\frac{\partial }{\partial t } \left[ \bar{\rho}^{\frac{1}{2}}  w \right] + \bar{\rho}^{\frac{1}{2}} (\mathbf{u} \cdot \nabla) w &amp;=&amp; - g\bar{\rho}^{\frac{-1}{2}}\left(\rho' - \frac{p'}{c^2}\right) - \left( \frac{g}{c^2}  + \frac{\partial}{\partial z} - \frac{1}{2H_s} \right)[\bar{\rho}^{\frac{-1}{2}}p'] + \bar{\rho}^{\frac{1}{2}} \left( \frac{\rho'^2}{\rho \bar{\rho} } g +  \frac{\rho'}{\rho \bar{\rho} } \frac{\partial p'}{\partial z}  \right)   \\  
-\frac{\partial }{\partial t } \left[ \bar{\rho}^{\frac{1}{2}}  w \right] + \bar{\rho}^{\frac{1}{2}} (\mathbf{u} \cdot \nabla) w &amp;\overset{\text{定義 4}}{=}&amp; - g\bar{\rho}^{\frac{-1}{2}}\left(\rho' - \frac{p'}{c^2}\right) - \left(  \frac{\partial}{\partial z} + \Gamma \right)[\bar{\rho}^{\frac{-1}{2}}p'] +  \bar{\rho}^{\frac{1}{2}} \left( \frac{\rho'^2}{\rho \bar{\rho} } g +  \frac{\rho'}{\rho \bar{\rho} } \frac{\partial p'}{\partial z}  \right)   \\  
-\frac{\partial }{\partial t } \left[ \bar{\rho}^{\frac{1}{2}}  w \right]  + g\bar{\rho}^{\frac{-1}{2}}\left(\rho' - \frac{p'}{c^2}\right) + \left(  \frac{\partial}{\partial z} + \Gamma \right)[\bar{\rho}^{\frac{-1}{2}}p'] &amp;=&amp; - \bar{\rho}^{\frac{1}{2}} (\mathbf{u} \cdot \nabla) w  + \bar{\rho}^{\frac{1}{2}} \left( \frac{\rho'^2}{\rho \bar{\rho} } g +  \frac{\rho'}{\rho \bar{\rho} } \frac{\partial p'}{\partial z}  \right)  \\  
-\frac{\partial }{\partial t } \left[ \bar{\rho}^{\frac{1}{2}}  w \right]  + g\bar{\rho}^{\frac{-1}{2}}\left(\rho' - \frac{p'}{c^2}\right) + \left(  \frac{\partial}{\partial z} + \Gamma \right)[\bar{\rho}^{\frac{-1}{2}}p'] &amp;=&amp; - \bar{\rho}^{\frac{1}{2}} \left( (\mathbf{u} \cdot \nabla) w  +  \frac{\rho'^2}{\rho \bar{\rho} } g +  \frac{\rho'}{\rho \bar{\rho}} \frac{\partial p'}{\partial z}  \right)  \\  
-\end{gather*}\end{split}\]</div>
-</section>
-<section id="d">
-<h5><strong>2d</strong><a class="headerlink" href="#d" title="Link to this heading">#</a></h5>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{gather*}
-\frac{D\rho}{Dt} &amp;=&amp; \frac{D\rho}{Dt}  \\
-\frac{D\rho}{Dt} &amp;=&amp; \frac{\partial \rho}{\partial t } + u \frac{\partial \rho }{\partial x } + v\frac{\partial \rho }{\partial y }   + w \frac{\partial \rho }{\partial z }  \\
-\frac{D\rho}{Dt} &amp;\overset{\text{已知 2}}{=}&amp; - \rho \left( \frac{\partial  u}{\partial x } + \frac{\partial  v}{\partial y } +\frac{\partial  w}{\partial z }\right)  \\
-\frac{1}{c^2}\frac{Dp}{Dt} &amp;\overset{\text{已知 3}}{=}&amp; - \rho \left( \frac{\partial  u}{\partial x } + \frac{\partial  v}{\partial y } +\frac{\partial  w}{\partial z }\right)  \\
-\frac{1}{c^2}\frac{Dp}{Dt} &amp;\overset{\text{假設 3(b)}}{=}&amp; - (\bar{\rho} + \rho' ) \left( \frac{\partial  u}{\partial x } + \frac{\partial  v}{\partial y } +\frac{\partial  w}{\partial z }\right)  \\
-\bar{\rho}^{\frac{-1}{2}} \frac{1}{c^2}\frac{Dp}{Dt} &amp;=&amp; - \bar{\rho}^{\frac{-1}{2}} (\bar{\rho} + \rho' ) \left( \frac{\partial  u}{\partial x } + \frac{\partial  v}{\partial y } +\frac{\partial  w}{\partial z }\right)  \\
-\bar{\rho}^{\frac{-1}{2}} \frac{1}{c^2}\frac{Dp}{Dt} &amp;=&amp; - \bar{\rho}^{\frac{1}{2}} \left( \frac{\partial  u}{\partial x } + \frac{\partial  v}{\partial y } +\frac{\partial  w}{\partial z }\right)  -  \bar{\rho}^{\frac{-1}{2}} \rho'  \left( \frac{\partial  u}{\partial x } + \frac{\partial  v}{\partial y } +\frac{\partial  w}{\partial z }\right)  \\
-\bar{\rho}^{\frac{-1}{2}} \frac{1}{c^2}\frac{Dp}{Dt} &amp;=&amp; - \bar{\rho}^{\frac{1}{2}} \left( \frac{\partial  u}{\partial x } + \frac{\partial  v}{\partial y } +\frac{\partial  w}{\partial z }\right)  -  \bar{\rho}^{\frac{-1}{2}} \rho'   \nabla \cdot \mathbf{u}   \\
-\bar{\rho}^{\frac{-1}{2}} \frac{1}{c^2}\frac{Dp}{Dt} &amp;=&amp; -  \left( \bar{\rho}^{\frac{1}{2}} \frac{\partial  u}{\partial x } + \bar{\rho}^{\frac{1}{2}} \frac{\partial  v}{\partial y } + \bar{\rho}^{\frac{1}{2}} \frac{\partial  w}{\partial z }\right)  -  \bar{\rho}^{\frac{-1}{2}} \rho'  \nabla \cdot \mathbf{u}  \\
-\bar{\rho}^{\frac{-1}{2}} \frac{1}{c^2}\frac{Dp}{Dt} &amp;=&amp; -  \left(  \frac{\partial ( \bar{\rho}^{\frac{1}{2}} u) }{\partial x } +  \frac{\partial  (\bar{\rho}^{\frac{1}{2}} v)}{\partial y } + \bar{\rho}^{\frac{1}{2}} \frac{\partial  w}{\partial z }\right)  -  \bar{\rho}^{\frac{-1}{2}} \rho'  \nabla \cdot \mathbf{u}  \\
-\bar{\rho}^{\frac{-1}{2}} \frac{1}{c^2}\frac{Dp}{Dt} &amp;\overset{\text{推導 4}}{=}&amp; -  \left(  \frac{\partial ( \bar{\rho}^{\frac{1}{2}} u) }{\partial x } +  \frac{\partial  (\bar{\rho}^{\frac{1}{2}} v)}{\partial y } + \frac{\partial (\bar{\rho}^{\frac{1}{2}} w )}{\partial z} - \left( \Gamma - \frac{g}{c^2} \right) \bar{\rho}^{\frac{1}{2}} w  \right)  -  \bar{\rho}^{\frac{-1}{2}} \rho'  \nabla \cdot \mathbf{u} \\
-\bar{\rho}^{\frac{-1}{2}} \frac{1}{c^2}\frac{Dp}{Dt} &amp;=&amp; - \frac{\partial ( \bar{\rho}^{\frac{1}{2}} u) }{\partial x } -  \frac{\partial  (\bar{\rho}^{\frac{1}{2}} v)}{\partial y } - \frac{\partial (\bar{\rho}^{\frac{1}{2}} w )}{\partial z} + \left( \Gamma - \frac{g}{c^2} \right) \bar{\rho}^{\frac{1}{2}} w  -  \bar{\rho}^{\frac{-1}{2}} \rho'  \nabla \cdot \mathbf{u} \\
-\bar{\rho}^{\frac{-1}{2}} \frac{1}{c^2} \left( \frac{\partial p' }{\partial t} +  (\mathbf{u} \cdot \nabla ) p'  - w \bar{\rho} g   \right) &amp;\overset{\text{推導 5}}{=}&amp;  - \frac{\partial ( \bar{\rho}^{\frac{1}{2}} u) }{\partial x } -  \frac{\partial  (\bar{\rho}^{\frac{1}{2}} v)}{\partial y } - \frac{\partial (\bar{\rho}^{\frac{1}{2}} w )}{\partial z} + \left( \Gamma - \frac{g}{c^2} \right) \bar{\rho}^{\frac{1}{2}} w  -  \bar{\rho}^{\frac{-1}{2}} \rho'  \nabla \cdot \mathbf{u}  \\
-\bar{\rho}^{\frac{-1}{2}} \frac{1}{c^2} \left( \frac{\partial p' }{\partial t} +  (\mathbf{u} \cdot \nabla ) p'  \right) - \bar{\rho}^{\frac{1}{2}} \frac{1}{c^2}  wg &amp;=&amp; - \frac{\partial ( \bar{\rho}^{\frac{1}{2}} u) }{\partial x } -  \frac{\partial  (\bar{\rho}^{\frac{1}{2}} v)}{\partial y } - \frac{\partial (\bar{\rho}^{\frac{1}{2}} w )}{\partial z} +  \Gamma \bar{\rho}^{\frac{1}{2}} w - \frac{g}{c^2} \bar{\rho}^{\frac{1}{2}} w  -  \bar{\rho}^{\frac{-1}{2}} \rho'  \nabla \cdot \mathbf{u}  \\
-\bar{\rho}^{\frac{-1}{2}} \frac{1}{c^2} \left( \frac{\partial p' }{\partial t} +  (\mathbf{u} \cdot \nabla ) p'  \right) &amp;=&amp; - \frac{\partial ( \bar{\rho}^{\frac{1}{2}} u) }{\partial x } -  \frac{\partial  (\bar{\rho}^{\frac{1}{2}} v)}{\partial y } - \frac{\partial (\bar{\rho}^{\frac{1}{2}} w )}{\partial z} +  \Gamma \bar{\rho}^{\frac{1}{2}} w -  \bar{\rho}^{\frac{-1}{2}} \rho'  \nabla \cdot \mathbf{u}  \\
-\bar{\rho}^{\frac{-1}{2}} \frac{1}{c^2} \left( \frac{\partial p' }{\partial t} +  (\mathbf{u} \cdot \nabla ) p'  \right) &amp;=&amp; - \frac{\partial ( \bar{\rho}^{\frac{1}{2}} u) }{\partial x } -  \frac{\partial  (\bar{\rho}^{\frac{1}{2}} v)}{\partial y } - \left( \frac{\partial }{\partial z} -  \Gamma \right)\left[\bar{\rho}^{\frac{1}{2}} w \right] -  \bar{\rho}^{\frac{-1}{2}} \rho'  \nabla \cdot \mathbf{u}  \\
-\bar{\rho}^{\frac{-1}{2}} \frac{\partial p' }{\partial t} +  \bar{\rho}^{\frac{-1}{2}} (\mathbf{u} \cdot \nabla ) p'   &amp;=&amp; -c^2 \left( \frac{\partial ( \bar{\rho}^{\frac{1}{2}} u) }{\partial x } +  \frac{\partial  (\bar{\rho}^{\frac{1}{2}} v)}{\partial y } + \left( \frac{\partial }{\partial z} -  \Gamma \right)\left[\bar{\rho}^{\frac{1}{2}} w \right]  \right) - c^2 \bar{\rho}^{\frac{-1}{2}} \rho'  \nabla \cdot \mathbf{u}  \\
-\frac{\partial ( \bar{\rho}^{\frac{-1}{2}} p') }{\partial t} +  \bar{\rho}^{\frac{-1}{2}} (\mathbf{u} \cdot \nabla ) p'   &amp;=&amp; -c^2 \left( \frac{\partial ( \bar{\rho}^{\frac{1}{2}} u) }{\partial x } +  \frac{\partial  (\bar{\rho}^{\frac{1}{2}} v)}{\partial y } + \left( \frac{\partial }{\partial z} -  \Gamma \right)\left[\bar{\rho}^{\frac{1}{2}} w \right]  \right) - c^2 \bar{\rho}^{\frac{-1}{2}} \rho'  \nabla \cdot \mathbf{u}  \\
-\frac{\partial ( \bar{\rho}^{\frac{-1}{2}} p') }{\partial t} + c^2 \left( \frac{\partial ( \bar{\rho}^{\frac{1}{2}} u) }{\partial x } +  \frac{\partial  (\bar{\rho}^{\frac{1}{2}} v)}{\partial y } + \left( \frac{\partial }{\partial z} -  \Gamma \right)\left[\bar{\rho}^{\frac{1}{2}} w \right]  \right)   &amp;=&amp;  -\bar{\rho}^{\frac{-1}{2}} (\mathbf{u} \cdot \nabla ) p' - c^2 \bar{\rho}^{\frac{-1}{2}} \rho'  \nabla \cdot \mathbf{u}  \\
-\frac{\partial ( \bar{\rho}^{\frac{-1}{2}} p') }{\partial t} + c^2 \left( \frac{\partial ( \bar{\rho}^{\frac{1}{2}} u) }{\partial x } +  \frac{\partial  (\bar{\rho}^{\frac{1}{2}} v)}{\partial y } + \left( \frac{\partial }{\partial z} -  \Gamma \right)\left[\bar{\rho}^{\frac{1}{2}} w \right]  \right)   &amp;=&amp;  -\bar{\rho}^{\frac{-1}{2}} \left( (\mathbf{u} \cdot \nabla ) p' + c^2  \rho'  \nabla \cdot \mathbf{u} \right) \\
-\end{gather*}\end{split}\]</div>
-</section>
-<section id="e">
-<h5><strong>2e</strong><a class="headerlink" href="#e" title="Link to this heading">#</a></h5>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{gather*} 
-\frac{D\rho}{Dt}  &amp;\overset{\text{已知 3}}{=}&amp;  \frac{1}{c^2}\frac{Dp}{Dt} \\
-\left( \frac{\partial \rho' }{\partial t} +  (\mathbf{u} \cdot \nabla ) \rho'  - w \frac{\bar{\rho}}{H_s} \right)  &amp;\overset{\text{推導 5,6}}{=}&amp; \frac{1}{c^2}\left( \frac{\partial p' }{\partial t} +  (\mathbf{u} \cdot \nabla ) p'  - w \bar{\rho} g \right) \\
-\frac{\partial }{\partial t} \left[ \rho' - \frac{p'}{c^2}  \right] + w \left( -\frac{\bar{\rho}}{H_s} + \frac{1}{c^2} \bar{\rho}g \right)  &amp;=&amp; -\mathbf{u}\cdot\nabla \rho' + \frac{1}{c^2} \mathbf{u}\cdot\nabla p'  \\
-\frac{\partial }{\partial t} \left[ \rho' - \frac{p'}{c^2}  \right] + w \bar{\rho} \left( -\frac{1}{H_s} + \frac{g}{c^2}  \right)  &amp;=&amp; -\mathbf{u}\cdot\nabla \rho' + \frac{1}{c^2} \mathbf{u}\cdot\nabla p'  \\
-\frac{\partial }{\partial t} \left[ \rho' - \frac{p'}{c^2}  \right] + w \bar{\rho} \left( -\frac{N^2}{g} \right)  &amp;\overset{\text{推導 7}}{=}&amp; -\mathbf{u}\cdot\nabla \rho' + \frac{1}{c^2} \mathbf{u}\cdot\nabla p'  \\
-\bar{\rho}^{\frac{-1}{2}} \frac{\partial }{\partial t} \left[ \rho' - \frac{p'}{c^2}  \right] + \bar{\rho}^{\frac{-1}{2}} w \bar{\rho} \left( -\frac{N^2}{g} \right)  &amp;=&amp; -\bar{\rho}^{\frac{-1}{2}} \left( \mathbf{u}\cdot\nabla \rho' -  \frac{1}{c^2} \mathbf{u}\cdot\nabla p' \right) \\
-\frac{\partial }{\partial t} \left[ \bar{\rho}^{\frac{-1}{2}}  \left( \rho' - \frac{p'}{c^2}  \right)   \right] -  w \bar{\rho}^{\frac{1}{2}} \frac{N^2}{g}   &amp;=&amp; -\bar{\rho}^{\frac{-1}{2}} \left( \mathbf{u}\cdot\nabla \rho' -\frac{1}{c^2} \mathbf{u}\cdot\nabla p'  \right)\\
-\end{gather*}\end{split}\]</div>
 </section>
 </section>
 </section>
-<section id="from-fluid-dynamics-pdes-to-linear-algebraic-matrix-equations">
-<h3>二、<strong>流體力學偏微分方程式</strong> 轉成 <strong>線性代數矩陣方程式</strong> (From fluid dynamics PDEs to linear algebraic matrix equations.)<a class="headerlink" href="#from-fluid-dynamics-pdes-to-linear-algebraic-matrix-equations" title="Link to this heading">#</a></h3>
-<div class="math notranslate nohighlight">
-\[\frac{\partial \tilde{u}}{\partial t} + \mathbf{L} \tilde{u} = \tilde{N}\]</div>
-<section id="id3">
-<h4>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
-<ul>
-<li><p><strong>【已知 1】  密度加權的線性化微擾方程組與非線性強迫項分離（Density-weighted linearized perturbation equations with nonlinear forcing separation） ：</strong></p>
-<ul class="simple">
-<li><p>(a) <span class="math notranslate nohighlight">\(x\)</span> 方向動量方程式：</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[\frac{\partial }{\partial t } \left[ \bar{\rho}^{\frac{1}{2}} u \right] + \frac{\partial }{\partial x} \left[ \bar{\rho}^{\frac{-1}{2}} p' \right]  = \bar{\rho}^{\frac{1}{2}} \left(-  (\mathbf{u} \cdot \nabla) u + \frac{\rho'}{\bar{\rho} \rho  } \frac{\partial p'}{\partial x} \right) \]</div>
-<ul class="simple">
-<li><p>(b) <span class="math notranslate nohighlight">\(y\)</span> 方向動量方程式：</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[\frac{\partial }{\partial t } \left[ \bar{\rho}^{\frac{1}{2}} v \right] + \frac{\partial }{\partial y} \left[ \bar{\rho}^{\frac{-1}{2}} p' \right]  = \bar{\rho}^{\frac{1}{2}} \left(-  (\mathbf{u} \cdot \nabla) v + \frac{\rho'}{\bar{\rho} \rho  }\frac{\partial p'}{\partial y} \right) \]</div>
-<ul class="simple">
-<li><p>(c) <span class="math notranslate nohighlight">\(z\)</span> 方向動量方程式：</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[\frac{\partial }{\partial t } \left[ \bar{\rho}^{\frac{1}{2}}  w \right]  + g\bar{\rho}^{\frac{-1}{2}}\left(\rho' - \frac{p'}{c^2}\right) + \left(  \frac{\partial}{\partial z} + \Gamma \right)[\bar{\rho}^{\frac{-1}{2}}p'] = - \bar{\rho}^{\frac{1}{2}} \left( (\mathbf{u} \cdot \nabla) w  +  \frac{\rho'^2}{\rho \bar{\rho} } g +  \frac{\rho'}{\rho \bar{\rho}} \frac{\partial p'}{\partial z}  \right)\]</div>
-<ul class="simple">
-<li><p>(d) 結合狀態方程之連續（質量守恆）方程式：</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[\frac{\partial ( \bar{\rho}^{\frac{-1}{2}} p') }{\partial t} + c^2 \left( \frac{\partial ( \bar{\rho}^{\frac{1}{2}} u) }{\partial x } +  \frac{\partial  (\bar{\rho}^{\frac{1}{2}} v)}{\partial y } + \left( \frac{\partial }{\partial z} -  \Gamma \right)\left[\bar{\rho}^{\frac{1}{2}} w \right]  \right)   =  -\bar{\rho}^{\frac{-1}{2}} \left( (\mathbf{u} \cdot \nabla ) p' + c^2  \rho'  \nabla \cdot \mathbf{u} \right) \]</div>
-<ul class="simple">
-<li><p>(e) 內能／熱力學能量（等熵）方程式：</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[\frac{\partial }{\partial t} \left[ \bar{\rho}^{\frac{-1}{2}}  \left( \rho' - \frac{p'}{c^2}  \right)   \right] -  w \bar{\rho}^{\frac{1}{2}} \frac{N^2}{g}   = -\bar{\rho}^{\frac{-1}{2}} \left( \mathbf{u}\cdot\nabla \rho' -\frac{1}{c^2} \mathbf{u}\cdot\nabla p'  \right)\]</div>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\rho \)</span> : 瞬時總密度場 (Instantaneous total density field) <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}^{-3}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\bar{\rho }\)</span> : 基本背景態密度 (Basic state density) <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}^{-3}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\rho '\)</span> : 密度的時空微擾項 (Density perturbation variable) <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}^{-3}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(p'\)</span> : 氣壓的時空微擾項 (Pressure perturbation variable) <span class="math notranslate nohighlight">\([\text{Pa}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\mathbf{u}\)</span>: 三維速度向量 <span class="math notranslate nohighlight">\((u, v, w)\)</span>  <span class="math notranslate nohighlight">\([\text{m} \cdot \text{s}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(g\)</span> : 地表重力加速度常數 (Standard acceleration of gravity) <span class="math notranslate nohighlight">\(g \approx 9.80665 \text{ m}\cdot\text{s}^{-2}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\Gamma \)</span> : 大氣層結修正因子 (Stratification correction factor) <span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(N^{2}\)</span> : 浮力頻率平方 (Brunt-Väisälä frequency squared) <span class="math notranslate nohighlight">\([\text{s}^{-2}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(c\)</span> : 本地音速 (Local speed of sound) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
-</ul>
-</li>
-<li><p><strong>【定義 1】 經密度加權的大氣狀態向量（Density-weighted atmospheric state vector） ：</strong></p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{gather*} 
-  \tilde{u} &amp;\overset{\text{def}}{=}&amp; \begin{bmatrix} U \\[1.5ex] V \\[1.5ex] W \\[1.5ex] P \\[1.5ex] \Pi \\[1.5ex] \end{bmatrix} 
-  &amp;\overset{\text{let}}{=}&amp;  \begin{bmatrix} \bar{\rho}^{\frac{1}{2}} u \\[1.5ex] \bar{\rho}^{\frac{1}{2}} v \\[1.5ex] \bar{\rho}^{\frac{1}{2}} w \\[1.5ex] \bar{\rho}^{\frac{-1}{2}} p' \\[1.5ex] \bar{\rho}^{\frac{-1}{2}}  \left( \rho' - \frac{p'}{c^2}  \right)\\[1.5ex] \end{bmatrix}
-  \end{gather*}\end{split}\]</div>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\~{\mathbf{u}}\)</span> : 大氣波動狀態向量 (Atmospheric wave state vector)</p></li>
-<li><p><span class="math notranslate nohighlight">\(U, V, W\)</span> : 經密度平方根加權後的 <span class="math notranslate nohighlight">\(x, y, z\)</span> 三軸方向動量型速度分量 <span class="math notranslate nohighlight">\([\text{kg}^{\frac{1}{2}}\cdot\text{m}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(P\)</span> : 經密度倒數平方根加權後的縮放氣壓微擾項 <span class="math notranslate nohighlight">\([\text{kg}^{-\frac{1}{2}}\cdot\text{m}^{\frac{1}{2}}\cdot\text{s}^{-2}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\Pi \)</span> : 經密度倒數平方根加權後的非等熵度量／勢度微擾項 (Non-isentropic perturbation representative) <span class="math notranslate nohighlight">\([\text{kg}^{\frac{1}{2}}\cdot\text{m}^{-3}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(u, v, w, p', \rho'\)</span> : 原始微擾場的速度、氣壓與密度分量</p></li>
-<li><p><span class="math notranslate nohighlight">\(\bar{\rho }\)</span> : 基本背景態密度 <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}^{-3}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(c\)</span> : 本地音速 <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
-</ul>
-</li>
-<li><p><strong>【定義 2】 非線性強迫力向量（Nonlinear forcing vector） ：</strong></p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\tilde{N} \overset{\text{def}}{=} \begin{bmatrix} 
-  \bar{\rho}^{\frac{1}{2}} \left(-  (\mathbf{u} \cdot \nabla) u + \frac{\rho'}{\bar{\rho} \rho  } \frac{\partial p'}{\partial x} \right) \\[2ex] 
-  \bar{\rho}^{\frac{1}{2}} \left(-  (\mathbf{u} \cdot \nabla) v + \frac{\rho'}{\bar{\rho} \rho  }\frac{\partial p'}{\partial y} \right) \\[2ex] 
-  - \bar{\rho}^{\frac{1}{2}} \left( (\mathbf{u} \cdot \nabla) w  +  \frac{\rho'^2}{\rho \bar{\rho} } g +  \frac{\rho'}{\rho \bar{\rho}} \frac{\partial p'}{\partial z}  \right) \\[2ex] 
-  -\bar{\rho}^{\frac{-1}{2}} \left( (\mathbf{u} \cdot \nabla ) p' + c^2  \rho'  \nabla \cdot \mathbf{u} \right) \\[2ex] 
-  -\bar{\rho}^{\frac{-1}{2}} \left( \mathbf{u}\cdot\nabla \rho' -\frac{1}{c^2} \mathbf{u}\cdot\nabla p'  \right) \\[2ex]
-  \end{bmatrix} \end{split}\]</div>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\tilde{\mathbf{N}}\)</span> : 包含平流與微擾乘積項的五維非線性強迫力向量 (Nonlinear forcing column vector)</p></li>
-<li><p><span class="math notranslate nohighlight">\(g\)</span> : 地表重力加速度常數 <span class="math notranslate nohighlight">\(g \approx 9.80665 \text{ m}\cdot\text{s}^{-2}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\rho \)</span> : 瞬時總密度場 <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}^{-3}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(c\)</span> : 本地音速 (Local speed of sound) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\((\mathbf{u} \cdot \nabla)\)</span> : 三維平流算符 <span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
-</ul>
-</li>
-<li><p><strong>【定義 3】 空間微分波動算符矩陣（Spatial differential wave operator matrix） ：</strong></p>
-<div class="math notranslate nohighlight">
-\[\begin{split} \mathbf{L} \overset{\text{def}}{=} \begin{bmatrix} 
-  0 &amp; 0 &amp; 0 &amp; \frac{\partial}{\partial x} &amp; 0 \\[2ex]
-  0 &amp; 0 &amp; 0 &amp; \frac{\partial}{\partial y} &amp; 0 \\[2ex]
-  0 &amp; 0 &amp; 0 &amp; \left(\frac{\partial}{\partial z} + \Gamma\right) &amp; g \\[2ex]
-  c^2 \frac{\partial}{\partial x} &amp; c^2 \frac{\partial}{\partial y} &amp; c^2 \left(\frac{\partial}{\partial z} - \Gamma\right) &amp; 0 &amp; 0 \\[2ex]
-  0 &amp; 0 &amp; -\frac{N^2}{g} &amp; 0 &amp; 0 \\[2ex]
-  \end{bmatrix}  \end{split}\]</div>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\mathbf{L}\)</span> : 封裝空間偏微分與大氣層結常數的 <span class="math notranslate nohighlight">\(5 \times 5\)</span> 矩陣微分算符 (Spatial differential operator matrix)</p></li>
-<li><p><span class="math notranslate nohighlight">\(\Gamma \)</span> : 大氣層結修正因子 <span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(N^{2}\)</span> : 浮力頻率平方 <span class="math notranslate nohighlight">\([\text{s}^{-2}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(g\)</span> : 地表重力加速度常數 <span class="math notranslate nohighlight">\(g \approx 9.80665 \text{ m}\cdot\text{s}^{-2}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(c\)</span> : 本地音速 (Local speed of sound) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\frac{\partial}{\partial x}, \frac{\partial}{\partial y}, \frac{\partial}{\partial z}\)</span> : 各時空空間軸向的偏微分算符 <span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span></p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="id4">
-<h4>證明<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{gather*} 
-\frac{\partial }{\partial t} \begin{bmatrix} 
-\bar{\rho}^{\frac{1}{2}} u \vphantom{\Bigg|} \\[2ex] 
-\bar{\rho}^{\frac{1}{2}} v \vphantom{\Bigg|} \\[2ex] 
-\bar{\rho}^{\frac{1}{2}} w \vphantom{\Bigg|} \\[2ex] 
-\bar{\rho}^{\frac{-1}{2}} p' \vphantom{\Bigg|} \\[2ex] 
-\bar{\rho}^{\frac{-1}{2}}  \left( \rho' - \frac{p'}{c^2}  \right) \vphantom{\Bigg|} \\[2ex] 
-\end{bmatrix}    
-&amp;+&amp; \begin{bmatrix} 
-0 &amp; 0 &amp; 0 &amp; \frac{\partial}{\partial x} &amp; 0 \vphantom{\Bigg|} \\[2ex]
-0 &amp; 0 &amp; 0 &amp; \frac{\partial}{\partial y} &amp; 0 \vphantom{\Bigg|} \\[2ex]
-0 &amp; 0 &amp; 0 &amp; \left(\frac{\partial}{\partial z} + \Gamma\right) &amp; g \vphantom{\Bigg|} \\[2ex]
-c^2 \frac{\partial}{\partial x} &amp; c^2 \frac{\partial}{\partial y} &amp; c^2 \left(\frac{\partial}{\partial z} - \Gamma\right) &amp; 0 &amp; 0 \vphantom{\Bigg|} \\[2ex]
-0 &amp; 0 &amp; -\frac{N^2}{g} &amp; 0 &amp; 0 \vphantom{\Bigg|} \\[2ex]
-\end{bmatrix}&amp;
-\begin{bmatrix} 
-\bar{\rho}^{\frac{1}{2}} u \vphantom{\Bigg|} \\[2ex] 
-\bar{\rho}^{\frac{1}{2}} v \vphantom{\Bigg|} \\[2ex] 
-\bar{\rho}^{\frac{1}{2}} w \vphantom{\Bigg|} \\[2ex] 
-\bar{\rho}^{\frac{-1}{2}} p' \vphantom{\Bigg|} \\[2ex] 
-\bar{\rho}^{\frac{-1}{2}}  \left( \rho' - \frac{p'}{c^2}  \right) \vphantom{\Bigg|} \\[2ex] 
-\end{bmatrix}
-&amp;\overset{\text{已知 1(a)(b)(c)(d)(e)}}{=}&amp;
-\begin{bmatrix} 
-\bar{\rho}^{\frac{1}{2}} \left(-  (\mathbf{u} \cdot \nabla) u + \frac{\rho'}{\bar{\rho} \rho  } \frac{\partial p'}{\partial x} \right) \vphantom{\Bigg|} \\[2ex] 
-\bar{\rho}^{\frac{1}{2}} \left(-  (\mathbf{u} \cdot \nabla) v + \frac{\rho'}{\bar{\rho} \rho  }\frac{\partial p'}{\partial y} \right) \vphantom{\Bigg|} \\[2ex] 
-- \bar{\rho}^{\frac{1}{2}} \left( (\mathbf{u} \cdot \nabla) w  +  \frac{\rho'^2}{\rho \bar{\rho} } g +  \frac{\rho'}{\rho \bar{\rho}} \frac{\partial p'}{\partial z}  \right) \vphantom{\Bigg|} \\[2ex] 
--\bar{\rho}^{\frac{-1}{2}} \left( (\mathbf{u} \cdot \nabla ) p' + c^2  \rho'  \nabla \cdot \mathbf{u} \right) \vphantom{\Bigg|} \\[2ex] 
--\bar{\rho}^{\frac{-1}{2}} \left( \mathbf{u}\cdot\nabla \rho' -\frac{1}{c^2} \mathbf{u}\cdot\nabla p'  \right) \vphantom{\Bigg|} \\[2ex]
-\end{bmatrix} \\
-\frac{\partial \tilde{u}}{\partial t} &amp;+&amp; \mathbf{L} &amp; \tilde{u} &amp;\overset{\text{定義 1,2,3}}{=}&amp; \tilde{N} \\ 
-\end{gather*}\end{split}\]</div>
-</section>
-</section>
-</section>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1302,20 +921,20 @@ c^2 \frac{\partial}{\partial x} &amp; c^2 \frac{\partial}{\partial y} &amp; c^2 
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../project.html"
+       href="../../homework/hw2/hw2.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">project</p>
+        <p class="prev-next-title">Advanced Atmospheric Dynamics Hw 2</p>
       </div>
     </a>
     <a class="right-next"
-       href="../project2/project2.html"
+       href="project1_1.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Advanced Atmospheric Dynamics Project 2</p>
+        <p class="prev-next-title"><strong>一、原始的完全可壓縮流體力學偏微分方程組</strong> 轉成 <strong>密度加權的線性化微擾方程組（且分離出非線性強迫項）</strong> (From the original fully compressible Navier-Stokes equations to the density-weighted linearized perturbation equations (with isolated nonlinear forcing terms))</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1342,22 +961,9 @@ c^2 \frac{\partial}{\partial x} &amp; c^2 \frac{\partial}{\partial y} &amp; c^2 
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-chinese">中文版 (In chinese)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-the-original-fully-compressible-navier-stokes-equations-to-the-density-weighted-linearized-perturbation-equations-with-isolated-nonlinear-forcing-terms">一、<strong>原始的完全可壓縮流體力學偏微分方程組</strong> 轉成 <strong>密度加權的線性化微擾方程組（且分離出非線性強迫項）</strong> (From the original fully compressible Navier-Stokes equations to the density-weighted linearized perturbation equations (with isolated nonlinear forcing terms))</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-the-original-fully-compressible-navier-stokes-equations-to-the-density-weighted-linearized-perturbation-equations-with-isolated-nonlinear-forcing-terms"><strong>一、原始的完全可壓縮流體力學偏微分方程組</strong> 轉成 <strong>密度加權的線性化微擾方程組（且分離出非線性強迫項）</strong> (From the original fully compressible Navier-Stokes equations to the density-weighted linearized perturbation equations (with isolated nonlinear forcing terms))</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-ultimate-goal"><strong>為什麼要花這麼大功夫轉成這樣？（The Ultimate Goal）</strong></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>證明</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#a"><strong>2a</strong></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#b"><strong>2b</strong></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#c"><strong>2c</strong></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#d"><strong>2d</strong></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#e"><strong>2e</strong></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-fluid-dynamics-pdes-to-linear-algebraic-matrix-equations">二、<strong>流體力學偏微分方程式</strong> 轉成 <strong>線性代數矩陣方程式</strong> (From fluid dynamics PDEs to linear algebraic matrix equations.)</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">證明</a></li>
 </ul>
 </li>
 </ul>
