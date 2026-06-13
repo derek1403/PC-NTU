@@ -1,0 +1,710 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Eigenfunctions and eigenvalues of the fully compressible model. &#8212; Advanced Atmospheric Dynamics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=4cca277b" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'project/project1/IPTNB_project_overview';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Advanced Atmospheric Dynamics - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Advanced Atmospheric Dynamics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lecture/lecture.html">lecture</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/week1/week1.html">Advanced Atmospheric Dynamics - Week 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/week2/week2.html">Advanced Atmospheric Dynamics - Week 2</a></li>
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../homework/homework.html">Homework Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../homework/hw1/hw1.html">Advanced Atmospheric Dynamics Hw 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../homework/hw2/hw2.html">Advanced Atmospheric Dynamics Hw 2</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="project_overview.html">Project 1: 大氣動力學方程轉換與頻譜分析</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="project1_1.html">1. 線性化微擾方程組轉換</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project1_2.html">2. 偏微分方程轉矩陣方程式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project1_3.html">3. 算符 L 的反厄米特特性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project1_4.html">4. 內積的範數正定性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project1_5.html">5. 特徵解與色散關係推導</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project1_6.html">6. 頻譜空間轉換與 CFL 條件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project1_7.html">7. 消除混疊之網格點數條件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project1_8.html">8. 色散方程式之無因次化證明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project1_AllInOne.html">Project 1: 大氣動力學方程轉換與頻譜分析 (All-in-One)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../project2/project2.html">Advanced Atmospheric Dynamics Project 2</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fproject/project1/IPTNB_project_overview.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/project/project1/IPTNB_project_overview.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Eigenfunctions and eigenvalues of the fully compressible model.</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Eigenfunctions and eigenvalues of the fully compressible model.</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#problems-and-project-1">Problems and Project 1</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="eigenfunctions-and-eigenvalues-of-the-fully-compressible-model">
+<h1>Eigenfunctions and eigenvalues of the fully compressible model.<a class="headerlink" href="#eigenfunctions-and-eigenvalues-of-the-fully-compressible-model" title="Link to this heading">#</a></h1>
+<p>We begin with a fully compressible nonhydrostatic model</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{Du}{Dt} &amp;=&amp;  -\frac{1}{\rho} \frac{\partial p}{\partial x}, \tag{1a} \\
+\frac{Dv}{Dt} &amp;=&amp;  -\frac{1}{\rho} \frac{\partial p}{\partial y}, \tag{1b} \\
+\frac{Dw}{Dt} &amp;=&amp;  -\frac{1}{\rho} \frac{\partial p}{\partial z} - g, \tag{1c} \\
+\frac{D\rho}{Dt} &amp;=&amp;  -\rho \left( \frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} + \frac{\partial w}{\partial z} \right), \tag{1d} \\
+\frac{D\rho}{Dt} &amp;=&amp;  \frac{1}{c^2} \frac{Dp}{Dt}, \tag{1e}
+\end{gather*}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(c^2\)</span> is the square of sound speed and <span class="math notranslate nohighlight">\(D/Dt = \partial/\partial t + u\partial/\partial x + v\partial/\partial y + w\partial/\partial z\)</span>.</p>
+<p>Let us divide the pressure and density into isothermal basic states and deviation parts, i.e.,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+P(x, y, z, t) &amp;=&amp;  \bar{p}(z) + p'(x, y, z, t), \\
+\rho(x, y, z, t) &amp;=&amp;  \bar{\rho}(z) + \rho'(x, y, z, t),
+\end{gather*}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\partial\bar{p}/\partial z = -\bar{\rho}g\)</span>.</p>
+<p>With a resting basic state in an isothermal atmosphere (temperature <span class="math notranslate nohighlight">\(T_0\)</span>), (1) can be linearized in the form (with the nonlinear terms on the right hand side)</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{\partial}{\partial t} \left(\bar{\rho}^{\frac{1}{2}}u\right) + \frac{\partial}{\partial x} \left( \frac{p'}{\bar{\rho}^{\frac{1}{2}}} \right) &amp;=&amp;  N_1, \tag{2a} \\
+\frac{\partial}{\partial t} \left(\bar{\rho}^{\frac{1}{2}}v\right) + \frac{\partial}{\partial y} \left( \frac{p'}{\bar{\rho}^{\frac{1}{2}}} \right) &amp;=&amp;  N_2, \tag{2b} \\
+\frac{\partial}{\partial t} \left(\bar{\rho}^{\frac{1}{2}}w\right) + \left( \frac{\partial}{\partial z} + \Gamma \right) \left( \frac{p'}{\bar{\rho}^{\frac{1}{2}}} \right) + g \left( \frac{1}{\bar{\rho}^{\frac{1}{2}}} \left(\rho' - \frac{p'}{c^2}\right) \right) &amp;=&amp;  N_3, \tag{2c} \\
+\frac{\partial}{\partial t} \left( \frac{p'}{\bar{\rho}^{\frac{1}{2}}} \right) + c^2 \left( \frac{\partial}{\partial x} \left(\bar{\rho}^{\frac{1}{2}}u\right) + \frac{\partial}{\partial y} \left(\bar{\rho}^{\frac{1}{2}}v\right) + \left( \frac{\partial}{\partial z} - \Gamma \right) \left(\bar{\rho}^{\frac{1}{2}}w\right) \right) &amp;=&amp;  N_4, \tag{2d} \\
+\frac{\partial}{\partial t} \left( \frac{1}{\bar{\rho}^{\frac{1}{2}}} \left(\rho' - \frac{p'}{c^2}\right) \right) - \frac{N^2}{g} \left(\bar{\rho}^{\frac{1}{2}}w\right) &amp;=&amp;  N_5, \tag{2e}
+\end{gather*}\end{split}\]</div>
+<p>where the constant parameters in the isothermal atmosphere are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+c^2 &amp;=&amp;  \gamma R_d T_0, \tag{3a} \\
+\Gamma &amp;=&amp;  \frac{1}{2} \left( \frac{g}{c^2} - \frac{N^2}{g} \right), \tag{3b} \\
+N^2 &amp;=&amp;  \frac{\kappa g}{H_s}, \tag{3c}
+\end{gather*}\end{split}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\begin{gather*}
+H_s &amp;=&amp;  R_d T_0 / g. \tag{3d}
+\end{gather*}\]</div>
+<p>The <span class="math notranslate nohighlight">\(\gamma\)</span>, <span class="math notranslate nohighlight">\(R_d\)</span>, and <span class="math notranslate nohighlight">\(\kappa\)</span> take the usual meaning in the thermodynamics.</p>
+<p>Now define the vectors</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\tilde{u} = \begin{pmatrix}
+\bar{\rho}^{\frac{1}{2}} u \\
+\bar{\rho}^{\frac{1}{2}} v \\
+\bar{\rho}^{\frac{1}{2}} w \\
+p' / \bar{\rho}^{\frac{1}{2}} \\
+(\rho' - p'/c^2) / \bar{\rho}^{\frac{1}{2}}
+\end{pmatrix} = \begin{pmatrix}
+U \\
+V \\
+W \\
+P \\
+\Pi
+\end{pmatrix},\end{split}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\tilde{N} = (N_1, N_2, N_3, N_4, N_5)^T,\]</div>
+<p>we can write (2) as</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial \tilde{u}}{\partial t} + L\tilde{u} = \tilde{N}, \tag{4}\]</div>
+<p>Where</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}L = \begin{pmatrix}
+0 &amp; 0 &amp; 0 &amp; \frac{\partial}{\partial x} &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; \frac{\partial}{\partial y} &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; \left(\frac{\partial}{\partial z} + \Gamma\right) &amp; g \\
+c^2 \frac{\partial}{\partial x} &amp; c^2 \frac{\partial}{\partial y} &amp; c^2 \left(\frac{\partial}{\partial z} - \Gamma\right) &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; -\frac{N^2}{g} &amp; 0 &amp; 0
+\end{pmatrix}.\end{split}\]</div>
+<p>Next we define the inner product of the vectors <span class="math notranslate nohighlight">\(\tilde{f}\)</span> and <span class="math notranslate nohighlight">\(\tilde{g}\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[(\tilde{f}, \tilde{g}) = \frac{1}{L_x L_y L_z} \int_{0}^{L_z} \int_{0}^{L_y} \int_{0}^{L_x} \left( f_1 g_1^* + f_2 g_2^* + f_3 g_3^* + \frac{1}{c^2} f_4 g_4^* + \frac{g^2}{N^2} f_5 g_5^* \right) dxdydz, \tag{5}\]</div>
+<p>where the <span class="math notranslate nohighlight">\(f^*\)</span> is the complex conjugate of <span class="math notranslate nohighlight">\(f\)</span>. All the components of <span class="math notranslate nohighlight">\(\tilde{f}\)</span> and <span class="math notranslate nohighlight">\(\tilde{g}\)</span> are periodic in <span class="math notranslate nohighlight">\(x \text{ and } y\)</span> and <span class="math notranslate nohighlight">\(f_3 = g_3 = 0\)</span> at <span class="math notranslate nohighlight">\(z = 0, L_z\)</span> (bottom and top). With the inner product (5) we can show that</p>
+<div class="math notranslate nohighlight">
+\[(L\tilde{f}, \tilde{g}) = -(\tilde{f}, L\tilde{g}), \tag{6}\]</div>
+<p>i.e., the operator <span class="math notranslate nohighlight">\(L\)</span> is skew-Hermitian. Skew-Hermitian operator with appropriate boundary conditions have three properties that are of extreme importance in physics, both quantum and classical. The three properties are</p>
+<ul class="simple">
+<li><p>(1) the eigenvalues of a skew-Hermitian operator are imaginary,</p></li>
+<li><p>(2) the eigenfunctions of a skew-Hermitian operator are orthogonal,</p></li>
+<li><p>(3) the eigenfunctions of a skew-Hermitian operator form a complete set.</p></li>
+</ul>
+<p>Finally, we note that (6) is a energy norm, it consists of the kinetic energy <span class="math notranslate nohighlight">\(\bar{\rho}/2(u^2 + v^2 + w^2)\)</span>, the elastic energy <span class="math notranslate nohighlight">\(1/(2\bar{\rho})(p'^2/c^2)\)</span> and the thermobaric energy ( the internal energy)</p>
+<div class="math notranslate nohighlight">
+\[I = \frac{\bar{\rho}}{2} \frac{g^2}{N^2} \left( \frac{\theta'}{\bar{\theta}} \right)^2,\]</div>
+<p>or with the linearized equation of state, <span class="math notranslate nohighlight">\((\rho - p'/c^2)\bar{\rho}^{-1/2} = -\bar{\rho}^{-1/2}(\theta'/\bar{\theta})\)</span> ( Eckart 1960),</p>
+<p>or with the linearized equation of state, <span class="math notranslate nohighlight">\((\rho' - p'/c^2)\bar{\rho}^{-1/2} = -\bar{\rho}^{1/2}(\theta'/\bar{\theta})\)</span> ( Eckart 1960),</p>
+<div class="math notranslate nohighlight">
+\[I = \frac{g^2}{N^2} \frac{\left( \rho' - \frac{p'}{c^2} \right)^2}{2\bar{\rho}},\]</div>
+<p>Thus, we can find the normalized eigenvectors <span class="math notranslate nohighlight">\(\tilde{K}_{klmn}\)</span> of L, which satisfy</p>
+<div class="math notranslate nohighlight">
+\[L\tilde{K}_{klmn} = i\nu_{klmn}\tilde{K}_{klmn} \tag{7}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\nu_{klmn}\)</span> is real, and <span class="math notranslate nohighlight">\(k, l, m\)</span> can be related to the wavenumbers <span class="math notranslate nohighlight">\(\bar{k}, \bar{l}, \bar{m}\)</span> by</p>
+<div class="math notranslate nohighlight">
+\[\bar{k} = \frac{2\pi k}{L_x}, \quad \bar{l} = \frac{2\pi l}{L_y}, \quad \bar{m} = \frac{2\pi m}{L_z}.\]</div>
+<p>The <span class="math notranslate nohighlight">\(\tilde{K}_{klmn}\)</span> form a complete space.</p>
+<p>For a given <span class="math notranslate nohighlight">\(k, l, m\)</span>, there are six <span class="math notranslate nohighlight">\(n\)</span>’s which must be considered.</p>
+<p>(1) The first gives zero frequency and corresponds to steady, horizontally non-divergent flow. This is really the degeneracy of the internal gravity waves with the wave number vector points in the vertical.</p>
+<p>(2) The second frequency corresponds to Lamb waves. This solution was first discovered by Laplace (1778-1779) in discussing thermal oscillations in the atmosphere. He effectively stated that there is a mode with equivalent depth equal to the scale height of the atmosphere, and this will satisfy the tidal equations. This mode is now usually called Lamb wave, following a more complete discussion by Lamb (1910). A feature of this mode is that the velocity is everywhere parallel to the earth’s surface, i.e., <span class="math notranslate nohighlight">\(w = 0\)</span>. The propagation speed is the speed of sound and has a value of about <span class="math notranslate nohighlight">\(300\text{ m s}^{-1}\)</span>. The eigenvectors are found to be</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\tilde{K}_{klmn} = A_{klmn} \begin{pmatrix}
+\bar{k} \\
+\bar{l} \\
+0 \\
+\nu_{klmn} \\
+0
+\end{pmatrix} e^{i(\bar{k}x + \bar{l}y)} e^{-\Gamma z}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[ . \tag{8a}\]</div>
+<p>with the dispersion relationship</p>
+<div class="math notranslate nohighlight">
+\[\nu_{klmn}^2 = c^2 (\bar{k}^2 + \bar{l}^2), \tag{8b}\]</div>
+<p>and the normalization factor</p>
+<div class="math notranslate nohighlight">
+\[A_{klmn} = \left( \frac{(\bar{k}^2 + \bar{l}^2)(1 - e^{-2\Gamma L_z})}{\Gamma L_z} \right)^{-\frac{1}{2}}, \tag{8c}\]</div>
+<p>(3) The remaining frequencies are the four roots (two acoustic waves and two buoyancy waves) of</p>
+<div class="math notranslate nohighlight">
+\[\frac{\nu_{klmn}^4}{c^2} - \nu_{klmn}^2 \left( \bar{k}^2 + \bar{l}^2 + \bar{m}^2 + \Gamma^2 + \frac{N^2}{c^2} \right) + (\bar{k}^2 + \bar{l}^2) N^2 = 0, \tag{9a}\]</div>
+<p>with the eigenvectors</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\tilde{K}_{klmn} = A_{klmn} \begin{pmatrix}
+\bar{k} (\bar{m} \cos \bar{m}z - \Gamma \sin \bar{m}z) \\
+\bar{l} (\bar{m} \cos \bar{m}z - \Gamma \sin \bar{m}z) \\
+-\frac{(\bar{m}^2 + \Gamma^2)\nu_{klmn}^2}{N^2 - \nu_{klmn}^2} i \sin \bar{m}z \\
+\nu_{klmn} (\bar{m} \cos \bar{m}z - \Gamma \sin \bar{m}z) \\
+\frac{N^2}{g} \frac{(\bar{m}^2 + \Gamma^2)}{N^2 - \nu_{klmn}^2} \nu_{klmn} \sin \bar{m}z
+\end{pmatrix} e^{i(\bar{k}x + \bar{l}y)}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[ . \tag{9b}\]</div>
+<p>Where</p>
+<div class="math notranslate nohighlight">
+\[A_{klmn} = \left( \left( \frac{\bar{m}^2 + \Gamma^2}{N^2 - \nu_{klmn}^2} \right) \left( N^2 (\bar{k}^2 + \bar{l}^2) - \frac{\nu_{klmn}^4}{c^2} \right) \right)^{-\frac{1}{2}}. \tag{9c}\]</div>
+<p>If we take the inner product of (4) with <span class="math notranslate nohighlight">\(\tilde{K}_{klmn}\)</span> to obtain</p>
+<div class="math notranslate nohighlight">
+\[\left( \frac{\partial \tilde{u}}{\partial t}, \tilde{K}_{klmn} \right) + (L\tilde{u}, \tilde{K}_{klmn}) = (\tilde{N}, \tilde{K}_{klmn}). \tag{10}\]</div>
+<p>With the skew-Hermitian property, we can write the second term of (10) as</p>
+<div class="math notranslate nohighlight">
+\[(L\tilde{u}, \tilde{K}_{klmn}) = -(\tilde{u}, L\tilde{K}_{klmn}) = i\nu_{klmn} (\tilde{u}, \tilde{K}_{klmn}). \tag{11}\]</div>
+<p>Now define the transform pairs of</p>
+<div class="math notranslate nohighlight">
+\[\hat{u}_{klmn}(t) = (\tilde{u}, \tilde{K}_{klmn}), \tag{12a}\]</div>
+<p>with inverse</p>
+<div class="math notranslate nohighlight">
+\[\tilde{u} = \sum_{klmn} \hat{u}_{klmn}(t) \tilde{K}_{klmn}(x, y, z), \tag{12b}\]</div>
+<p><span class="math notranslate nohighlight">\(\tilde{N}\)</span> and <span class="math notranslate nohighlight">\(\hat{N}_{klmn}\)</span> can be defined similarly.</p>
+<p>We can use (12) to write (10) as a set of scalar equations</p>
+<div class="math notranslate nohighlight">
+\[\frac{d\hat{u}_{klmn}(t)}{dt} + i\nu_{klmn}\hat{u}_{klmn}(t) = \hat{N}_{klmn}, \tag{13}\]</div>
+<p>which are the desired spectral equations. Equation (13) can be easily integrated as</p>
+<div class="math notranslate nohighlight">
+\[\hat{u}_{klmn}(t + \Delta t) = \hat{u}_{klmn}(t)e^{-i\nu_{klmn}(\Delta t)} + \int_{t}^{t+\Delta t} \hat{N}_{klmn} e^{i\nu_{klmn}(t' - t - \Delta t)} dt'. \tag{14}\]</div>
+<p>The computational procedures are:</p>
+<ul class="simple">
+<li><p>(1) Predict <span class="math notranslate nohighlight">\(\hat{u}_{klmn}\)</span> in spectral space.</p></li>
+<li><p>(2) Transform <span class="math notranslate nohighlight">\(\hat{u}_{klmn}\)</span> to physical space to get <span class="math notranslate nohighlight">\(\tilde{u}\)</span>.</p></li>
+<li><p>(3) Evaluate <span class="math notranslate nohighlight">\(\tilde{N}\)</span> in physical space.</p></li>
+<li><p>(4) Transform <span class="math notranslate nohighlight">\(\tilde{N}\)</span> to spectral space to get <span class="math notranslate nohighlight">\(\hat{N}_{klmn}\)</span>.</p></li>
+<li><p>(5) Go to step (1).</p></li>
+</ul>
+<p>In step (3) and (4), the transform method of Orszag (1970) can be used. If <span class="math notranslate nohighlight">\(k\)</span> is the truncated wave number, it is then possible to evaluate the <span class="math notranslate nohighlight">\(\hat{N}_{klmn}\)</span> exactly using <span class="math notranslate nohighlight">\(3k + 1\)</span> points trapezoidal quadrature, which prevents aliasing error in the calculation of the transformation of the nonlinear term. Note that the treatment of linear term in (14) is exact, which enlarge the time step of integration without the CFL constraint of the fast linear waves.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="reference">
+<h1>Reference<a class="headerlink" href="#reference" title="Link to this heading">#</a></h1>
+<ol class="arabic simple">
+<li><p>Eckart, C., 1960, ”Hydrodynamics of Ocean and Atmosphere.” Pergamon, Oxford.</p></li>
+<li><p>Gill, A. E., 1982, ”Atmosphere-Ocean Dynamics.” Academic Press.</p></li>
+</ol>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="problems-and-project-1">
+<h1>Problems and Project 1<a class="headerlink" href="#problems-and-project-1" title="Link to this heading">#</a></h1>
+<ol class="arabic simple">
+<li><p>With the definition of (3), derive the left hand side of (2) from (1) (i.e., the linear part of (2)).</p></li>
+<li><p>Show that <span class="math notranslate nohighlight">\(L\)</span> is skew-Hermitian with respect to the inner product (5).</p></li>
+<li><p>Show that the inner product (5) is a energy norm with the kinetic energy, the elastic energy, and the internal energy.</p></li>
+<li><p>Discuss the dynamics of non-divergent flow, Lamb waves, acoustic waves, and buoyancy waves.</p></li>
+<li><p>What are the frequency range for the Lamb waves, acoustic waves, and buoyancy waves. (hint: <span class="math notranslate nohighlight">\((0, \infty)\)</span>, <span class="math notranslate nohighlight">\([1.1N, \infty)\)</span> and <span class="math notranslate nohighlight">\((0, N]\)</span>.)</p></li>
+<li><p>Derive (14) from (13). Show that the integration of (14) allows a time step larger than that allowed by the CFL constraint of the linear waves.</p></li>
+<li><p>Why the use of <span class="math notranslate nohighlight">\(3k + 1\)</span> points trapezoidal quadrature prevent the aliasing in the transform method?</p></li>
+<li><p>Plot the frequency diagram with <span class="math notranslate nohighlight">\(\nu/N\)</span>, and <span class="math notranslate nohighlight">\(\bar{k}H_s\)</span> as coordinates and curves with different <span class="math notranslate nohighlight">\(\bar{m}H_s\)</span>, as the figure below (Figure 6-17, p174 in Gill’s book).</p></li>
+</ol>
+<hr class="docutils" />
+<p><em>(Note: The page also includes Figure 6.18: “Dispersion diagram for an isothermal atmosphere. Waves are possible only in the stippled regions and on the line for the Lamb wave…”)</em></p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./project\project1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Eigenfunctions and eigenvalues of the fully compressible model.</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#problems-and-project-1">Problems and Project 1</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC YE
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

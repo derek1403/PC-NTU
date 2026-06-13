@@ -194,12 +194,12 @@ The computational procedures are:
 
 In step (3) and (4), the transform method of Orszag (1970) can be used. If $k$ is the truncated wave number, it is then possible to evaluate the $\hat{N}_{klmn}$ exactly using $3k + 1$ points trapezoidal quadrature, which prevents aliasing error in the calculation of the transformation of the nonlinear term. Note that the treatment of linear term in (14) is exact, which enlarge the time step of integration without the CFL constraint of the fast linear waves.
 
-### Reference
+## Reference
 1. Eckart, C., 1960, ”Hydrodynamics of Ocean and Atmosphere.” Pergamon, Oxford.
 2. Gill, A. E., 1982, ”Atmosphere-Ocean Dynamics.” Academic Press.
 
 
-### Problems and Project 1
+## Problems and Project 1
 
 1. With the definition of (3), derive the left hand side of (2) from (1) (i.e., the linear part of (2)).
 2. Show that $L$ is skew-Hermitian with respect to the inner product (5).
