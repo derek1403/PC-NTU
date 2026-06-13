@@ -190,14 +190,23 @@
 
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../homework/homework.html">homework</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../homework/homework.html">Homework Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../homework/hw1/hw1.html">Advanced Atmospheric Dynamics Hw 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../homework/hw2/hw2.html">Advanced Atmospheric Dynamics Hw 2</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Eigenfunctions and eigenvalues of the fully compressible model.</a></li>
-
-
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Project 1: 大氣動力學方程轉換與頻譜分析</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="project1_1.html">1. 線性化微擾方程組轉換</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project1_2.html">2. 偏微分方程轉矩陣方程式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project1_3.html">3. 算符 L 的反厄米特特性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project1_4.html">4. 內積的範數正定性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project1_5.html">5. 特徵解與色散關係推導</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project1_6.html">6. 頻譜空間轉換與 CFL 條件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project1_7.html">7. 消除混疊之網格點數條件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project1_8.html">8. 色散方程式之無因次化證明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project1_AllInOne.html">Project 1: 大氣動力學方程轉換與頻譜分析 (All-in-One)</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../project2/project2.html">Advanced Atmospheric Dynamics Project 2</a></li>
 </ul>
 
@@ -300,7 +309,7 @@
       
       
       
-      <li><a href="../../_sources/project/project1/project_overview.ipynb" target="_blank"
+      <li><a href="../../_sources/project/project1/project_overview.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -310,7 +319,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -394,11 +403,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Eigenfunctions and eigenvalues of the fully compressible model.</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#problems-and-project-1">Problems and Project 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problems-and-project-1">Problems and Project 1</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -409,7 +416,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="eigenfunctions-and-eigenvalues-of-the-fully-compressible-model">
+  <section class="tex2jax_ignore mathjax_ignore" id="eigenfunctions-and-eigenvalues-of-the-fully-compressible-model">
 <h1>Eigenfunctions and eigenvalues of the fully compressible model.<a class="headerlink" href="#eigenfunctions-and-eigenvalues-of-the-fully-compressible-model" title="Link to this heading">#</a></h1>
 <p>We begin with a fully compressible nonhydrostatic model</p>
 <div class="math notranslate nohighlight">
@@ -570,16 +577,15 @@ c^2 \frac{\partial}{\partial x} &amp; c^2 \frac{\partial}{\partial y} &amp; c^2 
 <li><p>(5) Go to step (1).</p></li>
 </ul>
 <p>In step (3) and (4), the transform method of Orszag (1970) can be used. If <span class="math notranslate nohighlight">\(k\)</span> is the truncated wave number, it is then possible to evaluate the <span class="math notranslate nohighlight">\(\hat{N}_{klmn}\)</span> exactly using <span class="math notranslate nohighlight">\(3k + 1\)</span> points trapezoidal quadrature, which prevents aliasing error in the calculation of the transformation of the nonlinear term. Note that the treatment of linear term in (14) is exact, which enlarge the time step of integration without the CFL constraint of the fast linear waves.</p>
-</section>
 <section id="reference">
-<h1>Reference<a class="headerlink" href="#reference" title="Link to this heading">#</a></h1>
+<h2>Reference<a class="headerlink" href="#reference" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Eckart, C., 1960, ”Hydrodynamics of Ocean and Atmosphere.” Pergamon, Oxford.</p></li>
 <li><p>Gill, A. E., 1982, ”Atmosphere-Ocean Dynamics.” Academic Press.</p></li>
 </ol>
 </section>
 <section id="problems-and-project-1">
-<h1>Problems and Project 1<a class="headerlink" href="#problems-and-project-1" title="Link to this heading">#</a></h1>
+<h2>Problems and Project 1<a class="headerlink" href="#problems-and-project-1" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>With the definition of (3), derive the left hand side of (2) from (1) (i.e., the linear part of (2)).</p></li>
 <li><p>Show that <span class="math notranslate nohighlight">\(L\)</span> is skew-Hermitian with respect to the inner product (5).</p></li>
@@ -590,8 +596,9 @@ c^2 \frac{\partial}{\partial x} &amp; c^2 \frac{\partial}{\partial y} &amp; c^2 
 <li><p>Why the use of <span class="math notranslate nohighlight">\(3k + 1\)</span> points trapezoidal quadrature prevent the aliasing in the transform method?</p></li>
 <li><p>Plot the frequency diagram with <span class="math notranslate nohighlight">\(\nu/N\)</span>, and <span class="math notranslate nohighlight">\(\bar{k}H_s\)</span> as coordinates and curves with different <span class="math notranslate nohighlight">\(\bar{m}H_s\)</span>, as the figure below (Figure 6-17, p174 in Gill’s book).</p></li>
 </ol>
-<hr class="docutils" />
-<p><em>(Note: The page also includes Figure 6.18: “Dispersion diagram for an isothermal atmosphere. Waves are possible only in the stippled regions and on the line for the Lamb wave…”)</em></p>
+<p><img alt="" src="../../_images/Gill_Fig.6.18.png" /></p>
+<p><strong>Fig. 6.18.</strong> Dispersion diagram for an isothermal atmosphere. Waves are possible only in the stippled regions and on the line for the Lamb wave. The curves in the stippled regions give the same information as that shown in Fig. 6.17 but in a different way. Acoustic waves (modified by gravity) have frequency greater than the acoustic cutoff frequency <span class="math notranslate nohighlight">\(N_{\text{A}} \approx 1.11N\)</span>, whereas internal waves have frequency less than the buoyancy frequency <span class="math notranslate nohighlight">\(N\)</span>. <span class="math notranslate nohighlight">\(k\)</span> is the horizontal wavenumber, <span class="math notranslate nohighlight">\(m\)</span> the vertical wavenumber, and <span class="math notranslate nohighlight">\(H_{\text{s}}\)</span> the scale height. The horizontal component of the group velocity is given by the slope of the curves of constant <span class="math notranslate nohighlight">\(m\)</span>. The maximum value for internal waves is <span class="math notranslate nohighlight">\(\frac{2}{7}(10)^{1/2}c_{\text{s}} \approx 0.9c_{\text{s}}\)</span>, this value being obtained when <span class="math notranslate nohighlight">\(m = 0\)</span> and <span class="math notranslate nohighlight">\(k = 0\)</span>, i.e., for long waves.</p>
+</section>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -660,11 +667,9 @@ c^2 \frac{\partial}{\partial x} &amp; c^2 \frac{\partial}{\partial y} &amp; c^2 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Eigenfunctions and eigenvalues of the fully compressible model.</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#problems-and-project-1">Problems and Project 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problems-and-project-1">Problems and Project 1</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>

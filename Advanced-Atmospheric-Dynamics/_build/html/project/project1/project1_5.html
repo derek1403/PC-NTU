@@ -190,14 +190,23 @@
 
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../homework/homework.html">homework</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../homework/homework.html">Homework Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../homework/hw1/hw1.html">Advanced Atmospheric Dynamics Hw 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../homework/hw2/hw2.html">Advanced Atmospheric Dynamics Hw 2</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="project_overview.html">Eigenfunctions and eigenvalues of the fully compressible model.</a></li>
-
-
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="project_overview.html">Project 1: 大氣動力學方程轉換與頻譜分析</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="project1_1.html">1. 線性化微擾方程組轉換</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project1_2.html">2. 偏微分方程轉矩陣方程式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project1_3.html">3. 算符 L 的反厄米特特性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project1_4.html">4. 內積的範數正定性</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">5. 特徵解與色散關係推導</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project1_6.html">6. 頻譜空間轉換與 CFL 條件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project1_7.html">7. 消除混疊之網格點數條件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project1_8.html">8. 色散方程式之無因次化證明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project1_AllInOne.html">Project 1: 大氣動力學方程轉換與頻譜分析 (All-in-One)</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../project2/project2.html">Advanced Atmospheric Dynamics Project 2</a></li>
 </ul>
 
@@ -409,10 +418,10 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frequency-ranges">三種流場頻率範圍 (Frequency Ranges)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1. 藍姆波 (Lamb Waves)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2. 聲波 (Acoustic waves)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#buoyancy-waves">2. 浮力波 (Buoyancy waves)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2. 聲波 (Acoustic waves)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buoyancy-waves">2. 浮力波 (Buoyancy waves)</a></li>
 </ul>
             </nav>
         </div>
@@ -424,7 +433,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="mathbf-l">
+  <section class="tex2jax_ignore mathjax_ignore" id="mathbf-l">
 <h1>五、大氣矩陣微分算符 <span class="math notranslate nohighlight">\(\mathbf{L}\)</span> 的特徵解與色散關係推導<a class="headerlink" href="#mathbf-l" title="Link to this heading">#</a></h1>
 <section id="assumptions-preliminaries">
 <h2>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h2>
@@ -769,9 +778,8 @@ c^2 \nu^2 \left( \bar{m}^2 + \Gamma^2 \right) &amp;=&amp; \left( \nu^2 - N^2 \ri
 <li><p><strong>頻率範圍：</strong> <span class="math notranslate nohighlight">\(\nu \in (0, \infty)\)</span></p></li>
 </ul>
 </section>
-</section>
 <section id="id3">
-<h2>2. 聲波 (Acoustic waves)<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<h3>2. 聲波 (Acoustic waves)<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>下限（聲學截斷頻率 Acoustic Cutoff Frequency）：</strong> 聲波的頻率極小值發生在三維波數皆為零（<span class="math notranslate nohighlight">\(\bar{K} = 0, \bar{m} = 0\)</span>）的時候 。這個最小值被定義為聲學截斷頻率 <span class="math notranslate nohighlight">\(N_A\)</span>。如講義中 Fig 6.18 的說明所述，對於大氣參數，<span class="math notranslate nohighlight">\(N_A \approx 1.11N\)</span> 。</p></li>
 </ul>
@@ -799,7 +807,7 @@ c^2 \nu^2 \left( \bar{m}^2 + \Gamma^2 \right) &amp;=&amp; \left( \nu^2 - N^2 \ri
 </ul>
 </section>
 <section id="buoyancy-waves">
-<h2>2. 浮力波 (Buoyancy waves)<a class="headerlink" href="#buoyancy-waves" title="Link to this heading">#</a></h2>
+<h3>2. 浮力波 (Buoyancy waves)<a class="headerlink" href="#buoyancy-waves" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>下限：</strong> 當水平波數 <span class="math notranslate nohighlight">\(\bar{K} \to 0\)</span>（超長波）時，<span class="math notranslate nohighlight">\(C \to 0\)</span>，此時 <span class="math notranslate nohighlight">\(\nu_B^2 \to 0\)</span>。</p></li>
 </ul>
@@ -835,6 +843,7 @@ c^2 \nu^2 \left( \bar{m}^2 + \Gamma^2 \right) &amp;=&amp; \left( \nu^2 - N^2 \ri
 <ul class="simple">
 <li><p><strong>頻率範圍：</strong> <span class="math notranslate nohighlight">\(\nu_{\text{B}} \in (0, N]\)</span></p></li>
 </ul>
+</section>
 </section>
 </section>
 
@@ -917,10 +926,10 @@ c^2 \nu^2 \left( \bar{m}^2 + \Gamma^2 \right) &amp;=&amp; \left( \nu^2 - N^2 \ri
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frequency-ranges">三種流場頻率範圍 (Frequency Ranges)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1. 藍姆波 (Lamb Waves)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2. 聲波 (Acoustic waves)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#buoyancy-waves">2. 浮力波 (Buoyancy waves)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2. 聲波 (Acoustic waves)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buoyancy-waves">2. 浮力波 (Buoyancy waves)</a></li>
 </ul>
   </nav></div>
 

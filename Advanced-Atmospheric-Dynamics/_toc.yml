@@ -8,12 +8,13 @@ chapters:
     - file: lecture/week2/week2.ipynb
 
 - file: homework/homework.md
+  title: Homework Assignments
   sections:
     - file: homework/hw1/hw1.ipynb
     - file: homework/hw2/hw2.ipynb
 
 
-- file: project/project1/project_overview.ipynb
+- file: project/project1/project_overview.md
   title: "Project 1: 大氣動力學方程轉換與頻譜分析"
   sections:
     - file: project/project1/project1_1.ipynb
