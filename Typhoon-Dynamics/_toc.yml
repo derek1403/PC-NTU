@@ -14,3 +14,8 @@ chapters:
     - file: homework/hw2/hw2.ipynb
     - file: homework/hw3/hw3.ipynb
 
+- file: report/report1/report1.ipynb
+  title: "孟優班長：熱帶氣旋生成過程中動力學與熱力學的相互作用"
+
+- file: report/report2/report2.ipynb
+  title: "柏翔老大：垂直風切下熱帶氣旋的垂直對齊機制"

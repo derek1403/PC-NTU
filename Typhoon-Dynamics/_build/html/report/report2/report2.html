@@ -1,0 +1,644 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Typhoon Dynamics Report 2 &#8212; Typhoon Dynamics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'report/report2/report2';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Typhoon Dynamics Report 1" href="../report1/report1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Typhoon Dynamics - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Typhoon Dynamics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lecture/lecture.html">lecture</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/week2/week2.html">Typhoon-Dynamics - Week 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/week3/week3.html">Typhoon-Dynamics - Week 3</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../homework/homework.html">homework</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../homework/hw1/hw1.html">Typhoon Dynamics Hw 1</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../homework/hw2/hw2.html">Typhoon Dynamics Hw 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../homework/hw3/hw3.html">Typhoon Dynamics Hw 3</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../report1/report1.html">孟優班長：熱帶氣旋生成過程中動力學與熱力學的相互作用</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">柏翔老大：垂直風切下熱帶氣旋的垂直對齊機制</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Freport/report2/report2.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/report/report2/report2.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Typhoon Dynamics Report 2</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">垂直風切下熱帶氣旋的垂直對齊機制：從乾空氣動力到非對稱對流的熱力學影響</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">一、前言與研究動機</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vortex-rossby-wave-vrw">二、乾空氣動力學視角：Vortex Rossby Wave (VRW) 衰減機制</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">三、非對稱對流在垂直對齊中的角色</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">3.1 傾斜演化與強度的關係</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#precession">3.2 傾斜進動（Precession）的新發現</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pv-dh-ha">四、 PV 收支分析：DH 與 HA 的拔河比賽</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dh">4.1 非絕熱加熱（DH）的促對齊作用</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ha">4.2 水平平流（HA）的阻礙作用</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">4.3 兩者的競爭平衡</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">五、結論</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="typhoon-dynamics-report-2">
+<h1>Typhoon Dynamics Report 2<a class="headerlink" href="#typhoon-dynamics-report-2" title="Link to this heading">#</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="p">:</span><span class="n">葉品辰</span>
+<span class="n">ID</span><span class="p">:</span><span class="n">r14229017</span>
+<span class="n">date</span><span class="p">:</span> <span class="mf">2026.06.14</span>
+</pre></div>
+</div>
+<section id="id1">
+<h2>垂直風切下熱帶氣旋的垂直對齊機制：從乾空氣動力到非對稱對流的熱力學影響<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="id2">
+<h3>一、前言與研究動機<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>在強烈的垂直風切（Vertical Wind Shear, VWS）環境下，熱帶氣旋（Tropical Cyclone, TC）的渦旋結構會隨著高度發生傾斜，這會破壞其暖心結構並抑制潛熱的集中，進而阻礙氣旋的增強。然而，觀測顯示許多熱帶氣旋在強烈風切下依然能夠存活甚至持續增強，這種現象被稱為「渦旋韌性（Vortex Resiliency）」。</p>
+<p>過去的研究中，Wang &amp; Holland (1996) 發現包含水氣的模擬結果中，渦旋對齊的速度遠快於純乾空氣理論的預測。因此，了解究竟是何種物理過程彌補了這段理論差距，以及真實世界中非絕熱過程如何影響對齊機制，成為本篇探討的核心。本文將結合 Reasor &amp; Montgomery (2004) 的乾空氣理論與 Feng et al. (2025) 的最新理想化模擬實驗，系統性地梳理熱帶氣旋的垂直對齊機制。</p>
+</section>
+<section id="vortex-rossby-wave-vrw">
+<h3>二、乾空氣動力學視角：Vortex Rossby Wave (VRW) 衰減機制<a class="headerlink" href="#vortex-rossby-wave-vrw" title="Link to this heading">#</a></h3>
+<p>在純物理的乾絕熱動力學框架下，Reasor et al. (2004) 指出，傾斜的氣旋渦旋具有一種內在的韌性，能夠在不依賴非絕熱次級環流的情況下，抑制偏離直立狀態的擾動。其核心機制為「Vortex Rossby Wave (VRW) 衰減」：</p>
+<ul class="simple">
+<li><p><strong>傾斜與波的激發</strong>：渦旋的垂直傾斜在物理上可視為波數為 1（wavenumber-1）的 PV 不對稱性。這種不對稱性會激發出 VRWs，並在渦旋中沿方位角與徑向向外傳播。</p></li>
+<li><p><strong>共振衰減（Resonant Damping）</strong>：當波傳播至臨界半徑（波速等於平均流速）時，會發生共振衰減，將不對稱性的能量不可逆地轉移給平均流。</p></li>
+<li><p><strong>對齊結果</strong>：隨著能量的消散，傾斜振幅呈現指數衰減，最終促使渦旋重新對齊。在真實的熱帶氣旋參數範圍（低無因次化參數 <span class="math notranslate nohighlight">\(L/l_r\)</span>）內，渦旋主要處於「準模式衰減（Quasi-mode decay）」區域，且渦旋越強，對抗垂直風切的韌性就越高。</p></li>
+</ul>
+<p><img alt="" src="../../_images/Paul.D.Reasor%282004%29Fig.1.TC_alignment_mechanism.png" /></p>
+</section>
+<section id="id3">
+<h3>三、非對稱對流在垂直對齊中的角色<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>雖然乾空氣 VRW 理論極具啟發性，但真實的熱帶氣旋是受水氣與非絕熱過程驅動的。Feng et al. (2025) 將視角轉向「非對稱對流（Asymmetric Convection）」的作用，探討強烈的局部非絕熱加熱是促進還是阻礙對齊過程。</p>
+<section id="id4">
+<h4>3.1 傾斜演化與強度的關係<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<p>透過多組模擬實驗比較（如 S6 與 S10 實驗），所有熱帶氣旋在初期皆因風切而減弱，隨後才開始持續增強。</p>
+<ul class="simple">
+<li><p><strong>傾斜縮減為先兆</strong>：研究定義「傾斜」為 6 公里高度中心與 2 公里高度中心的水平位移差。結果顯示，傾斜距離快速縮減（小於 15 公里）是氣旋開始增強的重要前兆。</p></li>
+<li><p><strong>增強時機的獨立性</strong>：儘管各組暴露在相似的環境風切下，增強的起始時間卻可能相同或差異極大，證明「垂直風切大小」並非決定增強時機的唯一因素。</p></li>
+</ul>
+<p><img alt="" src="../../_images/Yecheng%282025%29_Fig.1.onset_of_intensification_MWS_Tilt.png" /></p>
+</section>
+<section id="precession">
+<h4>3.2 傾斜進動（Precession）的新發現<a class="headerlink" href="#precession" title="Link to this heading">#</a></h4>
+<p>傳統的乾空氣動力學認為，發展較成熟的氣旋在對齊前，其傾斜軸會先逆時針「進動」至上風切的左側（Upshear-Left, USL）象限。然而，模擬顯示了截然不同的演化路徑：</p>
+<ul class="simple">
+<li><p><strong>典型演化（如 S6）</strong>：傾斜軸在下風切左側（Downshear-Left, DSL）發生氣旋式旋轉，並在進動至 USL 象限後完成對齊。</p></li>
+<li><p><strong>非典型演化（如 S10）</strong>：氣旋的傾斜幅度在仍處於 DSL 象限時就發生了顯著的縮減。</p></li>
+</ul>
+<p><img alt="" src="../../_images/Yecheng%282025%29_Fig.2.trajectories_of_vortex_tilt.png" /></p>
+<ul class="simple">
+<li><p>這種異常現象表明，傾斜的演化並非完全由平流過程（乾動力學）控制，深層對流的空間分布起到了關鍵作用。模擬的雷達回波顯示，最強的對流始終發生在「渦旋傾斜的下傾（Downtilt）方向」，這股對流如同「拔河」一般，將渦旋拉向對齊狀態。</p></li>
+</ul>
+<p><img alt="" src="../../_images/Yecheng%282025%29_Fig.3.simulated_radar_reflectivity.png" /></p>
+</section>
+</section>
+<section id="pv-dh-ha">
+<h3>四、 PV 收支分析：DH 與 HA 的拔河比賽<a class="headerlink" href="#pv-dh-ha" title="Link to this heading">#</a></h3>
+<p>為了量化探討熱力學與動力學過程，Feng et al. (2025) 採用了 PV 收支方程式。在移動座標系下，影響氣旋中心移動速度的主要項可表示為：</p>
+<div class="math notranslate nohighlight">
+\[ C \cdot (-\nabla P_s) = \Lambda_1 \left( -V_h \cdot \nabla_h P - w \frac{\partial P}{\partial z} + \frac{\eta}{\rho} \cdot \nabla \frac{d\theta_v}{dt} + R \right) - \left( \frac{\partial P}{\partial t} \right)_{1m} \]</div>
+<p>分析結果指出，水平平流（HA, <span class="math notranslate nohighlight">\(-V_h \cdot \nabla_h P\)</span>）與非絕熱加熱（DH, <span class="math notranslate nohighlight">\(\frac{\eta}{\rho} \cdot \nabla \frac{d\theta_v}{dt}\)</span>）是主導渦旋移動的兩大關鍵項，兩者的大小與方向直接決定了傾斜的增減。</p>
+<section id="dh">
+<h4>4.1 非絕熱加熱（DH）的促對齊作用<a class="headerlink" href="#dh" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>垂直梯度的影響</strong>：DH 項由絕對渦度與加熱梯度的內積構成。由於熱帶氣旋主要受垂直相對渦度主導，因此 DH 幾乎完全由「垂直分量」決定。</p></li>
+<li><p><strong>推向對齊（Uptilt）</strong>：深層對流發生在下傾（Downtilt）側，其最大潛熱釋放位於中層。這導致低層加熱隨高度增加，高層加熱隨高度遞減。反映在 PV 趨勢上，低層的下傾側會產生正 PV 異常，而高層的「上傾（Uptilt）側」會產生正 PV 異常。綜合結果使 DH 項的速度向量指向 Uptilt 方向，發揮直接促使渦旋對齊的作用。</p></li>
+</ul>
+<p><img alt="" src="../../_images/Yecheng%282025%29_Fig.9.vertical_gradient_of_the_DH.png" /></p>
+</section>
+<section id="ha">
+<h4>4.2 水平平流（HA）的阻礙作用<a class="headerlink" href="#ha" title="Link to this heading">#</a></h4>
+<p>與 DH 相反，水平平流（HA）主要扮演使渦旋進一步傾斜的「阻礙力」。</p>
+<ul class="simple">
+<li><p><strong>高層環流偶極（Upper-Level Gyres）</strong>：不對稱對流在中高層產生了一對反向旋轉的渦旋偶極（Gyres）。這個偶極系統位於加熱區域的下游約 90 度處。</p></li>
+<li><p><strong>推向下傾（Downtilt）</strong>：在 6 至 9 公里的高度，這個由對流激發的偶極環流會產生一股穿過氣旋中心的不對稱氣流，將高層中心進一步推向下傾（Downtilt）方向。回歸分析證實，這個導致渦旋錯位的力量主要來自內核的「對流不對稱性」，而非單純的環境風切平流。</p></li>
+</ul>
+<p><img alt="" src="../../_images/Yecheng%282025%29_Fig.10.vorticity_DH_rate.png" /></p>
+</section>
+<section id="id5">
+<h4>4.3 兩者的競爭平衡<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
+<p>熱帶氣旋是否能夠對齊，取決於 DH 與 HA 之間的拔河結果：</p>
+<ul class="simple">
+<li><p><strong>增強期（對流旺盛）</strong>：當對流增強時，DH 能夠抗衡甚至略微超越 HA（DH <span class="math notranslate nohighlight">\(\approx\)</span> HA），使傾斜幅度下降，氣旋邁向對齊。</p></li>
+<li><p><strong>減弱期（對流減弱）</strong>：當對流活動減弱時，DH 不足以抵抗 HA（DH &lt; HA），高層偶極子會將渦旋繼續推開，導致傾斜幅度再次增加。
+此外，在強風切環境中，PV 不對稱結構的方位角旋轉傳播（PVTm）也必須被考慮，其與 HA 的結合效應能更準確地反映出與 DH 抗衡的總體動力作用。</p></li>
+</ul>
+<p><img alt="" src="../../_images/Yecheng%282025%29_Fig.13.Time_series_of_the_magnitudes_of_the_HA_and_DH.png" /></p>
+</section>
+</section>
+<section id="id6">
+<h3>五、結論<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<p>透過系集敏感度測試（引入微小的初始水氣擾動），可以發現雖然初始強度與環境風切相同，但氣旋的增強時機卻有著巨大的差異（從 19 小時到 54 小時不等）。這項結果總結了氣旋垂直對齊的最關鍵驅動因素：</p>
+<ol class="arabic simple">
+<li><p><strong>強度與時機脫鉤</strong>：環境垂直風切的大小決定了氣旋的最終強度上限，但「對流演化的過程（Convective Evolution）」才是決定對齊與增強時機的真正推手。</p></li>
+<li><p><strong>打破進動迷思</strong>：氣旋的垂直對齊不必然需要經歷完整的進動路徑至上風切左側（USL）；只要對流條件允許，氣旋完全可以在下風切左側（DSL）象限完成急劇的傾斜縮減。</p></li>
+<li><p><strong>核心物理機制</strong>：氣旋的命運取決於下傾深層對流引發的兩股力量競爭——「非絕熱加熱（DH）」直接將中心拉向對齊，而「水平平流（HA，由對流誘發的偶極子構成）」則試圖將中心推開。這場 DH 與 HA 的動態拔河，完美詮釋了熱帶氣旋在強烈垂直風切下的渦旋韌性本質。</p></li>
+</ol>
+<p><img alt="" src="../../_images/Yecheng%282025%29_Fig.17.Schematic_diagram_of_the_convective_asymmetry_in_a_vertically_tilted_TC_vortex.png" /></p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./report\report2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../report1/report1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Typhoon Dynamics Report 1</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">垂直風切下熱帶氣旋的垂直對齊機制：從乾空氣動力到非對稱對流的熱力學影響</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">一、前言與研究動機</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vortex-rossby-wave-vrw">二、乾空氣動力學視角：Vortex Rossby Wave (VRW) 衰減機制</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">三、非對稱對流在垂直對齊中的角色</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">3.1 傾斜演化與強度的關係</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#precession">3.2 傾斜進動（Precession）的新發現</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pv-dh-ha">四、 PV 收支分析：DH 與 HA 的拔河比賽</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dh">4.1 非絕熱加熱（DH）的促對齊作用</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ha">4.2 水平平流（HA）的阻礙作用</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">4.3 兩者的競爭平衡</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">五、結論</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC YE
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

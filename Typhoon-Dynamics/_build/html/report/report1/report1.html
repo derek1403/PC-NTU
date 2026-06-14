@@ -1,0 +1,959 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Typhoon Dynamics Report 1 &#8212; Typhoon Dynamics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'report/report1/report1';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Typhoon Dynamics Report 2" href="../report2/report2.html" />
+    <link rel="prev" title="Typhoon Dynamics Hw 3" href="../../homework/hw3/hw3.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Typhoon Dynamics - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Typhoon Dynamics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lecture/lecture.html">lecture</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/week2/week2.html">Typhoon-Dynamics - Week 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/week3/week3.html">Typhoon-Dynamics - Week 3</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../homework/homework.html">homework</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../homework/hw1/hw1.html">Typhoon Dynamics Hw 1</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../homework/hw2/hw2.html">Typhoon Dynamics Hw 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../homework/hw3/hw3.html">Typhoon Dynamics Hw 3</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">孟優班長：熱帶氣旋生成過程中動力學與熱力學的相互作用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../report2/report2.html">柏翔老大：垂直風切下熱帶氣旋的垂直對齊機制</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Freport/report1/report1.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/report/report1/report1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Typhoon Dynamics Report 1</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-note">quick note</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">論文內文精華</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">一、前言與研究動機</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">二、理論背景：動力濕對流平衡</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">三、觀測統計分析：渦度與熱力指標的關聯</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#karl-vs-gaston">四、發展與衰退個案對比（Karl vs. Gaston）</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#karl-2010">1. 成功發展的 Karl (2010)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#gaston-2004">2. 衰退消亡的 Gaston (2004)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">五、結論與延伸討論</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-vorticity-f">1. 橫軸：絕對渦度 (Absolute Vorticity) 與科氏力 (<span class="math notranslate nohighlight">\(f\)</span>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#gms-mfi">2. 縱軸：大氣熱力與對流指標 (GMS / MFI)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="typhoon-dynamics-report-1">
+<h1>Typhoon Dynamics Report 1<a class="headerlink" href="#typhoon-dynamics-report-1" title="Link to this heading">#</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="p">:</span><span class="n">葉品辰</span>
+<span class="n">ID</span><span class="p">:</span><span class="n">r14229017</span>
+<span class="n">date</span><span class="p">:</span> <span class="mf">2026.06.14</span>
+</pre></div>
+</div>
+<section id="quick-note">
+<h2>quick note<a class="headerlink" href="#quick-note" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p><strong>標題</strong>：</p>
+<p>熱帶氣旋生成之謎：中層渦旋在低層環流增強中的關鍵驅動角色</p>
+</li>
+<li><p><strong>一、前言與研究動機</strong>：</p>
+<p>探討為何僅有少數中尺度對流系統（MCS）能發展為熱帶氣旋，並聚焦於 <strong>中層渦旋（Mid-level vortex）</strong> 對低層旋生（Spin-up）的影響。</p>
+</li>
+<li><p><strong>二、理論背景：動力濕對流平衡（Balanced Dynamics &amp; MQE）</strong>：</p>
+<p>介紹位勢渦度、溫度偶極與大氣穩定度之間的熱力學與動力學關聯。</p>
+</li>
+<li><p><strong>三、觀測統計分析：渦度與熱力指標的關聯</strong>：</p>
+<p>彙整 37 個觀測個案的統計結果，證實強中層渦度如何營造有利於近地表渦度增加的熱力環境。</p>
+</li>
+<li><p><strong>四、發展與衰退個案對比（Karl vs. Gaston）</strong>：</p>
+<p>透過質量通量（Mass flux）的垂直分布特徵，解析系統成功發展與消散的核心物理機制。</p>
+</li>
+<li><p><strong>五、結論與延伸討論</strong>：</p>
+<p>總結中層渦旋的必要性，並根據 Sessions et al. (2019) 的研究提出關於穩定大氣下質量通量發展的未解之謎與課堂討論。</p>
+</li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="id1">
+<h2>論文內文精華<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="id2">
+<h3>一、前言與研究動機<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>熱帶氣旋生成（Cyclogenesis）是指初始擾動增強為熱帶風暴（Tropical Storm, TS）的過程。在颶風季中，會出現許多中尺度對流系統（MCSs）、季風槽或熱帶東風波，但僅有極少數能成功發展為熱帶氣旋。過去 McBride and Zehr (1981) 指出，發展中系統通常具備較大尺度的溫暖大氣、較小的靜穩定度以及低層較大的正渦度。</p>
+<p>關於具有暖心結構的表面增強渦旋是如何生成的，學界存在「<strong>由上而下（Top-down，依賴中層渦旋）</strong>」與「<strong>由下而上（Bottom-up，依賴初始包絡，Pouch）</strong>」兩種假說，甚至可能在不同尺度下共存。本研究旨在建立一套理論，探討「中層渦旋」如何促進低層渦旋的自旋增強（Spin up），並透過實際觀測個案，推論導致部分風暴衰退的原因。</p>
+</section>
+<section id="id3">
+<h3>二、理論背景：動力濕對流平衡<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>要理解熱帶氣旋的生成，必須結合動力學與熱力學的平衡機制：</p>
+<ol class="arabic simple">
+<li><p><strong>動力學平衡（Balanced Dynamics）</strong>：中層（3-8 km）的 PV 異常，會伴隨著溫度的偶極異常（上方溫暖、下方冷涼），這種熱力結構會改變大氣的穩定度（Instability index）。</p></li>
+<li><p><strong>水氣準平衡（Moisture Quasi-Equilibrium, MQE）</strong>：對流透過調整垂直質量通量，將大氣不穩定度與飽和分率（Saturation fraction，水氣多寡）連結起來。</p></li>
+</ol>
+<ul class="simple">
+<li><p>在不穩定且增濕的環境中，容易產生底部集中（Bottom-heavy）的淺對流。</p></li>
+<li><p>當大氣變得濕潤且相對穩定時，發展為深對流。</p></li>
+<li><p>在乾燥且較不穩定的環境中，則會出現頂部集中（Top-heavy）的對流並伴隨降水。</p></li>
+</ul>
+<p><a class="reference external" href="https://journals.ametsoc.org/view/journals/atsc/76/9/jas-d-18-0173.1.pdf"><img alt="" src="../../_images/Sessions%282019%29Fig.2.Balanced_dynamics_Moisture_quasi-equilbrium.png" /></a></p>
+<p><a class="reference external" href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2020JD033585"><img alt="" src="../../_images/Raymond_and_Fuchs-Stone%282021%29Fig.2.Illustration_of_moisture-quasiequilibrium.png" /></a></p>
+</section>
+<section id="id4">
+<h3>三、觀測統計分析：渦度與熱力指標的關聯<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>透過分析 PREDICT、GRIP 及 TCS08 等計畫中涵蓋北大西洋、加勒比海與西太平洋的 37 個擾動個案，渦度收支方程式與熱力學變數的統計結果揭示了重要趨勢：</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Case</p></th>
+<th class="head"><p>Date</p></th>
+<th class="head"><p>Ref. time (UTC)</p></th>
+<th class="head"><p>vp [m s⁻¹]</p></th>
+<th class="head"><p>SST [°C]</p></th>
+<th class="head"><p>Stage</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>PGI27−1</p></td>
+<td><p>17/08/2010</p></td>
+<td><p>12:00</p></td>
+<td><p>(−8.0, 0.0)</p></td>
+<td><p>29.8</p></td>
+<td><p>low</p></td>
+</tr>
+<tr class="row-odd"><td><p>PGI27−2</p></td>
+<td><p>18/08/2010</p></td>
+<td><p>14:30</p></td>
+<td><p>(−7.0, 0.0)</p></td>
+<td><p>29.6</p></td>
+<td><p>low</p></td>
+</tr>
+<tr class="row-even"><td><p>PGI30−1</p></td>
+<td><p>21/08/2010</p></td>
+<td><p>14:00</p></td>
+<td><p>(−8.0, 0.0)</p></td>
+<td><p>28.0</p></td>
+<td><p>not classified</p></td>
+</tr>
+<tr class="row-odd"><td><p>PGI30−2</p></td>
+<td><p>23/08/2010</p></td>
+<td><p>12:00</p></td>
+<td><p>(−7.0, 2.5)</p></td>
+<td><p>29.4</p></td>
+<td><p>not classified</p></td>
+</tr>
+<tr class="row-even"><td><p>Fiona 1</p></td>
+<td><p>30/08/2010</p></td>
+<td><p>13:00</p></td>
+<td><p>(−8.9, 0.0)</p></td>
+<td><p>28.5</p></td>
+<td><p>low</p></td>
+</tr>
+<tr class="row-odd"><td><p>Fiona 2</p></td>
+<td><p>31/08/2010</p></td>
+<td><p>13:00</p></td>
+<td><p>(−10.1, 3.7)</p></td>
+<td><p>29.3</p></td>
+<td><p>TD</p></td>
+</tr>
+<tr class="row-even"><td><p>Gaston 1</p></td>
+<td><p>02/09/2010</p></td>
+<td><p>17:00</p></td>
+<td><p>(−3.0, 1.0)</p></td>
+<td><p>28.2</p></td>
+<td><p>TD</p></td>
+</tr>
+<tr class="row-odd"><td><p>Gaston 2</p></td>
+<td><p>03/09/2010</p></td>
+<td><p>16:00</p></td>
+<td><p>(−3.1, 1.8)</p></td>
+<td><p>28.4</p></td>
+<td><p>low</p></td>
+</tr>
+<tr class="row-even"><td><p>Gaston 3</p></td>
+<td><p>05/09/2010</p></td>
+<td><p>16:00</p></td>
+<td><p>(−6.7, 0.0)</p></td>
+<td><p>28.7</p></td>
+<td><p>low</p></td>
+</tr>
+<tr class="row-odd"><td><p>Gaston 4</p></td>
+<td><p>06/09/2010</p></td>
+<td><p>14:00</p></td>
+<td><p>(−6.7, 0.0)</p></td>
+<td><p>29.1</p></td>
+<td><p>low</p></td>
+</tr>
+<tr class="row-even"><td><p>Gaston 4a</p></td>
+<td><p>06/09/2010</p></td>
+<td><p>21:30</p></td>
+<td><p>(−9.25, −0.5)</p></td>
+<td><p>29.3</p></td>
+<td><p>low</p></td>
+</tr>
+<tr class="row-odd"><td><p>Gaston 5</p></td>
+<td><p>07/09/2010</p></td>
+<td><p>14:00</p></td>
+<td><p>(−6.7, 0.0)</p></td>
+<td><p>29.4</p></td>
+<td><p>low</p></td>
+</tr>
+<tr class="row-even"><td><p>Gaston 5a</p></td>
+<td><p>07/09/2010</p></td>
+<td><p>21:30</p></td>
+<td><p>(−8.7, 1.0)</p></td>
+<td><p>29.4</p></td>
+<td><p>low</p></td>
+</tr>
+<tr class="row-odd"><td><p>Karl 1</p></td>
+<td><p>10/09/2010</p></td>
+<td><p>11:15</p></td>
+<td><p>(−5.1, 0.0)</p></td>
+<td><p>30.0</p></td>
+<td><p>not classified</p></td>
+</tr>
+<tr class="row-even"><td><p>Karl 2</p></td>
+<td><p>10/09/2010</p></td>
+<td><p>19:00</p></td>
+<td><p>(−2.0, 0.9)</p></td>
+<td><p>30.0</p></td>
+<td><p>not classified</p></td>
+</tr>
+<tr class="row-odd"><td><p>Karl 3</p></td>
+<td><p>11/09/2010</p></td>
+<td><p>17:45</p></td>
+<td><p>(−6.0, 0.0)</p></td>
+<td><p>30.2</p></td>
+<td><p>low</p></td>
+</tr>
+<tr class="row-even"><td><p>Karl 4</p></td>
+<td><p>12/09/2010</p></td>
+<td><p>13:30</p></td>
+<td><p>(−6.8, 0.0)</p></td>
+<td><p>30.0</p></td>
+<td><p>low</p></td>
+</tr>
+<tr class="row-odd"><td><p>Karl 4a</p></td>
+<td><p>12/09/2010</p></td>
+<td><p>21:20</p></td>
+<td><p>(−6.7, 1.5)</p></td>
+<td><p>30.0</p></td>
+<td><p>low</p></td>
+</tr>
+<tr class="row-even"><td><p>Karl 5</p></td>
+<td><p>13/09/2010</p></td>
+<td><p>13:45</p></td>
+<td><p>(−6.1, 2.8)</p></td>
+<td><p>30.1</p></td>
+<td><p>low</p></td>
+</tr>
+<tr class="row-odd"><td><p>Karl 5a</p></td>
+<td><p>13/09/2010</p></td>
+<td><p>22:30</p></td>
+<td><p>(−6.7, 1.5)</p></td>
+<td><p>30.1</p></td>
+<td><p>low</p></td>
+</tr>
+<tr class="row-even"><td><p>Karl 6</p></td>
+<td><p>14/09/2010</p></td>
+<td><p>17:00</p></td>
+<td><p>(−6.1, 2.8)</p></td>
+<td><p>30.0</p></td>
+<td><p>TS</p></td>
+</tr>
+<tr class="row-odd"><td><p>Matthew 1</p></td>
+<td><p>20/09/2010</p></td>
+<td><p>15:00</p></td>
+<td><p>(−5.1, −1.5)</p></td>
+<td><p>29.9</p></td>
+<td><p>low</p></td>
+</tr>
+<tr class="row-even"><td><p>Matthew 2</p></td>
+<td><p>21/09/2010</p></td>
+<td><p>14:30</p></td>
+<td><p>(−6.0, 0.0)</p></td>
+<td><p>30.1</p></td>
+<td><p>low</p></td>
+</tr>
+<tr class="row-odd"><td><p>Matthew 2a</p></td>
+<td><p>21/09/2010</p></td>
+<td><p>20:10</p></td>
+<td><p>(−6.0, 0.0)</p></td>
+<td><p>30.0</p></td>
+<td><p>low</p></td>
+</tr>
+<tr class="row-even"><td><p>Matthew 3</p></td>
+<td><p>22/09/2010</p></td>
+<td><p>16:00</p></td>
+<td><p>(−6.0, 0.0)</p></td>
+<td><p>29.8</p></td>
+<td><p>low</p></td>
+</tr>
+<tr class="row-odd"><td><p>Matthew 3a</p></td>
+<td><p>22/09/2010</p></td>
+<td><p>19:10</p></td>
+<td><p>(−6.0, 0.0)</p></td>
+<td><p>29.7</p></td>
+<td><p>low</p></td>
+</tr>
+<tr class="row-even"><td><p>Matthew 4</p></td>
+<td><p>24/09/2010</p></td>
+<td><p>16:00</p></td>
+<td><p>(−8.9, 0.0)</p></td>
+<td><p>29.7</p></td>
+<td><p>TS</p></td>
+</tr>
+<tr class="row-odd"><td><p>Nicole 1</p></td>
+<td><p>27/09/2010</p></td>
+<td><p>16:00</p></td>
+<td><p>(0.0, 0.0)</p></td>
+<td><p>29.6</p></td>
+<td><p>low</p></td>
+</tr>
+<tr class="row-even"><td><p>Nicole 2</p></td>
+<td><p>28/09/2010</p></td>
+<td><p>16:00</p></td>
+<td><p>(1.5, 4.2)</p></td>
+<td><p>29.6</p></td>
+<td><p>TS</p></td>
+</tr>
+<tr class="row-odd"><td><p>PGI48/50</p></td>
+<td><p>30/09/2010</p></td>
+<td><p>15:15</p></td>
+<td><p>(−6.2, 2.3)</p></td>
+<td><p>29.5</p></td>
+<td><p>low</p></td>
+</tr>
+<tr class="row-even"><td><p>Nuri 1</p></td>
+<td><p>15/08/2008</p></td>
+<td><p>25:50</p></td>
+<td><p>(−7.0, 0.0)</p></td>
+<td><p>29.8</p></td>
+<td><p>low</p></td>
+</tr>
+<tr class="row-odd"><td><p>Nuri 2</p></td>
+<td><p>16/08/2008</p></td>
+<td><p>23:55</p></td>
+<td><p>(−8.7, 0.0)</p></td>
+<td><p>29.9</p></td>
+<td><p>TD</p></td>
+</tr>
+<tr class="row-even"><td><p>TCS025−1</p></td>
+<td><p>27/08/2008</p></td>
+<td><p>00:00</p></td>
+<td><p>(2.4, 2.6)</p></td>
+<td><p>29.5</p></td>
+<td><p>low</p></td>
+</tr>
+<tr class="row-odd"><td><p>TCS025−2</p></td>
+<td><p>28/08/2008</p></td>
+<td><p>00:00</p></td>
+<td><p>(2.4, 2.6)</p></td>
+<td><p>29.2</p></td>
+<td><p>low</p></td>
+</tr>
+<tr class="row-even"><td><p>TCS030</p></td>
+<td><p>01/09/2008</p></td>
+<td><p>24:00</p></td>
+<td><p>(−6.3, 0.6)</p></td>
+<td><p>30.1</p></td>
+<td><p>low</p></td>
+</tr>
+<tr class="row-odd"><td><p>TCS037</p></td>
+<td><p>07/09/2008</p></td>
+<td><p>21:05</p></td>
+<td><p>(−5.7, 3.2)</p></td>
+<td><p>28.2</p></td>
+<td><p>low</p></td>
+</tr>
+<tr class="row-even"><td><p>Hagupit 2</p></td>
+<td><p>14/09/2008</p></td>
+<td><p>23:35</p></td>
+<td><p>(−2.3, 1.1)</p></td>
+<td><p>29.9</p></td>
+<td><p>low</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p><strong>5 km 相對渦度與不穩定指標呈顯著負相關（R = -0.60）</strong>。</p></li>
+<li><p>不穩定指標與飽和分率（Saturation fraction）也呈現負相關。</p></li>
+<li><p>這表明：伴隨強烈中層渦度的熱力學特徵（較低的不穩定度與較高的飽和分率），非常有利於近地表渦度的增加。大氣在動力與濕對流的交互作用下，對流時間尺度大於動力時間尺度，從而進入協同增強的狀態。</p></li>
+</ul>
+<p><a class="reference external" href="https://acp.copernicus.org/articles/14/3065/2014/acp-14-3065-2014.pdf#page=5.24"><img alt="" src="../../_images/S.Gjorgjievska_and_D.J.Raymond%282014%29Fig.1.more_stable_atmosphere_is_actually_more_conducive_to_TC_formation.png" /></a></p>
+</section>
+<section id="karl-vs-gaston">
+<h3>四、發展與衰退個案對比（Karl vs. Gaston）<a class="headerlink" href="#karl-vs-gaston" title="Link to this heading">#</a></h3>
+<p>為了驗證理論，研究對比了成功發展的颶風 Karl（2010）與未能發展的熱帶低壓 Gaston（2004）：</p>
+<section id="karl-2010">
+<h4>1. 成功發展的 Karl (2010)<a class="headerlink" href="#karl-2010" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>質量通量特徵</strong>：在系統發展階段（如 Karl 3），垂直質量通量呈現顯著的「頂部集中（Top-heavy）」特徵。</p></li>
+<li><p><strong>物理機制</strong>：中層出現強烈的質量與渦度輻合。強烈的中層渦旋發展先於低層渦旋的增強，成功帶動了低層的 Spin-up，最終發展為 3 級颶風。</p></li>
+</ul>
+<p><img alt="" src="../../_images/S.Gjorgjievska_and_D.J.Raymond%282014%29Fig.3.Karl2010.png" /></p>
+</section>
+<section id="gaston-2004">
+<h4>2. 衰退消亡的 Gaston (2004)<a class="headerlink" href="#gaston-2004" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>質量通量特徵</strong>：在 Gaston 1 階段，質量通量呈現「底部集中（Bottom-heavy）」特徵。</p></li>
+<li><p><strong>物理機制</strong>：質量與渦度的輻合僅發生在低層。中高層出現負的垂直梯度，意味著中層發生了質量與渦度的「輻散」。</p></li>
+<li><p><strong>衰退主因</strong>：較低的海面溫度（SST）和海洋熱含量產生了逆溫層，導致中層渦度輻散，進而允許周圍的乾空氣入侵（Dry air intrusion），徹底切斷了氣旋的發展動能。</p></li>
+</ul>
+<p><img alt="" src="../../_images/S.Gjorgjievska_and_D.J.Raymond%282014%29Fig.3.Gaston2004.png" /></p>
+<p><img alt="" src="../../_images/S.Gjorgjievska_and_D.J.Raymond%282014%29Fig.6.Vertical_mass_flux.png" /></p>
+<p><img alt="" src="../../_images/S.Gjorgjievska_and_D.J.Raymond%282014%29Fig.10.Vertical_profiles_moist_entropy_and_saturated_moist_entropy.png" /></p>
+</section>
+</section>
+<section id="id5">
+<h3>五、結論與延伸討論<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>研究總結指出，<strong>中層渦旋是促進低層旋生的必要條件</strong>。在發展個案中，強中層渦旋先於低層增強；而在衰退個案中，中層渦度的輻散則先於低層的減弱。</p>
+<p><strong>課堂延伸討論 ：</strong></p>
+<p>依據 Sessions et al. (2019) 的研究，在乾燥且低絕對渦度的環境中，底部集中的對流對應於極不穩定的環境；然而，在潮濕且高度旋轉的環境中，底部集中的對流卻與「較穩定」的大氣相關。</p>
+<p>留待探討的問題是：<strong>為何穩定的大氣會導致質量通量在底層發展？</strong> 未來的研究可進一步分析邊界層冷池效應、地表摩擦力（Surface friction），或是環境與颱風環流的交互作用對此異常現象的貢獻。</p>
+<p>David J. Raymond 團隊近年對熱帶對流與氣旋生成（TCG）理論的集大成總結。它完美地將「觀測計畫」、「動力學軸（絕對渦度）」與「熱力學軸（大氣穩定度與水氣）」串聯在一起。這張圖描繪了熱帶大氣在不同環境下，對流垂直質量通量型態（MFI / Bottom-heavy vs Top-heavy）與大尺度環境的關係：</p>
+<p><img alt="" src="../../_images/Sessions%282019%29Fig9.framework_for_tropical_convection_and_cyclone_formation.png" /></p>
+<section id="absolute-vorticity-f">
+<h4>1. 橫軸：絕對渦度 (Absolute Vorticity) 與科氏力 (<span class="math notranslate nohighlight">\(f\)</span>)<a class="headerlink" href="#absolute-vorticity-f" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>橫軸由左向右，代表大氣的絕對渦度越來越強，最左側通常對應赤道（<span class="math notranslate nohighlight">\(f=0\)</span>）。</p></li>
+<li><p>左半邊（藍色區間）：對應 TOGA-COARE 與 DYNAMO 觀測計畫。這些計畫在赤道或低緯度（低絕對渦度環境）進行，主要研究季風（MJO）尺度的對流與水氣平衡。</p></li>
+<li><p>右半邊（紅色區間）：對應 T-PARC/TCS08 與 PREDICT 觀測計畫。這些計畫專門追蹤中高緯度、擁有高絕對渦度的擾動，主要研究熱帶氣旋的生成 (TCG)（例如前面提到的 Karl 和 Gaston）。</p></li>
+</ul>
+</section>
+<section id="gms-mfi">
+<h4>2. 縱軸：大氣熱力與對流指標 (GMS / MFI)<a class="headerlink" href="#gms-mfi" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>GMS (Gross Moist Stability, 總濕穩定度)：由下往上遞增。</p></li>
+<li><p>MFI (Mass Flux Index, 質量通量指數)：由上往下遞增（朝向 Bottom-heavy）。</p></li>
+<li><p>左下角 (unstable / dry)：環境大氣非常不穩定且乾燥。</p></li>
+<li><p>右下角 (stable / moist)：環境大氣趨於穩定且高度濕潤。</p></li>
+</ul>
+<p>這條藍綠色的倒拋物線，代表了熱帶對流型態的演進軌跡（從底層加重到深對流頂層加重，再回歸）：</p>
+<ol class="arabic simple">
+<li><p>底層加重（Bottom-heavy，拋物線兩側底部）：</p>
+<ul class="simple">
+<li><p>左側（乾、不穩定）：對流受到乾空氣劇烈捲入而大量夭折，形成「淺對流/犧牲型對流」（例如消散前的 Gaston），將水氣釋放到中層大氣。</p></li>
+<li><p>右側（濕、穩定）：大氣高度飽和且趨於穩定，觸發強烈的低層質量與渦度輻合（例如 Karl 發展初期），這是熱帶氣旋生成（TCG）的最強催化劑。</p></li>
+</ul>
+</li>
+<li><p>頂層加重（Top-heavy，拋物線頂點）：</p>
+<ul class="simple">
+<li><p>當大氣水氣充沛、對流演進到成熟的深對流（Deep Convection）時，系統會達到頂層加重狀態。此時降水效率最高，大氣開始大量排除水分，隨後環境再度向兩側演進。</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./report\report1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../../homework/hw3/hw3.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Typhoon Dynamics Hw 3</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../report2/report2.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Typhoon Dynamics Report 2</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-note">quick note</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">論文內文精華</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">一、前言與研究動機</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">二、理論背景：動力濕對流平衡</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">三、觀測統計分析：渦度與熱力指標的關聯</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#karl-vs-gaston">四、發展與衰退個案對比（Karl vs. Gaston）</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#karl-2010">1. 成功發展的 Karl (2010)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#gaston-2004">2. 衰退消亡的 Gaston (2004)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">五、結論與延伸討論</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-vorticity-f">1. 橫軸：絕對渦度 (Absolute Vorticity) 與科氏力 (<span class="math notranslate nohighlight">\(f\)</span>)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#gms-mfi">2. 縱軸：大氣熱力與對流指標 (GMS / MFI)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC YE
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

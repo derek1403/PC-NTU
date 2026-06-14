@@ -194,6 +194,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../homework/hw3/hw3.html">Typhoon Dynamics Hw 3</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../report/report1/report1.html">孟優班長：熱帶氣旋生成過程中動力學與熱力學的相互作用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../report/report2/report2.html">柏翔老大：垂直風切下熱帶氣旋的垂直對齊機制</a></li>
 </ul>
 
     </div>
@@ -393,6 +395,14 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pvu">200PVU的動力</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#puv">200PUV 動力</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#axisymmetric-bl-flow-on-an-f-palne">Axisymmetric BL flow on an f-palne</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">在斜壓數值模式看</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#argue">根據方程式去argue</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ike">IKE</a></li>
 </ul>
 </li>
 </ul>
@@ -625,6 +635,127 @@ document.write(`
 </ul>
 </section>
 </section>
+<section id="id2">
+<h2><a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>給定一個軸對稱颱風的 r-v圖 ，再半徑100km以內v隨r上升，但是是凹向上的上升，可以畫出渦度應該會一開始(25km以內)很小然25~100km會很大，這符合飛機觀測看到的情況(Hurricant Hugo 1989、Hurricane Guillermo (1997))。
+所以可以畫出一個軸對稱的圓在25~100km有一個渦度環</p>
+<p>從圓心r=0，到渦度環k=50km，到颱風外側k=500km，經歷了渦度小渦度大渦度小，這在動力學上有教過是正壓不穩定</p>
+<p>可以觀察渦度方程式，猜會發生什麼事</p>
+<p><span class="math notranslate nohighlight">\(\frac{\partial \zeta}{\partial t} + u \frac{\partial \zeta}{\partial x} + v \frac{\partial \zeta}{\partial y} = 0\)</span></p>
+<p>從觀測來說它會局部聚集再一起，成為一群一群的可能項是wave number 10的情況，
+一群一群渦漩一段時間後在台風內部會相互吸引合併，然後從模式來看似乎到wave number 5 就會形成穩定的結構不再繼續合併(持續很長的時間，後當然還是會合併)</p>
+<p>觀測還不到位、解析度很差的時候，會想討論颱風中心有沒有其他渦漩 ，可是這個文章告訴我們渦漩會出現這五個小渦漩的結構</p>
+<p><a class="reference external" href="https://journals.ametsoc.org/view/journals/atsc/58/15/1520-0469_2001_058_2196_mpfpar_2.0.co_2.xml#i1520-0469-58-15-2196-f02">Mesovortices, Polygonal Flow Patterns, and Rapid Pressure Falls in Hurricane-Like Vortices 2001 fig9</a></p>
+<p>如果位渦還很粗，最後可能會合併再中心
+如果位渦還很細，系絲帶也會很細(?)</p>
+<ul class="simple">
+<li><p>如果另 <span class="math notranslate nohighlight">\(u= -\frac{\partial \psi}{\partial y}, \quad v= \frac{\partial \psi}{\partial x}\)</span></p></li>
+<li><p>\zeta^2 (entropy):\quad k^4 \hat{\psi}_k</p></li>
+<li><p>u^2 + v^2(動能):\quad k^2 \hat{\psi}_k</p></li>
+<li><p>k是波數，所以可以寫成 <span class="math notranslate nohighlight">\(k^2_i*K_i=k^2*K\)</span> 所以有內縮就有外放</p></li>
+</ul>
+<p>!大尺度考慮旋轉的效應足夠強、水平進來的都會水平出去(垂直的少)、不考慮摩擦力，基本上entropy、energy就會守恆，然後就會有這個等式<span class="math notranslate nohighlight">\(k^2_i*K_i=k^2*K\)</span>，當有<span class="math notranslate nohighlight">\(k_1\)</span>向內移動就勢必要有<span class="math notranslate nohighlight">\(k_n\)</span>向外移動</p>
+<ul class="simple">
+<li><p>內縮導致月轉越快動能更大了，但是動能應守恆，所以外圈的變慢</p></li>
+<li><p>這跟南極臭氧洞是一樣的故事，系絲帶會噴到很遠的地方產生很多介面然後可能飛機的儀器會觀測到O_3突然上升</p></li>
+<li><p>數值模是在解析系絲帶(Schubert et al. (1999))可能會碰到解析度不夠的問題、包含無法解析高頻率的波</p></li>
+<li><p>計算上系絲帶的index沒有反對稱可能導致某種不守恒 (諾特定裡告訴我們的)</p></li>
+</ul>
+<p>2002衛星觀測就有看到5角型的內眼牆結構
+MESOVORTICES IN HURRICANE ISABELBY JAMES P. KOSSIN AND WAYNE H. SCHUBERT 2002</p>
+<p>位渦環的位渦可以產生一些混和的作用(PV mixing)
+這個五角形在木星上、電漿學上都有觀測到這個穩定的形狀結構</p>
+<section id="id3">
+<h3>在斜壓數值模式看<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>從x-y平面看位渦環(r=20)也是混到裡面(r=0)去
+從r-z平面看，位渦環確實混進去且是底層從位渦環的位置(r=20~40km)混到中心(r=0)去，且最大量值下降有點像擴散進去</p>
+<p>這是在Ooyama時代的理解</p>
+<p>底層50km處v很大、旋轉很強、很穩定所以(Holland and Merrill(1984))[<a class="reference external" href="https://www.atmos.albany.edu/daes/atmclasses/atm527/Handouts_files/HollandMerrill_1984.pdf">https://www.atmos.albany.edu/daes/atmclasses/atm527/Handouts_files/HollandMerrill_1984.pdf</a>]才會畫出fig14那種圖，底層100km處左右會是空空的，實際上那邊是很強的位渦混和，是一個很強的內部結構，這邊產生對流東西、轉得很快很像鋼體東西都無法進去</p>
+<p>所以就做3度空間的模擬</p>
+<p>定義gamma factor (軸對稱指數)= 軸對稱平均/(軸對稱平均+非軸對稱的平均) <span class="math notranslate nohighlight">\(\gamma(r, z, t) \equiv \frac{\overline{\phi}(r, z, t)^2}{\overline{\phi}(r, z, t)^2 + \int_0^{2\pi} \phi'(r, \lambda, z, t)^2 \, d\lambda / 2\pi}\)</span> Miyamoto and Takemi 2013，非軸對稱的情況該指數會很小、若完美軸對稱則指數=1</p>
+<p>從 Kuo et al. 2019 MWR CReSS model 來看似乎所有變數(<span class="math notranslate nohighlight">\(\overline{\gamma_v}^{RZ} , \overline{\gamma_{PV}}^{RZ} , \overline{\gamma_{rain}}^{RZ} ,\overline{\gamma_q}^{RZ},\overline{\gamma_{dia}}^{RZ}\)</span>)都隨著颱風變強而變得越來越軸對稱
+這些符號分別代表不同變數在半徑-高度面 (<span class="math notranslate nohighlight">\(R\)</span>-<span class="math notranslate nohighlight">\(Z\)</span> plane) 上的平均軸對稱度：<span class="math notranslate nohighlight">\(v\)</span>: 切向風速 (Tangential velocity)<span class="math notranslate nohighlight">\(PV\)</span>: 位渦 (Potential Vorticity)<span class="math notranslate nohighlight">\(rain\)</span>: 降雨率 (Rain rate)<span class="math notranslate nohighlight">\(q\)</span>: 水氣含量 (Specific humidity)<span class="math notranslate nohighlight">\(dia\)</span>: 絕熱加熱 (Diabatic heating)</p>
+<p>而PV在變強的過程中似乎有一個週期 f(x) = ax+b , g(x)=sin(x2pi f ) ,似乎是 f+k*g(x) 的上升，k不是很大 ，從這張圖上來看一個週期大約16hr。</p>
+<p>直接看模式850hPax-y切麵的PV，一開始中間空的，慢慢PV向內混合，(沒有解釋為什麼有這個16hr的週期)</p>
+<p>如果看垂直的穩定度(逆溫層強度)，也可以從r-z圖看出來就是等溫線在颱風中心中層(500 hPa)下凹，凹到psudo height ~6km的位置(500 hPa)，所以有明顯的subsidence warming。所以可以得到結果，當底層50km處左右的位渦向內混和到底層(850hPa)中心，底層中心(850hPa,r=0km)的上方(500hPa,r=0)會有強大的下沉增溫。</p>
+<ul class="simple">
+<li><p>1991 年太平洋颶風 Jimena 的 眼牆內的探空觀測數據 (eye soundings)，就有觀察到伸到850hPa的沉降逆溫，這個很強的逆溫就是來自於PV的動力混和產生的沉降逆溫 (老師相信，但似乎沒有很具體的證明，不曉得有沒有更具體的證明)</p></li>
+<li></li>
+</ul>
+<section id="argue">
+<h4>根據方程式去argue<a class="headerlink" href="#argue" title="Link to this heading">#</a></h4>
+<p>!!內部應該說的是一個區域，大概是0~50km</p>
+<p>PV從r=50km底層混合&gt;內部底層垂直穩定&gt;內部中層有強大的垂直逆溫&gt;內部中層增溫&gt;導致底層壓力降低</p>
+<p>底層壓力變低有兩種:</p>
+<ul class="simple">
+<li><p>水平壓力梯度大 (直橢圓),垂直壓力梯度小 (強颱風)</p></li>
+<li><p>水平壓力梯度小 (橫橢圓),垂直壓力梯度大 (弱颱風)</p></li>
+</ul>
+<p>PV從r=50km底層混合&gt;會在底層50km處有非常強的u&gt;根據<span class="math notranslate nohighlight">\(\frac{\partial u}{\partial t} + u \frac{\partial u}{\partial r}\)</span> 會有非常強的非線性效應導致不連續的u (shock的出現)</p>
+<p>PV mixing near the core</p>
+<p><span class="math notranslate nohighlight">\(\frac{\partial u}{\partial t} + u \frac{\partial u}{\partial r} = 0\)</span></p>
+<p>BL PGF enhancement for u in strong TC
+<span class="math notranslate nohighlight">\(\frac{\partial v}{\partial t} \sim -\left( f + \frac{\partial(rv)}{r\partial r} \right) u\)</span></p>
+<p>Shock u structure with w &amp; ζ coupled
+<span class="math notranslate nohighlight">\(\frac{\partial ru}{r\partial r} + \frac{\partial w}{\partial z} = 0\)</span></p>
+<p>Kuo et al. 2019 MWR</p>
+<ul class="simple">
+<li><p>綠色的線是v、黑色虛線是邊界層的u</p></li>
+<li><p>r-t圖</p></li>
+<li><p>在邊界層的u產生shock的地方(25km,11/8號 00Z )，產生非常高密度的v等直線(v變化非常快)，Large ζ w coupled</p></li>
+<li><p>需要位渦的混和</p></li>
+</ul>
+<p>另一張圖，把最大渦度和最大上升速度相乘，並用紅線標註Top 2% ζw
+*</p>
+<p>Tsujino and Kuo 2020 JAS</p>
+<ul class="simple">
+<li><p>做了2km、1km、0.5km解析度</p></li>
+<li><p>2km解析度只能夠模擬出100PVU，0.5km才能解析出200PVU</p></li>
+<li><p>2km解析度上升速度在眼牆區只有2m/s，0.5km才能上升速度在眼牆區可以到20m/s</p></li>
+<li><p>現在希望可以用GPU加快加大高解析的運算</p></li>
+</ul>
+</section>
+</section>
+<section id="ike">
+<h3>IKE<a class="headerlink" href="#ike" title="Link to this heading">#</a></h3>
+<p>R34並不是一個好的變數，因為它只代表一個點，變異度可能很高、可能誤判、儀器誤差。IKE相對比較好它代表全域的颱風動能平均狀態</p>
+<p>獨立性和相關性來說Vmax-IKE也比Vmax-R34好</p>
+<p>LMI(lifetime maxima intencity)最大v出現的時間點
+LME(lifetime maxima energy)最大IKE出現時間點</p>
+<p>Ooama的模式告訴你經過LMI後颱風雖然最大風速會下降但是還在繼續擴張導致IKE一直變大(這也是MPI理論缺乏的點，它只告訴你最大的V沒有告訴你IKE的情況)</p>
+<p>在TC r=100km裡面加入多少熱量可以變成動能，加熱效率(Kuo et al. 2019 MWRTsujino san Tsuboki san )，200PVU的過程可以很高效的地把能量利用轉成動能</p>
+<ul class="simple">
+<li><p>利用Eliassen 方程式可以診斷多少能量<span class="math notranslate nohighlight">\(L \chi = \frac{g}{T_0} \frac{\partial T}{\partial r}\)</span>變成…環流? <span class="math notranslate nohighlight">\(L = \frac{\partial}{\partial r} \left( A \frac{\partial}{r \partial r} + B \frac{\partial}{\partial z} \right) + \frac{\partial}{\partial z} \left( B \frac{\partial}{r \partial r} + C \frac{\partial}{\partial z} \right)\)</span></p></li>
+<li></li>
+<li></li>
+</ul>
+<p>BF chen 2025</p>
+<ul class="simple">
+<li><p>強矮人可以變成強巨人在變成弱巨人，這個過程就是雙眼牆過程才有的V-IKE反映</p></li>
+</ul>
+<p>楊逸婷 2013
+長生命期雙眼牆的特色是</p>
+<ul class="simple">
+<li><p>活超過24hr</p></li>
+<li><p>moat很大</p></li>
+<li><p>渦度環很大</p></li>
+<li></li>
+</ul>
+<p>西北太平洋控制TC變異度最大的是聖嬰現象，當聖嬰年時TC在中太平洋形成有非常長的時間可以動</p>
+<ul class="simple">
+<li><p>聖嬰年TC出現雙眼牆的比例會比反聖嬰年的還多，有些聖嬰年有雙眼牆的沒了雙眼牆後還可能再次雙眼牆</p></li>
+<li><p>外眼牆越寬加熱效率越好(恩但為什麼?)</p></li>
+<li></li>
+</ul>
+<p><strong>解釋</strong>
+雙眼牆的特色 moat很大 導致正壓不穩定的渦度大渦度小渦度大不是很適用，所以不會非常的正壓不穩定</p>
+<p>moat大的好處是，大部分的inflow都被外眼牆擋住而上升了，些微的inflow需要重新加速，所以厚的moat可以提供加速的空間，內部的眼牆的v才會大</p>
+<ul class="simple">
+<li><p>美國跟日本預報的颱風相關係數很高，但是到雙眼牆的颱風相關係數就驟降</p></li>
+</ul>
+<p>IKE的變異度是跟雙眼牆結構有關係的，尤其常生命期雙眼牆</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -677,6 +808,14 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pvu">200PVU的動力</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#puv">200PUV 動力</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#axisymmetric-bl-flow-on-an-f-palne">Axisymmetric BL flow on an f-palne</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">在斜壓數值模式看</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#argue">根據方程式去argue</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ike">IKE</a></li>
 </ul>
 </li>
 </ul>
