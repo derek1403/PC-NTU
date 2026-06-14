@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>四、確認內積的範數正定性 &#8212; Advanced Atmospheric Dynamics</title>
+    <title>Matsuno (1966) 學習筆記 &#8212; Advanced Atmospheric Dynamics</title>
   
   
   
@@ -60,11 +60,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'project/project1/project1_4';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'project/project2/project2_2';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="五、大氣矩陣微分算符 \(\mathbf{L}\) 的特徵解與色散關係推導" href="project1_5.html" />
-    <link rel="prev" title="三、確認算子 \(\mathbf{L}\) 的反厄米特特性" href="project1_3.html" />
+    <link rel="next" title="Matsuno (1966) vs. Gill (1980)" href="project2_3.html" />
+    <link rel="prev" title="Eigenvectors and Eigenfunctions of the Linearized Sshallow Water Equations" href="project2_1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -196,23 +196,23 @@
 <li class="toctree-l2"><a class="reference internal" href="../../homework/hw3/hw3.html">Advanced Atmospheric Dynamics Hw 3</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="project_overview.html">Project 1: 大氣動力學方程轉換與頻譜分析</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="project1_1.html">1. 線性化微擾方程組轉換</a></li>
-<li class="toctree-l2"><a class="reference internal" href="project1_2.html">2. 偏微分方程轉矩陣方程式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="project1_3.html">3. 算符 L 的反厄米特特性</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">4. 內積的範數正定性</a></li>
-<li class="toctree-l2"><a class="reference internal" href="project1_5.html">5. 特徵解與色散關係推導</a></li>
-<li class="toctree-l2"><a class="reference internal" href="project1_6.html">6. 頻譜空間轉換與 CFL 條件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="project1_7.html">7. 消除混疊之網格點數條件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="project1_8.html">8. 色散方程式之無因次化證明</a></li>
-<li class="toctree-l2"><a class="reference internal" href="project1_AllInOne.html">Project 1: 大氣動力學方程轉換與頻譜分析 (All-in-One)</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../project1/project_overview.html">Project 1: 大氣動力學方程轉換與頻譜分析</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../project1/project1_1.html">1. 線性化微擾方程組轉換</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project1/project1_2.html">2. 偏微分方程轉矩陣方程式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project1/project1_3.html">3. 算符 L 的反厄米特特性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project1/project1_4.html">4. 內積的範數正定性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project1/project1_5.html">5. 特徵解與色散關係推導</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project1/project1_6.html">6. 頻譜空間轉換與 CFL 條件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project1/project1_7.html">7. 消除混疊之網格點數條件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project1/project1_8.html">8. 色散方程式之無因次化證明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project1/project1_AllInOne.html">Project 1: 大氣動力學方程轉換與頻譜分析 (All-in-One)</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../project2/project2.html">Project 2: Equatorial Wave Dispersion</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../project2/project2_1.html">赤道波動色散關係與空間特徵解推導</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../project2/project2_2.html">Hermite equation 與赤道波導機制解析</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../project2/project2_3.html">長波近似理論比較：Matsuno 與 Gill 之動力學探討</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../project2/project2_AllInOne.html">Project 2: Equatorial Wave Dispersion (All-in-One)</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="project2.html">Project 2: Equatorial Wave Dispersion</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="project2_1.html">赤道波動色散關係與空間特徵解推導</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Hermite equation 與赤道波導機制解析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project2_3.html">長波近似理論比較：Matsuno 與 Gill 之動力學探討</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project2_AllInOne.html">Project 2: Equatorial Wave Dispersion (All-in-One)</a></li>
 </ul>
 </details></li>
 </ul>
@@ -286,7 +286,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fproject/project1/project1_4.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fproject/project2/project2_2.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -316,7 +316,7 @@
       
       
       
-      <li><a href="../../_sources/project/project1/project1_4.ipynb" target="_blank"
+      <li><a href="../../_sources/project/project2/project2_2.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -400,7 +400,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>四、確認內積的範數正定性</h1>
+    <h1>Matsuno (1966) 學習筆記</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -410,8 +410,22 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">證明</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hermite">Hermite 函數與赤道波的數學物理連結</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">核心思想</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weber">1. Weber 方程式</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2. 邊界條件 → 高斯衰減包絡</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3. Hermite 微分方程式 &amp; 量子化條件</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda">為什麼 <span class="math notranslate nohighlight">\(\lambda\)</span> 不能任意取值？</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">量子化條件</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hermite-polynomial-vs-hermite-function">4. Hermite Polynomial vs. Hermite Function</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hermite-polynomial-h-n-y">Hermite Polynomial <span class="math notranslate nohighlight">\(H_n(y)\)</span>（埃爾米特多項式）</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hermite-function-psi-n-y">Hermite Function <span class="math notranslate nohighlight">\(\psi_n(y)\)</span>（埃爾米特函數）</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">5. 正交完備性的物理意義（最終結論）</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">一句話總結</a></li>
 </ul>
             </nav>
         </div>
@@ -423,131 +437,133 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1><strong>四、確認內積的範數正定性</strong><a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="matsuno-1966">
+<h1>Matsuno (1966) 學習筆記<a class="headerlink" href="#matsuno-1966" title="Link to this heading">#</a></h1>
+<section id="hermite">
+<h2>Hermite 函數與赤道波的數學物理連結<a class="headerlink" href="#hermite" title="Link to this heading">#</a></h2>
+</section>
+<section id="id1">
+<h2>核心思想<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Matsuno 發現<strong>赤道大氣動力學</strong> ≡ <strong>量子諧振子 (Harmonic Oscillator)</strong> — 數學結構完全等價</p></li>
+<li><p>科氏力隨緯度變化 → 形成天然「勢阱」→ 波動能量被困在赤道 → <strong>赤道波導 (Equatorial Waveguide)</strong></p></li>
+</ul>
+</section>
+<section id="weber">
+<h2>1. Weber 方程式<a class="headerlink" href="#weber" title="Link to this heading">#</a></h2>
 <div class="math notranslate nohighlight">
-\[(\tilde{u}, \tilde{u}) \ge 0\]</div>
-<p>在線性代數中，一個空間要定義 <strong>長度</strong> 或 <strong>距離</strong> ，就必須引入範數（Norm）。但一個合法的範數不能隨便定義，它必須滿足三個嚴格的數學條件，其中最關鍵的第一條就是「正定性」（Positive Definiteness）。 對於任何非零的向量 <span class="math notranslate nohighlight">\(\bar{u}\)</span>，它的自我內積（或範數平方）必須嚴格大於零；只有當向量本身是零向量時，其值才等於零。</p>
-<ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\((\tilde{u}, \tilde{u}) &gt; 0 \quad (\text{if } \tilde{u} \neq \mathbf{0})\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\((\tilde{u}, \tilde{u}) = 0 \quad (\text{iff } \tilde{u} = \mathbf{0})\)</span></p></li>
-</ol>
-<section id="assumptions-preliminaries">
-<h2>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h2>
+\[\frac{d^2\hat{v}}{dy^2} + \left( \lambda - y^2 \right)\hat{v} = 0\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\lambda = \omega^2 - k^2 + k/\omega\)</span>（特徵值）</p></li>
+<li><p>與<a class="reference external" href="https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/05_Quantum_Mechanics/quantum_mechanics.html#schrodingers-equation-steady-state-form"><strong>一維量子諧振子薛丁格方程式</strong></a>形式相同</p></li>
+<li><p><span class="math notranslate nohighlight">\(-y^2\)</span> 項的物理意義對照：</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>量子力學</p></th>
+<th class="head"><p>赤道波</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>位能勢阱，困住電子</p></td>
+<td><p>科氏參數 <span class="math notranslate nohighlight">\(\beta y\)</span>，困住波動能量</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="id2">
+<h2>2. 邊界條件 → 高斯衰減包絡<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>物理要求：<span class="math notranslate nohighlight">\(y \to \pm\infty\)</span> 時，<span class="math notranslate nohighlight">\(\hat{v} \to 0\)</span>（能量不向兩極發散）</p></li>
+<li><p>大 <span class="math notranslate nohighlight">\(y\)</span> 極限下方程式退化：<span class="math notranslate nohighlight">\(\hat{v}'' \approx y^2 \hat{v}\)</span>，解為 <span class="math notranslate nohighlight">\(e^{\pm y^2/2}\)</span></p></li>
+<li><p>只能取 <span class="math notranslate nohighlight">\(e^{-y^2/2}\)</span>（發散解捨棄）</p></li>
+<li><p>Matsuno 的關鍵代換：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\hat{v}(y) = V(y)\, e^{-y^2/2}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(e^{-y^2/2}\)</span> = <strong>高斯衰減包絡線</strong></p>
 <ul>
-<li><p><strong>【已知 1】 經密度加權的大氣狀態向量（Density-weighted atmospheric state vector） ：</strong></p>
-<ul class="simple">
-<li><p>(a)
-$<span class="math notranslate nohighlight">\(\begin{gather*} 
-\tilde{u} &amp;\overset{\text{def}}{=}&amp; \begin{bmatrix} \bar{\rho}^{\frac{1}{2}} u \\[1.5ex] \bar{\rho}^{\frac{1}{2}} v \\[1.5ex] \bar{\rho}^{\frac{1}{2}} w \\[1.5ex] \bar{\rho}^{\frac{-1}{2}} p' \\[1.5ex] \bar{\rho}^{\frac{-1}{2}}  \left( \rho' - \frac{p'}{c^2}  \right)\\[1.5ex] \end{bmatrix}
-\end{gather*}\)</span>$</p></li>
-<li><p>(b) 實數物理場</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[ \tilde{u} = \tilde{u}^{*}\]</div>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\~{\mathbf{u}}\)</span> : 大氣波動狀態向量 (Atmospheric wave state vector)</p></li>
-<li><p><span class="math notranslate nohighlight">\(U, V, W\)</span> : 經密度平方根加權後的 <span class="math notranslate nohighlight">\(x, y, z\)</span> 三軸方向動量型速度分量 <span class="math notranslate nohighlight">\([\text{kg}^{\frac{1}{2}}\cdot\text{m}^{-1}\cdot\text{s}^{-1}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(P\)</span> : 經密度倒數平方根加權後的縮放氣壓微擾項 <span class="math notranslate nohighlight">\([\text{kg}^{-\frac{1}{2}}\cdot\text{m}^{\frac{1}{2}}\cdot\text{s}^{-2}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\Pi \)</span> : 經密度倒數平方根加權後的非等熵度量／勢度微擾項 (Non-isentropic perturbation representative) <span class="math notranslate nohighlight">\([\text{kg}^{\frac{1}{2}}\cdot\text{m}^{-3}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(u, v, w, p', \rho'\)</span> : 原始微擾場的速度、氣壓與密度分量</p></li>
-<li><p><span class="math notranslate nohighlight">\(\bar{\rho }\)</span> : 基本背景態密度 <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}^{-3}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(c\)</span> : 本地音速 <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
-</ul>
-</li>
-<li><p><strong>【已知 2】 能量權重空間平均內積（Energy-weighted spatially averaged inner product）  ：</strong></p>
-<div class="math notranslate nohighlight">
-\[ (\tilde{f}, \tilde{g}) \overset{\text{def}}{=} \frac{1}{L_x L_y L_z} \int_{0}^{L_z} \int_{0}^{L_y} \int_{0}^{L_x} \left( f_1 g_1^* + f_2 g_2^* + f_3 g_3^* + \frac{1}{c^2} f_4 g_4^* + \frac{g^2}{N^2} f_5 g_5^* \right) dxdydz \]</div>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\((\mathbf{\tilde{f}}, \mathbf{\tilde{g}})\)</span> : 兩個波動狀態向量在全域空間上的內積值 (Spatially averaged inner product) [多元複合單位]</p></li>
-<li><p><span class="math notranslate nohighlight">\(f_{i}\)</span> : 第一個測試函數向量 <span class="math notranslate nohighlight">\(\bar{\mathbf{f}}\)</span> 的第 <span class="math notranslate nohighlight">\(i\)</span> 個純量分量</p></li>
-<li><p><span class="math notranslate nohighlight">\(g_{i}^{*}\)</span> : 第二個測試函數向量 <span class="math notranslate nohighlight">\(\bar{\mathbf{g}}\)</span> 的第 <span class="math notranslate nohighlight">\(i\)</span> 個純量分量的共軛複數 (Complex conjugate)</p></li>
-<li><p><span class="math notranslate nohighlight">\(x, y, z\)</span> : 三維直角空間座標 <span class="math notranslate nohighlight">\([\text{m}]\)</span><span class="math notranslate nohighlight">\(L_x, L_y\)</span> : 水平方向的長度與寬度 <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(L_{z}\)</span> : 垂直方向的大氣總高度 <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\frac{1}{L_{x}L_{y}L_{z}}\)</span> : 空間體積歸一化因子 (Volume normalization factor) <span class="math notranslate nohighlight">\([\text{m}^{-3}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(c^{2}\)</span> : 本地音速平方 (Speed of sound squared) <span class="math notranslate nohighlight">\([\text{m}^2\cdot\text{s}^{-2}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(g\)</span> : 地表重力加速度常數 <span class="math notranslate nohighlight">\(g \approx 9.80665 \text{ m}\cdot\text{s}^{-2}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(N^{2}\)</span> : 浮力頻率平方 / 班特-外薩拉頻率平方 (Brunt-Väisälä frequency squared) <span class="math notranslate nohighlight">\([\text{s}^{-2}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\frac{1}{c^2} f_4 g_4^*\)</span> : 經彈性音速權重調整後的彈性可壓縮位能項 (Compressible potential energy component)</p></li>
-<li><p><span class="math notranslate nohighlight">\(\frac{g^2}{N^2} f_5 g_5^*\)</span> : 經靜力穩定度權重調整後的重力浮力熱力位能項 (Gravitational potential energy component)</p></li>
-</ul>
-</li>
-<li><p><strong>【已知 3】 微擾動能 (Kinetic Energy, <span class="math notranslate nohighlight">\(E_k\)</span>)  ：</strong> 描述氣流微擾運動所蘊含的機械動能密度</p>
-<ul class="simple">
-<li><p>(a) 動能公式</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{gather*} 
-  E_k &amp;=&amp; \frac{1}{2} \bar{\rho}(u^2 + v^2 + w^2) \\
-  2 E_k&amp;=&amp; \bar{\rho}(u^2 + v^2 + w^2) 
-  \end{gather*}\end{split}\]</div>
-<ul class="simple">
-<li><p>(b) 正定性（能量恆大於或等於零）</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[E_k \ge 0\]</div>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(E_{k}\)</span> : 大氣微擾動能密度 (Perturbation kinetic energy density) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{m}^{-3}],[\text{kg}\cdot\text{m}^{-1}\cdot\text{s}^{-2}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\bar{\rho }\)</span> : 基本背景態密度 (Basic state density) <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}^{-3}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(u, v, w\)</span> : 速度場在三軸方向的微擾分量 (Perturbation velocity components) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
-</ul>
-</li>
-<li><p><strong>【已知 4】 彈性能 / 聲學位能 （Elastic Energy / Acoustic Potential Energy, <span class="math notranslate nohighlight">\(E_{e}\)</span>  ：</strong> 大氣受到聲波壓縮或膨脹時，因流體彈性所儲存的位能密度</p>
-<ul class="simple">
-<li><p>(a) 彈性能公式</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{gather*} 
-  E_e &amp;=&amp; \frac{1}{2\bar{\rho}}\frac{p'^2}{c^2} \\
-  2 E_e &amp;=&amp; \frac{1}{\bar{\rho}}\frac{p'^2}{c^2}
-  \end{gather*}\end{split}\]</div>
-<ul class="simple">
-<li><p>(b) 正定性</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[E_e \ge 0\]</div>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(E_{e}\)</span> : 大氣微擾彈性能密度 (Perturbation elastic energy density) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{m}^{-3}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(p'\)</span> : 氣壓的時空微擾項 (Pressure perturbation variable) <span class="math notranslate nohighlight">\([\text{Pa}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(c\)</span> : 本地音速 (Local speed of sound) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
-</ul>
-</li>
-<li><p><strong>【已知 5】 熱壓能 / 浮力位能 (Thermobaric / Internal Energy, <span class="math notranslate nohighlight">\(I\)</span>)  ：</strong> 大氣微塊因偏離等熵狀態或受到重力浮力效應（層結擾動）時所蘊含的熱力學內部能與浮力位能密度</p>
-<ul class="simple">
-<li><p>(a) 熱壓能公式</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{gather*} 
-  I &amp;=&amp; \frac{g^2 \left(\rho' - \frac{p'}{c^2}\right)^2}{2\bar{\rho} N^2} \\
-  2 I &amp;=&amp; \frac{g^2 \left(\rho' - \frac{p'}{c^2}\right)^2}{\bar{\rho} N^2}
-  \end{gather*}\end{split}\]</div>
-<ul class="simple">
-<li><p>(b) 正定性（當系統靜力穩定，即 <span class="math notranslate nohighlight">\(N^2 &gt; 0\)</span> 時恆成立）</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[I \ge 0\]</div>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(I\)</span> : 大氣微擾熱壓能密度 (Perturbation thermobaric energy density) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{m}^{-3}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\rho'\)</span> : 密度的時空微擾項 (Density perturbation variable) <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}^{-3}]\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(g\)</span> : 地表重力加速度常數 <span class="math notranslate nohighlight">\(g \approx 9.80665 \text{ m}\cdot\text{s}^{-2}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(N^{2}\)</span> : 浮力頻率平方 / 班特-外薩拉頻率平方 (Brunt-Väisälä frequency squared) <span class="math notranslate nohighlight">\([\text{s}^{-2}]\)</span></p></li>
+<li><p>決定赤道波能量南北遞減的空間尺度</p></li>
+<li><p>對應真實物理長度 = <strong>赤道羅斯貝變形半徑</strong></p></li>
 </ul>
 </li>
 </ul>
 </section>
-<section id="id2">
-<h2>證明<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<section id="id3">
+<h2>3. Hermite 微分方程式 &amp; 量子化條件<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>代入後 <span class="math notranslate nohighlight">\(V(y)\)</span> 滿足：</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\begin{gather*} 
-(\tilde{u}, \tilde{u}) &amp;\overset{\text{已知 2}}{=}&amp; \frac{1}{L_x L_y L_z} \int_{0}^{L_z} \int_{0}^{L_y} \int_{0}^{L_x} \left( \tilde{u}_1 \tilde{u}_1^* + \tilde{u}_2 \tilde{u}_2^* + \tilde{u}_3 \tilde{u}_3^* + \frac{1}{c^2}\tilde{u}_4 \tilde{u}_4^* + \frac{g^2}{N^2}\tilde{u}_5 \tilde{u}_5^* \right) dxdydz \\
-&amp;\overset{\text{已知 1(b)}}{=}&amp; \frac{1}{L_x L_y L_z} \int_{0}^{L_z} \int_{0}^{L_y} \int_{0}^{L_x} \left( \tilde{u}_1^2 + \tilde{u}_2^2  + \tilde{u}_3^2 + \frac{1}{c^2}\tilde{u}_4^2 + \frac{g^2}{N^2}\tilde{u}_5^2 \right) dxdydz \\
-&amp;\overset{\text{已知 1(a)}}{=}&amp; \frac{1}{L_x L_y L_z} \int_{0}^{L_z} \int_{0}^{L_y} \int_{0}^{L_x} \left( \left(\bar{\rho}^{1/2}u\right)^2 + \left(\bar{\rho}^{1/2}v\right)^2 + \left(\bar{\rho}^{1/2}w\right)^2 + \frac{1}{c^2}\left(\bar{\rho}^{-1/2}p'\right)^2 + \frac{g^2}{N^2}\left(\bar{\rho}^{-1/2}\left(\rho' - \frac{p'}{c^2}\right)\right)^2 \right) dxdydz \\
-&amp;=&amp; \frac{1}{L_x L_y L_z} \int_{0}^{L_z} \int_{0}^{L_y} \int_{0}^{L_x} \left( \bar{\rho}(u^2 + v^2 + w^2) + \frac{1}{\bar{\rho}}\frac{p'^2}{c^2} + \frac{g^2}{N^2 \bar{\rho}}\left(\rho' - \frac{p'}{c^2}\right)^2  \right) dxdydz \\
-&amp;\overset{\text{已知 3(a),已知 4(a),已知 5(a)}}{=}&amp; \frac{1}{L_x L_y L_z} \int_{0}^{L_z} \int_{0}^{L_y} \int_{0}^{L_x} \left( E_k + E_e + I  \right) dxdydz \\
-&amp;\overset{\text{已知 3(b),已知 4(b),已知 5(b)}}{\ge}&amp; \frac{1}{L_x L_y L_z} \int_{0}^{L_z} \int_{0}^{L_y} \int_{0}^{L_x} \left( 0 + 0 + 0  \right) dxdydz \\
-&amp;\ge&amp; 0 \\
-\end{gather*}\end{split}\]</div>
-<p>且 <span class="math notranslate nohighlight">\((\tilde{u}, \tilde{u}) = 0\)</span> 的唯一條件是系統完全處於靜止的背景平衡態（無任何速度、氣壓與位溫擾動），這完美滿足了線性代數中「能量範數 (Energy Norm)」的嚴格定義 。</p>
+\[V'' - 2yV' + (\lambda - 1)V = 0\]</div>
+<section id="lambda">
+<h3>為什麼 <span class="math notranslate nohighlight">\(\lambda\)</span> 不能任意取值？<a class="headerlink" href="#lambda" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>任意 <span class="math notranslate nohighlight">\(\lambda\)</span> → <span class="math notranslate nohighlight">\(V(y)\)</span> 展開為無窮級數 → 增長速度 <span class="math notranslate nohighlight">\(\sim e^{y^2}\)</span> → 抵消高斯衰減 → 物理崩潰</p></li>
+<li><p>解救條件：無窮級數必須<strong>截斷</strong>為有限次多項式</p></li>
+</ul>
+</section>
+<section id="id4">
+<h3>量子化條件<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\lambda - 1 = 2n, \quad n = 0, 1, 2, \dots\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\lambda\)</span> 只能取<strong>離散</strong>數值</p></li>
+<li><p>這正是<strong>色散關係式的數學起源</strong></p></li>
+<li><p>赤道波的頻率 <span class="math notranslate nohighlight">\(\omega\)</span> 與波數 <span class="math notranslate nohighlight">\(k\)</span> 被「量子化」，如同量子態</p></li>
+</ul>
+</section>
+</section>
+<section id="hermite-polynomial-vs-hermite-function">
+<h2>4. Hermite Polynomial vs. Hermite Function<a class="headerlink" href="#hermite-polynomial-vs-hermite-function" title="Link to this heading">#</a></h2>
+<section id="hermite-polynomial-h-n-y">
+<h3>Hermite Polynomial <span class="math notranslate nohighlight">\(H_n(y)\)</span>（埃爾米特多項式）<a class="headerlink" href="#hermite-polynomial-h-n-y" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>即 <span class="math notranslate nohighlight">\(V(y)\)</span> 的解</p></li>
+<li><p>前幾個：<span class="math notranslate nohighlight">\(H_0 = 1,\quad H_1 = 2y,\quad H_2 = 4y^2 - 2, \dots\)</span></p></li>
+<li><p><strong>物理意義：</strong></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> = 多項式最高次方 = 南北方向<strong>穿越零點（節點）的次數</strong></p></li>
+<li><p><span class="math notranslate nohighlight">\(n=0\)</span>：南北風全程同號</p></li>
+<li><p><span class="math notranslate nohighlight">\(n=1\)</span>：南北風在赤道兩側反號</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="hermite-function-psi-n-y">
+<h3>Hermite Function <span class="math notranslate nohighlight">\(\psi_n(y)\)</span>（埃爾米特函數）<a class="headerlink" href="#hermite-function-psi-n-y" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\psi_n(y) = e^{-y^2/2} H_n(y)\]</div>
+<ul class="simple">
+<li><p>多項式 × 高斯衰減 = <strong>真實的空間特徵解</strong></p></li>
+<li><p>關鍵數學性質：在 <span class="math notranslate nohighlight">\((-\infty, +\infty)\)</span> 上<strong>完備且正交</strong>：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^{\infty} \psi_m(y)\, \psi_n(y)\, dy = 0 \quad (m \neq n)\]</div>
+<ul class="simple">
+<li><p>構成赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 平面上的正交基底</p></li>
+</ul>
+</section>
+</section>
+<section id="id5">
+<h2>5. 正交完備性的物理意義（最終結論）<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>任何複雜的<strong>熱帶天氣擾動 / 對流加熱</strong>，都可以被完美<strong>投影分解</strong>成無限多個獨立赤道波的線性疊加：</p>
+<ul>
+<li><p>羅斯貝波 (Rossby Wave)</p></li>
+<li><p>重力波 (Gravity Wave)</p></li>
+<li><p>克耳文波 (Kelvin Wave)</p></li>
+</ul>
+</li>
+<li><p>各模態互相獨立、不干擾</p></li>
+<li><p>奠定<strong>現代熱帶氣象學</strong>的理論基礎</p></li>
+</ul>
+</section>
+<section id="id6">
+<h2>一句話總結<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>赤道科氏力的 <span class="math notranslate nohighlight">\(\beta y\)</span> 結構 → 數學上等同量子勢阱 → 邊界條件強迫波動「量子化」→ 色散關係離散化 → Hermite 函數成為熱帶大氣的自然正交基底。</p>
+</div></blockquote>
 </section>
 </section>
 
@@ -564,7 +580,7 @@ $<span class="math notranslate nohighlight">\(\begin{gather*}
         },
         kernelOptions: {
             name: "python3",
-            path: "./project\project1"
+            path: "./project\project2"
         },
         predefinedOutput: true
     }
@@ -582,20 +598,20 @@ $<span class="math notranslate nohighlight">\(\begin{gather*}
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="project1_3.html"
+       href="project2_1.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><strong>三、確認算子 <span class="math notranslate nohighlight">\(\mathbf{L}\)</span> 的反厄米特特性</strong></p>
+        <p class="prev-next-title">Eigenvectors and Eigenfunctions of the Linearized Sshallow Water Equations</p>
       </div>
     </a>
     <a class="right-next"
-       href="project1_5.html"
+       href="project2_3.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">五、大氣矩陣微分算符 <span class="math notranslate nohighlight">\(\mathbf{L}\)</span> 的特徵解與色散關係推導</p>
+        <p class="prev-next-title">Matsuno (1966) vs. Gill (1980)</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -615,8 +631,22 @@ $<span class="math notranslate nohighlight">\(\begin{gather*}
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">證明</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hermite">Hermite 函數與赤道波的數學物理連結</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">核心思想</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weber">1. Weber 方程式</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2. 邊界條件 → 高斯衰減包絡</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3. Hermite 微分方程式 &amp; 量子化條件</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda">為什麼 <span class="math notranslate nohighlight">\(\lambda\)</span> 不能任意取值？</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">量子化條件</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hermite-polynomial-vs-hermite-function">4. Hermite Polynomial vs. Hermite Function</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hermite-polynomial-h-n-y">Hermite Polynomial <span class="math notranslate nohighlight">\(H_n(y)\)</span>（埃爾米特多項式）</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hermite-function-psi-n-y">Hermite Function <span class="math notranslate nohighlight">\(\psi_n(y)\)</span>（埃爾米特函數）</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">5. 正交完備性的物理意義（最終結論）</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">一句話總結</a></li>
 </ul>
   </nav></div>
 

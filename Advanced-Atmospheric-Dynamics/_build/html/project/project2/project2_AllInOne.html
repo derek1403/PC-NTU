@@ -1,0 +1,1539 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Advanced Atmospheric Dynamics Project 2 &#8212; Advanced Atmospheric Dynamics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=4cca277b" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'project/project2/project2_AllInOne';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Matsuno (1966) vs. Gill (1980)" href="project2_3.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Advanced Atmospheric Dynamics - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Advanced Atmospheric Dynamics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lecture/lecture.html">lecture</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/week1/week1.html">Advanced Atmospheric Dynamics - Week 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/week2/week2.html">Advanced Atmospheric Dynamics - Week 2</a></li>
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../homework/homework.html">Homework Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../homework/hw1/hw1.html">Advanced Atmospheric Dynamics Hw 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../homework/hw2/hw2.html">Advanced Atmospheric Dynamics Hw 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../homework/hw3/hw3.html">Advanced Atmospheric Dynamics Hw 3</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../project1/project_overview.html">Project 1: 大氣動力學方程轉換與頻譜分析</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../project1/project1_1.html">1. 線性化微擾方程組轉換</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project1/project1_2.html">2. 偏微分方程轉矩陣方程式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project1/project1_3.html">3. 算符 L 的反厄米特特性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project1/project1_4.html">4. 內積的範數正定性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project1/project1_5.html">5. 特徵解與色散關係推導</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project1/project1_6.html">6. 頻譜空間轉換與 CFL 條件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project1/project1_7.html">7. 消除混疊之網格點數條件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project1/project1_8.html">8. 色散方程式之無因次化證明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project1/project1_AllInOne.html">Project 1: 大氣動力學方程轉換與頻譜分析 (All-in-One)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="project2.html">Project 2: Equatorial Wave Dispersion</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="project2_1.html">赤道波動色散關係與空間特徵解推導</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project2_2.html">Hermite equation 與赤道波導機制解析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project2_3.html">長波近似理論比較：Matsuno 與 Gill 之動力學探討</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Project 2: Equatorial Wave Dispersion (All-in-One)</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fproject/project2/project2_AllInOne.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/project/project2/project2_AllInOne.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Advanced Atmospheric Dynamics Project 2</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quastion">Quastion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvectors-and-eigenfunctions-of-the-linearized-sshallow-water-equations">Eigenvectors and Eigenfunctions of the Linearized Sshallow Water Equations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>證明目標：</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#i-kx-omega-t">如果使用 <span class="math notranslate nohighlight">\(i(kx+\omega t)\)</span> 應該會推導出這種形式</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries"><strong>假設與已知 (Assumptions &amp; Preliminaries)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proof"><strong>證明 (Proof)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>1. 色散方程式之證明</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>2. 空間特徵解之證明</strong></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">討論</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">1. 坐標軸的物理意義</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">2. 每一條線的意義</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">同一條線上不同的點</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#x">同一個 X 座標不同點</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#y">同一個 Y 座標不同點</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">3.空白的區域（禁帶）</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#n-0-t-0">帶入 <span class="math notranslate nohighlight">\(n=0, t=0\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matsuno-1966">Matsuno (1966) 筆記</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hermite">Hermite 函數與赤道波的數學物理連結</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">核心思想</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#weber">1. Weber 方程式</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">2. 邊界條件 → 高斯衰減包絡</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">3. Hermite 微分方程式 &amp; 量子化條件</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda">為什麼 <span class="math notranslate nohighlight">\(\lambda\)</span> 不能任意取值？</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">量子化條件</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hermite-polynomial-vs-hermite-function">4. Hermite Polynomial vs. Hermite Function</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hermite-polynomial-h-n-y">Hermite Polynomial <span class="math notranslate nohighlight">\(H_n(y)\)</span>（埃爾米特多項式）</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hermite-function-psi-n-y">Hermite Function <span class="math notranslate nohighlight">\(\psi_n(y)\)</span>（埃爾米特函數）</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">5. 正交完備性的物理意義（最終結論）</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">一句話總結</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matsuno-1966-vs-gill-1980">Matsuno (1966) vs. Gill (1980)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">長波近似的核心差異</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispersion">0. 色散 (Dispersion) 快速複習</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">1. 兩者目標根本不同</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">2. 數學近似的差異</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">完整色散關係（出發點相同）</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#matsuno-omega-2">Matsuno：只砍 <span class="math notranslate nohighlight">\(\omega^2\)</span>（低頻近似）</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#gill-omega-2-k-2">Gill：同時砍 <span class="math notranslate nohighlight">\(\omega^2\)</span> 與 <span class="math notranslate nohighlight">\(k^2\)</span>（嚴格長波近似）</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#k-2">3. 核心概念：<span class="math notranslate nohighlight">\(k^2\)</span> 項的命運</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">4. 總結比較表</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">一句話總結</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code">code</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="advanced-atmospheric-dynamics-project-2">
+<h1>Advanced Atmospheric Dynamics Project 2<a class="headerlink" href="#advanced-atmospheric-dynamics-project-2" title="Link to this heading">#</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="p">:</span><span class="n">葉品辰</span>
+<span class="n">ID</span><span class="p">:</span><span class="n">r14229017</span>
+<span class="n">date</span><span class="p">:</span> <span class="mf">2026.06.14</span>
+</pre></div>
+</div>
+<section id="quastion">
+<h2>Quastion<a class="headerlink" href="#quastion" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Derive the eigenvectors and eigenfunctions of the linearized shallow water equations on the equatorial <span class="math notranslate nohighlight">\(\beta\)</span> plane as in the Matsuno’s paper and reproduce the dispersion diagram of each wave (as figure below).</p></li>
+</ol>
+<p><img alt="" src="../../_images/Matsuno%281966%29Fig.3a_Dispersion_relation_diagram_of_equatorial_waves.png" /></p>
+<p><em>Fig. 3a: “Frequencies as functions of wave number. Thin solid line: eastward propagating inertio-gravity waves. Thin dashed line: westward propagating inertio-gravity waves. Thick solid line: Rossby (quasi-geostrophic) waves. Thick dashed line: The Kelvin wave like wave.”</em></p>
+<ol class="arabic simple" start="2">
+<li><p>Also, reproduce the plots of the eigenvectors as in the Matsuno’s paper (with convergence and divergence added). For example, the following figures are pressure and velocity distributions of eigensolutions for inertio-gravity wave.</p></li>
+</ol>
+<p><img alt="" src="../../_images/Matsuno%281966%29Fig.6_velocity_n0_wave.png" /></p>
+<p><em>Fig. 6: “Pressure and velocity distributions of eigensolutions for n=0 and k=0.5. a: Eastward moving inertio-gravity wave. b: Westward moving inertio-gravity wave.”</em></p>
+<ol class="arabic simple" start="3">
+<li><p>Study the Hermite function and Hermite equation notes to understand the Matsuno’s work.</p></li>
+<li><p>Compare the ”long wave approximation” of Gill with that of Matsuno.</p></li>
+</ol>
+</section>
+<section id="eigenvectors-and-eigenfunctions-of-the-linearized-sshallow-water-equations">
+<h2>Eigenvectors and Eigenfunctions of the Linearized Sshallow Water Equations<a class="headerlink" href="#eigenvectors-and-eigenfunctions-of-the-linearized-sshallow-water-equations" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h3><strong>證明目標：</strong><a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\omega^2 - k^2 - \frac{k}{\omega} - 1 &amp;=&amp; 2n \quad&amp;, (n=0,1,2,\dots)  \\
+\hat{v}(y) &amp;=&amp; i(\omega^2 - k^2) A e^{-\frac{y^2}{2}} H_n(y) \quad &amp;, \omega^2 - k^2 - \frac{k}{\omega} - 1 &amp;=&amp; 2n \quad (n=0,1,2,\dots) \\
+\hat{\phi}(y)&amp;=&amp; -A e^{-\frac{y^2}{2}} \Bigl(  \frac{1}{2}(k +\omega) H_{n+1} + (k -\omega)n H_{n-1}     \Bigr)  \quad &amp;, \omega^2 - k^2 - \frac{k}{\omega} - 1 &amp;=&amp; 2n \quad (n=0,1,2,\dots) \\
+\hat{u}(y)&amp;=&amp; -A e^{-\frac{y^2}{2}} \Bigl( \frac{1}{2}(\omega+k) H_{n+1} + n(\omega-k) H_{n-1} \Bigr) \quad &amp;, \omega^2 - k^2 - \frac{k}{\omega} - 1 &amp;=&amp; 2n \quad (n=0,1,2,\dots) \\
+\end{gather*}\end{split}\]</div>
+<section id="i-kx-omega-t">
+<h4>如果使用 <span class="math notranslate nohighlight">\(i(kx+\omega t)\)</span> 應該會推導出這種形式<a class="headerlink" href="#i-kx-omega-t" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\omega^2 - k^2 + \frac{k}{\omega} - 1 &amp;=&amp; 2n \quad (n=0,1,2,\dots) \\[2ex]
+\hat{v}(y) &amp;=&amp; i(\omega^2 - k^2) A e^{-\frac{y^2}{2}} H_n(y) \\[2ex]
+\hat{\phi}(y) &amp;=&amp; A e^{-\frac{y^2}{2}} \left\{ \frac{1}{2}(\omega - k)H_{n+1}(y) - n(\omega + k)H_{n-1}(y) \right\} \\[2ex]
+\hat{u}(y) &amp;=&amp; A e^{-\frac{y^2}{2}} \left\{ \frac{1}{2}(\omega - k)H_{n+1}(y) + n(\omega + k)H_{n-1}(y) \right\}
+\end{gather*}\end{split}\]</div>
+</section>
+</section>
+<section id="assumptions-preliminaries">
+<h3><strong>假設與已知 (Assumptions &amp; Preliminaries)</strong><a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><strong>【已知 1】赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 平面無因次化線性淺水方程式 (Non-dimensionalized linearized shallow water equations on equatorial beta-plane)：</strong></p>
+<ul class="simple">
+<li><p>(a) <span class="math notranslate nohighlight">\(x\)</span> 方向動量方程式：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\frac{\partial u}{\partial t} - yv + \frac{\partial \phi}{\partial x} = 0\]</div>
+<ul class="simple">
+<li><p>(b) <span class="math notranslate nohighlight">\(y\)</span> 方向動量方程式：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\frac{\partial v}{\partial t} + yu + \frac{\partial \phi}{\partial y} = 0\]</div>
+<ul class="simple">
+<li><p>(c) 質量守恆連續方程式：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\frac{\partial \phi}{\partial t} + \frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} = 0\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(u\)</span> : 經無因次化之緯向速度微擾場 (Non-dimensionalized zonal velocity perturbation field) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(v\)</span> : 經無因次化之經向速度微擾場 (Non-dimensionalized meridional velocity perturbation field) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 經無因次化之重力位高度微擾場 (Non-dimensionalized geopotential height perturbation field) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(x\)</span> : 無因次化之緯向空間座標 (Non-dimensionalized zonal spatial coordinate) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(y\)</span> : 無因次化之經向空間座標 (Non-dimensionalized meridional spatial coordinate) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(t\)</span> : 無因次化之時間座標 (Non-dimensionalized temporal coordinate) [無單位]</p></li>
+</ul>
+</li>
+<li><p><strong>【假設 1】波譜空間轉換形式 (Spectral space transformation form)：</strong> 因為在 <span class="math notranslate nohighlight">\(y\)</span> 方向無週期性，所以無法做轉換，因此以 <span class="math notranslate nohighlight">\(x\)</span> 方向的轉換為主。 <strong>注意：前人常用 <span class="math notranslate nohighlight">\(i(kx+\omega t)\)</span> 來推導但是現在我這邊用的是 <span class="math notranslate nohighlight">\(i(kx-\omega t)\)</span> 更符合現代波動向右傳定義為正號</strong></p>
+<ul class="simple">
+<li><p>(a) 東西向速度場的平面波譜展開：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[u(x,y,t) = \sum_{k=-\infty}^{\infty} \sum_{\omega=-\infty}^{\infty} \hat{u}_{k,\omega}(y)e^{i(kx-\omega t)}\]</div>
+<ul class="simple">
+<li><p>(b) 南北向速度場的平面波譜展開：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[v(x,y,t) = \sum_{k=-\infty}^{\infty} \sum_{\omega=-\infty}^{\infty} \hat{v}_{k,\omega}(y)e^{i(kx-\omega t)}\]</div>
+<ul class="simple">
+<li><p>(c) 位勢高度微擾場的平面波譜展開：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\phi(x,y,t) = \sum_{k=-\infty}^{\infty} \sum_{\omega=-\infty}^{\infty} \hat{\phi}_{k,\omega}(y)e^{i(kx-\omega t)}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(u(x,y,t)\)</span> : 物理空間中經無因次化之緯向（東西向）速度微擾場 (Non-dimensionalized zonal velocity perturbation field) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(v(x,y,t)\)</span> : 物理空間中經無因次化之經向（南北向）速度微擾場 (Non-dimensionalized meridional velocity perturbation field) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi(x,y,t)\)</span> : 物理空間中經無因次化之重力位高度微擾場 (Non-dimensionalized geopotential height perturbation field) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(k\)</span> : 經無因次化之緯向水平波數 (Non-dimensionalized zonal wavenumber) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\omega \)</span> : 經無因次化之波動特徵角頻率 (Non-dimensionalized angular frequency) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(i\)</span> : 虛數單位 (Imaginary unit, <span class="math notranslate nohighlight">\(i = \sqrt{-1}\)</span>) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(e^{i(kx-\omega t)}\)</span> : 現代標準之向右傳播平面波結構無因次基底函數 (Non-dimensionalized harmonic wave basis function) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{u}_{k,\omega}(y)\)</span> : 頻譜波數空間中，與波數 <span class="math notranslate nohighlight">\(k\)</span> 及頻率 <span class="math notranslate nohighlight">\(\omega \)</span> 對應的緯向速度傅立葉振幅結構函數，僅為 <span class="math notranslate nohighlight">\(y\)</span> 的函數 (Non-dimensionalized Fourier wave amplitude coefficient of zonal velocity) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{v}_{k,\omega}(y)\)</span> : 頻譜波數空間中，與波數 <span class="math notranslate nohighlight">\(k\)</span> 及頻率 <span class="math notranslate nohighlight">\(\omega \)</span> 對應的經向速度傅立葉振幅結構函數，僅為 <span class="math notranslate nohighlight">\(y\)</span> 的函數 (Non-dimensionalized Fourier wave amplitude coefficient of meridional velocity) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\phi}_{k,\omega}(y)\)</span> : 頻譜波數空間中，與波數 <span class="math notranslate nohighlight">\(k\)</span> 及頻率 <span class="math notranslate nohighlight">\(\omega \)</span> 對應的重力位高度微擾傅立葉振幅結構函數，僅為 <span class="math notranslate nohighlight">\(y\)</span> 的函數 (Non-dimensionalized Fourier wave amplitude coefficient of geopotential) [無單位]</p></li>
+</ul>
+</li>
+<li><p><strong>【已知 2】正交性 (Orthogonality)：</strong> <strong>複數指數基底函數在週期域上具有完美的正交性質</strong>。對任意整數波數 <span class="math notranslate nohighlight">\(k, k'\)</span> 與角頻率 <span class="math notranslate nohighlight">\(\omega, \omega'\)</span>，其在空間域與時間域的歸一化積分滿足克羅內克函數（Kronecker delta）關係，這是將物理方程投影至頻譜空間的數理基礎。</p>
+<ul class="simple">
+<li><p>(a) 空間基底函數的正交積分：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\frac{1}{L}\int _{0}^{L}e^{i(k'-k)x}\,dx=\delta_{k'k}\]</div>
+<ul class="simple">
+<li><p>(b) 時間基底函數的正交積分：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\frac{1}{T}\int _{0}^{T}e^{-i(\omega'-\omega )t}\,dt=\delta_{\omega'\omega }\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(L\)</span> : 系統在東西向（<span class="math notranslate nohighlight">\(x\)</span> 軸方向）經無因次化之空間特徵週期長度 (Non-dimensionalized spatial domain period) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{1}{L}\)</span> : 經無因次化之空間域歸一化因子 (Non-dimensionalized spatial normalization factor) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(k\)</span> : 展開式中基底函數經無因次化之緯向水平波數 (Non-dimensionalized zonal wavenumber index) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(k'\)</span> : 投影測試項中經無因次化之緯向水平波數 (Non-dimensionalized test zonal wavenumber index) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(e^{i(k'-k)x}\)</span> : 兩無因次空間基底相乘後的淨空間諧振位相函數 (Non-dimensionalized net spatial harmonic phase function) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\delta_{k'k}\)</span> : 空間克羅內克函數 (Spatial Kronecker delta)，當 <span class="math notranslate nohighlight">\(k'=k\)</span> 時其值為 1，當 <span class="math notranslate nohighlight">\(k' \neq k\)</span> 時其值為 0 [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(T\)</span> : 系統在時間軸上經無因次化之特徵觀測週期長度 (Non-dimensionalized temporal domain period) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{1}{T}\)</span> : 經無因次化之時間域歸一化因子 (Non-dimensionalized temporal normalization factor) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\omega \)</span> : 展開式中基底函數經無因次化之波動特徵角頻率 (Non-dimensionalized angular frequency index) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\omega'\)</span> : 投影測試項中經無因次化之波動特徵角頻率 (Non-dimensionalized test angular frequency index) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(e^{-i(\omega'-\omega )t}\)</span> : 兩無因次時間基底相乘後的淨時間諧振位相函數 (Non-dimensionalized net temporal harmonic phase function) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\delta_{\omega'\omega }\)</span> : 時間克羅內克函數 (Temporal Kronecker delta)，當 <span class="math notranslate nohighlight">\(\omega'=\omega\)</span> 時其值為 1，當 <span class="math notranslate nohighlight">\(\omega' \neq \omega\)</span> 時其值為 0 [無單位]</p></li>
+</ul>
+</li>
+<li><p><strong>【推導 1】時空偏微分算符之譜空間映射：</strong></p>
+<ul class="simple">
+<li><p>(a) 空間偏微時代換：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \frac{\partial}{\partial x}\left[ \Psi(x,y,t) \right]  &amp;\overset{\text{假設 1}}{=}&amp; \frac{\partial}{\partial x}\left[ \sum_{k=-\infty}^{\infty} \sum_{\omega=-\infty}^{\infty} \hat{\Psi}_{k,\omega}(y)e^{i(kx-\omega t)} \right]    \\
+  \frac{\partial}{\partial x}\left[ \Psi(x,y,t) \right]  &amp;=&amp; \sum_{k=-\infty}^{\infty} \sum_{\omega=-\infty}^{\infty}  \hat{\Psi}_{k,\omega}(y) \frac{\partial}{\partial x} \left[  e^{i(kx-\omega t)} \right]    \\
+  \frac{\partial}{\partial x}\left[ \Psi(x,y,t) \right]  &amp;=&amp; \sum_{k=-\infty}^{\infty} \sum_{\omega=-\infty}^{\infty}  \hat{\Psi}_{k,\omega}(y) \left( ik \cdot  e^{i(kx-\omega t)} \right)    \\
+  \frac{\partial}{\partial x}\left[ \Psi(x,y,t) \right]  &amp;=&amp; ik \cdot \sum_{k=-\infty}^{\infty} \sum_{\omega=-\infty}^{\infty}  \hat{\Psi}_{k,\omega}(y) e^{i(kx-\omega t)}    \\
+  \frac{\partial}{\partial x}\left[ \Psi(x,y,t) \right]  &amp;\overset{\text{假設 1}}{=}&amp; ik \cdot \Psi(x,y,t)    \\
+  \frac{\partial}{\partial x} &amp;\Leftrightarrow&amp; ik \\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(b) 時間偏微時代換：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \frac{\partial}{\partial t}\left[ \Psi(x,y,t) \right]  &amp;\overset{\text{假設 1}}{=}&amp; \frac{\partial}{\partial t}\left[ \sum_{k=-\infty}^{\infty} \sum_{\omega=-\infty}^{\infty} \hat{\Psi}_{k,\omega}(y)e^{i(kx-\omega t)} \right]    \\
+  \frac{\partial}{\partial t}\left[ \Psi(x,y,t) \right]  &amp;=&amp; \sum_{k=-\infty}^{\infty} \sum_{\omega=-\infty}^{\infty}  \hat{\Psi}_{k,\omega}(y) \frac{\partial}{\partial t} \left[  e^{i(kx-\omega t)} \right]    \\
+  \frac{\partial}{\partial t}\left[ \Psi(x,y,t) \right]  &amp;=&amp; \sum_{k=-\infty}^{\infty} \sum_{\omega=-\infty}^{\infty}  \hat{\Psi}_{k,\omega}(y) \left( -i\omega \cdot  e^{i(kx-\omega t)} \right)    \\
+  \frac{\partial}{\partial t}\left[ \Psi(x,y,t) \right]  &amp;=&amp; -i\omega \cdot \sum_{k=-\infty}^{\infty} \sum_{\omega=-\infty}^{\infty}  \hat{\Psi}_{k,\omega}(y) e^{i(kx-\omega t)}    \\
+  \frac{\partial}{\partial t}\left[ \Psi(x,y,t) \right]  &amp;\overset{\text{假設 1}}{=}&amp; -i\omega \cdot \Psi(x,y,t)    \\
+  \frac{\partial}{\partial t} &amp;\Leftrightarrow&amp; -i\omega \\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\Psi(x,y,t)\)</span> : 物理空間中經無因次化之大氣任意連續微擾場函數 (Non-dimensionalized arbitrary continuous perturbation field) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\Psi}_{k,\omega}(y)\)</span> : 譜空間中經無因次化且與波數 <span class="math notranslate nohighlight">\(k\)</span> 及頻率 <span class="math notranslate nohighlight">\(\omega \)</span> 對應的傅立葉特徵結構振幅函數，僅為 <span class="math notranslate nohighlight">\(y\)</span> 的函數 (Non-dimensionalized Fourier wave amplitude function) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(k\)</span> : 經無因次化之緯向水平波數 (Non-dimensionalized zonal wavenumber) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\omega \)</span> : 經無因次化之波動特徵角頻率 (Non-dimensionalized angular frequency) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(e^{i(kx-\omega t)}\)</span> : 現代向右傳播平面波結構之無因次基底函數 (Non-dimensionalized harmonic wave basis function) [無單位]</p></li>
+</ul>
+</li>
+<li><p><strong>【已知 3】埃爾米特微分方程式與遞迴關係 (Hermite differential equation and recurrence relations)：</strong></p>
+<ul class="simple">
+<li><p>(a) 標準常微分方程式：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\frac{d^2 H_n(y)}{dy^2} - 2y \frac{d H_n(y)}{dy} + 2n H_n(y) = 0\]</div>
+<ul class="simple">
+<li><p>(b) 一階微分遞迴關係：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\frac{d H_n(y)}{dy} = 2n H_{n-1}(y)\]</div>
+<ul class="simple">
+<li><p>(c) 空間變數遞迴關係：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[2y H_n(y) = H_{n+1}(y) + 2n H_{n-1}(y)\]</div>
+<ul class="simple">
+<li><p>(d) 參考表：</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>階數 (<span class="math notranslate nohighlight">\(n\)</span>)</p></th>
+<th class="head"><p>埃爾米特多項式 <span class="math notranslate nohighlight">\(H_n(y)\)</span></p></th>
+<th class="head"><p>奇偶性</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
+<td><p>偶函數</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p><span class="math notranslate nohighlight">\(2y\)</span></p></td>
+<td><p>奇函數</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p><span class="math notranslate nohighlight">\(4y^2 - 2\)</span></p></td>
+<td><p>偶函數</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p><span class="math notranslate nohighlight">\(8y^3 - 12y\)</span></p></td>
+<td><p>奇函數</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p><span class="math notranslate nohighlight">\(16y^4 - 48y^2 + 12\)</span></p></td>
+<td><p>偶函數</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p><span class="math notranslate nohighlight">\(32y^5 - 160y^3 + 120y\)</span></p></td>
+<td><p>奇函數</p></td>
+</tr>
+<tr class="row-even"><td><p>6</p></td>
+<td><p><span class="math notranslate nohighlight">\(64y^6 - 480y^4 + 720y^2 - 120\)</span></p></td>
+<td><p>偶函數</p></td>
+</tr>
+<tr class="row-odd"><td><p>7</p></td>
+<td><p><span class="math notranslate nohighlight">\(128y^7 - 1344y^5 + 3360y^3 - 1680y\)</span></p></td>
+<td><p>奇函數</p></td>
+</tr>
+<tr class="row-even"><td><p>8</p></td>
+<td><p><span class="math notranslate nohighlight">\(256y^8 - 3584y^6 + 13440y^4 - 13440y^2 + 1680\)</span></p></td>
+<td><p>偶函數</p></td>
+</tr>
+<tr class="row-odd"><td><p>9</p></td>
+<td><p><span class="math notranslate nohighlight">\(512y^9 - 9216y^7 + 48384y^5 - 80640y^3 + 30240y\)</span></p></td>
+<td><p>奇函數</p></td>
+</tr>
+<tr class="row-even"><td><p>10</p></td>
+<td><p><span class="math notranslate nohighlight">\(1024y^{10} - 23040y^8 + 161280y^6 - 403200y^4 + 302400y^2 - 30240\)</span></p></td>
+<td><p>偶函數</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(H_n(y)\)</span> : 關於無因次座標 <span class="math notranslate nohighlight">\(y\)</span> 的第 <span class="math notranslate nohighlight">\(n\)</span> 階埃爾米特多項式 (Hermite polynomial of order n) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 南北向特徵模態之非負整數指數 (Meridional mode non-negative integer index) [無單位]</p></li>
+</ul>
+</li>
+<li><p><strong>【定義 1】經向速度特徵解高斯包絡代換 (Gaussian envelope substitution for meridional velocity eigenfunction)：</strong> 為了滿足南北兩極遠離赤道時，微擾振幅必須趨近於零的無窮遠物理邊界條件（即當 <span class="math notranslate nohighlight">\(y \to \pm\infty\)</span> 時，波動能量不可發散），推導時會引入一個高斯衰減包絡函數</p>
+<div class="math notranslate nohighlight">
+\[\hat{v}_{k,\omega}(y) \overset{\text{def}}{=} e^{-\frac{y^2}{2}} V(y)\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat{v}_{k,\omega}(y)\)</span> : 經向速度波譜振幅函數 [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(k\)</span> : 經無因次化之緯向水平波數 (Non-dimensionalized zonal wavenumber index) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\omega \)</span> : 經無因次化之波動特徵角頻率 (Non-dimensionalized angular frequency index) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(e^{-\frac{y^2}{2}}\)</span> : 高斯衰減包絡函數 [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(V(y)\)</span> : 剝離高斯衰減項後，代表特定赤道波動特徵解的無因次經向結構變數函數 (Dimensionless meridional structure variable function) [無單位]，後續推導將證明其正比於埃爾米特多項式 <span class="math notranslate nohighlight">\(H_n(y)\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 2】結構變數特徵解常數設定 (Constant setup for structure variable eigenfunction)：</strong> 對於任何 <span class="math notranslate nohighlight">\(\frac{d^2V}{dy^2} - 2y \frac{dV}{dy} + \lambda V \overset{\text{已知 3(a)}}{=} 0\)</span> 為滿足 <span class="math notranslate nohighlight">\(V(y)\)</span> 必須收斂為多項式 (<strong>擾動在遠離赤道處消散的物理邊界條件</strong>，當 <span class="math notranslate nohighlight">\(y \to \pm\infty\)</span> 時 <span class="math notranslate nohighlight">\(\hat{v} \to 0\)</span> )</p>
+<div class="math notranslate nohighlight">
+\[V(y) \overset{\text{let}}{=} i(\omega^2 - k^2) A H_n(y)  \quad , \lambda \overset{\text{已知 3(a)}}{=} 2n \quad (n=0,1,2,\dots) \]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(V(y)\)</span> : 剝離高斯衰減項後，代表特定赤道波動特徵解的無因次經向結構變數函數 (Dimensionless meridional structure variable function) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(k\)</span> : 經無因次化之緯向水平波數 (Non-dimensionalized zonal wavenumber index) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\omega \)</span> : 經無因次化之波動特徵角頻率 (Non-dimensionalized angular frequency index) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(A\)</span> : 經無因次化之赤道波動任意實數常數振幅 (Arbitrary dimensionless real constant amplitude) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(H_n(y)\)</span> : 關於無因次座標 <span class="math notranslate nohighlight">\(y\)</span> 的第 <span class="math notranslate nohighlight">\(n\)</span> 階埃爾米特多項式 (Hermite polynomial of order n) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda \)</span> : 埃爾米特微分方程式中的固有特徵根常數參數 (Eigenvalue parameter of Hermite equation) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 埃爾米特多項式的非負整數階數／模態數 (Non-negative integer order / mode number) [無單位]，範圍為 <span class="math notranslate nohighlight">\(0, 1, 2, \dots\)</span>，決定赤道波在南北方向的波腹與節點數</p></li>
+</ul>
+</li>
+<li><p><strong>【推導 2】波譜空間常微分方程組 (ODEs in spectral space)：</strong></p>
+<ul class="simple">
+<li><p>(a) <span class="math notranslate nohighlight">\(x\)</span> 方向：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \frac{\partial u}{\partial t} - yv + \frac{\partial \phi}{\partial x} &amp;\overset{\text{已知 1(a)}}{=}&amp;   0 \\
+  \frac{\partial }{\partial t}\left[ \sum_{k'=-\infty}^{\infty} \sum_{\omega'=-\infty}^{\infty} \hat{u}_{k',\omega'}(y)e^{i(k'x-\omega' t)} \right] - y\left( \sum_{k'=-\infty}^{\infty} \sum_{\omega'=-\infty}^{\infty} \hat{v}_{k',\omega'}(y)e^{i(k'x-\omega' t)} \right) + \frac{\partial }{\partial x}\left[ \sum_{k'=-\infty}^{\infty} \sum_{\omega'=-\infty}^{\infty} \hat{\phi}_{k',\omega'}(y)e^{i(k'x-\omega' t)} \right] &amp;\overset{\text{假設 1(a)(b)(c)}}{=}&amp;   0 \\
+  \left( \sum_{k'=-\infty}^{\infty} \sum_{\omega'=-\infty}^{\infty} -i\omega' \hat{u}_{k',\omega'}(y)e^{i(k'x-\omega' t)} \right) - y\left( \sum_{k'=-\infty}^{\infty} \sum_{\omega'=-\infty}^{\infty} \hat{v}_{k',\omega'}(y)e^{i(k'x-\omega' t)} \right) + \left( \sum_{k'=-\infty}^{\infty} \sum_{\omega'=-\infty}^{\infty} ik' \hat{\phi}_{k',\omega'}(y)e^{i(k'x-\omega' t)} \right) &amp;\overset{\text{推導 1(a)(b)}}{=}&amp;   0 \\
+  \sum_{k'=-\infty}^{\infty} \sum_{\omega'=-\infty}^{\infty} \left(  \left[ -i\omega'\hat{u}_{k',\omega'}(y) - y\hat{v}_{k',\omega'}(y) + ik'\hat{\phi}_{k',\omega'}(y) \right] e^{i(k'x-\omega't)} \right)&amp;=&amp; 0 \\
+  \frac{1}{LT}\int_0^T \int_0^L \sum_{k'=-\infty}^{\infty} \sum_{\omega'=-\infty}^{\infty} \left(\left[ -i\omega'\hat{u}_{k',\omega'}(y) - y\hat{v}_{k',\omega'}(y) + ik'\hat{\phi}_{k',\omega'}(y) \right] e^{i(k'x-\omega't)} \right) e^{-i(kx-\omega t)}  \, dx dt &amp;=&amp; 0 \\
+  \sum_{k'=-\infty}^{\infty} \sum_{\omega'=-\infty}^{\infty} \left(\left[ -i\omega'\hat{u}_{k',\omega'}(y) - y\hat{v}_{k',\omega'}(y) + ik'\hat{\phi}_{k',\omega'}(y) \right] \frac{1}{LT}\int_0^T \int_0^L e^{i(k'-k)x} e^{-i(\omega'-\omega)t} \, dx dt \right)&amp;=&amp; 0 \\
+  \sum_{k'=-\infty}^{\infty} \sum_{\omega'=-\infty}^{\infty} \left(\left[ -i\omega'\hat{u}_{k',\omega'}(y) - y\hat{v}_{k',\omega'}(y) + ik'\hat{\phi}_{k',\omega'}(y) \right] \cdot \delta_{k'k} \cdot \delta_{\omega'\omega} \right) &amp;\overset{\text{已知 2(a)(b)}}{=}&amp; 0 \\
+  -i\omega\hat{u}_{k,\omega}(y) - y\hat{v}_{k,\omega}(y) + ik\hat{\phi}_{k,\omega}(y) = 0  \\
+  -i\omega\hat{u} - y\hat{v} + ik\hat{\phi} &amp;=&amp; 0 \\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(b) <span class="math notranslate nohighlight">\(y\)</span> 方向：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}     
+  \frac{\partial v}{\partial t} + yu + \frac{\partial \phi}{\partial y} &amp;\overset{\text{已知 1(b)}}{=}&amp;   0 \\     
+  \frac{\partial }{\partial t}\left[ \sum_{k'=-\infty}^{\infty} \sum_{\omega'=-\infty}^{\infty} \hat{v}_{k',\omega'}(y)e^{i(k'x-\omega' t)} \right] + y\left( \sum_{k'=-\infty}^{\infty} \sum_{\omega'=-\infty}^{\infty} \hat{u}_{k',\omega'}(y)e^{i(k'x-\omega' t)} \right) + \frac{\partial }{\partial y}\left[ \sum_{k'=-\infty}^{\infty} \sum_{\omega'=-\infty}^{\infty} \hat{\phi}_{k',\omega'}(y)e^{i(k'x-\omega' t)} \right] &amp;\overset{\text{假設 1(a)(b)(c)}}{=}&amp;   0 \\  
+  \left( \sum_{k'=-\infty}^{\infty} \sum_{\omega'=-\infty}^{\infty} -i\omega' \hat{v}_{k',\omega'}(y)e^{i(k'x-\omega' t)} \right) + y\left( \sum_{k'=-\infty}^{\infty} \sum_{\omega'=-\infty}^{\infty} \hat{u}_{k',\omega'}(y)e^{i(k'x-\omega' t)} \right) + \left( \sum_{k'=-\infty}^{\infty} \sum_{\omega'=-\infty}^{\infty} \frac{d\hat{\phi}_{k',\omega'}(y)}{dy} e^{i(k'x-\omega' t)} \right) &amp;\overset{\text{推導 1(b)}}{=}&amp;   0 \\  
+  \sum_{k'=-\infty}^{\infty} \sum_{\omega'=-\infty}^{\infty} \left(  \left[ -i\omega'\hat{v}_{k',\omega'}(y) + y\hat{u}_{k',\omega'}(y) + \frac{d\hat{\phi}_{k',\omega'}(y)}{dy} \right] e^{i(k'x-\omega't)} \right)&amp;=&amp; 0 \\  
+  \frac{1}{LT}\int_0^T \int_0^L \sum_{k'=-\infty}^{\infty} \sum_{\omega'=-\infty}^{\infty} \left(\left[ -i\omega'\hat{v}_{k',\omega'}(y) + y\hat{u}_{k',\omega'}(y) + \frac{d\hat{\phi}_{k',\omega'}(y)}{dy} \right] e^{i(k'x-\omega't)} \right) e^{-i(kx-\omega t)}  \, dx dt &amp;=&amp; 0 \\  
+  \sum_{k'=-\infty}^{\infty} \sum_{\omega'=-\infty}^{\infty} \left(\left[ -i\omega'\hat{v}_{k',\omega'}(y) + y\hat{u}_{k',\omega'}(y) + \frac{d\hat{\phi}_{k',\omega'}(y)}{dy} \right] \frac{1}{LT}\int_0^T \int_0^L e^{i(k'-k)x} e^{-i(\omega'-\omega)t} \, dx dt \right)&amp;=&amp; 0 \\  
+  \sum_{k'=-\infty}^{\infty} \sum_{\omega'=-\infty}^{\infty} \left(\left[ -i\omega'\hat{v}_{k',\omega'}(y) + y\hat{u}_{k',\omega'}(y) + \frac{d\hat{\phi}_{k',\omega'}(y)}{dy} \right] \cdot \delta_{k'k} \cdot \delta_{\omega'\omega} \right) &amp;\overset{\text{已知 2(a)(b)}}{=}&amp; 0 \\  
+  -i\omega\hat{v}_{k,\omega}(y) + y\hat{u}_{k,\omega}(y) + \frac{d\hat{\phi}_{k,\omega}(y)}{dy} &amp;=&amp; 0  \\  
+  -i\omega\hat{v} + y\hat{u} + \frac{d\hat{\phi}}{dy} &amp;=&amp; 0 \\     
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(c) 連續方程式：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}     
+  \frac{\partial \phi}{\partial t} + \frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} &amp;\overset{\text{已知 1(c)}}{=}&amp;   0 \\     
+  \frac{\partial }{\partial t}\left[ \sum_{k'=-\infty}^{\infty} \sum_{\omega'=-\infty}^{\infty} \hat{\phi}_{k',\omega'}(y)e^{i(k'x-\omega' t)} \right] + \frac{\partial }{\partial x}\left[ \sum_{k'=-\infty}^{\infty} \sum_{\omega'=-\infty}^{\infty} \hat{u}_{k',\omega'}(y)e^{i(k'x-\omega' t)} \right] + \frac{\partial }{\partial y}\left[ \sum_{k'=-\infty}^{\infty} \sum_{\omega'=-\infty}^{\infty} \hat{v}_{k',\omega'}(y)e^{i(k'x-\omega' t)} \right] &amp;\overset{\text{假設 1(a)(b)(c)}}{=}&amp;   0 \\  
+  \left( \sum_{k'=-\infty}^{\infty} \sum_{\omega'=-\infty}^{\infty} -i\omega' \hat{\phi}_{k',\omega'}(y)e^{i(k'x-\omega' t)} \right) + \left( \sum_{k'=-\infty}^{\infty} \sum_{\omega'=-\infty}^{\infty} ik' \hat{u}_{k',\omega'}(y)e^{i(k'x-\omega' t)} \right) + \left( \sum_{k'=-\infty}^{\infty} \sum_{\omega'=-\infty}^{\infty} \frac{d\hat{v}_{k',\omega'}(y)}{dy} e^{i(k'x-\omega' t)} \right) &amp;\overset{\text{推導 1(a)(b)}}{=}&amp;   0 \\  
+  \sum_{k'=-\infty}^{\infty} \sum_{\omega'=-\infty}^{\infty} \left(  \left[ -i\omega'\hat{\phi}_{k',\omega'}(y) + ik'\hat{u}_{k',\omega'}(y) + \frac{d\hat{v}_{k',\omega'}(y)}{dy} \right] e^{i(k'x-\omega't)} \right)&amp;=&amp; 0 \\  
+  \frac{1}{LT}\int_0^T \int_0^L \sum_{k'=-\infty}^{\infty} \sum_{\omega'=-\infty}^{\infty} \left(\left[ -i\omega'\hat{\phi}_{k',\omega'}(y) + ik'\hat{u}_{k',\omega'}(y) + \frac{d\hat{v}_{k',\omega'}(y)}{dy} \right] e^{i(k'x-\omega't)} \right) e^{-i(kx-\omega t)}  \, dx dt &amp;=&amp; 0 \\  
+  \sum_{k'=-\infty}^{\infty} \sum_{\omega'=-\infty}^{\infty} \left(\left[ -i\omega'\hat{\phi}_{k',\omega'}(y) + ik'\hat{u}_{k',\omega'}(y) + \frac{d\hat{v}_{k',\omega'}(y)}{dy} \right] \frac{1}{LT}\int_0^T \int_0^L e^{i(k'-k)x} e^{-i(\omega'-\omega)t} \, dx dt \right)&amp;=&amp; 0 \\  
+  \sum_{k'=-\infty}^{\infty} \sum_{\omega'=-\infty}^{\infty} \left(\left[ -i\omega'\hat{\phi}_{k',\omega'}(y) + ik'\hat{u}_{k',\omega'}(y) + \frac{d\hat{v}_{k',\omega'}(y)}{dy} \right] \cdot \delta_{k'k} \cdot \delta_{\omega'\omega} \right) &amp;\overset{\text{已知 2(a)(b)}}{=}&amp; 0 \\  
+  -i\omega\hat{\phi}_{k,\omega}(y) + ik\hat{u}_{k,\omega}(y) + \frac{d\hat{v}_{k,\omega}(y)}{dy} &amp;=&amp; 0  \\  
+  -i\omega\hat{\phi} + ik\hat{u} + \frac{d\hat{v}}{dy} &amp;=&amp; 0 \\     
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(u\)</span> : 物理空間中經無因次化之緯向（東西向）速度微擾場 [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(v\)</span> : 物理空間中經無因次化之經向（南北向）速度微擾場 [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi \)</span> : 物理空間中經無因次化之重力位高度微擾場 [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(k'\)</span> : 頻譜展開式中緯向水平波數的求和指標變數 [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\omega'\)</span> : 頻譜展開式中波動特徵角頻率的求和指標變數 [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(k\)</span> : 目標投影鎖定之無因次緯向水平波數 [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\omega \)</span> : 目標投影鎖定之無因次波動特徵角頻率 [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\delta_{k'k}\)</span> : 空間克羅內克函數，當 <span class="math notranslate nohighlight">\(k'=k\)</span> 時為 1，否則為 0 [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\delta_{\omega'\omega }\)</span> : 時間克羅內克函數，當 <span class="math notranslate nohighlight">\(\omega'=\omega\)</span> 時為 1，否則為 0 [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(L\)</span> : 經無因次化之東西向空間特徵週期長度 [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(T\)</span> : 經無因次化之時間軸特徵觀測週期長度 [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{u}_{k,\omega}(y)\)</span> : 篩選出特定波數 <span class="math notranslate nohighlight">\(k\)</span> 與頻率 <span class="math notranslate nohighlight">\(\omega \)</span> 之無因次緯向速度傅立葉振幅結構函數 [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{v}_{k,\omega}(y)\)</span> : 篩選出特定波數 <span class="math notranslate nohighlight">\(k\)</span> 與頻率 <span class="math notranslate nohighlight">\(\omega \)</span> 之無因次經向速度傅立葉振幅結構函數 [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\phi}_{k,\omega}(y)\)</span> : 篩選出特定波數 <span class="math notranslate nohighlight">\(k\)</span> 與頻率 <span class="math notranslate nohighlight">\(\omega \)</span> 之無因次重力位高度傅立葉振幅結構函數 [無單位]</p></li>
+</ul>
+</li>
+<li><p><strong>【推導 3】重力位高度與緯向速度之分離表示 (Separation representation of geopotential height and zonal velocity)：</strong></p>
+<ul class="simple">
+<li><p>(a) 重力位高度：由【推導 2(a)】帶入【推導 2(c)】消去 <span class="math notranslate nohighlight">\(\hat{u}\)</span>。</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*} 
+  &amp;\left\{\begin{matrix}
+  -i\omega\hat{u} - y\hat{v} + ik\hat{\phi} &amp;\overset{\text{推導 2(a)}}{=}&amp; 0\\
+  -i\omega\hat{\phi} + ik\hat{u} + \frac{d\hat{v}}{dy} &amp;\overset{\text{推導 2(c)}}{=}&amp;  0
+  \end{matrix}\right. \\ 
+  \Rightarrow &amp;\left\{\begin{matrix}
+  k\omega \hat{u}-k^{2}\hat{\phi } &amp;=&amp; iky\hat{v} \\
+  k\omega \hat{u}-\omega^{2}\hat{\phi } &amp;=&amp; i\omega \frac{d\hat{v}}{dy}
+  \end{matrix}\right. 
+  \end{gather*}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}  
+  \left( k\omega \hat{u}-k^{2}\hat{\phi } \right) - \left( k\omega \hat{u}-\omega^{2}\hat{\phi } \right) &amp;=&amp; iky\hat{v}-i\omega \frac{d\hat{v}}{dy} \\
+  \left(-k^{2} + \omega^{2} \right) \hat{\phi }&amp;=&amp; iky\hat{v}-i\omega \frac{d\hat{v}}{dy} \\
+  \hat{\phi} &amp;=&amp; \frac{i}{\omega^2 - k^2}\left(ky\hat{v} - \omega\frac{d\hat{v}}{dy}\right) \\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(b) 緯向速度：由【推導 2(a)】帶入【推導 2(c)】消去 <span class="math notranslate nohighlight">\(\hat{\phi}\)</span>。</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}    
+  &amp;\left\{\begin{matrix}   
+  -i\omega\hat{u} - y\hat{v} + ik\hat{\phi} &amp;\overset{\text{推導 2(a)}}{=}&amp; 0\\   
+  -i\omega\hat{\phi} + ik\hat{u} + \frac{d\hat{v}}{dy} &amp;\overset{\text{推導 2(c)}}{=}&amp;  0   \end{matrix}\right. \\    
+  \Rightarrow &amp;\left\{\begin{matrix}   
+  \omega^{2}\hat{u} - k\omega\hat{\phi} &amp;=&amp; i\omega y\hat{v} \\   
+  k^{2}\hat{u} - k\omega\hat{\phi}  &amp;=&amp; ik\frac{d\hat{v}}{dy}   
+  \end{matrix}\right.    
+  \end{gather*}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}     
+  \left( \omega^{2}\hat{u} - k\omega\hat{\phi} \right) - \left( k^{2}\hat{u} - k\omega\hat{\phi}  \right) &amp;=&amp; i\omega y\hat{v}-ik\frac{d\hat{v}}{dy}    \\   
+  \left( \omega^{2} - k^{2} \right)\hat{u} &amp;=&amp; i\omega y\hat{v}-ik\frac{d\hat{v}}{dy}    \\   
+  \hat{u} &amp;=&amp; \frac{i}{\omega^2 - k^2}\left(\omega y\hat{v} - k\frac{d\hat{v}}{dy}\right) \\   
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat{u}\)</span> : 經無因次化與譜空間轉換後之緯向（東西向）速度傅立葉振幅結構函數 [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{v}\)</span> : 經無因次化與譜空間轉換後之經向（南北向）速度傅立葉振幅結構函數 [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\phi }\)</span> : 經無因次化與譜空間轉換後之重力位高度傅立葉振幅結構函數 [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\omega \)</span> : 經無因次化之波動特徵角頻率 [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(k\)</span> : 經無因次化之緯向水平波數 [無單位]</p></li>
+</ul>
+</li>
+<li><p><strong>【推導 4】經向速度波譜振幅二階常微分方程式 (Second-order ODE for meridional velocity spectral amplitude)：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}  
+  -i\omega\hat{v} + y\hat{u} + \frac{d\hat{\phi}}{dy} &amp;\overset{\text{推導 2(b)}}{=}&amp; 0 \\ 
+  -i\omega\hat{v} + y\frac{i}{\omega^2 - k^2}\left(\omega y\hat{v} - k\frac{d\hat{v}}{dy}\right) + \frac{d}{dy}\left[ \frac{i}{\omega^2 - k^2}\left(ky\hat{v} - \omega\frac{d\hat{v}}{dy}\right) \right] &amp;\overset{\text{推導 3(a)(b)}}{=}&amp; 0 \\ 
+  -i\omega\hat{v} + y\frac{i}{\omega^2 - k^2}\left(\omega y\hat{v} - k\frac{d\hat{v}}{dy}\right) + \frac{i}{\omega^2 - k^2} \left(k \hat{v} + ky\frac{d \hat{v} }{dy} - \omega\frac{d^2\hat{v}}{dy^2} \right) &amp;=&amp; 0 \\ 
+  -i\omega\hat{v} + \frac{i}{\omega^2 - k^2}\left(\omega y^2 \hat{v} + k \hat{v}  - \omega\frac{d^2\hat{v}}{dy^2} \right) &amp;=&amp; 0 \\ 
+  \omega(\omega^2 - k^2)\hat{v} - \omega y^2 \hat{v} - k \hat{v} + \omega\frac{d^2\hat{v}}{dy^2}  &amp;=&amp; 0 \\ 
+  (\omega^2 - k^2)\hat{v} -  y^2 \hat{v} - \frac{k}{\omega} \hat{v}  + \frac{d^2\hat{v}}{dy^2}  &amp;=&amp; 0 \\ 
+  (\omega^2 - k^2 - \frac{k}{\omega} -  y^2 ) \hat{v} + \frac{d^2\hat{v}}{dy^2}  &amp;=&amp; 0 \\ 
+  \frac{d^2\hat{v}}{dy^2} + \left(\omega^2 - k^2 - \frac{k}{\omega} - y^2\right)\hat{v} &amp;=&amp; 0
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat{v}\)</span> : 經無因次化與譜空間轉換後之經向（南北向）速度傅立葉振幅結構函數 [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{u}\)</span> : 經無因次化與譜空間轉換後之緯向（東西向）速度傅立葉振幅結構函數 [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\phi }\)</span> : 經無因次化與譜空間轉換後之重力位高度傅立葉振幅結構函數 [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\omega \)</span> : 經無因次化之波動特徵角頻率 [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(k\)</span> : 經無因次化之緯向水平波數 [無單位]</p></li>
+</ul>
+</li>
+<li><p><strong>【推導 5】經向速度高斯包絡之垂直/經向微分展開（Differential expansion of meridional velocity with Gaussian envelope）：</strong></p>
+<ul class="simple">
+<li><p>(a) 經向速度振幅的一階常微分展開：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \frac{d\hat{v}}{dy} &amp;\overset{\text{定義 1}}{=}&amp; \frac{d}{dy}\left[e^{-\frac{y^2}{2}} V\right] \\
+  &amp;=&amp; - y e^{-\frac{y^2}{2}} V  + e^{-\frac{y^2}{2}} \frac{dV}{dy}  \\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(b) 經向速度振幅的二階常微分展開：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \frac{d^2\hat{v}}{dy^2} &amp;=&amp; \frac{d}{dy}\left[ \frac{d\hat{v}}{dy} \right] \\
+  &amp;\overset{\text{推導 5(a)}}{=}&amp;  \frac{d}{dy}\left[ - y e^{-\frac{y^2}{2}} V  + e^{-\frac{y^2}{2}} \frac{dV}{dy} \right] \\
+  &amp;=&amp; - \left( e^{-\frac{y^2}{2}} V + y \frac{-2y}{2} e^{-\frac{y^2}{2}} V + y e^{-\frac{y^2}{2}} \frac{dV}{dy} \right) - y e^{-\frac{y^2}{2}} \frac{dV}{dy} + e^{-\frac{y^2}{2}} \frac{d^2V}{dy^2}   \\
+  &amp;=&amp; e^{-\frac{y^2}{2}} \frac{d^2V}{dy^2} - 2y e^{-\frac{y^2}{2}} \frac{dV}{dy} + (y^2 - 1) e^{-\frac{y^2}{2}} V
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat{v}\)</span> : 經無因次化與譜空間轉換後之經向（南北向）速度傅立葉振幅結構函數 [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(e^{-\frac{y^{2}}{2}}\)</span> : 用於控制遠離赤道邊界波幅消散之無因次高斯包絡函數 [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(V\)</span> : 剝離高斯衰減項後，代表特定赤道波動特徵解的無因次經向結構變數函數 [無單位]</p></li>
+</ul>
+</li>
+<li><p><strong>【推導 6】：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  &amp;\frac{d^2\hat{v}}{dy^2} + \left(\omega^2 - k^2 - \frac{k}{\omega} - y^2\right)\hat{v} &amp;\overset{\text{推導 4}}{=}&amp; 0 \\
+  &amp;\left[ e^{-\frac{y^2}{2}} \frac{d^2V}{dy^2} - 2y e^{-\frac{y^2}{2}} \frac{dV}{dy} + (y^2 - 1) e^{-\frac{y^2}{2}} V \right] + \left(\omega^2 - k^2 - \frac{k}{\omega} - y^2\right) \left(e^{-\frac{y^2}{2}} V\right) &amp;\overset{\text{推導 5}}{=}&amp; 0 \\
+  &amp;\frac{d^2V}{dy^2} - 2y \frac{dV}{dy} + (y^2 - 1 + \omega^2 - k^2 - \frac{k}{\omega} - y^2) V &amp;=&amp; 0 \\
+  &amp;\frac{d^2V}{dy^2} - 2y \frac{dV}{dy} + \left(\omega^2 - k^2 - \frac{k}{\omega} - 1\right) V &amp;=&amp; 0 \\
+  \overset{\text{定義 2}}{\Rightarrow}&amp; V &amp;=&amp; i(\omega^2 - k^2) A H_n(y) \\
+  &amp;&amp;&amp; \omega^2 - k^2 - \frac{k}{\omega} - 1 &amp;\overset{\text{已知 3(a)}}{=}&amp; 2n \quad (n=0,1,2,\dots) \\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat{v}\)</span> : 經無因次化與譜空間轉換後之經向（南北向）速度傅立葉振幅結構函數 [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(e^{-\frac{y^{2}}{2}}\)</span> : 用於控制遠離赤道邊界波幅消散之無因次高斯包絡函數 [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(V\)</span> : 剝離高斯衰減項後，代表特定赤道波動特徵解的無因次經向結構變數函數 [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\omega \)</span> : 經無因次化之波動特徵角頻率 [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(k\)</span> : 經無因次化之緯向水平波數 [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(H_n(y)\)</span> : 關於無因次座標 <span class="math notranslate nohighlight">\(y\)</span> 的第 <span class="math notranslate nohighlight">\(n\)</span> 階埃爾米特多項式 [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 埃爾米特多項式的非負整數階數／模態數 [無單位]，範圍為 <span class="math notranslate nohighlight">\(0, 1, 2, \dots\)</span>，決定赤道波在南北方向的波腹與節點數</p></li>
+</ul>
+</li>
+<li><p><strong>【推導 7】經向速度特徵解與一階微分的埃爾米特函數表示（Hermite function representation of meridional velocity and its first derivative）：</strong></p>
+<ul class="simple">
+<li><p>(a) 經向速度振幅的埃爾米特多項式顯式表達：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \hat{v}(y) &amp;\overset{\text{定義 1}}{=}&amp; e^{-\frac{y^2}{2}} V(y) \\
+  &amp;\overset{\text{推導 6}}{=}&amp; i(\omega^2 - k^2) A e^{-\frac{y^2}{2}} H_n(y) \quad &amp;, \omega^2 - k^2 - \frac{k}{\omega} - 1 &amp;=&amp; 2n \quad (n=0,1,2,\dots) \\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(b) 經向速度一階常微分的埃爾米特遞迴變形：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \frac{d\hat{v}}{dy} &amp;\overset{\text{推導 5(a)}}{=}&amp; - y e^{-\frac{y^2}{2}} V  + e^{-\frac{y^2}{2}} \frac{dV}{dy}  \\
+  &amp;\overset{\text{推導 6}}{=}&amp;- y e^{-\frac{y^2}{2}}  \left[ i(\omega^2 - k^2) A H_n(y) \right]  + e^{-\frac{y^2}{2}} \frac{d}{dy} \left[ i(\omega^2 - k^2) A H_n(y) \right]  \quad &amp;, \omega^2 - k^2 - \frac{k}{\omega} - 1 &amp;=&amp; 2n \quad (n=0,1,2,\dots) \\
+  &amp;=&amp;i(\omega^2 - k^2) A e^{-\frac{y^2}{2}} \left( -y H_n(y) + \frac{d H_n(y)}{dy} \right)  \quad &amp;, \omega^2 - k^2 - \frac{k}{\omega} - 1 &amp;=&amp; 2n \quad (n=0,1,2,\dots) \\
+  &amp;\overset{\text{已知 3(b)}}{=}&amp; i(\omega^2 - k^2) A e^{-\frac{y^2}{2}} \left( -y H_n(y) + 2n H_{n-1}(y) \right) \quad &amp;, \omega^2 - k^2 - \frac{k}{\omega} - 1 &amp;=&amp; 2n \quad (n=0,1,2,\dots) \\
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat{v}\)</span> : 經無因次化與譜空間轉換後之經向（南北向）速度傅立葉振幅結構函數 [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(e^{-\frac{y^{2}}{2}}\)</span> : 用於控制遠離赤道邊界波幅消散之無因次高斯包絡函數 [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(V\)</span> : 剝離高斯衰減項後，代表特定赤道波動特徵解的無因次經向結構變數函數 [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\omega \)</span> : 經無因次化之波動特徵角頻率 [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(k\)</span> : 經無因次化之緯向水平波數 [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(H_n(y)\)</span> : 關於無因次座標 <span class="math notranslate nohighlight">\(y\)</span> 的第 <span class="math notranslate nohighlight">\(n\)</span> 階埃爾米特多項式 [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 埃爾米特多項式的非負整數階數／模態數 [無單位]，範圍為 <span class="math notranslate nohighlight">\(0, 1, 2, \dots\)</span>，決定赤道波在南北方向的波腹與節點數</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="proof">
+<h3><strong>證明 (Proof)</strong><a class="headerlink" href="#proof" title="Link to this heading">#</a></h3>
+<section id="id2">
+<h4><strong>1. 色散方程式之證明</strong><a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\begin{gather*}
+\omega^2 - k^2 - \frac{k}{\omega} - 1 &amp;\overset{\text{推導 6}}{=}&amp; 2n \quad (n=0,1,2,\dots) 
+\end{gather*}\]</div>
+</section>
+<section id="id3">
+<h4><strong>2. 空間特徵解之證明</strong><a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<p><strong>經向速度</strong> <span class="math notranslate nohighlight">\(\hat{v}(y)\)</span> ：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\hat{v}(y) &amp;\overset{\text{推導 7(a)}}{=}&amp; i(\omega^2 - k^2) A e^{-\frac{y^2}{2}} H_n(y) \quad &amp;, \omega^2 - k^2 - \frac{k}{\omega} - 1 &amp;=&amp; 2n \quad (n=0,1,2,\dots) \\
+\end{gather*}\end{split}\]</div>
+<p><strong>重力位</strong> <span class="math notranslate nohighlight">\(\hat{\phi}(y)\)</span> ：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\hat{\phi}(y) &amp;\overset{\text{推導 3(a)}}{=}&amp; \frac{i}{\omega^2 - k^2}\left(ky\hat{v} - \omega\frac{d\hat{v}}{dy}\right) \\
+&amp;\overset{\text{推導 7(a)(b)}}{=}&amp; \frac{i}{\omega^2 - k^2} \left( ky \left[ i(\omega^2 - k^2) A e^{-\frac{y^2}{2}} H_n \right] - \omega \left[ i(\omega^2 - k^2) A e^{-\frac{y^2}{2}} (-y H_n + 2n H_{n-1}) \right] \right) \quad &amp;, \omega^2 - k^2 - \frac{k}{\omega} - 1 &amp;=&amp; 2n \quad (n=0,1,2,\dots) \\
+&amp;=&amp;  \frac{i}{\omega^2 - k^2} i(\omega^2 - k^2) A e^{-\frac{y^2}{2}} \Bigl( ky   H_n  - \omega   (-y H_n + 2n H_{n-1})  \Bigr) \quad &amp;, \omega^2 - k^2 - \frac{k}{\omega} - 1 &amp;=&amp; 2n \quad (n=0,1,2,\dots) \\
+&amp;=&amp; -A e^{-\frac{y^2}{2}} \Bigl( ky   H_n  - \omega   (-y H_n + 2n H_{n-1})   \Bigr)  \quad &amp;, \omega^2 - k^2 - \frac{k}{\omega} - 1 &amp;=&amp; 2n \quad (n=0,1,2,\dots) \\
+&amp;=&amp; -A e^{-\frac{y^2}{2}} \Bigl( (k +\omega)y H_n  -  2n\omega H_{n-1}   \Bigr)  \quad &amp;, \omega^2 - k^2 - \frac{k}{\omega} - 1 &amp;=&amp; 2n \quad (n=0,1,2,\dots) \\
+&amp;\overset{\text{已知 3(c)}}{=}&amp; -A e^{-\frac{y^2}{2}} \Bigl( (k +\omega) \left( \frac{1}{2}H_{n+1} + n H_{n-1} \right)  -  2n\omega H_{n-1}   \Bigr)  \quad &amp;, \omega^2 - k^2 - \frac{k}{\omega} - 1 &amp;=&amp; 2n \quad (n=0,1,2,\dots) \\
+&amp;=&amp; -A e^{-\frac{y^2}{2}} \Bigl(  \frac{1}{2}(k +\omega) H_{n+1} + (k +\omega)n H_{n-1}  -  2n\omega H_{n-1}   \Bigr)  \quad &amp;, \omega^2 - k^2 - \frac{k}{\omega} - 1 &amp;=&amp; 2n \quad (n=0,1,2,\dots) \\
+&amp;=&amp; -A e^{-\frac{y^2}{2}} \Bigl(  \frac{1}{2}(k +\omega) H_{n+1} + (k -\omega)n H_{n-1}     \Bigr)  \quad &amp;, \omega^2 - k^2 - \frac{k}{\omega} - 1 &amp;=&amp; 2n \quad (n=0,1,2,\dots) \\
+\end{gather*}\end{split}\]</div>
+<p><strong>緯向速度</strong> <span class="math notranslate nohighlight">\(\hat{u}(y)\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\hat{u} &amp;\overset{\text{推導 3(b)}}{=}&amp; \frac{i}{\omega^2 - k^2}\left(\omega y\hat{v} - k\frac{d\hat{v}}{dy}\right) \\
+&amp;\overset{\text{推導 7(a)(b)}}{=}&amp;  \frac{i}{\omega^2 - k^2} \left( \omega y \left[ i(\omega^2 - k^2) A e^{-\frac{y^2}{2}} H_n \right] - k \left[ i(\omega^2 - k^2) A e^{-\frac{y^2}{2}} (-y H_n + 2n H_{n-1}) \right] \right) \quad &amp;, \omega^2 - k^2 - \frac{k}{\omega} - 1 &amp;=&amp; 2n \quad (n=0,1,2,\dots) \\
+&amp;=&amp;  \frac{i}{\omega^2 - k^2}  i(\omega^2 - k^2) A e^{-\frac{y^2}{2}} \left( \omega y  H_n  - k   \Bigl(-y H_n + 2n H_{n-1} \Bigr)  \right) \quad &amp;, \omega^2 - k^2 - \frac{k}{\omega} - 1 &amp;=&amp; 2n \quad (n=0,1,2,\dots) \\
+&amp;=&amp;  -A e^{-\frac{y^2}{2}} \Bigl( \omega y  H_n  - k   \left(-y H_n + 2n H_{n-1} \right)  \Bigr) \quad &amp;, \omega^2 - k^2 - \frac{k}{\omega} - 1 &amp;=&amp; 2n \quad (n=0,1,2,\dots) \\
+&amp;=&amp;  -A e^{-\frac{y^2}{2}} \Bigl( (\omega+k) y  H_n  - 2kn H_{n-1}   \Bigr) \quad &amp;, \omega^2 - k^2 - \frac{k}{\omega} - 1 &amp;=&amp; 2n \quad (n=0,1,2,\dots) \\
+&amp;=&amp;  -A e^{-\frac{y^2}{2}} \Bigl( (\omega+k) y  H_n  - 2kn H_{n-1}   \Bigr) \quad &amp;, \omega^2 - k^2 - \frac{k}{\omega} - 1 &amp;=&amp; 2n \quad (n=0,1,2,\dots) \\
+&amp;\overset{\text{已知 3(c)}}{=}&amp; -A e^{-\frac{y^2}{2}} \Bigl( (\omega+k) \left( \frac{1}{2}H_{n+1} + n H_{n-1} \right)  - 2kn H_{n-1}   \Bigr) \quad &amp;, \omega^2 - k^2 - \frac{k}{\omega} - 1 &amp;=&amp; 2n \quad (n=0,1,2,\dots) \\
+&amp;=&amp; -A e^{-\frac{y^2}{2}} \Bigl( \frac{1}{2}(\omega+k) H_{n+1} + (\omega+k)n H_{n-1}  - 2kn H_{n-1}   \Bigr) \quad &amp;, \omega^2 - k^2 - \frac{k}{\omega} - 1 &amp;=&amp; 2n \quad (n=0,1,2,\dots) \\
+&amp;=&amp; -A e^{-\frac{y^2}{2}} \Bigl( \frac{1}{2}(\omega+k) H_{n+1} + n(\omega-k) H_{n-1} \Bigr) \quad &amp;, \omega^2 - k^2 - \frac{k}{\omega} - 1 &amp;=&amp; 2n \quad (n=0,1,2,\dots) \\
+\end{gather*}\end{split}\]</div>
+</section>
+</section>
+<section id="id4">
+<h3>討論<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>這張 <strong>赤道波色散關係圖 (Dispersion Relation Diagram)</strong> 是大氣動力學中極度核心的圖表，它視覺化了流體力學方程式在特定邊界條件下，所允許存在的波動狀態。</p>
+<p><img alt="" src="../../_images/Dispersion_relation_diagram_of_equatorial_waves.png" /></p>
+<section id="id5">
+<h4>1. 坐標軸的物理意義<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>X 軸 (<span class="math notranslate nohighlight">\(k\)</span>)：無因次緯向波數 (Zonal wavenumber)</strong></p></li>
+</ul>
+<p>代表波動在東西方向的波數。數值越小代表水平波長越長（例如跨越數千公里的大尺度天氣系統）；數值越大（越往右），代表水平波長越短（例如較小尺度的微擾動）。</p>
+<ul class="simple">
+<li><p><strong>Y 軸 (<span class="math notranslate nohighlight">\(\omega\)</span>)：無因次頻率 (Frequency)</strong></p></li>
+</ul>
+<p>代表波動隨時間「震盪的快慢」。絕對值越大（圖形的上下兩端），波震盪越劇烈（如高頻的慣性重力波）；絕對值越小（貼近 X 軸），波的變化越緩慢（如低頻的羅斯貝波）。</p>
+</section>
+<section id="id6">
+<h4>2. 每一條線的意義<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>這是量子化，不是特舉幾條線而已。</strong> 圖中每一條實線或虛線，代表一種具有特定「南北向空間結構」的波動，這個結構由<strong>模態數 <span class="math notranslate nohighlight">\(n\)</span></strong> 決定。</p></li>
+</ul>
+<p>在開放空間中，頻率和波數通常是連續的，但因為赤道波的能量必須被限制在赤道附近（邊界條件：遠離赤道時擾動必須收斂至 0），數學上迫使空間結構必須以離散的埃爾米特多項式 <span class="math notranslate nohighlight">\(H_n(y)\)</span> 存在。因此，為了不讓波發散，<strong><span class="math notranslate nohighlight">\(n\)</span> 只能是整數 (<span class="math notranslate nohighlight">\(n = -1, 0, 1, 2, 3 \dots\)</span>)，這就是「量子化」的必然結果</strong>。圖中只畫出了前幾個模態作為代表，實際上還有無數條對應更大 <span class="math notranslate nohighlight">\(n\)</span> 值的離散曲線向外、向高頻擴展。</p>
+<section id="id7">
+<h5>同一條線上不同的點<a class="headerlink" href="#id7" title="Link to this heading">#</a></h5>
+<ul class="simple">
+<li><p>代表具有「南北向結構完全相同（同一個 <span class="math notranslate nohighlight">\(n\)</span>），但東西向尺度不斷縮放」的同族波動。</p></li>
+<li><p>當水平波數 <span class="math notranslate nohighlight">\(k\)</span> 改變時，為了滿足物理定律，頻率 <span class="math notranslate nohighlight">\(\omega\)</span> 必須沿著這條線嚴格跟著改變。</p></li>
+<li><p><strong>物理關鍵：</strong> 曲線上任意一點的「切線斜率」(<span class="math notranslate nohighlight">\(\partial \omega / \partial k\)</span>)，在物理上精確等於該波動的<strong>緯向群速度 (Zonal Group Velocity)</strong>，也就是這個波實際傳遞能量的速度與方向。</p></li>
+</ul>
+</section>
+<section id="x">
+<h5>同一個 X 座標不同點<a class="headerlink" href="#x" title="Link to this heading">#</a></h5>
+<ul class="simple">
+<li><p>代表我們在觀察「東西向水平寬度一模一樣」的擾動。</p></li>
+<li><p>沿著垂直線往上下看，會發現同一個寬度的系統，能以多種不同的頻率震盪。極高頻的點對應的是重力主導的<strong>慣性重力波</strong>；低頻的點對應的是受 <span class="math notranslate nohighlight">\(\beta\)</span> 效應主導的<strong>赤道羅斯貝波</strong>。</p></li>
+</ul>
+</section>
+<section id="y">
+<h5>同一個 Y 座標不同點<a class="headerlink" href="#y" title="Link to this heading">#</a></h5>
+<ul class="simple">
+<li><p>代表我們用一個「固定頻率的節拍器」去擾動大氣。</p></li>
+<li><p>畫一條水平線過去，它會切過許多不同 <span class="math notranslate nohighlight">\(n\)</span> 值的曲線。這意味著在同一個震盪頻率下，大氣會同時激發出多種水平波長與南北向寬度組合不同的波，它們會在空間中同時向外傳播並發生干涉。</p></li>
+</ul>
+</section>
+</section>
+<section id="id8">
+<h4>3.空白的區域（禁帶）<a class="headerlink" href="#id8" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>在圖中，高頻的慣性重力波（上下兩側）與低頻的羅斯貝波（中間貼地處）之間，有一大片沒有普通 <span class="math notranslate nohighlight">\(n \ge 1\)</span> 曲線經過的空白區域。這被稱為<strong>衰減區 (Evanescent Zone) 或禁帶 (Forbidden Zone)</strong>。</p></li>
+<li><p><strong>絕對不存在這種波嗎？</strong> 可以這麼說，在數學與物理上，<strong>「能夠自由向遠方無損耗傳遞能量的自由行進波」在這些白色區域是絕對不存在的</strong>。</p></li>
+<li><p>如果你強行以這塊空白區域內的頻率與波數組合去震盪空氣，擾動無法形成波動輻射出去，其振幅會隨空間距離呈<strong>指數型快速衰減 (Exponential decay)</strong>，能量會被死死困在震源附近。</p></li>
+</ul>
+<p><em>(註：圖中斜穿過這片禁區的 <span class="math notranslate nohighlight">\(n=-1\)</span> 克耳文波與 <span class="math notranslate nohighlight">\(n=0\)</span> 混合羅斯貝重力波是極度特殊的特例，它們是不受此頻率極限約束的邊界導波。)</em></p>
+</section>
+</section>
+<section id="n-0-t-0">
+<h3>帶入 <span class="math notranslate nohighlight">\(n=0, t=0\)</span><a class="headerlink" href="#n-0-t-0" title="Link to this heading">#</a></h3>
+<p><strong>緯向速度</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\hat{v}(y) &amp;=&amp; i(\omega^2 - k^2) A e^{-\frac{y^2}{2}} H_n(y) \quad &amp;, \omega^2 - k^2 - \frac{k}{\omega} - 1  &amp;=&amp;  2n \quad (n=0,1,2,\dots)  \\
+\hat{v}(y) &amp;=&amp; i(\omega^2 - k^2) A e^{-\frac{y^2}{2}} \\
+\hat{v}(y) &amp;=&amp; i(\omega^2 - k^2) A e^{-\frac{y^2}{2}} \\
+v(x,y) &amp;=&amp; -A(\omega^2 - k^2) e^{-\frac{y^2}{2}} \sin(kx)
+\end{gather*}\end{split}\]</div>
+<p><strong>經向速度</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\hat{u}(y) &amp;=&amp; -A e^{-\frac{y^2}{2}} \Bigl( \frac{1}{2}(\omega+k) H_{n+1} + n(\omega-k) H_{n-1} \Bigr) \quad &amp;, \omega^2 - k^2 - \frac{k}{\omega} - 1 &amp;=&amp; 2n \quad (n=0,1,2,\dots) \\
+\hat{u}(y) &amp;=&amp; -A e^{-\frac{y^2}{2}} \Bigl( \frac{1}{2}(\omega+k) (2y) + 0 \Bigr) \\
+\hat{u}(y) &amp;=&amp; -A(\omega + k) y e^{-\frac{y^2}{2}} \\
+u(x,y) &amp;=&amp; -A(\omega + k) y e^{-\frac{y^2}{2}} \cos(kx)
+\end{gather*}\end{split}\]</div>
+<p><strong>重力位</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\hat{\phi}(y) &amp;=&amp; -A e^{-\frac{y^2}{2}} \Bigl(  \frac{1}{2}(k +\omega) H_{n+1} + (k -\omega)n H_{n-1}     \Bigr)  \quad &amp; , \omega^2 - k^2 - \frac{k}{\omega} - 1 &amp;=&amp; 2n \quad (n=0,1,2,\dots) \\
+\hat{\phi}(y) &amp;=&amp; -A e^{-\frac{y^2}{2}} \Bigl(  \frac{1}{2}(k +\omega) (2y) + 0 \Bigr)  \\
+\hat{\phi}(y) &amp;=&amp; -A(\omega + k) y e^{-\frac{y^2}{2}} \\[2ex]
+\phi(x,y) &amp;=&amp; -A(\omega + k) y e^{-\frac{y^2}{2}} \cos(kx) \\[2ex]
+\end{gather*}\end{split}\]</div>
+<p><img alt="" src="../../_images/velocity_n0_wave.png" /></p>
+</section>
+</section>
+<section id="matsuno-1966">
+<h2>Matsuno (1966) 筆記<a class="headerlink" href="#matsuno-1966" title="Link to this heading">#</a></h2>
+<section id="hermite">
+<h3>Hermite 函數與赤道波的數學物理連結<a class="headerlink" href="#hermite" title="Link to this heading">#</a></h3>
+</section>
+<section id="id9">
+<h3>核心思想<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Matsuno 發現<strong>赤道大氣動力學</strong> ≡ <strong>量子諧振子 (Harmonic Oscillator)</strong> — 數學結構完全等價</p></li>
+<li><p>科氏力隨緯度變化 → 形成天然「勢阱」→ 波動能量被困在赤道 → <strong>赤道波導 (Equatorial Waveguide)</strong></p></li>
+</ul>
+</section>
+<section id="weber">
+<h3>1. Weber 方程式<a class="headerlink" href="#weber" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\frac{d^2\hat{v}}{dy^2} + \left( \lambda - y^2 \right)\hat{v} = 0\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\lambda = \omega^2 - k^2 + k/\omega\)</span>（特徵值）</p></li>
+<li><p>與<a class="reference external" href="https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/05_Quantum_Mechanics/quantum_mechanics.html#schrodingers-equation-steady-state-form"><strong>一維量子諧振子薛丁格方程式</strong></a>形式相同</p></li>
+<li><p><span class="math notranslate nohighlight">\(-y^2\)</span> 項的物理意義對照：</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>量子力學</p></th>
+<th class="head"><p>赤道波</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>位能勢阱，困住電子</p></td>
+<td><p>科氏參數 <span class="math notranslate nohighlight">\(\beta y\)</span>，困住波動能量</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="id10">
+<h3>2. 邊界條件 → 高斯衰減包絡<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>物理要求：<span class="math notranslate nohighlight">\(y \to \pm\infty\)</span> 時，<span class="math notranslate nohighlight">\(\hat{v} \to 0\)</span>（能量不向兩極發散）</p></li>
+<li><p>大 <span class="math notranslate nohighlight">\(y\)</span> 極限下方程式退化：<span class="math notranslate nohighlight">\(\hat{v}'' \approx y^2 \hat{v}\)</span>，解為 <span class="math notranslate nohighlight">\(e^{\pm y^2/2}\)</span></p></li>
+<li><p>只能取 <span class="math notranslate nohighlight">\(e^{-y^2/2}\)</span>（發散解捨棄）</p></li>
+<li><p>Matsuno 的關鍵代換：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\hat{v}(y) = V(y)\, e^{-y^2/2}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(e^{-y^2/2}\)</span> = <strong>高斯衰減包絡線</strong></p>
+<ul>
+<li><p>決定赤道波能量南北遞減的空間尺度</p></li>
+<li><p>對應真實物理長度 = <strong>赤道羅斯貝變形半徑</strong></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id11">
+<h3>3. Hermite 微分方程式 &amp; 量子化條件<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<p>代入後 <span class="math notranslate nohighlight">\(V(y)\)</span> 滿足：</p>
+<div class="math notranslate nohighlight">
+\[V'' - 2yV' + (\lambda - 1)V = 0\]</div>
+<section id="lambda">
+<h4>為什麼 <span class="math notranslate nohighlight">\(\lambda\)</span> 不能任意取值？<a class="headerlink" href="#lambda" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>任意 <span class="math notranslate nohighlight">\(\lambda\)</span> → <span class="math notranslate nohighlight">\(V(y)\)</span> 展開為無窮級數 → 增長速度 <span class="math notranslate nohighlight">\(\sim e^{y^2}\)</span> → 抵消高斯衰減 → 物理崩潰</p></li>
+<li><p>解救條件：無窮級數必須<strong>截斷</strong>為有限次多項式</p></li>
+</ul>
+</section>
+<section id="id12">
+<h4>量子化條件<a class="headerlink" href="#id12" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\lambda - 1 = 2n, \quad n = 0, 1, 2, \dots\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\lambda\)</span> 只能取<strong>離散</strong>數值</p></li>
+<li><p>這正是<strong>色散關係式的數學起源</strong></p></li>
+<li><p>赤道波的頻率 <span class="math notranslate nohighlight">\(\omega\)</span> 與波數 <span class="math notranslate nohighlight">\(k\)</span> 被「量子化」，如同量子態</p></li>
+</ul>
+</section>
+</section>
+<section id="hermite-polynomial-vs-hermite-function">
+<h3>4. Hermite Polynomial vs. Hermite Function<a class="headerlink" href="#hermite-polynomial-vs-hermite-function" title="Link to this heading">#</a></h3>
+<section id="hermite-polynomial-h-n-y">
+<h4>Hermite Polynomial <span class="math notranslate nohighlight">\(H_n(y)\)</span>（埃爾米特多項式）<a class="headerlink" href="#hermite-polynomial-h-n-y" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>即 <span class="math notranslate nohighlight">\(V(y)\)</span> 的解</p></li>
+<li><p>前幾個：<span class="math notranslate nohighlight">\(H_0 = 1,\quad H_1 = 2y,\quad H_2 = 4y^2 - 2, \dots\)</span></p></li>
+<li><p><strong>物理意義：</strong></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> = 多項式最高次方 = 南北方向<strong>穿越零點（節點）的次數</strong></p></li>
+<li><p><span class="math notranslate nohighlight">\(n=0\)</span>：南北風全程同號</p></li>
+<li><p><span class="math notranslate nohighlight">\(n=1\)</span>：南北風在赤道兩側反號</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="hermite-function-psi-n-y">
+<h4>Hermite Function <span class="math notranslate nohighlight">\(\psi_n(y)\)</span>（埃爾米特函數）<a class="headerlink" href="#hermite-function-psi-n-y" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\psi_n(y) = e^{-y^2/2} H_n(y)\]</div>
+<ul class="simple">
+<li><p>多項式 × 高斯衰減 = <strong>真實的空間特徵解</strong></p></li>
+<li><p>關鍵數學性質：在 <span class="math notranslate nohighlight">\((-\infty, +\infty)\)</span> 上<strong>完備且正交</strong>：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^{\infty} \psi_m(y)\, \psi_n(y)\, dy = 0 \quad (m \neq n)\]</div>
+<ul class="simple">
+<li><p>構成赤道 <span class="math notranslate nohighlight">\(\beta\)</span> 平面上的正交基底</p></li>
+</ul>
+</section>
+</section>
+<section id="id13">
+<h3>5. 正交完備性的物理意義（最終結論）<a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>任何複雜的<strong>熱帶天氣擾動 / 對流加熱</strong>，都可以被完美<strong>投影分解</strong>成無限多個獨立赤道波的線性疊加：</p>
+<ul>
+<li><p>羅斯貝波 (Rossby Wave)</p></li>
+<li><p>重力波 (Gravity Wave)</p></li>
+<li><p>克耳文波 (Kelvin Wave)</p></li>
+</ul>
+</li>
+<li><p>各模態互相獨立、不干擾</p></li>
+<li><p>奠定<strong>現代熱帶氣象學</strong>的理論基礎</p></li>
+</ul>
+</section>
+<section id="id14">
+<h3>一句話總結<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p>赤道科氏力的 <span class="math notranslate nohighlight">\(\beta y\)</span> 結構 → 數學上等同量子勢阱 → 邊界條件強迫波動「量子化」→ 色散關係離散化 → Hermite 函數成為熱帶大氣的自然正交基底。</p>
+</div></blockquote>
+</section>
+</section>
+<section id="matsuno-1966-vs-gill-1980">
+<h2>Matsuno (1966) vs. Gill (1980)<a class="headerlink" href="#matsuno-1966-vs-gill-1980" title="Link to this heading">#</a></h2>
+<section id="id15">
+<h3>長波近似的核心差異<a class="headerlink" href="#id15" title="Link to this heading">#</a></h3>
+</section>
+<section id="dispersion">
+<h3>0. 色散 (Dispersion) 快速複習<a class="headerlink" href="#dispersion" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>色散波：</strong> <span class="math notranslate nohighlight">\(\omega\)</span> 與 <span class="math notranslate nohighlight">\(k\)</span> 非線性正比 → 相速度 <span class="math notranslate nohighlight">\(c = \omega/k\)</span> 隨波長改變 → 波包「散開」</p></li>
+<li><p><strong>非色散波：</strong> <span class="math notranslate nohighlight">\(c\)</span> 與 <span class="math notranslate nohighlight">\(k\)</span> 無關（如淺水重力波 <span class="math notranslate nohighlight">\(c = \sqrt{gH}\)</span>）→ 波形不變形</p></li>
+<li><p>關鍵量：<strong>群速度</strong> <span class="math notranslate nohighlight">\(c_g = \partial\omega/\partial k\)</span>（能量傳遞速度），色散波中 <span class="math notranslate nohighlight">\(c \neq c_g\)</span></p></li>
+</ul>
+<blockquote>
+<div><p><strong>類比：</strong> 池塘丟石頭 → 長波快、短波慢 → 波紋「散開」= 色散。真空中的光 = 非色散。</p>
+</div></blockquote>
+</section>
+<section id="id16">
+<h3>1. 兩者目標根本不同<a class="headerlink" href="#id16" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Matsuno (1966)</p></th>
+<th class="head"><p>Gill (1980)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>想問的問題</strong></p></td>
+<td><p>赤道大氣裡有哪些<strong>自由波</strong>？</p></td>
+<td><p>持續加熱後大氣<strong>穩態響應</strong>長什麼樣？</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>研究對象</strong></p></td>
+<td><p>瞬變波動 (Transient waves)</p></td>
+<td><p>定態環流 (Steady-state response)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>代表現象</strong></p></td>
+<td><p>颱風生成、渦旋羅斯貝波</p></td>
+<td><p>沃克環流、ENSO、季風</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="id17">
+<h3>2. 數學近似的差異<a class="headerlink" href="#id17" title="Link to this heading">#</a></h3>
+<section id="id18">
+<h4>完整色散關係（出發點相同）<a class="headerlink" href="#id18" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\omega^2 - k^2 - \frac{k}{\omega} - 1 = 2n\]</div>
+</section>
+<section id="matsuno-omega-2">
+<h4>Matsuno：只砍 <span class="math notranslate nohighlight">\(\omega^2\)</span>（低頻近似）<a class="headerlink" href="#matsuno-omega-2" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>假設：<span class="math notranslate nohighlight">\(\omega \ll 1\)</span>（低頻運動）→ 忽略 <span class="math notranslate nohighlight">\(\omega^2\)</span></p></li>
+<li><p>結果：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\omega = \frac{-k}{k^2 + 2n + 1}\]</div>
+<ul class="simple">
+<li><p><strong><span class="math notranslate nohighlight">\(k^2\)</span> 保留</strong> → 羅斯貝波仍為<strong>色散波</strong></p>
+<ul>
+<li><p>長波（小 <span class="math notranslate nohighlight">\(k\)</span>）：相速度快</p></li>
+<li><p>短波（大 <span class="math notranslate nohighlight">\(k\)</span>）：相速度極慢，近乎停滯</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="gill-omega-2-k-2">
+<h4>Gill：同時砍 <span class="math notranslate nohighlight">\(\omega^2\)</span> 與 <span class="math notranslate nohighlight">\(k^2\)</span>（嚴格長波近似）<a class="headerlink" href="#gill-omega-2-k-2" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>假設：<span class="math notranslate nohighlight">\(L_x \gg L_y\)</span>（東西尺度遠大於南北）→ <span class="math notranslate nohighlight">\(k \to 0\)</span></p></li>
+<li><p>動力學操作：南北向動量方程式中 <span class="math notranslate nohighlight">\(\partial v/\partial t\)</span> 直接砍掉 → 強迫地轉平衡</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[yu + \frac{\partial \phi}{\partial y} = 0\]</div>
+<ul class="simple">
+<li><p>結果：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\omega = \frac{-k}{2n + 1}\]</div>
+<ul class="simple">
+<li><p><strong><span class="math notranslate nohighlight">\(k^2\)</span> 消失</strong> → <span class="math notranslate nohighlight">\(\omega \propto k\)</span> → 羅斯貝波變為<strong>非色散波</strong></p>
+<ul>
+<li><p>給定模態 <span class="math notranslate nohighlight">\(n\)</span>，所有波長一律以 <span class="math notranslate nohighlight">\(c = -1/(2n+1)\)</span> 向西傳播</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="k-2">
+<h3>3. 核心概念：<span class="math notranslate nohighlight">\(k^2\)</span> 項的命運<a class="headerlink" href="#k-2" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p><strong>“The fate of the <span class="math notranslate nohighlight">\(k^2\)</span> term”</strong> 是理解兩者差異的鑰匙。</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><strong>Matsuno 保留 <span class="math notranslate nohighlight">\(k^2\)</span></strong> → 物理完整，但數學複雜，難以求解析解</p></li>
+<li><p><strong>Gill 消滅 <span class="math notranslate nohighlight">\(k^2\)</span></strong> → 物理略失真，但換來數學優雅：</p>
+<ul>
+<li><p>可用<strong>特徵線法 (Method of Characteristics)</strong> 求解</p></li>
+<li><p>畫出著名的 <strong>Gill Pattern</strong>：</p>
+<ul>
+<li><p>加熱源<strong>東側</strong>：赤道克耳文波下沉區</p></li>
+<li><p>加熱源<strong>西側</strong>：一對羅斯貝波氣旋式環流（雙胞胎氣旋）</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id19">
+<h3>4. 總結比較表<a class="headerlink" href="#id19" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>比較項目</p></th>
+<th class="head"><p>Matsuno (1966)</p></th>
+<th class="head"><p>Gill (1980)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>動力學假設</p></td>
+<td><p>僅忽略 <span class="math notranslate nohighlight">\(\omega^2\)</span></p></td>
+<td><p>忽略 <span class="math notranslate nohighlight">\(\omega^2\)</span> 與 <span class="math notranslate nohighlight">\(\partial v/\partial t\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>保留 / 忽略 <span class="math notranslate nohighlight">\(k^2\)</span></p></td>
+<td><p><strong>保留</strong></p></td>
+<td><p><strong>忽略</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>色散關係</p></td>
+<td><p><span class="math notranslate nohighlight">\(\omega = \dfrac{-k}{k^2+2n+1}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\omega = \dfrac{-k}{2n+1}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>波的特性</p></td>
+<td><p><strong>色散波</strong>（短波慢）</p></td>
+<td><p><strong>非色散波</strong>（同速）</p></td>
+</tr>
+<tr class="row-even"><td><p>適用場景</p></td>
+<td><p>瞬變天氣、颱風</p></td>
+<td><p>大尺度氣候、ENSO</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="id20">
+<h3>一句話總結<a class="headerlink" href="#id20" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p>Matsuno 問「波怎麼走」，所以必須保留色散性；Gill 問「加熱後穩態場長什麼樣」，所以用長波近似換取解析解的可能——兩人各自犧牲了不同的物理細節，萃取出不同的真理。</p>
+</div></blockquote>
+</section>
+</section>
+<section id="code">
+<h2>code<a class="headerlink" href="#code" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>關於赤道波色散圖詳細的 code 可以參考<a class="reference external" href="https://github.com/derek1403/PC-NTU/blob/main/Advanced-Atmospheric-Dynamics/project/project2/dispersion_relation.py">這個</a></p></li>
+<li><p>關於赤道波初始 <span class="math notranslate nohighlight">\(n=0\)</span> 圖詳細的 code 可以參考<a class="reference external" href="https://github.com/derek1403/PC-NTU/blob/main/Advanced-Atmospheric-Dynamics/project/project2/velocity_n0_wave.py">這個</a></p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./project\project2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="project2_3.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Matsuno (1966) vs. Gill (1980)</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quastion">Quastion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvectors-and-eigenfunctions-of-the-linearized-sshallow-water-equations">Eigenvectors and Eigenfunctions of the Linearized Sshallow Water Equations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>證明目標：</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#i-kx-omega-t">如果使用 <span class="math notranslate nohighlight">\(i(kx+\omega t)\)</span> 應該會推導出這種形式</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries"><strong>假設與已知 (Assumptions &amp; Preliminaries)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proof"><strong>證明 (Proof)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>1. 色散方程式之證明</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>2. 空間特徵解之證明</strong></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">討論</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">1. 坐標軸的物理意義</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">2. 每一條線的意義</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">同一條線上不同的點</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#x">同一個 X 座標不同點</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#y">同一個 Y 座標不同點</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">3.空白的區域（禁帶）</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#n-0-t-0">帶入 <span class="math notranslate nohighlight">\(n=0, t=0\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matsuno-1966">Matsuno (1966) 筆記</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hermite">Hermite 函數與赤道波的數學物理連結</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">核心思想</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#weber">1. Weber 方程式</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">2. 邊界條件 → 高斯衰減包絡</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">3. Hermite 微分方程式 &amp; 量子化條件</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda">為什麼 <span class="math notranslate nohighlight">\(\lambda\)</span> 不能任意取值？</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">量子化條件</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hermite-polynomial-vs-hermite-function">4. Hermite Polynomial vs. Hermite Function</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hermite-polynomial-h-n-y">Hermite Polynomial <span class="math notranslate nohighlight">\(H_n(y)\)</span>（埃爾米特多項式）</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hermite-function-psi-n-y">Hermite Function <span class="math notranslate nohighlight">\(\psi_n(y)\)</span>（埃爾米特函數）</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">5. 正交完備性的物理意義（最終結論）</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">一句話總結</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matsuno-1966-vs-gill-1980">Matsuno (1966) vs. Gill (1980)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">長波近似的核心差異</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dispersion">0. 色散 (Dispersion) 快速複習</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">1. 兩者目標根本不同</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">2. 數學近似的差異</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">完整色散關係（出發點相同）</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#matsuno-omega-2">Matsuno：只砍 <span class="math notranslate nohighlight">\(\omega^2\)</span>（低頻近似）</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#gill-omega-2-k-2">Gill：同時砍 <span class="math notranslate nohighlight">\(\omega^2\)</span> 與 <span class="math notranslate nohighlight">\(k^2\)</span>（嚴格長波近似）</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#k-2">3. 核心概念：<span class="math notranslate nohighlight">\(k^2\)</span> 項的命運</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">4. 總結比較表</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">一句話總結</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code">code</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC YE
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

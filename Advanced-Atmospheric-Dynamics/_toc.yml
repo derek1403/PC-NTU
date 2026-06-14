@@ -37,4 +37,15 @@ chapters:
     - file: project/project1/project1_AllInOne.ipynb
       title: "Project 1: 大氣動力學方程轉換與頻譜分析 (All-in-One)"
 
-- file: project/project2/project2.ipynb
+
+- file: project/project2/project2.md
+  title: "Project 2: Equatorial Wave Dispersion"
+  sections:
+    - file: project/project2/project2_1.ipynb
+      title: "1. 赤道波動色散關係與空間特徵解推導"
+    - file: project/project2/project2_2.ipynb
+      title: "2. Hermite equation 與赤道波導機制解析"
+    - file: project/project2/project2_3.ipynb
+      title: "3. 長波近似理論比較：Matsuno 與 Gill 之動力學探討"
+    - file: project/project2/project2_AllInOne.ipynb
+      title: "Project 2: Equatorial Wave Dispersion (All-in-One)"
