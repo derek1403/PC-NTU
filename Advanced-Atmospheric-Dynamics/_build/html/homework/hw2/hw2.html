@@ -28,9 +28,9 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
@@ -51,7 +51,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -183,10 +183,10 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../equations_index.html">方程式索引表 (Equations Index)</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../lecture/lecture.html">lecture</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../lecture/week1/week1.html">Advanced Atmospheric Dynamics - Week 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lecture/week2/week2.html">Advanced Atmospheric Dynamics - Week 2</a></li>
-
 
 </ul>
 </details></li>
@@ -209,9 +209,9 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../project/project2/project2.html">Project 2: Equatorial Wave Dispersion</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../project/project2/project2_1.html">赤道波動色散關係與空間特徵解推導</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../project/project2/project2_2.html">Hermite equation 與赤道波導機制解析</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../project/project2/project2_3.html">長波近似理論比較：Matsuno 與 Gill 之動力學探討</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../project/project2/project2_1.html">1. 赤道波動色散關係與空間特徵解推導</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../project/project2/project2_2.html">2. Hermite equation 與赤道波導機制解析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../project/project2/project2_3.html">3. 長波近似理論比較：Matsuno 與 Gill 之動力學探討</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../project/project2/project2_AllInOne.html">Project 2: Equatorial Wave Dispersion (All-in-One)</a></li>
 </ul>
 </details></li>
@@ -435,8 +435,9 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-2-ke-of-traditional-approximation-equations">Q2.2 <span class="math notranslate nohighlight">\(KE\)</span> of Traditional Approximation Equations</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question 3</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">已知與假設</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-3">Answer 3</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q3-1a-zonal-wind-at-u-0-circ-text-n-16-text-km">Q3.1a zonal wind at <span class="math notranslate nohighlight">\(u(0^\circ \text{N} , 16 \text{ km})\)</span></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">對於 精確版</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">對於 近似版</a></li>
@@ -453,19 +454,18 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question 4</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-4">Answer 4</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Q2.1 <span class="math notranslate nohighlight">\(KE\)</span> of Exact Primitive Equations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q4-ke-of-exact-primitive-equations-frac-dw-dt-0">Q4 <span class="math notranslate nohighlight">\(KE\)</span> of Exact Primitive Equations <span class="math notranslate nohighlight">\(\frac{Dw}{Dt}=0\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q4-ke-of-exact-primitive-equations-with-frac-dw-dt-0">Q4 <span class="math notranslate nohighlight">\(KE\)</span> of Exact Primitive Equations with <span class="math notranslate nohighlight">\(\frac{Dw}{Dt}=0\)</span></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question 5</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-5">Answer 5</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Q1.1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q5">Q5</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6">Question 6</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-6">Answer 6</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">已知與假設</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q6-1-proof">Q6.1 proof</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q6-2-discuss-the-error">Q6.2 discuss the error</a></li>
 </ul>
@@ -503,7 +503,7 @@ document.write(`
 <p>where the material derivative in <span class="math notranslate nohighlight">\((1)\)</span> can be expressed as</p>
 <div class="math notranslate nohighlight">
 \[\frac{D}{Dt} = \frac{\partial}{\partial t} + \frac{u}{r \cos \phi} \frac{\partial}{\partial \lambda} + \frac{v}{r} \frac{\partial}{\partial \phi} + w \frac{\partial}{\partial r} \]</div>
-<p>The above equations are called the <strong>Nonhydrostatic Primitive Equations</strong> or <strong>The Exact Primitive Equations</strong>. They are not widely used at present. For large scale numerical weather prediction and general circulation modeling two approximations are made <strong>The Traditional Approximation</strong> and <strong>The Quasi-static Approximation</strong>. The Traditional Approximation involves an approximation to the metric expression while The Quasi-static Approximation involves an approximation to the vertical equation. With the ”traditional” approximation <span class="math notranslate nohighlight">\(z \ll a\)</span> ( <span class="math notranslate nohighlight">\(a \sim 6371 \text{km}\)</span> , the earth radius), the above component equations can be written as</p>
+<p>The above equations are called the <strong>Nonhydrostatic Primitive Equations</strong> or <strong>The Exact Primitive Equations</strong>. They are not widely used at present. For large scale numerical weather prediction and general circulation modeling two approximations are made <strong>The Traditional Approximation</strong> and <strong>The Quasi-static Approximation</strong>. The Traditional Approximation involves an approximation to the metric expression while The Quasi-static Approximation involves an approximation to the vertical equation. With the “traditional” approximation <span class="math notranslate nohighlight">\(z \ll a\)</span> ( <span class="math notranslate nohighlight">\(a \sim 6371 \text{km}\)</span> , the earth radius), the above component equations can be written as</p>
 <div class="math notranslate nohighlight">
 \[\frac{Du}{Dt} - \frac{uv \tan \phi}{a} = -\frac{1}{\rho a \cos \phi} \frac{\partial p}{\partial \lambda} + 2\Omega v \sin \phi, \tag{2.1}\]</div>
 <div class="math notranslate nohighlight">
@@ -600,15 +600,24 @@ document.write(`
 <section id="assumptions-preliminaries">
 <h3>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h3>
 <ul>
-<li><p><strong>【已知 1】 球面座標全導數：</strong></p>
+<li><p><strong>【已知 1】球面座標全導數 (Spherical Coordinate Material Derivative)：</strong></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{gather*}
     \frac{D \lambda }{Dt} &amp;=&amp;  \frac{u}{r\cos\phi}\\
     \frac{D \phi }{Dt} &amp;=&amp;  \frac{v}{r}\\
     \frac{D r }{Dt} &amp;=&amp;  w\\
     \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(u\)</span> : 緯向速度 (Zonal velocity) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(v\)</span> : 經向速度 (Meridional velocity) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(w\)</span> : 垂直速度 (Vertical velocity) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda\)</span> : 經度 (Longitude) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 緯度 (Latitude) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(r\)</span> : 地心距離 (Radial distance from Earth’s center) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+</ul>
 </li>
-<li><p><strong>【已知 2】 微積分✨1.1：</strong></p>
+<li><p><strong>【推導 1】展開 <span class="math notranslate nohighlight">\(D/Dt[u\cdot(\text{半徑})\cdot\cos\phi]\)</span> (Expansion of D/Dt[u·(radius)·cos φ])：</strong></p>
+<p>(a) 精確情形（半徑為 <span class="math notranslate nohighlight">\(r\)</span>）(Exact Case, radius <span class="math notranslate nohighlight">\(r\)</span>)：</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{gather*}
     \frac{D}{Dt}[ur\cos\phi] &amp;=&amp; \frac{Du}{Dt} r\cos\phi + u \frac{D r}{Dt} \cos\phi + ur \frac{D \cos\phi}{Dt} \\
@@ -617,8 +626,26 @@ document.write(`
     \frac{D}{Dt}[ur\cos\phi]&amp;=&amp; \frac{Du}{Dt} r\cos\phi - u(v\sin\phi - w\cos\phi)\\
     \frac{Du}{Dt} r\cos\phi &amp;=&amp; \frac{D}{Dt}[ur\cos\phi]  + u(v\sin\phi - w\cos\phi)\\
     \end{gather*}\end{split}\]</div>
+<p>(b) 傳統近似情形（半徑為常數 <span class="math notranslate nohighlight">\(a\)</span>，<span class="math notranslate nohighlight">\(Da/Dt=0\)</span>）(Traditional Approximation Case, constant radius <span class="math notranslate nohighlight">\(a\)</span>)：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+    \frac{D}{Dt}[ua\cos\phi] &amp;=&amp; \frac{Du}{Dt} a\cos\phi + u \frac{D a}{Dt} \cos\phi + ua \frac{D \cos\phi}{Dt} \\
+    \frac{D}{Dt}[ua\cos\phi]&amp;\overset{\text{已知 1}}{=}&amp; \frac{Du}{Dt} a\cos\phi + 0 - ua \sin\phi \frac{D \phi}{Dt} \\
+    \frac{D}{Dt}[ua\cos\phi]&amp;\overset{\text{已知 1}}{=}&amp; \frac{Du}{Dt} a\cos\phi - ua \sin\phi \frac{v}{a} \\
+    \frac{D}{Dt}[ua\cos\phi]&amp;=&amp; \frac{Du}{Dt} a\cos\phi - uv\sin\phi \\
+    \frac{Du}{Dt} a\cos\phi &amp;=&amp; \frac{D}{Dt}[ua\cos\phi]  + uv\sin\phi \\
+    \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(u\)</span> : 緯向速度 (Zonal velocity) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(v\)</span> : 經向速度 (Meridional velocity) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(w\)</span> : 垂直速度 (Vertical velocity) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(r\)</span> : 地心距離 (Radial distance from Earth’s center) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑（傳統近似下視為常數）(Earth’s radius, treated as constant under traditional approximation)，<span class="math notranslate nohighlight">\(a \approx 6.371\times 10^{6}\ \text{m}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 緯度 (Latitude) [無單位]</p></li>
+</ul>
 </li>
-<li><p><strong>【已知 3】 微積分✨✨1.1：</strong></p>
+<li><p><strong>【推導 2】展開 <span class="math notranslate nohighlight">\(D/Dt[(\Omega\cdot(\text{半徑})\cos\phi+u)\cdot(\text{半徑})\cos\phi]\)</span> (Expansion of D/Dt[(Ω·(radius) cos φ+u)·(radius) cos φ])：</strong></p>
+<p>(a) 精確情形（半徑為 <span class="math notranslate nohighlight">\(r\)</span>）(Exact Case, radius <span class="math notranslate nohighlight">\(r\)</span>)：</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{gather*}
     \frac{D}{Dt} [(\Omega r \cos \phi + u) r \cos \phi] &amp;=&amp; \frac{D}{Dt}[\Omega r^2\cos^2\phi] + \frac{D}{Dt}[ur\cos\phi] \\
@@ -629,18 +656,7 @@ document.write(`
     \frac{D}{Dt} [(\Omega r \cos \phi + u) r \cos \phi] - \frac{D}{Dt}[ur\cos\phi] &amp;=&amp;-2\Omega r\cos\phi(v\sin\phi - w\cos\phi)\\
     \frac{D}{Dt}[ur\cos\phi] &amp;=&amp;\frac{D}{Dt} [(\Omega r \cos \phi + u) r \cos \phi] +2\Omega r\cos\phi(v\sin\phi - w\cos\phi)\\
     \end{gather*}\end{split}\]</div>
-</li>
-<li><p><strong>【已知 4】 微積分✨1.2：</strong></p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{gather*}
-    \frac{D}{Dt}[ua\cos\phi] &amp;=&amp; \frac{Du}{Dt} a\cos\phi + u \frac{D a}{Dt} \cos\phi + ua \frac{D \cos\phi}{Dt} \\
-    \frac{D}{Dt}[ua\cos\phi]&amp;\overset{\text{已知 1}}{=}&amp; \frac{Du}{Dt} a\cos\phi + 0 - ua \sin\phi \frac{D \phi}{Dt} \\
-    \frac{D}{Dt}[ua\cos\phi]&amp;\overset{\text{已知 1}}{=}&amp; \frac{Du}{Dt} a\cos\phi - ua \sin\phi \frac{v}{a} \\
-    \frac{D}{Dt}[ua\cos\phi]&amp;=&amp; \frac{Du}{Dt} a\cos\phi - uv\sin\phi \\
-    \frac{Du}{Dt} a\cos\phi &amp;=&amp; \frac{D}{Dt}[ua\cos\phi]  + uv\sin\phi \\
-    \end{gather*}\end{split}\]</div>
-</li>
-<li><p><strong>【已知 5】 微積分✨✨1.2：</strong></p>
+<p>(b) 傳統近似情形（半徑為常數 <span class="math notranslate nohighlight">\(a\)</span>，<span class="math notranslate nohighlight">\(Da/Dt=0\)</span>）(Traditional Approximation Case, constant radius <span class="math notranslate nohighlight">\(a\)</span>)：</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{gather*}
     \frac{D}{Dt} [(\Omega a \cos \phi + u) a \cos \phi] &amp;=&amp; \frac{D}{Dt}[\Omega a^2\cos^2\phi] + \frac{D}{Dt}[ua\cos\phi] \\
@@ -650,6 +666,15 @@ document.write(`
     \frac{D}{Dt} [(\Omega a \cos \phi + u) a \cos \phi] - \frac{D}{Dt}[ua\cos\phi] &amp;=&amp; -2\Omega av\cos\phi \sin\phi\\
     \frac{D}{Dt}[ua\cos\phi] &amp;=&amp;\frac{D}{Dt} [(\Omega a \cos \phi + u) a \cos \phi] +2\Omega av\cos\phi \sin\phi\\
     \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(u\)</span> : 緯向速度 (Zonal velocity) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(v\)</span> : 經向速度 (Meridional velocity) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(w\)</span> : 垂直速度 (Vertical velocity) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(r\)</span> : 地心距離 (Radial distance from Earth’s center) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑（傳統近似下視為常數）(Earth’s radius, treated as constant under traditional approximation)，<span class="math notranslate nohighlight">\(a \approx 6.371\times 10^{6}\ \text{m}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 緯度 (Latitude) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Omega\)</span> : 地球自轉角速度 (Earth’s angular velocity)，<span class="math notranslate nohighlight">\(\Omega \approx 7.292\times 10^{-5}\ \text{s}^{-1}\)</span></p></li>
+</ul>
 </li>
 </ul>
 </section>
@@ -660,9 +685,9 @@ document.write(`
 \frac{Du}{Dt} - \left( 2\Omega + \frac{u}{r \cos \phi} \right) (v \sin \phi - w \cos \phi) &amp;\overset{(1.1)}{=}&amp; -\frac{1}{\rho r \cos \phi} \frac{\partial p}{\partial \lambda} \\
 r \cos \phi\frac{Du}{Dt} -  r \cos \phi\left( 2\Omega + \frac{u}{r \cos \phi} \right) (v \sin \phi - w \cos \phi) &amp;=&amp; -\frac{1}{\rho} \frac{\partial p}{\partial \lambda} \\
 r \cos \phi\frac{Du}{Dt} -  r \cos \phi\left( 2\Omega + \frac{u}{r \cos \phi} \right) (v \sin \phi - w \cos \phi) &amp;=&amp; -\frac{1}{\rho} \frac{\partial p}{\partial \lambda} \\
-\frac{D}{Dt}[ur\cos\phi] + u(v\sin\phi - w\cos\phi) -  r \cos \phi\left( 2\Omega + \frac{u}{r \cos \phi} \right) (v \sin \phi - w \cos \phi) &amp;\overset{\text{已知 2}}{=}&amp; -\frac{1}{\rho} \frac{\partial p}{\partial \lambda} \\
+\frac{D}{Dt}[ur\cos\phi] + u(v\sin\phi - w\cos\phi) -  r \cos \phi\left( 2\Omega + \frac{u}{r \cos \phi} \right) (v \sin \phi - w \cos \phi) &amp;\overset{\text{推導 1(a)}}{=}&amp; -\frac{1}{\rho} \frac{\partial p}{\partial \lambda} \\
 \frac{D}{Dt}[ur\cos\phi] -  r \cos \phi 2\Omega  (v \sin \phi - w \cos \phi) &amp;=&amp; -\frac{1}{\rho} \frac{\partial p}{\partial \lambda} \\
-\frac{D}{Dt} [(\Omega r \cos \phi + u) r \cos \phi] +2\Omega r\cos\phi(v\sin\phi - w\cos\phi)  -  r \cos \phi 2\Omega  (v \sin \phi - w \cos \phi) &amp;\overset{\text{已知 3}}{=}&amp; -\frac{1}{\rho} \frac{\partial p}{\partial \lambda} \\
+\frac{D}{Dt} [(\Omega r \cos \phi + u) r \cos \phi] +2\Omega r\cos\phi(v\sin\phi - w\cos\phi)  -  r \cos \phi 2\Omega  (v \sin \phi - w \cos \phi) &amp;\overset{\text{推導 2(a)}}{=}&amp; -\frac{1}{\rho} \frac{\partial p}{\partial \lambda} \\
 \frac{D}{Dt} [(\Omega r \cos \phi + u) r \cos \phi]  &amp;=&amp; -\frac{1}{\rho} \frac{\partial p}{\partial \lambda} \\
 \end{gather*}\end{split}\]</div>
 </section>
@@ -673,9 +698,9 @@ r \cos \phi\frac{Du}{Dt} -  r \cos \phi\left( 2\Omega + \frac{u}{r \cos \phi} \r
 \frac{Du}{Dt} - \frac{uv \tan \phi}{a} &amp;\overset{(2.1)}{=}&amp; -\frac{1}{\rho a \cos \phi} \frac{\partial p}{\partial \lambda} + 2\Omega v \sin \phi\\
 a\cos\phi\frac{Du}{Dt} - uv\sin\phi &amp;=&amp; -\frac{1}{\rho}\frac{\partial p}{\partial\lambda} + 2\Omega a v\sin\phi\cos\phi\\
 a\cos\phi\frac{Du}{Dt} - uv\sin\phi - 2\Omega a v\sin\phi\cos\phi &amp;=&amp; -\frac{1}{\rho}\frac{\partial p}{\partial\lambda}\\
-\frac{D}{Dt}[ua\cos\phi]  + uv\sin\phi - uv\sin\phi - 2\Omega a v\sin\phi\cos\phi &amp;\overset{\text{已知 4}}{=}&amp; -\frac{1}{\rho}\frac{\partial p}{\partial\lambda}\\
+\frac{D}{Dt}[ua\cos\phi]  + uv\sin\phi - uv\sin\phi - 2\Omega a v\sin\phi\cos\phi &amp;\overset{\text{推導 1(b)}}{=}&amp; -\frac{1}{\rho}\frac{\partial p}{\partial\lambda}\\
 \frac{D}{Dt}[ua\cos\phi]  - 2\Omega a v\sin\phi\cos\phi &amp;=&amp; -\frac{1}{\rho}\frac{\partial p}{\partial\lambda}\\
-\frac{D}{Dt} [(\Omega a \cos \phi + u) a \cos \phi] +2\Omega av\cos\phi \sin\phi  - 2\Omega a v\sin\phi\cos\phi &amp;\overset{\text{已知 5}}{=}&amp; -\frac{1}{\rho}\frac{\partial p}{\partial\lambda}\\
+\frac{D}{Dt} [(\Omega a \cos \phi + u) a \cos \phi] +2\Omega av\cos\phi \sin\phi  - 2\Omega a v\sin\phi\cos\phi &amp;\overset{\text{推導 2(b)}}{=}&amp; -\frac{1}{\rho}\frac{\partial p}{\partial\lambda}\\
 \frac{D}{Dt} [(\Omega a \cos \phi + u) a \cos \phi]  &amp;=&amp; -\frac{1}{\rho}\frac{\partial p}{\partial\lambda}\\
 \end{gather*}\end{split}\]</div>
 </section>
@@ -707,51 +732,80 @@ a\cos\phi\frac{Du}{Dt} - uv\sin\phi - 2\Omega a v\sin\phi\cos\phi &amp;=&amp; -\
 <section id="id2">
 <h3>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <ul>
-<li><p><strong>【已知 1】 總動能 <span class="math notranslate nohighlight">\(KE\)</span>：</strong></p>
+<li><p><strong>【已知 1】總動能 <span class="math notranslate nohighlight">\(KE\)</span> (Total Kinetic Energy per Unit Mass)：</strong></p>
 <div class="math notranslate nohighlight">
-\[K = \frac{1}{2}(u^2+v^2+w^2)\]</div>
+\[KE = \frac{1}{2}(u^2+v^2+w^2)\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(KE\)</span> : 單位質量動能 (Kinetic energy per unit mass) <span class="math notranslate nohighlight">\([\text{m}^2\cdot\text{s}^{-2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(u\)</span> : 緯向速度 (Zonal velocity) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(v\)</span> : 經向速度 (Meridional velocity) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(w\)</span> : 垂直速度 (Vertical velocity) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+</ul>
 </li>
-<li><p><strong>【已知 2】<span class="math notranslate nohighlight">\(x\)</span> 方向 <span class="math notranslate nohighlight">\((1.1)\)</span> 式同乘 <span class="math notranslate nohighlight">\(u\)</span> ：</strong></p>
+<li><p><strong>【推導 1】精確原始方程各分量乘以對應速度 (Exact Primitive Equations Multiplied by Respective Velocity Components)：</strong></p>
+<p>(a) <span class="math notranslate nohighlight">\(x\)</span> 方向 <span class="math notranslate nohighlight">\((1.1)\)</span> 式同乘 <span class="math notranslate nohighlight">\(u\)</span>：</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{gather*}
-    \frac{Du}{Dt} - \left(2\Omega+\frac{1}{r\cos\phi}\right)(v\sin\phi-w\cos\phi) &amp;\overset{\text{(1.1)}}{=}&amp; -\frac{1}{\rho r\cos\phi}\frac{\partial p}{\partial\lambda}\\
+    \frac{Du}{Dt} - \left(2\Omega+\frac{u}{r\cos\phi}\right)(v\sin\phi-w\cos\phi) &amp;\overset{\text{(1.1)}}{=}&amp; -\frac{1}{\rho r\cos\phi}\frac{\partial p}{\partial\lambda}\\
     u\frac{Du}{Dt} - u\left(2\Omega+\frac{u}{r\cos\phi}\right)(v\sin\phi-w\cos\phi) &amp;=&amp; -\frac{u}{\rho r\cos\phi}\frac{\partial p}{\partial\lambda}
     \end{gather*}\end{split}\]</div>
-</li>
-<li><p><strong>【已知 3】<span class="math notranslate nohighlight">\(y\)</span> 方向 <span class="math notranslate nohighlight">\((1.2)\)</span> 式同乘 <span class="math notranslate nohighlight">\(v\)</span> ：</strong></p>
+<p>(b) <span class="math notranslate nohighlight">\(y\)</span> 方向 <span class="math notranslate nohighlight">\((1.2)\)</span> 式同乘 <span class="math notranslate nohighlight">\(v\)</span>：</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{gather*}
     \frac{Dv}{Dt} + \left(2\Omega+\frac{u}{r\cos\phi}\right)u\sin\phi + \frac{vw}{r}  &amp;\overset{\text{(1.2)}}{=}&amp; -\frac{1}{\rho r}\frac{\partial p}{\partial\phi}\\
     v\frac{Dv}{Dt} + v\left(2\Omega+\frac{u}{r\cos\phi}\right)u\sin\phi + \frac{v^2w}{r} &amp;=&amp; -\frac{v}{\rho r}\frac{\partial p}{\partial\phi}
     \end{gather*}\end{split}\]</div>
-</li>
-<li><p><strong>【已知 4】<span class="math notranslate nohighlight">\(z\)</span> 方向 <span class="math notranslate nohighlight">\((1.3)\)</span> 式同乘 <span class="math notranslate nohighlight">\(w\)</span> ：</strong></p>
+<p>(c) <span class="math notranslate nohighlight">\(z\)</span> 方向 <span class="math notranslate nohighlight">\((1.3)\)</span> 式同乘 <span class="math notranslate nohighlight">\(w\)</span>：</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{gather*}
     \frac{Dw}{Dt} - \left(2\Omega+\frac{u}{r\cos\phi}\right)u\cos\phi - \frac{v^2}{r} &amp;\overset{\text{(1.3)}}{=}&amp; -\frac{1}{\rho}\frac{\partial p}{\partial r} - g\\
     w\frac{Dw}{Dt} - w\left(2\Omega+\frac{u}{r\cos\phi}\right)u\cos\phi - \frac{wv^2}{r} &amp;=&amp; -\frac{w}{\rho}\frac{\partial p}{\partial r} - gw
     \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(u\)</span> : 緯向速度 (Zonal velocity) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(v\)</span> : 經向速度 (Meridional velocity) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(w\)</span> : 垂直速度 (Vertical velocity) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Omega\)</span> : 地球自轉角速度 (Earth’s angular velocity)，<span class="math notranslate nohighlight">\(\Omega \approx 7.292\times 10^{-5}\ \text{s}^{-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(r\)</span> : 地心距離 (Radial distance from Earth’s center) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 緯度 (Latitude) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda\)</span> : 經度 (Longitude) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\rho\)</span> : 空氣密度 (Air density) <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}^{-3}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p\)</span> : 氣壓 (Pressure) <span class="math notranslate nohighlight">\([\text{Pa}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(g\)</span> : 重力加速度 (Gravitational acceleration)，<span class="math notranslate nohighlight">\(g \approx 9.81\ \text{m}\cdot\text{s}^{-2}\)</span></p></li>
+</ul>
 </li>
-<li><p><strong>【已知 5】<span class="math notranslate nohighlight">\(x\)</span> 方向 <span class="math notranslate nohighlight">\((2.1)\)</span> 式同乘 <span class="math notranslate nohighlight">\(u\)</span>：</strong></p>
+<li><p><strong>【推導 2】傳統近似方程各分量乘以對應速度 (Traditional Approximation Equations Multiplied by Respective Velocity Components)：</strong></p>
+<p>(a) <span class="math notranslate nohighlight">\(x\)</span> 方向 <span class="math notranslate nohighlight">\((2.1)\)</span> 式同乘 <span class="math notranslate nohighlight">\(u\)</span>：</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{gather*}
     \frac{Du}{Dt} - \frac{uv\tan\phi}{a} &amp;\overset{\text{(2.1)}}{=}&amp; -\frac{1}{\rho a\cos\phi}\frac{\partial p}{\partial\lambda} + 2\Omega v\sin\phi\\
     u\frac{Du}{Dt} - \frac{u^2v\tan\phi}{a} &amp;=&amp; -\frac{u}{\rho a\cos\phi}\frac{\partial p}{\partial\lambda} + 2\Omega uv\sin\phi
     \end{gather*}\end{split}\]</div>
-</li>
-<li><p><strong>【已知 6】<span class="math notranslate nohighlight">\(y\)</span> 方向 <span class="math notranslate nohighlight">\((2.2)\)</span> 式同乘 <span class="math notranslate nohighlight">\(v\)</span>：</strong></p>
+<p>(b) <span class="math notranslate nohighlight">\(y\)</span> 方向 <span class="math notranslate nohighlight">\((2.2)\)</span> 式同乘 <span class="math notranslate nohighlight">\(v\)</span>：</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{gather*}
     \frac{Dv}{Dt} + \frac{u^2\tan\phi}{a} &amp;\overset{\text{(2.2)}}{=}&amp; -\frac{1}{\rho a}\frac{\partial p}{\partial\phi} - 2\Omega u\sin\phi\\
     v\frac{Dv}{Dt} + \frac{vu^2\tan\phi}{a} &amp;=&amp; -\frac{v}{\rho a}\frac{\partial p}{\partial\phi} - 2\Omega uv\sin\phi
     \end{gather*}\end{split}\]</div>
-</li>
-<li><p><strong>【已知 7】<span class="math notranslate nohighlight">\(z\)</span> 方向 <span class="math notranslate nohighlight">\((2.3)\)</span> 式同乘 <span class="math notranslate nohighlight">\(w\)</span>：</strong></p>
+<p>(c) <span class="math notranslate nohighlight">\(z\)</span> 方向 <span class="math notranslate nohighlight">\((2.3)\)</span> 式同乘 <span class="math notranslate nohighlight">\(w\)</span>：</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{gather*}
     \frac{Dw}{Dt} &amp;\overset{\text{(2.3)}}{=}&amp; -\frac{1}{\rho}\frac{\partial p}{\partial z} - g\\
     w\frac{Dw}{Dt} &amp;=&amp; -\frac{w}{\rho}\frac{\partial p}{\partial z} - gw
     \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(u\)</span> : 緯向速度 (Zonal velocity) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(v\)</span> : 經向速度 (Meridional velocity) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(w\)</span> : 垂直速度 (Vertical velocity) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Omega\)</span> : 地球自轉角速度 (Earth’s angular velocity)，<span class="math notranslate nohighlight">\(\Omega \approx 7.292\times 10^{-5}\ \text{s}^{-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑（傳統近似下視為常數）(Earth’s radius, constant under traditional approximation)，<span class="math notranslate nohighlight">\(a \approx 6.371\times 10^{6}\ \text{m}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 緯度 (Latitude) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda\)</span> : 經度 (Longitude) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\rho\)</span> : 空氣密度 (Air density) <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}^{-3}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p\)</span> : 氣壓 (Pressure) <span class="math notranslate nohighlight">\([\text{Pa}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z\)</span> : 垂直高度 (Vertical height) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(g\)</span> : 重力加速度 (Gravitational acceleration)，<span class="math notranslate nohighlight">\(g \approx 9.81\ \text{m}\cdot\text{s}^{-2}\)</span></p></li>
+</ul>
 </li>
 </ul>
 </section>
@@ -761,7 +815,7 @@ a\cos\phi\frac{Du}{Dt} - uv\sin\phi - 2\Omega a v\sin\phi\cos\phi &amp;=&amp; -\
 \[\begin{split}\begin{gather*}
 \frac{D KE}{Dt} &amp;\overset{\text{已知 1}}{=}&amp;&amp; \frac{D }{Dt}\left[ \frac{1}{2}(u^2+v^2+w^2) \right]\\
 &amp;=&amp;&amp; u\frac{Du }{Dt}+ v\frac{D v}{Dt} + w\frac{D w}{Dt}\\
-&amp;\overset{\text{已知 2,3,4}}{=}&amp;&amp; -\frac{u}{\rho r\cos\phi}\frac{\partial p}{\partial\lambda} +  u\left(2\Omega+\frac{u}{r\cos\phi}\right)(v\sin\phi-w\cos\phi)\\
+&amp;\overset{\text{推導 1(a)(b)(c)}}{=}&amp;&amp; -\frac{u}{\rho r\cos\phi}\frac{\partial p}{\partial\lambda} +  u\left(2\Omega+\frac{u}{r\cos\phi}\right)(v\sin\phi-w\cos\phi)\\
 &amp;&amp;+&amp;-\frac{v}{\rho r}\frac{\partial p}{\partial\phi} -  v\left(2\Omega+\frac{u}{r\cos\phi}\right)u\sin\phi - \frac{v^2w}{r}\\
 &amp;&amp;+&amp;-\frac{w}{\rho}\frac{\partial p}{\partial r} - gw +w\left(2\Omega+\frac{u}{r\cos\phi}\right)u\cos\phi + \frac{wv^2}{r}\\
 &amp;=&amp;&amp;-\frac{1}{\rho}\left(\frac{u}{r\cos\phi}\frac{\partial p}{\partial\lambda} + \frac{v}{r}\frac{\partial p}{\partial\phi} + w\frac{\partial p}{\partial r}\right) - gw
@@ -773,7 +827,7 @@ a\cos\phi\frac{Du}{Dt} - uv\sin\phi - 2\Omega a v\sin\phi\cos\phi &amp;=&amp; -\
 \[\begin{split}\begin{gather*}
 \frac{D KE}{Dt} &amp;\overset{\text{已知 1}}{=}&amp;&amp; \frac{D }{Dt}\left[ \frac{1}{2}(u^2+v^2+w^2) \right]\\
 &amp;=&amp;&amp; u\frac{Du }{Dt}+ v\frac{D v}{Dt} + w\frac{D w}{Dt}\\
-&amp;\overset{\text{已知 5,6,7}}{=}&amp;&amp; -\frac{u}{\rho a\cos\phi}\frac{\partial p}{\partial\lambda} + 2\Omega uv\sin\phi + \frac{u^2v\tan\phi}{a}\\
+&amp;\overset{\text{推導 2(a)(b)(c)}}{=}&amp;&amp; -\frac{u}{\rho a\cos\phi}\frac{\partial p}{\partial\lambda} + 2\Omega uv\sin\phi + \frac{u^2v\tan\phi}{a}\\
 &amp;&amp;+&amp;-\frac{v}{\rho a}\frac{\partial p}{\partial\phi} - 2\Omega uv\sin\phi - \frac{vu^2\tan\phi}{a}\\
 &amp;&amp;+&amp;-\frac{w}{\rho}\frac{\partial p}{\partial z} - gw\\
 &amp;=&amp;&amp;-\frac{1}{\rho}\left(\frac{u}{a\cos\phi}\frac{\partial p}{\partial\lambda} + \frac{v}{a}\frac{\partial p}{\partial\phi} + w\frac{\partial p}{\partial z}\right) - gw
@@ -791,40 +845,65 @@ a\cos\phi\frac{Du}{Dt} - uv\sin\phi - 2\Omega a v\sin\phi\cos\phi &amp;=&amp; -\
 <li><p>Perform the calculations based on both <span class="math notranslate nohighlight">\((3)\)</span> and <span class="math notranslate nohighlight">\((4)\)</span>. Since almost all present NWP models and general circulation models use the <strong>traditional approximation</strong> and thus have the approximate angular momentum principle <span class="math notranslate nohighlight">\((4)\)</span>, <code class="docutils literal notranslate"><span class="pre">how</span> <span class="pre">large</span> <span class="pre">are</span> <span class="pre">the</span> <span class="pre">zonal</span> <span class="pre">wind</span> <span class="pre">errors</span></code> in the jet due to the traditional approximation in such models?</p></li>
 <li><p>What <code class="docutils literal notranslate"><span class="pre">other</span> <span class="pre">process(es)</span></code> may make the observed jet speed smaller than the speed produced by the conservation of angular momentum?</p></li>
 </ol>
+</section>
+<section id="answer-3">
+<h2>Answer 3<a class="headerlink" href="#answer-3" title="Link to this heading">#</a></h2>
 <section id="id3">
-<h3>已知與假設<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<h3>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <ul>
-<li><p><strong>【假設 1】理想假設 (Ideal)</strong></p>
+<li><p><strong>【假設 1】理想假設 (Ideal Assumptions)：</strong></p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial p}{\partial\lambda}=0\]</div>
 <ul class="simple">
-<li><p>緯向對稱 (zonally symmetric) : <span class="math notranslate nohighlight">\(\frac{\partial p}{\partial\lambda}=0\)</span></p></li>
+<li><p>緯向對稱 (zonally symmetric)：壓力不隨經度 <span class="math notranslate nohighlight">\(\lambda\)</span> 變化</p></li>
 <li><p>無黏滯力 (inviscid flow)</p></li>
+<li><p><span class="math notranslate nohighlight">\(p\)</span> : 氣壓 (Pressure) <span class="math notranslate nohighlight">\([\text{Pa}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda\)</span> : 經度 (Longitude) [無單位]</p></li>
 </ul>
 </li>
-<li><p><strong>【假設 2】題目假設</strong></p>
+<li><p><strong>【假設 2】題目初始條件 (Initial Conditions)：</strong></p>
+<div class="math notranslate nohighlight">
+\[u(0^\circ \text{N} , 0 \text{ km}) = 0\]</div>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(u(0^\circ \text{N} , 0 \text{ km}) =0\)</span></p></li>
-<li></li>
+<li><p><span class="math notranslate nohighlight">\(u\)</span> : 赤道海平面之緯向速度 (Zonal velocity at equatorial sea level) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
 </ul>
 </li>
-<li><p><strong>【已知 1】角動量精確版基於公式 (3)</strong></p>
+<li><p><strong>【已知 1】角動量守恆（精確版）基於公式 (3) (Exact Angular Momentum Conservation, from Eq. (3))：</strong></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{gather*}
     \frac{D}{Dt} [(\Omega r \cos \phi + u) r \cos \phi] &amp;\overset{(3)}{=}&amp; -\frac{1}{\rho} \frac{\partial p}{\partial \lambda}\\
     \frac{D}{Dt} [(\Omega r \cos \phi + u) r \cos \phi] &amp;\overset{\text{假設 1}}{=}&amp; 0\\
     \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\Omega\)</span> : 地球自轉角速度 (Earth’s angular velocity)，<span class="math notranslate nohighlight">\(\Omega \approx 7.292\times 10^{-5}\ \text{s}^{-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(r\)</span> : 地心距離 (Radial distance from Earth’s center) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 緯度 (Latitude) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(u\)</span> : 緯向速度 (Zonal velocity) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\rho\)</span> : 空氣密度 (Air density) <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}^{-3}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p\)</span> : 氣壓 (Pressure) <span class="math notranslate nohighlight">\([\text{Pa}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda\)</span> : 經度 (Longitude) [無單位]</p></li>
+</ul>
 </li>
-<li><p><strong>【已知 2】角動量近似版基於公式 (4)</strong></p>
+<li><p><strong>【已知 2】角動量守恆（近似版）基於公式 (4) (Approximate Angular Momentum Conservation, from Eq. (4))：</strong></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{gather*}
     \frac{D}{Dt} [(\Omega a \cos \phi + u) a \cos \phi] &amp;\overset{(4)}{=}&amp; -\frac{1}{\rho} \frac{\partial p}{\partial \lambda}\\
     \frac{D}{Dt} [(\Omega a \cos \phi + u) a \cos \phi] &amp;\overset{\text{假設 1}}{=}&amp; 0\\
     \end{gather*}\end{split}\]</div>
-</li>
-<li><p><strong>【已知 3】一些常數</strong></p>
 <ul class="simple">
-<li><p>地球半徑 <span class="math notranslate nohighlight">\(a \sim 6371000 \text{m}\)</span></p></li>
-<li><p>地球自轉角頻率 <span class="math notranslate nohighlight">\(\Omega \sim 7.292\times 10^{-5} \text{s}^{-1}\)</span></p></li>
-<li></li>
+<li><p><span class="math notranslate nohighlight">\(\Omega\)</span> : 地球自轉角速度 (Earth’s angular velocity)，<span class="math notranslate nohighlight">\(\Omega \approx 7.292\times 10^{-5}\ \text{s}^{-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑（傳統近似常數）(Earth’s radius, constant under traditional approximation)，<span class="math notranslate nohighlight">\(a \approx 6.371\times 10^{6}\ \text{m}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 緯度 (Latitude) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(u\)</span> : 緯向速度 (Zonal velocity) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\rho\)</span> : 空氣密度 (Air density) <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}^{-3}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p\)</span> : 氣壓 (Pressure) <span class="math notranslate nohighlight">\([\text{Pa}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda\)</span> : 經度 (Longitude) [無單位]</p></li>
+</ul>
+</li>
+<li><p><strong>【已知 3】物理常數 (Physical Constants)：</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑 (Earth’s radius)，<span class="math notranslate nohighlight">\(a \approx 6.371\times 10^{6}\ \text{m}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Omega\)</span> : 地球自轉角速度 (Earth’s angular velocity)，<span class="math notranslate nohighlight">\(\Omega \approx 7.292\times 10^{-5}\ \text{s}^{-1}\)</span></p></li>
 </ul>
 </li>
 </ul>
@@ -849,7 +928,7 @@ a\cos\phi\frac{Du}{Dt} - uv\sin\phi - 2\Omega a v\sin\phi\cos\phi &amp;=&amp; -\
 <h4>對於 近似版<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{gather*}
-\frac{D}{Dt} [(\Omega a \cos \phi + u) a \cos \phi] &amp;\overset{\text{已知 1}}{=}&amp; 0\\
+\frac{D}{Dt} [(\Omega a \cos \phi + u) a \cos \phi] &amp;\overset{\text{已知 2}}{=}&amp; 0\\
 \left. (\Omega a \cos \phi + u) a \cos \phi \right|_{(0^\circ \text{N} , 0 \text{ km})} &amp;=&amp; \left. (\Omega a \cos \phi + u) a \cos \phi \right|_{(0^\circ \text{N} , 16 \text{ km})} \\
 (\Omega a \cos 0^\circ + u(0^\circ \text{N} , 0 \text{ km})) a \cos 0^\circ  &amp;=&amp;  (\Omega a \cos 0^\circ + u(0^\circ \text{N} , 16 \text{ km})) a \cos 0^\circ \\
 \Omega a^2  &amp;\overset{\text{假設 2}}{=}&amp;  (\Omega a+ u(0^\circ \text{N} , 16 \text{ km})) a  \\
@@ -878,7 +957,7 @@ a\cos\phi\frac{Du}{Dt} - uv\sin\phi - 2\Omega a v\sin\phi\cos\phi &amp;=&amp; -\
 <h4>對於 近似版<a class="headerlink" href="#id7" title="Link to this heading">#</a></h4>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{gather*}
-\frac{D}{Dt} [(\Omega a \cos \phi + u) a \cos \phi] &amp;\overset{\text{已知 1}}{=}&amp; 0\\
+\frac{D}{Dt} [(\Omega a \cos \phi + u) a \cos \phi] &amp;\overset{\text{已知 2}}{=}&amp; 0\\
 \left. (\Omega a \cos \phi + u) a \cos \phi \right|_{(0^\circ \text{N} , 0 \text{ km})} &amp;=&amp; \left. (\Omega a \cos \phi + u) a \cos \phi \right|_{(30^\circ \text{N} , 16 \text{ km})} \\
 (\Omega a \cos 0^\circ + u(0^\circ \text{N} , 0 \text{ km})) a \cos 0^\circ  &amp;=&amp;  (\Omega a \cos 30^\circ + u(30^\circ \text{N} , 16 \text{ km})) a \cos 30^\circ \\
 \Omega a^2  &amp;\overset{\text{假設 2}}{=}&amp;  (\Omega a \frac{\sqrt{3}}{2} + u(30^\circ \text{N} , 16 \text{ km})) a \frac{\sqrt{3}}{2} \\
@@ -894,7 +973,7 @@ a\cos\phi\frac{Du}{Dt} - uv\sin\phi - 2\Omega a v\sin\phi\cos\phi &amp;=&amp; -\
 <h3>Q3.2 zonal wind errors at <span class="math notranslate nohighlight">\(u(30^\circ \text{N} , 16 \text{ km})\)</span><a class="headerlink" href="#q3-2-zonal-wind-errors-at-u-30-circ-text-n-16-text-km" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{gather*}
-u_{\text{Traditional Approximation}}(30^\circ \text{N} , 16 \text{ km}) - u_{\text{Exact Primitive}}(30^\circ \text{N} , 16 \text{ km})  &amp;\overset{\text{Q3.1b}}{=}&amp; 131.8\text{ m}\cdot \text{ s}^{-1} -134.1 \text{ m}\cdot \text{ s}^{-1}\\
+u_{\text{Traditional Approximation}}(30^\circ \text{N} , 16 \text{ km}) - u_{\text{Exact Primitive}}(30^\circ \text{N} , 16 \text{ km})  &amp;\overset{\text{Q3.1b}}{=}&amp; 134.1\text{ m}\cdot \text{ s}^{-1} -131.8 \text{ m}\cdot \text{ s}^{-1}\\
 &amp;=&amp; 2.3 \text{ m}\cdot \text{ s}^{-1}\\
 \end{gather*}\end{split}\]</div>
 </section>
@@ -917,7 +996,7 @@ u_{\text{Traditional Approximation}}(30^\circ \text{N} , 16 \text{ km}) - u_{\te
 </section>
 <section id="question-4">
 <h2>Question 4<a class="headerlink" href="#question-4" title="Link to this heading">#</a></h2>
-<p>In an effort to gain more accuracy in the climate model, some reserachers have approximated <span class="math notranslate nohighlight">\((1.3)\)</span> by the hydrostatic equation <span class="math notranslate nohighlight">\(\frac{Dw}{Dt}=0\)</span> but have left <span class="math notranslate nohighlight">\((1.1)\)</span> and <span class="math notranslate nohighlight">\((1.2)\)</span> unchanged. Discuss why this is a bad idea.</p>
+<p>In an effort to gain more accuracy in the climate model, some researchers have approximated <span class="math notranslate nohighlight">\((1.3)\)</span> by the hydrostatic equation <span class="math notranslate nohighlight">\(\frac{Dw}{Dt}=0\)</span> but have left <span class="math notranslate nohighlight">\((1.1)\)</span> and <span class="math notranslate nohighlight">\((1.2)\)</span> unchanged. Discuss why this is a bad idea.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{gather*}
 \frac{Du}{Dt}-\left(2\Omega+\frac{u}{r\cos\phi}\right)(v\sin\phi-w\cos\phi)&amp;=&amp;-\frac{1}{\rho}\frac{\partial p}{r\cos\phi\partial\lambda} \\
@@ -928,28 +1007,21 @@ u_{\text{Traditional Approximation}}(30^\circ \text{N} , 16 \text{ km}) - u_{\te
 <section id="answer-4">
 <h2>Answer 4<a class="headerlink" href="#answer-4" title="Link to this heading">#</a></h2>
 <p>Question 2 中 <span class="math notranslate nohighlight">\(\frac{Dw}{Dt}\)</span> 提供科氏力項與離心力項，若假設 <span class="math notranslate nohighlight">\(\frac{Dw}{Dt}=0\)</span> 則會有一些項無法消除導致動能 <span class="math notranslate nohighlight">\(KE\)</span> 不守恆。在數學上無法抵消對應到物理上就是：科氏力與度規離心力開始對空氣區塊作功了，虛假能量來源會隨著時間不斷累積導致模型的動能無限放大，最後數值發散。</p>
-<section id="id8">
-<h3>Q2.1 <span class="math notranslate nohighlight">\(KE\)</span> of Exact Primitive Equations<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<section id="q4-ke-of-exact-primitive-equations-with-frac-dw-dt-0">
+<h3>Q4 <span class="math notranslate nohighlight">\(KE\)</span> of Exact Primitive Equations with <span class="math notranslate nohighlight">\(\frac{Dw}{Dt}=0\)</span><a class="headerlink" href="#q4-ke-of-exact-primitive-equations-with-frac-dw-dt-0" title="Link to this heading">#</a></h3>
+<p>由 Q2.1 可知，完整精確方程組的 <span class="math notranslate nohighlight">\(KE\)</span> 推導為：</p>
+<div class="math notranslate nohighlight">
+\[\frac{DKE}{Dt} = u\frac{Du}{Dt}+ v\frac{Dv}{Dt} + w\frac{Dw}{Dt}\]</div>
+<p>令 <span class="math notranslate nohighlight">\(\frac{Dw}{Dt}=0\)</span>，則 <span class="math notranslate nohighlight">\(w\frac{Dw}{Dt}=0\)</span>，僅保留 <span class="math notranslate nohighlight">\(u\)</span> 與 <span class="math notranslate nohighlight">\(v\)</span> 方向貢獻：</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{gather*}
 \frac{D KE}{Dt} &amp;\overset{\text{Q2 已知 1}}{=}&amp;&amp; \frac{D }{Dt}\left[ \frac{1}{2}(u^2+v^2+w^2) \right]\\
-&amp;=&amp;&amp; u\frac{Du }{Dt}+ v\frac{D v}{Dt} + w\frac{D w}{Dt}\\
-&amp;\overset{\text{Q2 已知 2,3,4}}{=}&amp;&amp; -\frac{u}{\rho r\cos\phi}\frac{\partial p}{\partial\lambda} +  u\left(2\Omega+\frac{u}{r\cos\phi}\right)(v\sin\phi-w\cos\phi)\\
+&amp;=&amp;&amp; u\frac{Du }{Dt}+ v\frac{D v}{Dt} + w\cdot 0\\
+&amp;\overset{\text{Q2 推導 1(a)(b)}}{=}&amp;&amp; -\frac{u}{\rho r\cos\phi}\frac{\partial p}{\partial\lambda} +  u\left(2\Omega+\frac{u}{r\cos\phi}\right)(v\sin\phi-w\cos\phi)\\
 &amp;&amp;+&amp;-\frac{v}{\rho r}\frac{\partial p}{\partial\phi} -  v\left(2\Omega+\frac{u}{r\cos\phi}\right)u\sin\phi - \frac{v^2w}{r}\\
-&amp;&amp;+&amp;-\frac{w}{\rho}\frac{\partial p}{\partial r} - gw +w\left(2\Omega+\frac{u}{r\cos\phi}\right)u\cos\phi + \frac{wv^2}{r}\\
-&amp;=&amp;&amp;-\frac{1}{\rho}\left(\frac{u}{r\cos\phi}\frac{\partial p}{\partial\lambda} + \frac{v}{r}\frac{\partial p}{\partial\phi} + w\frac{\partial p}{\partial r}\right) - gw
+&amp;=&amp;&amp;-\frac{1}{\rho}\left(\frac{u}{r\cos\phi}\frac{\partial p}{\partial\lambda} + \frac{v}{r}\frac{\partial p}{\partial\phi}\right) - u\left(2\Omega+\frac{u}{r\cos\phi}\right)w\cos\phi- \frac{v^2w}{r}
 \end{gather*}\end{split}\]</div>
-</section>
-<section id="q4-ke-of-exact-primitive-equations-frac-dw-dt-0">
-<h3>Q4 <span class="math notranslate nohighlight">\(KE\)</span> of Exact Primitive Equations <span class="math notranslate nohighlight">\(\frac{Dw}{Dt}=0\)</span><a class="headerlink" href="#q4-ke-of-exact-primitive-equations-frac-dw-dt-0" title="Link to this heading">#</a></h3>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{gather*}
-\frac{D KE}{Dt} &amp;\overset{\text{Q2 已知 1}}{=}&amp;&amp; \frac{D }{Dt}\left[ \frac{1}{2}(u^2+v^2+w^2) \right]\\
-&amp;=&amp;&amp; u\frac{Du }{Dt}+ v\frac{D v}{Dt} + w\frac{D w}{Dt}\\
-&amp;\overset{\text{Q2 已知 2,3,4}}{=}&amp;&amp; -\frac{u}{\rho r\cos\phi}\frac{\partial p}{\partial\lambda} +  u\left(2\Omega+\frac{u}{r\cos\phi}\right)(v\sin\phi-w\cos\phi)\\
-&amp;&amp;+&amp;-\frac{v}{\rho r}\frac{\partial p}{\partial\phi} -  v\left(2\Omega+\frac{u}{r\cos\phi}\right)u\sin\phi - \frac{v^2w}{r}\\
-&amp;=&amp;&amp;-\frac{1}{\rho}\left(\frac{u}{r\cos\phi}\frac{\partial p}{\partial\lambda} + \frac{v}{r}\frac{\partial p}{\partial\phi} + w\frac{\partial p}{\partial r}\right) - gw -u\left(2\Omega+\frac{u}{r\cos\phi}\right)w\cos\phi- \frac{v^2w}{r}
-\end{gather*}\end{split}\]</div>
+<p>與 Q2.1 結果相比，多出了 <span class="math notranslate nohighlight">\(-u\left(2\Omega+\frac{u}{r\cos\phi}\right)w\cos\phi - \frac{v^2w}{r}\)</span> 無法被抵消，代表科氏力與離心力對流體做功，能量不守恆。</p>
 </section>
 </section>
 <section id="question-5">
@@ -965,43 +1037,10 @@ a\cos\phi\frac{Du}{Dt} - v\sin\phi(2\Omega a\cos\phi+u) + w\cos\phi(2\Omega a\co
 <section id="answer-5">
 <h2>Answer 5<a class="headerlink" href="#answer-5" title="Link to this heading">#</a></h2>
 <p>單純把 <span class="math notranslate nohighlight">\(r\)</span> 換成常數 <span class="math notranslate nohighlight">\(a\)</span> 會讓 <span class="math notranslate nohighlight">\(\frac{Dr}{Dt}= \frac{Da}{Dt}=0\)</span> ，也就是說Question 1 證明的角動量會不守恒會多出 <span class="math notranslate nohighlight">\(a \cos \phi\left( 2\Omega + \frac{u}{a \cos \phi} \right) ( w \cos \phi)\)</span>，這代表每當大氣中有垂直風速 (<span class="math notranslate nohighlight">\(w \neq 0\)</span>) 產生時，這團空氣就會憑空獲得或失去角動量！</p>
+<section id="id8">
+<h3>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
 <ul>
-<li><p><strong>【Q1 已知 2】 微積分✨1.1：</strong></p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{gather*}
-    \frac{D}{Dt}[ur\cos\phi] &amp;=&amp; \frac{Du}{Dt} r\cos\phi + u \frac{D r}{Dt} \cos\phi + ur \frac{D \cos\phi}{Dt} \\
-    \frac{D}{Dt}[ur\cos\phi]&amp;\overset{\text{Q1 已知 1}}{=}&amp; \frac{Du}{Dt} r\cos\phi + u w \cos\phi - ur \sin\phi \frac{D \phi}{Dt} \\
-    \frac{D}{Dt}[ur\cos\phi]&amp;\overset{\text{Q1 已知 1}}{=}&amp; \frac{Du}{Dt} r\cos\phi + u w \cos\phi - ur \sin\phi \frac{v}{r} \\
-    \frac{D}{Dt}[ur\cos\phi]&amp;=&amp; \frac{Du}{Dt} r\cos\phi - u(v\sin\phi - w\cos\phi)\\
-    \frac{Du}{Dt} r\cos\phi &amp;=&amp; \frac{D}{Dt}[ur\cos\phi]  + u(v\sin\phi - w\cos\phi)\\
-    \end{gather*}\end{split}\]</div>
-</li>
-<li><p><strong>【Q1 已知 3】 微積分✨✨1.1：</strong></p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{gather*}
-    \frac{D}{Dt} [(\Omega r \cos \phi + u) r \cos \phi] &amp;=&amp; \frac{D}{Dt}[\Omega r^2\cos^2\phi] + \frac{D}{Dt}[ur\cos\phi] \\
-    \frac{D}{Dt} [(\Omega r \cos \phi + u) r \cos \phi] - \frac{D}{Dt}[ur\cos\phi] &amp;=&amp; \frac{D}{Dt}[\Omega r^2\cos^2\phi] \\
-    \frac{D}{Dt} [(\Omega r \cos \phi + u) r \cos \phi] - \frac{D}{Dt}[ur\cos\phi] &amp;=&amp; \Omega 2r\frac{Dr}{Dt}\cos^2\phi + \Omega r^2 \cdot 2\cos\phi(-\sin\phi)\frac{D\phi}{Dt}\\
-    \frac{D}{Dt} [(\Omega r \cos \phi + u) r \cos \phi] - \frac{D}{Dt}[ur\cos\phi] &amp;\overset{\text{Q1 已知 1}}{=}&amp; \Omega 2rw\cos^2\phi - \Omega r^2 \cdot 2\cos\phi \sin\phi \frac{v}{r}\\
-    \frac{D}{Dt} [(\Omega r \cos \phi + u) r \cos \phi] - \frac{D}{Dt}[ur\cos\phi] &amp;=&amp; 2\Omega r\cos\phi(w\cos\phi - v\sin\phi)\\
-    \frac{D}{Dt} [(\Omega r \cos \phi + u) r \cos \phi] - \frac{D}{Dt}[ur\cos\phi] &amp;=&amp;-2\Omega r\cos\phi(v\sin\phi - w\cos\phi)\\
-    \frac{D}{Dt}[ur\cos\phi] &amp;=&amp;\frac{D}{Dt} [(\Omega r \cos \phi + u) r \cos \phi] +2\Omega r\cos\phi(v\sin\phi - w\cos\phi)\\
-    \end{gather*}\end{split}\]</div>
-</li>
-</ul>
-<section id="id9">
-<h3>Q1.1<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{gather*}
-\frac{Du}{Dt} - \left( 2\Omega + \frac{u}{r \cos \phi} \right) (v \sin \phi - w \cos \phi) &amp;\overset{(1.1)}{=}&amp; -\frac{1}{\rho r \cos \phi} \frac{\partial p}{\partial \lambda} \\
-r \cos \phi\frac{Du}{Dt} -  r \cos \phi\left( 2\Omega + \frac{u}{r \cos \phi} \right) (v \sin \phi - w \cos \phi) &amp;=&amp; -\frac{1}{\rho} \frac{\partial p}{\partial \lambda} \\
-\frac{D}{Dt}[ur\cos\phi] + u(v\sin\phi - w\cos\phi) -  r \cos \phi\left( 2\Omega + \frac{u}{r \cos \phi} \right) (v \sin \phi - w \cos \phi) &amp;\overset{\text{Q1 已知 2}}{=}&amp; -\frac{1}{\rho} \frac{\partial p}{\partial \lambda} \\
-\frac{D}{Dt}[ur\cos\phi] -  r \cos \phi 2\Omega  (v \sin \phi - w \cos \phi) &amp;=&amp; -\frac{1}{\rho} \frac{\partial p}{\partial \lambda} \\
-\frac{D}{Dt} [(\Omega r \cos \phi + u) r \cos \phi] +2\Omega r\cos\phi(v\sin\phi - w\cos\phi)  -  r \cos \phi 2\Omega  (v \sin \phi - w \cos \phi) &amp;\overset{\text{Q1 已知 3}}{=}&amp; -\frac{1}{\rho} \frac{\partial p}{\partial \lambda} \\
-\frac{D}{Dt} [(\Omega r \cos \phi + u) r \cos \phi]  &amp;=&amp; -\frac{1}{\rho} \frac{\partial p}{\partial \lambda} \\
-\end{gather*}\end{split}\]</div>
-<ul>
-<li><p><strong>【Q5 已知 2】 微積分✨1.1：</strong></p>
+<li><p><strong>【推導 1】展開 <span class="math notranslate nohighlight">\(D/Dt[ua\cos\phi]\)</span>（強制令 <span class="math notranslate nohighlight">\(r=a\)</span>）(Expansion of D/Dt[ua cos φ] with r Replaced by a)：</strong></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{gather*}
     \frac{D}{Dt}[ua\cos\phi] &amp;=&amp; \frac{Du}{Dt} a\cos\phi + u \frac{D a}{Dt} \cos\phi + ua \frac{D \cos\phi}{Dt} \\
@@ -1010,18 +1049,30 @@ r \cos \phi\frac{Du}{Dt} -  r \cos \phi\left( 2\Omega + \frac{u}{r \cos \phi} \r
     \frac{D}{Dt}[ua\cos\phi]&amp;=&amp; \frac{Du}{Dt} a\cos\phi - uv\sin\phi \\
     \frac{Du}{Dt} a\cos\phi &amp;=&amp; \frac{D}{Dt}[ua\cos\phi]  + uv\sin\phi \\
     \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(u\)</span> : 緯向速度 (Zonal velocity) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(v\)</span> : 經向速度 (Meridional velocity) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑（強制取代 <span class="math notranslate nohighlight">\(r\)</span>）(Earth’s radius, substituted for <span class="math notranslate nohighlight">\(r\)</span>)，<span class="math notranslate nohighlight">\(a \approx 6.371\times 10^{6}\ \text{m}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 緯度 (Latitude) [無單位]</p></li>
+</ul>
 </li>
-<li><p><strong>【Q5 已知 3】 微積分✨✨1.1：</strong></p>
+<li><p><strong>【推導 2】展開 <span class="math notranslate nohighlight">\(D/Dt[(\Omega a\cos\phi+u)a\cos\phi]\)</span>（強制令 <span class="math notranslate nohighlight">\(r=a\)</span>）(Expansion of D/Dt[(Ωa cos φ+u)a cos φ] with r Replaced by a)：</strong></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{gather*}
     \frac{D}{Dt} [(\Omega a \cos \phi + u) a \cos \phi] &amp;=&amp; \frac{D}{Dt}[\Omega a^2\cos^2\phi] + \frac{D}{Dt}[ua\cos\phi] \\
     \frac{D}{Dt} [(\Omega a \cos \phi + u) a \cos \phi] - \frac{D}{Dt}[ua\cos\phi] &amp;=&amp; \frac{D}{Dt}[\Omega a^2\cos^2\phi] \\
     \frac{D}{Dt} [(\Omega a \cos \phi + u) a \cos \phi] - \frac{D}{Dt}[ua\cos\phi] &amp;=&amp; \Omega 2a\frac{Da}{Dt}\cos^2\phi + \Omega a^2 \cdot 2\cos\phi(-\sin\phi)\frac{D\phi}{Dt}\\
-    \frac{D}{Dt} [(\Omega a \cos \phi + u) a \cos \phi] - \frac{D}{Dt}[ua\cos\phi] &amp;\overset{\text{已知 1}}{=}&amp; \Omega 2a0\cos^2\phi - \Omega a^2 \cdot 2\cos\phi \sin\phi \frac{v}{a}\\
+    \frac{D}{Dt} [(\Omega a \cos \phi + u) a \cos \phi] - \frac{D}{Dt}[ua\cos\phi] &amp;\overset{\text{Q1 已知 1}}{=}&amp; \Omega 2a\cdot 0\cdot\cos^2\phi - \Omega a^2 \cdot 2\cos\phi \sin\phi \frac{v}{a}\\
     \frac{D}{Dt} [(\Omega a \cos \phi + u) a \cos \phi] - \frac{D}{Dt}[ua\cos\phi] &amp;=&amp;- 2\Omega av\cos\phi\sin\phi\\
-    \frac{D}{Dt} [(\Omega a \cos \phi + u) a \cos \phi] - \frac{D}{Dt}[ua\cos\phi] &amp;=&amp;- 2\Omega av\cos\phi\sin\phi \\
     \frac{D}{Dt}[ua\cos\phi] &amp;=&amp;\frac{D}{Dt} [(\Omega a \cos \phi + u) a \cos \phi] + 2\Omega av\cos\phi\sin\phi\\
     \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(u\)</span> : 緯向速度 (Zonal velocity) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(v\)</span> : 經向速度 (Meridional velocity) <span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑（強制取代 <span class="math notranslate nohighlight">\(r\)</span>）(Earth’s radius, substituted for <span class="math notranslate nohighlight">\(r\)</span>)，<span class="math notranslate nohighlight">\(a \approx 6.371\times 10^{6}\ \text{m}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 緯度 (Latitude) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Omega\)</span> : 地球自轉角速度 (Earth’s angular velocity)，<span class="math notranslate nohighlight">\(\Omega \approx 7.292\times 10^{-5}\ \text{s}^{-1}\)</span></p></li>
+</ul>
 </li>
 </ul>
 </section>
@@ -1031,39 +1082,46 @@ r \cos \phi\frac{Du}{Dt} -  r \cos \phi\left( 2\Omega + \frac{u}{r \cos \phi} \r
 \[\begin{split}\begin{gather*}
 \frac{Du}{Dt} - \left( 2\Omega + \frac{u}{a \cos \phi} \right) (v \sin \phi - w \cos \phi) &amp;\overset{(1.1 \text{改})}{=}&amp; -\frac{1}{\rho a \cos \phi} \frac{\partial p}{\partial \lambda} \\
 a \cos \phi\frac{Du}{Dt} -  a \cos \phi\left( 2\Omega + \frac{u}{a \cos \phi} \right) (v \sin \phi - w \cos \phi) &amp;=&amp; -\frac{1}{\rho} \frac{\partial p}{\partial \lambda} \\
-\frac{D}{Dt}[ua\cos\phi] + uv\sin\phi -  a \cos \phi\left( 2\Omega + \frac{u}{a \cos \phi} \right) (v \sin \phi - w \cos \phi) &amp;\overset{\text{Q5 已知 2}}{=}&amp; -\frac{1}{\rho} \frac{\partial p}{\partial \lambda} \\
+\frac{D}{Dt}[ua\cos\phi] + uv\sin\phi -  a \cos \phi\left( 2\Omega + \frac{u}{a \cos \phi} \right) (v \sin \phi - w \cos \phi) &amp;\overset{\text{推導 1}}{=}&amp; -\frac{1}{\rho} \frac{\partial p}{\partial \lambda} \\
 \frac{D}{Dt}[ua\cos\phi] +  a \cos \phi\left( 2\Omega + \frac{u}{a \cos \phi} \right) ( w \cos \phi) - 2a v\Omega \cos \phi   \sin \phi &amp;=&amp; -\frac{1}{\rho} \frac{\partial p}{\partial \lambda} \\
-\frac{D}{Dt} [(\Omega a \cos \phi + u) a \cos \phi] + 2\Omega av\cos\phi\sin\phi +  a \cos \phi\left( 2\Omega + \frac{u}{a \cos \phi} \right) ( w \cos \phi) - 2a v\Omega \cos \phi   \sin \phi &amp;\overset{\text{Q5 已知 3}}{=}&amp; -\frac{1}{\rho} \frac{\partial p}{\partial \lambda} \\
+\frac{D}{Dt} [(\Omega a \cos \phi + u) a \cos \phi] + 2\Omega av\cos\phi\sin\phi +  a \cos \phi\left( 2\Omega + \frac{u}{a \cos \phi} \right) ( w \cos \phi) - 2a v\Omega \cos \phi   \sin \phi &amp;\overset{\text{推導 2}}{=}&amp; -\frac{1}{\rho} \frac{\partial p}{\partial \lambda} \\
 \frac{D}{Dt} [(\Omega a \cos \phi + u) a \cos \phi] +  a \cos \phi\left( 2\Omega + \frac{u}{a \cos \phi} \right) ( w \cos \phi)   &amp;=&amp; -\frac{1}{\rho} \frac{\partial p}{\partial \lambda} \\
 \end{gather*}\end{split}\]</div>
 </section>
 </section>
 <section id="question-6">
 <h2>Question 6<a class="headerlink" href="#question-6" title="Link to this heading">#</a></h2>
-<p>If a radius <span class="math notranslate nohighlight">\(a\)</span> spherical planet is covered with a homogeneous fluid with depath <span class="math notranslate nohighlight">\(h\)</span> and density <span class="math notranslate nohighlight">\(\rho\)</span> .</p>
+<p>If a radius <span class="math notranslate nohighlight">\(a\)</span> spherical planet is covered with a homogeneous fluid with depth <span class="math notranslate nohighlight">\(h\)</span> and density <span class="math notranslate nohighlight">\(\rho\)</span> .</p>
 <ol class="arabic simple">
 <li><p>Show that the surface pressure in hydrostatic balance is</p></li>
 </ol>
 <div class="math notranslate nohighlight">
 \[p = \rho g h \left( 1 + \frac{h}{a} + \frac{1}{3} \frac{h^2}{a^2} \right)\]</div>
 <ol class="arabic simple" start="2">
-<li><p>Note that the pressure is not the typical hydrostatic <span class="math notranslate nohighlight">\(\rho g h\)</span> value. The atmospheric pressure or the geopotential height is often calculated with the hydrotatic balance, <code class="docutils literal notranslate"><span class="pre">discuss</span> <span class="pre">the</span> <span class="pre">error</span></code> involved when the spherical geometry of earth is considered.</p></li>
+<li><p>Note that the pressure is not the typical hydrostatic <span class="math notranslate nohighlight">\(\rho g h\)</span> value. The atmospheric pressure or the geopotential height is often calculated with the hydrostatic balance, <code class="docutils literal notranslate"><span class="pre">discuss</span> <span class="pre">the</span> <span class="pre">error</span></code> involved when the spherical geometry of earth is considered.</p></li>
 </ol>
 </section>
 <section id="answer-6">
 <h2>Answer 6<a class="headerlink" href="#answer-6" title="Link to this heading">#</a></h2>
-<section id="id10">
-<h3>已知與假設<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<section id="id9">
+<h3>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
 <ul>
-<li><p><strong>【已知 1】球體積公式</strong></p>
+<li><p><strong>【已知 1】球體積公式 (Volume of a Sphere)：</strong></p>
 <div class="math notranslate nohighlight">
 \[V=\frac{4}{3}\pi r^3\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(V\)</span> : 球體積 (Volume of sphere) <span class="math notranslate nohighlight">\([\text{m}^3]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(r\)</span> : 球半徑 (Sphere radius) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+</ul>
 </li>
-<li><p><strong>【已知 2】二項式展開 (Binomial Expansion)</strong></p>
+<li><p><strong>【已知 2】二項式展開 (Binomial Expansion)：</strong></p>
 <div class="math notranslate nohighlight">
 \[(x+y)^3 = x^3 + 3x^2y + 3xy^2 + y^3\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x, y\)</span> : 任意實數 (Arbitrary real numbers) [無單位]</p></li>
+</ul>
 </li>
-<li><p><strong>【已知 3】地球上的空氣體積</strong></p>
+<li><p><strong>【已知 3】地球上空氣層體積 (Air Shell Volume above Earth’s Surface)：</strong></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{gather*}
     V &amp;\overset{\text{已知 1}}{=}&amp; \frac{4}{3}\pi(a+h)^3 - \frac{4}{3}\pi a^3\\
@@ -1071,10 +1129,32 @@ a \cos \phi\frac{Du}{Dt} -  a \cos \phi\left( 2\Omega + \frac{u}{a \cos \phi} \r
     &amp;=&amp;\frac{4}{3}\pi \cdot 3a^2h \left(1 + \frac{3ah^2}{3a^2h} + \frac{h^3}{3a^2h}\right)\\
     &amp;=&amp;4\pi a^2 h \left(1 + \frac{h}{a} + \frac{1}{3}\frac{h^2}{a^2}\right)
     \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(V\)</span> : 空氣層體積 (Air shell volume) <span class="math notranslate nohighlight">\([\text{m}^3]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑 (Earth’s radius)，<span class="math notranslate nohighlight">\(a \approx 6.371\times 10^{6}\ \text{m}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(h\)</span> : 流體層厚度 (Fluid layer depth) <span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+</ul>
 </li>
-<li><p><strong>【已知 3】球面積公式</strong></p>
+<li><p><strong>【已知 4】球面積公式 (Surface Area of a Sphere)：</strong></p>
 <div class="math notranslate nohighlight">
 \[A = 4\pi a^2\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(A\)</span> : 球面積 (Surface area of sphere) <span class="math notranslate nohighlight">\([\text{m}^2]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span> : 地球半徑 (Earth’s radius)，<span class="math notranslate nohighlight">\(a \approx 6.371\times 10^{6}\ \text{m}\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 5】靜力壓力定義 (Hydrostatic Pressure Definition)：</strong></p>
+<div class="math notranslate nohighlight">
+\[p = \frac{W}{A} = \frac{Mg}{A} = \frac{\rho V g}{A}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(p\)</span> : 球面壓力 (Surface pressure) <span class="math notranslate nohighlight">\([\text{Pa}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(W\)</span> : 流體重量 (Weight of fluid) <span class="math notranslate nohighlight">\([\text{N}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(A\)</span> : 球面積 (Surface area) <span class="math notranslate nohighlight">\([\text{m}^2]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(M\)</span> : 流體質量 (Fluid mass) <span class="math notranslate nohighlight">\([\text{kg}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(g\)</span> : 重力加速度 (Gravitational acceleration)，<span class="math notranslate nohighlight">\(g \approx 9.81\ \text{m}\cdot\text{s}^{-2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\rho\)</span> : 流體密度 (Fluid density) <span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}^{-3}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(V\)</span> : 流體體積 (Fluid volume) <span class="math notranslate nohighlight">\([\text{m}^3]\)</span></p></li>
+</ul>
 </li>
 </ul>
 </section>
@@ -1082,9 +1162,7 @@ a \cos \phi\frac{Du}{Dt} -  a \cos \phi\left( 2\Omega + \frac{u}{a \cos \phi} \r
 <h3>Q6.1 proof<a class="headerlink" href="#q6-1-proof" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{gather*}
-p &amp;\overset{\text{已知 1}}{=}&amp; \frac{W}{A} \\
-&amp;=&amp;\frac{ M \cdot g }{A}\\
-&amp;=&amp;\frac{ \rho \cdot V \cdot g }{A}\\
+p &amp;\overset{\text{已知 5}}{=}&amp; \frac{\rho V g}{A} \\
 &amp;\overset{\text{已知 3}}{=}&amp;\frac{ \rho \cdot 4\pi a^2 h \left(1 + \frac{h}{a} + \frac{1}{3}\frac{h^2}{a^2}\right) \cdot g }{A}\\
 &amp;\overset{\text{已知 4}}{=}&amp;\frac{ \rho \cdot 4\pi a^2 h \left(1 + \frac{h}{a} + \frac{1}{3}\frac{h^2}{a^2}\right) \cdot g }{4\pi a^2}\\
 &amp;=&amp; \rho gh \left(1 + \frac{h}{a} + \frac{1}{3}\frac{h^2}{a^2}\right)
@@ -1193,8 +1271,9 @@ p &amp;\overset{\text{已知 1}}{=}&amp; \frac{W}{A} \\
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-2-ke-of-traditional-approximation-equations">Q2.2 <span class="math notranslate nohighlight">\(KE\)</span> of Traditional Approximation Equations</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question 3</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">已知與假設</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-3">Answer 3</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q3-1a-zonal-wind-at-u-0-circ-text-n-16-text-km">Q3.1a zonal wind at <span class="math notranslate nohighlight">\(u(0^\circ \text{N} , 16 \text{ km})\)</span></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">對於 精確版</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">對於 近似版</a></li>
@@ -1211,19 +1290,18 @@ p &amp;\overset{\text{已知 1}}{=}&amp; \frac{W}{A} \\
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question 4</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-4">Answer 4</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Q2.1 <span class="math notranslate nohighlight">\(KE\)</span> of Exact Primitive Equations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q4-ke-of-exact-primitive-equations-frac-dw-dt-0">Q4 <span class="math notranslate nohighlight">\(KE\)</span> of Exact Primitive Equations <span class="math notranslate nohighlight">\(\frac{Dw}{Dt}=0\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q4-ke-of-exact-primitive-equations-with-frac-dw-dt-0">Q4 <span class="math notranslate nohighlight">\(KE\)</span> of Exact Primitive Equations with <span class="math notranslate nohighlight">\(\frac{Dw}{Dt}=0\)</span></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question 5</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-5">Answer 5</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Q1.1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q5">Q5</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6">Question 6</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-6">Answer 6</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">已知與假設</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q6-1-proof">Q6.1 proof</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q6-2-discuss-the-error">Q6.2 discuss the error</a></li>
 </ul>
