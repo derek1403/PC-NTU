@@ -1,0 +1,722 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>方程式索引表 (Equations Index) &#8212; Advanced Atmospheric Dynamics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=4cca277b" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'equations_index';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="lecture" href="lecture/lecture.html" />
+    <link rel="prev" title="Welcome to your Jupyter Book" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Advanced Atmospheric Dynamics - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Advanced Atmospheric Dynamics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">方程式索引表 (Equations Index)</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="lecture/lecture.html">lecture</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="lecture/week1/week1.html">Advanced Atmospheric Dynamics - Week 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lecture/week2/week2.html">Advanced Atmospheric Dynamics - Week 2</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="homework/homework.html">Homework Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="homework/hw1/hw1.html">Advanced Atmospheric Dynamics Hw 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="homework/hw2/hw2.html">Advanced Atmospheric Dynamics Hw 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="homework/hw3/hw3.html">Advanced Atmospheric Dynamics Hw 3</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="project/project1/project_overview.html">Project 1: 大氣動力學方程轉換與頻譜分析</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="project/project1/project1_1.html">1. 線性化微擾方程組轉換</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project/project1/project1_2.html">2. 偏微分方程轉矩陣方程式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project/project1/project1_3.html">3. 算符 L 的反厄米特特性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project/project1/project1_4.html">4. 內積的範數正定性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project/project1/project1_5.html">5. 特徵解與色散關係推導</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project/project1/project1_6.html">6. 頻譜空間轉換與 CFL 條件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project/project1/project1_7.html">7. 消除混疊之網格點數條件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project/project1/project1_8.html">8. 色散方程式之無因次化證明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project/project1/project1_AllInOne.html">Project 1: 大氣動力學方程轉換與頻譜分析 (All-in-One)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="project/project2/project2.html">Project 2: Equatorial Wave Dispersion</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="project/project2/project2_1.html">1. 赤道波動色散關係與空間特徵解推導</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project/project2/project2_2.html">2. Hermite equation 與赤道波導機制解析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project/project2/project2_3.html">3. 長波近似理論比較：Matsuno 與 Gill 之動力學探討</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project/project2/project2_AllInOne.html">Project 2: Equatorial Wave Dispersion (All-in-One)</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fequations_index.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/equations_index.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>方程式索引表 (Equations Index)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-week-1">Lecture — Week 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-week-2">Lecture — Week 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#homework-project">Homework / Project（待補）</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">維護規則</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="equations-index">
+<h1>方程式索引表 (Equations Index)<a class="headerlink" href="#equations-index" title="Link to this heading">#</a></h1>
+<p>本頁是 <strong>Advanced Atmospheric Dynamics 課程自己的</strong>方程式索引。</p>
+<p><strong>用途</strong>：撰寫新的推導時，凡是<strong>本課程已經證明過</strong>的式子，一律用<strong>帶超連結的【已知】卡片</strong>直接引用，
+<strong>不得重證</strong>（見推導風格規範 <code class="docutils literal notranslate"><span class="pre">PC-NTU/.claude/skills/derivation-style-review/SKILL.md</span></code> §10「引用免證」）。</p>
+<p><strong>單一職責原則</strong>：本表<strong>只收錄本課程（AAD）內部已證的方程式</strong>。
+外部知識庫（如 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/">Theory_Playground</a>）的推導由該庫自行維護索引，
+本課程的 notebook 只在【已知】卡片內以超連結引用，這樣外部改動時本表不必跟著改。</p>
+<p>引用卡片寫法：</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="k">*</span><span class="w"> </span><span class="gs">**【已知 1】[動量方程式 (Momentum Equation, Navier-Stokes)](連結)：**</span>
+
+  $$\frac{\partial \mathbf{u}}{\partial t } + (\mathbf{u} \cdot \nabla) \mathbf{u} = \mathbf{g} - \frac{1}{\rho} \nabla P + \frac{\mu}{\rho} \nabla^2 \mathbf{u}$$
+</pre></div>
+</div>
+<hr class="docutils" />
+<section id="lecture-week-1">
+<h2>Lecture — Week 1<a class="headerlink" href="#lecture-week-1" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>名稱 (Name)</p></th>
+<th class="head"><p>LaTeX Equation</p></th>
+<th class="head"><p>連結 (Link)</p></th>
+<th class="head"><p>前提／適用條件</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>萊布尼茲積分法則 (Leibniz Integral Rule)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\frac{d}{dt}</span> <span class="pre">\int_{a(t)}^{b(t)}</span> <span class="pre">f(x,t)</span> <span class="pre">\,</span> <span class="pre">dx</span> <span class="pre">=</span> <span class="pre">\int_{a(t)}^{b(t)}</span> <span class="pre">\frac{\partial</span> <span class="pre">f}{\partial</span> <span class="pre">t}</span> <span class="pre">\,</span> <span class="pre">dx</span> <span class="pre">+</span> <span class="pre">f(b,t)</span> <span class="pre">\frac{db}{dt}</span> <span class="pre">-</span> <span class="pre">f(a,t)</span> <span class="pre">\frac{da}{dt}</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/PC-NTU/Advanced-Atmospheric-Dynamics/_build/html/lecture/week1/week1.html#leibniz-integral-rule">week1 #leibniz-integral-rule</a></p></td>
+<td><p>積分上下限隨時間變動；<span class="math notranslate nohighlight">\(f\)</span> 對 <span class="math notranslate nohighlight">\(t\)</span> 可微</p></td>
+</tr>
+<tr class="row-odd"><td><p>雷諾傳輸定理 (Reynolds Transport Theorem, RTT)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\frac{d}{dt}</span> <span class="pre">\int_{V_m}</span> <span class="pre">\rho</span> <span class="pre">\,</span> <span class="pre">dV</span> <span class="pre">=</span> <span class="pre">\int_{V_m}</span> <span class="pre">\frac{\partial</span> <span class="pre">\rho}{\partial</span> <span class="pre">t}</span> <span class="pre">\,</span> <span class="pre">dV</span> <span class="pre">+</span> <span class="pre">\oint_{\partial</span> <span class="pre">V_m}</span> <span class="pre">\rho</span> <span class="pre">\mathbf{u}</span> <span class="pre">\cdot</span> <span class="pre">d\mathbf{A}</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/PC-NTU/Advanced-Atmospheric-Dynamics/_build/html/lecture/week1/week1.html#leibniz-integral-rule">week1 #leibniz-integral-rule</a></p></td>
+<td><p>物質體積 <span class="math notranslate nohighlight">\(V_m\)</span> 隨流體移動；連續體假設</p></td>
+</tr>
+<tr class="row-even"><td><p>連續方程式 (Continuity Equation)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\frac{\partial</span> <span class="pre">\rho}{\partial</span> <span class="pre">t}</span> <span class="pre">+</span> <span class="pre">\nabla</span> <span class="pre">\cdot</span> <span class="pre">(\rho</span> <span class="pre">\mathbf{u})</span> <span class="pre">=</span> <span class="pre">0</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/PC-NTU/Advanced-Atmospheric-Dynamics/_build/html/lecture/week1/week1.html#continuity-equation">week1 #continuity-equation</a></p></td>
+<td><p>質量守恆；任意體積引理</p></td>
+</tr>
+<tr class="row-odd"><td><p>動量方程式 (Momentum Equation, Navier-Stokes)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\frac{\partial</span> <span class="pre">\mathbf{u}}{\partial</span> <span class="pre">t}</span> <span class="pre">+</span> <span class="pre">(\mathbf{u}</span> <span class="pre">\cdot</span> <span class="pre">\nabla)</span> <span class="pre">\mathbf{u}</span> <span class="pre">=</span> <span class="pre">\mathbf{g}</span> <span class="pre">-</span> <span class="pre">\frac{1}{\rho}</span> <span class="pre">\nabla</span> <span class="pre">P</span> <span class="pre">+</span> <span class="pre">\frac{\mu}{\rho}</span> <span class="pre">\nabla^2</span> <span class="pre">\mathbf{u}</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/PC-NTU/Advanced-Atmospheric-Dynamics/_build/html/lecture/week1/week1.html#momentum-equation-navier-stokes">week1 #momentum-equation-navier-stokes</a></p></td>
+<td><p>只考慮重力、壓力梯度力、黏滯力；不可壓縮牛頓流體（<span class="math notranslate nohighlight">\(\nabla \cdot \mathbf{\tau} = \mu \nabla^2 \mathbf{u}\)</span>）</p></td>
+</tr>
+<tr class="row-even"><td><p>狀態方程式 (Equation of State)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">P</span> <span class="pre">=</span> <span class="pre">\rho</span> <span class="pre">R_d</span> <span class="pre">T</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/PC-NTU/Advanced-Atmospheric-Dynamics/_build/html/lecture/week1/week1.html#equation-of-state">week1 #equation-of-state</a></p></td>
+<td><p>乾空氣；理想氣體；<span class="math notranslate nohighlight">\(R_d = R^*/M_d \approx 287 \ \text{J} \cdot \text{kg}^{-1} \cdot \text{K}^{-1}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>控制方程組 (Governing Equations)</p></td>
+<td><p>連續 + 動量 + 狀態方程式（閉合系統）</p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/PC-NTU/Advanced-Atmospheric-Dynamics/_build/html/lecture/week1/week1.html#governing-equations">week1 #governing-equations</a></p></td>
+<td><p>5 未知數（<span class="math notranslate nohighlight">\(u,v,w,\rho,P\)</span>）需 5 條方程式；斜壓大氣尚需熱力學方程式</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="lecture-week-2">
+<h2>Lecture — Week 2<a class="headerlink" href="#lecture-week-2" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>名稱 (Name)</p></th>
+<th class="head"><p>LaTeX Equation</p></th>
+<th class="head"><p>連結 (Link)</p></th>
+<th class="head"><p>前提／適用條件</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>一般化連續方程式 (Generalized Continuity Equation)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\frac{\partial</span> <span class="pre">C}{\partial</span> <span class="pre">t}</span> <span class="pre">+</span> <span class="pre">\nabla</span> <span class="pre">\cdot</span> <span class="pre">\vec{J}_C</span> <span class="pre">=</span> <span class="pre">0</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/PC-NTU/Advanced-Atmospheric-Dynamics/_build/html/lecture/week2/week2.html#continuity-equation-diffusion">week2 #continuity-equation-diffusion</a></p></td>
+<td><p>任意守恆量 <span class="math notranslate nohighlight">\(C\)</span> 與其通量 <span class="math notranslate nohighlight">\(\vec{J}_C\)</span>；無源匯項</p></td>
+</tr>
+<tr class="row-odd"><td><p>熱傳導方程式 (Heat Conduction Equation)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\frac{\partial</span> <span class="pre">T}{\partial</span> <span class="pre">t}</span> <span class="pre">=</span> <span class="pre">\alpha</span> <span class="pre">\nabla^2</span> <span class="pre">T</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/PC-NTU/Advanced-Atmospheric-Dynamics/_build/html/lecture/week2/week2.html#heat-conduction-equation">week2 #heat-conduction-equation</a></p></td>
+<td><p>無巨觀流體運動（純傳導）；均質不可壓縮（<span class="math notranslate nohighlight">\(\rho, c_p, k\)</span> 為常數）；無內部熱源；<span class="math notranslate nohighlight">\(\alpha \equiv k/(\rho c_p)\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>擾動變異數的耗散 (Dissipation of Scalar Variance)</p></td>
+<td><p>`\frac{d}{dt} \int \frac{{q’}^2}{2} , dV = -\nu \int</p></td>
+<td><p>\nabla q’</p></td>
+<td><p>^2 , dV`</p></td>
+</tr>
+<tr class="row-odd"><td><p>雷諾數 (Reynolds Number)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Re</span> <span class="pre">=</span> <span class="pre">\frac{\rho</span> <span class="pre">v</span> <span class="pre">l}{\mu}</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/PC-NTU/Advanced-Atmospheric-Dynamics/_build/html/lecture/week2/week2.html#dimensional-analysis">week2 #dimensional-analysis</a></p></td>
+<td><p>由白金漢 <span class="math notranslate nohighlight">\(\pi\)</span> 定理導出（本課程只做因次分析；嚴格定義見 Theory_Playground）</p></td>
+</tr>
+<tr class="row-even"><td><p>Poiseuille 速度剖面 (Velocity Profile)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">u(r)</span> <span class="pre">=</span> <span class="pre">\frac{\Delta</span> <span class="pre">P}{4\ell\mu}</span> <span class="pre">(r_0^2</span> <span class="pre">-</span> <span class="pre">r^2)</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/PC-NTU/Advanced-Atmospheric-Dynamics/_build/html/lecture/week2/week2.html#a-proof">week2 #a-proof</a></p></td>
+<td><p>圓管；穩態層流；無滑動邊界 <span class="math notranslate nohighlight">\(u(r_0)=0\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Poiseuille 定律：總流量 (Poiseuille’s Law)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">I</span> <span class="pre">=</span> <span class="pre">\frac{\pi</span> <span class="pre">\Delta</span> <span class="pre">P}{8</span> <span class="pre">\ell</span> <span class="pre">\mu}</span> <span class="pre">r_0^4</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/PC-NTU/Advanced-Atmospheric-Dynamics/_build/html/lecture/week2/week2.html#b-proof-poiseuille-s-law">week2 #b-proof-poiseuille-s-law</a></p></td>
+<td><p>同上；<span class="math notranslate nohighlight">\(I \propto r_0^4\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>流阻 (Fluid Resistance)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">R_{\text{fluid}}</span> <span class="pre">=</span> <span class="pre">\frac{8</span> <span class="pre">\ell</span> <span class="pre">\mu}{\pi</span> <span class="pre">r_0^4}</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/PC-NTU/Advanced-Atmospheric-Dynamics/_build/html/lecture/week2/week2.html#d-proof">week2 #d-proof</a></p></td>
+<td><p>定義 <span class="math notranslate nohighlight">\(R_{\text{fluid}} \equiv \frac{\Delta P}{I}\)</span>（歐姆定律類比），再代入 Poiseuille 定律導出</p></td>
+</tr>
+<tr class="row-odd"><td><p>穆雷定律 (Murray’s Law)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\cos\theta</span> <span class="pre">=</span> <span class="pre">\frac{r_2^4}{r_1^4}</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/PC-NTU/Advanced-Atmospheric-Dynamics/_build/html/lecture/week2/week2.html#murray-s-law">week2 #murray-s-law</a></p></td>
+<td><p>主管 <span class="math notranslate nohighlight">\(r_1\)</span>／支管 <span class="math notranslate nohighlight">\(r_2\)</span> 串聯；總流阻對分叉角 <span class="math notranslate nohighlight">\(\theta\)</span> 取極小</p></td>
+</tr>
+<tr class="row-even"><td><p>絕對角動量守恆 (Absolute Angular Momentum Conservation)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\frac{D}{Dt}\left(</span> <span class="pre">v</span> <span class="pre">r</span> <span class="pre">+</span> <span class="pre">\frac{1}{2}</span> <span class="pre">f</span> <span class="pre">r^2</span> <span class="pre">\right)</span> <span class="pre">=</span> <span class="pre">0</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/PC-NTU/Advanced-Atmospheric-Dynamics/_build/html/lecture/week2/week2.html#application-to-tropical-cyclones">week2 #application-to-tropical-cyclones</a></p></td>
+<td><p>圓柱座標；軸對稱（<span class="math notranslate nohighlight">\(\partial P/\partial \lambda = 0\)</span>）；無摩擦；<span class="math notranslate nohighlight">\(f\)</span>-plane（<span class="math notranslate nohighlight">\(Df/Dt = 0\)</span>）</p></td>
+</tr>
+<tr class="row-odd"><td><p>原始方程式 (Primitive Equations)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\frac{Du}{Dt}</span> <span class="pre">-</span> <span class="pre">f</span> <span class="pre">v</span> <span class="pre">-</span> <span class="pre">\frac{u</span> <span class="pre">v</span> <span class="pre">\tan\phi}{a}</span> <span class="pre">=</span> <span class="pre">-\frac{1}{\rho</span> <span class="pre">a</span> <span class="pre">\cos\phi}</span> <span class="pre">\frac{\partial</span> <span class="pre">P}{\partial</span> <span class="pre">\lambda}</span> <span class="pre">+</span> <span class="pre">F_\lambda</span></code> <br> <code class="docutils literal notranslate"><span class="pre">\frac{Dv}{Dt}</span> <span class="pre">+</span> <span class="pre">f</span> <span class="pre">u</span> <span class="pre">+</span> <span class="pre">\frac{u^2</span> <span class="pre">\tan\phi}{a}</span> <span class="pre">=</span> <span class="pre">-\frac{1}{\rho</span> <span class="pre">a}</span> <span class="pre">\frac{\partial</span> <span class="pre">P}{\partial</span> <span class="pre">\phi}</span> <span class="pre">+</span> <span class="pre">F_\phi</span></code> <br> <code class="docutils literal notranslate"><span class="pre">\frac{\partial</span> <span class="pre">P}{\partial</span> <span class="pre">z}</span> <span class="pre">=</span> <span class="pre">-\rho</span> <span class="pre">g</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/PC-NTU/Advanced-Atmospheric-Dynamics/_build/html/lecture/week2/week2.html#primitive-equations">week2 #primitive-equations</a></p></td>
+<td><p>球座標；傳統／淺層近似（<span class="math notranslate nohighlight">\(R \approx a\)</span>、<span class="math notranslate nohighlight">\(w \ll u,v\)</span>）；靜力平衡；<span class="math notranslate nohighlight">\(f = 2\Omega\sin\phi\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>靜力平衡 (Hydrostatic Balance)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\frac{\partial</span> <span class="pre">P}{\partial</span> <span class="pre">z}</span> <span class="pre">=</span> <span class="pre">-\rho</span> <span class="pre">g</span></code></p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/PC-NTU/Advanced-Atmospheric-Dynamics/_build/html/lecture/week2/week2.html#primitive-equations">week2 #primitive-equations</a></p></td>
+<td><p>垂直尺度分析：<span class="math notranslate nohighlight">\(\frac{Dw}{Dt}, 2\Omega u \cos\phi, \frac{u^2+v^2}{a} \ll g\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="homework-project">
+<h2>Homework / Project（待補）<a class="headerlink" href="#homework-project" title="Link to this heading">#</a></h2>
+<p>以下 notebook 的結論式尚未編入索引；需要引用時請先把該式補進本表，再於卡片內連結。</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>來源</p></th>
+<th class="head"><p>頁面</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>HW1</p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/PC-NTU/Advanced-Atmospheric-Dynamics/_build/html/homework/hw1/hw1.html">hw1</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HW2</p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/PC-NTU/Advanced-Atmospheric-Dynamics/_build/html/homework/hw2/hw2.html">hw2</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HW3</p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/PC-NTU/Advanced-Atmospheric-Dynamics/_build/html/homework/hw3/hw3.html">hw3</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Project 1（線性化微擾方程組、算符 <span class="math notranslate nohighlight">\(L\)</span> 的反厄米性、色散關係、CFL 條件、無因次化）</p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/PC-NTU/Advanced-Atmospheric-Dynamics/_build/html/project/project1/project_overview.html">project1</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Project 2（赤道波色散關係、Hermite／Weber 方程式、長波近似）</p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/PC-NTU/Advanced-Atmospheric-Dynamics/_build/html/project/project2/project2.html">project2</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="id1">
+<h2>維護規則<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>新增推導後就補一列</strong>：只要某個 notebook 證出一條可被別處引用的結論，就在本表加一列（名稱、LaTeX、連結、前提）。</p></li>
+<li><p><strong>連結指向唯一 anchor</strong>：Jupyter Book 的 heading anchor 取自標題中的<strong>英文</strong>（例如 <code class="docutils literal notranslate"><span class="pre">##</span> <span class="pre">5.</span> <span class="pre">圓管流體力學</span> <span class="pre">(Poiseuille</span> <span class="pre">Flow)</span></code> → <code class="docutils literal notranslate"><span class="pre">#poiseuille-flow</span></code>）。
+通用標題（<code class="docutils literal notranslate"><span class="pre">目標</span> <span class="pre">(Goal)</span></code>、<code class="docutils literal notranslate"><span class="pre">假設與已知</span></code>、<code class="docutils literal notranslate"><span class="pre">proof</span></code>）在同一份 notebook 內會重複，Sphinx 會自動改成 <code class="docutils literal notranslate"><span class="pre">#id1</span></code>、<code class="docutils literal notranslate"><span class="pre">#id2</span></code>，<strong>不要連到那些</strong>——請連到帶有唯一英文名的章節標題。</p></li>
+<li><p><strong>改標題就要回來改連結</strong>：更動 notebook 的英文標題會改變 anchor，本表對應的連結必須同步更新。</p></li>
+<li><p><strong>不收外部條目</strong>：Theory_Playground 等外部知識庫的式子不列入本表。</p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Welcome to your Jupyter Book</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="lecture/lecture.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">lecture</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-week-1">Lecture — Week 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-week-2">Lecture — Week 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#homework-project">Homework / Project（待補）</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">維護規則</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC YE
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

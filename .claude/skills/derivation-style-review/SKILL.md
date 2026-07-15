@@ -48,6 +48,27 @@ description: >-
    - 物理常數在說明處給近似值，例如 `$k \approx 1.38 \times 10^{-23} \text{ J}\cdot\text{K}^{-1}$`。
 4. 子項用 `(a) (b) (c)`，可在標籤後標 `(a)` 並各帶自己的 `gather*`。
 
+- **R2.6 「可捨棄某項」不是宣告，是結論 ─ 必須從量級前提推出來**：
+  尺度分析中「某項可以丟掉」的每一條不等式，**不可憑空斷言**，必須在該次級編號內用 `gather*`
+  **從前面的量級假設起手、逐步推出**（兩側同乘同一個正量、代入 $O(1)$ 的三角函數量級…），
+  並在關鍵關係上掛 `\overset{\text{假設 N(x)}}{\ll}` 回溯。
+  ```
+  * (d-1) 故緯向方程式中，含 w 的曲率項可捨棄：
+    $$\begin{gather*}
+    w                &\overset{\text{假設 3(b-3)}}{\ll}& v \\
+    \frac{u w}{a}    &\ll&                              \frac{u v}{a} \\
+    \frac{u w}{a}    &\overset{\text{假設 3(c)}}{\ll}&  \frac{u v \tan\phi}{a}
+    \end{gather*}$$
+  ```
+  若推導過程中需要新的前提（例如「中緯度 $\tan\phi \sim O(1)$」），就**回到前置區新增一個次級編號**，
+  不可在不等式裡偷偷假設。
+
+- **R2.5 卡片一律「把式子寫出來」，且一律用 display math**：
+  - **不可只用文字描述**條件（`「內部生熱項為零，故右端維持 0」`），必須把**完整的方程式**寫出來
+    （`$$\dot{Q}_{\text{source}} = 0$$`、`$$\frac{\partial e}{\partial t} + \nabla\cdot\vec{J}_q = \dot{Q}_{\text{source}} = 0$$`）。
+  - **子項 `(a) (b) (c)` 裡的方程式，即使很短也一律用 `$$ … $$` display**，
+    **禁止**偷懶寫成 inline `$\bar{\mathbf{u}} = 0$`。行內 `$…$` 只用於敘述句中提及符號。
+
 完整樣板見 [reference/templates.md](reference/templates.md) §卡片。
 
 ## 3. 推導嚴謹度規則（R3 — 逐步、絕不跳步、全程可追溯）
@@ -57,6 +78,21 @@ description: >-
   `\overset{\text{已知 1(b)}}{=}`、`\overset{\text{假設 3(a)}}{=}`、`\overset{\text{推導 5,6}}{=}`、
   `\overset{\text{定義 4}}{=}`、`\overset{\text{Q4(a)}}{=}`、`\overset{\text{let}}{=}`。
   - 純代數整理（移項、約分）可不標；凡「援用某條卡片或前一子步」就**必須**標。
+  - **同一張卡片的多個次級編號，用連寫簡化，不要重複主標號**：
+    ✅ `\overset{\text{假設 1(a)(b)}}{=}`、`\overset{\text{已知 2(a)(b)}}{=}`、`\overset{\text{假設 3(b-1)(b-2)}}{\approx}`
+    ❌ `\overset{\text{假設 1(a),假設 1(b)}}{=}`
+    （**不同卡片**之間仍用逗號分隔：`\overset{\text{已知 1,假設 1}}{=}`。）
+- **R3.8 `gather*` 只用來裝「推導鏈」，不用來裝「並列的獨立宣告」**：
+  若一組式子彼此**沒有推導關係**（例如三條各自獨立的尺度宣告 $w \sim 10^{-1}$、$u,v \sim 10^{1}$、$w \ll u,v$），
+  **不可**把它們塞進同一個 `gather*` 假裝是一條鏈 ─ 應各自成為一個**次級編號**、各帶自己的 `$$ … $$`。
+  同理，一條不等式裡**不可**用逗號並列多個待捨棄項（`\frac{uw}{a}, \frac{vw}{a} \ll \frac{uv\tan\phi}{a}, \frac{u^2\tan\phi}{a}`），
+  必須**一個編號一條不等式**（`(c-1)` $\frac{uw}{a} \ll \frac{uv\tan\phi}{a}`、`(c-2)` $\frac{vw}{a} \ll \frac{u^2\tan\phi}{a}`），否則不嚴謹。
+- **R3.7 一行只做一件事**：`gather*` 的每一列**只呈現一個等式／關係**，不可把兩個關係擠在同一列
+  （如 `&\approx& 2.9 \times 10^{7} \ \text{s} \approx 1 \ \text{年}`）。應拆成兩列：
+  ```
+  &\approx& 2.9 \times 10^{7} \ \text{s} \\
+  &\approx& 1 \ \text{年}
+  ```
 - **R3.3** 子步驟有層級編號，供後續回引：`Q1.1.3`、`1(a)(b)`、大段證明用 `2a`~`2e`。
 - **R3.4** 最終答案用 `\approx` 給數值並**附單位**。代入數值的那一步要把帶單位的量整串寫出（如 `(6.626 \times 10^{-34} \text{ J s})(1.32 \times 10^{14} \text{ s}^{-1})`）。
 - **R3.5 箭頭使用規則（移項一律 `gather*` 換行，箭頭極少用）**：移項、代數整理、多步推導**一律**用 `$$\begin{gather*} … \end{gather*}$$` 逐行（`\\` 換行 + `&=&` 對齊），**禁止用箭頭（`\Rightarrow`、`\to` 等）取代換行，或把多步塞進一行**。
@@ -77,13 +113,37 @@ description: >-
     \end{gather*}$$
     ```
 
+- **R3.6 移項行必須補齊左式（LHS 不得省略）**：`gather*` 的第一欄（LHS）**只有在「該行沒有做任何移項、
+  純粹是同一個左式的連續代換」時才可以留空**（續行）。**只要那一行做了移項／兩側同乘同除／重新整理**，
+  就**必須把左式完整寫出來**，不可依賴上一行的對齊繼承。
+  ```
+  $$\begin{gather*}
+  0 &\overset{\text{已知 1}}{=}& \frac{\partial C}{\partial t} + \nabla \cdot \vec{J}_C \\
+  0 &\overset{\text{定義 1,已知 2}}{=}& \frac{\partial (\rho c_p T)}{\partial t} + \nabla \cdot (-k \nabla T) \\
+  0 &\overset{\text{假設 2(b),假設 2(c)}}{=}& \rho c_p \frac{\partial T}{\partial t} - k \nabla^2 T \\
+  \rho c_p \frac{\partial T}{\partial t} &=& k \nabla^2 T \\        % ← 移項了，左式補齊
+  \frac{\partial T}{\partial t} &=& \frac{k}{\rho c_p} \nabla^2 T \\ % ← 移項了，左式補齊
+  &\overset{\text{定義 2}}{=}& \alpha \nabla^2 T                      % ← 沒移項，只是代換，可省略
+  \end{gather*}$$
+  ```
+
 ## 4. 術語 / 符號 / 語言慣例（R4）
 
 - **R4.1 雙語並陳**：中文（English）成對出現，貫穿卡片標籤與符號說明。
 - **R4.2** 動詞性小節標題用英文：`proof` / `solve` / `verify`。
-- **R4.3** 單位與常數一律 `\text{}` 包裹，單位放 `[ ]`（如 `[\text{m}\cdot\text{s}^{-1}]`）。
+- **R4.3 單位的中括號只給「變數」，不給「數字」**：單位一律 `\text{}` 包裹；
+  **中括號 `[ ]` 只用在「宣告某個變數的單位」時**，例如符號清單 `* $r$ : 半徑 (Radius) $[\text{m}]$`。
+  **只要單位前面是具體數值，就不加中括號**，直接跟在數字後面。
+  - ✅ `$$r \sim \frac{1}{2} \cdot 2.5 \times 10^{-6} \ \text{m}$$`、`&\approx& 2.9 \times 10^{7} \ \text{s}`
+  - ❌ `$$r \sim \frac{1}{2} \cdot 2.5 \times 10^{-6} \ [\text{m}]$$`、`&\approx& 2.9 \times 10^{7} \ [\text{s}]`
+  - 變數清單中若要順帶給常數近似值，兩者並存：
+    `* $\Omega$ : 地球自轉角速度 (Earth's angular velocity) $[\text{rad}\cdot\text{s}^{-1}]$，$\Omega \approx 7.29 \times 10^{-5} \ \text{rad}\cdot\text{s}^{-1}$`
 - **R4.4** 符號慣例：擾動量加撇號 `p'`、`\rho'`；背景／基本態加 `\bar{}`（`\bar{\rho}`、`\bar{p}`）；向量粗體 `\mathbf{u}`；下標用 `\text{}`（`f_{\text{FD}}`、`\varepsilon_{\text{med}}`）。
 - **R4.5 字形一致**：能量態統一用 `\varepsilon`（不混 `\epsilon`）；速率／一般量視題目既有符號而定，但**同一份檔內同一物理量只用一種字形**。
+- **R4.6 微分算子後面接「中括號」**：微分算子（`\frac{D}{Dt}`、`\frac{d}{d\theta}`、`\frac{\partial}{\partial t}`…）
+  作用在一整串式子上時，**一律用 `\left[ … \right]` 中括號**，不用小括號。
+  - ✅ `\frac{D}{Dt}\left[ v r + \frac{1}{2} f r^2 \right]`、`\frac{d}{d\theta}\left[ \cot\theta \right]`、`\frac{D \left[ v r \right]}{Dt}`
+  - ❌ `\frac{D}{Dt}( v r + \frac{1}{2} f r^2 )`、`\frac{d}{d\theta}(\cot\theta)`
 
 ---
 
@@ -105,6 +165,13 @@ description: >-
 - [ ] **C12 標籤分類（脈絡驅動）＋引用鏈自洽**：每張卡片是否依「意圖」正確歸類（整備普適定律→【已知】／確立大前提→【假設】／引新符號→【定義】／題目特有局部運算→【推導】），而**非**因「內含運算或引用」被誤判？重新梳理後每個（含次級）標號**只定義一次**、每個 `\overset` 引用都指向**存在且正確**的卡片，引用鏈 100% 自洽？（見 §8.1, §8.3）
 - [ ] **C13 證明純淨**：`### 證明`／`### proof` 之後**沒有**臨時新增的已知／假設，沒有「此時引入…」「接著代入…」之類冗長敘述；本體只是一句話 + `gather*` 純展開？（見 §9）
 - [ ] **C14 平行邏輯收束**：高對稱／重複的連續操作（$x,y,z$ 三維、方程組、$u$/$v$ 分別推導…）是否**收束在同一主標號**下用 `(a)(b)(c)` 次級編號，而非拆成獨立主編號？（見 §8.2）
+- [ ] **C16 卡片式子完整＋display**：卡片是否把方程式**完整寫出來**（不是只用文字描述）？子項 `(a)(b)(c)` 的式子是否一律 `$$ … $$` 而非 inline `$…$`？（見 R2.5）
+- [ ] **C17 移項補齊左式**：`gather*` 中**做了移項**的那幾行，左式是否都完整寫出？（只有「純代換、未移項」的續行才可留空）（見 R3.6）
+- [ ] **C18 次級編號**：是否預設用 `(a)(b)(c)`？`(b-1)(b-2)` 是否只用在「同一前提下兩個極相近的延伸」？（見 §8.2.1）
+- [ ] **C19 無前向引用**：卡片（尤其【定義】）是否**沒有**引用後面才證的結果？引用鏈是否為 DAG（無循環論證）？（見 §8.2.2）
+- [ ] **C21 單位中括號**：`[ ]` 是否只出現在「宣告變數單位」處？數值後面的單位是否**沒有**中括號？（見 R4.3）
+- [ ] **C22 一行一件事＋引用簡寫**：`gather*` 每列是否只有一個關係？同卡片的多個次級引用是否簡寫成 `假設 1(a)(b)`？（見 R3.2、R3.7）
+- [ ] **C20 微分算子中括號**：`\frac{D}{Dt}`、`\frac{d}{d\theta}` 後面是否接 `\left[ … \right]` 而非小括號？（見 R4.6）
 - [ ] **C15 箭頭規範**：是否**沒有**用箭頭（`\Rightarrow` 等）取代 `gather*` 換行做移項？不等式是否用 `&\ll&` 等關係欄而非箭頭？箭頭是否只出現在 `gather*` 行首、且為方程式巨大跳躍（罕見，如解 ODE）？（見 R3.5、§6.7）
 
 ## 6. 常見不一致樣式庫（要主動抓的 pattern，源自參考檔自身問題）
@@ -141,15 +208,18 @@ description: >-
 > 在拿到對應的使用者明確訊號之前，**禁止 sync、禁止收尾**。沒有訊號時，**預設永遠停在
 > PAIRED-DRAFT 繼續迭代或等使用者下一句話**，不要主動往 Gate B / Gate C 前進。
 
-執行環境：jupytext 裝在獨立全域 Python `py -3.13`（`C:\Users\PDK\python.exe`），
-與使用者的 Anaconda / jupyter-book 1.x **完全隔離**，所有指令一律以 `py -3.13 -m jupytext …` 呼叫。
+執行環境：jupytext 裝在獨立全域 Python（由 Windows py launcher 的預設版本提供，
+目前為 `C:\Users\admin\AppData\Local\Programs\Python\Python314\python.exe`，jupytext 1.19.3），
+與使用者的 Anaconda / jupyter-book 1.x **完全隔離**，所有指令一律以 `py -m jupytext …` 呼叫
+（**不要**寫死 `py -3.13`／`C:\Users\PDK\python.exe`，那個環境已不存在）。
+一律先設 `$env:PYTHONUTF8='1'` 再執行，否則中文會炸編碼。
 
 ### 7.1 環境與格式綁定（審閱前第一步）
 當使用者指定任一 `.ipynb` 推導檔要審閱／修改時，**先檢查是否已有配對的同名 `.md`**：
 - 看 `.ipynb` 是否含 `"jupytext": {"formats": "ipynb,md:myst"}` metadata，或同資料夾是否有同名 `.md`。
 - 若**尚未配對**，強制先執行綁定（MyST 格式，避免 cell 合併）：
   ```
-  py -3.13 -m jupytext --set-formats ipynb,md:myst "<路徑>\<檔名>.ipynb"
+  py -m jupytext --set-formats ipynb,md:myst "<路徑>\<檔名>.ipynb"
   ```
 - 綁定後建議跑一次保真度檢查（比對 `.md` 還原的 cell source 與原 `.ipynb` 是否內容一致，
   僅允許行尾空白／空白尾格差異）。
@@ -179,7 +249,7 @@ description: >-
 
 得到訊號後，執行同步將變更安全寫回 Notebook：
   ```
-  py -3.13 -m jupytext --sync "<路徑>\<檔名>.md"
+  py -m jupytext --sync "<路徑>\<檔名>.md"
   ```
   （`--sync` 以較新檔更新另一個；流程恆為「先改 .md → 再 sync」。）
 - 同步後確認 `.ipynb` 仍為合法 JSON、cell 數正常，並向使用者回報 diff 範圍。
@@ -198,9 +268,9 @@ description: >-
 得到明確指示後，才解除配對並清掉暫存，不留殘跡：
 1. **解除配對**（移除 `.ipynb` 內的 jupytext metadata）。建議用 nbformat，最穩定：
    ```
-   py -3.13 -c "import nbformat,sys; p=sys.argv[1]; nb=nbformat.read(p,as_version=4); nb.metadata.pop('jupytext',None); nbformat.write(nb,p)" "<路徑>\<檔名>.ipynb"
+   py -c "import nbformat,sys; p=sys.argv[1]; nb=nbformat.read(p,as_version=4); nb.metadata.pop('jupytext',None); nbformat.write(nb,p)" "<路徑>\<檔名>.ipynb"
    ```
-   （或 `py -3.13 -m jupytext --update-metadata '{\"jupytext\": null}' "<檔>.ipynb"`。）
+   （或 `py -m jupytext --update-metadata '{\"jupytext\": null}' "<檔>.ipynb"`。）
 2. **刪除 `.md` 暫存檔**。
 3. **驗證收尾**：確認 `.ipynb` 已無 `jupytext` metadata、`.md` 已不存在、目錄只剩 `.ipynb`，向使用者回報。
 
@@ -241,10 +311,38 @@ description: >-
 **絕對不可**拆成獨立主編號（如推導 1～6、已知 1～3）。
 
 - **格式要求**：收束在**同一個主標題**下（例如【推導 2】），內部用 `(a)`、`(b)`、`(c)` 次級編號條列。
+- **R8.2.1 次級編號預設就是 `(a) (b) (c) … (z)`，不要動不動就用 `(b-1) (b-2)`**：
+  `(b-1) (b-2)` 是**第三層**編號，**只在**「某兩（多）項彼此**極度相近**、且與同層其他項**差異很大**時才啟用
+  ─ 典型情境：`(a)` 是一回事，而 `(b-1) (b-2)` 是同一條前提 `(b)` 底下**兩個幾乎一樣的延伸結論**。
+  - ✅ 正確：【假設 3】淺層近似 `(a)` $R \approx a$；`(b)` $w \ll u,v$；`(b-1)` 丟 $\frac{uw}{a},\frac{vw}{a}$；`(b-2)` 丟 $2\Omega w\cos\phi$
+    （`(b-1) (b-2)` 都是 `(b)` 的直接後果，性質幾乎相同）
+  - ❌ 錯誤：【假設 2】均質不可壓縮 `(b-1)` 時間項提常數、`(b-2)` 空間項提常數 ─ 這裡沒有 `(a)`，
+    兩項只是平行的兩件事，應該老實寫成 `(a) (b) (c)`。
 - **次級編號可被引用**：`(a)(b)(c)` 完全具備被引用資格，公式中可合法出現
   `\overset{\text{已知 2(b)}}{=}`、`\overset{\text{推導 1(a)}}{=}`；同一區塊內 `(b)` 也可直接引用上方的 `(a)`。
 - **實例對照**：`project1_1/3/5.ipynb` 的【推導 1】（三分量展開）、【推導 2】（單維分部積分），
   以及 citations `\overset{\text{假設 3(a)}}{=}`、`\overset{\text{定義 1(b),定義 2}}{=}`。
+
+### 8.2.2 禁止前向引用（No Forward Reference ─ 避免循環論證）
+
+**卡片（尤其【定義】）絕對不可以引用「後面才要證明」的結果**，否則會被質疑**循環論證**。
+
+- ❌ 錯誤：【定義 1】流阻 `R_{\text{fluid}} \overset{\text{def}}{=} \frac{\Delta P}{I} \overset{\text{5.3(b)}}{=} \frac{8\ell\mu}{\pi r_0^4}`
+  （定義卡片裡就把後面 5.3(b) 的證明結果搬進來用）
+- ✅ 正確：
+  1. 【定義 1】**只做定義**：`$$R_{\text{fluid}} \overset{\text{def}}{=} \frac{\Delta P}{I}$$`
+  2. 證明段新增一個子步（例如 `#### (d) proof 流阻`），**先呼叫【定義 1】、再呼叫前面已證的 5.3(b) 代入**：
+     ```
+     $$\begin{gather*}
+     R_{\text{fluid}} &\overset{\text{定義 1}}{=}& \frac{\Delta P}{I} \\
+                      &\overset{\text{5.3(b)}}{=}& \frac{\Delta P}{\frac{\pi \Delta P}{8\ell\mu} r_0^4} \\
+                      &=& \frac{8 \ell \mu}{\pi r_0^4}
+     \end{gather*}$$
+     ```
+  3. 後續（含別的大節）要用具體值時，引用 **5.3(d)** 而不是【定義 1】。
+
+**通則**：引用鏈必須是 **DAG（有向無環）**─ 每個 `\overset` 只能指向**已經成立**的東西
+（前面的卡片、前面的子步、外部已證的連結），**永遠不能指向自己下游的結果**。
 
 ### 8.3 連鎖校正流程（當出現「真正」的誤標時）
 依 8.1 脈絡判準確認某卡片**性質確實標錯**後：
@@ -262,3 +360,36 @@ description: >-
 - **禁止事項**：證明的下方或內部**絕對禁止**補充大量文字描述、臨時宣告新的已知／假設／定義、或做複雜的代入說明。
 - **AI 的主動職責**：若發現 `### 證明` 過於臃腫、夾雜太多文字或臨時條件，**主動**把那些「過度說明的推算步驟」**向上提取**，
   依 8.1 重新包裝成前置的【推導】或【已知】（或【假設】）卡片；提取後同步更新證明本體的 `\overset` 引用（見 8.3）。
+
+---
+
+## 10. 引用免證（Cite-Don't-Reprove）— 跨檔案的可追溯性
+
+> 可追溯性不只存在於單一檔案內。**已經在別處證明過的式子，一律「引用」而非「重證」。**
+
+- **R10.1 鐵則**：若某條方程式已在**本課程的其他 notebook**（week1、其他 hw/project）、**其他知識庫**
+  （如 Theory_Playground）、或**本檔前面的大節**證明過，就用**帶超連結的【已知 N】卡片**直接搬結論，
+  **禁止重新推導一遍**；證明段以 `\overset{\text{已知 N}}{=}` 引用即可。
+
+- **R10.2 卡片寫法**（templates.md「含 lecture 超連結」變體）：
+
+  ```markdown
+  * **【已知 1】[動量方程式 (Momentum Equation, Navier-Stokes)](https://derek1403.github.io/PC-NTU/Advanced-Atmospheric-Dynamics/_build/html/lecture/week1/week1.html#momentum-equation-navier-stokes)：**
+
+    $$\frac{D \vec{V}}{Dt} + f\hat{k}\times \vec{V} = -\frac{1}{\rho}\nabla P - g\hat{k} + \text{Friction}$$
+  ```
+
+  卡片可加一句「此式已於 ⟨出處⟩ 完整證明，此處直接引用不再重證」，並照常附逐符號單位 bullet。
+
+- **R10.3 索引表優先**：每個知識庫維護**自己的**方程式索引（名稱 / LaTeX / 連結 / 前提），
+  例如 `Advanced-Atmospheric-Dynamics/equations_index.md`。
+  找可引用的式子時**先查索引表**，不要重讀整個知識庫；證出新的可引用結論時，**回頭補一列**。
+  **索引表只收本庫自己的式子**，外部庫的式子由該庫自行維護——跨庫只靠卡片內的超連結，
+  這樣外部改動時本庫不必跟著改。
+
+- **R10.4 anchor 注意**：Jupyter Book 的 heading anchor 取自標題中的**英文**
+  （`## 5. 圓管流體力學 (Poiseuille Flow)` → `#poiseuille-flow`）。
+  通用標題（`目標 (Goal)`、`假設與已知`、`proof`）在同一檔內會重複，Sphinx 會自動改成 `#id1`、`#id2`，
+  **不可連到那些**；請連到帶唯一英文名的章節標題。改英文標題＝改 anchor，索引表要同步更新。
+
+- **C16 檢查項**：本檔是否有「重新證明別處已證過的式子」？若有，改成【已知】引用卡片 + 超連結。

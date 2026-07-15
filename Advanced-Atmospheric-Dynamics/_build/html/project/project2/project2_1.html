@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Eigenvectors and Eigenfunctions of the Linearized Sshallow Water Equations &#8212; Advanced Atmospheric Dynamics</title>
+    <title>Eigenvectors and Eigenfunctions of the Linearized Shallow Water Equations &#8212; Advanced Atmospheric Dynamics</title>
   
   
   
@@ -28,9 +28,9 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
@@ -51,7 +51,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -183,10 +183,10 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../equations_index.html">方程式索引表 (Equations Index)</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../lecture/lecture.html">lecture</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../lecture/week1/week1.html">Advanced Atmospheric Dynamics - Week 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lecture/week2/week2.html">Advanced Atmospheric Dynamics - Week 2</a></li>
-
 
 </ul>
 </details></li>
@@ -209,9 +209,9 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="project2.html">Project 2: Equatorial Wave Dispersion</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">赤道波動色散關係與空間特徵解推導</a></li>
-<li class="toctree-l2"><a class="reference internal" href="project2_2.html">Hermite equation 與赤道波導機制解析</a></li>
-<li class="toctree-l2"><a class="reference internal" href="project2_3.html">長波近似理論比較：Matsuno 與 Gill 之動力學探討</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1. 赤道波動色散關係與空間特徵解推導</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project2_2.html">2. Hermite equation 與赤道波導機制解析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project2_3.html">3. 長波近似理論比較：Matsuno 與 Gill 之動力學探討</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project2_AllInOne.html">Project 2: Equatorial Wave Dispersion (All-in-One)</a></li>
 </ul>
 </details></li>
@@ -400,7 +400,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Eigenvectors and Eigenfunctions of the Linearized Sshallow Water Equations</h1>
+    <h1>Eigenvectors and Eigenfunctions of the Linearized Shallow Water Equations</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -432,7 +432,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#n-0-t-0">帶入 <span class="math notranslate nohighlight">\(n=0, t=0\)</span></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9"></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#velocity-field-visualization">速度場視覺化 (Velocity Field Visualization)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code">code</a></li>
@@ -447,8 +447,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="eigenvectors-and-eigenfunctions-of-the-linearized-sshallow-water-equations">
-<h1>Eigenvectors and Eigenfunctions of the Linearized Sshallow Water Equations<a class="headerlink" href="#eigenvectors-and-eigenfunctions-of-the-linearized-sshallow-water-equations" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="eigenvectors-and-eigenfunctions-of-the-linearized-shallow-water-equations">
+<h1>Eigenvectors and Eigenfunctions of the Linearized Shallow Water Equations<a class="headerlink" href="#eigenvectors-and-eigenfunctions-of-the-linearized-shallow-water-equations" title="Link to this heading">#</a></h1>
 <section id="id1">
 <h2><strong>證明目標：</strong><a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <div class="math notranslate nohighlight">
@@ -662,6 +662,7 @@ document.write(`
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(H_n(y)\)</span> : 關於無因次座標 <span class="math notranslate nohighlight">\(y\)</span> 的第 <span class="math notranslate nohighlight">\(n\)</span> 階埃爾米特多項式 (Hermite polynomial of order n) [無單位]</p></li>
 <li><p><span class="math notranslate nohighlight">\(n\)</span> : 南北向特徵模態之非負整數指數 (Meridional mode non-negative integer index) [無單位]</p></li>
+<li><p><span class="math notranslate nohighlight">\(y\)</span> : 無因次化之經向空間座標 (Non-dimensionalized meridional spatial coordinate) [無單位]</p></li>
 </ul>
 </li>
 <li><p><strong>【定義 1】經向速度特徵解高斯包絡代換 (Gaussian envelope substitution for meridional velocity eigenfunction)：</strong> 為了滿足南北兩極遠離赤道時，微擾振幅必須趨近於零的無窮遠物理邊界條件（即當 <span class="math notranslate nohighlight">\(y \to \pm\infty\)</span> 時，波動能量不可發散），推導時會引入一個高斯衰減包絡函數</p>
@@ -677,7 +678,7 @@ document.write(`
 </li>
 <li><p><strong>【定義 2】結構變數特徵解常數設定 (Constant setup for structure variable eigenfunction)：</strong> 對於任何 <span class="math notranslate nohighlight">\(\frac{d^2V}{dy^2} - 2y \frac{dV}{dy} + \lambda V \overset{\text{已知 3(a)}}{=} 0\)</span> 為滿足 <span class="math notranslate nohighlight">\(V(y)\)</span> 必須收斂為多項式 (<strong>擾動在遠離赤道處消散的物理邊界條件</strong>，當 <span class="math notranslate nohighlight">\(y \to \pm\infty\)</span> 時 <span class="math notranslate nohighlight">\(\hat{v} \to 0\)</span> )</p>
 <div class="math notranslate nohighlight">
-\[V(y) \overset{\text{let}}{=} i(\omega^2 - k^2) A H_n(y)  \quad , \lambda \overset{\text{已知 3(a)}}{=} 2n \quad (n=0,1,2,\dots) \]</div>
+\[V(y) \overset{\text{def}}{=} i(\omega^2 - k^2) A H_n(y)  \quad , \lambda \overset{\text{已知 3(a)}}{=} 2n \quad (n=0,1,2,\dots) \]</div>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(V(y)\)</span> : 剝離高斯衰減項後，代表特定赤道波動特徵解的無因次經向結構變數函數 (Dimensionless meridional structure variable function) [無單位]</p></li>
 <li><p><span class="math notranslate nohighlight">\(k\)</span> : 經無因次化之緯向水平波數 (Non-dimensionalized zonal wavenumber index) [無單位]</p></li>
@@ -848,7 +849,7 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{gather*}
   &amp;\frac{d^2\hat{v}}{dy^2} + \left(\omega^2 - k^2 - \frac{k}{\omega} - y^2\right)\hat{v} &amp;\overset{\text{推導 4}}{=}&amp; 0 \\
-  &amp;\left[ e^{-\frac{y^2}{2}} \frac{d^2V}{dy^2} - 2y e^{-\frac{y^2}{2}} \frac{dV}{dy} + (y^2 - 1) e^{-\frac{y^2}{2}} V \right] + \left(\omega^2 - k^2 - \frac{k}{\omega} - y^2\right) \left(e^{-\frac{y^2}{2}} V\right) &amp;\overset{\text{推導 5}}{=}&amp; 0 \\
+  &amp;\left[ e^{-\frac{y^2}{2}} \frac{d^2V}{dy^2} - 2y e^{-\frac{y^2}{2}} \frac{dV}{dy} + (y^2 - 1) e^{-\frac{y^2}{2}} V \right] + \left(\omega^2 - k^2 - \frac{k}{\omega} - y^2\right) \left(e^{-\frac{y^2}{2}} V\right) &amp;\overset{\text{推導 5(b), 定義 1}}{=}&amp; 0 \\
   &amp;\frac{d^2V}{dy^2} - 2y \frac{dV}{dy} + (y^2 - 1 + \omega^2 - k^2 - \frac{k}{\omega} - y^2) V &amp;=&amp; 0 \\
   &amp;\frac{d^2V}{dy^2} - 2y \frac{dV}{dy} + \left(\omega^2 - k^2 - \frac{k}{\omega} - 1\right) V &amp;=&amp; 0 \\
   \overset{\text{定義 2}}{\Rightarrow}&amp; V &amp;=&amp; i(\omega^2 - k^2) A H_n(y) \\
@@ -862,6 +863,7 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(k\)</span> : 經無因次化之緯向水平波數 [無單位]</p></li>
 <li><p><span class="math notranslate nohighlight">\(H_n(y)\)</span> : 關於無因次座標 <span class="math notranslate nohighlight">\(y\)</span> 的第 <span class="math notranslate nohighlight">\(n\)</span> 階埃爾米特多項式 [無單位]</p></li>
 <li><p><span class="math notranslate nohighlight">\(n\)</span> : 埃爾米特多項式的非負整數階數／模態數 [無單位]，範圍為 <span class="math notranslate nohighlight">\(0, 1, 2, \dots\)</span>，決定赤道波在南北方向的波腹與節點數</p></li>
+<li><p><span class="math notranslate nohighlight">\(A\)</span> : 經無因次化之赤道波動任意實數常數振幅 (Arbitrary dimensionless real constant amplitude) [無單位]</p></li>
 </ul>
 </li>
 <li><p><strong>【推導 7】經向速度特徵解與一階微分的埃爾米特函數表示（Hermite function representation of meridional velocity and its first derivative）：</strong></p>
@@ -891,6 +893,7 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(k\)</span> : 經無因次化之緯向水平波數 [無單位]</p></li>
 <li><p><span class="math notranslate nohighlight">\(H_n(y)\)</span> : 關於無因次座標 <span class="math notranslate nohighlight">\(y\)</span> 的第 <span class="math notranslate nohighlight">\(n\)</span> 階埃爾米特多項式 [無單位]</p></li>
 <li><p><span class="math notranslate nohighlight">\(n\)</span> : 埃爾米特多項式的非負整數階數／模態數 [無單位]，範圍為 <span class="math notranslate nohighlight">\(0, 1, 2, \dots\)</span>，決定赤道波在南北方向的波腹與節點數</p></li>
+<li><p><span class="math notranslate nohighlight">\(A\)</span> : 經無因次化之赤道波動任意實數常數振幅 (Arbitrary dimensionless real constant amplitude) [無單位]</p></li>
 </ul>
 </li>
 </ul>
@@ -994,32 +997,31 @@ document.write(`
 </section>
 <section id="n-0-t-0">
 <h2>帶入 <span class="math notranslate nohighlight">\(n=0, t=0\)</span><a class="headerlink" href="#n-0-t-0" title="Link to this heading">#</a></h2>
-<p><strong>緯向速度</strong></p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{gather*}
-\hat{v}(y) &amp;=&amp; i(\omega^2 - k^2) A e^{-\frac{y^2}{2}} H_n(y) \quad &amp;, \omega^2 - k^2 - \frac{k}{\omega} - 1  &amp;=&amp;  2n \quad (n=0,1,2,\dots)  \\
-\hat{v}(y) &amp;=&amp; i(\omega^2 - k^2) A e^{-\frac{y^2}{2}} \\
-\hat{v}(y) &amp;=&amp; i(\omega^2 - k^2) A e^{-\frac{y^2}{2}} \\
-v(x,y) &amp;=&amp; -A(\omega^2 - k^2) e^{-\frac{y^2}{2}} \sin(kx)
-\end{gather*}\end{split}\]</div>
 <p><strong>經向速度</strong></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{gather*}
-\hat{u}(y) &amp;=&amp; -A e^{-\frac{y^2}{2}} \Bigl( \frac{1}{2}(\omega+k) H_{n+1} + n(\omega-k) H_{n-1} \Bigr) \quad &amp;, \omega^2 - k^2 - \frac{k}{\omega} - 1 &amp;=&amp; 2n \quad (n=0,1,2,\dots) \\
-\hat{u}(y) &amp;=&amp; -A e^{-\frac{y^2}{2}} \Bigl( \frac{1}{2}(\omega+k) (2y) + 0 \Bigr) \\
-\hat{u}(y) &amp;=&amp; -A(\omega + k) y e^{-\frac{y^2}{2}} \\
-u(x,y) &amp;=&amp; -A(\omega + k) y e^{-\frac{y^2}{2}} \cos(kx)
+\hat{v}(y) &amp;\overset{\text{推導 7(a)}}{=}&amp; i(\omega^2 - k^2) A e^{-\frac{y^2}{2}} H_n(y) \quad &amp;, \omega^2 - k^2 - \frac{k}{\omega} - 1  &amp;=&amp;  2n \quad (n=0,1,2,\dots)  \\
+&amp;\overset{n=0,\,\text{已知 3(d)}}{=}&amp; i(\omega^2 - k^2) A e^{-\frac{y^2}{2}} \\
+v(x,y) &amp;\overset{\text{取實部},\,t=0}{=}&amp; -A(\omega^2 - k^2) e^{-\frac{y^2}{2}} \sin(kx)
+\end{gather*}\end{split}\]</div>
+<p><strong>緯向速度</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\hat{u}(y) &amp;\overset{\text{推導 3(b), 推導 7(a)(b)}}{=}&amp; -A e^{-\frac{y^2}{2}} \Bigl( \frac{1}{2}(\omega+k) H_{n+1} + n(\omega-k) H_{n-1} \Bigr) \quad &amp;, \omega^2 - k^2 - \frac{k}{\omega} - 1 &amp;=&amp; 2n \quad (n=0,1,2,\dots) \\
+&amp;\overset{n=0,\,\text{已知 3(d)}}{=}&amp; -A e^{-\frac{y^2}{2}} \Bigl( \frac{1}{2}(\omega+k) (2y) + 0 \Bigr) \\
+&amp;=&amp; -A(\omega + k) y e^{-\frac{y^2}{2}} \\
+u(x,y) &amp;\overset{\text{取實部},\,t=0}{=}&amp; -A(\omega + k) y e^{-\frac{y^2}{2}} \cos(kx)
 \end{gather*}\end{split}\]</div>
 <p><strong>重力位</strong></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{gather*}
-\hat{\phi}(y) &amp;=&amp; -A e^{-\frac{y^2}{2}} \Bigl(  \frac{1}{2}(k +\omega) H_{n+1} + (k -\omega)n H_{n-1}     \Bigr)  \quad &amp; , \omega^2 - k^2 - \frac{k}{\omega} - 1 &amp;=&amp; 2n \quad (n=0,1,2,\dots) \\
-\hat{\phi}(y) &amp;=&amp; -A e^{-\frac{y^2}{2}} \Bigl(  \frac{1}{2}(k +\omega) (2y) + 0 \Bigr)  \\
-\hat{\phi}(y) &amp;=&amp; -A(\omega + k) y e^{-\frac{y^2}{2}} \\[2ex]
-\phi(x,y) &amp;=&amp; -A(\omega + k) y e^{-\frac{y^2}{2}} \cos(kx) \\[2ex]
+\hat{\phi}(y) &amp;\overset{\text{推導 3(a), 推導 7(a)(b)}}{=}&amp; -A e^{-\frac{y^2}{2}} \Bigl(  \frac{1}{2}(k +\omega) H_{n+1} + (k -\omega)n H_{n-1}     \Bigr)  \quad &amp; , \omega^2 - k^2 - \frac{k}{\omega} - 1 &amp;=&amp; 2n \quad (n=0,1,2,\dots) \\
+&amp;\overset{n=0,\,\text{已知 3(d)}}{=}&amp; -A e^{-\frac{y^2}{2}} \Bigl(  \frac{1}{2}(k +\omega) (2y) + 0 \Bigr)  \\
+&amp;=&amp; -A(\omega + k) y e^{-\frac{y^2}{2}} \\[2ex]
+\phi(x,y) &amp;\overset{\text{取實部},\,t=0}{=}&amp; -A(\omega + k) y e^{-\frac{y^2}{2}} \cos(kx) \\[2ex]
 \end{gather*}\end{split}\]</div>
-<section id="id9">
-<h3><a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<section id="velocity-field-visualization">
+<h3>速度場視覺化 (Velocity Field Visualization)<a class="headerlink" href="#velocity-field-visualization" title="Link to this heading">#</a></h3>
 <p><img alt="" src="../../_images/velocity_n0_wave.png" /></p>
 </section>
 </section>
@@ -1118,7 +1120,7 @@ u(x,y) &amp;=&amp; -A(\omega + k) y e^{-\frac{y^2}{2}} \cos(kx)
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#n-0-t-0">帶入 <span class="math notranslate nohighlight">\(n=0, t=0\)</span></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9"></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#velocity-field-visualization">速度場視覺化 (Velocity Field Visualization)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code">code</a></li>

@@ -2,6 +2,9 @@ format: jb-book
 root: intro
 
 chapters:
+- file: equations_index.md
+  title: "方程式索引表 (Equations Index)"
+
 - file: lecture/lecture.md
   sections:
     - file: lecture/week1/week1.ipynb
