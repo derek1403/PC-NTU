@@ -1,15 +1,117 @@
 # Table of contents
 # Learn more at https://jupyterbook.org/customize/toc.html
 
-
-
-
 format: jb-book
 root: intro
 chapters:
 - file: lecture/lecture.md
-  sections:      # <--- 代表下面的檔案都屬於它
-    - file: lecture/Algebra/Abstract_Algebra/Group.ipynb
-      title: Cryptography - Group
-- file: homework/Cryptography_2026_Assignment.ipynb
+  sections:
+    - file: lecture/Algebra/Abstract_Algebra/Abstract_Algebra.md
+      title: "抽象代數 (Abstract Algebra)"
+      sections:
+        - file: lecture/Algebra/Abstract_Algebra/theorems_index.md
+          title: "[索引] 定理索引表"
+        - file: lecture/Algebra/Abstract_Algebra/Number_Sets_and_Notation.md
+          title: "[基礎] 數系與符號約定"
 
+        # ---------------- 1. 群 (Group) ----------------
+        - file: lecture/Algebra/Abstract_Algebra/Group/Group_Definition.md
+          title: "[群] 群的定義"
+        - file: lecture/Algebra/Abstract_Algebra/Group/Group_Examples_and_Counterexamples.md
+          title: "[群] 群的正例與反例"
+        - file: lecture/Algebra/Abstract_Algebra/Group/Uniqueness_of_Identity.md
+          title: "[群] 單位元素唯一"
+        - file: lecture/Algebra/Abstract_Algebra/Group/Uniqueness_of_Inverse.md
+          title: "[群] 反元素唯一"
+        - file: lecture/Algebra/Abstract_Algebra/Group/Inverse_of_an_Inverse.md
+          title: "[群] 反元素的反元素"
+        - file: lecture/Algebra/Abstract_Algebra/Group/Inverse_of_a_Product.md
+          title: "[群] 乘積的反元素"
+        - file: lecture/Algebra/Abstract_Algebra/Group/Unique_Solution_and_Cancellation_Law.md
+          title: "[群] 唯一解與消去律"
+        - file: lecture/Algebra/Abstract_Algebra/Group/Permutation.md
+          title: "[群] 排列"
+        - file: lecture/Algebra/Abstract_Algebra/Group/Symmetric_Group.md
+          title: "[群] 對稱群"
+        - file: lecture/Algebra/Abstract_Algebra/Group/Abelian_and_Non_Abelian_Group.md
+          title: "[群] 阿貝爾群與非阿貝爾群"
+        - file: lecture/Algebra/Abstract_Algebra/Group/Cyclic_Group.md
+          title: "[群] 循環群"
+        - file: lecture/Algebra/Abstract_Algebra/Group/Group_Order.md
+          title: "[群] 群的階"
+        - file: lecture/Algebra/Abstract_Algebra/Group/General_Linear_Group_Order.md
+          title: "[群] 一般線性群的階"
+        - file: lecture/Algebra/Abstract_Algebra/Group/Subgroup_Criterion.md
+          title: "[群] 子群判別法"
+        - file: lecture/Algebra/Abstract_Algebra/Group/Subgroup_Examples.md
+          title: "[群] 子群的例子"
+        - file: lecture/Algebra/Abstract_Algebra/Group/Coset.md
+          title: "[群] 陪集"
+        - file: lecture/Algebra/Abstract_Algebra/Group/Coset_Equality_Criterion.md
+          title: "[群] 陪集相等的充要條件"
+        - file: lecture/Algebra/Abstract_Algebra/Group/Coset_Partition.md
+          title: "[群] 陪集分割"
+        - file: lecture/Algebra/Abstract_Algebra/Group/Lagrange_Theorem.md
+          title: "[群] 拉格朗日定理"
+        - file: lecture/Algebra/Abstract_Algebra/Group/Order_of_Element_and_Cyclic_Subgroup.md
+          title: "[群] 元素的階與循環子群"
+        - file: lecture/Algebra/Abstract_Algebra/Group/Special_Linear_Subgroup_Index.md
+          title: "[群] 特殊線性群的指標"
+        - file: lecture/Algebra/Abstract_Algebra/Group/Group_Homomorphism_and_Isomorphism.md
+          title: "[群] 群同態與群同構"
+
+        # ---------------- 2. 環 (Ring) ----------------
+        - file: lecture/Algebra/Abstract_Algebra/Ring/Ring_Definition.md
+          title: "[環] 環的定義"
+        - file: lecture/Algebra/Abstract_Algebra/Ring/Ring_Examples.md
+          title: "[環] 環的例子"
+        - file: lecture/Algebra/Abstract_Algebra/Ring/Ring_with_Identity_and_Commutative_Ring.md
+          title: "[環] 含單位元環與交換環"
+        - file: lecture/Algebra/Abstract_Algebra/Ring/Ring_Basic_Propositions.md
+          title: "[環] 環的基本命題"
+        - file: lecture/Algebra/Abstract_Algebra/Ring/Subring.md
+          title: "[環] 子環"
+        - file: lecture/Algebra/Abstract_Algebra/Ring/Zero_Divisor.md
+          title: "[環] 零因子"
+        - file: lecture/Algebra/Abstract_Algebra/Ring/Integral_Domain.md
+          title: "[環] 整環"
+        - file: lecture/Algebra/Abstract_Algebra/Ring/Ideal.md
+          title: "[環] 理想"
+        - file: lecture/Algebra/Abstract_Algebra/Ring/Principal_Ideal.md
+          title: "[環] 主理想"
+        - file: lecture/Algebra/Abstract_Algebra/Ring/Non_Principal_Ideal_in_Z_x.md
+          title: "[環] Z[x] 中的非主理想"
+        - file: lecture/Algebra/Abstract_Algebra/Ring/Congruence_Class_Modulo_Ideal.md
+          title: "[環] 模理想的同餘類"
+        - file: lecture/Algebra/Abstract_Algebra/Ring/Quotient_Ring.md
+          title: "[環] 商環"
+        - file: lecture/Algebra/Abstract_Algebra/Ring/Ring_Homomorphism_and_Kernel.md
+          title: "[環] 環同態與核"
+        - file: lecture/Algebra/Abstract_Algebra/Ring/Chinese_Remainder_Theorem.md
+          title: "[環] 中國剩餘定理"
+
+        # ---------------- 3. 體 (Field) ----------------
+        - file: lecture/Algebra/Abstract_Algebra/Field/Field_Definition.md
+          title: "[體] 體的定義"
+        - file: lecture/Algebra/Abstract_Algebra/Field/Characteristic_of_a_Field.md
+          title: "[體] 體的特徵"
+        - file: lecture/Algebra/Abstract_Algebra/Field/Prime_Divides_Binomial_Coefficient.md
+          title: "[體] 質數整除二項式係數"
+        - file: lecture/Algebra/Abstract_Algebra/Field/Freshmans_Dream.md
+          title: "[體] 新生之夢"
+        - file: lecture/Algebra/Abstract_Algebra/Field/Subfield_and_Field_Extension.md
+          title: "[體] 子體與體擴張"
+        - file: lecture/Algebra/Abstract_Algebra/Field/Irreducible_Polynomial.md
+          title: "[體] 不可約多項式"
+        - file: lecture/Algebra/Abstract_Algebra/Field/Tower_Law.md
+          title: "[體] 塔定理"
+        - file: lecture/Algebra/Abstract_Algebra/Field/Quotient_by_Irreducible_is_Field.md
+          title: "[體] 模不可約多項式的商環是體"
+        - file: lecture/Algebra/Abstract_Algebra/Field/Simple_Extension.md
+          title: "[體] 單擴張"
+        - file: lecture/Algebra/Abstract_Algebra/Field/Primitive_Element_Theorem.md
+          title: "[體] 本原元定理"
+
+    - file: lecture/Algebra/Arithmatic/Arithmetic.ipynb
+      title: "Arithmetic (整數運算)"
+- file: homework/Cryptography_2026_Assignment.ipynb
