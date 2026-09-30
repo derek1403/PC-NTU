@@ -3,7 +3,9 @@
 ## Question 1. Maximum-Entropy Distributions
 
 Let $X$ be a continuous random variable with probability density function (PDF) $p(x)$. Its differential entropy is
+
 $$S[p] = -\int_{\mathcal{X}} p(x) \ln p(x) \, dx,$$
+
 where $\mathcal{X}$ is the domain of $X$. Use natural logarithms and require $p(x) \geq 0$ throughout this question.
 
 Consider the following two separate maximization problems.
@@ -11,15 +13,21 @@ Consider the following two separate maximization problems.
 * (a) Normalization on a finite interval
 
     Suppose $X$ is restricted to a fixed interval $[a, b]$, where $a < b$. In addition to nonnegativity, the only constraint is
+
     $$\int_{a}^{b} p(x) \, dx = 1.$$
+
     Use a Lagrange multiplier to find the PDF that maximizes the differential entropy. Identify the resulting distribution.
 
 * (b) Fixed mean and variance on the real line
 
     Now let $X$ take values over the entire real line, rather than on the finite interval in part (a). Require the PDF to satisfy
+
     $$\int_{-\infty}^{\infty} p(x) \, dx = 1,$$
+
     $$\int_{-\infty}^{\infty} x p(x) \, dx = \mu_x,$$
+
     $$\int_{-\infty}^{\infty} (x - \mu_x)^2 p(x) \, dx = \sigma_x^2,$$
+
     where $\mu_x$ is the prescribed mean and $\sigma_x^2 > 0$ is the prescribed variance.
 
     Use Lagrange multipliers to show that the entropy-maximizing PDF is a Gaussian distribution with mean $\mu_x$ and variance $\sigma_x^2$. Write the normalized PDF explicitly.
@@ -37,25 +45,25 @@ $$\mathcal{L}[p] = -\int_{a}^{b} p(x) \ln p(x) \, dx - \lambda_0 \left( \int_{a}
 
 
 
-$$\begin{gather*}
-0 &=& \dfrac{\partial \mathcal{L}}{\partial p} \\
-0 &=& \dfrac{\partial }{\partial p} \left[ -\int_{a}^{b} p(x) \ln p(x) \, dx - \lambda_0 \left( \int_{a}^{b} p(x) \, dx - 1 \right) \right] \\
-0 &=& \frac{\partial}{\partial p} \big[ -p(x) \ln p(x) - \lambda_0 p(x) \big] \\
-0 &=& -\ln p(x) - 1 - \lambda_0 \\
-\ln p(x) &=&  -(1 + \lambda_0) \\
-p(x) &=& e^{-(1 + \lambda_0)} \\
-\end{gather*}$$
+$$\begin{aligned}
+0 &= \dfrac{\partial \mathcal{L}}{\partial p} \\
+0 &= \dfrac{\partial }{\partial p} \left[ -\int_{a}^{b} p(x) \ln p(x) \, dx - \lambda_0 \left( \int_{a}^{b} p(x) \, dx - 1 \right) \right] \\
+0 &= \frac{\partial}{\partial p} \big[ -p(x) \ln p(x) - \lambda_0 p(x) \big] \\
+0 &= -\ln p(x) - 1 - \lambda_0 \\
+\ln p(x) &=  -(1 + \lambda_0) \\
+p(x) &= e^{-(1 + \lambda_0)} \\
+\end{aligned}$$
 
 
-$$\begin{gather*}
-1 &=& \int_{a}^{b} p(x) \, dx \\
-1 &=& \int_{a}^{b} e^{-(1 + \lambda_0)} \, dx \\
-1 &=& (b-a) e^{-(1 + \lambda_0)}  \\
-e^{-(1 + \lambda_0)} &=& \frac{1}{b-a} \\
-p(x) &=& \begin{cases} 
+$$\begin{aligned}
+1 &= \int_{a}^{b} p(x) \, dx \\
+1 &= \int_{a}^{b} e^{-(1 + \lambda_0)} \, dx \\
+1 &= (b-a) e^{-(1 + \lambda_0)}  \\
+e^{-(1 + \lambda_0)} &= \frac{1}{b-a} \\
+p(x) &= \begin{cases} 
 \frac{1}{b - a}&, & a \le x \le b \\
 0 &, & \text{otherwise} \end{cases} 
-\end{gather*}$$
+\end{aligned}$$
 
 
 * 駐點解能最大化熵
@@ -76,43 +84,43 @@ $$\mathcal{L}[p] = -\int_{-\infty}^{\infty} p(x) \ln p(x) \, dx
 * 為了使 $p(x)$ 在 $(-\infty, \infty)$ 上可積分，必須要求 $\lambda_2 > 0$
 * $B = A e^{\frac{\lambda_1^2}{4\lambda_2}} > 0$
 
-$$\begin{gather*}
-0 &=& \dfrac{\partial \mathcal{L}}{\partial p} \\
-0 &=& \dfrac{\partial }{\partial p} \left[ -\int_{-\infty}^{\infty} p(x) \ln p(x) \, dx 
+$$\begin{aligned}
+0 &= \dfrac{\partial \mathcal{L}}{\partial p} \\
+0 &= \dfrac{\partial }{\partial p} \left[ -\int_{-\infty}^{\infty} p(x) \ln p(x) \, dx 
 - \lambda_0 \left( \int_{-\infty}^{\infty} p(x) \, dx - 1 \right) 
 - \lambda_1 \left( \int_{-\infty}^{\infty} x \, p(x) \, dx - \mu_x \right) 
 - \lambda_2 \left( \int_{-\infty}^{\infty} (x - \mu_x)^2 p(x) \, dx 
 - \sigma_x^2 \right) \right] \\
-0 &=& -\ln p(x) - 1 - \lambda_0 - \lambda_1 x - \lambda_2 (x - \mu_x)^2 \\
-\ln p(x) &=& -(1 + \lambda_0) - \lambda_1 x - \lambda_2 (x - \mu_x)^2 \\
-p(x) &=& A \exp\Big( -\lambda_1 (x - \mu_x) - \lambda_2 (x - \mu_x)^2 \Big) \\
-\end{gather*}$$
+0 &= -\ln p(x) - 1 - \lambda_0 - \lambda_1 x - \lambda_2 (x - \mu_x)^2 \\
+\ln p(x) &= -(1 + \lambda_0) - \lambda_1 x - \lambda_2 (x - \mu_x)^2 \\
+p(x) &= A \exp\Big( -\lambda_1 (x - \mu_x) - \lambda_2 (x - \mu_x)^2 \Big) \\
+\end{aligned}$$
 
 
-$$\begin{gather*}
+$$\begin{aligned}
 p(u) = B \exp\left[ -\lambda_2 \left( u + \frac{\lambda_1}{2\lambda_2} \right)^2 \right]
-\end{gather*}$$
+\end{aligned}$$
 
 
 
 
 * 推導  $w = u + \frac{\lambda_1}{2\lambda_2}$
 
-$$\begin{gather*}
-0 &=& \dfrac{\partial \mathcal{L}}{\partial \lambda_1} \\
-0 &=& \dfrac{\partial }{\partial p} \left[ -\int_{-\infty}^{\infty} p(x) \ln p(x) \, dx 
+$$\begin{aligned}
+0 &= \dfrac{\partial \mathcal{L}}{\partial \lambda_1} \\
+0 &= \dfrac{\partial }{\partial p} \left[ -\int_{-\infty}^{\infty} p(x) \ln p(x) \, dx 
 - \lambda_0 \left( \int_{-\infty}^{\infty} p(x) \, dx - 1 \right) 
 - \lambda_1 \left( \int_{-\infty}^{\infty} x \, p(x) \, dx - \mu_x \right) 
 - \lambda_2 \left( \int_{-\infty}^{\infty} (x - \mu_x)^2 p(x) \, dx 
 - \sigma_x^2 \right) \right] \\
-0 &=& \int_{-\infty}^{\infty} x \, p(x) \, dx - \mu_x  \\
-0 &=& \int_{-\infty}^{\infty} x \, p(x) \, dx - \mu_x  \int_{-\infty}^{\infty} \, p(x) \, dx \\
-0 &=& \int_{-\infty}^{\infty} (x - \mu_x) p(x) \, dx \\
-0 &=& B \int_{-\infty}^{\infty} u \exp\left[ -\lambda_2 \left( u + \frac{\lambda_1}{2\lambda_2} \right)^2 \right] \, du \\
-0 &=& B \int_{-\infty}^{\infty} \left( w - \frac{\lambda_1}{2\lambda_2} \right) e^{-\lambda_2 w^2} \, dw \\
-0 &=& B \left( 0 - \frac{\lambda_1}{2\lambda_2} \sqrt{\frac{\pi}{\lambda_2}} \right) \\
-0 &=& \lambda_1 \\
-\end{gather*}$$
+0 &= \int_{-\infty}^{\infty} x \, p(x) \, dx - \mu_x  \\
+0 &= \int_{-\infty}^{\infty} x \, p(x) \, dx - \mu_x  \int_{-\infty}^{\infty} \, p(x) \, dx \\
+0 &= \int_{-\infty}^{\infty} (x - \mu_x) p(x) \, dx \\
+0 &= B \int_{-\infty}^{\infty} u \exp\left[ -\lambda_2 \left( u + \frac{\lambda_1}{2\lambda_2} \right)^2 \right] \, du \\
+0 &= B \int_{-\infty}^{\infty} \left( w - \frac{\lambda_1}{2\lambda_2} \right) e^{-\lambda_2 w^2} \, dw \\
+0 &= B \left( 0 - \frac{\lambda_1}{2\lambda_2} \sqrt{\frac{\pi}{\lambda_2}} \right) \\
+0 &= \lambda_1 \\
+\end{aligned}$$
 
 
 $$p(x) = A e^{-\lambda_2 (x - \mu_x)^2}$$
@@ -122,25 +130,25 @@ $$p(x) = A e^{-\lambda_2 (x - \mu_x)^2}$$
 * 推導
 * $\int_{-\infty}^{\infty} e^{-\lambda_2 u^2} du = \sqrt{\frac{\pi}{\lambda_2}}$
 
-$$\begin{gather*}
-\int_{-\infty}^{\infty} p(x) \, dx &=& 1 \\
-\int_{-\infty}^{\infty} A e^{-\lambda_2 (x - \mu_x)^2} \, dx &=& 1 \\
-A \sqrt{\frac{\pi}{\lambda_2}}&=& 1 \\
-A &=& \sqrt{\frac{\lambda_2}{\pi}} \\
-\end{gather*}$$
+$$\begin{aligned}
+\int_{-\infty}^{\infty} p(x) \, dx &= 1 \\
+\int_{-\infty}^{\infty} A e^{-\lambda_2 (x - \mu_x)^2} \, dx &= 1 \\
+A \sqrt{\frac{\pi}{\lambda_2}}&= 1 \\
+A &= \sqrt{\frac{\lambda_2}{\pi}} \\
+\end{aligned}$$
 
 * 推導
 * $\int_{-\infty}^{\infty} u^2 e^{-\lambda_2 u^2} du = \frac{1}{2\lambda_2}\sqrt{\frac{\pi}{\lambda_2}}$
 
 
-$$\begin{gather*}
-\int_{-\infty}^{\infty} (x - \mu_x)^2 p(x) \, dx &=& \sigma_x^2 \\
-\int_{-\infty}^{\infty} (x - \mu_x)^2 A e^{-\lambda_2 (x - \mu_x)^2} \, dx &=& \sigma_x^2 \\
-A \cdot \frac{1}{2\lambda_2}\sqrt{\frac{\pi}{\lambda_2}} &=& \sigma_x^2 \\
-\frac{1}{2\lambda_2}&=& \sigma_x^2 \\
-\lambda_2 &=& \frac{1}{2\sigma_x^2} \\
-A &=& \frac{1}{\sqrt{2\pi \sigma_x^2}}
-\end{gather*}$$
+$$\begin{aligned}
+\int_{-\infty}^{\infty} (x - \mu_x)^2 p(x) \, dx &= \sigma_x^2 \\
+\int_{-\infty}^{\infty} (x - \mu_x)^2 A e^{-\lambda_2 (x - \mu_x)^2} \, dx &= \sigma_x^2 \\
+A \cdot \frac{1}{2\lambda_2}\sqrt{\frac{\pi}{\lambda_2}} &= \sigma_x^2 \\
+\frac{1}{2\lambda_2}&= \sigma_x^2 \\
+\lambda_2 &= \frac{1}{2\sigma_x^2} \\
+A &= \frac{1}{\sqrt{2\pi \sigma_x^2}}
+\end{aligned}$$
 
 $$p(x) = \frac{1}{\sqrt{2\pi \sigma_x^2}} \exp\left( -\frac{(x - \mu_x)^2}{2\sigma_x^2} \right)$$
 
@@ -205,28 +213,28 @@ proposed linear form; odd symmetry alone does not establish linearity.
 
 Cauchy 函數方程 $\varphi(a + b) = \varphi(a) + \varphi(b)$
 
-$$\begin{gather*}
-\sum_{i=1}^{N} \phi(e_i) &=& 0 \\
-\phi(e_1) + \phi(e_2) &=& 0 \\
-\phi(d) + \phi(-d) &=& 0 \\
-\phi(-d) &=& -\phi(d) \\
-\end{gather*}$$
+$$\begin{aligned}
+\sum_{i=1}^{N} \phi(e_i) &= 0 \\
+\phi(e_1) + \phi(e_2) &= 0 \\
+\phi(d) + \phi(-d) &= 0 \\
+\phi(-d) &= -\phi(d) \\
+\end{aligned}$$
 
 奇函數 odd function
 
 ### (b) 
 
-$$\begin{gather*}
-\phi(e) &=& -he \\
-\phi(-d) &=& -h(-d) \\
-&=& hd \\
-\end{gather*}$$
+$$\begin{aligned}
+\phi(e) &= -he \\
+\phi(-d) &= -h(-d) \\
+&= hd \\
+\end{aligned}$$
 
-$$\begin{gather*}
-\phi(e) &=& -he \\
--\phi(d) &=& -(-h(d)) \\
-&=& hd \\
-\end{gather*}$$
+$$\begin{aligned}
+\phi(e) &= -he \\
+-\phi(d) &= -(-h(d)) \\
+&= hd \\
+\end{aligned}$$
 
 $$\phi(-d) = hd = -\phi(d)$$
 
@@ -240,6 +248,7 @@ $$\phi(-d) = hd = -\phi(d)$$
 Consider a simplified subseasonal-to-seasonal (S2S) precipitation forecast with three mutually exclusive and exhaustive categories: Below Normal ($i = 0$), Near Normal ($i = 1$), and Above Normal ($i = 2$). The category thresholds are prescribed and held fixed.
 
 Suppose $N$ independent verification cases are represented by the **same** forecast probability vector $\mathbf{p} = (p_0, p_1, p_2)$, where $p_i > 0$ and $\sum_{i=0}^{2} p_i = 1$. Let $n_i$ be the observed number of cases in category $i$, and define
+
 $$q_i = \frac{n_i}{N}, \quad \sum_{i=0}^{2} q_i = 1.$$
 
 Assume every category is observed at least once, so $q_i > 0$.
@@ -251,6 +260,7 @@ The likelihood of the observed category counts is
 $$\mathcal{P}(\mathbf{n} \mid \mathbf{p}) = \frac{N!}{n_0! n_1! n_2!} \prod_{i=0}^{2} p_i^{n_i}.$$
 
 The multinomial coefficient does not depend on $\mathbf{p}$. Omit this factor throughout the exercise and define the log-likelihood, up to this additive constant, as
+
 $$\ell(\mathbf{p}) = \ln \left( \prod_{i=0}^{2} p_i^{n_i} \right).$$
 
 Express $\ell(\mathbf{p})$ in terms of $N$, $q_i$, and $\ln p_i$. Use natural logarithms.
@@ -266,6 +276,7 @@ Treat the observed frequencies $q_i$ as fixed constants.
 
 * (c) Comparing two forecast distributions
 Let $N = 100$ and $\mathbf{q} = (0.1, 0.5, 0.4)$. Compare
+
 $$\text{Model A: } \mathbf{p}_A = (0.1, 0.5, 0.4), \quad \text{Model B: } \mathbf{p}_B = (1/3, 1/3, 1/3).$$
 
 Calculate $\ell(\mathbf{p})$ and the forecast entropy $S(\mathbf{p}) = -\sum_{i=0}^{2} p_i \ln p_i$ for each model. Explain why Model B has a lower log-likelihood even though its forecast entropy is higher. Distinguish uncertainty within a forecast distribution from agreement with the observed frequencies.
@@ -277,13 +288,13 @@ Calculate $\ell(\mathbf{p})$ and the forecast entropy $S(\mathbf{p}) = -\sum_{i=
 
 * $q_i = \frac{n_i}{N}$
 
-$$\begin{gather*}
-l(p) &=& \ln\left(\prod_{i=0}^{2} p_i^{n_i}\right) \\
-&=& \sum_{i=0}^{2} \ln\left(p_i^{n_i}\right) \\
-&=& \sum_{i=0}^{2} n_i \ln p_i \\
-&=& \sum_{i=0}^{2} (N q_i) \ln p_i \\
-&=& N \sum_{i=0}^{2} q_i \ln p_i
-\end{gather*}$$
+$$\begin{aligned}
+l(p) &= \ln\left(\prod_{i=0}^{2} p_i^{n_i}\right) \\
+&= \sum_{i=0}^{2} \ln\left(p_i^{n_i}\right) \\
+&= \sum_{i=0}^{2} n_i \ln p_i \\
+&= \sum_{i=0}^{2} (N q_i) \ln p_i \\
+&= N \sum_{i=0}^{2} q_i \ln p_i
+\end{aligned}$$
 
 ### (b)
 
@@ -298,18 +309,18 @@ $$\mathcal{L}(p, \lambda) = N \sum_{i=0}^{2} q_i \ln p_i - \lambda \left( \sum_{
 
 (ii) $\sum_{i=0}^{2} q_i = 1$
 
-$$\begin{gather*}
-\frac{\partial \mathcal{L}}{\partial p_i} &=& 0 \\
-\frac{N q_i}{p_i} - \lambda &=& 0 \\
-p_i &=& \frac{N q_i}{\lambda}
-\end{gather*}$$
+$$\begin{aligned}
+\frac{\partial \mathcal{L}}{\partial p_i} &= 0 \\
+\frac{N q_i}{p_i} - \lambda &= 0 \\
+p_i &= \frac{N q_i}{\lambda}
+\end{aligned}$$
 
-$$\begin{gather*}
-\sum_{i=0}^{2} p_i &=& 1 \\
-\frac{N}{\lambda} \sum_{i=0}^{2} q_i  &=& 1\\
-\frac{N}{\lambda} (1) &=& 1 \\
-\lambda &=& N
-\end{gather*}$$
+$$\begin{aligned}
+\sum_{i=0}^{2} p_i &= 1 \\
+\frac{N}{\lambda} \sum_{i=0}^{2} q_i  &= 1\\
+\frac{N}{\lambda} (1) &= 1 \\
+\lambda &= N
+\end{aligned}$$
 
 $$ p_i = q_i$$
 
@@ -317,12 +328,12 @@ $l(p)$ 在定義域上為嚴格凹函數，所以極值是最大值
 
 (iii)
 
-$$\begin{gather*}
-l(p) &=& N \sum_{i=0}^{2} q_i \ln p_i \\
-\frac{l(p)}{N} &=&  \sum_{i=0}^{2} q_i \ln p_i \\
-\frac{l_{\text{max}}}{N} &=&  \sum_{i=0}^{2} q_i \ln p_i \\
--S(q) &=&  \sum_{i=0}^{2} q_i \ln p_i \\
-\end{gather*}$$
+$$\begin{aligned}
+l(p) &= N \sum_{i=0}^{2} q_i \ln p_i \\
+\frac{l(p)}{N} &=  \sum_{i=0}^{2} q_i \ln p_i \\
+\frac{l_{\text{max}}}{N} &=  \sum_{i=0}^{2} q_i \ln p_i \\
+-S(q) &=  \sum_{i=0}^{2} q_i \ln p_i \\
+\end{aligned}$$
 
 ### (c)
 (c) 比較兩個預報分佈 (Comparing two forecast distributions)   
@@ -340,17 +351,17 @@ l(p) &=& N \sum_{i=0}^{2} q_i \ln p_i \\
 
 已知 $N = 100$，觀測相對頻率為 $q = (0.1, 0.5, 0.4)$。
 
-#### **1. 計算 Model A 與 Model B 的 $S(p)$ 與 $l(p)$**
+#### 1. 計算 Model A 與 Model B 的 $S(p)$ 與 $l(p)$
 
-* **Model A：$p_A = (0.1, 0.5, 0.4)$**（完美吻合觀測頻率，即 $p_A = q$）
+* **Model A**：$p_A = (0.1, 0.5, 0.4)$（完美吻合觀測頻率，即 $p_A = q$）
 
 
-* **預報熵 $S(p_A)$**：
+* **預報熵** $S(p_A)$：
 
 $$\begin{aligned}     S(p_A) &= -\sum_{i=0}^{2} p_{A,i} \ln p_{A,i} \\     &= -\big( 0.1 \ln 0.1 + 0.5 \ln 0.5 + 0.4 \ln 0.4 \big) \\     &\approx -\big( 0.1(-2.3026) + 0.5(-0.6931) + 0.4(-0.9163) \big) \\     &\approx -\big( -0.2303 - 0.3466 - 0.3665 \big) = \mathbf{0.9433}     \end{aligned}$$
 
 
-* **對數似然值 $l(p_A)$**：
+* **對數似然值** $l(p_A)$：
 因為 $p_A = q$，由 (b)(iii) 可知 $l(p_A) = l_{\max} = -N S(q)$：
 
 
@@ -360,15 +371,15 @@ $$l(p_A) = -100 \times 0.943348 \approx \mathbf{-94.33}$$
 
 
 
-* **Model B：$p_B = (1/3, 1/3, 1/3)$**（均勻分佈預報）
+* **Model B**：$p_B = (1/3, 1/3, 1/3)$（均勻分佈預報）
 
 
-* **預報熵 $S(p_B)$**：
+* **預報熵** $S(p_B)$：
 
 $$S(p_B) = -\sum_{i=0}^{2} \frac{1}{3} \ln\left(\frac{1}{3}\right) = -3 \times \frac{1}{3} (-\ln 3) = \ln 3 \approx \mathbf{1.0986}$$
 
 
-* **對數似然值 $l(p_B)$**：
+* **對數似然值** $l(p_B)$：
 
 $$\begin{aligned}     l(p_B) &= N \sum_{i=0}^{2} q_i \ln p_{B,i} \\     &= 100 \times \big( 0.1 \ln(1/3) + 0.5 \ln(1/3) + 0.4 \ln(1/3) \big) \\     &= 100 \times (0.1 + 0.5 + 0.4) \ln(1/3) \\     &= -100 \ln 3 \approx \mathbf{-109.86}     \end{aligned}$$
 
@@ -378,8 +389,8 @@ $$\begin{aligned}     l(p_B) &= N \sum_{i=0}^{2} q_i \ln p_{B,i} \\     &= 100 \
 
 | 模型 | 預報機率向量 $p$<br> | 預報熵 $S(p)$<br> | 對數似然值 $l(p)$<br> |
 | --- | --- | --- | --- |
-| **Model A**<br> | $(0.1, 0.5, 0.4)$<br> | **$0.9433$** | **$-94.33$**（較高，擬合較佳） |
-| **Model B**<br> | $(1/3, 1/3, 1/3)$<br> | **$1.0986$**（較高，不確定性較大） | **$-109.86$** |
+| **Model A**<br> | $(0.1, 0.5, 0.4)$<br> | $\mathbf{0.9433}$ | $\mathbf{-94.33}$（較高，擬合較佳） |
+| **Model B**<br> | $(1/3, 1/3, 1/3)$<br> | $\mathbf{1.0986}$（較高，不確定性較大） | $\mathbf{-109.86}$ |
 
 ---
 
@@ -483,7 +494,7 @@ Model A 的熵比較小，代表它**消除了部分不確定性**，明確指�
 | --- | --- | --- |
 | **手上的資訊** | 只有部分統計矩（例如只知區間 $[a,b]$，或只知 $\mu_x, \sigma_x^2$）| 已有實際觀測到的完整類別頻率 $q = (0.1, 0.5, 0.4)$<br> |
 | **核心目標** | **避免人為偏見**：在滿足已知條件下，讓未知部分保持最大不確定性 | **吻合觀測事實**：讓預報分佈 $p$ 越接近真實觀測 $q$ 越好|
-| **數學操作** | 在約束條件下 **最大化熵 $S[p]$**<br> | **最大化對數似然 $l(p)$**（等價於最小化 $q$ 與 $p$ 的相對熵 $D_{\text{KL}}$） |
+| **數學操作** | 在約束條件下 **最大化熵** $S[p]$<br> | **最大化對數似然** $l(p)$（等價於最小化 $q$ 與 $p$ 的相對熵 $D_{\text{KL}}$） |
 | **「熵很大」代表什麼？** | 代表沒有亂加額外假設（誠實反映無知） | 代表預報本身非常模糊、缺乏鑑別度（如 $1/3, 1/3, 1/3$ 亂猜） |
 
 簡言之：當你沒有資料時，要選「熵最大」的分佈才不會不懂裝懂（Q1）；但當你已經有真實觀測資料時，還給出「熵最大」的均勻預報，就是在裝傻了（Q3）！
