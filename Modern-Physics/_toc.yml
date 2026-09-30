@@ -16,6 +16,8 @@ chapters:
       title: Modern Physics - Atomic Structure
     - file: lecture/05_Quantum_Mechanics/quantum_mechanics.ipynb
       title: Modern Physics - Quantum Mechanics
+    - file: lecture/06_Quantum_Theory_of_the_Hydrogen_Atom/quantum_theory_of_the_hydrogen_atom.ipynb
+      title: Modern Physics - Quantum Theory of the Hydrogen Atom
 - file: homework/homework.md
   sections:
     - file: homework/hw1/hw1.ipynb
