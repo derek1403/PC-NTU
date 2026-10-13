@@ -1,0 +1,48 @@
+# Book settings
+# Learn more at https://jupyterbook.org/customize/config.html
+
+title: Objective Analysis
+author: PC YE
+copyright: "2026"
+
+# 筆記都是 Markdown，不執行 notebook
+execute:
+  execute_notebooks: "off"
+
+# 不要把建置輸出、互動頁與畫圖腳本當成書的頁面
+exclude_patterns:
+  - _build
+  - interactive
+  - "**/00_pic/**"
+  - "**/.ipynb_checkpoints"
+
+parse:
+  myst_enable_extensions:
+    - amsmath
+    - colon_fence
+    - dollarmath
+    - linkify
+    - substitution
+
+# Define the name of the latex output file for PDF builds
+latex:
+  latex_documents:
+    targetname: book.tex
+
+# Information about where the book exists on the web
+repository:
+  url: https://github.com/derek1403/PC-NTU
+  path_to_book: Objective-Analysis
+  branch: main
+
+html:
+  use_issues_button: false
+  use_repository_button: true
+  baseurl: https://derek1403.github.io/PC-NTU/Objective-Analysis/_build/html/
+
+sphinx:
+  config:
+    language: zh_TW
+    myst_heading_anchors: 4   # 讓 [§](#1-...) 這類頁內錨點可以用
+    html_static_path: ["_static"]
+    html_css_files: ["custom.css"]

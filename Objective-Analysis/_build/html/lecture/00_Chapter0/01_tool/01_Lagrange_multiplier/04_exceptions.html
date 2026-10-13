@@ -1,0 +1,680 @@
+
+<!DOCTYPE html>
+
+
+<html lang="zh-TW" data-content_root="../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>拉格朗日乘數法的適用範圍 (When Does It Apply?) &#8212; Objective Analysis</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=4cca277b" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../../_static/documentation_options.js?v=7da51243"></script>
+    <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../../../_static/translations.js?v=1fe8cbde"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/04_exceptions';</script>
+    <link rel="canonical" href="https://derek1403.github.io/PC-NTU/Objective-Analysis/_build/html/lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/04_exceptions.html" />
+    <link rel="index" title="索引" href="../../../../genindex.html" />
+    <link rel="search" title="搜尋" href="../../../../search.html" />
+    <link rel="next" title="Q01｜基本題：二次函數在直線上的極值" href="05_problems/Q01_quadratic_on_line.html" />
+    <link rel="prev" title="拉格朗日乘數法的證明 (Proof of the Lagrange Multiplier Method)" href="03_proof.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="zh-TW"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Objective Analysis</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="搜尋" aria-label="搜尋" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">搜尋</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../../intro.html">
+                    Objective Analysis (客觀分析)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lecture</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../00_The_Idea_Behind_the_Course.html">Chapter 0: The Idea Behind the Course</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01_basic_use.html">Find extreme values under a constraint, using Lagrange Multiplier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_advanced_use.html">Find extreme values under multiple constraints, using Lagrange Multipliers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_proof.html">拉格朗日乘數法的證明 (Proof of the Lagrange Multiplier Method)</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">拉格朗日乘數法的適用範圍 (When Does It Apply?)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_problems/Q01_quadratic_on_line.html">Q01｜基本題：二次函數在直線上的極值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_problems/Q02_cubic_on_ellipse.html">Q02｜基礎暖身：橢圓上的 <span class="math notranslate nohighlight">\(x^2y\)</span> 與分類討論</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_problems/Q03_two_linear_constraints.html">Q03｜雙重限制條件：兩平面交線上離原點最近的點</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_problems/Q04_symmetric_on_sphere.html">Q04｜進階對稱：球面上的 <span class="math notranslate nohighlight">\(xy+yz+zx\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_problems/Q05_cubic_on_unit_sphere.html">Q05｜微積分期末壓軸：單位球上的 <span class="math notranslate nohighlight">\(x^2y+yz^2\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_problems/Q06_hyperboloid_plane_distance.html">Q06｜微積分期末壓軸：雙曲面與平面交線到原點的距離</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_problems/Q07_box_min_surface.html">Q07｜材料科學：固定體積下表面積最小的長方體</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_problems/Q08_1DVar_data_assimilation.html">Q08｜大氣科學：一維變分資料同化 (1D-Var)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_problems/Q09_QG_min_kinetic_energy.html">Q09｜大氣動力：熱力風平衡下的最小動能配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_problems/Q10_Thomson_conducting_spheres.html">Q10｜電磁學：孤立導體球的靜電能最小化 (Thomson’s Theorem)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_problems/Q11_wind_max_transport.html">Q11｜流體力學：固定動能下使輸送量最大的風場</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_problems/Q12_entropy_max_equilibrium.html">Q12｜熱力學：固定總能量下的熵最大與熱平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_problems/Q13_hydrogen_tank_min_mass.html">Q13｜結構工程：異質材料儲氫槽的輕量化設計</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_problems/Q14_inertia_principal_axes.html">Q14｜古典力學：非對稱衛星的慣量主軸</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_problems/Q15_Gibbs_min_equilibrium.html">Q15｜化學熱力學：吉布斯自由能最小化與化學平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_problems/Q16_quadratic_form_two_constraints.html">Q16｜大氣／物理壓軸：球面＋平面上的二次型極值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_problems/Q17_three_level_negative_temperature.html">Q17｜應用壓軸：三能階雷射的最大熵分布與負絕對溫度</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../01_Rule101/00_Rule101.html">Rule 101: From Maximum Entropy to Bayes』 Theorem (Rule101：從最大熵到貝氏定理)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Rule101/01_tool/01_Gaussian/01_Gaussian_distribution.html">高斯分布 (Gaussian Distribution)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Rule101/01_tool/01_Gaussian/02_Gaussian_integrals.html">高斯積分 (Gaussian Integrals)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Rule101/01_tool/03_expectation_rules.html">期望值與變異數的運算規則 (Rules for Expectation and Variance)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Rule101/01_tool/02_Bayes/01_problems/01_weather_prediction.html">Conditional Probability and Bayes』 Theorem in Weather Prediction (條件機率與貝氏定理：由「今天下雨」推估「明天下雨」)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Rule101/01_tool/02_Bayes/01_problems/02_COVID-19.html">Base Rate and Rapid Testing in COVID-19 Screening (基本比率：快篩陽性真的染疫的機率)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Rule101/01_tool/02_Bayes/01_problems/03_Monty_Hall_problem.html">Monty Hall Problem (三門問題：主持人的行動也是資訊)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Rule101/01_tool/02_Bayes/01_problems/04_Data_Assimilation.html">Data Assimilation as Bayes』 Theorem (資料同化：用觀測修正模式預報)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Rule101/02_proof/01_max_entropy_Gaussian.html">已知平均與變異數時，最大熵分布是高斯分布 (Maximum Entropy with Known Mean and Variance)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Rule101/02_proof/02_Gauss_mean_optimal_Gaussian.html">「平均值是最佳估計」推出高斯分布 (Gauss: Optimal Mean Implies Gaussian Errors)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Rule101/02_proof/03_standard_error.html">樣本平均的標準誤 (Standard Error of the Sample Mean)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Rule101/02_proof/04_sample_variance_N-1.html">樣本變異數為什麼除以 <span class="math notranslate nohighlight">\(N-1\)</span> (Why the Sample Variance Divides by <span class="math notranslate nohighlight">\(N-1\)</span>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Rule101/02_proof/05_Gaussian_skewness_kurtosis.html">高斯分布的偏度為 0、峰度為 3 (Skewness and Kurtosis of the Gaussian)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Rule101/02_proof/06_Gaussian_product_posterior.html">高斯先驗 × 高斯概似 = 高斯後驗 (Gaussian Prior × Gaussian Likelihood → Gaussian Posterior)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Rule101/03_notation_X_vs_x.html">大寫 <span class="math notranslate nohighlight">\(X\)</span> 與小寫 <span class="math notranslate nohighlight">\(x\)</span> (Random Variable vs. Observed Value)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../01_Rule101/99_textbook.html">Week 1-3: Rule101</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../homework/hw2/hw2.html">Objective Analysis Week 02 Homework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../homework/hw3/hw3.html">Objective Analysis Week 03 Homework</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/derek1403/PC-NTU" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="來源儲存庫"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="下載此頁面">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../../_sources/lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/04_exceptions.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="下載原始檔"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="列印成 PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="全螢幕模式"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="搜尋" aria-label="搜尋" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>拉格朗日乘數法的適用範圍 (When Does It Apply?)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目錄 </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#necessary-not-sufficient">1. 只是必要條件：解出來的點不一定是極值 (Necessary, Not Sufficient)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#existence-is-not-guaranteed">2. 極值可能根本不存在 (Existence Is Not Guaranteed)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boundaries-and-inequalities">3. 邊界與不等式約束抓不到 (Boundaries and Inequalities)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#licq-licq-violation">4. 違反 LICQ：約束梯度線性相依 (LICQ Violation)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solve">solve</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-differentiable-points">5. 函數不可微 (Non-differentiable Points)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">總表 (Summary)</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="when-does-it-apply">
+<h1>拉格朗日乘數法的適用範圍 (When Does It Apply?)<a class="headerlink" href="#when-does-it-apply" title="連結到這個標頭">#</a></h1>
+<p><a class="reference internal" href="01_basic_use.html"><span class="std std-doc">01_basic_use.md</span></a>／<a class="reference internal" href="02_advanced_use.html"><span class="std std-doc">02_advanced_use.md</span></a> 的方程組是從 <a class="reference internal" href="03_proof.html"><span class="std std-doc">03_proof.md</span></a> 的前提推出來的。
+前提一旦不成立，方法就會<strong>多給</strong>（把不是極值的點當成候選點）、<strong>少給</strong>（漏掉真正的極值點），甚至<strong>亂給</strong>（極值根本不存在也照樣解出點來）。
+以下五種情況各舉一例，文末附總表。</p>
+<hr class="docutils" />
+<section id="necessary-not-sufficient">
+<h2>1. 只是必要條件：解出來的點不一定是極值 (Necessary, Not Sufficient)<a class="headerlink" href="#necessary-not-sufficient" title="連結到這個標頭">#</a></h2>
+<p><span class="math notranslate nohighlight">\(\nabla f = \lambda\nabla g\)</span> 只說「在這裡往切向走，<span class="math notranslate nohighlight">\(f\)</span> 的一階變化為零」，就像單變數的 <span class="math notranslate nohighlight">\(f'=0\)</span>，也可能是反曲點或鞍點。</p>
+<p><strong>例（反曲點）</strong>：求 <span class="math notranslate nohighlight">\(f = x^3 + y\)</span> 在 <span class="math notranslate nohighlight">\(y = 0\)</span> 上的極值。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{\partial}{\partial x}\Big[x^3 + y - \lambda y\Big] &amp;=&amp; 3x^2 \\
+\frac{\partial}{\partial y}\Big[x^3 + y - \lambda y\Big] &amp;=&amp; 1 - \lambda
+\end{gather*}\end{split}\]</div>
+<p>令兩式為零得唯一候選點 <span class="math notranslate nohighlight">\((0,0)\)</span>，但沿約束 <span class="math notranslate nohighlight">\(f = x^3\)</span> 在兩側異號，它<strong>不是</strong>極值（這題根本沒有極值）。</p>
+<p><strong>例（局部而非全域）</strong>：<a class="reference internal" href="05_problems/Q02_cubic_on_ellipse.html"><span class="std std-doc">Q02</span></a> 的方程組會解出 <span class="math notranslate nohighlight">\((0,\pm\sqrt{3})\)</span>，<span class="math notranslate nohighlight">\(f = 0\)</span>。它們是局部極值，但全域最大最小是 <span class="math notranslate nohighlight">\(\pm 4\)</span>，只有把所有候選點的 <span class="math notranslate nohighlight">\(f\)</span> 值列出來比較才分得出來。</p>
+<p><strong>對策</strong>：列出所有候選點的 <span class="math notranslate nohighlight">\(f\)</span> 值比較；需要判斷局部極值時，看約束切空間上的二階條件（bordered Hessian）。</p>
+</section>
+<hr class="docutils" />
+<section id="existence-is-not-guaranteed">
+<h2>2. 極值可能根本不存在 (Existence Is Not Guaranteed)<a class="headerlink" href="#existence-is-not-guaranteed" title="連結到這個標頭">#</a></h2>
+<p>方法只負責回答「<strong>如果</strong>極值存在，它會在哪裡」，不負責證明存在。可行域無界（非緊緻）時，<span class="math notranslate nohighlight">\(f\)</span> 可能一路往 <span class="math notranslate nohighlight">\(\pm\infty\)</span> 跑。</p>
+<p><strong>例</strong>：<a class="reference internal" href="05_problems/Q01_quadratic_on_line.html"><span class="std std-doc">Q01</span></a> 求 <span class="math notranslate nohighlight">\(f = x^2 + 2y^2\)</span> 在直線 <span class="math notranslate nohighlight">\(x+y=6\)</span> 上的極值，方程組只解出一點 <span class="math notranslate nohighlight">\((4,2)\)</span>，<span class="math notranslate nohighlight">\(f=24\)</span>。
+但沿直線 <span class="math notranslate nohighlight">\(x = 6 - y\)</span> 往外走，<span class="math notranslate nohighlight">\(f = (6-y)^2 + 2y^2 \to \infty\)</span>，所以<strong>沒有最大值</strong>，<span class="math notranslate nohighlight">\((4,2)\)</span> 只能是最小值。</p>
+<p><strong>對策</strong>：先確認可行域緊緻（有界閉集，連續函數必有最大最小），例如 <a class="reference internal" href="05_problems/Q06_hyperboloid_plane_distance.html"><span class="std std-doc">Q06</span></a> 要先證明交線是橢圓；
+或者用凸性、<span class="math notranslate nohighlight">\(f\to\infty\)</span> 之類的論證，判斷唯一的候選點是哪一種極值。</p>
+</section>
+<hr class="docutils" />
+<section id="boundaries-and-inequalities">
+<h2>3. 邊界與不等式約束抓不到 (Boundaries and Inequalities)<a class="headerlink" href="#boundaries-and-inequalities" title="連結到這個標頭">#</a></h2>
+<p>方程組只描述<strong>等式</strong>約束<strong>內部</strong>的點。題目若另有 <span class="math notranslate nohighlight">\(x \ge 0\)</span> 之類的不等式，極值可能卡在邊界上，這時 <span class="math notranslate nohighlight">\(\nabla f \neq \lambda \nabla g\)</span> 也無妨。</p>
+<p><strong>例</strong>：兩點電荷 <span class="math notranslate nohighlight">\(q_1+q_2 = Q &gt; 0\)</span>，<span class="math notranslate nohighlight">\(q_1, q_2 \ge 0\)</span>，求位能 <span class="math notranslate nohighlight">\(U \propto q_1 q_2\)</span> 的極值。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{\partial}{\partial q_1}\Big[q_1q_2 - \lambda(q_1+q_2-Q)\Big] &amp;=&amp; q_2 - \lambda \\
+\frac{\partial}{\partial q_2}\Big[q_1q_2 - \lambda(q_1+q_2-Q)\Big] &amp;=&amp; q_1 - \lambda
+\end{gather*}\end{split}\]</div>
+<p>令兩式為零得 <span class="math notranslate nohighlight">\(q_1 = q_2 = Q/2\)</span>，這是<strong>最大值</strong> <span class="math notranslate nohighlight">\(U \propto Q^2/4\)</span>。<strong>最小值</strong> <span class="math notranslate nohighlight">\(U = 0\)</span> 在端點 <span class="math notranslate nohighlight">\((Q,0)\)</span>、<span class="math notranslate nohighlight">\((0,Q)\)</span>，方程組完全看不到。
+（若拿掉 <span class="math notranslate nohighlight">\(q_i \ge 0\)</span>，<span class="math notranslate nohighlight">\(q_1 q_2 = q_1(Q - q_1) \to -\infty\)</span>，連最小值都不存在，又回到第 2 點。）</p>
+<p><strong>對策</strong>：邊界另外代入比較；不等式約束系統化的處理方式是 KKT 條件 (Karush–Kuhn–Tucker)。</p>
+</section>
+<hr class="docutils" />
+<section id="licq-licq-violation">
+<h2>4. 違反 LICQ：約束梯度線性相依 (LICQ Violation)<a class="headerlink" href="#licq-licq-violation" title="連結到這個標頭">#</a></h2>
+<p>證明的關鍵一步（<a class="reference internal" href="03_proof.html"><span class="std std-doc">03_proof.md</span></a>【已知 2】【已知 5】）需要約束面在極值點上光滑，也就是各 <span class="math notranslate nohighlight">\(\nabla g_n\)</span> 線性獨立（單一約束時即 <span class="math notranslate nohighlight">\(\nabla g \neq \mathbf{0}\)</span>）。
+這個條件不成立時，真正的極值點可能<strong>無法</strong>寫成 <span class="math notranslate nohighlight">\(\nabla f = \sum \lambda_n \nabla g_n\)</span>，方法就會漏掉它。</p>
+<p><strong>例</strong>：求 <span class="math notranslate nohighlight">\(f(x,y) = x\)</span> 在下列兩條約束下的最小值。</p>
+<section id="assumptions-preliminaries">
+<h3>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="連結到這個標頭">#</a></h3>
+<ul>
+<li><p><strong>【定義 1】目標與約束 (Objective &amp; Constraints)：</strong> 一條三次曲線與 <span class="math notranslate nohighlight">\(x\)</span> 軸，兩者只交於一點。</p>
+<p>(a) $<span class="math notranslate nohighlight">\(f(x,y) \overset{\text{def}}{=} x\)</span>$</p>
+<p>(b) $<span class="math notranslate nohighlight">\(g_1(x,y) \overset{\text{def}}{=} (x-1)^3 - y = 0\)</span>$</p>
+<p>(c) $<span class="math notranslate nohighlight">\(g_2(x,y) \overset{\text{def}}{=} y = 0\)</span>$</p>
+</li>
+<li><p><strong>【已知 1】多約束 Lagrange 條件 (Lagrange Condition)：</strong> 極值點若滿足 LICQ，必使 Lagrangian 對 <span class="math notranslate nohighlight">\(x, y\)</span> 的偏導數為零。（見 <a class="reference internal" href="02_advanced_use.html"><span class="std std-doc">02_advanced_use.md</span></a>。）</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{L} = f - \lambda_1 g_1 - \lambda_2 g_2\]</div>
+</li>
+</ul>
+</section>
+<section id="solve">
+<h3>solve<a class="headerlink" href="#solve" title="連結到這個標頭">#</a></h3>
+<p>(a) 可行域：代入 (c) 到 (b)，只剩一個點，所以它就是最小值點。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+0 &amp;\overset{\text{定義 1(b)(c)}}{=}&amp; (x-1)^3 \\
+x &amp;=&amp; 1
+\end{gather*}\end{split}\]</div>
+<p>可行域 <span class="math notranslate nohighlight">\(= \{(1,0)\}\)</span>，最小值 <span class="math notranslate nohighlight">\(f = 1\)</span>。</p>
+<p>(b) 檢查 LICQ：兩個梯度在 <span class="math notranslate nohighlight">\((1,0)\)</span> 互為反向，線性相依。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\nabla g_1(1,0) &amp;\overset{\text{定義 1(b)}}{=}&amp; \big(3(x-1)^2,\ -1\big)\Big|_{(1,0)} \\
+\nabla g_1(1,0) &amp;=&amp; (0,\ -1) \\
+\nabla g_2(1,0) &amp;\overset{\text{定義 1(c)}}{=}&amp; (0,\ 1)
+\end{gather*}\end{split}\]</div>
+<p>(c) 硬套方程組：在真正的極值點上得到矛盾。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+0 &amp;\overset{\text{已知 1}}{=}&amp; \frac{\partial \mathcal{L}}{\partial x}\bigg|_{(1,0)} \\
+0 &amp;\overset{\text{定義 1}}{=}&amp; 1 - 3\lambda_1 (1-1)^2 \\
+0 &amp;=&amp; 1
+\end{gather*}\end{split}\]</div>
+<p><strong>結論</strong>：極值點 <span class="math notranslate nohighlight">\((1,0)\)</span> 真實存在，但方程組在該點無解。原因是兩條約束在 <span class="math notranslate nohighlight">\((1,0)\)</span> 相切，<span class="math notranslate nohighlight">\(\nabla g_1, \nabla g_2\)</span> 都只指向 <span class="math notranslate nohighlight">\(y\)</span> 方向，而 <span class="math notranslate nohighlight">\(\nabla f = (1,0)\)</span> 指向 <span class="math notranslate nohighlight">\(x\)</span> 方向，怎麼組合都湊不出來。</p>
+<p><strong>對策</strong>：另外列出所有違反 LICQ 的可行點（解 <span class="math notranslate nohighlight">\(\nabla g_n\)</span> 線性相依 ＋ 約束），把它們也當候選點比較。</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="non-differentiable-points">
+<h2>5. 函數不可微 (Non-differentiable Points)<a class="headerlink" href="#non-differentiable-points" title="連結到這個標頭">#</a></h2>
+<p><span class="math notranslate nohighlight">\(\nabla f\)</span>、<span class="math notranslate nohighlight">\(\nabla g\)</span> 不存在的點，方程組根本寫不出來，自然也不會出現在解裡。</p>
+<p><strong>例</strong>：求 <span class="math notranslate nohighlight">\(f(x,y) = |x| + |y|\)</span> 在 <span class="math notranslate nohighlight">\(x + 2y = 2\)</span> 上的最小值。
+在任一象限內部 <span class="math notranslate nohighlight">\(\nabla f = (\pm 1, \pm 1)\)</span>，而 <span class="math notranslate nohighlight">\(\nabla g = (1, 2)\)</span>，兩者永遠不平行，所以方程組<strong>無解</strong>。
+但真正的最小值 <span class="math notranslate nohighlight">\(f = 1\)</span> 就在 <span class="math notranslate nohighlight">\((0,1)\)</span>，剛好落在 <span class="math notranslate nohighlight">\(f\)</span> 不可微的 <span class="math notranslate nohighlight">\(y\)</span> 軸上。</p>
+<p><strong>對策</strong>：把不可微的點與可行域的交集單獨列為候選點。</p>
+</section>
+<hr class="docutils" />
+<section id="summary">
+<h2>總表 (Summary)<a class="headerlink" href="#summary" title="連結到這個標頭">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>情況</p></th>
+<th class="head"><p>症狀</p></th>
+<th class="head"><p>對策</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1. 只是必要條件</p></td>
+<td><p>解出的點不是極值（鞍點、反曲點）</p></td>
+<td><p>比較所有候選點的 <span class="math notranslate nohighlight">\(f\)</span> 值；或看二階條件</p></td>
+</tr>
+<tr class="row-odd"><td><p>2. 極值不存在</p></td>
+<td><p>可行域無界，某一側解不出或只解出一點</p></td>
+<td><p>先證緊緻；或用凸性／趨勢判斷</p></td>
+</tr>
+<tr class="row-even"><td><p>3. 邊界、不等式</p></td>
+<td><p>極值在端點上，方程組漏掉</p></td>
+<td><p>邊界另外代入；KKT</p></td>
+</tr>
+<tr class="row-odd"><td><p>4. 違反 LICQ</p></td>
+<td><p>真正的極值點讓方程組無解（如 <span class="math notranslate nohighlight">\(1=0\)</span>）</p></td>
+<td><p>解出所有 <span class="math notranslate nohighlight">\(\nabla g_n\)</span> 線性相依的可行點，一併比較</p></td>
+</tr>
+<tr class="row-even"><td><p>5. 不可微</p></td>
+<td><p>梯度不存在，方程組寫不出來</p></td>
+<td><p>不可微點另外列入候選</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<div><p>實務上的最終答案 = 比較以下三者的 <span class="math notranslate nohighlight">\(f\)</span> 值：方程組的解、邊界／不可微點、違反 LICQ 的點。</p>
+</div></blockquote>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lecture\00_Chapter0\01_tool\01_Lagrange_multiplier"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="03_proof.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">上一頁</p>
+        <p class="prev-next-title">拉格朗日乘數法的證明 (Proof of the Lagrange Multiplier Method)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="05_problems/Q01_quadratic_on_line.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">下一頁</p>
+        <p class="prev-next-title">Q01｜基本題：二次函數在直線上的極值</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目錄
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#necessary-not-sufficient">1. 只是必要條件：解出來的點不一定是極值 (Necessary, Not Sufficient)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#existence-is-not-guaranteed">2. 極值可能根本不存在 (Existence Is Not Guaranteed)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boundaries-and-inequalities">3. 邊界與不等式約束抓不到 (Boundaries and Inequalities)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#licq-licq-violation">4. 違反 LICQ：約束梯度線性相依 (LICQ Violation)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solve">solve</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-differentiable-points">5. 函數不可微 (Non-differentiable Points)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">總表 (Summary)</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+作者： PC YE
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

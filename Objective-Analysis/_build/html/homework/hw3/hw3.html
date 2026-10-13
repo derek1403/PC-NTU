@@ -1,0 +1,1133 @@
+
+<!DOCTYPE html>
+
+
+<html lang="zh-TW" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Objective Analysis Week 03 Homework &#8212; Objective Analysis</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=4cca277b" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=7da51243"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/translations.js?v=1fe8cbde"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'homework/hw3/hw3';</script>
+    <link rel="canonical" href="https://derek1403.github.io/PC-NTU/Objective-Analysis/_build/html/homework/hw3/hw3.html" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜尋" href="../../search.html" />
+    <link rel="prev" title="Objective Analysis Week 02 Homework" href="../hw2/hw2.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="zh-TW"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Objective Analysis</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="搜尋" aria-label="搜尋" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">搜尋</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Objective Analysis (客觀分析)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lecture</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lecture/00_Chapter0/00_The_Idea_Behind_the_Course.html">Chapter 0: The Idea Behind the Course</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/01_basic_use.html">Find extreme values under a constraint, using Lagrange Multiplier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/02_advanced_use.html">Find extreme values under multiple constraints, using Lagrange Multipliers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/03_proof.html">拉格朗日乘數法的證明 (Proof of the Lagrange Multiplier Method)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/04_exceptions.html">拉格朗日乘數法的適用範圍 (When Does It Apply?)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q01_quadratic_on_line.html">Q01｜基本題：二次函數在直線上的極值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q02_cubic_on_ellipse.html">Q02｜基礎暖身：橢圓上的 <span class="math notranslate nohighlight">\(x^2y\)</span> 與分類討論</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q03_two_linear_constraints.html">Q03｜雙重限制條件：兩平面交線上離原點最近的點</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q04_symmetric_on_sphere.html">Q04｜進階對稱：球面上的 <span class="math notranslate nohighlight">\(xy+yz+zx\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q05_cubic_on_unit_sphere.html">Q05｜微積分期末壓軸：單位球上的 <span class="math notranslate nohighlight">\(x^2y+yz^2\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q06_hyperboloid_plane_distance.html">Q06｜微積分期末壓軸：雙曲面與平面交線到原點的距離</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q07_box_min_surface.html">Q07｜材料科學：固定體積下表面積最小的長方體</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q08_1DVar_data_assimilation.html">Q08｜大氣科學：一維變分資料同化 (1D-Var)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q09_QG_min_kinetic_energy.html">Q09｜大氣動力：熱力風平衡下的最小動能配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q10_Thomson_conducting_spheres.html">Q10｜電磁學：孤立導體球的靜電能最小化 (Thomson’s Theorem)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q11_wind_max_transport.html">Q11｜流體力學：固定動能下使輸送量最大的風場</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q12_entropy_max_equilibrium.html">Q12｜熱力學：固定總能量下的熵最大與熱平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q13_hydrogen_tank_min_mass.html">Q13｜結構工程：異質材料儲氫槽的輕量化設計</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q14_inertia_principal_axes.html">Q14｜古典力學：非對稱衛星的慣量主軸</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q15_Gibbs_min_equilibrium.html">Q15｜化學熱力學：吉布斯自由能最小化與化學平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q16_quadratic_form_two_constraints.html">Q16｜大氣／物理壓軸：球面＋平面上的二次型極值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q17_three_level_negative_temperature.html">Q17｜應用壓軸：三能階雷射的最大熵分布與負絕對溫度</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lecture/01_Rule101/00_Rule101.html">Rule 101: From Maximum Entropy to Bayes』 Theorem (Rule101：從最大熵到貝氏定理)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/01_tool/01_Gaussian/01_Gaussian_distribution.html">高斯分布 (Gaussian Distribution)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/01_tool/01_Gaussian/02_Gaussian_integrals.html">高斯積分 (Gaussian Integrals)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/01_tool/03_expectation_rules.html">期望值與變異數的運算規則 (Rules for Expectation and Variance)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/01_tool/02_Bayes/01_problems/01_weather_prediction.html">Conditional Probability and Bayes』 Theorem in Weather Prediction (條件機率與貝氏定理：由「今天下雨」推估「明天下雨」)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/01_tool/02_Bayes/01_problems/02_COVID-19.html">Base Rate and Rapid Testing in COVID-19 Screening (基本比率：快篩陽性真的染疫的機率)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/01_tool/02_Bayes/01_problems/03_Monty_Hall_problem.html">Monty Hall Problem (三門問題：主持人的行動也是資訊)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/01_tool/02_Bayes/01_problems/04_Data_Assimilation.html">Data Assimilation as Bayes』 Theorem (資料同化：用觀測修正模式預報)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/02_proof/01_max_entropy_Gaussian.html">已知平均與變異數時，最大熵分布是高斯分布 (Maximum Entropy with Known Mean and Variance)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/02_proof/02_Gauss_mean_optimal_Gaussian.html">「平均值是最佳估計」推出高斯分布 (Gauss: Optimal Mean Implies Gaussian Errors)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/02_proof/03_standard_error.html">樣本平均的標準誤 (Standard Error of the Sample Mean)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/02_proof/04_sample_variance_N-1.html">樣本變異數為什麼除以 <span class="math notranslate nohighlight">\(N-1\)</span> (Why the Sample Variance Divides by <span class="math notranslate nohighlight">\(N-1\)</span>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/02_proof/05_Gaussian_skewness_kurtosis.html">高斯分布的偏度為 0、峰度為 3 (Skewness and Kurtosis of the Gaussian)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/02_proof/06_Gaussian_product_posterior.html">高斯先驗 × 高斯概似 = 高斯後驗 (Gaussian Prior × Gaussian Likelihood → Gaussian Posterior)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/03_notation_X_vs_x.html">大寫 <span class="math notranslate nohighlight">\(X\)</span> 與小寫 <span class="math notranslate nohighlight">\(x\)</span> (Random Variable vs. Observed Value)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/99_textbook.html">Week 1-3: Rule101</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../hw2/hw2.html">Objective Analysis Week 02 Homework</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Objective Analysis Week 03 Homework</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/derek1403/PC-NTU" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="來源儲存庫"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="下載此頁面">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/homework/hw3/hw3.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="下載原始檔"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="列印成 PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="全螢幕模式"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="搜尋" aria-label="搜尋" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Objective Analysis Week 03 Homework</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目錄 </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-extended-monty-hall-problem-with-four-doors">Question 1. Extended Monty Hall Problem with Four Doors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">中文翻譯</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-1">Answer 1.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a">(a)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b">(b)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c">(c)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d">(d)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-a-scalar-bayesian-analysis-and-the-kalman-gain">Question 2. A Scalar Bayesian Analysis and the Kalman Gain</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">中文翻譯</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-2">Answer 2.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">(a)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">(b)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">(c)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-bayesian-interpretation-of-a-heavy-rain-warning">Question 3. Bayesian Interpretation of a Heavy-Rain Warning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">中文翻譯</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-3">Answer 3.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">1.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">3.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">4.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">5.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">6.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4-the-sleeping-beauty-paradox">Question 4. The Sleeping Beauty Paradox</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">中文翻譯</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-4">Answer 4.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">(a)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">(b)</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="objective-analysis-week-03-homework">
+<h1>Objective Analysis Week 03 Homework<a class="headerlink" href="#objective-analysis-week-03-homework" title="連結到這個標頭">#</a></h1>
+<section id="question-1-extended-monty-hall-problem-with-four-doors">
+<h2>Question 1. Extended Monty Hall Problem with Four Doors<a class="headerlink" href="#question-1-extended-monty-hall-problem-with-four-doors" title="連結到這個標頭">#</a></h2>
+<p>A prize is hidden behind one of four doors, while the other three doors hide goats. Assume that the prize is equally likely to be behind any door. The game proceeds according to the following rules:</p>
+<ol class="arabic simple">
+<li><p>You first choose one door, but it remains closed.</p></li>
+<li><p>The host knows where the prize is. From the three doors that you did not choose, the host opens two doors that both hide goats.</p></li>
+<li><p>If the host has more than one possible pair of goat doors to open, the host selects one of the possible pairs at random.</p></li>
+<li><p>Exactly two doors now remain closed: your original choice and one other door. You may either stay with your original choice or switch to the other unopened door.</p></li>
+</ol>
+<p>Answer the following questions. Clearly state the events and conditional probabilities used in your reasoning.</p>
+<ul class="simple">
+<li><p>(a) Before the host opens any doors, what is the probability that your initial choice contains the prize?</p></li>
+<li><p>(b) What is the probability of winning if you always stay with your initial choice?</p></li>
+<li><p>(c) What is the probability of winning if you always switch to the only other unopened door?</p></li>
+<li><p>(d) Which strategy should you use? Explain why the host’s action changes the information available to you but does not change whether your initial choice was correct.</p></li>
+</ul>
+<section id="id1">
+<h3>中文翻譯<a class="headerlink" href="#id1" title="連結到這個標頭">#</a></h3>
+<blockquote>
+<div><p><strong>問題 1：四扇門的延伸版蒙提霍爾問題</strong></p>
+<p>獎品藏在四扇門其中一扇的後面，其餘三扇門後面都是山羊。假設獎品在每一扇門後面的機率都相同。遊戲依照以下規則進行：</p>
+<ol class="arabic simple">
+<li><p>你先選擇一扇門，但這扇門保持關閉。</p></li>
+<li><p>主持人知道獎品在哪裡。主持人從你沒有選的三扇門中，打開兩扇後面都是山羊的門。</p></li>
+<li><p>若主持人有不只一組可打開的山羊門組合，則主持人會從可能的組合中隨機選一組打開。</p></li>
+<li><p>此時恰好剩下兩扇門是關著的：你最初選的門，以及另一扇門。你可以選擇堅持原本的選擇，或換到另一扇未打開的門。</p></li>
+</ol>
+<p>回答以下問題。請在推理過程中清楚寫出所使用的事件與條件機率。</p>
+<ul class="simple">
+<li><p>(a) 在主持人打開任何門之前，你最初選的門後有獎品的機率是多少？</p></li>
+<li><p>(b) 若你總是堅持最初的選擇，獲勝機率是多少？</p></li>
+<li><p>(c) 若你總是換到唯一剩下的另一扇未打開的門，獲勝機率是多少？</p></li>
+<li><p>(d) 你應該採用哪一種策略？請解釋為什麼主持人的行動改變了你所能得到的資訊，卻沒有改變你最初的選擇是否正確。</p></li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+<section id="answer-1">
+<h2>Answer 1.<a class="headerlink" href="#answer-1" title="連結到這個標頭">#</a></h2>
+<p>假設參賽者最初選擇 第 1 扇門</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(D_i\)</span>：獎品藏在第 <span class="math notranslate nohighlight">\(i\)</span> 扇門後（<span class="math notranslate nohighlight">\(i \in \{1, 2, 3, 4\}\)</span>）。</p></li>
+<li><p><span class="math notranslate nohighlight">\(O_{jk}\)</span>：主持人打開第 <span class="math notranslate nohighlight">\(j\)</span> 扇與第 <span class="math notranslate nohighlight">\(k\)</span> 扇門（其中 <span class="math notranslate nohighlight">\(j, k \in \{2, 3, 4\}\)</span> 且 <span class="math notranslate nohighlight">\(j &lt; k\)</span>），這兩扇門後面都是山羊。</p></li>
+</ul>
+<section id="a">
+<h3>(a)<a class="headerlink" href="#a" title="連結到這個標頭">#</a></h3>
+<div class="math notranslate nohighlight">
+\[P(D_1) = P(D_2) = P(D_3) = P(D_4) = \frac{1}{4}\]</div>
+<p>第 1 扇門後有獎品的機率為 <span class="math notranslate nohighlight">\(\frac{1}{4}\)</span></p>
+</section>
+<section id="b">
+<h3>(b)<a class="headerlink" href="#b" title="連結到這個標頭">#</a></h3>
+<p>總是堅持最初選擇（Stay）的獲勝機率</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+P(D_1 \mid O_{23}) &amp;=&amp; \frac{P(O_{23} \mid D_1)P(D_1)}{P(O_{23})} \\
+&amp;=&amp; \frac{\frac{1}{3} \times \frac{1}{4}}{\frac{1}{3}} \\
+&amp;=&amp; \frac{1}{4} \\
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>各情況下主持人打開 2、3 號門的條件機率（Likelihood）：</p>
+<ul>
+<li><p>若獎品在 1 號門（<span class="math notranslate nohighlight">\(D_1\)</span>）：2、3、4 號門後都是山羊，主持人從 <span class="math notranslate nohighlight">\(\{(2,3), (2,4), (3,4)\}\)</span> 三組中隨機選一組打開，故 <span class="math notranslate nohighlight">\(P(O_{23} \mid D_1) = \frac{1}{3}\)</span>。</p></li>
+<li><p>若獎品在 2 號門（<span class="math notranslate nohighlight">\(D_2\)</span>）：主持人不能打開有獎品的 2 號門，故 <span class="math notranslate nohighlight">\(P(O_{23} \mid D_2) = 0\)</span>。</p></li>
+<li><p>若獎品在 3 號門（<span class="math notranslate nohighlight">\(D_3\)</span>）：主持人不能打開 3 號門，故 <span class="math notranslate nohighlight">\(P(O_{23} \mid D_3) = 0\)</span>。</p></li>
+<li><p>若獎品在 4 號門（<span class="math notranslate nohighlight">\(D_4\)</span>）：主持人只能打開剩下的兩扇山羊門（2 號與 3 號），故 <span class="math notranslate nohighlight">\(P(O_{23} \mid D_4) = 1\)</span></p></li>
+</ul>
+</li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+P(O_{23}) &amp;=&amp; \sum_{i=1}^{4} P(O_{23} \mid D_i)P(D_i) \\ 
+&amp;=&amp; \left(\frac{1}{3} \times \frac{1}{4}\right) + 0 + 0 + \left(1 \times \frac{1}{4}\right) \\ 
+&amp;=&amp; \frac{1}{12} + \frac{1}{4} \\ 
+&amp;=&amp; \frac{1}{3}
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="c">
+<h3>(c)<a class="headerlink" href="#c" title="連結到這個標頭">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+P(D_4 \mid O_{23}) &amp;=&amp; \frac{P(O_{23} \mid D_4)P(D_4)}{P(O_{23})} \\
+&amp;=&amp; \frac{1 \times \frac{1}{4}}{\frac{1}{3}} \\
+&amp;=&amp; \frac{3}{4}
+\end{gather*}\end{split}\]</div>
+<p>因此，總是換門的獲勝機率為 <span class="math notranslate nohighlight">\(\frac{3}{4}\)</span></p>
+</section>
+<section id="d">
+<h3>(d)<a class="headerlink" href="#d" title="連結到這個標頭">#</a></h3>
+<p>應該選擇 換門（Switch），因為獲勝機率是 <span class="math notranslate nohighlight">\(\frac{3}{4}\)</span>，為不換門（<span class="math notranslate nohighlight">\(\frac{1}{4}\)</span>）的 3 倍。</p>
+<ul class="simple">
+<li><p>主持人總是能從你未選的 3 扇門中找出至少 2 扇山羊門並打開（不論你最初有沒有猜中）。因此「有兩扇山羊門被打開」這件事本身並未提供關於「第 1 扇門是否為獎品」的新資訊，所以 <span class="math notranslate nohighlight">\(P(D_1 \mid O_{23}) = P(D_1) = \frac{1}{4}\)</span>。</p></li>
+<li><p>然而，你未選的三扇門 <span class="math notranslate nohighlight">\(\{2, 3, 4\}\)</span> 原本合起來擁有 <span class="math notranslate nohighlight">\(\frac{3}{4}\)</span> 的獲勝機率。主持人知情且刻意避開獎品開門的動作，對 <span class="math notranslate nohighlight">\(\{2, 3, 4\}\)</span> 進行了篩選，將原本分散在三扇門的 <span class="math notranslate nohighlight">\(\frac{3}{4}\)</span> 機率全部濃縮（重新分配）到唯一留下的那扇未開門（第 4 扇門）上</p></li>
+</ul>
+</section>
+</section>
+<section id="question-2-a-scalar-bayesian-analysis-and-the-kalman-gain">
+<h2>Question 2. A Scalar Bayesian Analysis and the Kalman Gain<a class="headerlink" href="#question-2-a-scalar-bayesian-analysis-and-the-kalman-gain" title="連結到這個標頭">#</a></h2>
+<p>In data assimilation, a background estimate and an observation are combined to obtain an analysis estimate, which can then be used as the initial condition for numerical weather prediction. In the scalar case, suppose the observation operator is the identity, so that the background and observation represent the same physical quantity at the same location.</p>
+<p>Let the background estimate be <span class="math notranslate nohighlight">\(x_b\)</span> and the observation be <span class="math notranslate nohighlight">\(y\)</span>. Assume that their errors are unbiased, mutually independent, and Gaussian, with variances <span class="math notranslate nohighlight">\(\sigma_b^2\)</span> and <span class="math notranslate nohighlight">\(\sigma_o^2\)</span>, respectively. The analysis is</p>
+<div class="math notranslate nohighlight">
+\[x_a = x_b + K (y - x_b), \quad K = \frac{\sigma_b^2}{\sigma_b^2 + \sigma_o^2}\]</div>
+<p>where <span class="math notranslate nohighlight">\(K\)</span> is the scalar Kalman gain. Under these assumptions, this expression is both the minimum-error-variance linear estimate and the maximum a posteriori (MAP) estimate.</p>
+<p>Answer the following questions:</p>
+<ul>
+<li><p>(a) In a Bayesian formulation, write the prior density <span class="math notranslate nohighlight">\(p(x)\)</span> implied by the background estimate and the likelihood <span class="math notranslate nohighlight">\(p(y \mid x)\)</span> implied by the observation. Use Bayes』 theorem to write the posterior density <span class="math notranslate nohighlight">\(p(x \mid y)\)</span> up to a normalization constant. Identify which density is the prior and which is the posterior.</p></li>
+<li><p>(b) Show that maximizing <span class="math notranslate nohighlight">\(p(x \mid y)\)</span> is equivalent to minimizing</p>
+<div class="math notranslate nohighlight">
+\[J(x) = \frac{(x - x_b)^2}{2\sigma_b^2} + \frac{(y - x)^2}{2\sigma_o^2}\]</div>
+<p>Differentiate <span class="math notranslate nohighlight">\(J(x)\)</span> and verify that its minimizer has the Kalman-gain form given above.</p>
+</li>
+<li><p>(c) Given</p>
+<div class="math notranslate nohighlight">
+\[x_b = 10^{\circ}\mathrm{C}, \quad y = 15^{\circ}\mathrm{C}, \quad \sigma_b^2 = 1^{\circ}\mathrm{C}^2, \quad \sigma_o^2 = 0.5^{\circ}\mathrm{C}^2\]</div>
+<p>calculate the Kalman gain and the analysis value that maximizes the posterior density. Briefly explain why the analysis lies closer to either the background or the observation.</p>
+</li>
+</ul>
+<section id="id2">
+<h3>中文翻譯<a class="headerlink" href="#id2" title="連結到這個標頭">#</a></h3>
+<blockquote>
+<div><p><strong>問題 2：純量貝氏分析與卡爾曼增益</strong></p>
+<p>在資料同化中，會將背景估計值與觀測值結合，得到分析估計值，而分析值可作為數值天氣預報的初始條件。在純量情況下，假設觀測算子為恆等算子，使得背景值與觀測值代表同一位置上的同一物理量。</p>
+<p>令背景估計值為 <span class="math notranslate nohighlight">\(x_b\)</span>、觀測值為 <span class="math notranslate nohighlight">\(y\)</span>。假設兩者的誤差皆為無偏、彼此獨立且服從高斯分布，變異數分別為 <span class="math notranslate nohighlight">\(\sigma_b^2\)</span> 與 <span class="math notranslate nohighlight">\(\sigma_o^2\)</span>。分析值為</p>
+<div class="math notranslate nohighlight">
+\[x_a = x_b + K (y - x_b), \quad K = \frac{\sigma_b^2}{\sigma_b^2 + \sigma_o^2}\]</div>
+<p>其中 <span class="math notranslate nohighlight">\(K\)</span> 為純量卡爾曼增益。在上述假設下，此式同時是最小誤差變異數的線性估計，也是最大後驗（MAP）估計。</p>
+<p>回答以下問題：</p>
+<ul>
+<li><p>(a) 在貝氏架構下，寫出由背景估計值所隱含的先驗密度 <span class="math notranslate nohighlight">\(p(x)\)</span>，以及由觀測值所隱含的概似函數 <span class="math notranslate nohighlight">\(p(y \mid x)\)</span>。利用貝氏定理寫出後驗密度 <span class="math notranslate nohighlight">\(p(x \mid y)\)</span>（可忽略正規化常數）。指出哪一個密度是先驗、哪一個是後驗。</p></li>
+<li><p>(b) 證明最大化 <span class="math notranslate nohighlight">\(p(x \mid y)\)</span> 等價於最小化的 <span class="math notranslate nohighlight">\(J(x)\)</span>。</p>
+<div class="math notranslate nohighlight">
+\[J(x) = \frac{(x - x_b)^2}{2\sigma_b^2} + \frac{(y - x)^2}{2\sigma_o^2}\]</div>
+<p>對 <span class="math notranslate nohighlight">\(J(x)\)</span> 微分，並驗證其最小值解具有上面給定的卡爾曼增益形式。</p>
+</li>
+<li><p>(c) 給定 <span class="math notranslate nohighlight">\(x_b = 10^{\circ}\mathrm{C}\)</span>、<span class="math notranslate nohighlight">\(y = 15^{\circ}\mathrm{C}\)</span>、<span class="math notranslate nohighlight">\(\sigma_b^2 = 1^{\circ}\mathrm{C}^2\)</span>、<span class="math notranslate nohighlight">\(\sigma_o^2 = 0.5^{\circ}\mathrm{C}^2\)</span>，計算卡爾曼增益，以及使後驗密度最大的分析值。簡要說明為什麼分析值會比較靠近背景值或觀測值。</p></li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+<section id="answer-2">
+<h2>Answer 2.<a class="headerlink" href="#answer-2" title="連結到這個標頭">#</a></h2>
+<section id="id3">
+<h3>(a)<a class="headerlink" href="#id3" title="連結到這個標頭">#</a></h3>
+<p>先驗機率密度函數 (Prior density, <span class="math notranslate nohighlight">\(p(x)\)</span>)：</p>
+<ul class="simple">
+<li><p>由背景場估計 <span class="math notranslate nohighlight">\(x_b\)</span> 與其誤差變異數 <span class="math notranslate nohighlight">\(\sigma_b^2\)</span> 決定，假設為常態分佈：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[p(x) = \frac{1}{\sqrt{2\pi}\sigma_b} \exp\left( -\frac{(x - x_b)^2}{2\sigma_b^2} \right)\]</div>
+<ul class="simple">
+<li><p>概似函數 (Likelihood density, <span class="math notranslate nohighlight">\(p(y \mid x)\)</span>)： 給定真實狀態 <span class="math notranslate nohighlight">\(x\)</span> 下，觀測值 <span class="math notranslate nohighlight">\(y\)</span> 的條件機率密度（誤差變異數為 <span class="math notranslate nohighlight">\(\sigma_o^2\)</span>）：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[p(y \mid x) = \frac{1}{\sqrt{2\pi}\sigma_o} \exp\left( -\frac{(y - x)^2}{2\sigma_o^2} \right)\]</div>
+<ul class="simple">
+<li><p>後驗機率密度函數 (Posterior density, <span class="math notranslate nohighlight">\(p(x \mid y)\)</span>)： 根據貝氏定理 <span class="math notranslate nohighlight">\(p(x \mid y) = \frac{p(y \mid x)p(x)}{p(y)} \propto p(y \mid x)p(x)\)</span>，省去與 <span class="math notranslate nohighlight">\(x\)</span> 無關的正規化常數後可寫為：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[p(x \mid y) \propto \exp\left[ -\left( \frac{(x - x_b)^2}{2\sigma_b^2} + \frac{(y - x)^2}{2\sigma_o^2} \right) \right]\]</div>
+<p>指認： <span class="math notranslate nohighlight">\(p(x)\)</span> 為 Prior（先驗密度），<span class="math notranslate nohighlight">\(p(x \mid y)\)</span> 為 Posterior（後驗密度）。</p>
+</section>
+<section id="id4">
+<h3>(b)<a class="headerlink" href="#id4" title="連結到這個標頭">#</a></h3>
+<p>背景誤差與觀測誤差皆為無偏、獨立的高斯分布，故</p>
+<div class="math notranslate nohighlight">
+\[p(x) \propto \exp\left[-\frac{(x - x_b)^2}{2\sigma_b^2}\right], \quad p(y \mid x) \propto \exp\left[-\frac{(y - x)^2}{2\sigma_o^2}\right]\]</div>
+<p>由貝氏定理（<span class="math notranslate nohighlight">\(p(y)\)</span> 與 <span class="math notranslate nohighlight">\(x\)</span> 無關，視為正規化常數）：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+p(x \mid y) &amp;\propto&amp; p(y \mid x)\,p(x) \\
+&amp;\propto&amp; \exp\left[-\frac{(x - x_b)^2}{2\sigma_b^2} - \frac{(y - x)^2}{2\sigma_o^2}\right] \\
+&amp;=&amp; \exp\left[-J(x)\right]
+\end{gather*}\end{split}\]</div>
+<p>取負對數：</p>
+<div class="math notranslate nohighlight">
+\[-\ln p(x \mid y) = J(x) + \text{const}\]</div>
+<p>因為 <span class="math notranslate nohighlight">\(\exp(\cdot)\)</span> 為嚴格遞增函數，<span class="math notranslate nohighlight">\(p(x \mid y)\)</span> 越大 <span class="math notranslate nohighlight">\(\Leftrightarrow\)</span> <span class="math notranslate nohighlight">\(J(x)\)</span> 越小，所以最大化 <span class="math notranslate nohighlight">\(p(x \mid y)\)</span> 等價於最小化 <span class="math notranslate nohighlight">\(J(x)\)</span>。</p>
+<ul class="simple">
+<li><p>對 <span class="math notranslate nohighlight">\(J(x)\)</span> 微分並令其為 0：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{dJ}{dx} &amp;=&amp; \frac{x - x_b}{\sigma_b^2} - \frac{y - x}{\sigma_o^2} = 0 \\
+x\left(\frac{1}{\sigma_b^2} + \frac{1}{\sigma_o^2}\right) &amp;=&amp; \frac{x_b}{\sigma_b^2} + \frac{y}{\sigma_o^2}
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>兩邊同乘 <span class="math notranslate nohighlight">\(\sigma_b^2 \sigma_o^2\)</span>：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+x\left(\sigma_o^2 + \sigma_b^2\right) &amp;=&amp; \sigma_o^2 x_b + \sigma_b^2 y \\
+x_a &amp;=&amp; \frac{\sigma_o^2 x_b + \sigma_b^2 y}{\sigma_b^2 + \sigma_o^2} \\
+&amp;=&amp; \frac{(\sigma_b^2 + \sigma_o^2) x_b + \sigma_b^2 (y - x_b)}{\sigma_b^2 + \sigma_o^2} \\
+&amp;=&amp; x_b + \frac{\sigma_b^2}{\sigma_b^2 + \sigma_o^2}(y - x_b) \\
+&amp;=&amp; x_b + K(y - x_b)
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>二階導數檢查：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\frac{d^2 J}{dx^2} = \frac{1}{\sigma_b^2} + \frac{1}{\sigma_o^2} &gt; 0\]</div>
+<p>故此臨界點為 <span class="math notranslate nohighlight">\(J(x)\)</span> 的最小值，即 <span class="math notranslate nohighlight">\(p(x \mid y)\)</span> 的最大值（MAP），其形式正是 <span class="math notranslate nohighlight">\(x_a = x_b + K(y - x_b)\)</span>，<span class="math notranslate nohighlight">\(K = \dfrac{\sigma_b^2}{\sigma_b^2 + \sigma_o^2}\)</span>。</p>
+</section>
+<section id="id5">
+<h3>(c)<a class="headerlink" href="#id5" title="連結到這個標頭">#</a></h3>
+<ul class="simple">
+<li><p>卡爾曼增益：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[K = \frac{\sigma_b^2}{\sigma_b^2 + \sigma_o^2} = \frac{1}{1 + 0.5} = \frac{2}{3} \approx 0.667\]</div>
+<ul class="simple">
+<li><p>分析值（使後驗密度最大的 <span class="math notranslate nohighlight">\(x\)</span>）：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+x_a &amp;=&amp; x_b + K(y - x_b) \\
+&amp;=&amp; 10 + \frac{2}{3}(15 - 10) \\
+&amp;=&amp; 10 + \frac{10}{3} \\
+&amp;\approx&amp; 13.33^{\circ}\mathrm{C}
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>分析誤差變異數（補充）：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\sigma_a^2 = (1 - K)\sigma_b^2 = \frac{1}{3}{}^{\circ}\mathrm{C}^2\]</div>
+<p>分析值 <span class="math notranslate nohighlight">\(13.33^{\circ}\mathrm{C}\)</span> 較靠近觀測值（<span class="math notranslate nohighlight">\(15^{\circ}\mathrm{C}\)</span>），而非背景值（<span class="math notranslate nohighlight">\(10^{\circ}\mathrm{C}\)</span>）。</p>
+<ul class="simple">
+<li><p>因為觀測誤差變異數 <span class="math notranslate nohighlight">\(\sigma_o^2 = 0.5\)</span> 小於背景誤差變異數 <span class="math notranslate nohighlight">\(\sigma_b^2 = 1\)</span>，觀測值較可信。由 (b) 可知 <span class="math notranslate nohighlight">\(x_a = \dfrac{\sigma_o^2 x_b + \sigma_b^2 y}{\sigma_b^2 + \sigma_o^2}\)</span>，即以「變異數的倒數（精確度）」加權平均，觀測值的權重 <span class="math notranslate nohighlight">\(K = \frac{2}{3}\)</span> 是背景值權重 <span class="math notranslate nohighlight">\(1 - K = \frac{1}{3}\)</span> 的 2 倍。</p></li>
+<li><p>且 <span class="math notranslate nohighlight">\(\sigma_a^2 = \frac{1}{3}\)</span> 小於 <span class="math notranslate nohighlight">\(\sigma_b^2\)</span> 與 <span class="math notranslate nohighlight">\(\sigma_o^2\)</span>，表示結合兩者後的估計比任一單獨來源更準確。</p></li>
+</ul>
+</section>
+</section>
+<section id="question-3-bayesian-interpretation-of-a-heavy-rain-warning">
+<h2>Question 3. Bayesian Interpretation of a Heavy-Rain Warning<a class="headerlink" href="#question-3-bayesian-interpretation-of-a-heavy-rain-warning" title="連結到這個標頭">#</a></h2>
+<p>Suppose that, according to the local climatology, the probability of heavy rainfall on a randomly selected day is</p>
+<div class="math notranslate nohighlight">
+\[P(H) = 0.10\]</div>
+<p>where <span class="math notranslate nohighlight">\(H\)</span> denotes the occurrence of heavy rainfall. A meteorological warning system has the following characteristics:</p>
+<div class="math notranslate nohighlight">
+\[P(W \mid H) = 0.90, \quad P(W \mid H^c) = 0.20\]</div>
+<p>where <span class="math notranslate nohighlight">\(W\)</span> denotes that the system issues a heavy-rain warning, and <span class="math notranslate nohighlight">\(H^c\)</span> denotes that heavy rainfall does not occur. Thus, the system issues a warning on 90% of heavy-rain days and on 20% of non-heavy-rain days.</p>
+<p>Answer the following questions:</p>
+<ol class="arabic">
+<li><p>Identify the prior probability of heavy rainfall, the likelihood of receiving a warning when heavy rainfall occurs, and the false-positive probability of the warning system.</p></li>
+<li><p>Using the law of total probability, calculate the overall probability that the system issues a warning:</p>
+<div class="math notranslate nohighlight">
+\[P(W) = P(W \mid H)P(H) + P(W \mid H^c)P(H^c)\]</div>
+</li>
+<li><p>Use Bayes』 theorem to calculate the probability that heavy rainfall will occur given that a warning has been issued:</p>
+<div class="math notranslate nohighlight">
+\[P(H \mid W) = \frac{P(W \mid H)P(H)}{P(W)}\]</div>
+</li>
+<li><p>Consider 1000 days with the same statistical characteristics. Construct a table showing the expected numbers of:</p>
+<ul class="simple">
+<li><p>heavy-rain days with a warning;</p></li>
+<li><p>heavy-rain days without a warning;</p></li>
+<li><p>non-heavy-rain days with a warning; and</p></li>
+<li><p>non-heavy-rain days without a warning.</p></li>
+</ul>
+<p>Use this table to verify your answer to Question 3.</p>
+</li>
+<li><p>Explain why <span class="math notranslate nohighlight">\(P(H \mid W)\)</span> is considerably smaller than <span class="math notranslate nohighlight">\(P(W \mid H)\)</span>. What role does the climatological frequency of heavy rainfall play in interpreting the warning?</p></li>
+<li><p>During the wet season, suppose the prior probability of heavy rainfall increases to <span class="math notranslate nohighlight">\(P(H) = 0.30\)</span>, while the characteristics of the warning system remain unchanged. Recalculate <span class="math notranslate nohighlight">\(P(H \mid W)\)</span> and explain why the posterior probability changes even though the warning system itself has not changed.</p></li>
+</ol>
+<section id="id6">
+<h3>中文翻譯<a class="headerlink" href="#id6" title="連結到這個標頭">#</a></h3>
+<blockquote>
+<div><p><strong>問題 3：豪雨特報的貝氏解讀</strong></p>
+<p>假設根據當地氣候統計，隨機挑選的某一天發生豪雨的機率為 <span class="math notranslate nohighlight">\(P(H) = 0.10\)</span>，其中 <span class="math notranslate nohighlight">\(H\)</span> 表示發生豪雨。某氣象預警系統具有以下特性：</p>
+<div class="math notranslate nohighlight">
+\[P(W \mid H) = 0.90, \quad P(W \mid H^c) = 0.20\]</div>
+<p>其中 <span class="math notranslate nohighlight">\(W\)</span> 表示系統發布豪雨特報，<span class="math notranslate nohighlight">\(H^c\)</span> 表示沒有發生豪雨。也就是說，在豪雨日中有 90% 會發布特報，而在非豪雨日中有 20% 會發布特報。</p>
+<p>回答以下問題：</p>
+<ol class="arabic">
+<li><p>指出豪雨的先驗機率、發生豪雨時收到特報的概似機率，以及預警系統的誤報（偽陽性）機率。</p></li>
+<li><p>利用全機率定理，計算系統發布特報的整體機率 <span class="math notranslate nohighlight">\(P(W)\)</span>。</p></li>
+<li><p>利用貝氏定理，計算在已發布特報的條件下，發生豪雨的機率 <span class="math notranslate nohighlight">\(P(H \mid W)\)</span>。</p></li>
+<li><p>考慮 1000 天具有相同統計特性的日子，建立一個表格，列出以下各類的期望天數：</p>
+<ul class="simple">
+<li><p>有發布特報的豪雨日；</p></li>
+<li><p>沒有發布特報的豪雨日；</p></li>
+<li><p>有發布特報的非豪雨日；以及</p></li>
+<li><p>沒有發布特報的非豪雨日。</p></li>
+</ul>
+<p>用此表格驗證你在第 3 小題的答案。</p>
+</li>
+<li><p>解釋為什麼 <span class="math notranslate nohighlight">\(P(H \mid W)\)</span> 會明顯小於 <span class="math notranslate nohighlight">\(P(W \mid H)\)</span>。豪雨的氣候頻率在解讀特報時扮演什麼角色？</p></li>
+<li><p>在雨季期間，假設豪雨的先驗機率提高為 <span class="math notranslate nohighlight">\(P(H) = 0.30\)</span>，而預警系統的特性維持不變。重新計算 <span class="math notranslate nohighlight">\(P(H \mid W)\)</span>，並解釋為什麼即使預警系統本身沒有改變，後驗機率仍然會改變。</p></li>
+</ol>
+</div></blockquote>
+</section>
+</section>
+<section id="answer-3">
+<h2>Answer 3.<a class="headerlink" href="#answer-3" title="連結到這個標頭">#</a></h2>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(H\)</span>：發生豪雨；<span class="math notranslate nohighlight">\(H^c\)</span>：未發生豪雨。</p></li>
+<li><p><span class="math notranslate nohighlight">\(W\)</span>：系統發布豪雨特報；<span class="math notranslate nohighlight">\(W^c\)</span>：未發布特報。</p></li>
+</ul>
+<section id="id7">
+<h3>1.<a class="headerlink" href="#id7" title="連結到這個標頭">#</a></h3>
+<ul class="simple">
+<li><p>豪雨的先驗機率（Prior）：<span class="math notranslate nohighlight">\(P(H) = 0.10\)</span></p></li>
+<li><p>發生豪雨時收到特報的概似機率（Likelihood）：<span class="math notranslate nohighlight">\(P(W \mid H) = 0.90\)</span></p></li>
+<li><p>誤報（偽陽性）機率（False-positive）：<span class="math notranslate nohighlight">\(P(W \mid H^c) = 0.20\)</span></p></li>
+</ul>
+</section>
+<section id="id8">
+<h3>2.<a class="headerlink" href="#id8" title="連結到這個標頭">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+P(W) &amp;=&amp; P(W \mid H)P(H) + P(W \mid H^c)P(H^c) \\
+&amp;=&amp; 0.90 \times 0.10 + 0.20 \times 0.90 \\
+&amp;=&amp; 0.09 + 0.18 \\
+&amp;=&amp; 0.27
+\end{gather*}\end{split}\]</div>
+<p>系統發布特報的整體機率為 <span class="math notranslate nohighlight">\(0.27\)</span></p>
+</section>
+<section id="id9">
+<h3>3.<a class="headerlink" href="#id9" title="連結到這個標頭">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+P(H \mid W) &amp;=&amp; \frac{P(W \mid H)P(H)}{P(W)} \\
+&amp;=&amp; \frac{0.90 \times 0.10}{0.27} \\
+&amp;=&amp; \frac{0.09}{0.27} \\
+&amp;=&amp; \frac{1}{3} \approx 0.333
+\end{gather*}\end{split}\]</div>
+<p>在已發布特報的條件下，真的發生豪雨的機率約為 <span class="math notranslate nohighlight">\(33.3\%\)</span></p>
+</section>
+<section id="id10">
+<h3>4.<a class="headerlink" href="#id10" title="連結到這個標頭">#</a></h3>
+<p>1000 天中，豪雨日 <span class="math notranslate nohighlight">\(1000 \times 0.10 = 100\)</span> 天，非豪雨日 <span class="math notranslate nohighlight">\(1000 \times 0.90 = 900\)</span> 天：</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>有特報 <span class="math notranslate nohighlight">\(W\)</span></p></th>
+<th class="head"><p>無特報 <span class="math notranslate nohighlight">\(W^c\)</span></p></th>
+<th class="head"><p>合計</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>豪雨日 <span class="math notranslate nohighlight">\(H\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(100 \times 0.9 = 90\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(100 \times 0.1 = 10\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(100\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>非豪雨日 <span class="math notranslate nohighlight">\(H^c\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(900 \times 0.2 = 180\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(900 \times 0.8 = 720\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(900\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>合計</p></td>
+<td><p><span class="math notranslate nohighlight">\(270\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(730\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(1000\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>驗證：</p>
+<div class="math notranslate nohighlight">
+\[P(W) = \frac{270}{1000} = 0.27, \quad P(H \mid W) = \frac{90}{270} = \frac{1}{3}\]</div>
+<p>與第 2、3 小題的結果一致。</p>
+</section>
+<section id="id11">
+<h3>5.<a class="headerlink" href="#id11" title="連結到這個標頭">#</a></h3>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(P(W \mid H) = 0.9\)</span> 是「在豪雨日中，有多少比例會發布特報」（偵測率）；<span class="math notranslate nohighlight">\(P(H \mid W) = \frac{1}{3}\)</span> 則是「在有發布特報的日子中，有多少比例真的下豪雨」，兩者的條件方向相反。</p></li>
+<li><p>由表格可見，雖然誤報率只有 20%，但非豪雨日（900 天）是豪雨日（100 天）的 9 倍，因此誤報天數（180 天）反而是正確特報天數（90 天）的 2 倍，使得每 3 次特報中只有 1 次真的下豪雨。</p></li>
+<li><p>豪雨的氣候頻率 <span class="math notranslate nohighlight">\(P(H)\)</span> 就是先驗機率（base rate）。當豪雨本身是罕見事件時，即使預警系統的偵測率很高，特報的可信度（<span class="math notranslate nohighlight">\(P(H \mid W)\)</span>）仍會被大量的非豪雨日誤報稀釋。因此解讀特報時必須同時考慮系統特性與氣候背景，忽略它會犯「基本比率謬誤（base-rate fallacy）」。</p></li>
+</ul>
+</section>
+<section id="id12">
+<h3>6.<a class="headerlink" href="#id12" title="連結到這個標頭">#</a></h3>
+<p><span class="math notranslate nohighlight">\(P(H) = 0.30\)</span>，<span class="math notranslate nohighlight">\(P(H^c) = 0.70\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+P(W) &amp;=&amp; 0.90 \times 0.30 + 0.20 \times 0.70 \\
+&amp;=&amp; 0.27 + 0.14 \\
+&amp;=&amp; 0.41
+\end{gather*}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+P(H \mid W) &amp;=&amp; \frac{0.90 \times 0.30}{0.41} \\
+&amp;=&amp; \frac{0.27}{0.41} \\
+&amp;\approx&amp; 0.659
+\end{gather*}\end{split}\]</div>
+<p>後驗機率由 <span class="math notranslate nohighlight">\(0.333\)</span> 上升到約 <span class="math notranslate nohighlight">\(0.659\)</span>。</p>
+<ul class="simple">
+<li><p>以勝算（odds）形式表示貝氏定理：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\frac{P(H \mid W)}{P(H^c \mid W)} = \frac{P(W \mid H)}{P(W \mid H^c)} \times \frac{P(H)}{P(H^c)}\]</div>
+<ul class="simple">
+<li><p>預警系統的特性決定了概似比 <span class="math notranslate nohighlight">\(\frac{P(W \mid H)}{P(W \mid H^c)} = \frac{0.9}{0.2} = 4.5\)</span>，這在乾季與雨季都相同；改變的是先驗勝算：</p>
+<ul>
+<li><p>平時：<span class="math notranslate nohighlight">\(\frac{0.1}{0.9} \times 4.5 = 0.5\)</span>，換算為 <span class="math notranslate nohighlight">\(P(H \mid W) = \frac{0.5}{1.5} = \frac{1}{3}\)</span></p></li>
+<li><p>雨季：<span class="math notranslate nohighlight">\(\frac{0.3}{0.7} \times 4.5 \approx 1.929\)</span>，換算為 <span class="math notranslate nohighlight">\(P(H \mid W) = \frac{1.929}{2.929} \approx 0.659\)</span></p></li>
+</ul>
+</li>
+<li><p>後驗機率是「先驗資訊」與「觀測（特報）資訊」的結合。特報提供的證據強度不變，但雨季時豪雨本來就較常發生（先驗較高），且非豪雨日變少、誤報數量也隨之減少，所以同一個特報所代表的豪雨機率就提高了。</p></li>
+</ul>
+</section>
+</section>
+<section id="question-4-the-sleeping-beauty-paradox">
+<h2>Question 4. The Sleeping Beauty Paradox<a class="headerlink" href="#question-4-the-sleeping-beauty-paradox" title="連結到這個標頭">#</a></h2>
+<p>Researchers put Sleeping Beauty to sleep on Sunday. They then toss a fair coin in another room.</p>
+<ul class="simple">
+<li><p>If <strong>Heads</strong>: She is woken up on Monday for an interview. Afterwards, she is given an amnesia-inducing drug and put back to sleep until the experiment ends.</p></li>
+<li><p>If <strong>Tails</strong>: She is woken up on Monday for an interview, given the amnesia drug, and put back to sleep. She is then woken up <strong>again</strong> on Tuesday for a second interview, and again given the drug.</p></li>
+</ul>
+<p>During any interview, she has no idea what day it is, nor does she remember any previous awakenings. When she wakes up, the researchers ask her: 「What is the probability that the coin landed Heads?」</p>
+<ul>
+<li><p>(a) <strong>The 1/2 Position (No New Information)</strong></p>
+<p>From the perspective that 「waking up」 does not constitute new information:</p>
+<ul class="simple">
+<li><p>Use Bayes』 theorem to prove that her probability for Heads remains 1/2. Clearly define your prior probabilities and the likelihood of the event 「she wakes up」 under each coin outcome.</p></li>
+<li><p>Briefly explain why the probability is not updated.</p></li>
+</ul>
+</li>
+<li><p>(b) <strong>The 1/3 Position (The Subjective Experience)</strong></p>
+<p>From the perspective of her subjective experience, prove that the probability of Heads should be updated to 1/3. Provide the following two derivations:</p>
+<ul class="simple">
+<li><p>Suppose the entire experiment is repeated <span class="math notranslate nohighlight">\(2N\)</span> times. Calculate the total number of 「awakenings」 she will experience, and how many of those awakenings occur when the coin is Heads.</p></li>
+<li><p>List all possible mutually exclusive states she could be in upon waking (i.e., combinations of the day and the coin outcome). Apply the principle of indifference to these states (e.g., if she is told it is Monday, Heads and Tails are equally likely; if she is told it is Tails, waking up on Monday and Tuesday are indistinguishable experiences) to determine the probability of Heads.</p></li>
+</ul>
+</li>
+</ul>
+<section id="id13">
+<h3>中文翻譯<a class="headerlink" href="#id13" title="連結到這個標頭">#</a></h3>
+<blockquote>
+<div><p><strong>問題 4：睡美人悖論</strong></p>
+<p>研究人員在星期日讓睡美人入睡，接著在另一個房間擲一枚公正的硬幣。</p>
+<ul class="simple">
+<li><p>若為<strong>正面</strong>：她會在星期一被叫醒接受訪談。之後讓她服用會導致失憶的藥物，並讓她繼續沉睡直到實驗結束。</p></li>
+<li><p>若為<strong>反面</strong>：她會在星期一被叫醒接受訪談，服用失憶藥物後再次入睡。接著她會在星期二<strong>再次</strong>被叫醒接受第二次訪談，然後再次服用藥物。</p></li>
+</ul>
+<p>在任何一次訪談中，她都不知道當天是星期幾，也不記得之前任何一次被叫醒的經驗。每當她醒來時，研究人員都會問她：「硬幣擲出正面的機率是多少？」</p>
+<ul>
+<li><p>(a) <strong>1/2 立場（沒有新資訊）</strong></p>
+<p>從「醒來」並不構成新資訊的觀點出發：</p>
+<ul class="simple">
+<li><p>利用貝氏定理證明她認為正面的機率仍然是 1/2。清楚定義你的先驗機率，以及在各硬幣結果下「她醒來」這個事件的概似機率。</p></li>
+<li><p>簡要說明為什麼機率沒有被更新。</p></li>
+</ul>
+</li>
+<li><p>(b) <strong>1/3 立場（主觀經驗）</strong></p>
+<p>從她主觀經驗的觀點出發，證明正面的機率應更新為 1/3。請提供以下兩種推導：</p>
+<ul class="simple">
+<li><p>假設整個實驗重複進行 <span class="math notranslate nohighlight">\(2N\)</span> 次。計算她總共會經歷幾次「醒來」，以及其中有幾次是在硬幣為正面時發生的。</p></li>
+<li><p>列出她醒來時可能處於的所有互斥狀態（即「星期幾」與「硬幣結果」的組合）。對這些狀態套用無差異原則（例如：若告訴她今天是星期一，則正面與反面的可能性相同；若告訴她結果是反面，則在星期一醒來與在星期二醒來是無法區分的經驗），以求出正面的機率。</p></li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+<section id="answer-4">
+<h2>Answer 4.<a class="headerlink" href="#answer-4" title="連結到這個標頭">#</a></h2>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(H\)</span>：硬幣為正面（Heads）；<span class="math notranslate nohighlight">\(T\)</span>：硬幣為反面（Tails）。</p></li>
+<li><p><span class="math notranslate nohighlight">\(A\)</span>：「她在實驗中醒來（接受訪談）」。</p></li>
+</ul>
+<section id="id14">
+<h3>(a)<a class="headerlink" href="#id14" title="連結到這個標頭">#</a></h3>
+<ul class="simple">
+<li><p>先驗機率：公正硬幣</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[P(H) = P(T) = \frac{1}{2}\]</div>
+<ul class="simple">
+<li><p>概似機率：不論正面或反面，她都一定會至少被叫醒一次</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[P(A \mid H) = 1, \quad P(A \mid T) = 1\]</div>
+<ul class="simple">
+<li><p>由貝氏定理：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+P(H \mid A) &amp;=&amp; \frac{P(A \mid H)P(H)}{P(A \mid H)P(H) + P(A \mid T)P(T)} \\
+&amp;=&amp; \frac{1 \times \frac{1}{2}}{1 \times \frac{1}{2} + 1 \times \frac{1}{2}} \\
+&amp;=&amp; \frac{1}{2}
+\end{gather*}\end{split}\]</div>
+<p>機率沒有被更新的原因：</p>
+<ul class="simple">
+<li><p>她在星期日入睡前就已經知道「自己一定會醒來」，因此「醒來」是在兩種硬幣結果下都必然發生的事件，概似比 <span class="math notranslate nohighlight">\(\frac{P(A \mid H)}{P(A \mid T)} = 1\)</span>。</p></li>
+<li><p>一個在所有假設下發生機率都相同的觀測，無法區分正面或反面，不提供任何新資訊，所以後驗機率等於先驗機率 <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span>。</p></li>
+<li><p>此外，失憶藥物讓她無法分辨是第幾次醒來，醒來時也沒有得到任何關於日期或硬幣的額外線索。</p></li>
+</ul>
+</section>
+<section id="id15">
+<h3>(b)<a class="headerlink" href="#id15" title="連結到這個標頭">#</a></h3>
+<p><strong>推導一：重複實驗的頻率論證</strong></p>
+<p>將整個實驗重複 <span class="math notranslate nohighlight">\(2N\)</span> 次，平均而言有 <span class="math notranslate nohighlight">\(N\)</span> 次正面、<span class="math notranslate nohighlight">\(N\)</span> 次反面：</p>
+<ul class="simple">
+<li><p>正面：每次實驗醒來 1 次（星期一），共 <span class="math notranslate nohighlight">\(N \times 1 = N\)</span> 次醒來</p></li>
+<li><p>反面：每次實驗醒來 2 次（星期一、星期二），共 <span class="math notranslate nohighlight">\(N \times 2 = 2N\)</span> 次醒來</p></li>
+<li><p>總醒來次數：<span class="math notranslate nohighlight">\(N + 2N = 3N\)</span> 次</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[P(\text{Heads} \mid \text{醒來}) = \frac{\text{正面時的醒來次數}}{\text{總醒來次數}} = \frac{N}{3N} = \frac{1}{3}\]</div>
+<p>從她主觀經驗來看，每一次醒來都是一個無法區分的經驗，而在所有醒來中只有 <span class="math notranslate nohighlight">\(\frac{1}{3}\)</span> 是發生在正面的情況。</p>
+<p><strong>推導二：無差異原則</strong></p>
+<p>她醒來時可能處於的互斥狀態只有三種：</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(H_1\)</span>：正面、星期一</p></li>
+<li><p><span class="math notranslate nohighlight">\(T_1\)</span>：反面、星期一</p></li>
+<li><p><span class="math notranslate nohighlight">\(T_2\)</span>：反面、星期二</p></li>
+</ul>
+<p>（「正面、星期二」不會發生，因為正面時她星期二不會被叫醒。）</p>
+<div class="math notranslate nohighlight">
+\[P(H_1) + P(T_1) + P(T_2) = 1\]</div>
+<ul class="simple">
+<li><p>若告訴她結果是反面，則星期一與星期二醒來的經驗完全無法區分，故</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[P(T_1 \mid T) = P(T_2 \mid T) \;\Rightarrow\; P(T_1) = P(T_2)\]</div>
+<ul class="simple">
+<li><p>若告訴她今天是星期一，由於星期一不論硬幣結果她都會被叫醒（硬幣甚至可以在星期一訪談後才擲），正面與反面機率相同，故</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[P(H_1 \mid \text{Monday}) = P(T_1 \mid \text{Monday}) \;\Rightarrow\; P(H_1) = P(T_1)\]</div>
+<ul class="simple">
+<li><p>因此 <span class="math notranslate nohighlight">\(P(H_1) = P(T_1) = P(T_2)\)</span>，代入總和為 1：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[P(H_1) = P(T_1) = P(T_2) = \frac{1}{3}\]</div>
+<div class="math notranslate nohighlight">
+\[P(\text{Heads}) = P(H_1) = \frac{1}{3}\]</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./homework\hw3"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../hw2/hw2.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">上一頁</p>
+        <p class="prev-next-title">Objective Analysis Week 02 Homework</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目錄
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-extended-monty-hall-problem-with-four-doors">Question 1. Extended Monty Hall Problem with Four Doors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">中文翻譯</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-1">Answer 1.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a">(a)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b">(b)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c">(c)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d">(d)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-a-scalar-bayesian-analysis-and-the-kalman-gain">Question 2. A Scalar Bayesian Analysis and the Kalman Gain</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">中文翻譯</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-2">Answer 2.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">(a)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">(b)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">(c)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-bayesian-interpretation-of-a-heavy-rain-warning">Question 3. Bayesian Interpretation of a Heavy-Rain Warning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">中文翻譯</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-3">Answer 3.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">1.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">3.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">4.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">5.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">6.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4-the-sleeping-beauty-paradox">Question 4. The Sleeping Beauty Paradox</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">中文翻譯</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-4">Answer 4.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">(a)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">(b)</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+作者： PC YE
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

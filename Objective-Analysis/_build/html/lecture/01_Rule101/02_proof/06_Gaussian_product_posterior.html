@@ -1,0 +1,666 @@
+
+<!DOCTYPE html>
+
+
+<html lang="zh-TW" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>高斯先驗 × 高斯概似 = 高斯後驗 (Gaussian Prior × Gaussian Likelihood → Gaussian Posterior) &#8212; Objective Analysis</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=4cca277b" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=7da51243"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../../_static/translations.js?v=1fe8cbde"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lecture/01_Rule101/02_proof/06_Gaussian_product_posterior';</script>
+    <link rel="canonical" href="https://derek1403.github.io/PC-NTU/Objective-Analysis/_build/html/lecture/01_Rule101/02_proof/06_Gaussian_product_posterior.html" />
+    <link rel="index" title="索引" href="../../../genindex.html" />
+    <link rel="search" title="搜尋" href="../../../search.html" />
+    <link rel="next" title="大寫 \(X\) 與小寫 \(x\) (Random Variable vs. Observed Value)" href="../03_notation_X_vs_x.html" />
+    <link rel="prev" title="高斯分布的偏度為 0、峰度為 3 (Skewness and Kurtosis of the Gaussian)" href="05_Gaussian_skewness_kurtosis.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="zh-TW"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Objective Analysis</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="搜尋" aria-label="搜尋" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">搜尋</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../intro.html">
+                    Objective Analysis (客觀分析)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lecture</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../00_Chapter0/00_The_Idea_Behind_the_Course.html">Chapter 0: The Idea Behind the Course</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../00_Chapter0/01_tool/01_Lagrange_multiplier/01_basic_use.html">Find extreme values under a constraint, using Lagrange Multiplier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../00_Chapter0/01_tool/01_Lagrange_multiplier/02_advanced_use.html">Find extreme values under multiple constraints, using Lagrange Multipliers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../00_Chapter0/01_tool/01_Lagrange_multiplier/03_proof.html">拉格朗日乘數法的證明 (Proof of the Lagrange Multiplier Method)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../00_Chapter0/01_tool/01_Lagrange_multiplier/04_exceptions.html">拉格朗日乘數法的適用範圍 (When Does It Apply?)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q01_quadratic_on_line.html">Q01｜基本題：二次函數在直線上的極值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q02_cubic_on_ellipse.html">Q02｜基礎暖身：橢圓上的 <span class="math notranslate nohighlight">\(x^2y\)</span> 與分類討論</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q03_two_linear_constraints.html">Q03｜雙重限制條件：兩平面交線上離原點最近的點</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q04_symmetric_on_sphere.html">Q04｜進階對稱：球面上的 <span class="math notranslate nohighlight">\(xy+yz+zx\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q05_cubic_on_unit_sphere.html">Q05｜微積分期末壓軸：單位球上的 <span class="math notranslate nohighlight">\(x^2y+yz^2\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q06_hyperboloid_plane_distance.html">Q06｜微積分期末壓軸：雙曲面與平面交線到原點的距離</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q07_box_min_surface.html">Q07｜材料科學：固定體積下表面積最小的長方體</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q08_1DVar_data_assimilation.html">Q08｜大氣科學：一維變分資料同化 (1D-Var)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q09_QG_min_kinetic_energy.html">Q09｜大氣動力：熱力風平衡下的最小動能配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q10_Thomson_conducting_spheres.html">Q10｜電磁學：孤立導體球的靜電能最小化 (Thomson’s Theorem)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q11_wind_max_transport.html">Q11｜流體力學：固定動能下使輸送量最大的風場</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q12_entropy_max_equilibrium.html">Q12｜熱力學：固定總能量下的熵最大與熱平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q13_hydrogen_tank_min_mass.html">Q13｜結構工程：異質材料儲氫槽的輕量化設計</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q14_inertia_principal_axes.html">Q14｜古典力學：非對稱衛星的慣量主軸</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q15_Gibbs_min_equilibrium.html">Q15｜化學熱力學：吉布斯自由能最小化與化學平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q16_quadratic_form_two_constraints.html">Q16｜大氣／物理壓軸：球面＋平面上的二次型極值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q17_three_level_negative_temperature.html">Q17｜應用壓軸：三能階雷射的最大熵分布與負絕對溫度</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../00_Rule101.html">Rule 101: From Maximum Entropy to Bayes』 Theorem (Rule101：從最大熵到貝氏定理)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../01_tool/01_Gaussian/01_Gaussian_distribution.html">高斯分布 (Gaussian Distribution)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_tool/01_Gaussian/02_Gaussian_integrals.html">高斯積分 (Gaussian Integrals)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_tool/03_expectation_rules.html">期望值與變異數的運算規則 (Rules for Expectation and Variance)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_tool/02_Bayes/01_problems/01_weather_prediction.html">Conditional Probability and Bayes』 Theorem in Weather Prediction (條件機率與貝氏定理：由「今天下雨」推估「明天下雨」)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_tool/02_Bayes/01_problems/02_COVID-19.html">Base Rate and Rapid Testing in COVID-19 Screening (基本比率：快篩陽性真的染疫的機率)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_tool/02_Bayes/01_problems/03_Monty_Hall_problem.html">Monty Hall Problem (三門問題：主持人的行動也是資訊)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_tool/02_Bayes/01_problems/04_Data_Assimilation.html">Data Assimilation as Bayes』 Theorem (資料同化：用觀測修正模式預報)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_max_entropy_Gaussian.html">已知平均與變異數時，最大熵分布是高斯分布 (Maximum Entropy with Known Mean and Variance)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_Gauss_mean_optimal_Gaussian.html">「平均值是最佳估計」推出高斯分布 (Gauss: Optimal Mean Implies Gaussian Errors)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_standard_error.html">樣本平均的標準誤 (Standard Error of the Sample Mean)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_sample_variance_N-1.html">樣本變異數為什麼除以 <span class="math notranslate nohighlight">\(N-1\)</span> (Why the Sample Variance Divides by <span class="math notranslate nohighlight">\(N-1\)</span>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_Gaussian_skewness_kurtosis.html">高斯分布的偏度為 0、峰度為 3 (Skewness and Kurtosis of the Gaussian)</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">高斯先驗 × 高斯概似 = 高斯後驗 (Gaussian Prior × Gaussian Likelihood → Gaussian Posterior)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_notation_X_vs_x.html">大寫 <span class="math notranslate nohighlight">\(X\)</span> 與小寫 <span class="math notranslate nohighlight">\(x\)</span> (Random Variable vs. Observed Value)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../99_textbook.html">Week 1-3: Rule101</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../homework/hw2/hw2.html">Objective Analysis Week 02 Homework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../homework/hw3/hw3.html">Objective Analysis Week 03 Homework</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/derek1403/PC-NTU" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="來源儲存庫"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="下載此頁面">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/lecture/01_Rule101/02_proof/06_Gaussian_product_posterior.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="下載原始檔"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="列印成 PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="全螢幕模式"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="搜尋" aria-label="搜尋" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>高斯先驗 × 高斯概似 = 高斯後驗 (Gaussian Prior × Gaussian Likelihood → Gaussian Posterior)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目錄 </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proof">proof</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-x-x">(a) 後驗是高斯：取對數，與 <span class="math notranslate nohighlight">\(x\)</span> 無關的項都丟進常數，對 <span class="math notranslate nohighlight">\(x\)</span> 配方</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-kalman">(b) 改寫成 Kalman 形式</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">結論</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="gaussian-prior-gaussian-likelihood-gaussian-posterior">
+<h1>高斯先驗 × 高斯概似 = 高斯後驗 (Gaussian Prior × Gaussian Likelihood → Gaussian Posterior)<a class="headerlink" href="#gaussian-prior-gaussian-likelihood-gaussian-posterior" title="連結到這個標頭">#</a></h1>
+<p>模式預報（先驗）與儀器觀測（概似）各自帶著高斯誤差，用貝氏定理合併後，結果仍是高斯：<strong>精度相加、平均是精度加權平均</strong>。這就是資料同化中一步 Kalman 更新。</p>
+<section id="assumptions-preliminaries">
+<h2>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="連結到這個標頭">#</a></h2>
+<ul>
+<li><p><strong>【假設 1】先驗與概似皆為高斯 (Gaussian Prior &amp; Likelihood)：</strong> 模式預報帶高斯誤差；觀測 = 真值 + 高斯雜訊。</p>
+<ul class="simple">
+<li><p>(a) 先驗</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[f(x) = \mathcal{N}(\mu_0,\ \sigma_0^2)\]</div>
+<ul class="simple">
+<li><p>(b) 概似</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[f(y \mid x) = \mathcal{N}(x,\ \sigma_w^2)\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x\)</span> : 真實狀態 (True state)，要估計的量</p></li>
+<li><p><span class="math notranslate nohighlight">\(y\)</span> : 觀測值 (Observation)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mu_0, \sigma_0^2\)</span> : 先驗平均與變異數 (Prior mean &amp; variance)，資料同化中的背景場 <span class="math notranslate nohighlight">\(x^b\)</span>、<span class="math notranslate nohighlight">\(\sigma_b^2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\sigma_w^2\)</span> : 觀測誤差變異數 (Observation error variance)，資料同化中的 <span class="math notranslate nohighlight">\(\sigma_o^2\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 1】連續形式的貝氏定理 (Bayes』 Theorem)：</strong> 後驗正比於概似乘先驗；分母 <span class="math notranslate nohighlight">\(f(y)\)</span> 與 <span class="math notranslate nohighlight">\(x\)</span> 無關，只是正規化常數。（見 <a class="reference internal" href="../99_textbook.html"><span class="std std-doc">99_textbook.md</span></a> 「From the product rule of probability to Bayes』 theorem」。）</p>
+<div class="math notranslate nohighlight">
+\[f(x \mid y) \propto f(y \mid x)\,f(x)\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f(x \mid y)\)</span> : 後驗 (Posterior)，看到觀測後對真值的信念</p></li>
+<li><p><span class="math notranslate nohighlight">\(f(y \mid x)\)</span> : 概似 (Likelihood)，若真值是 <span class="math notranslate nohighlight">\(x\)</span>，看到 <span class="math notranslate nohighlight">\(y\)</span> 的機率</p></li>
+<li><p><span class="math notranslate nohighlight">\(f(x)\)</span> : 先驗 (Prior)，看到觀測前對真值的信念</p></li>
+</ul>
+</li>
+<li><p><strong>【已知 2】<a class="reference internal" href="../01_tool/01_Gaussian/01_Gaussian_distribution.html"><span class="std std-doc">高斯分布的判別 (Recognizing a Gaussian)</span></a>：</strong> 任何「對數是開口向下的二次式」的密度都是高斯；二次項係數決定變異數、一次項決定中心。</p>
+<div class="math notranslate nohighlight">
+\[\ln g(x) = -\frac{(x - m)^2}{2s^2} + \text{const} \quad\text{則}\quad g = \mathcal{N}(m, s^2)\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(g\)</span> : 任意機率密度 (PDF)，本證明中取後驗 <span class="math notranslate nohighlight">\(f(x \mid y)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m, s^2\)</span> : 任意中心與變異數，本證明中對應【定義 1】的 <span class="math notranslate nohighlight">\(\mu_1, \sigma_1^2\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 1】後驗參數 (Posterior Parameters)：</strong> 後驗的精度是兩個精度的和；後驗平均是兩個平均以精度加權。</p>
+<ul class="simple">
+<li><p>(a)</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\frac{1}{\sigma_1^2} \overset{\text{def}}{=} \frac{1}{\sigma_0^2} + \frac{1}{\sigma_w^2}\]</div>
+<ul class="simple">
+<li><p>(b)</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\mu_1 \overset{\text{def}}{=} \sigma_1^2\left(\frac{\mu_0}{\sigma_0^2} + \frac{y}{\sigma_w^2}\right)\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mu_1, \sigma_1^2\)</span> : 後驗平均與變異數 (Posterior mean &amp; variance)，資料同化中的分析場 <span class="math notranslate nohighlight">\(x^a\)</span>、<span class="math notranslate nohighlight">\(\sigma_a^2\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 2】總誤差與 Kalman 增益 (Total Error &amp; Kalman Gain)：</strong> <span class="math notranslate nohighlight">\(K\)</span> 是背景誤差佔總誤差的比例，決定要往觀測拉多少。</p>
+<ul class="simple">
+<li><p>(a)</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[S \overset{\text{def}}{=} \sigma_0^2 + \sigma_w^2\]</div>
+<ul class="simple">
+<li><p>(b)</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[K \overset{\text{def}}{=} \frac{\sigma_0^2}{S}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(S\)</span> : 背景與觀測的總誤差變異數 (Total error variance)</p></li>
+<li><p><span class="math notranslate nohighlight">\(K\)</span> : Kalman 增益 (Kalman gain)，<span class="math notranslate nohighlight">\(0 \le K \le 1\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 1】後驗變異數的另一種寫法 (Posterior Variance)：</strong> 把【定義 1(a)】的倒數通分取倒數。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \sigma_1^2 &amp;\overset{\text{定義 1(a)}}{=}&amp; \frac{\sigma_0^2\,\sigma_w^2}{\sigma_0^2 + \sigma_w^2} \\
+  &amp;\overset{\text{定義 2(a)}}{=}&amp; \frac{\sigma_0^2\,\sigma_w^2}{S}
+  \end{gather*}\end{split}\]</div>
+</li>
+</ul>
+</section>
+<section id="proof">
+<h2>proof<a class="headerlink" href="#proof" title="連結到這個標頭">#</a></h2>
+<section id="a-x-x">
+<h3>(a) 後驗是高斯：取對數，與 <span class="math notranslate nohighlight">\(x\)</span> 無關的項都丟進常數，對 <span class="math notranslate nohighlight">\(x\)</span> 配方<a class="headerlink" href="#a-x-x" title="連結到這個標頭">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\ln f(x \mid y) &amp;\overset{\text{已知 1,假設 1}}{=}&amp; -\frac{(y - x)^2}{2\sigma_w^2} - \frac{(x - \mu_0)^2}{2\sigma_0^2} + \text{const} \\
+&amp;=&amp; -\frac{1}{2}\left[\left(\frac{1}{\sigma_w^2} + \frac{1}{\sigma_0^2}\right)x^2 - 2\left(\frac{y}{\sigma_w^2} + \frac{\mu_0}{\sigma_0^2}\right)x\right] + \text{const} \\
+&amp;\overset{\text{定義 1}}{=}&amp; -\frac{1}{2\sigma_1^2}\Big[x^2 - 2\mu_1 x\Big] + \text{const} \\
+&amp;=&amp; -\frac{(x - \mu_1)^2}{2\sigma_1^2} + \text{const}
+\end{gather*}\end{split}\]</div>
+<p>由【已知 2】，<span class="math notranslate nohighlight">\(f(x \mid y) = \mathcal{N}(\mu_1, \sigma_1^2)\)</span>。</p>
+</section>
+<section id="b-kalman">
+<h3>(b) 改寫成 Kalman 形式<a class="headerlink" href="#b-kalman" title="連結到這個標頭">#</a></h3>
+<ul>
+<li><p>(b-1) 後驗平均</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \mu_1 &amp;\overset{\text{定義 1(b),推導 1}}{=}&amp; \frac{\sigma_0^2\sigma_w^2}{S}\left(\frac{\mu_0}{\sigma_0^2} + \frac{y}{\sigma_w^2}\right) \\
+  &amp;=&amp; \frac{\sigma_w^2\,\mu_0 + \sigma_0^2\,y}{S} \\
+  &amp;\overset{\text{定義 2(a)}}{=}&amp; \mu_0 + \frac{\sigma_0^2}{S}\,(y - \mu_0) \\
+  &amp;\overset{\text{定義 2(b)}}{=}&amp; \mu_0 + K\,(y - \mu_0)
+  \end{gather*}\end{split}\]</div>
+</li>
+<li><p>(b-2) 後驗變異數</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \sigma_1^2 &amp;\overset{\text{推導 1}}{=}&amp; \frac{\sigma_0^2\,\sigma_w^2}{S} \\
+  &amp;\overset{\text{定義 2(a)}}{=}&amp; \sigma_0^2\left(1 - \frac{\sigma_0^2}{S}\right) \\
+  &amp;\overset{\text{定義 2(b)}}{=}&amp; (1 - K)\,\sigma_0^2
+  \end{gather*}\end{split}\]</div>
+</li>
+</ul>
+<p><span class="math notranslate nohighlight">\(\blacksquare\)</span></p>
+</section>
+</section>
+<section id="id1">
+<h2>結論<a class="headerlink" href="#id1" title="連結到這個標頭">#</a></h2>
+<div class="math notranslate nohighlight">
+\[\boxed{\frac{1}{\sigma_1^2} = \frac{1}{\sigma_0^2} + \frac{1}{\sigma_w^2},\qquad x^a = x^b + K\,(y^o - x^b),\qquad \sigma_a^2 = (1-K)\,\sigma_b^2}\]</div>
+<ul class="simple">
+<li><p><strong>精度相加</strong>：後驗永遠比先驗和觀測都更確定（<span class="math notranslate nohighlight">\(\sigma_1 &lt; \sigma_0\)</span> 且 <span class="math notranslate nohighlight">\(\sigma_1 &lt; \sigma_w\)</span>）</p></li>
+<li><p><strong><span class="math notranslate nohighlight">\(K \to 0\)</span></strong>（儀器很吵）：分析場貼近預報；<strong><span class="math notranslate nohighlight">\(K \to 1\)</span></strong>（預報很不準）：分析場貼近觀測</p></li>
+</ul>
+<p>同一件事的最佳化版本：最小化 <span class="math notranslate nohighlight">\(J = -2\ln f(x \mid y)\)</span> 就是 3D-Var。<a class="reference internal" href="../../00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q08_1DVar_data_assimilation.html"><span class="std std-doc">Q08 1D-Var</span></a> 用 Lagrange 乘數解的就是加了物理約束的這個代價函數，「越不可信的觀測被拉得越多」正是 <span class="math notranslate nohighlight">\(K\)</span> 的角色。</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lecture\01_Rule101\02_proof"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="05_Gaussian_skewness_kurtosis.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">上一頁</p>
+        <p class="prev-next-title">高斯分布的偏度為 0、峰度為 3 (Skewness and Kurtosis of the Gaussian)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../03_notation_X_vs_x.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">下一頁</p>
+        <p class="prev-next-title">大寫 <span class="math notranslate nohighlight">\(X\)</span> 與小寫 <span class="math notranslate nohighlight">\(x\)</span> (Random Variable vs. Observed Value)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目錄
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proof">proof</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-x-x">(a) 後驗是高斯：取對數，與 <span class="math notranslate nohighlight">\(x\)</span> 無關的項都丟進常數，對 <span class="math notranslate nohighlight">\(x\)</span> 配方</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-kalman">(b) 改寫成 Kalman 形式</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">結論</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+作者： PC YE
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1026 @@
+
+<!DOCTYPE html>
+
+
+<html lang="zh-TW" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Objective Analysis Week 02 Homework &#8212; Objective Analysis</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=4cca277b" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=7da51243"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/translations.js?v=1fe8cbde"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'homework/hw2/hw2';</script>
+    <link rel="canonical" href="https://derek1403.github.io/PC-NTU/Objective-Analysis/_build/html/homework/hw2/hw2.html" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜尋" href="../../search.html" />
+    <link rel="next" title="Objective Analysis Week 03 Homework" href="../hw3/hw3.html" />
+    <link rel="prev" title="Week 1-3: Rule101" href="../../lecture/01_Rule101/99_textbook.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="zh-TW"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Objective Analysis</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="搜尋" aria-label="搜尋" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">搜尋</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Objective Analysis (客觀分析)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lecture</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lecture/00_Chapter0/00_The_Idea_Behind_the_Course.html">Chapter 0: The Idea Behind the Course</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/01_basic_use.html">Find extreme values under a constraint, using Lagrange Multiplier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/02_advanced_use.html">Find extreme values under multiple constraints, using Lagrange Multipliers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/03_proof.html">拉格朗日乘數法的證明 (Proof of the Lagrange Multiplier Method)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/04_exceptions.html">拉格朗日乘數法的適用範圍 (When Does It Apply?)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q01_quadratic_on_line.html">Q01｜基本題：二次函數在直線上的極值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q02_cubic_on_ellipse.html">Q02｜基礎暖身：橢圓上的 <span class="math notranslate nohighlight">\(x^2y\)</span> 與分類討論</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q03_two_linear_constraints.html">Q03｜雙重限制條件：兩平面交線上離原點最近的點</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q04_symmetric_on_sphere.html">Q04｜進階對稱：球面上的 <span class="math notranslate nohighlight">\(xy+yz+zx\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q05_cubic_on_unit_sphere.html">Q05｜微積分期末壓軸：單位球上的 <span class="math notranslate nohighlight">\(x^2y+yz^2\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q06_hyperboloid_plane_distance.html">Q06｜微積分期末壓軸：雙曲面與平面交線到原點的距離</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q07_box_min_surface.html">Q07｜材料科學：固定體積下表面積最小的長方體</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q08_1DVar_data_assimilation.html">Q08｜大氣科學：一維變分資料同化 (1D-Var)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q09_QG_min_kinetic_energy.html">Q09｜大氣動力：熱力風平衡下的最小動能配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q10_Thomson_conducting_spheres.html">Q10｜電磁學：孤立導體球的靜電能最小化 (Thomson’s Theorem)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q11_wind_max_transport.html">Q11｜流體力學：固定動能下使輸送量最大的風場</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q12_entropy_max_equilibrium.html">Q12｜熱力學：固定總能量下的熵最大與熱平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q13_hydrogen_tank_min_mass.html">Q13｜結構工程：異質材料儲氫槽的輕量化設計</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q14_inertia_principal_axes.html">Q14｜古典力學：非對稱衛星的慣量主軸</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q15_Gibbs_min_equilibrium.html">Q15｜化學熱力學：吉布斯自由能最小化與化學平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q16_quadratic_form_two_constraints.html">Q16｜大氣／物理壓軸：球面＋平面上的二次型極值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q17_three_level_negative_temperature.html">Q17｜應用壓軸：三能階雷射的最大熵分布與負絕對溫度</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lecture/01_Rule101/00_Rule101.html">Rule 101: From Maximum Entropy to Bayes』 Theorem (Rule101：從最大熵到貝氏定理)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/01_tool/01_Gaussian/01_Gaussian_distribution.html">高斯分布 (Gaussian Distribution)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/01_tool/01_Gaussian/02_Gaussian_integrals.html">高斯積分 (Gaussian Integrals)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/01_tool/03_expectation_rules.html">期望值與變異數的運算規則 (Rules for Expectation and Variance)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/01_tool/02_Bayes/01_problems/01_weather_prediction.html">Conditional Probability and Bayes』 Theorem in Weather Prediction (條件機率與貝氏定理：由「今天下雨」推估「明天下雨」)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/01_tool/02_Bayes/01_problems/02_COVID-19.html">Base Rate and Rapid Testing in COVID-19 Screening (基本比率：快篩陽性真的染疫的機率)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/01_tool/02_Bayes/01_problems/03_Monty_Hall_problem.html">Monty Hall Problem (三門問題：主持人的行動也是資訊)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/01_tool/02_Bayes/01_problems/04_Data_Assimilation.html">Data Assimilation as Bayes』 Theorem (資料同化：用觀測修正模式預報)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/02_proof/01_max_entropy_Gaussian.html">已知平均與變異數時，最大熵分布是高斯分布 (Maximum Entropy with Known Mean and Variance)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/02_proof/02_Gauss_mean_optimal_Gaussian.html">「平均值是最佳估計」推出高斯分布 (Gauss: Optimal Mean Implies Gaussian Errors)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/02_proof/03_standard_error.html">樣本平均的標準誤 (Standard Error of the Sample Mean)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/02_proof/04_sample_variance_N-1.html">樣本變異數為什麼除以 <span class="math notranslate nohighlight">\(N-1\)</span> (Why the Sample Variance Divides by <span class="math notranslate nohighlight">\(N-1\)</span>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/02_proof/05_Gaussian_skewness_kurtosis.html">高斯分布的偏度為 0、峰度為 3 (Skewness and Kurtosis of the Gaussian)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/02_proof/06_Gaussian_product_posterior.html">高斯先驗 × 高斯概似 = 高斯後驗 (Gaussian Prior × Gaussian Likelihood → Gaussian Posterior)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/03_notation_X_vs_x.html">大寫 <span class="math notranslate nohighlight">\(X\)</span> 與小寫 <span class="math notranslate nohighlight">\(x\)</span> (Random Variable vs. Observed Value)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/99_textbook.html">Week 1-3: Rule101</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Objective Analysis Week 02 Homework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hw3/hw3.html">Objective Analysis Week 03 Homework</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/derek1403/PC-NTU" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="來源儲存庫"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="下載此頁面">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/homework/hw2/hw2.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="下載原始檔"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="列印成 PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="全螢幕模式"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="搜尋" aria-label="搜尋" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Objective Analysis Week 02 Homework</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目錄 </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-maximum-entropy-distributions">Question 1. Maximum-Entropy Distributions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-1">Answer 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a">(a)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b">(b)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-verifying-the-odd-symmetry-of-phi">Question 2. Verifying the Odd Symmetry of <span class="math notranslate nohighlight">\(\phi\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-2">Answer 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">(a)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">(b)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-maximum-likelihood-for-categorical-forecasts">Question 3. Maximum Likelihood for Categorical Forecasts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-3">Answer 3</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">(a)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">(b)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c">(c)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#model-a-model-b-s-p-l-p"><strong>1. 計算 Model A 與 Model B 的 <span class="math notranslate nohighlight">\(S(p)\)</span> 與 <span class="math notranslate nohighlight">\(l(p)\)</span></strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vs"><strong>2. 物理與統計意義解釋：預報內部不確定性 vs. 與觀測的吻合度</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">比較</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1"><strong>1. 為什麼在 Q1 我們要選「熵最大」的分佈？（建立先驗分佈：不「不懂裝懂」）</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q3-model-b"><strong>2. 為什麼在 Q3 中，熵最大的 Model B 反而是壞預報？（預報校驗：不能「有資料還裝傻」）</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-q3"><strong>3. 把 Q1 與 Q3 統一起來看：約束條件決定一切</strong></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="objective-analysis-week-02-homework">
+<h1>Objective Analysis Week 02 Homework<a class="headerlink" href="#objective-analysis-week-02-homework" title="連結到這個標頭">#</a></h1>
+<section id="question-1-maximum-entropy-distributions">
+<h2>Question 1. Maximum-Entropy Distributions<a class="headerlink" href="#question-1-maximum-entropy-distributions" title="連結到這個標頭">#</a></h2>
+<p>Let <span class="math notranslate nohighlight">\(X\)</span> be a continuous random variable with probability density function (PDF) <span class="math notranslate nohighlight">\(p(x)\)</span>. Its differential entropy is
+$<span class="math notranslate nohighlight">\(S[p] = -\int_{\mathcal{X}} p(x) \ln p(x) \, dx,\)</span><span class="math notranslate nohighlight">\(
+where \)</span>\mathcal{X}<span class="math notranslate nohighlight">\( is the domain of \)</span>X<span class="math notranslate nohighlight">\(. Use natural logarithms and require \)</span>p(x) \geq 0$ throughout this question.</p>
+<p>Consider the following two separate maximization problems.</p>
+<ul>
+<li><p>(a) Normalization on a finite interval</p>
+<p>Suppose <span class="math notranslate nohighlight">\(X\)</span> is restricted to a fixed interval <span class="math notranslate nohighlight">\([a, b]\)</span>, where <span class="math notranslate nohighlight">\(a &lt; b\)</span>. In addition to nonnegativity, the only constraint is
+$<span class="math notranslate nohighlight">\(\int_{a}^{b} p(x) \, dx = 1.\)</span>$
+Use a Lagrange multiplier to find the PDF that maximizes the differential entropy. Identify the resulting distribution.</p>
+</li>
+<li><p>(b) Fixed mean and variance on the real line</p>
+<p>Now let <span class="math notranslate nohighlight">\(X\)</span> take values over the entire real line, rather than on the finite interval in part (a). Require the PDF to satisfy
+$<span class="math notranslate nohighlight">\(\int_{-\infty}^{\infty} p(x) \, dx = 1,\)</span><span class="math notranslate nohighlight">\(
+  \)</span><span class="math notranslate nohighlight">\(\int_{-\infty}^{\infty} x p(x) \, dx = \mu_x,\)</span><span class="math notranslate nohighlight">\(
+  \)</span><span class="math notranslate nohighlight">\(\int_{-\infty}^{\infty} (x - \mu_x)^2 p(x) \, dx = \sigma_x^2,\)</span><span class="math notranslate nohighlight">\(
+  where \)</span>\mu_x<span class="math notranslate nohighlight">\( is the prescribed mean and \)</span>\sigma_x^2 &gt; 0$ is the prescribed variance.</p>
+<p>Use Lagrange multipliers to show that the entropy-maximizing PDF is a Gaussian distribution with mean <span class="math notranslate nohighlight">\(\mu_x\)</span> and variance <span class="math notranslate nohighlight">\(\sigma_x^2\)</span>. Write the normalized PDF explicitly.</p>
+</li>
+<li><p><strong>For both parts：</strong> Show how you obtain the stationary PDF and briefly explain why it maximizes the entropy.</p></li>
+<li><p><strong>Hint：</strong> Construct a constrained functional and set its first variation with respect to <span class="math notranslate nohighlight">\(p\)</span> equal to zero. You may use the fact that entropy is strictly concave in <span class="math notranslate nohighlight">\(p\)</span>, so a stationary solution subject to these linear constraints is a global maximum.</p></li>
+</ul>
+</section>
+<section id="answer-1">
+<h2>Answer 1<a class="headerlink" href="#answer-1" title="連結到這個標頭">#</a></h2>
+<section id="a">
+<h3>(a)<a class="headerlink" href="#a" title="連結到這個標頭">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\mathcal{L}[p] = -\int_{a}^{b} p(x) \ln p(x) \, dx - \lambda_0 \left( \int_{a}^{b} p(x) \, dx - 1 \right)\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+0 &amp;=&amp; \dfrac{\partial \mathcal{L}}{\partial p} \\
+0 &amp;=&amp; \dfrac{\partial }{\partial p} \left[ -\int_{a}^{b} p(x) \ln p(x) \, dx - \lambda_0 \left( \int_{a}^{b} p(x) \, dx - 1 \right) \right] \\
+0 &amp;=&amp; \frac{\partial}{\partial p} \big[ -p(x) \ln p(x) - \lambda_0 p(x) \big] \\
+0 &amp;=&amp; -\ln p(x) - 1 - \lambda_0 \\
+\ln p(x) &amp;=&amp;  -(1 + \lambda_0) \\
+p(x) &amp;=&amp; e^{-(1 + \lambda_0)} \\
+\end{gather*}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+1 &amp;=&amp; \int_{a}^{b} p(x) \, dx \\
+1 &amp;=&amp; \int_{a}^{b} e^{-(1 + \lambda_0)} \, dx \\
+1 &amp;=&amp; (b-a) e^{-(1 + \lambda_0)}  \\
+e^{-(1 + \lambda_0)} &amp;=&amp; \frac{1}{b-a} \\
+p(x) &amp;=&amp; \begin{cases} 
+\frac{1}{b - a}&amp;, &amp; a \le x \le b \\
+0 &amp;, &amp; \text{otherwise} \end{cases} 
+\end{gather*}\end{split}\]</div>
+<ul>
+<li><p>駐點解能最大化熵</p>
+<p>因為函數 <span class="math notranslate nohighlight">\(g(p) = -p \ln p\)</span> 的二階導數為 <span class="math notranslate nohighlight">\(g''(p) = -\frac{1}{p} &lt; 0\)</span>（當 <span class="math notranslate nohighlight">\(p &gt; 0\)</span>），這表示微分熵泛函 <span class="math notranslate nohighlight">\(S[p]\)</span> 對於 <span class="math notranslate nohighlight">\(p\)</span> 是嚴格凹函數（strictly concave）。此外，正規化條件是關於 <span class="math notranslate nohighlight">\(p\)</span> 的線性約束（linear constraint），因此在線性約束下求得的駐點解（stationary solution）必然是唯一的全域最大值（global maximum）</p>
+</li>
+</ul>
+</section>
+<section id="b">
+<h3>(b)<a class="headerlink" href="#b" title="連結到這個標頭">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\mathcal{L}[p] = -\int_{-\infty}^{\infty} p(x) \ln p(x) \, dx 
+- \lambda_0 \left( \int_{-\infty}^{\infty} p(x) \, dx - 1 \right) 
+- \lambda_1 \left( \int_{-\infty}^{\infty} x \, p(x) \, dx - \mu_x \right) 
+- \lambda_2 \left( \int_{-\infty}^{\infty} (x - \mu_x)^2 p(x) \, dx 
+- \sigma_x^2 \right)\]</div>
+<ul class="simple">
+<li><p>中間的 <span class="math notranslate nohighlight">\(x\)</span> 改寫為 <span class="math notranslate nohighlight">\((x - \mu_x) + \mu_x\)</span>，並將常數項合併為 <span class="math notranslate nohighlight">\(A = e^{-(1 + \lambda_0 + \lambda_1 \mu_x)}\)</span></p></li>
+<li><p>為了使 <span class="math notranslate nohighlight">\(p(x)\)</span> 在 <span class="math notranslate nohighlight">\((-\infty, \infty)\)</span> 上可積分，必須要求 <span class="math notranslate nohighlight">\(\lambda_2 &gt; 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(B = A e^{\frac{\lambda_1^2}{4\lambda_2}} &gt; 0\)</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+0 &amp;=&amp; \dfrac{\partial \mathcal{L}}{\partial p} \\
+0 &amp;=&amp; \dfrac{\partial }{\partial p} \left[ -\int_{-\infty}^{\infty} p(x) \ln p(x) \, dx 
+- \lambda_0 \left( \int_{-\infty}^{\infty} p(x) \, dx - 1 \right) 
+- \lambda_1 \left( \int_{-\infty}^{\infty} x \, p(x) \, dx - \mu_x \right) 
+- \lambda_2 \left( \int_{-\infty}^{\infty} (x - \mu_x)^2 p(x) \, dx 
+- \sigma_x^2 \right) \right] \\
+0 &amp;=&amp; -\ln p(x) - 1 - \lambda_0 - \lambda_1 x - \lambda_2 (x - \mu_x)^2 \\
+\ln p(x) &amp;=&amp; -(1 + \lambda_0) - \lambda_1 x - \lambda_2 (x - \mu_x)^2 \\
+p(x) &amp;=&amp; A \exp\Big( -\lambda_1 (x - \mu_x) - \lambda_2 (x - \mu_x)^2 \Big) \\
+\end{gather*}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{gather*}
+p(u) = B \exp\left[ -\lambda_2 \left( u + \frac{\lambda_1}{2\lambda_2} \right)^2 \right]
+\end{gather*}\]</div>
+<ul class="simple">
+<li><p>推導  <span class="math notranslate nohighlight">\(w = u + \frac{\lambda_1}{2\lambda_2}\)</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+0 &amp;=&amp; \dfrac{\partial \mathcal{L}}{\partial \lambda_1} \\
+0 &amp;=&amp; \dfrac{\partial }{\partial p} \left[ -\int_{-\infty}^{\infty} p(x) \ln p(x) \, dx 
+- \lambda_0 \left( \int_{-\infty}^{\infty} p(x) \, dx - 1 \right) 
+- \lambda_1 \left( \int_{-\infty}^{\infty} x \, p(x) \, dx - \mu_x \right) 
+- \lambda_2 \left( \int_{-\infty}^{\infty} (x - \mu_x)^2 p(x) \, dx 
+- \sigma_x^2 \right) \right] \\
+0 &amp;=&amp; \int_{-\infty}^{\infty} x \, p(x) \, dx - \mu_x  \\
+0 &amp;=&amp; \int_{-\infty}^{\infty} x \, p(x) \, dx - \mu_x  \int_{-\infty}^{\infty} \, p(x) \, dx \\
+0 &amp;=&amp; \int_{-\infty}^{\infty} (x - \mu_x) p(x) \, dx \\
+0 &amp;=&amp; B \int_{-\infty}^{\infty} u \exp\left[ -\lambda_2 \left( u + \frac{\lambda_1}{2\lambda_2} \right)^2 \right] \, du \\
+0 &amp;=&amp; B \int_{-\infty}^{\infty} \left( w - \frac{\lambda_1}{2\lambda_2} \right) e^{-\lambda_2 w^2} \, dw \\
+0 &amp;=&amp; B \left( 0 - \frac{\lambda_1}{2\lambda_2} \sqrt{\frac{\pi}{\lambda_2}} \right) \\
+0 &amp;=&amp; \lambda_1 \\
+\end{gather*}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[p(x) = A e^{-\lambda_2 (x - \mu_x)^2}\]</div>
+<ul class="simple">
+<li><p>推導</p></li>
+<li><p><span class="math notranslate nohighlight">\(\int_{-\infty}^{\infty} e^{-\lambda_2 u^2} du = \sqrt{\frac{\pi}{\lambda_2}}\)</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\int_{-\infty}^{\infty} p(x) \, dx &amp;=&amp; 1 \\
+\int_{-\infty}^{\infty} A e^{-\lambda_2 (x - \mu_x)^2} \, dx &amp;=&amp; 1 \\
+A \sqrt{\frac{\pi}{\lambda_2}}&amp;=&amp; 1 \\
+A &amp;=&amp; \sqrt{\frac{\lambda_2}{\pi}} \\
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>推導</p></li>
+<li><p><span class="math notranslate nohighlight">\(\int_{-\infty}^{\infty} u^2 e^{-\lambda_2 u^2} du = \frac{1}{2\lambda_2}\sqrt{\frac{\pi}{\lambda_2}}\)</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\int_{-\infty}^{\infty} (x - \mu_x)^2 p(x) \, dx &amp;=&amp; \sigma_x^2 \\
+\int_{-\infty}^{\infty} (x - \mu_x)^2 A e^{-\lambda_2 (x - \mu_x)^2} \, dx &amp;=&amp; \sigma_x^2 \\
+A \cdot \frac{1}{2\lambda_2}\sqrt{\frac{\pi}{\lambda_2}} &amp;=&amp; \sigma_x^2 \\
+\frac{1}{2\lambda_2}&amp;=&amp; \sigma_x^2 \\
+\lambda_2 &amp;=&amp; \frac{1}{2\sigma_x^2} \\
+A &amp;=&amp; \frac{1}{\sqrt{2\pi \sigma_x^2}}
+\end{gather*}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[p(x) = \frac{1}{\sqrt{2\pi \sigma_x^2}} \exp\left( -\frac{(x - \mu_x)^2}{2\sigma_x^2} \right)\]</div>
+<ul>
+<li><p>此駐點解能最大化熵</p>
+<p>與 (a) 小題相同，微分熵泛函 <span class="math notranslate nohighlight">\(S[p] = -\int p(x) \ln p(x) \, dx\)</span> 對於 <span class="math notranslate nohighlight">\(p(x)\)</span> 是嚴格凹函數（strictly concave），且正規化、期望值與變異數這三個約束條件皆為關於 <span class="math notranslate nohighlight">\(p(x)\)</span> 的線性約束（linear constraints）。因此，由一階變分為零所求得的駐點解即為唯一的全域最大值（global maximum</p>
+</li>
+</ul>
+</section>
+</section>
+<section id="question-2-verifying-the-odd-symmetry-of-phi">
+<h2>Question 2. Verifying the Odd Symmetry of <span class="math notranslate nohighlight">\(\phi\)</span><a class="headerlink" href="#question-2-verifying-the-odd-symmetry-of-phi" title="連結到這個標頭">#</a></h2>
+<p>Consider independent observations</p>
+<div class="math notranslate nohighlight">
+\[x_i = \mu + \varepsilon_i, \quad i = 1, \dots, N,\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mu \in \mathbb{R}\)</span> is an unknown location parameter. The errors <span class="math notranslate nohighlight">\(\varepsilon_i\)</span> share a common, strictly positive, differentiable PDF <span class="math notranslate nohighlight">\(f(e)\)</span> on <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>. Define</p>
+<div class="math notranslate nohighlight">
+\[\phi(e) = \frac{f'(e)}{f(e)}.\]</div>
+<p>Suppose we require the sample mean</p>
+<div class="math notranslate nohighlight">
+\[\bar{x} = \frac{1}{N} \sum_{i=1}^{N} x_i\]</div>
+<p>to be a maximum-likelihood estimate of <span class="math notranslate nohighlight">\(\mu\)</span> for every possible sample. At <span class="math notranslate nohighlight">\(\mu = \bar{x}\)</span>, the deviations</p>
+<div class="math notranslate nohighlight">
+\[e_i = x_i - \bar{x}\]</div>
+<p>satisfy <span class="math notranslate nohighlight">\(\sum_{i=1}^{N} e_i = 0\)</span>. The first-order likelihood condition then requires</p>
+<div class="math notranslate nohighlight">
+\[\sum_{i=1}^{N} \phi(e_i) = 0.\]</div>
+<p>For <span class="math notranslate nohighlight">\(N = 2\)</span>, consider the deviations</p>
+<div class="math notranslate nohighlight">
+\[e_1 = d, \quad e_2 = -d,\]</div>
+<p>where <span class="math notranslate nohighlight">\(d\)</span> is any real number.</p>
+<ul>
+<li><p>(a)</p>
+<p>Substitute these deviations into the likelihood condition and show that</p>
+<div class="math notranslate nohighlight">
+\[\phi(-d) = -\phi(d).\]</div>
+<p>Is <span class="math notranslate nohighlight">\(\phi\)</span> an odd or an even function?</p>
+</li>
+<li><p>(b)</p>
+<p>Verify that the proposed linear form</p>
+<div class="math notranslate nohighlight">
+\[\phi(e) = -he, \quad h &gt; 0,\]</div>
+<p>satisfies this symmetry condition.</p>
+</li>
+<li><p><strong>Note：</strong> This question concerns the symmetry of <span class="math notranslate nohighlight">\(\phi\)</span> not of the PDF <span class="math notranslate nohighlight">\(f\)</span> . You are asked to verify the
+proposed linear form; odd symmetry alone does not establish linearity.</p></li>
+</ul>
+</section>
+<section id="answer-2">
+<h2>Answer 2<a class="headerlink" href="#answer-2" title="連結到這個標頭">#</a></h2>
+<section id="id1">
+<h3>(a)<a class="headerlink" href="#id1" title="連結到這個標頭">#</a></h3>
+<p>Cauchy 函數方程 <span class="math notranslate nohighlight">\(\varphi(a + b) = \varphi(a) + \varphi(b)\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\sum_{i=1}^{N} \phi(e_i) &amp;=&amp; 0 \\
+\phi(e_1) + \phi(e_2) &amp;=&amp; 0 \\
+\phi(d) + \phi(-d) &amp;=&amp; 0 \\
+\phi(-d) &amp;=&amp; -\phi(d) \\
+\end{gather*}\end{split}\]</div>
+<p>奇函數 odd function</p>
+</section>
+<section id="id2">
+<h3>(b)<a class="headerlink" href="#id2" title="連結到這個標頭">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\phi(e) &amp;=&amp; -he \\
+\phi(-d) &amp;=&amp; -h(-d) \\
+&amp;=&amp; hd \\
+\end{gather*}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\phi(e) &amp;=&amp; -he \\
+-\phi(d) &amp;=&amp; -(-h(d)) \\
+&amp;=&amp; hd \\
+\end{gather*}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\phi(-d) = hd = -\phi(d)\]</div>
+<p>順帶一提，當 <span class="math notranslate nohighlight">\(\phi(e) = \frac{f'(e)}{f(e)} = -he\)</span> 時，兩邊對 <span class="math notranslate nohighlight">\(e\)</span> 積分就會得到 <span class="math notranslate nohighlight">\(\ln f(e) = -\frac{1}{2}he^2 + C \implies f(e) \propto e^{-\frac{1}{2}he^2}\)</span>，這正是高斯分佈的推導基礎——高斯定理指出，當樣本平均數 <span class="math notranslate nohighlight">\(\bar{x}\)</span> 對任意樣本都是位置參數 <span class="math notranslate nohighlight">\(\mu\)</span> 的最大似然估計量時，誤差分佈必然為高斯分佈。</p>
+</section>
+</section>
+<section id="question-3-maximum-likelihood-for-categorical-forecasts">
+<h2>Question 3. Maximum Likelihood for Categorical Forecasts<a class="headerlink" href="#question-3-maximum-likelihood-for-categorical-forecasts" title="連結到這個標頭">#</a></h2>
+<p>Consider a simplified subseasonal-to-seasonal (S2S) precipitation forecast with three mutually exclusive and exhaustive categories: Below Normal (<span class="math notranslate nohighlight">\(i = 0\)</span>), Near Normal (<span class="math notranslate nohighlight">\(i = 1\)</span>), and Above Normal (<span class="math notranslate nohighlight">\(i = 2\)</span>). The category thresholds are prescribed and held fixed.</p>
+<p>Suppose <span class="math notranslate nohighlight">\(N\)</span> independent verification cases are represented by the <strong>same</strong> forecast probability vector <span class="math notranslate nohighlight">\(\mathbf{p} = (p_0, p_1, p_2)\)</span>, where <span class="math notranslate nohighlight">\(p_i &gt; 0\)</span> and <span class="math notranslate nohighlight">\(\sum_{i=0}^{2} p_i = 1\)</span>. Let <span class="math notranslate nohighlight">\(n_i\)</span> be the observed number of cases in category <span class="math notranslate nohighlight">\(i\)</span>, and define
+$<span class="math notranslate nohighlight">\(q_i = \frac{n_i}{N}, \quad \sum_{i=0}^{2} q_i = 1.\)</span>$</p>
+<p>Assume every category is observed at least once, so <span class="math notranslate nohighlight">\(q_i &gt; 0\)</span>.</p>
+<ul class="simple">
+<li><p>(a) Constructing the log-likelihood
+The likelihood of the observed category counts is</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\mathcal{P}(\mathbf{n} \mid \mathbf{p}) = \frac{N!}{n_0! n_1! n_2!} \prod_{i=0}^{2} p_i^{n_i}.\]</div>
+<p>The multinomial coefficient does not depend on <span class="math notranslate nohighlight">\(\mathbf{p}\)</span>. Omit this factor throughout the exercise and define the log-likelihood, up to this additive constant, as
+$<span class="math notranslate nohighlight">\(\ell(\mathbf{p}) = \ln \left( \prod_{i=0}^{2} p_i^{n_i} \right).\)</span>$</p>
+<p>Express <span class="math notranslate nohighlight">\(\ell(\mathbf{p})\)</span> in terms of <span class="math notranslate nohighlight">\(N\)</span>, <span class="math notranslate nohighlight">\(q_i\)</span>, and <span class="math notranslate nohighlight">\(\ln p_i\)</span>. Use natural logarithms.</p>
+<ul class="simple">
+<li><p>(b) Finding the maximum-likelihood probabilities
+Treat the observed frequencies <span class="math notranslate nohighlight">\(q_i\)</span> as fixed constants.</p>
+<ul>
+<li><p>Construct a Lagrangian to maximize <span class="math notranslate nohighlight">\(\ell(\mathbf{p})\)</span> subject to <span class="math notranslate nohighlight">\(\sum_{i=0}^{2} p_i = 1\)</span>.</p></li>
+<li><p>Show that the maximum occurs at <span class="math notranslate nohighlight">\(p_i = q_i\)</span>. Briefly justify why the stationary solution is a maximum.</p></li>
+<li><p>Define <span class="math notranslate nohighlight">\(S(\mathbf{q}) = -\sum_{i=0}^{2} q_i \ln q_i\)</span>, the discrete Shannon entropy of the observed relative-frequency distribution. Show that <span class="math notranslate nohighlight">\(\ell_{\max}/N = -S(\mathbf{q})\)</span>.</p></li>
+</ul>
+</li>
+<li><p>(c) Comparing two forecast distributions
+Let <span class="math notranslate nohighlight">\(N = 100\)</span> and <span class="math notranslate nohighlight">\(\mathbf{q} = (0.1, 0.5, 0.4)\)</span>. Compare
+$<span class="math notranslate nohighlight">\(\text{Model A: } \mathbf{p}_A = (0.1, 0.5, 0.4), \quad \text{Model B: } \mathbf{p}_B = (1/3, 1/3, 1/3).\)</span>$</p></li>
+</ul>
+<p>Calculate <span class="math notranslate nohighlight">\(\ell(\mathbf{p})\)</span> and the forecast entropy <span class="math notranslate nohighlight">\(S(\mathbf{p}) = -\sum_{i=0}^{2} p_i \ln p_i\)</span> for each model. Explain why Model B has a lower log-likelihood even though its forecast entropy is higher. Distinguish uncertainty within a forecast distribution from agreement with the observed frequencies.</p>
+</section>
+<section id="answer-3">
+<h2>Answer 3<a class="headerlink" href="#answer-3" title="連結到這個標頭">#</a></h2>
+<section id="id3">
+<h3>(a)<a class="headerlink" href="#id3" title="連結到這個標頭">#</a></h3>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(q_i = \frac{n_i}{N}\)</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+l(p) &amp;=&amp; \ln\left(\prod_{i=0}^{2} p_i^{n_i}\right) \\
+&amp;=&amp; \sum_{i=0}^{2} \ln\left(p_i^{n_i}\right) \\
+&amp;=&amp; \sum_{i=0}^{2} n_i \ln p_i \\
+&amp;=&amp; \sum_{i=0}^{2} (N q_i) \ln p_i \\
+&amp;=&amp; N \sum_{i=0}^{2} q_i \ln p_i
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="id4">
+<h3>(b)<a class="headerlink" href="#id4" title="連結到這個標頭">#</a></h3>
+<p>將觀測頻率 <span class="math notranslate nohighlight">\(q_i\)</span> 視為固定常數。<br />
+(i) 建立拉格朗日函數（Lagrangian），以在受限於 <span class="math notranslate nohighlight">\(\sum_{i=0}^{2} p_i = 1\)</span> 的條件下最大化 <span class="math notranslate nohighlight">\(l(p)\)</span>。<br />
+(ii) 證明最大值發生在 <span class="math notranslate nohighlight">\(p_i = q_i\)</span>，並簡要說明為何此駐點解為最大值。<br />
+(iii) 定義 <span class="math notranslate nohighlight">\(S(q) = -\sum_{i=0}^{2} q_i \ln q_i\)</span> 為觀測相對頻率分佈的離散夏農熵（discrete Shannon entropy），請證明 <span class="math notranslate nohighlight">\(l_{\max} / N = -S(q)\)</span>。</p>
+<p>(i)</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{L}(p, \lambda) = N \sum_{i=0}^{2} q_i \ln p_i - \lambda \left( \sum_{i=0}^{2} p_i - 1 \right)\]</div>
+<p>(ii) <span class="math notranslate nohighlight">\(\sum_{i=0}^{2} q_i = 1\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{\partial \mathcal{L}}{\partial p_i} &amp;=&amp; 0 \\
+\frac{N q_i}{p_i} - \lambda &amp;=&amp; 0 \\
+p_i &amp;=&amp; \frac{N q_i}{\lambda}
+\end{gather*}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\sum_{i=0}^{2} p_i &amp;=&amp; 1 \\
+\frac{N}{\lambda} \sum_{i=0}^{2} q_i  &amp;=&amp; 1\\
+\frac{N}{\lambda} (1) &amp;=&amp; 1 \\
+\lambda &amp;=&amp; N
+\end{gather*}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[ p_i = q_i\]</div>
+<p><span class="math notranslate nohighlight">\(l(p)\)</span> 在定義域上為嚴格凹函數，所以極值是最大值</p>
+<p>(iii)</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+l(p) &amp;=&amp; N \sum_{i=0}^{2} q_i \ln p_i \\
+\frac{l(p)}{N} &amp;=&amp;  \sum_{i=0}^{2} q_i \ln p_i \\
+\frac{l_{\text{max}}}{N} &amp;=&amp;  \sum_{i=0}^{2} q_i \ln p_i \\
+-S(q) &amp;=&amp;  \sum_{i=0}^{2} q_i \ln p_i \\
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="c">
+<h3>(c)<a class="headerlink" href="#c" title="連結到這個標頭">#</a></h3>
+<p>(c) 比較兩個預報分佈 (Comparing two forecast distributions)</p>
+<p>設 <span class="math notranslate nohighlight">\(N = 100\)</span> 且 <span class="math notranslate nohighlight">\(q = (0.1, 0.5, 0.4)\)</span>，比較以下兩個模型：</p>
+<ul class="simple">
+<li><p>模型 A (Model A)：<span class="math notranslate nohighlight">\(p_A = (0.1, 0.5, 0.4)\)</span></p></li>
+<li><p>模型 B (Model B)：<span class="math notranslate nohighlight">\(p_B = (1/3, 1/3, 1/3)\)</span></p></li>
+</ul>
+<p>請計算每個模型的 <span class="math notranslate nohighlight">\(l(p)\)</span> 與預報熵 <span class="math notranslate nohighlight">\(S(p) = -\sum_{i=0}^{2} p_i \ln p_i\)</span>。請解釋為何模型 B 的預報熵較高，但其對數似然值卻較低；並區分「預報分佈內部的不確定性（uncertainty within a forecast distribution）」與「和觀測頻率之間的吻合度（agreement with the observed frequencies）」。</p>
+<p>已知 <span class="math notranslate nohighlight">\(N = 100\)</span>，觀測相對頻率為 <span class="math notranslate nohighlight">\(q = (0.1, 0.5, 0.4)\)</span>。</p>
+<section id="model-a-model-b-s-p-l-p">
+<h4><strong>1. 計算 Model A 與 Model B 的 <span class="math notranslate nohighlight">\(S(p)\)</span> 與 <span class="math notranslate nohighlight">\(l(p)\)</span></strong><a class="headerlink" href="#model-a-model-b-s-p-l-p" title="連結到這個標頭">#</a></h4>
+<ul class="simple">
+<li><p><strong>Model A：<span class="math notranslate nohighlight">\(p_A = (0.1, 0.5, 0.4)\)</span></strong>（完美吻合觀測頻率，即 <span class="math notranslate nohighlight">\(p_A = q\)</span>）</p></li>
+<li><p><strong>預報熵 <span class="math notranslate nohighlight">\(S(p_A)\)</span></strong>：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}     S(p_A) &amp;= -\sum_{i=0}^{2} p_{A,i} \ln p_{A,i} \\     &amp;= -\big( 0.1 \ln 0.1 + 0.5 \ln 0.5 + 0.4 \ln 0.4 \big) \\     &amp;\approx -\big( 0.1(-2.3026) + 0.5(-0.6931) + 0.4(-0.9163) \big) \\     &amp;\approx -\big( -0.2303 - 0.3466 - 0.3665 \big) = \mathbf{0.9433}     \end{aligned}\end{split}\]</div>
+<ul class="simple">
+<li><p><strong>對數似然值 <span class="math notranslate nohighlight">\(l(p_A)\)</span></strong>：
+因為 <span class="math notranslate nohighlight">\(p_A = q\)</span>，由 (b)(iii) 可知 <span class="math notranslate nohighlight">\(l(p_A) = l_{\max} = -N S(q)\)</span>：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[l(p_A) = -100 \times 0.943348 \approx \mathbf{-94.33}\]</div>
+<ul class="simple">
+<li><p><strong>Model B：<span class="math notranslate nohighlight">\(p_B = (1/3, 1/3, 1/3)\)</span></strong>（均勻分佈預報）</p></li>
+<li><p><strong>預報熵 <span class="math notranslate nohighlight">\(S(p_B)\)</span></strong>：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[S(p_B) = -\sum_{i=0}^{2} \frac{1}{3} \ln\left(\frac{1}{3}\right) = -3 \times \frac{1}{3} (-\ln 3) = \ln 3 \approx \mathbf{1.0986}\]</div>
+<ul class="simple">
+<li><p><strong>對數似然值 <span class="math notranslate nohighlight">\(l(p_B)\)</span></strong>：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}     l(p_B) &amp;= N \sum_{i=0}^{2} q_i \ln p_{B,i} \\     &amp;= 100 \times \big( 0.1 \ln(1/3) + 0.5 \ln(1/3) + 0.4 \ln(1/3) \big) \\     &amp;= 100 \times (0.1 + 0.5 + 0.4) \ln(1/3) \\     &amp;= -100 \ln 3 \approx \mathbf{-109.86}     \end{aligned}\end{split}\]</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>模型</p></th>
+<th class="head"><p>預報機率向量 <span class="math notranslate nohighlight">\(p\)</span><br></p></th>
+<th class="head"><p>預報熵 <span class="math notranslate nohighlight">\(S(p)\)</span><br></p></th>
+<th class="head"><p>對數似然值 <span class="math notranslate nohighlight">\(l(p)\)</span><br></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Model A</strong><br></p></td>
+<td><p><span class="math notranslate nohighlight">\((0.1, 0.5, 0.4)\)</span><br></p></td>
+<td><p><strong><span class="math notranslate nohighlight">\(0.9433\)</span></strong></p></td>
+<td><p><strong><span class="math notranslate nohighlight">\(-94.33\)</span></strong>（較高，擬合較佳）</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Model B</strong><br></p></td>
+<td><p><span class="math notranslate nohighlight">\((1/3, 1/3, 1/3)\)</span><br></p></td>
+<td><p><strong><span class="math notranslate nohighlight">\(1.0986\)</span></strong>（較高，不確定性較大）</p></td>
+<td><p><strong><span class="math notranslate nohighlight">\(-109.86\)</span></strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="vs">
+<h4><strong>2. 物理與統計意義解釋：預報內部不確定性 vs. 與觀測的吻合度</strong><a class="headerlink" href="#vs" title="連結到這個標頭">#</a></h4>
+<ul class="simple">
+<li><p><strong>預報分佈內部的不確定性（Uncertainty within a forecast distribution — 由 <span class="math notranslate nohighlight">\(S(p)\)</span> 衡量）</strong>：
+預報熵 <span class="math notranslate nohighlight">\(S(p) = -\sum p_i \ln p_i\)</span> 僅取決於預報機率 <span class="math notranslate nohighlight">\(p\)</span> 本身，用來衡量<strong>預報系統自身的分散程度或「不確定性」</strong>，與實際觀測結果 <span class="math notranslate nohighlight">\(q\)</span> 完全無關。Model B 將三個類別的機率皆設為 <span class="math notranslate nohighlight">\(1/3\)</span>（均勻分佈），代表預報沒有提供任何傾向特定類別的資訊，因此具有三類別中可能達到的最高預報熵（<span class="math notranslate nohighlight">\(S(p_B) = \ln 3 \approx 1.0986 &gt; S(p_A) \approx 0.9433\)</span>）。</p></li>
+<li><p><strong>與觀測頻率的吻合度（Agreement with the observed frequencies — 由 <span class="math notranslate nohighlight">\(l(p)\)</span> 衡量）</strong>：
+對數似然函數 <span class="math notranslate nohighlight">\(l(p) = N \sum q_i \ln p_i\)</span> 衡量的是<strong>預報分佈 <span class="math notranslate nohighlight">\(p\)</span> 對實際觀測頻率 <span class="math notranslate nohighlight">\(q\)</span> 的解釋能力與吻合程度</strong>。從資訊理論來看，我們可以將 <span class="math notranslate nohighlight">\(l(p)/N\)</span> 改寫為：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\frac{l(p)}{N} = \sum_{i=0}^{2} q_i \ln p_i = -S(q) - \sum_{i=0}^{2} q_i \ln\left(\frac{q_i}{p_i}\right) = -S(q) - D_{\text{KL}}(q \parallel p)\]</div>
+<p>其中 <span class="math notranslate nohighlight">\(D_{\text{KL}}(q \parallel p) \ge 0\)</span> 為衡量 <span class="math notranslate nohighlight">\(q\)</span> 與 <span class="math notranslate nohighlight">\(p\)</span> 差異的相對熵（Kullback-Leibler divergence）。</p>
+<ul class="simple">
+<li><p><strong>為何 Model B 的預報熵較高，對數似然值卻較低？</strong>
+因為最大化預報熵 <span class="math notranslate nohighlight">\(S(p)\)</span> 只是讓預報本身變得「最模糊、最均勻」，並不等於貼近真實大氣狀態。實際觀測頻率 <span class="math notranslate nohighlight">\(q = (0.1, 0.5, 0.4)\)</span> 明顯偏向正常（<span class="math notranslate nohighlight">\(i=1\)</span>）與偏多（<span class="math notranslate nohighlight">\(i=2\)</span>）：</p></li>
+<li><p><strong>Model A</strong> 準確捕捉到這個分佈特徵（<span class="math notranslate nohighlight">\(p_A = q\)</span>），沒有任何分佈偏差懲罰（<span class="math notranslate nohighlight">\(D_{\text{KL}} = 0\)</span>），因此獲得最高可能的對數似然值（<span class="math notranslate nohighlight">\(-94.33\)</span>）。</p></li>
+<li><p><strong>Model B</strong> 給出毫無鑑別度的均勻機率（<span class="math notranslate nohighlight">\(p_B \neq q\)</span>），與實際觀測頻率不符（產生了 <span class="math notranslate nohighlight">\(D_{\text{KL}}(q \parallel p_B) &gt; 0\)</span> 的偏差懲罰），因此即使它的預報熵最高，其對數似然值（<span class="math notranslate nohighlight">\(-109.86\)</span>）仍顯著低於 Model A。</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="id5">
+<h2>比較<a class="headerlink" href="#id5" title="連結到這個標頭">#</a></h2>
+<p>這正是把第一題（最大熵原理，Maximum Entropy）和第三題（最大似然估計，Maximum Likelihood）串聯起來最核心的觀念：<strong>「熵（Entropy）」衡量的是「不確定性（Uncertainty）或模糊程度」，而不是「預報的好壞或準確度」</strong>。</p>
+<p>為什麼第一題我們要「選熵最大的分佈」，到了第三題，熵最大的 Model B 卻變成比較差的模型？關鍵在於「我們手上有多少已知資訊（約束條件）」<strong>以及</strong>「我們現在的任務是什麼」。</p>
+<hr class="docutils" />
+<section id="q1">
+<h3><strong>1. 為什麼在 Q1 我們要選「熵最大」的分佈？（建立先驗分佈：不「不懂裝懂」）</strong><a class="headerlink" href="#q1" title="連結到這個標頭">#</a></h3>
+<p>在第一題中，我們<strong>沒有完整的觀測分佈資料</strong>，手上只有極少數的條件：</p>
+<ul class="simple">
+<li><p><strong>Q1(a)</strong>：只知道變數落在 <span class="math notranslate nohighlight">\([a, b]\)</span> 之間，其他一無所知。</p></li>
+<li><p><strong>Q1(b)</strong>：只知道平均數是 <span class="math notranslate nohighlight">\(\mu_x\)</span>、變異數是 <span class="math notranslate nohighlight">\(\sigma_x^2\)</span>，其他高階特徵一無所知。</p></li>
+</ul>
+<p>在這種「資訊不足」的情況下，如果我們隨便挑一個「熵比較小」的分佈（例如在 <span class="math notranslate nohighlight">\([a, b]\)</span> 裡面故意畫一個偏向某邊的尖峰），就代表我們<strong>在沒有觀測證據的情況下，自己亂加了主觀假設（人為偏見）</strong>。</p>
+<p>因此，統計學上的最大熵原理（Principle of Maximum Entropy）告訴我們：</p>
+<blockquote>
+<div><p><strong>「在滿足所有已知約束條件（Constraints）的前提下，我們應該選擇熵最大（不確定性最高、最平坦）的分佈。」</strong></p>
+</div></blockquote>
+<p>這樣做的目的不是因為「熵大代表準確」，而是為了<strong>誠實面對未知（保持最大程度的中立與不偏頗）</strong>——除了已知的 <span class="math notranslate nohighlight">\(\mu_x\)</span> 和 <span class="math notranslate nohighlight">\(\sigma_x^2\)</span> 之外，不多做任何沒有根據的猜測。</p>
+</section>
+<hr class="docutils" />
+<section id="q3-model-b">
+<h3><strong>2. 為什麼在 Q3 中，熵最大的 Model B 反而是壞預報？（預報校驗：不能「有資料還裝傻」）</strong><a class="headerlink" href="#q3-model-b" title="連結到這個標頭">#</a></h3>
+<p>到了第三題，情境完全不同了：我們現在是在做<strong>降雨預報校驗（Forecast Verification）</strong>，而且手上有 <span class="math notranslate nohighlight">\(N = 100\)</span> 次真實的大氣觀測頻率 <span class="math notranslate nohighlight">\(q = (0.1, 0.5, 0.4)\)</span>。</p>
+<p>這時候來看兩個模型的物理意義：</p>
+<ul class="simple">
+<li><p><strong>Model B：<span class="math notranslate nohighlight">\(p_B = (1/3, 1/3, 1/3)\)</span>（熵最大，<span class="math notranslate nohighlight">\(S = 1.0986\)</span>）</strong></p></li>
+</ul>
+<p>在三分類預報中，給出 <span class="math notranslate nohighlight">\((1/3, 1/3, 1/3)\)</span> 代表預報員說：<strong>「偏少、正常、偏多的機率通通一樣，我完全不知道會不會下雨！」</strong></p>
+<p>它的預報熵 <span class="math notranslate nohighlight">\(S(p_B)\)</span> 最大，代表這個預報<strong>內部的不確定性最高（最模糊、資訊量為零）</strong>。如果氣象局每天都報 <span class="math notranslate nohighlight">\((1/3, 1/3, 1/3)\)</span>，雖然它的熵最大，但對使用者來說毫無參考價值，而且完全違背了真實氣候背景中「正常與偏多佔了 90%（<span class="math notranslate nohighlight">\(0.5 + 0.4\)</span>）、偏少只佔 10%（<span class="math notranslate nohighlight">\(0.1\)</span>）」的觀測事實。</p>
+<ul class="simple">
+<li><p><strong>Model A：<span class="math notranslate nohighlight">\(p_A = (0.1, 0.5, 0.4)\)</span>（熵較小，<span class="math notranslate nohighlight">\(S = 0.9433\)</span>）</strong></p></li>
+</ul>
+<p>Model A 的熵比較小，代表它<strong>消除了部分不確定性</strong>，明確指出「正常（50%）與偏多（40%）的機率較高，偏少（10%）的機率很低」。更重要的是，這個分佈完美吻合真實觀測 <span class="math notranslate nohighlight">\(q = (0.1, 0.5, 0.4)\)</span>，因此在似然函數 <span class="math notranslate nohighlight">\(l(p)\)</span> 的評分下拿到最高分（<span class="math notranslate nohighlight">\(-94.33 &gt; -109.86\)</span>）。</p>
+</section>
+<hr class="docutils" />
+<section id="q1-q3">
+<h3><strong>3. 把 Q1 與 Q3 統一起來看：約束條件決定一切</strong><a class="headerlink" href="#q1-q3" title="連結到這個標頭">#</a></h3>
+<p>其實 Q1 和 Q3 並沒有矛盾！</p>
+<ul class="simple">
+<li><p>在 <strong>Q1(a)</strong> 中，因為<strong>沒有任何額外資訊</strong>，唯一約束只有 <span class="math notranslate nohighlight">\(\int_a^b p(x)dx = 1\)</span>，所以最大熵分佈是均勻分佈（就像 Model B 的 <span class="math notranslate nohighlight">\(1/3, 1/3, 1/3\)</span>）。</p></li>
+<li><p>在 <strong>Q1(b)</strong> 中，當我們<strong>加入了 <span class="math notranslate nohighlight">\(\mu_x\)</span> 和 <span class="math notranslate nohighlight">\(\sigma_x^2\)</span> 的約束條件</strong>後，我們就不能再選均勻分佈了，而必須在「符合 <span class="math notranslate nohighlight">\(\mu_x\)</span> 與 <span class="math notranslate nohighlight">\(\sigma_x^2\)</span>」的函數裡面挑熵最大的（也就是高斯分佈）。</p></li>
+<li><p>在 <strong>Q3</strong> 中，我們已經透過 <span class="math notranslate nohighlight">\(N = 100\)</span> 次觀測，直接知道了真實世界的類別機率分佈就是 <span class="math notranslate nohighlight">\(q = (0.1, 0.5, 0.4)\)</span>。當真實分佈已經揭曉時，預報的目標是<strong>貼近真實觀測（最大化似然函數 <span class="math notranslate nohighlight">\(l(p)\)</span>）</strong>，而不是閉著眼睛追求最大的模糊度（最大化 <span class="math notranslate nohighlight">\(S(p)\)</span>）。</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>比較維度</p></th>
+<th class="head"><p>第一題 (Q1)：最大熵原理 (MaxEnt)</p></th>
+<th class="head"><p>第三題 (Q3)：最大似然估計 (MLE)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>手上的資訊</strong></p></td>
+<td><p>只有部分統計矩（例如只知區間 <span class="math notranslate nohighlight">\([a,b]\)</span>，或只知 <span class="math notranslate nohighlight">\(\mu_x, \sigma_x^2\)</span>）</p></td>
+<td><p>已有實際觀測到的完整類別頻率 <span class="math notranslate nohighlight">\(q = (0.1, 0.5, 0.4)\)</span><br></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>核心目標</strong></p></td>
+<td><p><strong>避免人為偏見</strong>：在滿足已知條件下，讓未知部分保持最大不確定性</p></td>
+<td><p><strong>吻合觀測事實</strong>：讓預報分佈 <span class="math notranslate nohighlight">\(p\)</span> 越接近真實觀測 <span class="math notranslate nohighlight">\(q\)</span> 越好</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>數學操作</strong></p></td>
+<td><p>在約束條件下 <strong>最大化熵 <span class="math notranslate nohighlight">\(S[p]\)</span></strong><br></p></td>
+<td><p><strong>最大化對數似然 <span class="math notranslate nohighlight">\(l(p)\)</span></strong>（等價於最小化 <span class="math notranslate nohighlight">\(q\)</span> 與 <span class="math notranslate nohighlight">\(p\)</span> 的相對熵 <span class="math notranslate nohighlight">\(D_{\text{KL}}\)</span>）</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>「熵很大」代表什麼？</strong></p></td>
+<td><p>代表沒有亂加額外假設（誠實反映無知）</p></td>
+<td><p>代表預報本身非常模糊、缺乏鑑別度（如 <span class="math notranslate nohighlight">\(1/3, 1/3, 1/3\)</span> 亂猜）</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>簡言之：當你沒有資料時，要選「熵最大」的分佈才不會不懂裝懂（Q1）；但當你已經有真實觀測資料時，還給出「熵最大」的均勻預報，就是在裝傻了（Q3）！</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./homework\hw2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../../lecture/01_Rule101/99_textbook.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">上一頁</p>
+        <p class="prev-next-title">Week 1-3: Rule101</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../hw3/hw3.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">下一頁</p>
+        <p class="prev-next-title">Objective Analysis Week 03 Homework</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目錄
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-maximum-entropy-distributions">Question 1. Maximum-Entropy Distributions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-1">Answer 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a">(a)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b">(b)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-verifying-the-odd-symmetry-of-phi">Question 2. Verifying the Odd Symmetry of <span class="math notranslate nohighlight">\(\phi\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-2">Answer 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">(a)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">(b)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-maximum-likelihood-for-categorical-forecasts">Question 3. Maximum Likelihood for Categorical Forecasts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-3">Answer 3</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">(a)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">(b)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c">(c)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#model-a-model-b-s-p-l-p"><strong>1. 計算 Model A 與 Model B 的 <span class="math notranslate nohighlight">\(S(p)\)</span> 與 <span class="math notranslate nohighlight">\(l(p)\)</span></strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vs"><strong>2. 物理與統計意義解釋：預報內部不確定性 vs. 與觀測的吻合度</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">比較</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1"><strong>1. 為什麼在 Q1 我們要選「熵最大」的分佈？（建立先驗分佈：不「不懂裝懂」）</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q3-model-b"><strong>2. 為什麼在 Q3 中，熵最大的 Model B 反而是壞預報？（預報校驗：不能「有資料還裝傻」）</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-q3"><strong>3. 把 Q1 與 Q3 統一起來看：約束條件決定一切</strong></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+作者： PC YE
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
