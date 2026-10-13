@@ -24,17 +24,17 @@ $$f(z) = \frac{1}{\sqrt{2\pi}}\exp\left(-\frac{z^2}{2}\right)$$
 
 ## 3. 精度形式 (Precision Form)
 
-Gauss 原始推導裡的寫法（見 [02_Gauss_mean_optimal_Gaussian.md](../02_proof/02_Gauss_mean_optimal_Gaussian.md)），用**精度** $h = 1/\sigma^2$ 取代變異數：
+Gauss 原始推導裡的寫法（見 [02_Gauss_mean_optimal_Gaussian.md](../../02_proof/02_Gauss_mean_optimal_Gaussian.md)），用**精度** $h = 1/\sigma^2$ 取代變異數：
 
 $$f(e) = A\,\exp\left(-\frac{h}{2}e^2\right),\qquad h = \frac{1}{\sigma^2},\quad A = \sqrt{\frac{h}{2\pi}}$$
 
 * $e = x - \mu$ : 誤差 (Error)，觀測值偏離真值的量
 
-精度越大越集中。貝氏更新時「精度相加」（見 [06_Gaussian_product_posterior.md](../02_proof/06_Gaussian_product_posterior.md)），用這個寫法最方便。
+精度越大越集中。貝氏更新時「精度相加」（見 [06_Gaussian_product_posterior.md](../../02_proof/06_Gaussian_product_posterior.md)），用這個寫法最方便。
 
 ## 4. 指數二次形式 (Exponential-of-Quadratic Form)
 
-最大熵推導直接得到的形式（見 [01_max_entropy_Gaussian.md](../02_proof/01_max_entropy_Gaussian.md)），三個乘數各對應一條約束：
+最大熵推導直接得到的形式（見 [01_max_entropy_Gaussian.md](../../02_proof/01_max_entropy_Gaussian.md)），三個乘數各對應一條約束：
 
 $$f(x) = \exp\Big(-1 - \lambda_0 - \lambda_1 x - \lambda_2 (x-\mu)^2\Big)$$
 
@@ -55,7 +55,7 @@ $$f = \exp\Big(-1 - \lambda_0 - \lambda_1(\mu + \mu_i) - \lambda_2\,\mu_i^2\Big)
 |---|---|---|
 | 平均 $\mathbb{E}[X]$ | $\mu$ | 對稱性 |
 | 變異數 $\mathbb{E}[(X-\mu)^2]$ | $\sigma^2$ | [02_Gaussian_integrals.md](02_Gaussian_integrals.md) |
-| 偏度 $a_3$ | $0$ | [05_Gaussian_skewness_kurtosis.md](../02_proof/05_Gaussian_skewness_kurtosis.md) |
-| 峰度 $a_4$ | $3$ | [05_Gaussian_skewness_kurtosis.md](../02_proof/05_Gaussian_skewness_kurtosis.md) |
-| 熵 $-\int f\ln f\,dx$ | $\frac{1}{2}\ln(2\pi e\sigma^2)$ | [01_max_entropy_Gaussian.md](../02_proof/01_max_entropy_Gaussian.md) |
+| 偏度 $a_3$ | $0$ | [05_Gaussian_skewness_kurtosis.md](../../02_proof/05_Gaussian_skewness_kurtosis.md) |
+| 峰度 $a_4$ | $3$ | [05_Gaussian_skewness_kurtosis.md](../../02_proof/05_Gaussian_skewness_kurtosis.md) |
+| 熵 $-\int f\ln f\,dx$ | $\frac{1}{2}\ln(2\pi e\sigma^2)$ | [01_max_entropy_Gaussian.md](../../02_proof/01_max_entropy_Gaussian.md) |
 | $\Pr(\lvert z\rvert \le 1, 2, 3)$ | $68.27\%,\ 95.45\%,\ 99.73\%$ | 查表 |

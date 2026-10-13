@@ -14,7 +14,7 @@
   * $\lambda_n$ : 第 $n$ 條約束的乘數 (Lagrange multiplier)，本證明記為 $\lambda_0, \lambda_1, \lambda_2$
   * $\mathcal{L}$ : Lagrangian，把目標與約束合成一個函數
 
-* **【已知 2】[高斯積分 (Gaussian Integrals)](../01_tool/02_Gaussian_integrals.md)：** 本證明用到其中三條（$a > 0$）。
+* **【已知 2】[高斯積分 (Gaussian Integrals)](../01_tool/01_Gaussian/02_Gaussian_integrals.md)：** 本證明用到其中三條（$a > 0$）。
 
   * (a) 
   

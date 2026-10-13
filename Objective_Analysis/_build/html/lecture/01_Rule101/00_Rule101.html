@@ -1,0 +1,1410 @@
+
+<!DOCTYPE html>
+
+
+<html lang="zh-TW" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Rule 101: From Maximum Entropy to Bayes』 Theorem (Rule101：從最大熵到貝氏定理) &#8212; Objective Analysis</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=4cca277b" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=7da51243"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/translations.js?v=1fe8cbde"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lecture/01_Rule101/00_Rule101';</script>
+    <link rel="canonical" href="https://derek1403.github.io/PC-NTU/Objective_Analysis/_build/html/lecture/01_Rule101/00_Rule101.html" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜尋" href="../../search.html" />
+    <link rel="next" title="高斯分布 (Gaussian Distribution)" href="01_tool/01_Gaussian/01_Gaussian_distribution.html" />
+    <link rel="prev" title="Q17｜應用壓軸：三能階雷射的最大熵分布與負絕對溫度" href="../00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q17_three_level_negative_temperature.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="zh-TW"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Objective Analysis</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="搜尋" aria-label="搜尋" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">搜尋</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Objective Analysis (客觀分析)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lecture</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../00_Chapter0/00_The_Idea_Behind_the_Course.html">Chapter 0: The Idea Behind the Course</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00_Chapter0/01_tool/01_Lagrange_multiplier/01_basic_use.html">Find extreme values under a constraint, using Lagrange Multiplier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_Chapter0/01_tool/01_Lagrange_multiplier/02_advanced_use.html">Find extreme values under multiple constraints, using Lagrange Multipliers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_Chapter0/01_tool/01_Lagrange_multiplier/03_proof.html">拉格朗日乘數法的證明 (Proof of the Lagrange Multiplier Method)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_Chapter0/01_tool/01_Lagrange_multiplier/04_exceptions.html">拉格朗日乘數法的適用範圍 (When Does It Apply?)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q01_quadratic_on_line.html">Q01｜基本題：二次函數在直線上的極值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q02_cubic_on_ellipse.html">Q02｜基礎暖身：橢圓上的 <span class="math notranslate nohighlight">\(x^2y\)</span> 與分類討論</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q03_two_linear_constraints.html">Q03｜雙重限制條件：兩平面交線上離原點最近的點</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q04_symmetric_on_sphere.html">Q04｜進階對稱：球面上的 <span class="math notranslate nohighlight">\(xy+yz+zx\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q05_cubic_on_unit_sphere.html">Q05｜微積分期末壓軸：單位球上的 <span class="math notranslate nohighlight">\(x^2y+yz^2\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q06_hyperboloid_plane_distance.html">Q06｜微積分期末壓軸：雙曲面與平面交線到原點的距離</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q07_box_min_surface.html">Q07｜材料科學：固定體積下表面積最小的長方體</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q08_1DVar_data_assimilation.html">Q08｜大氣科學：一維變分資料同化 (1D-Var)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q09_QG_min_kinetic_energy.html">Q09｜大氣動力：熱力風平衡下的最小動能配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q10_Thomson_conducting_spheres.html">Q10｜電磁學：孤立導體球的靜電能最小化 (Thomson’s Theorem)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q11_wind_max_transport.html">Q11｜流體力學：固定動能下使輸送量最大的風場</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q12_entropy_max_equilibrium.html">Q12｜熱力學：固定總能量下的熵最大與熱平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q13_hydrogen_tank_min_mass.html">Q13｜結構工程：異質材料儲氫槽的輕量化設計</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q14_inertia_principal_axes.html">Q14｜古典力學：非對稱衛星的慣量主軸</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q15_Gibbs_min_equilibrium.html">Q15｜化學熱力學：吉布斯自由能最小化與化學平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q16_quadratic_form_two_constraints.html">Q16｜大氣／物理壓軸：球面＋平面上的二次型極值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q17_three_level_negative_temperature.html">Q17｜應用壓軸：三能階雷射的最大熵分布與負絕對溫度</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Rule 101: From Maximum Entropy to Bayes』 Theorem (Rule101：從最大熵到貝氏定理)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="01_tool/01_Gaussian/01_Gaussian_distribution.html">高斯分布 (Gaussian Distribution)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_tool/01_Gaussian/02_Gaussian_integrals.html">高斯積分 (Gaussian Integrals)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_tool/03_expectation_rules.html">期望值與變異數的運算規則 (Rules for Expectation and Variance)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_tool/02_Bayes/01_problems/01_weather_prediction.html">Conditional Probability and Bayes』 Theorem in Weather Prediction (條件機率與貝氏定理：由「今天下雨」推估「明天下雨」)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_tool/02_Bayes/01_problems/02_COVID-19.html">Base Rate and Rapid Testing in COVID-19 Screening (基本比率：快篩陽性真的染疫的機率)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_tool/02_Bayes/01_problems/03_Monty_Hall_problem.html">Monty Hall Problem (三門問題：主持人的行動也是資訊)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_tool/02_Bayes/01_problems/04_Data_Assimilation.html">Data Assimilation as Bayes』 Theorem (資料同化：用觀測修正模式預報)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_proof/01_max_entropy_Gaussian.html">已知平均與變異數時，最大熵分布是高斯分布 (Maximum Entropy with Known Mean and Variance)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_proof/02_Gauss_mean_optimal_Gaussian.html">「平均值是最佳估計」推出高斯分布 (Gauss: Optimal Mean Implies Gaussian Errors)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_proof/03_standard_error.html">樣本平均的標準誤 (Standard Error of the Sample Mean)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_proof/04_sample_variance_N-1.html">樣本變異數為什麼除以 <span class="math notranslate nohighlight">\(N-1\)</span> (Why the Sample Variance Divides by <span class="math notranslate nohighlight">\(N-1\)</span>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_proof/05_Gaussian_skewness_kurtosis.html">高斯分布的偏度為 0、峰度為 3 (Skewness and Kurtosis of the Gaussian)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_proof/06_Gaussian_product_posterior.html">高斯先驗 × 高斯概似 = 高斯後驗 (Gaussian Prior × Gaussian Likelihood → Gaussian Posterior)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_notation_X_vs_x.html">大寫 <span class="math notranslate nohighlight">\(X\)</span> 與小寫 <span class="math notranslate nohighlight">\(x\)</span> (Random Variable vs. Observed Value)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="99_textbook.html">Week 1-3: Rule101</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../homework/hw2/hw2.html">Objective Analysis Week 02 Homework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../homework/hw3/hw3.html">Objective Analysis Week 03 Homework</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/derek1403/PC-NTU" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="來源儲存庫"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="下載此頁面">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/lecture/01_Rule101/00_Rule101.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="下載原始檔"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="列印成 PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="全螢幕模式"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="搜尋" aria-label="搜尋" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Rule 101: From Maximum Entropy to Bayes』 Theorem (Rule101：從最大熵到貝氏定理)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目錄 </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roadmap">0. Roadmap (本章地圖)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#information-entropy">1. Information Entropy (資訊熵)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.1 資訊量</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.2 資訊熵</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.3 熵大代表什麼</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-the-gaussian">2. Why the Gaussian (為什麼是高斯分布)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#route-1">2.1 Route 1：已知平均與變異數時的最大熵</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#route-2">2.2 Route 2：要求算術平均是最佳估計</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">2.3 高斯分布的工具</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moments">3. Moments (動差：平均、變異數與高階動差)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-rules">4. Probability Rules (機率的基本規則)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#complement">4.1 補集 (Complement)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intersection-union">4.2 交集與聯集 (Intersection &amp; Union)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-probability-multiplicative-law">4.3 條件機率與乘法規則 (Conditional Probability &amp; Multiplicative Law)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#independence">4.4 獨立 (Independence)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bayes-theorem">5. Bayes』 Theorem (貝氏定理)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">5.1 直覺：同樣的證據，在不同背景下分量不同</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">5.2 推導：乘法規則換個方向</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#law-of-total-probability">5.3 分母：全機率公式 (Law of Total Probability)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">5.4 名詞</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">5.5 解題五步驟（課本的做法）</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-bayes-theorem">6. Continuous Bayes』 Theorem (連續形式的貝氏定理)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-assimilation-as-bayes-theorem">7. Data Assimilation as Bayes』 Theorem (資料同化就是貝氏定理)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-bayes">7.1 Scalar Bayes (純量貝氏：一個點的一次更新)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kalman-filter">7.2 Kalman Filter (時間上重複的貝氏更新)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multivariate-kalman-filter">7.3 Multivariate Kalman Filter (多變數：整個模式狀態)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-var-4d-var">7.4 3D-Var / 4D-Var (變分法：只找後驗的最大值)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ensemble-kalman-filter">7.5 Ensemble Kalman Filter (系集卡爾曼濾波)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-philosophy">8. Probability Philosophy (頻率學派與貝氏學派)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">8.1 例子：2025 是史上最暖的一年嗎？</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#index">9. Index (本章工具、證明與例題)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coming-next">10. Coming Next (講義後半，尚未整理)</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="rule-101-from-maximum-entropy-to-bayes-theorem-rule101">
+<h1>Rule 101: From Maximum Entropy to Bayes』 Theorem (Rule101：從最大熵到貝氏定理)<a class="headerlink" href="#rule-101-from-maximum-entropy-to-bayes-theorem-rule101" title="連結到這個標頭">#</a></h1>
+<p>在 <a class="reference internal" href="../00_Chapter0/00_The_Idea_Behind_the_Course.html"><span class="std std-doc">Chapter 0</span></a> 我們知道「客觀」＝把已知寫成約束，再在約束內做最佳化，工具是 Lagrange multiplier。
+本章回答兩個問題：</p>
+<ol class="arabic simple">
+<li><p><strong>要最佳化的函數是什麼？</strong> 資訊熵。在已知條件之外，選擇熵最大、也就是隱含假設最少的分布 → 得到<strong>高斯分布</strong>。</p></li>
+<li><p><strong>拿到新資料後怎麼更新判斷？</strong> 貝氏定理。先驗 × 概似 → 後驗；兩個高斯相乘就是<strong>資料同化</strong>。</p></li>
+</ol>
+<p>本檔只放<strong>概念與結論</strong>；推導放在 <a class="reference external" href="https://github.com/derek1403/PC-NTU/tree/main/Objective_Analysis/lecture/01_Rule101/02_proof">02_proof/</a>，例題放在 <a class="reference external" href="https://github.com/derek1403/PC-NTU/tree/main/Objective_Analysis/lecture/01_Rule101/01_tool/02_Bayes/01_problems">01_tool/02_Bayes/01_problems/</a>，圖放在 <a class="reference external" href="https://github.com/derek1403/PC-NTU/tree/main/Objective_Analysis/lecture/01_Rule101/00_pic">00_pic/</a>。</p>
+<section id="roadmap">
+<h2>0. Roadmap (本章地圖)<a class="headerlink" href="#roadmap" title="連結到這個標頭">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>部分</p></th>
+<th class="head"><p>節</p></th>
+<th class="head"><p>核心問題</p></th>
+<th class="head"><p>一句話結論</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>A. 為什麼是高斯</p></td>
+<td><p><a class="reference internal" href="#information-entropy">1</a>、<a class="reference internal" href="#why-the-gaussian">2</a></p></td>
+<td><p>只知道 <span class="math notranslate nohighlight">\(\mu, \sigma^2\)</span> 時該選哪個分布？</p></td>
+<td><p>熵最大的就是高斯</p></td>
+</tr>
+<tr class="row-odd"><td><p>B. 描述分布</p></td>
+<td><p><a class="reference internal" href="#moments">3</a></p></td>
+<td><p>怎麼用數字描述一個分布？</p></td>
+<td><p>動差 = 以 PDF 加權的期望值</p></td>
+</tr>
+<tr class="row-even"><td><p>C. 機率規則</p></td>
+<td><p><a class="reference internal" href="#probability-rules">4</a></p></td>
+<td><p>兩個事件一起發生的機率？</p></td>
+<td><p>乘法規則；獨立才可以直接相乘</p></td>
+</tr>
+<tr class="row-odd"><td><p>D. 貝氏定理</p></td>
+<td><p><a class="reference internal" href="#bayes-theorem">5</a></p></td>
+<td><p>看到證據後怎麼更新信念？</p></td>
+<td><p>後驗 ∝ 概似 × 先驗；別忘了基本比率</p></td>
+</tr>
+<tr class="row-even"><td><p>E. 連續與資料同化</p></td>
+<td><p><a class="reference internal" href="#continuous-bayes-theorem">6</a>、<a class="reference internal" href="#data-assimilation-as-bayes-theorem">7</a></p></td>
+<td><p>模式預報 + 觀測 → 最佳估計？</p></td>
+<td><p>高斯 × 高斯 = 高斯，權重就是 Kalman gain</p></td>
+</tr>
+<tr class="row-odd"><td><p>F. 兩種機率觀</p></td>
+<td><p><a class="reference internal" href="#probability-philosophy">8</a></p></td>
+<td><p>同一組資料，機率描述的是資料還是假設？</p></td>
+<td><p>頻率學派 <span class="math notranslate nohighlight">\(\Pr(\text{data} \mid H)\)</span>、貝氏學派 <span class="math notranslate nohighlight">\(\Pr(H \mid \text{data})\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="information-entropy">
+<h2>1. Information Entropy (資訊熵)<a class="headerlink" href="#information-entropy" title="連結到這個標頭">#</a></h2>
+<section id="id1">
+<h3>1.1 資訊量<a class="headerlink" href="#id1" title="連結到這個標頭">#</a></h3>
+<p>先定義一件事「帶有多少資訊」：</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f(x)\)</span> 大：常發生，<strong>單次</strong>資訊量少（例：「冬天會下雨」，不知道是哪一天）</p></li>
+<li><p><span class="math notranslate nohighlight">\(f(x)\)</span> 小：罕見，<strong>單次</strong>資訊量多（例：「冬天下了 300 mm/day」，幾乎能鎖定是哪一天）</p></li>
+</ul>
+<p>所以資訊量取 <span class="math notranslate nohighlight">\(-\ln f(x)\)</span>：機率越小越大，而且獨立事件的資訊量可以相加。</p>
+</section>
+<section id="id2">
+<h3>1.2 資訊熵<a class="headerlink" href="#id2" title="連結到這個標頭">#</a></h3>
+<p><strong>資訊熵</strong>是資訊量的期望值：</p>
+<div class="math notranslate nohighlight">
+\[H[f] = -\int_{-\infty}^{\infty} f(x)\ln f(x)\,dx = \mathbb{E}\big[-\ln f(X)\big]\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f(x)\)</span> : 機率密度 (Probability density)</p></li>
+<li><p><span class="math notranslate nohighlight">\(-\ln f(x)\)</span> : 資訊量 (Information content)</p></li>
+<li><p><span class="math notranslate nohighlight">\(H[f]\)</span> : 資訊熵 (Information entropy)，整體資訊量的期望值</p></li>
+</ul>
+<p>積分範圍是 <span class="math notranslate nohighlight">\(f\)</span> 可能不為零的所有 <span class="math notranslate nohighlight">\(x\)</span>（支撐集）；變數在整條實數線上時就是 <span class="math notranslate nohighlight">\((-\infty, \infty)\)</span>，有界的量（例如降雨 <span class="math notranslate nohighlight">\(\ge 0\)</span>）就只積有定義的那一段。</p>
+</section>
+<section id="id3">
+<h3>1.3 熵大代表什麼<a class="headerlink" href="#id3" title="連結到這個標頭">#</a></h3>
+<p>熵越大，分布越「攤平」、越沒有偏好，代表我們<strong>多假設的東西越少</strong>。
+所以「只用已知、不多做假設」寫成數學，就是<strong>最大化</strong>熵。</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>物理量</p></th>
+<th class="head"><p>數學式</p></th>
+<th class="head"><p>描述對象</p></th>
+<th class="head"><p>隨 <span class="math notranslate nohighlight">\(p\)</span> 變大（<span class="math notranslate nohighlight">\(0 \to 1\)</span>）的行為</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>資訊量 (驚喜度)</strong></p></td>
+<td><p><span class="math notranslate nohighlight">\(I(p) = -\ln p\)</span></p></td>
+<td><p><strong>單一事件</strong>發生時帶來的驚喜</p></td>
+<td><p><strong>永遠遞減</strong>（從 <span class="math notranslate nohighlight">\(\infty\)</span> 一路降到 <span class="math notranslate nohighlight">\(0\)</span>）</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>單項對熵的貢獻</strong></p></td>
+<td><p><span class="math notranslate nohighlight">\(g(p) = -p\ln p\)</span></p></td>
+<td><p><strong>單一事件</strong>的「發生機率 <span class="math notranslate nohighlight">\(\times\)</span> 驚喜度」</p></td>
+<td><p><strong>先升後降</strong>（在 <span class="math notranslate nohighlight">\(p = 1/e \approx 0.368\)</span> 達最高點，兩端 <span class="math notranslate nohighlight">\(0\)</span> 與 <span class="math notranslate nohighlight">\(1\)</span> 皆為 <span class="math notranslate nohighlight">\(0\)</span>）</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>資訊熵 (總不確定性)</strong></p></td>
+<td><p><span class="math notranslate nohighlight">\(H = \sum_i -p_i\ln p_i\)</span></p></td>
+<td><p><strong>整個機率分布</strong>（所有事件的總和）</p></td>
+<td><p>取決於分布有多平均：<strong>越平均（越攤平）越大，越集中越小</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><img alt="資訊量與單項熵貢獻" src="../../_images/entropy_terms.png" /></p>
+</section>
+</section>
+<section id="why-the-gaussian">
+<h2>2. Why the Gaussian (為什麼是高斯分布)<a class="headerlink" href="#why-the-gaussian" title="連結到這個標頭">#</a></h2>
+<p>兩條完全獨立的路走到同一條曲線，這就是整門課以高斯分布為中心的原因。</p>
+<section id="route-1">
+<h3>2.1 Route 1：已知平均與變異數時的最大熵<a class="headerlink" href="#route-1" title="連結到這個標頭">#</a></h3>
+<p>統計檢定最常碰到的已知條件是平均 <span class="math notranslate nohighlight">\(\mu\)</span> 與變異數 <span class="math notranslate nohighlight">\(\sigma^2\)</span>，加上機率和為 1，共三條約束：</p>
+<div class="math notranslate nohighlight">
+\[\int f\,dx = 1,\qquad \int x\,f\,dx = \mu,\qquad \int (x-\mu)^2 f\,dx = \sigma^2\]</div>
+<p>在這三條約束下最大化 <span class="math notranslate nohighlight">\(H[f]\)</span>（Lagrange multiplier，未知數是<strong>整個函數 <span class="math notranslate nohighlight">\(f\)</span></strong>），得到</p>
+<div class="math notranslate nohighlight">
+\[f(x) = \frac{1}{\sigma\sqrt{2\pi}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)\]</div>
+<p><strong>知道 mean 與 variance 之後，熵最大的分布就是高斯分布。</strong></p>
+<ul class="simple">
+<li><p>證明：<a class="reference internal" href="02_proof/01_max_entropy_Gaussian.html"><span class="std std-doc">01_max_entropy_Gaussian.md</span></a>（做法：把 <span class="math notranslate nohighlight">\(f\)</span> 離散成 <span class="math notranslate nohighlight">\(p_i\)</span>，就變回一般的有限維 Lagrange）</p></li>
+</ul>
+</section>
+<section id="route-2">
+<h3>2.2 Route 2：要求算術平均是最佳估計<a class="headerlink" href="#route-2" title="連結到這個標頭">#</a></h3>
+<p>用多次有誤差的量測估計同一個量時，若要求「算術平均永遠是最佳（最大概似）估計」，誤差分布也只能是高斯。</p>
+<ul class="simple">
+<li><p>證明：<a class="reference internal" href="02_proof/02_Gauss_mean_optimal_Gaussian.html"><span class="std std-doc">02_Gauss_mean_optimal_Gaussian.md</span></a></p></li>
+</ul>
+</section>
+<section id="id4">
+<h3>2.3 高斯分布的工具<a class="headerlink" href="#id4" title="連結到這個標頭">#</a></h3>
+<ul class="simple">
+<li><p>四種寫法與性質速查：<a class="reference internal" href="01_tool/01_Gaussian/01_Gaussian_distribution.html"><span class="std std-doc">01_Gaussian_distribution.md</span></a></p></li>
+<li><p>正規化與動差都靠的積分 <span class="math notranslate nohighlight">\(\int x^n e^{-ax^2}dx\)</span>：<a class="reference internal" href="01_tool/01_Gaussian/02_Gaussian_integrals.html"><span class="std std-doc">02_Gaussian_integrals.md</span></a></p></li>
+</ul>
+</section>
+</section>
+<section id="moments">
+<h2>3. Moments (動差：平均、變異數與高階動差)<a class="headerlink" href="#moments" title="連結到這個標頭">#</a></h2>
+<p>每一個動差都是以 PDF 加權的期望值：</p>
+<div class="math notranslate nohighlight">
+\[m_r = \mathbb{E}\big[(X-\mu)^r\big] = \int_{-\infty}^{\infty} (x-\mu)^r f(x)\,dx\]</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(r\)</span></p></th>
+<th class="head"><p>名稱</p></th>
+<th class="head"><p>意義</p></th>
+<th class="head"><p>高斯的值</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>平均 (Mean) <span class="math notranslate nohighlight">\(\mu\)</span></p></td>
+<td><p>分布的中心</p></td>
+<td><p><span class="math notranslate nohighlight">\(\mu\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>變異數 (Variance) <span class="math notranslate nohighlight">\(\sigma^2\)</span></p></td>
+<td><p>分布的寬度</p></td>
+<td><p><span class="math notranslate nohighlight">\(\sigma^2\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>偏度 (Skewness) <span class="math notranslate nohighlight">\(m_3/\sigma^3\)</span></p></td>
+<td><p>左右是否對稱</p></td>
+<td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>峰度 (Kurtosis) <span class="math notranslate nohighlight">\(m_4/\sigma^4\)</span></p></td>
+<td><p>尾巴有多厚</p></td>
+<td><p><span class="math notranslate nohighlight">\(3\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>高斯分布的特別之處：<strong>只要前兩個動差 <span class="math notranslate nohighlight">\(\mu, \sigma^2\)</span> 就完全決定整個分布</strong>。</p>
+<p>從樣本估計時要注意的兩件事：</p>
+<ul class="simple">
+<li><p>樣本平均的不確定性是<strong>標準誤</strong> <span class="math notranslate nohighlight">\(\sigma/\sqrt{N}\)</span>：<a class="reference internal" href="02_proof/03_standard_error.html"><span class="std std-doc">03_standard_error.md</span></a></p></li>
+<li><p>樣本變異數要除以 <span class="math notranslate nohighlight">\(N-1\)</span> 才不偏：<a class="reference internal" href="02_proof/04_sample_variance_N-1.html"><span class="std std-doc">04_sample_variance_N-1.md</span></a></p></li>
+<li><p>高斯的偏度 <span class="math notranslate nohighlight">\(0\)</span>、峰度 <span class="math notranslate nohighlight">\(3\)</span>：<a class="reference internal" href="02_proof/05_Gaussian_skewness_kurtosis.html"><span class="std std-doc">05_Gaussian_skewness_kurtosis.md</span></a></p></li>
+<li><p>以上都用到的運算規則：<a class="reference internal" href="01_tool/03_expectation_rules.html"><span class="std std-doc">03_expectation_rules.md</span></a></p></li>
+<li><p>符號：大寫 <span class="math notranslate nohighlight">\(X\)</span> 是隨機變數、小寫 <span class="math notranslate nohighlight">\(x\)</span> 是實現值，見 <a class="reference internal" href="03_notation_X_vs_x.html"><span class="std std-doc">03_notation_X_vs_x.md</span></a></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="probability-rules">
+<h2>4. Probability Rules (機率的基本規則)<a class="headerlink" href="#probability-rules" title="連結到這個標頭">#</a></h2>
+<section id="complement">
+<h3>4.1 補集 (Complement)<a class="headerlink" href="#complement" title="連結到這個標頭">#</a></h3>
+<p><span class="math notranslate nohighlight">\(\Pr(E)\)</span> 代表事件 <span class="math notranslate nohighlight">\(E\)</span> 發生的機率，<span class="math notranslate nohighlight">\(\Pr(\widetilde{E})\)</span> 代表事件 <span class="math notranslate nohighlight">\(E\)</span> 不發生的機率：</p>
+<div class="math notranslate nohighlight">
+\[\Pr(E) + \Pr(\widetilde{E}) = 1\]</div>
+<p>在給定 <span class="math notranslate nohighlight">\(B\)</span> 的條件下也一樣成立（解題時很常用）：</p>
+<div class="math notranslate nohighlight">
+\[\Pr(E \mid B) + \Pr(\widetilde{E} \mid B) = 1\]</div>
+</section>
+<section id="intersection-union">
+<h3>4.2 交集與聯集 (Intersection &amp; Union)<a class="headerlink" href="#intersection-union" title="連結到這個標頭">#</a></h3>
+<ul class="simple">
+<li><p>交集 <span class="math notranslate nohighlight">\(\Pr(E_1 \cap E_2)\)</span>：兩件事<strong>都</strong>發生</p></li>
+<li><p>聯集 <span class="math notranslate nohighlight">\(\Pr(E_1 \cup E_2)\)</span>：<strong>至少一件</strong>發生</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\Pr(E_1 \cup E_2) = \Pr(E_1) + \Pr(E_2) - \Pr(E_1 \cap E_2)\]</div>
+<p><img alt="交集與聯集" src="../../_images/venn_diagram.png" /></p>
+<p>若兩事件<strong>互斥</strong>（不會同時發生），則 <span class="math notranslate nohighlight">\(\Pr(E_1 \cap E_2) = 0\)</span>，聯集直接相加。</p>
+</section>
+<section id="conditional-probability-multiplicative-law">
+<h3>4.3 條件機率與乘法規則 (Conditional Probability &amp; Multiplicative Law)<a class="headerlink" href="#conditional-probability-multiplicative-law" title="連結到這個標頭">#</a></h3>
+<p><span class="math notranslate nohighlight">\(\Pr(A \mid B)\)</span> 代表「給定 <span class="math notranslate nohighlight">\(B\)</span> 已經發生，<span class="math notranslate nohighlight">\(A\)</span> 發生的機率」：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\Pr(A \mid B) &amp;=&amp; \frac{\Pr(A \cap B)}{\Pr(B)} \\
+\Pr(A \cap B) &amp;=&amp; \Pr(A \mid B)\Pr(B) = \Pr(B \mid A)\Pr(A)
+\end{gather*}\end{split}\]</div>
+<p>第二行就是<strong>乘法規則</strong>：交集可以從任一邊「先發生」的順序去算。</p>
+</section>
+<section id="independence">
+<h3>4.4 獨立 (Independence)<a class="headerlink" href="#independence" title="連結到這個標頭">#</a></h3>
+<p>若 <span class="math notranslate nohighlight">\(A\)</span> 與 <span class="math notranslate nohighlight">\(B\)</span> 獨立（知道 <span class="math notranslate nohighlight">\(B\)</span> 不改變 <span class="math notranslate nohighlight">\(A\)</span> 的機率）：</p>
+<div class="math notranslate nohighlight">
+\[\Pr(A \mid B) = \Pr(A) \quad\Longleftrightarrow\quad \Pr(A \cap B) = \Pr(A)\Pr(B)\]</div>
+<p><strong>不獨立時直接相乘會算錯。</strong> 天氣有持續性，所以「今天下雨」與「明天下雨」不獨立。</p>
+<ul class="simple">
+<li><p>例題：<a class="reference internal" href="01_tool/02_Bayes/01_problems/01_weather_prediction.html"><span class="std std-doc">01_weather_prediction.md</span></a>（乘法規則、全機率公式、獨立性判斷）</p></li>
+</ul>
+</section>
+</section>
+<section id="bayes-theorem">
+<h2>5. Bayes』 Theorem (貝氏定理)<a class="headerlink" href="#bayes-theorem" title="連結到這個標頭">#</a></h2>
+<section id="id5">
+<h3>5.1 直覺：同樣的證據，在不同背景下分量不同<a class="headerlink" href="#id5" title="連結到這個標頭">#</a></h3>
+<ul class="simple">
+<li><p>給定<strong>高雄人帶傘</strong>，問下雨機率：高雄平常很少下雨，會帶傘通常代表今天真的很可能下雨。</p></li>
+<li><p>給定<strong>台北人帶傘</strong>，問下雨機率：台北常下雨、很多人天天帶傘，看到帶傘幾乎無法推斷今天是否下雨。</p></li>
+</ul>
+<p>「帶傘」這個證據有多少分量，取決於<strong>背景機率（基本比率, base rate）</strong>。貝氏定理就是把這件事寫成公式。</p>
+</section>
+<section id="id6">
+<h3>5.2 推導：乘法規則換個方向<a class="headerlink" href="#id6" title="連結到這個標頭">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\Pr(A \mid B)\Pr(B) &amp;=&amp; \Pr(A \cap B) \\
+\Pr(A \mid B)\Pr(B) &amp;=&amp; \Pr(B \mid A)\Pr(A) \\
+\Pr(A \mid B) &amp;=&amp; \Pr(B \mid A)\frac{\Pr(A)}{\Pr(B)}
+\end{gather*}\end{split}\]</div>
+<p>貝氏定理把 <span class="math notranslate nohighlight">\(\Pr(B \mid A)\)</span> 翻成 <span class="math notranslate nohighlight">\(\Pr(A \mid B)\)</span>。</p>
+</section>
+<section id="law-of-total-probability">
+<h3>5.3 分母：全機率公式 (Law of Total Probability)<a class="headerlink" href="#law-of-total-probability" title="連結到這個標頭">#</a></h3>
+<p>分母 <span class="math notranslate nohighlight">\(\Pr(B)\)</span> 通常不直接知道，要把<strong>原因</strong>拆開來加總。
+若 <span class="math notranslate nohighlight">\(E_1, \dots, E_N\)</span> <strong>互斥且涵蓋所有可能</strong>（一組分割, partition）：</p>
+<div class="math notranslate nohighlight">
+\[\Pr(B) = \sum_{i=1}^{N} \Pr(B \mid E_i)\Pr(E_i)\]</div>
+<p>代回去就是常用的完整形式：</p>
+<div class="math notranslate nohighlight">
+\[\Pr(E_j \mid B) = \frac{\Pr(B \mid E_j)\Pr(E_j)}{\sum_{i=1}^{N} \Pr(B \mid E_i)\Pr(E_i)}\]</div>
+<blockquote>
+<div><p><strong>注意下標加在誰身上</strong>：被拆開的是「原因」<span class="math notranslate nohighlight">\(E_i\)</span>（例如有病／沒病、獎品在哪扇門），不是證據 <span class="math notranslate nohighlight">\(B\)</span>。
+所以分母是 <span class="math notranslate nohighlight">\(\sum_i \Pr(B \mid E_i)\Pr(E_i)\)</span>，而不是 <span class="math notranslate nohighlight">\(\sum_i \Pr(B_i)\)</span>。
+最常見的兩項版本：<span class="math notranslate nohighlight">\(\Pr(B) = \Pr(B \mid A)\Pr(A) + \Pr(B \mid \widetilde{A})\Pr(\widetilde{A})\)</span>。</p>
+</div></blockquote>
+</section>
+<section id="id7">
+<h3>5.4 名詞<a class="headerlink" href="#id7" title="連結到這個標頭">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+\Pr(A \mid B) = \Pr(B \mid A)\frac{\Pr(A)}{\Pr(B)}
+\]</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>符號</p></th>
+<th class="head"><p>名稱</p></th>
+<th class="head"><p>意義</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\Pr(A)\)</span></p></td>
+<td><p>先驗 (Prior, a priori)</p></td>
+<td><p>看到證據<strong>之前</strong>對 <span class="math notranslate nohighlight">\(A\)</span> 的信念</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\Pr(B \mid A)\)</span></p></td>
+<td><p>概似 (Likelihood)</p></td>
+<td><p>若 <span class="math notranslate nohighlight">\(A\)</span> 為真，看到證據 <span class="math notranslate nohighlight">\(B\)</span> 的機率</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\Pr(B)\)</span></p></td>
+<td><p>證據 (Evidence)</p></td>
+<td><p>不論原因為何，看到 <span class="math notranslate nohighlight">\(B\)</span> 的總機率（正規化常數）</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\Pr(A \mid B)\)</span></p></td>
+<td><p>後驗 (Posterior, a posteriori)</p></td>
+<td><p>看到證據<strong>之後</strong>對 <span class="math notranslate nohighlight">\(A\)</span> 的信念</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="id8">
+<h3>5.5 解題五步驟（課本的做法）<a class="headerlink" href="#id8" title="連結到這個標頭">#</a></h3>
+<ol class="arabic simple">
+<li><p>定義事件（含補集）</p></li>
+<li><p>寫出要求什麼，例如 <span class="math notranslate nohighlight">\(\Pr(C \mid +)\)</span></p></li>
+<li><p>列出題目給的所有機率</p></li>
+<li><p>檢查假設：分母用的事件是否互斥且涵蓋所有可能</p></li>
+<li><p>代入貝氏定理</p></li>
+</ol>
+<p>例題（都照這五步驟寫成 <strong>Background → Rule 101 → Solution → Review</strong>）：</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>例題</p></th>
+<th class="head"><p>重點</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="01_tool/02_Bayes/01_problems/01_weather_prediction.html"><span class="std std-doc">01_weather_prediction.md</span></a></p></td>
+<td><p>乘法規則、全機率公式、獨立性</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="01_tool/02_Bayes/01_problems/02_COVID-19.html"><span class="std std-doc">02_COVID-19.md</span></a></p></td>
+<td><p>基本比率：檢驗再準，罕見疾病的陽性多半是偽陽性</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="01_tool/02_Bayes/01_problems/03_Monty_Hall_problem.html"><span class="std std-doc">03_Monty_Hall_problem.md</span></a></p></td>
+<td><p>主持人的行動是資訊：換門贏 <span class="math notranslate nohighlight">\(2/3\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="01_tool/02_Bayes/01_problems/04_Data_Assimilation.html"><span class="std std-doc">04_Data_Assimilation.md</span></a></p></td>
+<td><p>連續版：預報 + 觀測 → 分析場</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>課本另一個例子（計程車目擊者）：85% 計程車是綠色、15% 藍色，目擊者辨色正確率 80%，說看到藍車 → 真的是藍車的機率只有</p>
+<div class="math notranslate nohighlight">
+\[\Pr(B \mid W) = \frac{0.8 \times 0.15}{0.8 \times 0.15 + 0.2 \times 0.85} \approx 0.41\]</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="continuous-bayes-theorem">
+<h2>6. Continuous Bayes』 Theorem (連續形式的貝氏定理)<a class="headerlink" href="#continuous-bayes-theorem" title="連結到這個標頭">#</a></h2>
+<p>把機率換成機率密度、加總換成積分：</p>
+<div class="math notranslate nohighlight">
+\[f(x \mid y) = \frac{f(y \mid x)\,f(x)}{f(y)}, \qquad f(y) = \int_{-\infty}^{\infty} f(y \mid x)\,f(x)\,dx\]</div>
+<p>在大氣科學裡，<span class="math notranslate nohighlight">\(x\)</span> 是<strong>真實狀態</strong>（要估計的）、<span class="math notranslate nohighlight">\(y\)</span> 是<strong>觀測值</strong>（手上的資料）：</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>符號</p></th>
+<th class="head"><p>統計學術語</p></th>
+<th class="head"><p>資料同化對應</p></th>
+<th class="head"><p>例子（500 hPa 溫度）</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(f(x)\)</span></p></td>
+<td><p>先驗 (A priori)</p></td>
+<td><p>背景場 (Background)：昨天的預報或歷史統計</p></td>
+<td><p>模式預報約 <span class="math notranslate nohighlight">\(-20^{\circ}\mathrm{C}\)</span>，帶有預報誤差</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(f(y \mid x)\)</span></p></td>
+<td><p>概似 (Likelihood)</p></td>
+<td><p>觀測誤差模型：若真值是 <span class="math notranslate nohighlight">\(x\)</span>，儀器讀到 <span class="math notranslate nohighlight">\(y\)</span> 的機率（常假設高斯 <span class="math notranslate nohighlight">\(\propto e^{-(y-x)^2/2\sigma_o^2}\)</span>）</p></td>
+<td><p>探空儀誤差約 <span class="math notranslate nohighlight">\(\pm 2^{\circ}\mathrm{C}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(f(y)\)</span></p></td>
+<td><p>證據 (Evidence)</p></td>
+<td><p>正規化常數，與 <span class="math notranslate nohighlight">\(x\)</span> 無關</p></td>
+<td><p>不論真值為何，讀到 <span class="math notranslate nohighlight">\(-17^{\circ}\mathrm{C}\)</span> 的總機率</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(f(x \mid y)\)</span></p></td>
+<td><p>後驗 (A posteriori)</p></td>
+<td><p>分析場 (Analysis)：結合預報與觀測後的最佳估計</p></td>
+<td><p>介於 <span class="math notranslate nohighlight">\(-20\)</span> 與 <span class="math notranslate nohighlight">\(-17^{\circ}\mathrm{C}\)</span> 之間</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>離散與連續的對應：<span class="math notranslate nohighlight">\(E_j \leftrightarrow x\)</span>（原因／真值）、<span class="math notranslate nohighlight">\(B \leftrightarrow y\)</span>（證據／觀測）、<span class="math notranslate nohighlight">\(\sum_i \leftrightarrow \int dx\)</span>。</p>
+<p>因為 <span class="math notranslate nohighlight">\(f(y)\)</span> 與 <span class="math notranslate nohighlight">\(x\)</span> 無關，實際計算只需要</p>
+<div class="math notranslate nohighlight">
+\[f(x \mid y) \propto f(y \mid x)\,f(x)\]</div>
+</section>
+<section id="data-assimilation-as-bayes-theorem">
+<h2>7. Data Assimilation as Bayes』 Theorem (資料同化就是貝氏定理)<a class="headerlink" href="#data-assimilation-as-bayes-theorem" title="連結到這個標頭">#</a></h2>
+<p>資料同化 (DA) 的工作：用觀測 <span class="math notranslate nohighlight">\(y\)</span> 修正模式的場 <span class="math notranslate nohighlight">\(x\)</span>，也就是求 <span class="math notranslate nohighlight">\(f(x \mid y)\)</span>。
+課本把 DA 由簡到繁分成五種，<strong>全部都是同一條貝氏定理，差別只在「推廣到哪裡」</strong>：</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>方法</p></th>
+<th class="head"><p>推廣了什麼</p></th>
+<th class="head"><p>怎麼用貝氏定理</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>7.1</p></td>
+<td><p>純量貝氏 (Scalar Bayes)</p></td>
+<td><p>一個點、一個變數</p></td>
+<td><p>先驗 × 概似 → 後驗，一次</p></td>
+</tr>
+<tr class="row-odd"><td><p>7.2</p></td>
+<td><p>Kalman Filter</p></td>
+<td><p><strong>時間</strong>：一直重複</p></td>
+<td><p>這次的後驗 = 下次的先驗</p></td>
+</tr>
+<tr class="row-even"><td><p>7.3</p></td>
+<td><p>多變數 Kalman Filter</p></td>
+<td><p><strong>空間</strong>：整個模式狀態向量</p></td>
+<td><p>變異數 → 共變異數矩陣</p></td>
+</tr>
+<tr class="row-odd"><td><p>7.4</p></td>
+<td><p>3D-Var / 4D-Var</p></td>
+<td><p><strong>算法</strong>：不算整個後驗，只找最大值</p></td>
+<td><p>最小化 <span class="math notranslate nohighlight">\(-\ln f(x \mid y)\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>7.5</p></td>
+<td><p>Ensemble Kalman Filter (EnKF)</p></td>
+<td><p><strong>誤差估計</strong>：<span class="math notranslate nohighlight">\(\mathbf{B}\)</span> 不再固定</p></td>
+<td><p>用系集成員估計背景誤差</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="scalar-bayes">
+<h3>7.1 Scalar Bayes (純量貝氏：一個點的一次更新)<a class="headerlink" href="#scalar-bayes" title="連結到這個標頭">#</a></h3>
+<p>先驗與概似都是高斯：</p>
+<div class="math notranslate nohighlight">
+\[f(x) = \mathcal{N}(x^b, \sigma_b^2), \qquad f(y \mid x) = \mathcal{N}(x, \sigma_o^2)\]</div>
+<p>相乘後仍是高斯（證明：<a class="reference internal" href="02_proof/06_Gaussian_product_posterior.html"><span class="std std-doc">06_Gaussian_product_posterior.md</span></a>），結果有兩種等價寫法：</p>
+<ul class="simple">
+<li><p><strong>精度加權平均</strong>（統計語言）：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\frac{1}{\sigma_a^2} = \frac{1}{\sigma_b^2} + \frac{1}{\sigma_o^2}, \qquad x^a = \frac{\frac{1}{\sigma_b^2}}{\frac{1}{\sigma_b^2} + \frac{1}{\sigma_o^2}}\,x^b + \frac{\frac{1}{\sigma_o^2}}{\frac{1}{\sigma_b^2} + \frac{1}{\sigma_o^2}}\,y\]</div>
+<ul class="simple">
+<li><p><strong>Kalman 形式</strong>（DA 語言）：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[x^a = x^b + K\,(y - x^b), \qquad K = \frac{\sigma_b^2}{\sigma_b^2 + \sigma_o^2}, \qquad \sigma_a^2 = (1 - K)\,\sigma_b^2\]</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>符號</p></th>
+<th class="head"><p>統計</p></th>
+<th class="head"><p>DA</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(x^b, \sigma_b^2\)</span></p></td>
+<td><p>先驗平均、變異數 <span class="math notranslate nohighlight">\(\mu_0, \sigma_0^2\)</span></p></td>
+<td><p>背景場與背景誤差</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(y, \sigma_o^2\)</span></p></td>
+<td><p>觀測、雜訊變異數 <span class="math notranslate nohighlight">\(\sigma_w^2\)</span></p></td>
+<td><p>觀測與觀測誤差</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(x^a, \sigma_a^2\)</span></p></td>
+<td><p>後驗平均、變異數 <span class="math notranslate nohighlight">\(\mu_1, \sigma_1^2\)</span></p></td>
+<td><p>分析場與分析誤差</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(K\)</span></p></td>
+<td><p>觀測所佔的精度權重</p></td>
+<td><p>Kalman gain，<span class="math notranslate nohighlight">\(0 \le K \le 1\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p><strong>精度相加</strong>：分析場比預報和觀測都更確定。</p></li>
+<li><p><strong><span class="math notranslate nohighlight">\(K \to 0\)</span></strong>（<span class="math notranslate nohighlight">\(\sigma_o^2 \gg \sigma_b^2\)</span>，儀器很吵）：完全不依賴觀測，分析場貼近預報。</p></li>
+<li><p><strong><span class="math notranslate nohighlight">\(K \to 1\)</span></strong>（<span class="math notranslate nohighlight">\(\sigma_b^2 \gg \sigma_o^2\)</span>，預報很不準）：分析場貼近觀測。</p></li>
+</ul>
+<p><img alt="高斯先驗 × 高斯概似 → 高斯後驗" src="../../_images/gaussian_update.png" /></p>
+<ul class="simple">
+<li><p>例題：<a class="reference internal" href="01_tool/02_Bayes/01_problems/04_Data_Assimilation.html"><span class="std std-doc">04_Data_Assimilation.md</span></a></p></li>
+</ul>
+</section>
+<section id="kalman-filter">
+<h3>7.2 Kalman Filter (時間上重複的貝氏更新)<a class="headerlink" href="#kalman-filter" title="連結到這個標頭">#</a></h3>
+<p>把 7.1 在時間上一直重複：</p>
+<div class="math notranslate nohighlight">
+\[\underbrace{\text{預報}}_{\text{先驗}} \xrightarrow{\text{新觀測}} \underbrace{\text{更新}}_{\text{後驗}} \xrightarrow{\text{模式積分}} \underbrace{\text{預報}}_{\text{新的先驗}} \to \cdots\]</div>
+<p>第 <span class="math notranslate nohighlight">\(k\)</span> 步的後驗（分析場）就是第 <span class="math notranslate nohighlight">\(k+1\)</span> 步的初始條件，模式積分之後成為新的先驗。</p>
+</section>
+<section id="multivariate-kalman-filter">
+<h3>7.3 Multivariate Kalman Filter (多變數：整個模式狀態)<a class="headerlink" href="#multivariate-kalman-filter" title="連結到這個標頭">#</a></h3>
+<p>真實狀態是向量 <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>（上百萬個格點），觀測 <span class="math notranslate nohighlight">\(\mathbf{y}^o\)</span> 散在空間中、不一定在格點上。純量公式直接推廣成矩陣：</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{x}^a = \mathbf{x}^b + \mathbf{K}\,(\mathbf{y}^o - \mathbf{H}\mathbf{x}^b), \qquad \mathbf{K} = \mathbf{B}\mathbf{H}^\top\left(\mathbf{H}\mathbf{B}\mathbf{H}^\top + \mathbf{R}\right)^{-1}\]</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>符號</p></th>
+<th class="head"><p>名稱</p></th>
+<th class="head"><p>推廣自</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\mathbf{B}\)</span></p></td>
+<td><p>背景誤差共變異數矩陣</p></td>
+<td><p><span class="math notranslate nohighlight">\(\sigma_b^2\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\mathbf{R}\)</span></p></td>
+<td><p>觀測誤差共變異數矩陣</p></td>
+<td><p><span class="math notranslate nohighlight">\(\sigma_o^2\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\mathbf{H}\)</span></p></td>
+<td><p>觀測算子：把模式狀態轉成儀器會看到的量（例如把溫度剖面積分成衛星輻射）</p></td>
+<td><p>純量時 <span class="math notranslate nohighlight">\(H = 1\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\mathbf{y}^o - \mathbf{H}\mathbf{x}^b\)</span></p></td>
+<td><p>新息 (Innovation)：觀測與預報差多少</p></td>
+<td><p><span class="math notranslate nohighlight">\(y - x^b\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="d-var-4d-var">
+<h3>7.4 3D-Var / 4D-Var (變分法：只找後驗的最大值)<a class="headerlink" href="#d-var-4d-var" title="連結到這個標頭">#</a></h3>
+<p>不算整個後驗分布，只找<strong>最大後驗估計 (MAP)</strong>，也就是最小化 <span class="math notranslate nohighlight">\(-\ln f(\mathbf{x} \mid \mathbf{y}^o)\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[J(\mathbf{x}) = \underbrace{\frac{1}{2}(\mathbf{x} - \mathbf{x}^b)^\top \mathbf{B}^{-1} (\mathbf{x} - \mathbf{x}^b)}_{-\ln f(\mathbf{x})\ \text{(先驗)}} + \underbrace{\frac{1}{2}(\mathbf{y}^o - \mathbf{H}\mathbf{x})^\top \mathbf{R}^{-1} (\mathbf{y}^o - \mathbf{H}\mathbf{x})}_{-\ln f(\mathbf{y}^o \mid \mathbf{x})\ \text{(概似)}}\]</div>
+<ul class="simple">
+<li><p><strong>3D-Var</strong>：同一時間的觀測，最小化 <span class="math notranslate nohighlight">\(J\)</span>（ECMWF、NCEP 等作業中心使用）。</p></li>
+<li><p><strong>4D-Var</strong>：把模式積分放進代價函數，讓不同時間的觀測一起約束初始場。</p></li>
+<li><p>在高斯假設下，MAP 與 7.1 的後驗平均相同；用 Lagrange 乘數加上物理約束的版本見 <a class="reference internal" href="../00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q08_1DVar_data_assimilation.html"><span class="std std-doc">Q08 1D-Var</span></a>。</p></li>
+</ul>
+</section>
+<section id="ensemble-kalman-filter">
+<h3>7.5 Ensemble Kalman Filter (系集卡爾曼濾波)<a class="headerlink" href="#ensemble-kalman-filter" title="連結到這個標頭">#</a></h3>
+<p>7.3 需要背景誤差共變異數 <span class="math notranslate nohighlight">\(\mathbf{B}\)</span>，但它很難知道、也會隨天氣改變。
+EnKF 跑一組<strong>系集</strong>（多個略有不同的模式預報），用系集成員之間的離散程度<strong>估計</strong> <span class="math notranslate nohighlight">\(\mathbf{B}\)</span>，而不是假設它固定。目前大氣與海洋資料同化廣泛使用。</p>
+</section>
+</section>
+<section id="probability-philosophy">
+<h2>8. Probability Philosophy (頻率學派與貝氏學派)<a class="headerlink" href="#probability-philosophy" title="連結到這個標頭">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>頻率學派 (Frequentist)</p></th>
+<th class="head"><p>貝氏學派 (Bayesian)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>機率是什麼</p></td>
+<td><p>重複很多次時的發生頻率</p></td>
+<td><p>對一件事的相信程度</p></td>
+</tr>
+<tr class="row-odd"><td><p>什麼是隨機的</p></td>
+<td><p>資料</p></td>
+<td><p>未知的量（假設、真值）</p></td>
+</tr>
+<tr class="row-even"><td><p>先驗資訊</p></td>
+<td><p>不使用</p></td>
+<td><p>使用，並隨新證據更新</p></td>
+</tr>
+<tr class="row-odd"><td><p>回答的問題</p></td>
+<td><p><span class="math notranslate nohighlight">\(\Pr(\text{data} \mid \text{Hypothesis} )\)</span>：若假設成立，看到這組資料有多可能</p></td>
+<td><p><span class="math notranslate nohighlight">\(\Pr(\text{Hypothesis} \mid \text{data})\)</span>：看到資料後，假設成立有多可能</p></td>
+</tr>
+<tr class="row-even"><td><p>測試的東西</p></td>
+<td><p>如果我有一組資料去測試一模一樣的假設，我有多高的機率會再看到同樣的事情</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>行為</p></td>
+<td><p>不是真實世界，但是我一值重複實驗，然後告訴你這個東西多有可能會出現 (Large Ensemble)</p></td>
+<td><p>根據資料調整相信的程度</p></td>
+</tr>
+<tr class="row-even"><td><p>計程車例</p></td>
+<td><p>目擊者正確率 80% → 80%</p></td>
+<td><p>考慮城市裡藍車只有 15% → 41%</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>貝氏定理就是連接 <span class="math notranslate nohighlight">\(\Pr(\text{data} \mid H)\)</span> 與 <span class="math notranslate nohighlight">\(\Pr(H \mid \text{data})\)</span> 的橋，所以它在兩派爭論的中心。</p>
+<section id="id9">
+<h3>8.1 例子：2025 是史上最暖的一年嗎？<a class="headerlink" href="#id9" title="連結到這個標頭">#</a></h3>
+<p><strong>已知</strong>（課本 <a class="reference internal" href="99_textbook.html"><span class="std std-doc">99_textbook.md</span></a> 的 <em>Probability philosophy</em>）：</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>量</p></th>
+<th class="head"><p>值</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>2025 全球平均溫度距平</p></td>
+<td><p><span class="math notranslate nohighlight">\(1.28^{\circ}\mathrm{C}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>2024 距平（舊紀錄）</p></td>
+<td><p><span class="math notranslate nohighlight">\(1.24^{\circ}\mathrm{C}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>差距 <span class="math notranslate nohighlight">\(d\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.04^{\circ}\mathrm{C}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>差距的量測誤差 <span class="math notranslate nohighlight">\(\sigma_d\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.05^{\circ}\mathrm{C}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>假設</strong>：</p>
+<ul class="simple">
+<li><p>量測誤差是高斯、無偏。</p></li>
+<li><p>虛無假設 <span class="math notranslate nohighlight">\(H_0\)</span>：兩年其實一樣暖（真正的差距為 <span class="math notranslate nohighlight">\(0\)</span>），看到的 <span class="math notranslate nohighlight">\(0.04^{\circ}\mathrm{C}\)</span> 全部來自量測誤差。</p></li>
+</ul>
+<p><strong>目標（顯著性）</strong>：若 <span class="math notranslate nohighlight">\(H_0\)</span> 成立，純雜訊做出 <span class="math notranslate nohighlight">\(|\Delta T| \ge 0.04\)</span> 的機率（p 值）有多大？p 值小於 <span class="math notranslate nohighlight">\(\alpha = 0.05\)</span> 才算顯著，相當於要求 <span class="math notranslate nohighlight">\(|\Delta T| &gt; 1.96\,\sigma_d \approx 0.098^{\circ}\mathrm{C}\)</span>。</p>
+<p><strong>兩派的答案</strong>：</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>頻率學派</p></th>
+<th class="head"><p>貝氏學派</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>算的是</p></td>
+<td><p><span class="math notranslate nohighlight">\(\Pr(\lvert\Delta T\rvert \ge 0.04 \mid H_0)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\Pr(d &gt; 0 \mid \text{data})\)</span>，平坦先驗</p></td>
+</tr>
+<tr class="row-odd"><td><p>結果</p></td>
+<td><p><span class="math notranslate nohighlight">\(z = 0.04/0.05 = 0.8\)</span>，p <span class="math notranslate nohighlight">\(\approx 42\%\)</span>，<strong>不顯著</strong></p></td>
+<td><p>後驗 <span class="math notranslate nohighlight">\(d \sim \mathcal{N}(0.04, 0.05^2)\)</span>，<span class="math notranslate nohighlight">\(\Phi(0.8) \approx 79\%\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>說法</p></td>
+<td><p>若兩年一樣暖，雜訊有 42% 的機會做出這麼大的差距</p></td>
+<td><p>2025 有 79% 的機率是最暖的一年</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>兩個數字算術上相連：<span class="math notranslate nohighlight">\(1 - 0.79 = 0.21 = 0.42 / 2\)</span>（單尾）。差別在於機率描述的是<strong>資料</strong>還是<strong>假設</strong>。</p>
+<p><strong>互動模擬</strong>：<a class="reference external" href="https://derek1403.github.io/PC-NTU/Objective_Analysis/interactive/warmest_year.html">warmest_year.html</a>。從單一年份的誤差分布隨機抽兩個值相減，一次抽 1、10、100 或 n 次，看 <span class="math notranslate nohighlight">\(\Delta T\)</span> 分布慢慢長出來，再看 <span class="math notranslate nohighlight">\(|\Delta T| \ge 0.04\)</span> 的比例如何收斂到 42%。</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="index">
+<h2>9. Index (本章工具、證明與例題)<a class="headerlink" href="#index" title="連結到這個標頭">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>類別</p></th>
+<th class="head"><p>檔案</p></th>
+<th class="head"><p>一句話</p></th>
+<th class="head"><p>用在</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>工具</p></td>
+<td><p><a class="reference internal" href="01_tool/01_Gaussian/01_Gaussian_distribution.html"><span class="std std-doc">01_Gaussian_distribution</span></a></p></td>
+<td><p>高斯分布的四種寫法與性質速查</p></td>
+<td><p>§2、§7</p></td>
+</tr>
+<tr class="row-odd"><td><p>工具</p></td>
+<td><p><a class="reference internal" href="01_tool/01_Gaussian/02_Gaussian_integrals.html"><span class="std std-doc">02_Gaussian_integrals</span></a></p></td>
+<td><p><span class="math notranslate nohighlight">\(\int x^n e^{-ax^2}dx\)</span>，正規化與動差都靠它</p></td>
+<td><p>§2、§3</p></td>
+</tr>
+<tr class="row-even"><td><p>工具</p></td>
+<td><p><a class="reference internal" href="01_tool/03_expectation_rules.html"><span class="std std-doc">03_expectation_rules</span></a></p></td>
+<td><p>期望值線性；獨立變數的變異數相加</p></td>
+<td><p>§3</p></td>
+</tr>
+<tr class="row-odd"><td><p>工具</p></td>
+<td><p><a class="reference internal" href="../00_Chapter0/01_tool/01_Lagrange_multiplier/01_basic_use.html"><span class="std std-doc">Lagrange multiplier</span></a></p></td>
+<td><p>約束下求極值（Chapter 0）</p></td>
+<td><p>§2</p></td>
+</tr>
+<tr class="row-even"><td><p>證明</p></td>
+<td><p><a class="reference internal" href="02_proof/01_max_entropy_Gaussian.html"><span class="std std-doc">01_max_entropy_Gaussian</span></a></p></td>
+<td><p>已知 <span class="math notranslate nohighlight">\(\mu, \sigma^2\)</span> 的最大熵分布是高斯</p></td>
+<td><p>§2.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>證明</p></td>
+<td><p><a class="reference internal" href="02_proof/02_Gauss_mean_optimal_Gaussian.html"><span class="std std-doc">02_Gauss_mean_optimal_Gaussian</span></a></p></td>
+<td><p>平均是最佳估計，所以誤差是高斯</p></td>
+<td><p>§2.2</p></td>
+</tr>
+<tr class="row-even"><td><p>證明</p></td>
+<td><p><a class="reference internal" href="02_proof/03_standard_error.html"><span class="std std-doc">03_standard_error</span></a></p></td>
+<td><p>樣本平均的標準誤 <span class="math notranslate nohighlight">\(\sigma/\sqrt{N}\)</span></p></td>
+<td><p>§3</p></td>
+</tr>
+<tr class="row-odd"><td><p>證明</p></td>
+<td><p><a class="reference internal" href="02_proof/04_sample_variance_N-1.html"><span class="std std-doc">04_sample_variance_N-1</span></a></p></td>
+<td><p>樣本變異數除以 <span class="math notranslate nohighlight">\(N-1\)</span> 才不偏</p></td>
+<td><p>§3</p></td>
+</tr>
+<tr class="row-even"><td><p>證明</p></td>
+<td><p><a class="reference internal" href="02_proof/05_Gaussian_skewness_kurtosis.html"><span class="std std-doc">05_Gaussian_skewness_kurtosis</span></a></p></td>
+<td><p>高斯的偏度 <span class="math notranslate nohighlight">\(0\)</span>、峰度 <span class="math notranslate nohighlight">\(3\)</span></p></td>
+<td><p>§3</p></td>
+</tr>
+<tr class="row-odd"><td><p>證明</p></td>
+<td><p><a class="reference internal" href="02_proof/06_Gaussian_product_posterior.html"><span class="std std-doc">06_Gaussian_product_posterior</span></a></p></td>
+<td><p>高斯×高斯＝高斯，得到 Kalman 增益</p></td>
+<td><p>§7.1</p></td>
+</tr>
+<tr class="row-even"><td><p>例題</p></td>
+<td><p><a class="reference internal" href="01_tool/02_Bayes/01_problems/01_weather_prediction.html"><span class="std std-doc">01_weather_prediction</span></a></p></td>
+<td><p>今天下雨 → 明天下雨</p></td>
+<td><p>§4</p></td>
+</tr>
+<tr class="row-odd"><td><p>例題</p></td>
+<td><p><a class="reference internal" href="01_tool/02_Bayes/01_problems/02_COVID-19.html"><span class="std std-doc">02_COVID-19</span></a></p></td>
+<td><p>快篩陽性真的有病的機率</p></td>
+<td><p>§5</p></td>
+</tr>
+<tr class="row-even"><td><p>例題</p></td>
+<td><p><a class="reference internal" href="01_tool/02_Bayes/01_problems/03_Monty_Hall_problem.html"><span class="std std-doc">03_Monty_Hall_problem</span></a></p></td>
+<td><p>三門問題：換門贏 <span class="math notranslate nohighlight">\(2/3\)</span></p></td>
+<td><p>§5</p></td>
+</tr>
+<tr class="row-odd"><td><p>例題</p></td>
+<td><p><a class="reference internal" href="01_tool/02_Bayes/01_problems/04_Data_Assimilation.html"><span class="std std-doc">04_Data_Assimilation</span></a></p></td>
+<td><p>預報 + 探空 → 分析場</p></td>
+<td><p>§7.1</p></td>
+</tr>
+<tr class="row-even"><td><p>圖</p></td>
+<td><p><a class="reference download internal" download="" href="../../_downloads/d148a2b64e4804f3d56d5c6dbeb96257/entropy_terms.py"><span class="xref download myst">entropy/</span></a></p></td>
+<td><p>資訊量與單項熵貢獻</p></td>
+<td><p>§1</p></td>
+</tr>
+<tr class="row-odd"><td><p>圖</p></td>
+<td><p><a class="reference download internal" download="" href="../../_downloads/3bb79e74cd02420c43231adfde170d95/venn_diagram.py"><span class="xref download myst">venn_diagram/</span></a></p></td>
+<td><p>交集與聯集（文氏圖）</p></td>
+<td><p>§4</p></td>
+</tr>
+<tr class="row-even"><td><p>圖</p></td>
+<td><p><a class="reference download internal" download="" href="../../_downloads/5abc3f97a628d2c3396e148e0272d145/weather_mosaic.py"><span class="xref download myst">weather_prediction/</span></a></p></td>
+<td><p>面積 = 機率：今天／明天下雨</p></td>
+<td><p>例題 01</p></td>
+</tr>
+<tr class="row-odd"><td><p>圖</p></td>
+<td><p><a class="reference download internal" download="" href="../../_downloads/da0d9c8b10945ef6132fb90f2dc398ab/covid_base_rate.py"><span class="xref download myst">COVID-19/</span></a></p></td>
+<td><p>快篩陽性的組成、盛行率 vs 陽性預測值</p></td>
+<td><p>例題 02</p></td>
+</tr>
+<tr class="row-even"><td><p>圖</p></td>
+<td><p><a class="reference download internal" download="" href="../../_downloads/2d73a672c5eb53ac935ba5b5c7eee060/monty_hall_mosaic.py"><span class="xref download myst">Monty_Hall/</span></a></p></td>
+<td><p>三門問題的先驗 × 概似分割</p></td>
+<td><p>例題 03</p></td>
+</tr>
+<tr class="row-odd"><td><p>圖</p></td>
+<td><p><a class="reference download internal" download="" href="../../_downloads/696923f71f343965becb8dc7234ebe99/gaussian_update.py"><span class="xref download myst">data_assimilation/</span></a></p></td>
+<td><p>高斯更新、不同誤差下的 Kalman gain</p></td>
+<td><p>§7.1、例題 04</p></td>
+</tr>
+<tr class="row-even"><td><p>互動</p></td>
+<td><p><a class="reference external" href="https://derek1403.github.io/PC-NTU/Objective_Analysis/interactive/warmest_year.html">warmest_year.html</a></p></td>
+<td><p>抽樣建立 <span class="math notranslate nohighlight">\(\Delta T\)</span> 分布，檢定 2025 是否最暖</p></td>
+<td><p>§8.1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>符號補充：<a class="reference internal" href="03_notation_X_vs_x.html"><span class="std std-doc">03_notation_X_vs_x.md</span></a>（大寫隨機變數 vs 小寫觀測值）</p></li>
+<li><p>課堂講義原文：<a class="reference internal" href="99_textbook.html"><span class="std std-doc">99_textbook.md</span></a></p></li>
+</ul>
+</section>
+<section id="coming-next">
+<h2>10. Coming Next (講義後半，尚未整理)<a class="headerlink" href="#coming-next" title="連結到這個標頭">#</a></h2>
+<p>講義 Week 1–3 後半的主題，之後可以照同樣的「概念在本檔、證明拉出去」方式補上：</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>主題</p></th>
+<th class="head"><p>講義章節</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>常態分布與 z 分數、信賴區間、中央極限定理</p></td>
+<td><p><em>Statistical Significance Testing</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>t 檢定（小樣本）</p></td>
+<td><p><em>The t-statistic</em></p></td>
+</tr>
+<tr class="row-even"><td><p>假設檢定、型一／型二錯誤</p></td>
+<td><p><em>Hypothesis Testing</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bootstrap、Jackknife、Monte Carlo</p></td>
+<td><p><em>Monte Carlo and Resampling techniques</em></p></td>
+</tr>
+<tr class="row-even"><td><p>合成分析 (Compositing)</p></td>
+<td><p><em>Compositing</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>卡方、F、二項分布</p></td>
+<td><p><em>Other Common Distributions</em></p></td>
+</tr>
+<tr class="row-even"><td><p>無母數檢定</p></td>
+<td><p><em>Non-parametric Tests</em></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lecture\01_Rule101"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q17_three_level_negative_temperature.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">上一頁</p>
+        <p class="prev-next-title">Q17｜應用壓軸：三能階雷射的最大熵分布與負絕對溫度</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="01_tool/01_Gaussian/01_Gaussian_distribution.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">下一頁</p>
+        <p class="prev-next-title">高斯分布 (Gaussian Distribution)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目錄
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roadmap">0. Roadmap (本章地圖)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#information-entropy">1. Information Entropy (資訊熵)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.1 資訊量</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.2 資訊熵</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.3 熵大代表什麼</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-the-gaussian">2. Why the Gaussian (為什麼是高斯分布)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#route-1">2.1 Route 1：已知平均與變異數時的最大熵</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#route-2">2.2 Route 2：要求算術平均是最佳估計</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">2.3 高斯分布的工具</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moments">3. Moments (動差：平均、變異數與高階動差)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-rules">4. Probability Rules (機率的基本規則)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#complement">4.1 補集 (Complement)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intersection-union">4.2 交集與聯集 (Intersection &amp; Union)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-probability-multiplicative-law">4.3 條件機率與乘法規則 (Conditional Probability &amp; Multiplicative Law)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#independence">4.4 獨立 (Independence)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bayes-theorem">5. Bayes』 Theorem (貝氏定理)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">5.1 直覺：同樣的證據，在不同背景下分量不同</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">5.2 推導：乘法規則換個方向</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#law-of-total-probability">5.3 分母：全機率公式 (Law of Total Probability)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">5.4 名詞</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">5.5 解題五步驟（課本的做法）</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-bayes-theorem">6. Continuous Bayes』 Theorem (連續形式的貝氏定理)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-assimilation-as-bayes-theorem">7. Data Assimilation as Bayes』 Theorem (資料同化就是貝氏定理)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-bayes">7.1 Scalar Bayes (純量貝氏：一個點的一次更新)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kalman-filter">7.2 Kalman Filter (時間上重複的貝氏更新)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multivariate-kalman-filter">7.3 Multivariate Kalman Filter (多變數：整個模式狀態)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-var-4d-var">7.4 3D-Var / 4D-Var (變分法：只找後驗的最大值)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ensemble-kalman-filter">7.5 Ensemble Kalman Filter (系集卡爾曼濾波)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-philosophy">8. Probability Philosophy (頻率學派與貝氏學派)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">8.1 例子：2025 是史上最暖的一年嗎？</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#index">9. Index (本章工具、證明與例題)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coming-next">10. Coming Next (講義後半，尚未整理)</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+作者： PC YE
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

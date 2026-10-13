@@ -19,14 +19,14 @@
   * $a_r$ : 無因次化動差 (Standardized moment)；$a_3$ 為偏度 (Skewness)，$a_4$ 為峰度 (Kurtosis)
   * $f(x)$ : 機率密度 (PDF)
 
-* **【已知 1】[高斯分布 (Gaussian Distribution)](../01_tool/01_Gaussian_distribution.md)：**
+* **【已知 1】[高斯分布 (Gaussian Distribution)](../01_tool/01_Gaussian/01_Gaussian_distribution.md)：**
 
   $$f(x) = \frac{1}{\sigma\sqrt{2\pi}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)$$
 
   * $\mu$ : 平均 (Mean)
   * $\sigma$ : 標準差 (Standard deviation)
 
-* **【已知 2】[高斯積分 (Gaussian Integrals)](../01_tool/02_Gaussian_integrals.md)：** 把中心平移到 $\mu$（tool 02 (e)），本證明取 $a = \frac{1}{2\sigma^2}$。
+* **【已知 2】[高斯積分 (Gaussian Integrals)](../01_tool/01_Gaussian/02_Gaussian_integrals.md)：** 把中心平移到 $\mu$（tool 02 (e)），本證明取 $a = \frac{1}{2\sigma^2}$。
 
   * (a) 奇次方
 

@@ -27,7 +27,7 @@
   * $f(y \mid x)$ : 概似 (Likelihood)，若真值是 $x$，看到 $y$ 的機率
   * $f(x)$ : 先驗 (Prior)，看到觀測前對真值的信念
 
-* **【已知 2】[高斯分布的判別 (Recognizing a Gaussian)](../01_tool/01_Gaussian_distribution.md)：** 任何「對數是開口向下的二次式」的密度都是高斯；二次項係數決定變異數、一次項決定中心。
+* **【已知 2】[高斯分布的判別 (Recognizing a Gaussian)](../01_tool/01_Gaussian/01_Gaussian_distribution.md)：** 任何「對數是開口向下的二次式」的密度都是高斯；二次項係數決定變異數、一次項決定中心。
 
   $$\ln g(x) = -\frac{(x - m)^2}{2s^2} + \text{const} \quad\text{則}\quad g = \mathcal{N}(m, s^2)$$
 

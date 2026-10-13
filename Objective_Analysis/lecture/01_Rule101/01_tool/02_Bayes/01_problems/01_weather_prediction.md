@@ -174,7 +174,9 @@ $$\Pr(\widetilde{N} \mid \widetilde{T}) = \frac{\Pr(\widetilde{N} \cap \widetild
 
 ### 4.4 完整的聯合機率表
 
-三種情況最後都填出同一張表：
+三種情況最後都填出同一張表。用「面積 = 機率」畫出來：欄寬是今天的機率，欄內高度是明天的條件機率。
+
+![今天與明天下雨的聯合機率](../../../00_pic/weather_prediction/weather_mosaic.png)
 
 |  | 明天下雨 $T$ | 明天沒下雨 $\widetilde{T}$ | 合計 |
 | --- | --- | --- | --- |
@@ -198,3 +200,5 @@ $$\Pr(T \mid N) = 0.8 \neq \Pr(T) = 0.56 \neq \Pr(T \mid \widetilde{N}) = 0.2$$
 | 全機率公式 | $\Pr(T) = \Pr(T \mid N)\Pr(N) + \Pr(T \mid \widetilde{N})\Pr(\widetilde{N})$ | 明天下雨的總機率（情況 1） |
 | 貝氏定理 | $\Pr(N \mid T) = \dfrac{\Pr(T \mid N)\Pr(N)}{\Pr(T)}$ | 已知明天下雨，反推今天下雨 |
 | 獨立性判斷 | $\Pr(N \cap T) = \Pr(N)\Pr(T) \iff \Pr(T \mid N) = \Pr(T)$ | 驗證兩天天氣是否相關 |
+
+回到本章：[00_Rule101.md §4 Probability Rules](../../../00_Rule101.md#4-probability-rules-機率的基本規則)

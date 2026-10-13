@@ -1,0 +1,466 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>2025 是最暖的一年嗎？</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&family=Noto+Sans+TC:wght@400;500;700;900&display=swap">
+<style>
+/* Layout: one wide screen — left column = question, controls, results; right column = the two linked charts (noise → ΔT). Light only, by request. */
+:root {
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --soft: #f5f8fa;
+  --fg: #16212b;
+  --muted: #5a6875;
+  --line: #dde4ea;
+  --noise: #2d6fa8;      /* measurement-noise distribution */
+  --delta: #4b8f8c;      /* ΔT histogram */
+  --heat: #d2482b;       /* the observed 0.04 °C gap */
+  --sig: #8a5cc2;        /* significance threshold */
+  --ok: #2f7d4f;
+  --font-display: "Noto Sans TC", "IBM Plex Sans", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", "Noto Sans TC", system-ui, sans-serif;
+  --font-data: "IBM Plex Mono", ui-monospace, "Cascadia Mono", monospace;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 14px/1.55 var(--font-body);
+}
+.page {
+  max-width: 1440px;
+  min-height: 100%;
+  margin: 0 auto;
+  padding-inline: 20px;
+  padding-block: 16px;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 14px;
+}
+h1, h2 { font-family: var(--font-display); text-wrap: balance; margin: 0; }
+h1 { font-size: 1.75rem; font-weight: 900; line-height: 1.2; }
+h1 .yr { color: var(--heat); }
+h2 { font-size: 1rem; font-weight: 700; }
+p { margin: 0; }
+.num { font-family: var(--font-data); font-variant-numeric: tabular-nums; }
+.eyebrow {
+  font-family: var(--font-data); font-size: .72rem; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--muted);
+}
+.note { font-size: .84rem; color: var(--muted); }
+
+.top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 18px; border-bottom: 1px solid var(--line); padding-bottom: 10px; }
+.top .lede { color: var(--muted); flex: 1 1 420px; min-width: 0; }
+
+.grid { display: grid; grid-template-columns: minmax(320px, 400px) 1fr; gap: 18px; min-height: 0; }
+.left, .right { display: grid; gap: 12px; align-content: start; min-width: 0; }
+.right { grid-template-rows: auto 1fr; }
+
+.block { display: grid; gap: 6px; }
+.block + .block { border-top: 1px solid var(--line); padding-top: 12px; }
+
+.facts { display: grid; grid-template-columns: 1fr auto; gap: 2px 12px; align-items: baseline; margin: 0; }
+.facts dt { color: var(--muted); }
+.facts dd { margin: 0; font-family: var(--font-data); font-variant-numeric: tabular-nums; text-align: right; }
+.facts dd.hot { color: var(--heat); font-weight: 600; }
+.hyp { display: grid; gap: 4px; }
+.hyp div { display: grid; grid-template-columns: 2.4em 1fr; gap: 6px; }
+.hyp b { font-family: var(--font-data); }
+
+/* Charts */
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px 14px;
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+.panel header { display: flex; flex-wrap: wrap; gap: 2px 14px; align-items: baseline; justify-content: space-between; }
+.panel header p { color: var(--muted); font-size: .84rem; }
+canvas { width: 100%; display: block; }
+#noise { height: 150px; }
+#hist { height: clamp(240px, calc(100vh - 420px), 420px); }
+.legend { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: .8rem; color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.sw { width: 18px; height: 3px; border-radius: 2px; display: inline-block; }
+.sw.box { height: 10px; }
+
+/* Controls */
+.controls { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+button, input {
+  font: 600 .85rem var(--font-data);
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--fg);
+  padding: 6px 10px;
+}
+button { cursor: pointer; }
+button.draw { border-color: var(--delta); color: var(--delta); }
+button.draw:hover { background: var(--delta); color: var(--surface); }
+button.reset { color: var(--muted); }
+button:focus-visible, input:focus-visible { outline: 3px solid var(--noise); outline-offset: 2px; }
+.custom { display: inline-flex; gap: 6px; align-items: center; }
+#nInput { width: 6em; }
+.last {
+  font-family: var(--font-data); font-variant-numeric: tabular-nums; font-size: .82rem;
+  color: var(--muted); min-height: 2.6em; background: var(--soft); border-radius: 6px; padding: 6px 8px;
+}
+.last .a { color: var(--noise); font-weight: 600; }
+.last .d { color: var(--delta); font-weight: 600; }
+
+/* Results */
+.stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 12px; }
+.stat { border-top: 2px solid var(--line); padding-top: 4px; display: grid; }
+.stat .v { font: 600 1.3rem var(--font-data); font-variant-numeric: tabular-nums; }
+.stat .t { font-size: .76rem; color: var(--muted); }
+.stat.hot { border-top-color: var(--heat); }
+.stat.hot .v { color: var(--heat); }
+.pill {
+  justify-self: start;
+  font: 600 .8rem var(--font-data); padding: 3px 10px; border-radius: 999px;
+  border: 1.5px solid var(--ok); color: var(--ok);
+}
+
+.compare { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.compare > div { min-width: 0; display: grid; gap: 2px; align-content: start; background: var(--soft); border-radius: 6px; padding: 8px 10px; }
+.compare .big { font: 600 1.4rem var(--font-data); }
+.compare .freq .big { color: var(--delta); }
+.compare .bayes .big { color: var(--heat); }
+.compare p { font-size: .8rem; }
+
+@media (max-width: 860px) {
+  .grid { grid-template-columns: 1fr; }
+  #hist { height: 280px; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<main class="page">
+  <section class="top">
+    <h1><span class="yr">2025</span> 是史上最暖的一年嗎？</h1>
+    <p class="lede">2025 只比 2024 高 0.04 °C，但全球平均溫度本身就有量測誤差。這個差距可能只是雜訊造成的嗎？</p>
+  </section>
+
+  <div class="grid">
+    <div class="left">
+      <div class="block">
+        <h2>已知</h2>
+        <dl class="facts">
+          <dt>2025 距平</dt><dd>1.28 °C</dd>
+          <dt>2024 距平（舊紀錄）</dt><dd>1.24 °C</dd>
+          <dt>差距 d</dt><dd class="hot">0.04 °C</dd>
+          <dt>差距的誤差 σ<sub>d</sub></dt><dd>0.05 °C</dd>
+        </dl>
+      </div>
+      <div class="block">
+        <h2>要檢定什麼</h2>
+        <div class="hyp">
+          <div><b>H₀</b><span>兩年其實一樣暖，0.04 °C 全部來自量測誤差。</span></div>
+          <div><b>目標</b><span>H₀ 成立時，雜訊做出 |ΔT| ≥ 0.04 °C 的機率（p 值）。</span></div>
+          <div><b>α</b><span>p &lt; 0.05 才顯著，即 |ΔT| &gt; 1.96 σ<sub>d</sub> ≈ 0.098 °C。</span></div>
+        </div>
+      </div>
+      <div class="block">
+        <h2>抽樣</h2>
+        <div class="controls">
+          <button class="draw" id="b1" type="button">抽 1 次</button>
+          <button class="draw" id="b10" type="button">10 次</button>
+          <button class="draw" id="b100" type="button">100 次</button>
+          <button class="draw" id="b1000" type="button">1000 次</button>
+          <span class="custom">
+            <label for="nInput" class="note">n =</label>
+            <input id="nInput" type="number" min="1" max="100000" step="1" value="5000" inputmode="numeric">
+            <button class="draw" id="bn" type="button">抽 n 次</button>
+          </span>
+          <button class="reset" id="reset" type="button">重設</button>
+        </div>
+        <div class="last" id="last" aria-live="polite"></div>
+      </div>
+      <div class="block">
+        <h2>結果</h2>
+        <div class="stats">
+          <div class="stat"><span class="v num" id="sN">0</span><span class="t">已抽次數</span></div>
+          <div class="stat hot"><span class="v num" id="sK">0</span><span class="t">|ΔT| ≥ 0.04 的次數</span></div>
+          <div class="stat hot"><span class="v num" id="sP">–</span><span class="t">p 值（雙尾）｜理論 42.4%</span></div>
+          <div class="stat"><span class="v num" id="sP1">–</span><span class="t">ΔT ≥ 0.04（單尾）｜理論 21.2%</span></div>
+        </div>
+        <span class="pill" id="pill">p ≈ 0.42 &gt; 0.05：不顯著</span>
+        <p class="note">雜訊就有約四成機會做出 0.04 °C 以上的差距，資料不足以宣稱 2025 創新紀錄。</p>
+      </div>
+      <div class="block">
+        <h2>同一組數字，兩種說法</h2>
+        <div class="compare">
+          <div class="freq">
+            <span class="eyebrow">頻率 · Pr(data | H₀)</span>
+            <span class="big">42%</span>
+            <p>若兩年一樣暖，雜訊有 42% 機會做出這麼大的差距。</p>
+          </div>
+          <div class="bayes">
+            <span class="eyebrow">貝氏 · Pr(H | data)</span>
+            <span class="big">79%</span>
+            <p>平坦先驗，d | data ~ N(0.04, 0.05²)，Pr(d &gt; 0) = Φ(0.8)。</p>
+          </div>
+        </div>
+        <p class="note">1 − 0.79 = 0.21，正好是 0.42 的一半（單尾）。差別在機率描述的是資料還是假設。</p>
+      </div>
+    </div>
+
+    <div class="right">
+      <section class="panel" aria-labelledby="noiseTitle">
+        <header>
+          <h2 id="noiseTitle">① 每一年的量測誤差（已減去平均）</h2>
+          <p>N(0, σ²)，σ = 0.05/√2 ≈ 0.035 °C；兩個獨立誤差相減的標準差 √2 σ = 0.05 = σ<sub>d</sub></p>
+        </header>
+        <canvas id="noise" role="img" aria-label="單一年份量測誤差的常態分布，標出最近一次抽到的兩個值"></canvas>
+      </section>
+      <section class="panel" aria-labelledby="histTitle">
+        <header>
+          <h2 id="histTitle">② 兩年相減的差距 ΔT 的分布</h2>
+          <p>每次從 ① 抽兩個誤差相減，加進來；黑線是 H₀ 下的理論 N(0, 0.05²)</p>
+        </header>
+        <canvas id="hist" role="img" aria-label="抽樣得到的 ΔT 直方圖，標出 ±0.04 與顯著門檻 ±0.098"></canvas>
+        <div class="legend">
+          <span><i class="sw box" style="background:var(--delta)"></i>|ΔT| &lt; 0.04</span>
+          <span><i class="sw box" style="background:var(--heat)"></i>|ΔT| ≥ 0.04（和觀測一樣極端）</span>
+          <span><i class="sw" style="background:var(--fg)"></i>理論 N(0, 0.05²)</span>
+          <span><i class="sw" style="background:var(--sig)"></i>顯著門檻 ±0.098</span>
+        </div>
+      </section>
+    </div>
+  </div>
+</main>
+
+<script>
+(() => {
+  const SIGMA_D = 0.05;                 // σ of the gap ΔT
+  const SIGMA_E = SIGMA_D / Math.SQRT2; // σ of one year's measurement error
+  const OBS = 0.04;                     // observed gap
+  const CRIT = 1.96 * SIGMA_D;          // two-sided 5% threshold
+  const XMAX_N = 0.15, XMAX_H = 0.2, BW = 0.01;
+  const NB = Math.round(2 * XMAX_H / BW);
+
+  let bins = new Array(NB).fill(0);
+  let n = 0, kTwo = 0, kOne = 0, outside = 0;
+  let lastPair = null, pending = 0;
+
+  const $ = id => document.getElementById(id);
+  const noiseCv = $("noise"), histCv = $("hist");
+
+  function gauss() {
+    let u = 0, v = 0;
+    while (u === 0) u = Math.random();
+    while (v === 0) v = Math.random();
+    return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
+  }
+  const pdf = (x, s) => Math.exp(-x * x / (2 * s * s)) / (s * Math.sqrt(2 * Math.PI));
+
+  function drawOne() {
+    const a = gauss() * SIGMA_E, b = gauss() * SIGMA_E, d = a - b;
+    n++;
+    if (Math.abs(d) >= OBS) kTwo++;
+    if (d >= OBS) kOne++;
+    const i = Math.floor((d + XMAX_H) / BW);
+    if (i >= 0 && i < NB) bins[i]++; else outside++;
+    lastPair = { a, b, d };
+  }
+
+  function tokens() {
+    const cs = getComputedStyle(document.documentElement);
+    const g = k => cs.getPropertyValue(k).trim();
+    return { fg: g("--fg"), muted: g("--muted"), line: g("--line"), noise: g("--noise"),
+             delta: g("--delta"), heat: g("--heat"), sig: g("--sig"), surface: g("--surface"),
+             data: g("--font-data") };
+  }
+
+  function setup(cv) {
+    const r = cv.getBoundingClientRect(), dpr = window.devicePixelRatio || 1;
+    cv.width = Math.round(r.width * dpr); cv.height = Math.round(r.height * dpr);
+    const ctx = cv.getContext("2d"); ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    return { ctx, w: r.width, h: r.height };
+  }
+
+  function axis(ctx, t, x0, x1, y, X, ticks, unit) {
+    ctx.strokeStyle = t.line; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(x0, y + .5); ctx.lineTo(x1, y + .5); ctx.stroke();
+    ctx.fillStyle = t.muted; ctx.font = `12px ${t.data}`; ctx.textAlign = "center"; ctx.textBaseline = "top";
+    for (const v of ticks) {
+      const px = X(v);
+      ctx.beginPath(); ctx.moveTo(px + .5, y); ctx.lineTo(px + .5, y + 5); ctx.stroke();
+      ctx.fillText(v.toFixed(2), px, y + 8);
+    }
+    ctx.textAlign = "right"; ctx.fillText(unit, x1, y + 24);
+  }
+
+  function vline(ctx, x, top, bottom, color, dash, label, align) {
+    ctx.save(); ctx.strokeStyle = color; ctx.lineWidth = 2; ctx.setLineDash(dash);
+    ctx.beginPath(); ctx.moveTo(x, top); ctx.lineTo(x, bottom); ctx.stroke(); ctx.restore();
+    if (label) {
+      ctx.fillStyle = color; ctx.textAlign = align; ctx.textBaseline = "top";
+      ctx.fillText(label, x + (align === "left" ? 5 : align === "right" ? -5 : 0), top);
+    }
+  }
+
+  function drawNoise(t) {
+    const { ctx, w, h } = setup(noiseCv);
+    const L = 16, R = w - 16, T = 14, B = h - 40;
+    const X = v => L + (v + XMAX_N) / (2 * XMAX_N) * (R - L);
+    const peak = pdf(0, SIGMA_E) * 1.12;
+    const Y = p => B - p / peak * (B - T);
+    ctx.clearRect(0, 0, w, h);
+    ctx.beginPath();
+    for (let i = 0; i <= 300; i++) { const v = -XMAX_N + i / 300 * 2 * XMAX_N; i ? ctx.lineTo(X(v), Y(pdf(v, SIGMA_E))) : ctx.moveTo(X(v), Y(pdf(v, SIGMA_E))); }
+    ctx.lineTo(X(XMAX_N), B); ctx.lineTo(X(-XMAX_N), B); ctx.closePath();
+    ctx.globalAlpha = .14; ctx.fillStyle = t.noise; ctx.fill(); ctx.globalAlpha = 1;
+    ctx.strokeStyle = t.noise; ctx.lineWidth = 2.2; ctx.stroke();
+    axis(ctx, t, L, R, B, X, [-0.15, -0.1, -0.05, 0, 0.05, 0.1, 0.15], "誤差 (°C)");
+    if (lastPair) {
+      ctx.font = `600 12px ${t.data}`;
+      const pts = [[lastPair.a, "2025"], [lastPair.b, "2024"]];
+      pts.sort((p, q) => p[0] - q[0]);
+      pts.forEach(([v, lab], idx) => {
+        const cv = Math.max(-XMAX_N, Math.min(XMAX_N, v)), px = X(cv), py = Y(pdf(cv, SIGMA_E));
+        ctx.strokeStyle = t.noise; ctx.setLineDash([3, 3]); ctx.beginPath(); ctx.moveTo(px, py); ctx.lineTo(px, B); ctx.stroke(); ctx.setLineDash([]);
+        ctx.fillStyle = t.surface; ctx.beginPath(); ctx.arc(px, py, 6, 0, 2 * Math.PI); ctx.fill();
+        ctx.strokeStyle = t.noise; ctx.lineWidth = 2.5; ctx.stroke();
+        ctx.fillStyle = t.fg; ctx.textBaseline = "bottom"; ctx.textAlign = idx === 0 ? "right" : "left";
+        ctx.fillText(`${lab} ${v >= 0 ? "+" : ""}${v.toFixed(3)}`, px + (idx === 0 ? -9 : 9), py - 4);
+      });
+    }
+  }
+
+  function drawHist(t) {
+    const { ctx, w, h } = setup(histCv);
+    const L = 44, R = w - 12, T = 22, B = h - 40;
+    const X = v => L + (v + XMAX_H) / (2 * XMAX_H) * (R - L);
+    const expectedPeak = Math.max(n, 1) * BW * pdf(0, SIGMA_D);
+    const maxBin = Math.max(...bins);
+    const top = Math.max(n ? expectedPeak : 0, maxBin, 1) * 1.15;
+    const Y = c => B - c / top * (B - T);
+    ctx.clearRect(0, 0, w, h);
+
+    // y grid + labels (counts)
+    ctx.font = `12px ${t.data}`; ctx.textAlign = "right"; ctx.textBaseline = "middle";
+    const step = niceStep(top / 4);
+    for (let c = 0; c <= top; c += step) {
+      ctx.strokeStyle = t.line; ctx.globalAlpha = .6; ctx.beginPath(); ctx.moveTo(L, Y(c) + .5); ctx.lineTo(R, Y(c) + .5); ctx.stroke(); ctx.globalAlpha = 1;
+      ctx.fillStyle = t.muted; ctx.fillText(String(c), L - 6, Y(c));
+    }
+
+    // bars
+    for (let i = 0; i < NB; i++) {
+      if (!bins[i]) continue;
+      const lo = -XMAX_H + i * BW, hi = lo + BW;
+      const extreme = lo >= OBS - 1e-9 || hi <= -OBS + 1e-9;
+      ctx.fillStyle = extreme ? t.heat : t.delta;
+      ctx.globalAlpha = .85;
+      ctx.fillRect(X(lo) + .5, Y(bins[i]), X(hi) - X(lo) - 1, B - Y(bins[i]));
+      ctx.globalAlpha = 1;
+    }
+
+    // theory curve scaled to expected counts
+    if (n) {
+      ctx.strokeStyle = t.fg; ctx.lineWidth = 1.8; ctx.beginPath();
+      for (let i = 0; i <= 400; i++) {
+        const v = -XMAX_H + i / 400 * 2 * XMAX_H, c = n * BW * pdf(v, SIGMA_D);
+        i ? ctx.lineTo(X(v), Y(c)) : ctx.moveTo(X(v), Y(c));
+      }
+      ctx.stroke();
+    }
+
+    axis(ctx, t, L, R, B, X, [-0.2, -0.1, -0.04, 0, 0.04, 0.1, 0.2], "ΔT (°C)");
+    ctx.font = `600 12px ${t.data}`;
+    vline(ctx, X(OBS), T - 18, B, t.heat, [], "觀測 0.04", "left");
+    vline(ctx, X(-OBS), T - 18, B, t.heat, [], "−0.04", "right");
+    vline(ctx, X(CRIT), T, B, t.sig, [6, 4], "顯著 0.098", "left");
+    vline(ctx, X(-CRIT), T, B, t.sig, [6, 4], "", "right");
+    ctx.save(); ctx.fillStyle = t.muted; ctx.font = `12px ${t.data}`; ctx.translate(12, (T + B) / 2); ctx.rotate(-Math.PI / 2);
+    ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillText("次數", 0, 0); ctx.restore();
+    if (!n) {
+      ctx.fillStyle = t.muted; ctx.font = `14px ${t.data}`; ctx.textAlign = "center";
+      ctx.fillText("按上方按鈕開始抽樣", (L + R) / 2, (T + B) / 2);
+    }
+  }
+
+  function niceStep(x) {
+    const p = Math.pow(10, Math.floor(Math.log10(Math.max(x, 1))));
+    const m = x / p;
+    return Math.max(1, (m <= 1 ? 1 : m <= 2 ? 2 : m <= 5 ? 5 : 10) * p);
+  }
+
+  const pct = x => (100 * x).toFixed(1) + "%";
+  function updateText() {
+    $("sN").textContent = n.toLocaleString();
+    $("sK").textContent = kTwo.toLocaleString();
+    $("sP").textContent = n ? pct(kTwo / n) : "–";
+    $("sP1").textContent = n ? pct(kOne / n) : "–";
+    if (lastPair) {
+      const f = v => (v >= 0 ? "+" : "−") + Math.abs(v).toFixed(3);
+      const ext = Math.abs(lastPair.d) >= OBS;
+      $("last").innerHTML = `最近一次：<span class="a">2025 誤差 ${f(lastPair.a)}</span> − <span class="a">2024 誤差 ${f(lastPair.b)}</span> = <span class="d">ΔT ${f(lastPair.d)} °C</span>` +
+        (ext ? `　<span style="color:var(--heat)">≥ 0.04，和觀測一樣極端</span>` : "");
+    } else {
+      $("last").textContent = "每次抽樣：從 ① 抽兩個誤差，相減得到一個 ΔT，加到 ②。";
+    }
+    const p = n >= 200 ? kTwo / n : 2 * (1 - Phi(OBS / SIGMA_D));
+    $("pill").textContent = `p ≈ ${p.toFixed(2)} > 0.05：不顯著`;
+  }
+
+  function Phi(z) { // standard normal CDF (Abramowitz–Stegun 7.1.26)
+    const tt = 1 / (1 + 0.3275911 * Math.abs(z) / Math.SQRT2);
+    const y = 1 - (((((1.061405429 * tt - 1.453152027) * tt) + 1.421413741) * tt - 0.284496736) * tt + 0.254829592) * tt * Math.exp(-z * z / 2);
+    return z >= 0 ? (1 + y) / 2 : (1 - y) / 2;
+  }
+
+  function render() { const t = tokens(); drawNoise(t); drawHist(t); updateText(); }
+
+  // animate draws over ~1 s so the histogram visibly fills
+  let raf = 0;
+  function queue(k) {
+    pending += k;
+    if (!raf) raf = requestAnimationFrame(tick);
+  }
+  let chunk = 1, lastStep = 0;
+  function tick(ts) {
+    raf = 0;
+    if (pending <= 0) return;
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) { while (pending > 0) { drawOne(); pending--; } render(); return; }
+    if (pending <= 10) {
+      if (ts - lastStep < 140) { raf = requestAnimationFrame(tick); return; }
+      lastStep = ts; drawOne(); pending--;
+    } else {
+      chunk = Math.max(1, Math.ceil(pending / 50));
+      for (let i = 0; i < chunk && pending > 0; i++) { drawOne(); pending--; }
+    }
+    render();
+    if (pending > 0) raf = requestAnimationFrame(tick);
+  }
+
+  $("b1").onclick = () => queue(1);
+  $("b10").onclick = () => queue(10);
+  $("b100").onclick = () => queue(100);
+  $("b1000").onclick = () => queue(1000);
+  $("bn").onclick = () => {
+    const k = Math.max(1, Math.min(100000, Math.floor(Number($("nInput").value) || 0)));
+    $("nInput").value = k; queue(k);
+  };
+  $("reset").onclick = () => {
+    pending = 0; bins = new Array(NB).fill(0); n = kTwo = kOne = outside = 0; lastPair = null; render();
+  };
+
+  // start in a working state: a handful of draws already made
+  for (let i = 0; i < 30; i++) drawOne();
+
+  let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(render, 80); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(render);
+  render();
+})();
+</script>

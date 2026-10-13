@@ -1,0 +1,28 @@
+format: jb-book
+root: intro
+
+parts:
+  - caption: Lecture
+    chapters:
+      - file: lecture/00_Chapter0/00_The_Idea_Behind_the_Course
+        sections:
+          - file: lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/01_basic_use
+          - file: lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/02_advanced_use
+          - file: lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/03_proof
+          - file: lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/04_exceptions
+          - glob: lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/*
+
+      - file: lecture/01_Rule101/00_Rule101
+        sections:
+          - file: lecture/01_Rule101/01_tool/01_Gaussian/01_Gaussian_distribution
+          - file: lecture/01_Rule101/01_tool/01_Gaussian/02_Gaussian_integrals
+          - file: lecture/01_Rule101/01_tool/03_expectation_rules
+          - glob: lecture/01_Rule101/01_tool/02_Bayes/01_problems/*
+          - glob: lecture/01_Rule101/02_proof/*
+          - file: lecture/01_Rule101/03_notation_X_vs_x
+          - file: lecture/01_Rule101/99_textbook
+
+  - caption: Homework
+    chapters:
+      - file: homework/hw2/hw2
+      - file: homework/hw3/hw3

@@ -1,0 +1,683 @@
+
+<!DOCTYPE html>
+
+
+<html lang="zh-TW" data-content_root="../../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Q17｜應用壓軸：三能階雷射的最大熵分布與負絕對溫度 &#8212; Objective Analysis</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/custom.css?v=4cca277b" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../../../_static/documentation_options.js?v=7da51243"></script>
+    <script src="../../../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../../../../_static/translations.js?v=1fe8cbde"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q17_three_level_negative_temperature';</script>
+    <link rel="canonical" href="https://derek1403.github.io/PC-NTU/Objective_Analysis/_build/html/lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q17_three_level_negative_temperature.html" />
+    <link rel="index" title="索引" href="../../../../../genindex.html" />
+    <link rel="search" title="搜尋" href="../../../../../search.html" />
+    <link rel="next" title="Rule 101: From Maximum Entropy to Bayes』 Theorem (Rule101：從最大熵到貝氏定理)" href="../../../../01_Rule101/00_Rule101.html" />
+    <link rel="prev" title="Q16｜大氣／物理壓軸：球面＋平面上的二次型極值" href="Q16_quadratic_form_two_constraints.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="zh-TW"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../../../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Objective Analysis</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="搜尋" aria-label="搜尋" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">搜尋</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../../../intro.html">
+                    Objective Analysis (客觀分析)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lecture</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../../00_The_Idea_Behind_the_Course.html">Chapter 0: The Idea Behind the Course</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../01_basic_use.html">Find extreme values under a constraint, using Lagrange Multiplier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_advanced_use.html">Find extreme values under multiple constraints, using Lagrange Multipliers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_proof.html">拉格朗日乘數法的證明 (Proof of the Lagrange Multiplier Method)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04_exceptions.html">拉格朗日乘數法的適用範圍 (When Does It Apply?)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Q01_quadratic_on_line.html">Q01｜基本題：二次函數在直線上的極值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Q02_cubic_on_ellipse.html">Q02｜基礎暖身：橢圓上的 <span class="math notranslate nohighlight">\(x^2y\)</span> 與分類討論</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Q03_two_linear_constraints.html">Q03｜雙重限制條件：兩平面交線上離原點最近的點</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Q04_symmetric_on_sphere.html">Q04｜進階對稱：球面上的 <span class="math notranslate nohighlight">\(xy+yz+zx\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Q05_cubic_on_unit_sphere.html">Q05｜微積分期末壓軸：單位球上的 <span class="math notranslate nohighlight">\(x^2y+yz^2\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Q06_hyperboloid_plane_distance.html">Q06｜微積分期末壓軸：雙曲面與平面交線到原點的距離</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Q07_box_min_surface.html">Q07｜材料科學：固定體積下表面積最小的長方體</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Q08_1DVar_data_assimilation.html">Q08｜大氣科學：一維變分資料同化 (1D-Var)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Q09_QG_min_kinetic_energy.html">Q09｜大氣動力：熱力風平衡下的最小動能配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Q10_Thomson_conducting_spheres.html">Q10｜電磁學：孤立導體球的靜電能最小化 (Thomson’s Theorem)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Q11_wind_max_transport.html">Q11｜流體力學：固定動能下使輸送量最大的風場</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Q12_entropy_max_equilibrium.html">Q12｜熱力學：固定總能量下的熵最大與熱平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Q13_hydrogen_tank_min_mass.html">Q13｜結構工程：異質材料儲氫槽的輕量化設計</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Q14_inertia_principal_axes.html">Q14｜古典力學：非對稱衛星的慣量主軸</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Q15_Gibbs_min_equilibrium.html">Q15｜化學熱力學：吉布斯自由能最小化與化學平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Q16_quadratic_form_two_constraints.html">Q16｜大氣／物理壓軸：球面＋平面上的二次型極值</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Q17｜應用壓軸：三能階雷射的最大熵分布與負絕對溫度</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../01_Rule101/00_Rule101.html">Rule 101: From Maximum Entropy to Bayes』 Theorem (Rule101：從最大熵到貝氏定理)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../01_Rule101/01_tool/01_Gaussian/01_Gaussian_distribution.html">高斯分布 (Gaussian Distribution)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../01_Rule101/01_tool/01_Gaussian/02_Gaussian_integrals.html">高斯積分 (Gaussian Integrals)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../01_Rule101/01_tool/03_expectation_rules.html">期望值與變異數的運算規則 (Rules for Expectation and Variance)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../01_Rule101/01_tool/02_Bayes/01_problems/01_weather_prediction.html">Conditional Probability and Bayes』 Theorem in Weather Prediction (條件機率與貝氏定理：由「今天下雨」推估「明天下雨」)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../01_Rule101/01_tool/02_Bayes/01_problems/02_COVID-19.html">Base Rate and Rapid Testing in COVID-19 Screening (基本比率：快篩陽性真的染疫的機率)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../01_Rule101/01_tool/02_Bayes/01_problems/03_Monty_Hall_problem.html">Monty Hall Problem (三門問題：主持人的行動也是資訊)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../01_Rule101/01_tool/02_Bayes/01_problems/04_Data_Assimilation.html">Data Assimilation as Bayes』 Theorem (資料同化：用觀測修正模式預報)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../01_Rule101/02_proof/01_max_entropy_Gaussian.html">已知平均與變異數時，最大熵分布是高斯分布 (Maximum Entropy with Known Mean and Variance)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../01_Rule101/02_proof/02_Gauss_mean_optimal_Gaussian.html">「平均值是最佳估計」推出高斯分布 (Gauss: Optimal Mean Implies Gaussian Errors)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../01_Rule101/02_proof/03_standard_error.html">樣本平均的標準誤 (Standard Error of the Sample Mean)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../01_Rule101/02_proof/04_sample_variance_N-1.html">樣本變異數為什麼除以 <span class="math notranslate nohighlight">\(N-1\)</span> (Why the Sample Variance Divides by <span class="math notranslate nohighlight">\(N-1\)</span>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../01_Rule101/02_proof/05_Gaussian_skewness_kurtosis.html">高斯分布的偏度為 0、峰度為 3 (Skewness and Kurtosis of the Gaussian)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../01_Rule101/02_proof/06_Gaussian_product_posterior.html">高斯先驗 × 高斯概似 = 高斯後驗 (Gaussian Prior × Gaussian Likelihood → Gaussian Posterior)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../01_Rule101/03_notation_X_vs_x.html">大寫 <span class="math notranslate nohighlight">\(X\)</span> 與小寫 <span class="math notranslate nohighlight">\(x\)</span> (Random Variable vs. Observed Value)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../01_Rule101/99_textbook.html">Week 1-3: Rule101</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../homework/hw2/hw2.html">Objective Analysis Week 02 Homework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../homework/hw3/hw3.html">Objective Analysis Week 03 Homework</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/derek1403/PC-NTU" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="來源儲存庫"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="下載此頁面">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../../../_sources/lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q17_three_level_negative_temperature.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="下載原始檔"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="列印成 PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="全螢幕模式"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="搜尋" aria-label="搜尋" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Q17｜應用壓軸：三能階雷射的最大熵分布與負絕對溫度</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目錄 </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question">Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-answer">Question - Answer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solve">solve</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1. 等比數列</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2. 機率分布</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3. 負溫度</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="q17">
+<h1>Q17｜應用壓軸：三能階雷射的最大熵分布與負絕對溫度<a class="headerlink" href="#q17" title="連結到這個標頭">#</a></h1>
+<blockquote>
+<div><p>應用題 ★★★★★</p>
+</div></blockquote>
+<section id="question">
+<h2>Question<a class="headerlink" href="#question" title="連結到這個標頭">#</a></h2>
+<p>考慮固態雷射晶體中的三能階量子系統，其三個能階的能量分別為 <span class="math notranslate nohighlight">\(E_1 = 0\)</span>、<span class="math notranslate nohighlight">\(E_2 = \varepsilon\)</span>、<span class="math notranslate nohighlight">\(E_3 = 2\varepsilon\)</span>（其中 <span class="math notranslate nohighlight">\(\varepsilon &gt; 0\)</span>），粒子處於各能階的機率分別為 <span class="math notranslate nohighlight">\(p_1, p_2, p_3 &gt; 0\)</span>。
+根據統計力學的最大熵原理（Maximum Entropy Principle），熱平衡或準平衡態會最大化吉布斯熵函數：</p>
+<div class="math notranslate nohighlight">
+\[S(p_1, p_2, p_3) = -k_B \left( p_1 \ln p_1 + p_2 \ln p_2 + p_3 \ln p_3 \right)\]</div>
+<p>今以光學幫浦（Optical Pumping）將能量注入晶體，使系統同時受到兩個守恆條件限制：</p>
+<ul class="simple">
+<li><p>總機率正規化：<span class="math notranslate nohighlight">\(p_1 + p_2 + p_3 = 1\)</span></p></li>
+<li><p>高能態平均能量限制：<span class="math notranslate nohighlight">\(0\cdot p_1 + \varepsilon p_2 + 2\varepsilon p_3 = \frac{10}{7}\varepsilon\)</span></p></li>
+</ul>
+<p>請完成以下推導：</p>
+<ol class="arabic simple">
+<li><p>引入拉格朗日乘數，證明各能階機率滿足等比數列關係 <span class="math notranslate nohighlight">\(p_2 = p_1 r\)</span>、<span class="math notranslate nohighlight">\(p_3 = p_1 r^2\)</span>（其中 <span class="math notranslate nohighlight">\(r = e^{-\beta\varepsilon}\)</span>，<span class="math notranslate nohighlight">\(\beta\)</span> 為對應能量限制的乘數）。</p></li>
+<li><p>將限制條件代入並化簡為關於 <span class="math notranslate nohighlight">\(r\)</span> 的一元二次方程式，手算出機率分布 <span class="math notranslate nohighlight">\((p_1, p_2, p_3)\)</span>。</p></li>
+<li><p>根據統計熱力學定義 <span class="math notranslate nohighlight">\(\beta = \frac{1}{k_B T}\)</span>，求出此系統的絕對溫度 <span class="math notranslate nohighlight">\(T\)</span>，並解釋為何會出現「負絕對溫度（<span class="math notranslate nohighlight">\(T &lt; 0\)</span>）」與「居量反轉（Population Inversion, <span class="math notranslate nohighlight">\(p_3 &gt; p_2 &gt; p_1\)</span>）」。</p></li>
+</ol>
+</section>
+<section id="question-answer">
+<h2>Question - Answer<a class="headerlink" href="#question-answer" title="連結到這個標頭">#</a></h2>
+<section id="assumptions-preliminaries">
+<h3>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="連結到這個標頭">#</a></h3>
+<ul>
+<li><p><strong>【已知 1】<a class="reference internal" href="../02_advanced_use.html"><span class="std std-doc">多約束 Lagrange 條件 (Lagrange Condition)</span></a>：</strong> 每條約束配一個乘數，極值點必使 Lagrangian 對所有變數的偏導數同時為零。</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial \mathcal{L}}{\partial p_i} = 0,\qquad i = 1,2,3\]</div>
+</li>
+<li><p><strong>【已知 2】統計溫度 (Statistical Temperature)：</strong> 波茲曼分布中能量的「權重係數」就是倒溫度；它的正負號決定機率隨能量遞減或遞增。</p>
+<div class="math notranslate nohighlight">
+\[\beta = \frac{1}{k_B T}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(T\)</span> : 絕對溫度 (Absolute temperature) <span class="math notranslate nohighlight">\([\text{K}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 1】目標與約束 (Objective &amp; Constraints)：</strong></p>
+<p>(a) $<span class="math notranslate nohighlight">\(S \overset{\text{def}}{=} -k_B \sum_{i=1}^{3} p_i \ln p_i\)</span>$</p>
+<p>(b) $<span class="math notranslate nohighlight">\(g_1 \overset{\text{def}}{=} p_1 + p_2 + p_3 = 1\)</span>$</p>
+<p>(c) $<span class="math notranslate nohighlight">\(g_2 \overset{\text{def}}{=} \sum_{i=1}^{3} E_i\, p_i = \frac{10}{7}\varepsilon\)</span>$</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(p_i\)</span> : 第 <span class="math notranslate nohighlight">\(i\)</span> 能階佔據機率 (Occupation probability) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(E_i\)</span> : 能階能量 (Energy level) <span class="math notranslate nohighlight">\([\text{J}]\)</span>，<span class="math notranslate nohighlight">\(E_i = (i-1)\varepsilon\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(k_B\)</span> : 波茲曼常數 (Boltzmann constant) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{K}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(k_B \approx 1.38 \times 10^{-23}\ \text{J}\cdot\text{K}^{-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(S\)</span> : 吉布斯熵 (Gibbs entropy) <span class="math notranslate nohighlight">\([\text{J}\cdot\text{K}^{-1}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 2】乘數的寫法 (Scaled Multipliers)：</strong> 把兩個乘數寫成 <span class="math notranslate nohighlight">\(k_B\alpha\)</span>、<span class="math notranslate nohighlight">\(k_B\beta\)</span>，讓 <span class="math notranslate nohighlight">\(\beta\)</span> 的單位是 <span class="math notranslate nohighlight">\(\text{J}^{-1}\)</span>，直接對上 <span class="math notranslate nohighlight">\(\beta = 1/(k_B T)\)</span>。</p>
+<p>(a) $<span class="math notranslate nohighlight">\(\mathcal{L} \overset{\text{def}}{=} S - k_B\alpha\,(g_1 - 1) - k_B\beta\Big(g_2 - \frac{10}{7}\varepsilon\Big)\)</span>$</p>
+<p>(b) $<span class="math notranslate nohighlight">\(r \overset{\text{def}}{=} e^{-\beta\varepsilon}\)</span>$</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\alpha\)</span> : 正規化乘數 (Normalization multiplier) <span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 能量乘數 (Energy multiplier) <span class="math notranslate nohighlight">\([\text{J}^{-1}]\)</span></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="solve">
+<h3>solve<a class="headerlink" href="#solve" title="連結到這個標頭">#</a></h3>
+<section id="id1">
+<h4>1. 等比數列<a class="headerlink" href="#id1" title="連結到這個標頭">#</a></h4>
+<p>(a) 對 <span class="math notranslate nohighlight">\(p_i\)</span> 偏微分：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+0 &amp;\overset{\text{已知 1}}{=}&amp; \frac{\partial \mathcal{L}}{\partial p_i} \\
+0 &amp;\overset{\text{定義 1,2(a)}}{=}&amp; -k_B(\ln p_i + 1) - k_B\alpha - k_B\beta E_i \\
+\ln p_i &amp;=&amp; -1 - \alpha - \beta E_i \\
+p_i &amp;=&amp; e^{-1-\alpha}\, e^{-\beta E_i}
+\end{gather*}\end{split}\]</div>
+<p>(b) 代入 <span class="math notranslate nohighlight">\(E_i = (i-1)\varepsilon\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+p_2 &amp;\overset{\text{(a)}}{=}&amp; p_1\, e^{-\beta\varepsilon} \\
+p_2 &amp;\overset{\text{定義 2(b)}}{=}&amp; p_1\, r \\
+p_3 &amp;\overset{\text{(a),定義 2(b)}}{=}&amp; p_1\, r^2
+\end{gather*}\end{split}\]</div>
+</section>
+<section id="id2">
+<h4>2. 機率分布<a class="headerlink" href="#id2" title="連結到這個標頭">#</a></h4>
+<p>(c) 能量約束：把 <span class="math notranslate nohighlight">\(E_i\)</span> 展開，再用 (b) 把 <span class="math notranslate nohighlight">\(p_2, p_3\)</span> 換成 <span class="math notranslate nohighlight">\(p_1\)</span> 與 <span class="math notranslate nohighlight">\(r\)</span>，最後兩邊約掉 <span class="math notranslate nohighlight">\(\varepsilon\)</span>。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{10}{7}\varepsilon &amp;\overset{\text{定義 1(c)}}{=}&amp; E_1 p_1 + E_2 p_2 + E_3 p_3 \\
+\frac{10}{7}\varepsilon &amp;\overset{\text{定義 1}}{=}&amp; 0 \cdot p_1 + \varepsilon\, p_2 + 2\varepsilon\, p_3 \\
+\frac{10}{7}\varepsilon &amp;\overset{\text{(b)}}{=}&amp; \varepsilon\, p_1 r + 2\varepsilon\, p_1 r^2 \\
+\frac{10}{7} &amp;=&amp; p_1\,(r + 2r^2)
+\end{gather*}\end{split}\]</div>
+<p>(d) 正規化約束：同樣把 <span class="math notranslate nohighlight">\(p_2, p_3\)</span> 換成 <span class="math notranslate nohighlight">\(p_1\)</span> 與 <span class="math notranslate nohighlight">\(r\)</span>。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+1 &amp;\overset{\text{定義 1(b)}}{=}&amp; p_1 + p_2 + p_3 \\
+1 &amp;\overset{\text{(b)}}{=}&amp; p_1 + p_1 r + p_1 r^2 \\
+1 &amp;=&amp; p_1\,(1 + r + r^2)
+\end{gather*}\end{split}\]</div>
+<p>(e) (c) 除以 (d)，<span class="math notranslate nohighlight">\(p_1\)</span> 消掉，只剩 <span class="math notranslate nohighlight">\(r\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{10}{7} &amp;\overset{\text{(c),(d)}}{=}&amp; \frac{r + 2r^2}{1 + r + r^2} \\
+10\,(1 + r + r^2) &amp;=&amp; 7\,(r + 2r^2) \\
+10 + 10r + 10r^2 &amp;=&amp; 7r + 14r^2 \\
+0 &amp;=&amp; 4r^2 - 3r - 10 \\
+0 &amp;=&amp; (4r + 5)(r - 2) \\
+r &amp;=&amp; 2
+\end{gather*}\end{split}\]</div>
+<p>（<span class="math notranslate nohighlight">\(r = e^{-\beta\varepsilon} &gt; 0\)</span>，捨去 <span class="math notranslate nohighlight">\(-\frac{5}{4}\)</span>。）</p>
+<p>(f) 代回 (d) 求 <span class="math notranslate nohighlight">\(p_1\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+1 &amp;\overset{\text{(d),(e)}}{=}&amp; p_1\,(1 + 2 + 4) \\
+p_1 &amp;=&amp; \frac{1}{7}
+\end{gather*}\end{split}\]</div>
+<p>所以 <span class="math notranslate nohighlight">\((p_1, p_2, p_3) = \left(\frac{1}{7},\ \frac{2}{7},\ \frac{4}{7}\right)\)</span>。</p>
+</section>
+<section id="id3">
+<h4>3. 負溫度<a class="headerlink" href="#id3" title="連結到這個標頭">#</a></h4>
+<p>(g) 由 <span class="math notranslate nohighlight">\(r\)</span> 求 <span class="math notranslate nohighlight">\(\beta\)</span> 與 <span class="math notranslate nohighlight">\(T\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+e^{-\beta\varepsilon} &amp;\overset{\text{定義 2(b),(e)}}{=}&amp; 2 \\
+\beta &amp;=&amp; -\frac{\ln 2}{\varepsilon} \\
+T &amp;\overset{\text{已知 2}}{=}&amp; \frac{1}{k_B\beta} \\
+T &amp;=&amp; -\frac{\varepsilon}{k_B \ln 2}
+\end{gather*}\end{split}\]</div>
+<p>(h) 判定：<span class="math notranslate nohighlight">\(-p\ln p\)</span> 是凹函數，約束都是線性的，所以唯一候選點是熵的全域最大值。</p>
+<p><strong>結論</strong>：</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(p_i \propto e^{-\beta E_i}\)</span>，即波茲曼分布，相鄰能階比值固定為 <span class="math notranslate nohighlight">\(r\)</span>。</p></li>
+<li><p><span class="math notranslate nohighlight">\((p_1, p_2, p_3) = \left(\frac{1}{7}, \frac{2}{7}, \frac{4}{7}\right)\)</span>。</p></li>
+<li><p><span class="math notranslate nohighlight">\(T = -\dfrac{\varepsilon}{k_B \ln 2} &lt; 0\)</span>。</p></li>
+</ol>
+<p>為什麼是負的：溫度 <span class="math notranslate nohighlight">\(T &gt; 0\)</span> 時 <span class="math notranslate nohighlight">\(r &lt; 1\)</span>，機率隨能量遞減，平均能量必小於 <span class="math notranslate nohighlight">\(\varepsilon\)</span>；<span class="math notranslate nohighlight">\(T \to \pm\infty\)</span> 時三能階均分，平均能量恰為 <span class="math notranslate nohighlight">\(\varepsilon\)</span>。幫浦把平均能量推到 <span class="math notranslate nohighlight">\(\frac{10}{7}\varepsilon &gt; \varepsilon\)</span>，只能靠 <span class="math notranslate nohighlight">\(r &gt; 1\)</span>（高能階比低能階更擠），也就是 <span class="math notranslate nohighlight">\(\beta &lt; 0\)</span>、<span class="math notranslate nohighlight">\(T &lt; 0\)</span>。這就是<strong>居量反轉</strong> <span class="math notranslate nohighlight">\(p_3 &gt; p_2 &gt; p_1\)</span>，也是雷射能產生受激輻射放大的前提。負溫度並不比 <span class="math notranslate nohighlight">\(0\ \text{K}\)</span> 冷，反而比任何正溫度都「熱」：與正溫度系統接觸時，能量會從它流出去。</p>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lecture\00_Chapter0\01_tool\01_Lagrange_multiplier\05_problems"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Q16_quadratic_form_two_constraints.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">上一頁</p>
+        <p class="prev-next-title">Q16｜大氣／物理壓軸：球面＋平面上的二次型極值</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../../../01_Rule101/00_Rule101.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">下一頁</p>
+        <p class="prev-next-title">Rule 101: From Maximum Entropy to Bayes』 Theorem (Rule101：從最大熵到貝氏定理)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目錄
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question">Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-answer">Question - Answer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solve">solve</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1. 等比數列</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2. 機率分布</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3. 負溫度</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+作者： PC YE
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

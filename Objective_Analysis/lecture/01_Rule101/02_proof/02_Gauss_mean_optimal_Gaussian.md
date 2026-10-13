@@ -53,7 +53,7 @@
   * $a, b$ : 任意兩個實數
   * $k$ : 直線的斜率，常數
 
-* **【已知 3】[高斯分布的精度形式 (Precision Form)](../01_tool/01_Gaussian_distribution.md)：** 用精度 $h$ 寫的高斯分布；正規化常數與變異數都可由 [高斯積分](../01_tool/02_Gaussian_integrals.md) (a)(b) 算出。
+* **【已知 3】[高斯分布的精度形式 (Precision Form)](../01_tool/01_Gaussian/01_Gaussian_distribution.md)：** 用精度 $h$ 寫的高斯分布；正規化常數與變異數都可由 [高斯積分](../01_tool/01_Gaussian/02_Gaussian_integrals.md) (a)(b) 算出。
 
   * (a) 形式
 
