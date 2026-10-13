@@ -1,0 +1,1125 @@
+
+<!DOCTYPE html>
+
+
+<html lang="zh-TW" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Objective Analysis Week 04 Homework &#8212; Objective Analysis</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=4cca277b" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=7da51243"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/translations.js?v=1fe8cbde"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'homework/hw4/hw4';</script>
+    <link rel="canonical" href="https://derek1403.github.io/PC-NTU/Objective-Analysis/_build/html/homework/hw4/hw4.html" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜尋" href="../../search.html" />
+    <link rel="prev" title="Objective Analysis Week 03 Homework" href="../hw3/hw3.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="zh-TW"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Objective Analysis</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="搜尋" aria-label="搜尋" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">搜尋</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Objective Analysis (客觀分析)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lecture</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lecture/00_Chapter0/00_The_Idea_Behind_the_Course.html">Chapter 0: The Idea Behind the Course</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/01_basic_use.html">Find extreme values under a constraint, using Lagrange Multiplier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/02_advanced_use.html">Find extreme values under multiple constraints, using Lagrange Multipliers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/03_proof.html">拉格朗日乘數法的證明 (Proof of the Lagrange Multiplier Method)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/04_exceptions.html">拉格朗日乘數法的適用範圍 (When Does It Apply?)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q01_quadratic_on_line.html">Q01｜基本題：二次函數在直線上的極值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q02_cubic_on_ellipse.html">Q02｜基礎暖身：橢圓上的 <span class="math notranslate nohighlight">\(x^2y\)</span> 與分類討論</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q03_two_linear_constraints.html">Q03｜雙重限制條件：兩平面交線上離原點最近的點</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q04_symmetric_on_sphere.html">Q04｜進階對稱：球面上的 <span class="math notranslate nohighlight">\(xy+yz+zx\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q05_cubic_on_unit_sphere.html">Q05｜微積分期末壓軸：單位球上的 <span class="math notranslate nohighlight">\(x^2y+yz^2\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q06_hyperboloid_plane_distance.html">Q06｜微積分期末壓軸：雙曲面與平面交線到原點的距離</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q07_box_min_surface.html">Q07｜材料科學：固定體積下表面積最小的長方體</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q08_1DVar_data_assimilation.html">Q08｜大氣科學：一維變分資料同化 (1D-Var)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q09_QG_min_kinetic_energy.html">Q09｜大氣動力：熱力風平衡下的最小動能配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q10_Thomson_conducting_spheres.html">Q10｜電磁學：孤立導體球的靜電能最小化 (Thomson’s Theorem)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q11_wind_max_transport.html">Q11｜流體力學：固定動能下使輸送量最大的風場</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q12_entropy_max_equilibrium.html">Q12｜熱力學：固定總能量下的熵最大與熱平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q13_hydrogen_tank_min_mass.html">Q13｜結構工程：異質材料儲氫槽的輕量化設計</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q14_inertia_principal_axes.html">Q14｜古典力學：非對稱衛星的慣量主軸</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q15_Gibbs_min_equilibrium.html">Q15｜化學熱力學：吉布斯自由能最小化與化學平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q16_quadratic_form_two_constraints.html">Q16｜大氣／物理壓軸：球面＋平面上的二次型極值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q17_three_level_negative_temperature.html">Q17｜應用壓軸：三能階雷射的最大熵分布與負絕對溫度</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lecture/01_Rule101/00_Rule101.html">Rule 101: From Maximum Entropy to Bayes』 Theorem (Rule101：從最大熵到貝氏定理)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/01_tool/01_Gaussian/01_Gaussian_distribution.html">高斯分布 (Gaussian Distribution)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/01_tool/01_Gaussian/02_Gaussian_integrals.html">高斯積分 (Gaussian Integrals)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/01_tool/03_expectation_rules.html">期望值與變異數的運算規則 (Rules for Expectation and Variance)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/01_tool/02_Bayes/01_problems/01_weather_prediction.html">Conditional Probability and Bayes』 Theorem in Weather Prediction (條件機率與貝氏定理：由「今天下雨」推估「明天下雨」)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/01_tool/02_Bayes/01_problems/02_COVID-19.html">Base Rate and Rapid Testing in COVID-19 Screening (基本比率：快篩陽性真的染疫的機率)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/01_tool/02_Bayes/01_problems/03_Monty_Hall_problem.html">Monty Hall Problem (三門問題：主持人的行動也是資訊)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/01_tool/02_Bayes/01_problems/04_Data_Assimilation.html">Data Assimilation as Bayes』 Theorem (資料同化：用觀測修正模式預報)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/02_proof/01_max_entropy_Gaussian.html">已知平均與變異數時，最大熵分布是高斯分布 (Maximum Entropy with Known Mean and Variance)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/02_proof/02_Gauss_mean_optimal_Gaussian.html">「平均值是最佳估計」推出高斯分布 (Gauss: Optimal Mean Implies Gaussian Errors)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/02_proof/03_standard_error.html">樣本平均的標準誤 (Standard Error of the Sample Mean)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/02_proof/04_sample_variance_N-1.html">樣本變異數為什麼除以 <span class="math notranslate nohighlight">\(N-1\)</span> (Why the Sample Variance Divides by <span class="math notranslate nohighlight">\(N-1\)</span>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/02_proof/05_Gaussian_skewness_kurtosis.html">高斯分布的偏度為 0、峰度為 3 (Skewness and Kurtosis of the Gaussian)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/02_proof/06_Gaussian_product_posterior.html">高斯先驗 × 高斯概似 = 高斯後驗 (Gaussian Prior × Gaussian Likelihood → Gaussian Posterior)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/03_notation_X_vs_x.html">大寫 <span class="math notranslate nohighlight">\(X\)</span> 與小寫 <span class="math notranslate nohighlight">\(x\)</span> (Random Variable vs. Observed Value)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/99_textbook.html">Week 1-3: Rule101</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../hw2/hw2.html">Objective Analysis Week 02 Homework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hw3/hw3.html">Objective Analysis Week 03 Homework</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Objective Analysis Week 04 Homework</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/derek1403/PC-NTU" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="來源儲存庫"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="下載此頁面">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/homework/hw4/hw4.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="下載原始檔"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="列印成 PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="全螢幕模式"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="搜尋" aria-label="搜尋" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Objective Analysis Week 04 Homework</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目錄 </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-frequentist-vs-bayesian-perspectives">Question 1. Frequentist vs. Bayesian Perspectives</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">中文翻譯</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-1">Answer 1.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a">(a)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b">(b)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c">(c)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d">(d)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-monte-carlo-derivation-of-the-t-distribution">Question 2. Monte Carlo Derivation of the t-Distribution</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">中文翻譯</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-2">Answer 2.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">基本知識</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">程式空格</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-b">(a)(b) 結果</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">(c) 討論</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-comparison-among-different-numerical-approaches-for-linear-regression">Question 3. Comparison among Different Numerical Approaches for Linear Regression</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">中文翻譯</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-3">Answer 3.</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="objective-analysis-week-04-homework">
+<h1>Objective Analysis Week 04 Homework<a class="headerlink" href="#objective-analysis-week-04-homework" title="連結到這個標頭">#</a></h1>
+<section id="question-1-frequentist-vs-bayesian-perspectives">
+<h2>Question 1. Frequentist vs. Bayesian Perspectives<a class="headerlink" href="#question-1-frequentist-vs-bayesian-perspectives" title="連結到這個標頭">#</a></h2>
+<p>To evaluate the localized cooling effect of a climate engineering intervention (e.g., stratospheric aerosol injection), scientists compared the mean temperatures of an experimental region and a control region. The latest observational analysis reports an apparent cooling effect of</p>
+<div class="math notranslate nohighlight">
+\[d = 0.6^{\circ}\mathrm{C}\]</div>
+<p>Due to instrumental noise, uneven sampling networks, and natural climate variability, the standard error of this estimated difference is <span class="math notranslate nohighlight">\(\sigma_d = 0.4^{\circ}\mathrm{C}\)</span>. Both frequentist and Bayesian statisticians accept these numbers, but they profoundly disagree on what may be said next.</p>
+<ul class="simple">
+<li><p>(a) <strong>The Frequentist View</strong></p>
+<ul>
+<li><p>Calculate the probability that measurement noise and natural variability alone would produce an apparent cooling gap of <span class="math notranslate nohighlight">\(0.6^{\circ}\mathrm{C}\)</span> or larger if the intervention were truly ineffective (i.e., true cooling <span class="math notranslate nohighlight">\(d_{\text{true}} = 0\)</span>). You may express your answer using the standard normal cumulative distribution function <span class="math notranslate nohighlight">\(\Phi(z)\)</span>.</p></li>
+<li><p>Furthermore, explain why a frequentist strictly declines to answer the question, 「What is the probability that the intervention is truly effective?」 Base your reasoning on the frequentist definition of what kind of quantity is allowed to carry a probability.</p></li>
+</ul>
+</li>
+<li><p>(b) <strong>The Bayesian View</strong></p>
+<ul>
+<li><p>Assume a flat prior, meaning there is no reason beforehand to favor either a cooling or warming effect. Write down the posterior distribution of the true cooling effect <span class="math notranslate nohighlight">\(d\)</span> given the observed data.</p></li>
+<li><p>Then, calculate the posterior probability that the intervention is truly effective (true <span class="math notranslate nohighlight">\(d &gt; 0\)</span>). How do the conditional forms of the probabilities differ between the two camps? Express this distinction mathematically using the form <span class="math notranslate nohighlight">\(\Pr(A \mid B)\)</span>.</p></li>
+</ul>
+</li>
+<li><p>(c) <strong>The Common Pitfall</strong></p>
+<ul>
+<li><p>Suppose a science news article reports: <em>「According to statistical analysis, there is only a 6.7% probability that the climate intervention has no effect.」</em> (Note: <span class="math notranslate nohighlight">\(\Phi(-1.5) \approx 0.067\)</span>). Explain the fundamental statistical error in this statement.</p></li>
+<li><p>Using your understanding from parts (a) and (b), rewrite the conclusion into two statistically rigorous sentences: one strictly following the frequentist logic, and one following the Bayesian logic.</p></li>
+</ul>
+</li>
+<li><p>(d) <strong>Informative Prior</strong></p>
+<ul>
+<li><p>Suppose another research team warns that, based on past laboratory experiments and small-scale climate models, this specific technology often triggers a weak unexpected 「warming」 rather than cooling. Consequently, the prior distribution is no longer flat, but is instead a Gaussian distribution centered on a negative value.</p></li>
+<li><p>Qualitatively explain how this new prior information would alter the Bayesian posterior probability calculated in (b). Finally, would the frequentist calculation (the p-value) in (a) change due to this new prior information? Briefly explain why or why not.</p></li>
+</ul>
+</li>
+</ul>
+<section id="id1">
+<h3>中文翻譯<a class="headerlink" href="#id1" title="連結到這個標頭">#</a></h3>
+<blockquote>
+<div><p><strong>問題 1：頻率學派 vs. 貝氏學派的觀點</strong></p>
+<p>為了評估某項氣候工程干預（例如平流層氣膠注入）的局地降溫效果，科學家比較了實驗區與對照區的平均氣溫。最新的觀測分析顯示，表觀降溫效果為</p>
+<div class="math notranslate nohighlight">
+\[d = 0.6^{\circ}\mathrm{C}\]</div>
+<p>由於儀器雜訊、不均勻的取樣網路以及自然氣候變異，此估計差值的標準誤為 <span class="math notranslate nohighlight">\(\sigma_d = 0.4^{\circ}\mathrm{C}\)</span>。頻率學派與貝氏學派的統計學家都接受這些數字，但對於接下來可以說什麼，兩派意見嚴重分歧。</p>
+<ul class="simple">
+<li><p>(a) <strong>頻率學派的觀點</strong></p>
+<ul>
+<li><p>若該干預實際上完全無效（即真實降溫 <span class="math notranslate nohighlight">\(d_{\text{true}} = 0\)</span>），計算僅靠量測雜訊與自然變異就產生 <span class="math notranslate nohighlight">\(0.6^{\circ}\mathrm{C}\)</span> 或更大表觀降溫差的機率。答案可用標準常態累積分布函數 <span class="math notranslate nohighlight">\(\Phi(z)\)</span> 表示。</p></li>
+<li><p>此外，解釋為什麼頻率學派會嚴格拒絕回答「此干預真正有效的機率是多少？」這個問題。請依據頻率學派對「什麼樣的量才可以被賦予機率」的定義來說明理由。</p></li>
+</ul>
+</li>
+<li><p>(b) <strong>貝氏學派的觀點</strong></p>
+<ul>
+<li><p>假設採用平坦先驗（flat prior），也就是事前沒有任何理由偏好降溫或增溫效果。寫出在給定觀測資料下，真實降溫效果 <span class="math notranslate nohighlight">\(d\)</span> 的後驗分布。</p></li>
+<li><p>接著，計算此干預真正有效（真實 <span class="math notranslate nohighlight">\(d &gt; 0\)</span>）的後驗機率。兩個陣營的機率在條件形式上有何不同？請用 <span class="math notranslate nohighlight">\(\Pr(A \mid B)\)</span> 的形式以數學方式表達此差異。</p></li>
+</ul>
+</li>
+<li><p>(c) <strong>常見的陷阱</strong></p>
+<ul>
+<li><p>假設某篇科學新聞報導：<em>「根據統計分析，該氣候干預沒有效果的機率只有 6.7%。」</em>（註：<span class="math notranslate nohighlight">\(\Phi(-1.5) \approx 0.067\)</span>）。解釋此敘述中根本性的統計錯誤。</p></li>
+<li><p>根據你在 (a) 與 (b) 的理解，將此結論改寫為兩個統計上嚴謹的句子：一句嚴格遵循頻率學派的邏輯，另一句遵循貝氏學派的邏輯。</p></li>
+</ul>
+</li>
+<li><p>(d) <strong>資訊性先驗（Informative Prior）</strong></p>
+<ul>
+<li><p>假設另一個研究團隊提出警告：根據過去的實驗室實驗與小尺度氣候模式，這項技術經常會引發微弱且出乎意料的「增溫」而非降溫。因此，先驗分布不再是平坦的，而是一個中心位於負值的高斯分布。</p></li>
+<li><p>定性說明此新的先驗資訊會如何改變 (b) 中計算出的貝氏後驗機率。最後，(a) 中的頻率學派計算（p 值）會因為這項新的先驗資訊而改變嗎？簡要說明原因。</p></li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+<section id="answer-1">
+<h2>Answer 1.<a class="headerlink" href="#answer-1" title="連結到這個標頭">#</a></h2>
+<p><strong>符號與基本設定</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(d\)</span>：真實降溫效果（固定但未知的數）</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat d\)</span>：觀測到的估計值，<span class="math notranslate nohighlight">\(\hat d = 0.6^\circ\mathrm{C}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\sigma_d = 0.4^\circ\mathrm{C}\)</span>：<span class="math notranslate nohighlight">\(\hat d\)</span> 的標準誤</p></li>
+</ul>
+<p>量測模型：在真實效果為 <span class="math notranslate nohighlight">\(d\)</span> 的條件下，觀測值 <span class="math notranslate nohighlight">\(\hat d\)</span> 服從平均為 <span class="math notranslate nohighlight">\(d\)</span>、標準差為 <span class="math notranslate nohighlight">\(\sigma_d\)</span> 的常態分布</p>
+<div class="math notranslate nohighlight">
+\[\hat d = d + \varepsilon,\quad \varepsilon \sim \mathcal N(0, \sigma_d^2) \;\Rightarrow\; \hat d \mid d \sim \mathcal N(d,\ \sigma_d^2)\]</div>
+<p>標準常態分布 <span class="math notranslate nohighlight">\(Z \sim \mathcal N(0,1)\)</span> 的累積分布函數（CDF）：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\Phi(z) &amp;=&amp; \Pr(Z \le z) = \int_{-\infty}^{z} \frac{1}{\sqrt{2\pi}} e^{-t^2/2}\, dt \\
+\Pr(Z &gt; z) &amp;=&amp; 1 - \Phi(z) = \Phi(-z)
+\end{gather*}\end{split}\]</div>
+<section id="a">
+<h3>(a)<a class="headerlink" href="#a" title="連結到這個標頭">#</a></h3>
+<ul class="simple">
+<li><p>虛無假設 <span class="math notranslate nohighlight">\(H_0\)</span>：干預無效，<span class="math notranslate nohighlight">\(d = 0\)</span>。在 <span class="math notranslate nohighlight">\(H_0\)</span> 下</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\hat d \mid (d = 0) \sim \mathcal N\left(0,\ 0.4^2\right)\]</div>
+<ul class="simple">
+<li><p>p 值（標準化後查 <span class="math notranslate nohighlight">\(\Phi\)</span>）：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+p &amp;=&amp; \Pr(\hat d \ge 0.6 \mid d = 0) \\
+&amp;=&amp; \Pr\left(\frac{\hat d - 0}{0.4} \ge \frac{0.6 - 0}{0.4}\right) \\
+&amp;=&amp; \Pr\left(Z \ge 1.5\right) \\
+&amp;=&amp; 1 - \Phi(1.5) = \Phi\left(-1.5\right) \\
+&amp;\approx&amp; 0.067
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>意義：若干預真的無效，單靠量測雜訊與自然變異，在大量重複的實驗中約有 <span class="math notranslate nohighlight">\(6.7\%\)</span> 的機會觀測到 <span class="math notranslate nohighlight">\(\ge 0.6^\circ\mathrm{C}\)</span> 的表觀降溫。</p></li>
+</ul>
+<p>為什麼頻率學派拒絕回答「干預真正有效的機率」：</p>
+<ul class="simple">
+<li><p>頻率學派中，機率的定義是可重複隨機實驗的 <strong>長期頻率</strong>。</p></li>
+<li><p>每次重做實驗都會改變的隨機量是 <span class="math notranslate nohighlight">\(\hat{d}\)</span>；而真實效果 <span class="math notranslate nohighlight">\(d\)</span> 是 <strong>未知的定值</strong>，不會因重做實驗而改變。</p></li>
+<li><p>因此「<span class="math notranslate nohighlight">\(d &gt; 0\)</span>」這個命題要嘛為真、要嘛為假，它的「機率」只能是 <span class="math notranslate nohighlight">\(0\)</span> 或 <span class="math notranslate nohighlight">\(1\)</span>，沒有長期頻率可言，無法給出介於兩者之間的數值。</p></li>
+<li><p>p 值描述的是 <span class="math notranslate nohighlight">\(\Pr(\text{資料} \mid \text{假設})\)</span>，而不是 <span class="math notranslate nohighlight">\(\Pr(\text{假設} \mid \text{資料})\)</span>。</p></li>
+</ul>
+</section>
+<section id="b">
+<h3>(b)<a class="headerlink" href="#b" title="連結到這個標頭">#</a></h3>
+<p>連續版貝氏定理（<span class="math notranslate nohighlight">\(p(\hat d)\)</span> 與 <span class="math notranslate nohighlight">\(d\)</span> 無關，視為正規化常數）：</p>
+<div class="math notranslate nohighlight">
+\[p(d \mid \hat d) = \frac{p(\hat d \mid d)\, p(d)}{p(\hat d)} \propto p(\hat d \mid d)\, p(d)\]</div>
+<ul class="simple">
+<li><p>先驗（平坦先驗）：<span class="math notranslate nohighlight">\(p(d) = \text{常數}\)</span>，對所有 <span class="math notranslate nohighlight">\(d \in (-\infty, \infty)\)</span> 都一樣</p></li>
+<li><p>概似函數：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[p(\hat d = 0.6 \mid d) \propto \exp\left[-\frac{(0.6 - d)^2}{2 \cdot 0.4^2}\right]\]</div>
+<ul class="simple">
+<li><p>後驗（利用 <span class="math notranslate nohighlight">\((0.6 - d)^2 = (d - 0.6)^2\)</span>，改看成 <span class="math notranslate nohighlight">\(d\)</span> 的函數）：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+p(d \mid \hat d = 0.6) &amp;\propto&amp; \exp\left[-\frac{(0.6 - d)^2}{2 \cdot 0.4^2}\right] \times \text{常數} \\
+&amp;\propto&amp; \exp\left[-\frac{\left(d - 0.6 \right)^2}{2 \cdot \left(0.4\right)^2}\right]
+\end{gather*}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[d \mid \hat d = 0.6 \;\sim\; \mathcal N\left(0.6,\ 0.4^2\right)\]</div>
+<ul class="simple">
+<li><p>與 hw3 Q2 對照：平坦先驗相當於背景誤差 <span class="math notranslate nohighlight">\(\sigma_b^2 \to \infty\)</span>（背景完全沒有資訊），此時</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[K = \frac{\sigma_b^2}{\sigma_b^2 + \sigma_o^2} \to 1, \quad x_a = x_b + K(y - x_b) \to y\]</div>
+<p>也就是後驗中心完全由觀測值決定，後驗的不確定度就等於觀測誤差。</p>
+<ul class="simple">
+<li><p>干預真正有效（<span class="math notranslate nohighlight">\(d &gt; 0\)</span>）的後驗機率：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\Pr(d &gt; 0 \mid \hat d = 0.6) &amp;=&amp; \Pr\left(Z &gt; \frac{0 - 0.6}{0.4}\right) \\
+&amp;=&amp; \Pr\left(Z &gt; -1.5\right) \\
+&amp;=&amp; 1 - \Phi(-1.5) = \Phi\left(1.5\right) \\
+&amp;\approx&amp; 0.933
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>兩派條件機率形式的差異：</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>頻率學派 (a)</p></th>
+<th class="head"><p>貝氏學派 (b)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>機率形式</p></td>
+<td><p><span class="math notranslate nohighlight">\(\Pr(\hat d \ge 0.6 \mid d = 0)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\Pr(d&gt;0 \mid \hat d = 0.6)\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>條件（<code class="docutils literal notranslate"><span class="pre">|</span></code> 右邊）</p></td>
+<td><p>假設（<span class="math notranslate nohighlight">\(d = 0\)</span>）</p></td>
+<td><p>已知 <span class="math notranslate nohighlight">\(\hat d = 0.6\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>問的對象（<code class="docutils literal notranslate"><span class="pre">|</span></code> 左邊）</p></td>
+<td><p>資料</p></td>
+<td><p>假設（關於真實效果 <span class="math notranslate nohighlight">\(d\)</span>）</p></td>
+</tr>
+<tr class="row-odd"><td><p>數值</p></td>
+<td><p><span class="math notranslate nohighlight">\(\approx 0.067\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\approx 0.933\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>觀察：<span class="math notranslate nohighlight">\(0.067 + 0.933 = 1\)</span> 。這只在「平坦先驗 + 對稱的常態分布」下才剛好成立，不代表 p 值等於「干預無效的機率」（這正是 (c) 要討論的陷阱）。</p></li>
+</ul>
+</section>
+<section id="c">
+<h3>(c)<a class="headerlink" href="#c" title="連結到這個標頭">#</a></h3>
+<p><strong>新聞敘述的根本錯誤</strong></p>
+<ul class="simple">
+<li><p>新聞說「干預沒有效果的機率只有 6.7%」，這是一個關於<strong>假設</strong>的機率，形式為</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\Pr\left(d=0 \mid \hat{d}=0.6 \right)\]</div>
+<ul class="simple">
+<li><p>但 <span class="math notranslate nohighlight">\(0.067\)</span> 其實是 (a) 算出的 p 值，形式為</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[p = \Pr\left( \hat{d}\ge0.6 \mid d=0 \right)\]</div>
+<ul class="simple">
+<li><p>新聞把 <code class="docutils literal notranslate"><span class="pre">|</span></code> 兩邊的「資料」與「假設」對調了，這種錯誤稱為 <strong>條件機率倒置謬誤</strong>（又稱 transposed conditional / prosecutor’s fallacy）。一般而言 <span class="math notranslate nohighlight">\(\Pr(A \mid B) \ne \Pr(B \mid A)\)</span>，就像 hw3 Q3 中 <span class="math notranslate nohighlight">\(P(W \mid H) = 0.9\)</span> 但 <span class="math notranslate nohighlight">\(P(H \mid W) = \frac{1}{3}\)</span>。</p></li>
+<li><p>從頻率學派的角度：由 (a)，<span class="math notranslate nohighlight">\(d\)</span> 是固定的未知常數，「干預無效」這個命題根本 <strong>不能</strong> 被賦予機率，p 值不可能是「假設成立的機率」。</p></li>
+<li><p>從貝氏學派的角度：後驗 <span class="math notranslate nohighlight">\(d \mid \hat d \sim \mathcal N(0.6,\ 0.4^2)\)</span> 是連續分布，「完全無效」（<span class="math notranslate nohighlight">\(d = 0\)</span> 這一個點）的後驗機率為 0。貝氏能說的最接近的是 <span class="math notranslate nohighlight">\(\Pr(d \le 0 \mid \hat d = 0.6) \approx 0.067\)</span>，它與 p 值數值相同，只是因為 <strong>先驗平坦</strong> 的巧合，換一個先驗就不再相等（見 (d)）。</p></li>
+</ul>
+<p><strong>改寫成兩個嚴謹的句子</strong></p>
+<ul class="simple">
+<li><p>頻率學派：「若該干預實際上完全無效（<span class="math notranslate nohighlight">\(d = 0\)</span>），則僅由量測雜訊與自然變異，就產生 <span class="math notranslate nohighlight">\(\ge\)</span> 0.6 <span class="math notranslate nohighlight">\(^\circ\mathrm{C}\)</span> 表觀降溫的機率約為 6.7 %（<span class="math notranslate nohighlight">\(p \approx 0.067\)</span>）；在 5% 顯著水準下，<strong>無法</strong> 拒絕『干預無效』的虛無假設。」</p></li>
+<li><p>貝氏學派：「在平坦先驗下，根據觀測到的 <span class="math notranslate nohighlight">\(0.6^\circ\mathrm{C}\)</span> 降溫，干預確實具有降溫效果（<span class="math notranslate nohighlight">\(d &gt; 0\)</span>）的後驗機率約為 93.3 %，不具降溫效果（<span class="math notranslate nohighlight">\(d \le 0\)</span>）的後驗機率約為 6.7 %。」</p></li>
+</ul>
+</section>
+<section id="d">
+<h3>(d)<a class="headerlink" href="#d" title="連結到這個標頭">#</a></h3>
+<p>令新的先驗為 <span class="math notranslate nohighlight">\(d \sim \mathcal N(\mu_0,\ \sigma_0^2)\)</span>，其中 <span class="math notranslate nohighlight">\(\mu_0 &lt; 0\)</span>。</p>
+<p><strong>後驗如何改變</strong></p>
+<ul class="simple">
+<li><p>先驗與概似函數都是高斯分布，相乘後的後驗仍是高斯分布，結構與 hw3 Q2 完全相同：</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>hw3 Q2</p></th>
+<th class="head"><p>本題</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>背景值 <span class="math notranslate nohighlight">\(x_b\)</span></p></td>
+<td><p>先驗中心 <span class="math notranslate nohighlight">\(\mu_0\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>背景誤差變異數 <span class="math notranslate nohighlight">\(\sigma_b^2\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\sigma_0^2\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>觀測值 <span class="math notranslate nohighlight">\(y\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\hat{d}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>觀測誤差變異數 <span class="math notranslate nohighlight">\(\sigma_o^2\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\sigma_d^2= 0.4^2\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>分析值 <span class="math notranslate nohighlight">\(x_a\)</span></p></td>
+<td><p>後驗中心 <span class="math notranslate nohighlight">\(\mu_{\text{post}}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>套用 hw3 Q2 的結果：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+K &amp;=&amp; \frac{\sigma_0^2}{\sigma_0^2 + 0.4^2}, \quad 0 &lt; K &lt; 1 \\
+\mu_{\text{post}} &amp;=&amp; \mu_0 + K(0.6 - \mu_0) \\
+\sigma_{\text{post}}^2 &amp;=&amp; (1 - K)\sigma_0^2 = \left(\frac{1}{\sigma_0^2} + \frac{1}{0.4^2}\right)^{-1}
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mu_{\text{post}}\)</span> 是 <span class="math notranslate nohighlight">\(\mu_0\)</span> 與 <span class="math notranslate nohighlight">\(0.6\)</span> 的加權平均，因為 <span class="math notranslate nohighlight">\(\mu_0 &lt; 0\)</span>，所以 <span class="math notranslate nohighlight">\(\mu_{\text{post}}\)</span> &lt; <span class="math notranslate nohighlight">\(0.6\)</span>：後驗中心被先驗往負值（增溫）方向拉。</p></li>
+<li><p>後驗機率</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\Pr(d &gt; 0 \mid \hat d = 0.6) = \Phi\left(\frac{\mu_{\text{post}}}{\sigma_{\text{post}}}\right)\]</div>
+<ul class="simple">
+<li><p>補充：代入上式可得</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{\mu_{\text{post}}}{\sigma_{\text{post}}} &amp;=&amp; \frac{\sigma_0^2 \cdot 0.6 + 0.4^2 \mu_0}{\sigma_0 \cdot 0.4 \sqrt{\sigma_0^2 + 0.4^2}} \\
+&amp;=&amp; \underbrace{\frac{0.6}{0.4} \cdot \frac{\sigma_0}{\sqrt{\sigma_0^2 + 0.4^2}}}_{&lt; \, 1.5} + \underbrace{\frac{0.4\, \mu_0}{\sigma_0 \sqrt{\sigma_0^2 + 0.4^2}}}_{&lt; \, 0} \;&lt;\; 1.5
+\end{gather*}\end{split}\]</div>
+<p>所以 <span class="math notranslate nohighlight">\(\Pr(d &gt; 0 \mid \hat d = 0.6)\)</span> 一定比 (b) 的 <span class="math notranslate nohighlight">\(\Phi(1.5) \approx 0.933\)</span> <strong>低</strong>，干預有效的後驗機率下降。</p>
+<ul class="simple">
+<li><p>兩個極端情況：</p>
+<ul>
+<li><p>先驗很弱（<span class="math notranslate nohighlight">\(\sigma_0 \to \infty\)</span>）：<span class="math notranslate nohighlight">\(K \to 1\)</span>，回到平坦先驗，後驗機率 <span class="math notranslate nohighlight">\(\to\)</span> 0.933。</p></li>
+<li><p>先驗很強（<span class="math notranslate nohighlight">\(\sigma_0 \to 0\)</span>）：<span class="math notranslate nohighlight">\(K \to 0\)</span>，<span class="math notranslate nohighlight">\(\mu_{\text{post}} \to \mu_0 &lt; 0\)</span> 且 <span class="math notranslate nohighlight">\(\sigma_{\text{post}} \to 0\)</span>，後驗機率 <span class="math notranslate nohighlight">\(\to\)</span> 0。</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>p 值會不會改變</strong></p>
+<ul class="simple">
+<li><p>(a) 的 p 值 <strong>不會</strong> 改變。</p></li>
+<li><p>因為 <span class="math notranslate nohighlight">\(p = \Pr(\hat d \ge 0.6 \mid d = 0)\)</span> 只用到「在 <span class="math notranslate nohighlight">\(H_0\)</span> 下資料 <span class="math notranslate nohighlight">\(\hat d\)</span> 的抽樣分布 <span class="math notranslate nohighlight">\(\mathcal N(0,\ 0.4^2)\)</span>」，公式中完全沒有 先驗 <span class="math notranslate nohighlight">\(p(d)\)</span> 這一項；頻率學派把 <span class="math notranslate nohighlight">\(d\)</span> 當作固定常數，不使用先驗資訊。</p></li>
+<li><p>這也說明 (c) 中「p 值 <span class="math notranslate nohighlight">\(=\)</span> 後驗 <span class="math notranslate nohighlight">\(\Pr(d \le 0 \mid \text{資料})\)</span>」只是平坦先驗下的巧合：先驗改變後，後驗 <span class="math notranslate nohighlight">\(\Pr(d \le 0 \mid \hat d = 0.6) = 1 - \Pr(d &gt; 0 \mid \hat d = 0.6) &gt; 1 - 0.933 = 0.067\)</span>，但 p 值仍是 <span class="math notranslate nohighlight">\(0.067\)</span>。</p></li>
+</ul>
+</section>
+</section>
+<section id="question-2-monte-carlo-derivation-of-the-t-distribution">
+<h2>Question 2. Monte Carlo Derivation of the t-Distribution<a class="headerlink" href="#question-2-monte-carlo-derivation-of-the-t-distribution" title="連結到這個標頭">#</a></h2>
+<p>In class, we learned that when the sample size <span class="math notranslate nohighlight">\(N\)</span> is small, the standardized distribution of the sample mean <span class="math notranslate nohighlight">\(\overline{x}\)</span> is no longer a standard normal distribution (z-distribution), but instead follows a t-distribution with heavier tails. The course notes define the t-statistic as:</p>
+<div class="math notranslate nohighlight">
+\[t = \frac{\overline{x} - \mu}{\sqrt{s^2/(N - 1)}}\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[s^2 = \frac{1}{N} \sum_{i=1}^{N} (x_i - \overline{x})^2\]</div>
+<p>is the uncorrected (biased) sample variance.</p>
+<p>This question asks you to construct the distribution of this t-statistic yourself using a Monte Carlo simulation drawn from a standard normal population, and to compare it against the theoretical analytical solution provided in the notes.</p>
+<ul>
+<li><p>(a) <strong>Monte Carlo Simulation</strong></p>
+<p>Follow these steps to generate the empirical distribution:</p>
+<ul class="simple">
+<li><p>Assume a standard normal population <span class="math notranslate nohighlight">\(\mathcal{N}(\mu = 0, \sigma = 1)\)</span>.</p></li>
+<li><p>Perform <span class="math notranslate nohighlight">\(M = 10{,}000\)</span> independent Monte Carlo experiments.</p></li>
+<li><p>In each experiment, randomly draw a sample of size <span class="math notranslate nohighlight">\(N = 5\)</span>.</p></li>
+<li><p>Calculate the sample mean <span class="math notranslate nohighlight">\(\overline{x}\)</span> and the biased sample variance <span class="math notranslate nohighlight">\(s^2\)</span> for the sample.</p></li>
+<li><p>Compute the <span class="math notranslate nohighlight">\(t\)</span>-statistic for each experiment.</p></li>
+<li><p>Plot the <span class="math notranslate nohighlight">\(10{,}000\)</span> resulting <span class="math notranslate nohighlight">\(t\)</span>-values as a probability density histogram.</p></li>
+</ul>
+</li>
+<li><p>(b) <strong>Analytical Comparison</strong></p>
+<p>Overlay the theoretical probability density function (PDF) of the t-distribution for <span class="math notranslate nohighlight">\(\nu = 4\)</span> on your histogram. The theoretical formula given in the notes is:</p>
+<div class="math notranslate nohighlight">
+\[f(t) = f_0(\nu) \left(1 + \frac{t^2}{\nu}\right)^{-\left(\frac{\nu + 1}{2}\right)}\]</div>
+<p><em>(Note: You may use built-in functions like <code class="docutils literal notranslate"><span class="pre">scipy.stats.t.pdf</span></code> in Python or <code class="docutils literal notranslate"><span class="pre">tpdf</span></code> in MATLAB to plot this theoretical curve, as they inherently compute and include the normalization constant <span class="math notranslate nohighlight">\(f_0(\nu)\)</span>.)</em></p>
+</li>
+<li><p>(c) <strong>Discussion</strong></p>
+<p>Address the following points based on your results:</p>
+<ul class="simple">
+<li><p>Does your Monte Carlo histogram closely match the theoretical t-distribution curve?</p></li>
+<li><p>On the same figure, overlay the PDF of a standard normal distribution <span class="math notranslate nohighlight">\(\mathcal{N}(0, 1)\)</span>. Compare the 「tails」 of the two theoretical curves. Briefly explain why a small sample size <span class="math notranslate nohighlight">\(N\)</span> causes the <span class="math notranslate nohighlight">\(t\)</span>-statistic to exhibit heavier tails, even though the data is drawn from a perfectly normal population. <em>(Hint: Consider the uncertainty introduced by estimating the denominator <span class="math notranslate nohighlight">\(\sqrt{s^2/(N - 1)}\)</span> from a small sample).</em></p></li>
+</ul>
+</li>
+</ul>
+<section id="id2">
+<h3>中文翻譯<a class="headerlink" href="#id2" title="連結到這個標頭">#</a></h3>
+<blockquote>
+<div><p><strong>問題 2：以蒙地卡羅方法推導 t 分布</strong></p>
+<p>課堂上我們學到，當樣本數 <span class="math notranslate nohighlight">\(N\)</span> 很小時，樣本平均 <span class="math notranslate nohighlight">\(\overline{x}\)</span> 標準化後的分布不再是標準常態分布（z 分布），而是服從尾部較厚的 t 分布。課程講義將 t 統計量定義為：</p>
+<div class="math notranslate nohighlight">
+\[t = \frac{\overline{x} - \mu}{\sqrt{s^2/(N - 1)}}\]</div>
+<p>其中</p>
+<div class="math notranslate nohighlight">
+\[s^2 = \frac{1}{N} \sum_{i=1}^{N} (x_i - \overline{x})^2\]</div>
+<p>為未經修正（有偏）的樣本變異數。</p>
+<p>本題要求你從標準常態母體中進行蒙地卡羅模擬，自行建構此 t 統計量的分布，並與講義中提供的理論解析解比較。</p>
+<ul>
+<li><p>(a) <strong>蒙地卡羅模擬</strong></p>
+<p>依照以下步驟產生經驗分布：</p>
+<ul class="simple">
+<li><p>假設母體為標準常態分布 <span class="math notranslate nohighlight">\(\mathcal{N}(\mu = 0, \sigma = 1)\)</span>。</p></li>
+<li><p>進行 <span class="math notranslate nohighlight">\(M = 10{,}000\)</span> 次獨立的蒙地卡羅實驗。</p></li>
+<li><p>每次實驗隨機抽取一組樣本數 <span class="math notranslate nohighlight">\(N = 5\)</span> 的樣本。</p></li>
+<li><p>計算該樣本的樣本平均 <span class="math notranslate nohighlight">\(\overline{x}\)</span> 與有偏樣本變異數 <span class="math notranslate nohighlight">\(s^2\)</span>。</p></li>
+<li><p>計算每次實驗的 <span class="math notranslate nohighlight">\(t\)</span> 統計量。</p></li>
+<li><p>將所得的 <span class="math notranslate nohighlight">\(10{,}000\)</span> 個 <span class="math notranslate nohighlight">\(t\)</span> 值畫成機率密度直方圖。</p></li>
+</ul>
+</li>
+<li><p>(b) <strong>與解析解比較</strong></p>
+<p>在你的直方圖上疊加自由度 <span class="math notranslate nohighlight">\(\nu = 4\)</span> 的 t 分布理論機率密度函數（PDF）。講義中給出的理論公式為：</p>
+<div class="math notranslate nohighlight">
+\[f(t) = f_0(\nu) \left(1 + \frac{t^2}{\nu}\right)^{-\left(\frac{\nu + 1}{2}\right)}\]</div>
+<p><em>（註：你可以使用內建函數，例如 Python 的 <code class="docutils literal notranslate"><span class="pre">scipy.stats.t.pdf</span></code> 或 MATLAB 的 <code class="docutils literal notranslate"><span class="pre">tpdf</span></code> 來繪製這條理論曲線，因為它們會自動計算並包含正規化常數 <span class="math notranslate nohighlight">\(f_0(\nu)\)</span>。）</em></p>
+</li>
+<li><p>(c) <strong>討論</strong></p>
+<p>根據你的結果回答以下問題：</p>
+<ul class="simple">
+<li><p>你的蒙地卡羅直方圖是否與理論 t 分布曲線高度吻合？</p></li>
+<li><p>在同一張圖上疊加標準常態分布 <span class="math notranslate nohighlight">\(\mathcal{N}(0, 1)\)</span> 的 PDF。比較兩條理論曲線的「尾部」。簡要說明為什麼即使資料是從完全常態的母體中抽出，小樣本數 <span class="math notranslate nohighlight">\(N\)</span> 仍會使 <span class="math notranslate nohighlight">\(t\)</span> 統計量呈現較厚的尾部。<em>（提示：考慮從小樣本估計分母 <span class="math notranslate nohighlight">\(\sqrt{s^2/(N - 1)}\)</span> 所引入的不確定性。）</em></p></li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+<section id="answer-2">
+<h2>Answer 2.<a class="headerlink" href="#answer-2" title="連結到這個標頭">#</a></h2>
+<section id="id3">
+<h3>基本知識<a class="headerlink" href="#id3" title="連結到這個標頭">#</a></h3>
+<p><strong>1. 蒙地卡羅方法（Monte Carlo）</strong></p>
+<p>不去推導分布的解析式，而是「用亂數把實驗做很多次」，再用所有結果畫出的直方圖去近似真正的分布。實驗次數 <span class="math notranslate nohighlight">\(M\)</span> 越大，直方圖越接近真實分布。</p>
+<p><strong>2. 有偏與無偏樣本變異數</strong></p>
+<div class="math notranslate nohighlight">
+\[s^2 = \frac{1}{N}\sum_{i=1}^{N}(x_i - \overline{x})^2 \ (\text{有偏}), \qquad S^2 = \frac{1}{N-1}\sum_{i=1}^{N}(x_i - \overline{x})^2 = \frac{N}{N-1}s^2 \ (\text{無偏})\]</div>
+<p>因此本題分母可以改寫成</p>
+<div class="math notranslate nohighlight">
+\[\sqrt{\frac{s^2}{N-1}} = \sqrt{\frac{S^2}{N}} = \frac{S}{\sqrt N}\]</div>
+<p><strong>3. 為什麼 t 分布的自由度是 <span class="math notranslate nohighlight">\(\nu = N - 1\)</span></strong></p>
+<p>若 <span class="math notranslate nohighlight">\(x_i \sim \mathcal N(\mu, \sigma^2)\)</span> 彼此獨立，則</p>
+<div class="math notranslate nohighlight">
+\[z = \frac{\overline{x} - \mu}{\sigma/\sqrt N} \sim \mathcal N(0, 1), \qquad \frac{(N-1)S^2}{\sigma^2} \sim \chi^2_{N-1}\]</div>
+<p>且兩者彼此獨立。t 分布的定義正是</p>
+<div class="math notranslate nohighlight">
+\[t = \frac{z}{\sqrt{\chi^2_\nu / \nu}} = \frac{\overline{x} - \mu}{\sigma/\sqrt N} \cdot \frac{\sigma}{S} = \frac{\overline{x} - \mu}{S/\sqrt N}, \qquad \nu = N - 1\]</div>
+<p><span class="math notranslate nohighlight">\(N\)</span> 個資料點算出 <span class="math notranslate nohighlight">\(\overline{x}\)</span> 後，只剩 <span class="math notranslate nohighlight">\(N-1\)</span> 個偏差 <span class="math notranslate nohighlight">\(x_i - \overline{x}\)</span> 是自由的（它們加總必為 0），所以自由度是 <span class="math notranslate nohighlight">\(N - 1\)</span>。</p>
+<p><strong>4. 機率密度直方圖</strong></p>
+<p>縱軸不是「次數」，而是「次數 <span class="math notranslate nohighlight">\(/(M \times \text{組距})\)</span>」，這樣所有長條的面積加總為 1，才能和 PDF 曲線疊在同一張圖上比較。</p>
+<p><strong>5. NumPy 向量化</strong></p>
+<p>不用迴圈跑 <span class="math notranslate nohighlight">\(M\)</span> 次，而是一次產生 shape 為 <span class="math notranslate nohighlight">\((M, N)\)</span> 的陣列：每一列（row）是一次實驗的 <span class="math notranslate nohighlight">\(N\)</span> 個樣本。沿著 <code class="docutils literal notranslate"><span class="pre">axis=1</span></code>（每一列內部）取平均，就得到 <span class="math notranslate nohighlight">\(M\)</span> 個樣本平均。</p>
+</section>
+<section id="id4">
+<h3>程式空格<a class="headerlink" href="#id4" title="連結到這個標頭">#</a></h3>
+<p>程式在 <a class="reference download internal" download="" href="../../_downloads/196c9f6f34b3e53c18482ac4c526dc81/hw4_q2.py"><span class="xref download myst">hw4_q2.py</span></a>，請把 <code class="docutils literal notranslate"><span class="pre">___1___</span></code>～<code class="docutils literal notranslate"><span class="pre">___7___</span></code> 換成正確的程式碼：</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>空格</p></th>
+<th class="head"><p>要填什麼</p></th>
+<th class="head"><p>提示</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">___1___</span></code></p></td>
+<td><p>自由度 <span class="math notranslate nohighlight">\(\nu\)</span></p></td>
+<td><p>用 <code class="docutils literal notranslate"><span class="pre">N</span></code> 表示，見基本知識 3</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">___2___</span></code>、<code class="docutils literal notranslate"><span class="pre">___3___</span></code></p></td>
+<td><p>母體的平均與標準差</p></td>
+<td><p>題目指定的母體是 <span class="math notranslate nohighlight">\(\mathcal N(\mu = ?, \sigma = ?)\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">___4___</span></code></p></td>
+<td><p>取平均的軸</p></td>
+<td><p>要對「每次實驗的 <span class="math notranslate nohighlight">\(N\)</span> 個樣本」取平均，見基本知識 5</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">___5___</span></code></p></td>
+<td><p>t 統計量的分母（根號內）</p></td>
+<td><p>照題目的公式，用變數 <code class="docutils literal notranslate"><span class="pre">s2</span></code> 與 <code class="docutils literal notranslate"><span class="pre">N</span></code> 表示</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">___6___</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">stats.t.pdf</span></code> 的自由度</p></td>
+<td><p>前面已經定義過的變數</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">___7___</span></code></p></td>
+<td><p>標準常態 PDF</p></td>
+<td><p>模仿上一行，改用 <code class="docutils literal notranslate"><span class="pre">stats.norm.pdf</span></code>；預設就是 <span class="math notranslate nohighlight">\(\mathcal N(0,1)\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>填完後在 hw4 資料夾執行 <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">hw4_q2.py</span></code>，會印出數值結果並存出圖檔 <code class="docutils literal notranslate"><span class="pre">q2_t_distribution.png</span></code>。</p>
+</section>
+<section id="a-b">
+<h3>(a)(b) 結果<a class="headerlink" href="#a-b" title="連結到這個標頭">#</a></h3>
+<p>亂數種子：<code class="docutils literal notranslate"><span class="pre">SEED</span> <span class="pre">=</span> <span class="pre">2026</span></code></p>
+<p><img alt="Monte Carlo t-distribution" src="homework/hw4/q2_t_distribution.png" /></p>
+<p>把程式印出的數字填入下表（取到小數點後 4 位）：</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>統計量</p></th>
+<th class="head"><p>蒙地卡羅</p></th>
+<th class="head"><p>理論 t 分布（<span class="math notranslate nohighlight">\(\nu = 4\)</span>）</p></th>
+<th class="head"><p>標準常態</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(t\)</span> 的變異數</p></td>
+<td><p>＿＿⑧＿＿</p></td>
+<td><p><span class="math notranslate nohighlight">\(\nu/(\nu - 2) = \)</span> ＿＿⑨＿＿</p></td>
+<td><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\Pr(\lvert t \rvert &gt; 3)\)</span></p></td>
+<td><p>＿＿⑩＿＿</p></td>
+<td><p>＿＿⑪＿＿</p></td>
+<td><p>＿＿⑫＿＿</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="id5">
+<h3>(c) 討論<a class="headerlink" href="#id5" title="連結到這個標頭">#</a></h3>
+<p><strong>蒙地卡羅直方圖是否吻合理論 t 分布？</strong></p>
+<ul class="simple">
+<li><p>直方圖與 <span class="math notranslate nohighlight">\(\nu = 4\)</span> 的 t 分布曲線 ＿＿⑬＿＿（吻合／不吻合）：<span class="math notranslate nohighlight">\(t\)</span> 的變異數 ⑧ 與理論值 ⑨ 很接近，尾部機率 ⑩ 與 ⑪ 也很接近。</p></li>
+<li><p>剩下的小差異來自有限次數 <span class="math notranslate nohighlight">\(M\)</span> 的抽樣誤差；<span class="math notranslate nohighlight">\(M\)</span> 越 ＿＿⑭＿＿（大／小），直方圖越接近理論曲線。</p></li>
+</ul>
+<p><strong>比較 t 分布與標準常態的尾部</strong></p>
+<ul class="simple">
+<li><p>t 分布的峰值較 ＿＿⑮＿＿（高／低），尾部較 ＿＿⑯＿＿（厚／薄）。右邊的對數座標圖在 <span class="math notranslate nohighlight">\(|t| &gt; 3\)</span> 處最明顯。</p></li>
+<li><p>以 <span class="math notranslate nohighlight">\(\Pr(|t| &gt; 3)\)</span> 來看，t 分布約為標準常態的 ＿＿⑰＿＿ 倍（⑪ ÷ ⑫，取整數）。</p></li>
+</ul>
+<p><strong>為什麼小樣本會造成厚尾？</strong></p>
+<p>由基本知識 2、3，</p>
+<div class="math notranslate nohighlight">
+\[t = \frac{\overline{x} - \mu}{\sqrt{s^2/(N-1)}} = \underbrace{\frac{\overline{x} - \mu}{\sigma/\sqrt N}}_{z \, \sim \, \mathcal N(0,1)} \cdot \frac{\sigma}{S}\]</div>
+<ul class="simple">
+<li><p>如果母體標準差 <span class="math notranslate nohighlight">\(\sigma\)</span> 已知，分母就是 <span class="math notranslate nohighlight">\(\sigma/\sqrt N\)</span>，是一個 ＿＿⑱＿＿（常數／隨機變數），此時 <span class="math notranslate nohighlight">\(t\)</span> 恰好就是 ＿＿⑲＿＿ 分布。</p></li>
+<li><p>但實際上分母用的是從樣本估計的 <span class="math notranslate nohighlight">\(S\)</span>，它本身是 ＿＿⑳＿＿（常數／隨機變數）。<span class="math notranslate nohighlight">\(N = 5\)</span> 時只有 5 個點，<span class="math notranslate nohighlight">\(S\)</span> 的抽樣變動很大。</p></li>
+<li><p>當某次實驗的 <span class="math notranslate nohighlight">\(S\)</span> 碰巧 ＿＿㉑＿＿（大於／小於）<span class="math notranslate nohighlight">\(\sigma\)</span> 時，<span class="math notranslate nohighlight">\(\sigma/S &gt; 1\)</span>，<span class="math notranslate nohighlight">\(|t|\)</span> 被放大，產生比常態更多的極端值，於是尾部變厚。</p></li>
+<li><p>當 <span class="math notranslate nohighlight">\(N \to \infty\)</span>，<span class="math notranslate nohighlight">\(S \to\)</span> ＿＿㉒＿＿，分母的不確定性消失，t 分布趨近 ＿＿㉓＿＿ 分布。</p></li>
+</ul>
+</section>
+</section>
+<section id="question-3-comparison-among-different-numerical-approaches-for-linear-regression">
+<h2>Question 3. Comparison among Different Numerical Approaches for Linear Regression<a class="headerlink" href="#question-3-comparison-among-different-numerical-approaches-for-linear-regression" title="連結到這個標頭">#</a></h2>
+<p>Generate <span class="math notranslate nohighlight">\(n = 10^6\)</span> synthetic observations from</p>
+<div class="math notranslate nohighlight">
+\[y_i = 2 + 3x_i + \epsilon_i\]</div>
+<p>where <span class="math notranslate nohighlight">\(x_i\)</span> is uniformly distributed over <span class="math notranslate nohighlight">\([-1, 1]\)</span>, and <span class="math notranslate nohighlight">\(\epsilon_i\)</span> is normally distributed with mean zero and standard deviation 0.5. Assume that the observations are independent and that <span class="math notranslate nohighlight">\(\epsilon_i\)</span> is independent of <span class="math notranslate nohighlight">\(x_i\)</span>. Use a fixed random seed and report its value.</p>
+<p>Fit the model</p>
+<div class="math notranslate nohighlight">
+\[\hat{y}_i = a + b x_i\]</div>
+<p>by minimizing</p>
+<div class="math notranslate nohighlight">
+\[J(a, b) = \frac{1}{2n} \sum_{i=1}^{n} (a + b x_i - y_i)^2\]</div>
+<ol class="arabic">
+<li><p>Implement the following three approaches using the same dataset:</p>
+<ul>
+<li><p>Built-in least-squares routine: use <code class="docutils literal notranslate"><span class="pre">np.linalg.lstsq</span></code> with <code class="docutils literal notranslate"><span class="pre">rcond=None</span></code>.</p></li>
+<li><p>Normal equations: construct the design matrix <span class="math notranslate nohighlight">\(X = [\mathbf{1}, x]\)</span> and solve</p>
+<div class="math notranslate nohighlight">
+\[X^{\mathsf{T}} X \boldsymbol{\beta} = X^{\mathsf{T}} y\]</div>
+<p>where <span class="math notranslate nohighlight">\(\boldsymbol{\beta} = (a, b)^{\mathsf{T}}\)</span>. Use <code class="docutils literal notranslate"><span class="pre">np.linalg.solve</span></code> rather than explicitly computing the matrix inverse.</p>
+</li>
+<li><p>Batch gradient descent: initialize <span class="math notranslate nohighlight">\(a = b = 0\)</span> and update both coefficients simultaneously using the gradient of <span class="math notranslate nohighlight">\(J\)</span> evaluated over all observations. Use a learning rate of 0.1, stop when <span class="math notranslate nohighlight">\(\|\nabla J\|_2 &lt; 10^{-6}\)</span>, and impose a maximum of 10000 iterations.</p></li>
+</ul>
+</li>
+<li><p>Compare the fitted results.</p>
+<p>For each approach, report the intercept, slope, final objective value, and coefficient differences relative to the built-in least-squares solution. For gradient descent, also report the number of updates performed and whether the stopping criterion was satisfied.</p>
+<p>Plot a subset of 100 observations from the generated dataset together with the three fitted lines. Use the coefficients fitted from all <span class="math notranslate nohighlight">\(10^6\)</span> observations, and evaluate the lines on an increasing grid of <span class="math notranslate nohighlight">\(x\)</span> values over <span class="math notranslate nohighlight">\([-1, 1]\)</span>.</p>
+<p>Discuss whether the fitted results agree and explain any differences.</p>
+</li>
+<li><p>Compare computational time.</p>
+<p>Use the same observations and design matrix for all three approaches. Exclude data generation, design-matrix construction, plotting, printing, and the final evaluation of <span class="math notranslate nohighlight">\(J\)</span> from the timing.</p>
+<p>For the built-in approach, time the call to <code class="docutils literal notranslate"><span class="pre">np.linalg.lstsq</span></code>. For the normal equations, include the computation of <span class="math notranslate nohighlight">\(X^{\mathsf{T}} X\)</span> and <span class="math notranslate nohighlight">\(X^{\mathsf{T}} y\)</span>, and the linear solve. For gradient descent, include coefficient initialization, all gradient evaluations, convergence checks, and updates.</p>
+<p>Perform one untimed warm-up run for each approach, followed by at least five timed runs using <code class="docutils literal notranslate"><span class="pre">time.perf_counter</span></code>. Report the median execution time. Reset the gradient-descent coefficients before every run.</p>
+<p>Compare the execution times and explain the observed differences.</p>
+</li>
+</ol>
+<section id="id6">
+<h3>中文翻譯<a class="headerlink" href="#id6" title="連結到這個標頭">#</a></h3>
+<blockquote>
+<div><p><strong>問題 3：線性迴歸不同數值方法之比較</strong></p>
+<p>由下式產生 <span class="math notranslate nohighlight">\(n = 10^6\)</span> 筆合成觀測資料：</p>
+<div class="math notranslate nohighlight">
+\[y_i = 2 + 3x_i + \epsilon_i\]</div>
+<p>其中 <span class="math notranslate nohighlight">\(x_i\)</span> 在 <span class="math notranslate nohighlight">\([-1, 1]\)</span> 上均勻分布，<span class="math notranslate nohighlight">\(\epsilon_i\)</span> 服從平均為 0、標準差為 0.5 的常態分布。假設各觀測彼此獨立，且 <span class="math notranslate nohighlight">\(\epsilon_i\)</span> 與 <span class="math notranslate nohighlight">\(x_i\)</span> 獨立。請使用固定的亂數種子，並回報其數值。</p>
+<p>透過最小化</p>
+<div class="math notranslate nohighlight">
+\[J(a, b) = \frac{1}{2n} \sum_{i=1}^{n} (a + b x_i - y_i)^2\]</div>
+<p>來擬合模型 <span class="math notranslate nohighlight">\(\hat{y}_i = a + b x_i\)</span>。</p>
+<ol class="arabic">
+<li><p>使用同一組資料實作以下三種方法：</p>
+<ul>
+<li><p>內建最小平方法函式：使用 <code class="docutils literal notranslate"><span class="pre">np.linalg.lstsq</span></code>，並設定 <code class="docutils literal notranslate"><span class="pre">rcond=None</span></code>。</p></li>
+<li><p>正規方程（Normal equations）：建構設計矩陣 <span class="math notranslate nohighlight">\(X = [\mathbf{1}, x]\)</span> 並求解</p>
+<div class="math notranslate nohighlight">
+\[X^{\mathsf{T}} X \boldsymbol{\beta} = X^{\mathsf{T}} y\]</div>
+<p>其中 <span class="math notranslate nohighlight">\(\boldsymbol{\beta} = (a, b)^{\mathsf{T}}\)</span>。請使用 <code class="docutils literal notranslate"><span class="pre">np.linalg.solve</span></code>，而不要直接計算反矩陣。</p>
+</li>
+<li><p>批次梯度下降法（Batch gradient descent）：初始化 <span class="math notranslate nohighlight">\(a = b = 0\)</span>，並以對所有觀測計算的 <span class="math notranslate nohighlight">\(J\)</span> 梯度同時更新兩個係數。學習率設為 0.1，當 <span class="math notranslate nohighlight">\(\|\nabla J\|_2 &lt; 10^{-6}\)</span> 時停止，且最多迭代 10000 次。</p></li>
+</ul>
+</li>
+<li><p>比較擬合結果。</p>
+<p>對每一種方法，回報截距、斜率、最終目標函數值，以及相對於內建最小平方解的係數差異。對梯度下降法，另外回報實際執行的更新次數，以及是否滿足停止條件。</p>
+<p>從產生的資料中取 100 筆觀測的子集合畫出散布點，並與三條擬合直線畫在一起。直線請使用由全部 <span class="math notranslate nohighlight">\(10^6\)</span> 筆觀測擬合出的係數，並在 <span class="math notranslate nohighlight">\([-1, 1]\)</span> 上遞增排列的 <span class="math notranslate nohighlight">\(x\)</span> 網格點上計算。</p>
+<p>討論各方法的擬合結果是否一致，並解釋任何差異。</p>
+</li>
+<li><p>比較計算時間。</p>
+<p>三種方法使用相同的觀測資料與設計矩陣。計時範圍不包含資料產生、設計矩陣建構、繪圖、輸出，以及最後計算 <span class="math notranslate nohighlight">\(J\)</span> 的步驟。</p>
+<p>對內建方法，計時 <code class="docutils literal notranslate"><span class="pre">np.linalg.lstsq</span></code> 的呼叫。對正規方程，計時範圍包含計算 <span class="math notranslate nohighlight">\(X^{\mathsf{T}} X\)</span> 與 <span class="math notranslate nohighlight">\(X^{\mathsf{T}} y\)</span> 以及線性求解。對梯度下降法，計時範圍包含係數初始化、所有梯度計算、收斂檢查與更新。</p>
+<p>每種方法先進行一次不計時的暖身執行，接著使用 <code class="docutils literal notranslate"><span class="pre">time.perf_counter</span></code> 進行至少五次計時執行，並回報執行時間的中位數。每次執行前都要重設梯度下降法的係數。</p>
+<p>比較各方法的執行時間，並解釋觀察到的差異。</p>
+</li>
+</ol>
+</div></blockquote>
+</section>
+</section>
+<section id="answer-3">
+<h2>Answer 3.<a class="headerlink" href="#answer-3" title="連結到這個標頭">#</a></h2>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./homework\hw4"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../hw3/hw3.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">上一頁</p>
+        <p class="prev-next-title">Objective Analysis Week 03 Homework</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目錄
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-frequentist-vs-bayesian-perspectives">Question 1. Frequentist vs. Bayesian Perspectives</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">中文翻譯</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-1">Answer 1.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a">(a)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b">(b)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c">(c)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d">(d)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-monte-carlo-derivation-of-the-t-distribution">Question 2. Monte Carlo Derivation of the t-Distribution</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">中文翻譯</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-2">Answer 2.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">基本知識</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">程式空格</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-b">(a)(b) 結果</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">(c) 討論</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-comparison-among-different-numerical-approaches-for-linear-regression">Question 3. Comparison among Different Numerical Approaches for Linear Regression</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">中文翻譯</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-3">Answer 3.</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+作者： PC YE
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
