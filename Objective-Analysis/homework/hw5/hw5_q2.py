@@ -80,8 +80,11 @@ for k in range(3):
     ax = axes[k]
     ax.hist(b_null, bins=40, density=True, color="lightgray", edgecolor="gray", label="slopes under H0")
     ax.axvline(b_hat, color="r", lw=2, label="original b_hat = %.3f" % b_hat)
-    ax.axvline(crit_sur, color="b", ls="--", label="5% critical |b|")
+    ax.axvline(crit_sur, color="b", ls="--", label="surrogate 5% critical |b|")
     ax.axvline(-crit_sur, color="b", ls="--")
+    # 傳統 OLS t 檢定的 5% 臨界值：|b| > t_crit * SE_OLS 就判定顯著
+    ax.axvline(t_crit * se_b, color="g", ls=":", lw=2, label="OLS 5% critical |b|")
+    ax.axvline(-t_crit * se_b, color="g", ls=":", lw=2)
     ax.set_title("phi = %.1f,  surrogate p = %.3f" % (phi, p_sur))
     ax.set_xlabel("slope")
     ax.legend(fontsize=8)
