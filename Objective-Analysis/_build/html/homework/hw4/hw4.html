@@ -407,16 +407,20 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-2">Answer 2.</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">基本知識</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">程式空格</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-b">(a)(b) 結果</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">(c) 討論</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">(c) 討論</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-comparison-among-different-numerical-approaches-for-linear-regression">Question 3. Comparison among Different Numerical Approaches for Linear Regression</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">中文翻譯</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">中文翻譯</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-3">Answer 3.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-3">Answer 3.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">基本知識</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">1. &amp; 2. 擬合結果</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">3. 計算時間</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -632,7 +636,7 @@ p(d \mid \hat d = 0.6) &amp;\propto&amp; \exp\left[-\frac{(0.6 - d)^2}{2 \cdot 0
 <ul class="simple">
 <li><p>新聞把 <code class="docutils literal notranslate"><span class="pre">|</span></code> 兩邊的「資料」與「假設」對調了，這種錯誤稱為 <strong>條件機率倒置謬誤</strong>（又稱 transposed conditional / prosecutor’s fallacy）。一般而言 <span class="math notranslate nohighlight">\(\Pr(A \mid B) \ne \Pr(B \mid A)\)</span>，就像 hw3 Q3 中 <span class="math notranslate nohighlight">\(P(W \mid H) = 0.9\)</span> 但 <span class="math notranslate nohighlight">\(P(H \mid W) = \frac{1}{3}\)</span>。</p></li>
 <li><p>從頻率學派的角度：由 (a)，<span class="math notranslate nohighlight">\(d\)</span> 是固定的未知常數，「干預無效」這個命題根本 <strong>不能</strong> 被賦予機率，p 值不可能是「假設成立的機率」。</p></li>
-<li><p>從貝氏學派的角度：後驗 <span class="math notranslate nohighlight">\(d \mid \hat d \sim \mathcal N(0.6,\ 0.4^2)\)</span> 是連續分布，「完全無效」（<span class="math notranslate nohighlight">\(d = 0\)</span> 這一個點）的後驗機率為 0。貝氏能說的最接近的是 <span class="math notranslate nohighlight">\(\Pr(d \le 0 \mid \hat d = 0.6) \approx 0.067\)</span>，它與 p 值數值相同，只是因為 <strong>先驗平坦</strong> 的巧合，換一個先驗就不再相等（見 (d)）。</p></li>
+<li><p>從貝氏學派的角度：後驗 <span class="math notranslate nohighlight">\(d \mid \hat d \sim \mathcal N(0.6,\ 0.4^2)\)</span> 是連續分布，「完全無效」（<span class="math notranslate nohighlight">\(d = 0\)</span> 這一個點）的後驗機率為 0。貝氏能說的最接近的是 <span class="math notranslate nohighlight">\(\Pr(d \le 0 \mid \hat d = 0.6) \approx 0.067\)</span>，它與 p 值數值相同，只是因為 <strong>平坦先驗 ＋ 對稱的常態分布</strong> 的巧合，換一個先驗就不再相等（見 (d)）。</p></li>
 </ul>
 <p><strong>改寫成兩個嚴謹的句子</strong></p>
 <ul class="simple">
@@ -791,6 +795,7 @@ K &amp;=&amp; \frac{\sigma_0^2}{\sigma_0^2 + 0.4^2}, \quad 0 &lt; K &lt; 1 \\
 </section>
 <section id="answer-2">
 <h2>Answer 2.<a class="headerlink" href="#answer-2" title="連結到這個標頭">#</a></h2>
+<p>程式：<a class="reference download internal" download="" href="../../_downloads/196c9f6f34b3e53c18482ac4c526dc81/hw4_q2.py"><span class="xref download myst">hw4_q2.py</span></a>（執行：在 hw4 資料夾輸入 <code class="docutils literal notranslate"><span class="pre">py</span> <span class="pre">hw4_q2.py</span></code>）</p>
 <section id="id3">
 <h3>基本知識<a class="headerlink" href="#id3" title="連結到這個標頭">#</a></h3>
 <p><strong>1. 蒙地卡羅方法（Monte Carlo）</strong></p>
@@ -808,57 +813,16 @@ K &amp;=&amp; \frac{\sigma_0^2}{\sigma_0^2 + 0.4^2}, \quad 0 &lt; K &lt; 1 \\
 <p>且兩者彼此獨立。t 分布的定義正是</p>
 <div class="math notranslate nohighlight">
 \[t = \frac{z}{\sqrt{\chi^2_\nu / \nu}} = \frac{\overline{x} - \mu}{\sigma/\sqrt N} \cdot \frac{\sigma}{S} = \frac{\overline{x} - \mu}{S/\sqrt N}, \qquad \nu = N - 1\]</div>
-<p><span class="math notranslate nohighlight">\(N\)</span> 個資料點算出 <span class="math notranslate nohighlight">\(\overline{x}\)</span> 後，只剩 <span class="math notranslate nohighlight">\(N-1\)</span> 個偏差 <span class="math notranslate nohighlight">\(x_i - \overline{x}\)</span> 是自由的（它們加總必為 0），所以自由度是 <span class="math notranslate nohighlight">\(N - 1\)</span>。</p>
+<p><span class="math notranslate nohighlight">\(N\)</span> 個資料點算出 <span class="math notranslate nohighlight">\(\overline{x}\)</span> 後，只剩 <span class="math notranslate nohighlight">\(N-1\)</span> 個偏差 <span class="math notranslate nohighlight">\(x_i - \overline{x}\)</span> 是自由的（它們加總必為 0），所以自由度是 <span class="math notranslate nohighlight">\(N - 1 = 4\)</span>。</p>
 <p><strong>4. 機率密度直方圖</strong></p>
-<p>縱軸不是「次數」，而是「次數 <span class="math notranslate nohighlight">\(/(M \times \text{組距})\)</span>」，這樣所有長條的面積加總為 1，才能和 PDF 曲線疊在同一張圖上比較。</p>
+<p>縱軸不是「次數」，而是「次數 <span class="math notranslate nohighlight">\(/(M \times \text{組距})\)</span>」（<code class="docutils literal notranslate"><span class="pre">density=True</span></code>），所有長條面積加總為 1，才能和 PDF 曲線疊在同一張圖上比較。</p>
 <p><strong>5. NumPy 向量化</strong></p>
-<p>不用迴圈跑 <span class="math notranslate nohighlight">\(M\)</span> 次，而是一次產生 shape 為 <span class="math notranslate nohighlight">\((M, N)\)</span> 的陣列：每一列（row）是一次實驗的 <span class="math notranslate nohighlight">\(N\)</span> 個樣本。沿著 <code class="docutils literal notranslate"><span class="pre">axis=1</span></code>（每一列內部）取平均，就得到 <span class="math notranslate nohighlight">\(M\)</span> 個樣本平均。</p>
-</section>
-<section id="id4">
-<h3>程式空格<a class="headerlink" href="#id4" title="連結到這個標頭">#</a></h3>
-<p>程式在 <a class="reference download internal" download="" href="../../_downloads/196c9f6f34b3e53c18482ac4c526dc81/hw4_q2.py"><span class="xref download myst">hw4_q2.py</span></a>，請把 <code class="docutils literal notranslate"><span class="pre">___1___</span></code>～<code class="docutils literal notranslate"><span class="pre">___7___</span></code> 換成正確的程式碼：</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>空格</p></th>
-<th class="head"><p>要填什麼</p></th>
-<th class="head"><p>提示</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">___1___</span></code></p></td>
-<td><p>自由度 <span class="math notranslate nohighlight">\(\nu\)</span></p></td>
-<td><p>用 <code class="docutils literal notranslate"><span class="pre">N</span></code> 表示，見基本知識 3</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">___2___</span></code>、<code class="docutils literal notranslate"><span class="pre">___3___</span></code></p></td>
-<td><p>母體的平均與標準差</p></td>
-<td><p>題目指定的母體是 <span class="math notranslate nohighlight">\(\mathcal N(\mu = ?, \sigma = ?)\)</span></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">___4___</span></code></p></td>
-<td><p>取平均的軸</p></td>
-<td><p>要對「每次實驗的 <span class="math notranslate nohighlight">\(N\)</span> 個樣本」取平均，見基本知識 5</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">___5___</span></code></p></td>
-<td><p>t 統計量的分母（根號內）</p></td>
-<td><p>照題目的公式，用變數 <code class="docutils literal notranslate"><span class="pre">s2</span></code> 與 <code class="docutils literal notranslate"><span class="pre">N</span></code> 表示</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">___6___</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">stats.t.pdf</span></code> 的自由度</p></td>
-<td><p>前面已經定義過的變數</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">___7___</span></code></p></td>
-<td><p>標準常態 PDF</p></td>
-<td><p>模仿上一行，改用 <code class="docutils literal notranslate"><span class="pre">stats.norm.pdf</span></code>；預設就是 <span class="math notranslate nohighlight">\(\mathcal N(0,1)\)</span></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>填完後在 hw4 資料夾執行 <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">hw4_q2.py</span></code>，會印出數值結果並存出圖檔 <code class="docutils literal notranslate"><span class="pre">q2_t_distribution.png</span></code>。</p>
+<p>一次產生 shape 為 <span class="math notranslate nohighlight">\((M, N)\)</span> 的陣列：每一列是一次實驗的 <span class="math notranslate nohighlight">\(N\)</span> 個樣本。<code class="docutils literal notranslate"><span class="pre">np.mean(x,</span> <span class="pre">axis=1)</span></code> 沿著每一列取平均，得到 <span class="math notranslate nohighlight">\(M\)</span> 個樣本平均；<code class="docutils literal notranslate"><span class="pre">np.var(x,</span> <span class="pre">axis=1)</span></code> 預設除以 <span class="math notranslate nohighlight">\(N\)</span>，正好是有偏變異數 <span class="math notranslate nohighlight">\(s^2\)</span>。</p>
 </section>
 <section id="a-b">
 <h3>(a)(b) 結果<a class="headerlink" href="#a-b" title="連結到這個標頭">#</a></h3>
-<p>亂數種子：<code class="docutils literal notranslate"><span class="pre">SEED</span> <span class="pre">=</span> <span class="pre">2026</span></code></p>
-<p><img alt="Monte Carlo t-distribution" src="homework/hw4/q2_t_distribution.png" /></p>
-<p>把程式印出的數字填入下表（取到小數點後 4 位）：</p>
+<p>亂數種子：<code class="docutils literal notranslate"><span class="pre">SEED</span> <span class="pre">=</span> <span class="pre">2026</span></code>，<span class="math notranslate nohighlight">\(M = 10000\)</span>，<span class="math notranslate nohighlight">\(N = 5\)</span>，<span class="math notranslate nohighlight">\(\nu = 4\)</span></p>
+<p><img alt="Monte Carlo t-distribution" src="../../_images/q2_t_distribution.png" /></p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>統計量</p></th>
@@ -868,41 +832,55 @@ K &amp;=&amp; \frac{\sigma_0^2}{\sigma_0^2 + 0.4^2}, \quad 0 &lt; K &lt; 1 \\
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(t\)</span> 的變異數</p></td>
-<td><p>＿＿⑧＿＿</p></td>
-<td><p><span class="math notranslate nohighlight">\(\nu/(\nu - 2) = \)</span> ＿＿⑨＿＿</p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(t\)</span> 的平均</p></td>
+<td><p><span class="math notranslate nohighlight">\(0.0004\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(t\)</span> 的變異數</p></td>
+<td><p><span class="math notranslate nohighlight">\(2.0121\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\nu/(\nu - 2) = 2.0000\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
 </tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\Pr(\lvert t \rvert &gt; 2)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.1144\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.1161\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.0455\)</span></p></td>
+</tr>
 <tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\Pr(\lvert t \rvert &gt; 3)\)</span></p></td>
-<td><p>＿＿⑩＿＿</p></td>
-<td><p>＿＿⑪＿＿</p></td>
-<td><p>＿＿⑫＿＿</p></td>
+<td><p><span class="math notranslate nohighlight">\(0.0388\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.0399\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.0027\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\Pr(\lvert t \rvert &gt; 4)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.0162\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.0161\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.0001\)</span></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </section>
-<section id="id5">
-<h3>(c) 討論<a class="headerlink" href="#id5" title="連結到這個標頭">#</a></h3>
+<section id="id4">
+<h3>(c) 討論<a class="headerlink" href="#id4" title="連結到這個標頭">#</a></h3>
 <p><strong>蒙地卡羅直方圖是否吻合理論 t 分布？</strong></p>
 <ul class="simple">
-<li><p>直方圖與 <span class="math notranslate nohighlight">\(\nu = 4\)</span> 的 t 分布曲線 ＿＿⑬＿＿（吻合／不吻合）：<span class="math notranslate nohighlight">\(t\)</span> 的變異數 ⑧ 與理論值 ⑨ 很接近，尾部機率 ⑩ 與 ⑪ 也很接近。</p></li>
-<li><p>剩下的小差異來自有限次數 <span class="math notranslate nohighlight">\(M\)</span> 的抽樣誤差；<span class="math notranslate nohighlight">\(M\)</span> 越 ＿＿⑭＿＿（大／小），直方圖越接近理論曲線。</p></li>
+<li><p>吻合。直方圖與 <span class="math notranslate nohighlight">\(\nu = 4\)</span> 的 t 分布曲線幾乎重疊：<span class="math notranslate nohighlight">\(t\)</span> 的變異數 <span class="math notranslate nohighlight">\(2.0121\)</span> 與理論值 <span class="math notranslate nohighlight">\(2\)</span> 很接近，各尾部機率也都很接近（例如 <span class="math notranslate nohighlight">\(\Pr(|t|&gt;3)\)</span>：<span class="math notranslate nohighlight">\(0.0388\)</span> vs <span class="math notranslate nohighlight">\(0.0399\)</span>）。</p></li>
+<li><p>剩下的小差異來自有限次數 <span class="math notranslate nohighlight">\(M\)</span> 的抽樣誤差（比例的標準誤約 <span class="math notranslate nohighlight">\(\sqrt{p(1-p)/M} \approx 0.002\)</span>）；<span class="math notranslate nohighlight">\(M\)</span> 越大，直方圖越接近理論曲線。</p></li>
 </ul>
 <p><strong>比較 t 分布與標準常態的尾部</strong></p>
 <ul class="simple">
-<li><p>t 分布的峰值較 ＿＿⑮＿＿（高／低），尾部較 ＿＿⑯＿＿（厚／薄）。右邊的對數座標圖在 <span class="math notranslate nohighlight">\(|t| &gt; 3\)</span> 處最明顯。</p></li>
-<li><p>以 <span class="math notranslate nohighlight">\(\Pr(|t| &gt; 3)\)</span> 來看，t 分布約為標準常態的 ＿＿⑰＿＿ 倍（⑪ ÷ ⑫，取整數）。</p></li>
+<li><p>t 分布的峰值較低（<span class="math notranslate nohighlight">\(0.375\)</span> vs <span class="math notranslate nohighlight">\(0.399\)</span>），尾部較厚。右邊的對數座標圖在 <span class="math notranslate nohighlight">\(|t| &gt; 3\)</span> 處最明顯：常態曲線急速下降，t 分布則慢慢下降。</p></li>
+<li><p>以 <span class="math notranslate nohighlight">\(\Pr(|t| &gt; 3)\)</span> 來看，t 分布約為標準常態的 <span class="math notranslate nohighlight">\(0.0399 / 0.0027 \approx 15\)</span> 倍；<span class="math notranslate nohighlight">\(|t|&gt;4\)</span> 時更達到約 <span class="math notranslate nohighlight">\(250\)</span> 倍。</p></li>
 </ul>
 <p><strong>為什麼小樣本會造成厚尾？</strong></p>
-<p>由基本知識 2、3，</p>
 <div class="math notranslate nohighlight">
 \[t = \frac{\overline{x} - \mu}{\sqrt{s^2/(N-1)}} = \underbrace{\frac{\overline{x} - \mu}{\sigma/\sqrt N}}_{z \, \sim \, \mathcal N(0,1)} \cdot \frac{\sigma}{S}\]</div>
 <ul class="simple">
-<li><p>如果母體標準差 <span class="math notranslate nohighlight">\(\sigma\)</span> 已知，分母就是 <span class="math notranslate nohighlight">\(\sigma/\sqrt N\)</span>，是一個 ＿＿⑱＿＿（常數／隨機變數），此時 <span class="math notranslate nohighlight">\(t\)</span> 恰好就是 ＿＿⑲＿＿ 分布。</p></li>
-<li><p>但實際上分母用的是從樣本估計的 <span class="math notranslate nohighlight">\(S\)</span>，它本身是 ＿＿⑳＿＿（常數／隨機變數）。<span class="math notranslate nohighlight">\(N = 5\)</span> 時只有 5 個點，<span class="math notranslate nohighlight">\(S\)</span> 的抽樣變動很大。</p></li>
-<li><p>當某次實驗的 <span class="math notranslate nohighlight">\(S\)</span> 碰巧 ＿＿㉑＿＿（大於／小於）<span class="math notranslate nohighlight">\(\sigma\)</span> 時，<span class="math notranslate nohighlight">\(\sigma/S &gt; 1\)</span>，<span class="math notranslate nohighlight">\(|t|\)</span> 被放大，產生比常態更多的極端值，於是尾部變厚。</p></li>
-<li><p>當 <span class="math notranslate nohighlight">\(N \to \infty\)</span>，<span class="math notranslate nohighlight">\(S \to\)</span> ＿＿㉒＿＿，分母的不確定性消失，t 分布趨近 ＿＿㉓＿＿ 分布。</p></li>
+<li><p>如果母體標準差 <span class="math notranslate nohighlight">\(\sigma\)</span> 已知，分母就是 <span class="math notranslate nohighlight">\(\sigma/\sqrt N\)</span>，是一個常數，此時 <span class="math notranslate nohighlight">\(t\)</span> 恰好就是標準常態分布。</p></li>
+<li><p>但實際上分母用的是從樣本估計的 <span class="math notranslate nohighlight">\(S\)</span>，它本身是隨機變數。<span class="math notranslate nohighlight">\(N = 5\)</span> 時只有 5 個點，<span class="math notranslate nohighlight">\(S\)</span> 的抽樣變動很大。</p></li>
+<li><p>當某次實驗的 <span class="math notranslate nohighlight">\(S\)</span> 碰巧小於 <span class="math notranslate nohighlight">\(\sigma\)</span> 時，<span class="math notranslate nohighlight">\(\sigma/S &gt; 1\)</span>，<span class="math notranslate nohighlight">\(|t|\)</span> 被放大，產生比常態更多的極端值，於是尾部變厚（分子的不確定性之外，又多了分母的不確定性）。</p></li>
+<li><p>當 <span class="math notranslate nohighlight">\(N \to \infty\)</span>，<span class="math notranslate nohighlight">\(S \to \sigma\)</span>，分母的不確定性消失，t 分布趨近標準常態分布。</p></li>
 </ul>
 </section>
 </section>
@@ -942,8 +920,8 @@ K &amp;=&amp; \frac{\sigma_0^2}{\sigma_0^2 + 0.4^2}, \quad 0 &lt; K &lt; 1 \\
 <p>Compare the execution times and explain the observed differences.</p>
 </li>
 </ol>
-<section id="id6">
-<h3>中文翻譯<a class="headerlink" href="#id6" title="連結到這個標頭">#</a></h3>
+<section id="id5">
+<h3>中文翻譯<a class="headerlink" href="#id5" title="連結到這個標頭">#</a></h3>
 <blockquote>
 <div><p><strong>問題 3：線性迴歸不同數值方法之比較</strong></p>
 <p>由下式產生 <span class="math notranslate nohighlight">\(n = 10^6\)</span> 筆合成觀測資料：</p>
@@ -983,6 +961,107 @@ K &amp;=&amp; \frac{\sigma_0^2}{\sigma_0^2 + 0.4^2}, \quad 0 &lt; K &lt; 1 \\
 </section>
 <section id="answer-3">
 <h2>Answer 3.<a class="headerlink" href="#answer-3" title="連結到這個標頭">#</a></h2>
+<p>程式：<a class="reference download internal" download="" href="../../_downloads/3c198d7a6b4f23be4a10dbbc1dc573ef/hw4_q3.py"><span class="xref download myst">hw4_q3.py</span></a>（執行：在 hw4 資料夾輸入 <code class="docutils literal notranslate"><span class="pre">py</span> <span class="pre">hw4_q3.py</span></code>，梯度下降要計時 8 次，全部約需 1 分鐘）</p>
+<section id="id6">
+<h3>基本知識<a class="headerlink" href="#id6" title="連結到這個標頭">#</a></h3>
+<p><strong>1. 三種方法要解的是同一個問題</strong></p>
+<p>最小化 <span class="math notranslate nohighlight">\(J(a,b)\)</span> 就是一般的最小平方法，令 <span class="math notranslate nohighlight">\(\nabla J = 0\)</span> 得到正規方程：</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial J}{\partial a} = \frac{1}{n}\sum_{i}(a + bx_i - y_i) = 0, \qquad \frac{\partial J}{\partial b} = \frac{1}{n}\sum_{i}(a + bx_i - y_i)\,x_i = 0 \;\Longleftrightarrow\; X^{\mathsf T} X \boldsymbol\beta = X^{\mathsf T} y\]</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">np.linalg.lstsq</span></code>：直接對 <span class="math notranslate nohighlight">\(X\)</span> 做 SVD 分解來解，不需要先算 <span class="math notranslate nohighlight">\(X^{\mathsf T}X\)</span>，數值上最穩定。</p></li>
+<li><p>正規方程：先算出 <span class="math notranslate nohighlight">\(2 \times 2\)</span> 的 <span class="math notranslate nohighlight">\(X^{\mathsf T}X\)</span> 與長度 2 的 <span class="math notranslate nohighlight">\(X^{\mathsf T}y\)</span>，再解 <span class="math notranslate nohighlight">\(2\times 2\)</span> 線性方程組。</p></li>
+<li><p>梯度下降：不解方程，而是沿著負梯度方向一步一步走：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[a \leftarrow a - \eta \frac{\partial J}{\partial a}, \qquad b \leftarrow b - \eta \frac{\partial J}{\partial b}, \qquad \eta = 0.1\]</div>
+<p>停止條件：<span class="math notranslate nohighlight">\(\|\nabla J\|_2 = \sqrt{(\partial_a J)^2 + (\partial_b J)^2} &lt; 10^{-6}\)</span>。</p>
+<p><strong>2. 梯度下降的收斂速度</strong></p>
+<p><span class="math notranslate nohighlight">\(J\)</span> 的 Hessian 矩陣為</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}H = \begin{bmatrix} 1 &amp; \overline{x} \\ \overline{x} &amp; \overline{x^2} \end{bmatrix} \approx \begin{bmatrix} 1 &amp; 0 \\ 0 &amp; 1/3 \end{bmatrix} \quad (x \sim U[-1,1] \Rightarrow E[x^2] = 1/3)\end{split}\]</div>
+<p>每一步誤差在最慢的方向（特徵值 <span class="math notranslate nohighlight">\(\lambda = 1/3\)</span>）只縮小為 <span class="math notranslate nohighlight">\((1 - \eta\lambda) = 1 - 0.1/3 \approx 0.967\)</span> 倍。梯度從約 <span class="math notranslate nohighlight">\(3\)</span> 降到 <span class="math notranslate nohighlight">\(10^{-6}\)</span> 需要約</p>
+<div class="math notranslate nohighlight">
+\[k \approx \frac{\ln(3 / 10^{-6})}{-\ln(0.967)} \approx \frac{14.9}{0.034} \approx 440 \text{ 步}\]</div>
+</section>
+<section id="id7">
+<h3>1. &amp; 2. 擬合結果<a class="headerlink" href="#id7" title="連結到這個標頭">#</a></h3>
+<p>亂數種子：<code class="docutils literal notranslate"><span class="pre">SEED</span> <span class="pre">=</span> <span class="pre">2026</span></code>，<span class="math notranslate nohighlight">\(n = 10^6\)</span></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>方法</p></th>
+<th class="head"><p>截距 <span class="math notranslate nohighlight">\(a\)</span></p></th>
+<th class="head"><p>斜率 <span class="math notranslate nohighlight">\(b\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(J(a,b)\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(a - a_{\text{lstsq}}\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(b - b_{\text{lstsq}}\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">lstsq</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(2.00008399\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(3.00010065\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.1248721106\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>正規方程</p></td>
+<td><p><span class="math notranslate nohighlight">\(2.00008399\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(3.00010065\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.1248721106\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(5.3 \times 10^{-15}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(-2.5 \times 10^{-14}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>梯度下降</p></td>
+<td><p><span class="math notranslate nohighlight">\(2.00008399\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(3.00009772\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.1248721106\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(-2.8 \times 10^{-9}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(-2.9 \times 10^{-6}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>梯度下降：更新 <span class="math notranslate nohighlight">\(408\)</span> 次，<strong>有</strong>滿足停止條件 <span class="math notranslate nohighlight">\(\|\nabla J\|_2 &lt; 10^{-6}\)</span>（未達到 10000 次上限）。</p>
+<p><img alt="three fitted lines" src="../../_images/q3_fit.png" /></p>
+<p><strong>討論：結果是否一致？</strong></p>
+<ul class="simple">
+<li><p>三條直線在圖上完全重疊，三種方法都得到 <span class="math notranslate nohighlight">\(a \approx 2\)</span>、<span class="math notranslate nohighlight">\(b \approx 3\)</span>，與真值相符。與真值的差距（約 <span class="math notranslate nohighlight">\(10^{-4}\)</span>）是有限樣本造成的統計誤差：<span class="math notranslate nohighlight">\(\text{SE}(\hat b) \approx 0.5/\sqrt{n/3} \approx 8.7\times10^{-4}\)</span>。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lstsq</span></code> 與正規方程的差異只有 <span class="math notranslate nohighlight">\(10^{-14}\)</span> 量級，是浮點數的捨入誤差（機器精度約 <span class="math notranslate nohighlight">\(10^{-16}\)</span>）。兩者解的是同一個方程，只是演算法不同。本題 <span class="math notranslate nohighlight">\(X^{\mathsf T}X \approx \begin{bmatrix} n &amp; 0 \\ 0 &amp; n/3\end{bmatrix}\)</span> 條件數很小，所以正規方程不會有精度問題；若 <span class="math notranslate nohighlight">\(X\)</span> 的欄位高度相關，算 <span class="math notranslate nohighlight">\(X^{\mathsf T}X\)</span> 會把條件數平方，正規方程的誤差就會變大。</p></li>
+<li><p>梯度下降在 <span class="math notranslate nohighlight">\(b\)</span> 上差了約 <span class="math notranslate nohighlight">\(3 \times 10^{-6}\)</span>，因為它是「近似」解：停在梯度 <span class="math notranslate nohighlight">\(&lt; 10^{-6}\)</span> 時，與真正最小值的距離約為 <span class="math notranslate nohighlight">\(\|\nabla J\| / \lambda = 10^{-6}/(1/3) = 3 \times 10^{-6}\)</span>，而且偏差集中在收斂最慢的 <span class="math notranslate nohighlight">\(b\)</span> 方向，與觀察完全一致。</p></li>
+<li><p><span class="math notranslate nohighlight">\(J\)</span> 到小數點後 10 位都相同，因為在最小值附近 <span class="math notranslate nohighlight">\(J\)</span> 是平的：<span class="math notranslate nohighlight">\(\Delta J \approx \frac{1}{2}\lambda(\Delta b)^2 \approx 10^{-12}\)</span>。</p></li>
+</ul>
+</section>
+<section id="id8">
+<h3>3. 計算時間<a class="headerlink" href="#id8" title="連結到這個標頭">#</a></h3>
+<p>暖身 1 次後計時 7 次，取中位數（數值依電腦而異）：</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>方法</p></th>
+<th class="head"><p>執行時間中位數</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>正規方程</p></td>
+<td><p><span class="math notranslate nohighlight">\(0.0059\)</span> s</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">lstsq</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.0346\)</span> s</p></td>
+</tr>
+<tr class="row-even"><td><p>梯度下降</p></td>
+<td><p><span class="math notranslate nohighlight">\(7.50\)</span> s</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>討論：</strong></p>
+<ul class="simple">
+<li><p><strong>正規方程最快</strong>：只要把 <span class="math notranslate nohighlight">\(10^6\)</span> 筆資料掃一次算出 <span class="math notranslate nohighlight">\(X^{\mathsf T}X\)</span>（<span class="math notranslate nohighlight">\(2\times 2\)</span>）與 <span class="math notranslate nohighlight">\(X^{\mathsf T}y\)</span>，之後只解一個 <span class="math notranslate nohighlight">\(2 \times 2\)</span> 方程，計算量約 <span class="math notranslate nohighlight">\(O(np^2)\)</span>，<span class="math notranslate nohighlight">\(p = 2\)</span>。</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">lstsq</span></code> 慢約 6 倍</strong>：它對整個 <span class="math notranslate nohighlight">\(n \times 2\)</span> 的矩陣做 SVD（LAPACK <code class="docutils literal notranslate"><span class="pre">gelsd</span></code>），還要算奇異值與秩，計算量和記憶體搬移都比較多；換來的是數值穩定性。</p></li>
+<li><p><strong>梯度下降最慢（約 1000 倍）</strong>：每一次更新都要掃過全部 <span class="math notranslate nohighlight">\(10^6\)</span> 筆資料算梯度（還會產生暫存陣列），總共做了 408 次，等於掃描資料數百次。學習率固定且 Hessian 兩個特徵值相差 3 倍，收斂只是線性的。</p></li>
+<li><p>結論：參數少的線性迴歸應該用解析解（<code class="docutils literal notranslate"><span class="pre">lstsq</span></code> 或正規方程）；梯度下降適合參數極多、無法建構或分解矩陣，或模型非線性、沒有解析解的情況。</p></li>
+</ul>
+</section>
 </section>
 </section>
 
@@ -1058,16 +1137,20 @@ K &amp;=&amp; \frac{\sigma_0^2}{\sigma_0^2 + 0.4^2}, \quad 0 &lt; K &lt; 1 \\
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-2">Answer 2.</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">基本知識</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">程式空格</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-b">(a)(b) 結果</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">(c) 討論</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">(c) 討論</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-comparison-among-different-numerical-approaches-for-linear-regression">Question 3. Comparison among Different Numerical Approaches for Linear Regression</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">中文翻譯</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">中文翻譯</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-3">Answer 3.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-3">Answer 3.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">基本知識</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">1. &amp; 2. 擬合結果</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">3. 計算時間</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

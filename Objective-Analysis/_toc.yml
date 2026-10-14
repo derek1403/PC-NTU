@@ -27,3 +27,4 @@ parts:
       - file: homework/hw2/hw2
       - file: homework/hw3/hw3
       - file: homework/hw4/hw4
+      - file: homework/hw5/hw5

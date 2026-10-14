@@ -1,0 +1,1156 @@
+
+<!DOCTYPE html>
+
+
+<html lang="zh-TW" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Objective Analysis Week 05 Homework &#8212; Objective Analysis</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=4cca277b" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=7da51243"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/translations.js?v=1fe8cbde"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'homework/hw5/hw5';</script>
+    <link rel="canonical" href="https://derek1403.github.io/PC-NTU/Objective-Analysis/_build/html/homework/hw5/hw5.html" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜尋" href="../../search.html" />
+    <link rel="prev" title="Objective Analysis Week 04 Homework" href="../hw4/hw4.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="zh-TW"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Objective Analysis</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="搜尋" aria-label="搜尋" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">搜尋</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Objective Analysis (客觀分析)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lecture</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lecture/00_Chapter0/00_The_Idea_Behind_the_Course.html">Chapter 0: The Idea Behind the Course</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/01_basic_use.html">Find extreme values under a constraint, using Lagrange Multiplier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/02_advanced_use.html">Find extreme values under multiple constraints, using Lagrange Multipliers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/03_proof.html">拉格朗日乘數法的證明 (Proof of the Lagrange Multiplier Method)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/04_exceptions.html">拉格朗日乘數法的適用範圍 (When Does It Apply?)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q01_quadratic_on_line.html">Q01｜基本題：二次函數在直線上的極值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q02_cubic_on_ellipse.html">Q02｜基礎暖身：橢圓上的 <span class="math notranslate nohighlight">\(x^2y\)</span> 與分類討論</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q03_two_linear_constraints.html">Q03｜雙重限制條件：兩平面交線上離原點最近的點</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q04_symmetric_on_sphere.html">Q04｜進階對稱：球面上的 <span class="math notranslate nohighlight">\(xy+yz+zx\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q05_cubic_on_unit_sphere.html">Q05｜微積分期末壓軸：單位球上的 <span class="math notranslate nohighlight">\(x^2y+yz^2\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q06_hyperboloid_plane_distance.html">Q06｜微積分期末壓軸：雙曲面與平面交線到原點的距離</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q07_box_min_surface.html">Q07｜材料科學：固定體積下表面積最小的長方體</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q08_1DVar_data_assimilation.html">Q08｜大氣科學：一維變分資料同化 (1D-Var)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q09_QG_min_kinetic_energy.html">Q09｜大氣動力：熱力風平衡下的最小動能配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q10_Thomson_conducting_spheres.html">Q10｜電磁學：孤立導體球的靜電能最小化 (Thomson’s Theorem)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q11_wind_max_transport.html">Q11｜流體力學：固定動能下使輸送量最大的風場</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q12_entropy_max_equilibrium.html">Q12｜熱力學：固定總能量下的熵最大與熱平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q13_hydrogen_tank_min_mass.html">Q13｜結構工程：異質材料儲氫槽的輕量化設計</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q14_inertia_principal_axes.html">Q14｜古典力學：非對稱衛星的慣量主軸</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q15_Gibbs_min_equilibrium.html">Q15｜化學熱力學：吉布斯自由能最小化與化學平衡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q16_quadratic_form_two_constraints.html">Q16｜大氣／物理壓軸：球面＋平面上的二次型極值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/00_Chapter0/01_tool/01_Lagrange_multiplier/05_problems/Q17_three_level_negative_temperature.html">Q17｜應用壓軸：三能階雷射的最大熵分布與負絕對溫度</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lecture/01_Rule101/00_Rule101.html">Rule 101: From Maximum Entropy to Bayes』 Theorem (Rule101：從最大熵到貝氏定理)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/01_tool/01_Gaussian/01_Gaussian_distribution.html">高斯分布 (Gaussian Distribution)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/01_tool/01_Gaussian/02_Gaussian_integrals.html">高斯積分 (Gaussian Integrals)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/01_tool/03_expectation_rules.html">期望值與變異數的運算規則 (Rules for Expectation and Variance)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/01_tool/02_Bayes/01_problems/01_weather_prediction.html">Conditional Probability and Bayes』 Theorem in Weather Prediction (條件機率與貝氏定理：由「今天下雨」推估「明天下雨」)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/01_tool/02_Bayes/01_problems/02_COVID-19.html">Base Rate and Rapid Testing in COVID-19 Screening (基本比率：快篩陽性真的染疫的機率)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/01_tool/02_Bayes/01_problems/03_Monty_Hall_problem.html">Monty Hall Problem (三門問題：主持人的行動也是資訊)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/01_tool/02_Bayes/01_problems/04_Data_Assimilation.html">Data Assimilation as Bayes』 Theorem (資料同化：用觀測修正模式預報)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/02_proof/01_max_entropy_Gaussian.html">已知平均與變異數時，最大熵分布是高斯分布 (Maximum Entropy with Known Mean and Variance)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/02_proof/02_Gauss_mean_optimal_Gaussian.html">「平均值是最佳估計」推出高斯分布 (Gauss: Optimal Mean Implies Gaussian Errors)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/02_proof/03_standard_error.html">樣本平均的標準誤 (Standard Error of the Sample Mean)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/02_proof/04_sample_variance_N-1.html">樣本變異數為什麼除以 <span class="math notranslate nohighlight">\(N-1\)</span> (Why the Sample Variance Divides by <span class="math notranslate nohighlight">\(N-1\)</span>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/02_proof/05_Gaussian_skewness_kurtosis.html">高斯分布的偏度為 0、峰度為 3 (Skewness and Kurtosis of the Gaussian)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/02_proof/06_Gaussian_product_posterior.html">高斯先驗 × 高斯概似 = 高斯後驗 (Gaussian Prior × Gaussian Likelihood → Gaussian Posterior)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/03_notation_X_vs_x.html">大寫 <span class="math notranslate nohighlight">\(X\)</span> 與小寫 <span class="math notranslate nohighlight">\(x\)</span> (Random Variable vs. Observed Value)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lecture/01_Rule101/99_textbook.html">Week 1-3: Rule101</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../hw2/hw2.html">Objective Analysis Week 02 Homework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hw3/hw3.html">Objective Analysis Week 03 Homework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hw4/hw4.html">Objective Analysis Week 04 Homework</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Objective Analysis Week 05 Homework</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/derek1403/PC-NTU" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="來源儲存庫"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="下載此頁面">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/homework/hw5/hw5.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="下載原始檔"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="列印成 PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="全螢幕模式"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="搜尋" aria-label="搜尋" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Objective Analysis Week 05 Homework</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目錄 </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-bootstrap-confidence-intervals-for-a-regression-slope">Question 1. Bootstrap Confidence Intervals for a Regression Slope</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">中文翻譯</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-1">Answer 1.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">基本知識</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a">(a) 迴歸估計</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-bootstrap">(b) Bootstrap 重抽樣</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c">(c) 信賴區間</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d">(d) 解讀與重抽樣假設</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-regression-significance-with-ar-1-errors">Question 2. Regression Significance with AR(1) Errors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">中文翻譯</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-2">Answer 2.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">基本知識</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">(a) 迴歸估計</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b">(b) 顯著性檢定</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-ar-1-versus-ar-2-for-an-oscillatory-signal">Question 3. AR(1) versus AR(2) for an Oscillatory Signal</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">中文翻譯</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-3">Answer 3.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">(a) 無雜訊訊號</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">(b) 模型擬合</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">(c) 預報比較</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="objective-analysis-week-05-homework">
+<h1>Objective Analysis Week 05 Homework<a class="headerlink" href="#objective-analysis-week-05-homework" title="連結到這個標頭">#</a></h1>
+<section id="question-1-bootstrap-confidence-intervals-for-a-regression-slope">
+<h2>Question 1. Bootstrap Confidence Intervals for a Regression Slope<a class="headerlink" href="#question-1-bootstrap-confidence-intervals-for-a-regression-slope" title="連結到這個標頭">#</a></h2>
+<p>To investigate the uncertainty of a regression slope, generate <span class="math notranslate nohighlight">\(n = 200\)</span> independent observations from</p>
+<div class="math notranslate nohighlight">
+\[y_i = 1 + b x_i + \epsilon_i, \qquad x_i \sim U[-1, 1], \qquad \epsilon_i \sim \mathcal{N}(0, 1)\]</div>
+<p>where <span class="math notranslate nohighlight">\(x_i\)</span> and <span class="math notranslate nohighlight">\(\epsilon_i\)</span> are independent. Consider two cases: <span class="math notranslate nohighlight">\(b = 0\)</span> and <span class="math notranslate nohighlight">\(b = 0.4\)</span>. Here, <span class="math notranslate nohighlight">\(\mathcal{N}(\mu, \sigma^2)\)</span> denotes a normal distribution with mean <span class="math notranslate nohighlight">\(\mu\)</span> and variance <span class="math notranslate nohighlight">\(\sigma^2\)</span>. Use a fixed random seed and report it.</p>
+<ul>
+<li><p>(a) <strong>Regression Estimation</strong></p>
+<ul class="simple">
+<li><p>Estimate the intercept and slope using ordinary least squares (OLS).</p></li>
+<li><p>Plot the observations and the fitted regression line for each value of <span class="math notranslate nohighlight">\(b\)</span>.</p></li>
+</ul>
+</li>
+<li><p>(b) <strong>Bootstrap Resampling</strong></p>
+<ul class="simple">
+<li><p>Perform a pairs bootstrap with <span class="math notranslate nohighlight">\(B = 2000\)</span> replicates. In each replicate, sample <span class="math notranslate nohighlight">\(n\)</span> indices with replacement and select the corresponding pairs <span class="math notranslate nohighlight">\((x_i, y_i)\)</span> using the same indices.</p></li>
+<li><p>Refit the regression for each bootstrap sample and retain the estimated slope <span class="math notranslate nohighlight">\(\hat b^{*(j)}\)</span>, where <span class="math notranslate nohighlight">\(j = 1, \dots, B\)</span>. Plot the bootstrap distribution of the estimated slope.</p></li>
+</ul>
+</li>
+<li><p>(c) <strong>Confidence Intervals</strong></p>
+<ul>
+<li><p>Calculate the 95% percentile bootstrap confidence interval:</p>
+<div class="math notranslate nohighlight">
+\[\left[ q_{0.025}(\hat b^*),\ q_{0.975}(\hat b^*) \right]\]</div>
+<p>where <span class="math notranslate nohighlight">\(q_p\)</span> denotes the empirical <span class="math notranslate nohighlight">\(p\)</span>-quantile. Compare this interval with the conventional 95% OLS confidence interval:</p>
+<div class="math notranslate nohighlight">
+\[\hat b \pm t_{0.975, n-2}\, \mathrm{SE}_{\mathrm{OLS}}(\hat b)\]</div>
+</li>
+</ul>
+</li>
+<li><p>(d) <strong>Interpretation and Resampling Assumptions</strong></p>
+<ul class="simple">
+<li><p>Explain why independently resampling the <span class="math notranslate nohighlight">\(x_i\)</span> and <span class="math notranslate nohighlight">\(y_i\)</span> values is inappropriate for this analysis.</p></li>
+<li><p>Does the ordinary bootstrap slope distribution directly represent the null distribution under <span class="math notranslate nohighlight">\(H_0: b = 0\)</span>? Explain the distinction between estimating sampling uncertainty and constructing a null distribution.</p></li>
+</ul>
+</li>
+</ul>
+<section id="id1">
+<h3>中文翻譯<a class="headerlink" href="#id1" title="連結到這個標頭">#</a></h3>
+<blockquote>
+<div><p><strong>問題 1：迴歸斜率的 Bootstrap 信賴區間</strong></p>
+<p>為了研究迴歸斜率的不確定性，由下式產生 <span class="math notranslate nohighlight">\(n = 200\)</span> 筆獨立觀測：</p>
+<div class="math notranslate nohighlight">
+\[y_i = 1 + b x_i + \epsilon_i, \qquad x_i \sim U[-1, 1], \qquad \epsilon_i \sim \mathcal{N}(0, 1)\]</div>
+<p>其中 <span class="math notranslate nohighlight">\(x_i\)</span> 與 <span class="math notranslate nohighlight">\(\epsilon_i\)</span> 彼此獨立。考慮兩種情況：<span class="math notranslate nohighlight">\(b = 0\)</span> 與 <span class="math notranslate nohighlight">\(b = 0.4\)</span>。此處 <span class="math notranslate nohighlight">\(\mathcal{N}(\mu, \sigma^2)\)</span> 表示平均為 <span class="math notranslate nohighlight">\(\mu\)</span>、變異數為 <span class="math notranslate nohighlight">\(\sigma^2\)</span> 的常態分布。請使用固定的亂數種子並回報其數值。</p>
+<ul class="simple">
+<li><p>(a) <strong>迴歸估計</strong></p>
+<ul>
+<li><p>以普通最小平方法（OLS）估計截距與斜率。</p></li>
+<li><p>對每一個 <span class="math notranslate nohighlight">\(b\)</span> 值，畫出觀測資料與擬合的迴歸直線。</p></li>
+</ul>
+</li>
+<li><p>(b) <strong>Bootstrap 重抽樣</strong></p>
+<ul>
+<li><p>進行 <span class="math notranslate nohighlight">\(B = 2000\)</span> 次的成對 bootstrap（pairs bootstrap）。每次重抽時，有放回地抽出 <span class="math notranslate nohighlight">\(n\)</span> 個索引，並用同一組索引選出對應的資料對 <span class="math notranslate nohighlight">\((x_i, y_i)\)</span>。</p></li>
+<li><p>對每一組 bootstrap 樣本重新擬合迴歸，保留估計的斜率 <span class="math notranslate nohighlight">\(\hat b^{*(j)}\)</span>，<span class="math notranslate nohighlight">\(j = 1, \dots, B\)</span>。畫出估計斜率的 bootstrap 分布。</p></li>
+</ul>
+</li>
+<li><p>(c) <strong>信賴區間</strong></p>
+<ul>
+<li><p>計算 95% 百分位數 bootstrap 信賴區間 <span class="math notranslate nohighlight">\(\left[ q_{0.025}(\hat b^*),\ q_{0.975}(\hat b^*) \right]\)</span>，其中 <span class="math notranslate nohighlight">\(q_p\)</span> 表示經驗 <span class="math notranslate nohighlight">\(p\)</span> 分位數。將此區間與傳統的 95% OLS 信賴區間 <span class="math notranslate nohighlight">\(\hat b \pm t_{0.975, n-2}\, \mathrm{SE}_{\mathrm{OLS}}(\hat b)\)</span> 比較。</p></li>
+</ul>
+</li>
+<li><p>(d) <strong>解讀與重抽樣假設</strong></p>
+<ul>
+<li><p>解釋為什麼在本分析中，將 <span class="math notranslate nohighlight">\(x_i\)</span> 與 <span class="math notranslate nohighlight">\(y_i\)</span> 各自獨立地重抽是不恰當的。</p></li>
+<li><p>一般的 bootstrap 斜率分布是否直接代表 <span class="math notranslate nohighlight">\(H_0: b = 0\)</span> 下的虛無分布？說明「估計抽樣不確定性」與「建構虛無分布」之間的差別。</p></li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+<section id="answer-1">
+<h2>Answer 1.<a class="headerlink" href="#answer-1" title="連結到這個標頭">#</a></h2>
+<p>程式：<a class="reference download internal" download="" href="../../_downloads/d3846398f4afb7d0d1b38515d0e7c983/hw5_q1.py"><span class="xref download myst">hw5_q1.py</span></a>（執行：在 hw5 資料夾輸入 <code class="docutils literal notranslate"><span class="pre">py</span> <span class="pre">hw5_q1.py</span></code>）</p>
+<section id="id2">
+<h3>基本知識<a class="headerlink" href="#id2" title="連結到這個標頭">#</a></h3>
+<p><strong>1. OLS 斜率與標準誤</strong></p>
+<div class="math notranslate nohighlight">
+\[\hat b = \frac{\sum_i (x_i - \overline{x})(y_i - \overline{y})}{\sum_i (x_i - \overline{x})^2} = \frac{S_{xy}}{S_{xx}}, \qquad \hat a = \overline{y} - \hat b\,\overline{x}\]</div>
+<div class="math notranslate nohighlight">
+\[\hat\sigma^2 = \frac{1}{n-2}\sum_i (y_i - \hat a - \hat b x_i)^2, \qquad \mathrm{SE}_{\mathrm{OLS}}(\hat b) = \sqrt{\frac{\hat\sigma^2}{S_{xx}}}\]</div>
+<p>殘差變異數除以 <span class="math notranslate nohighlight">\(n-2\)</span>，因為估計了 <span class="math notranslate nohighlight">\(a\)</span>、<span class="math notranslate nohighlight">\(b\)</span> 兩個參數，用掉 2 個自由度；所以信賴區間用 <span class="math notranslate nohighlight">\(t_{n-2}\)</span> 分布。</p>
+<p><strong>2. Bootstrap 的想法</strong></p>
+<p>我們只有一組樣本，無法重做實驗。Bootstrap 把「手上這組樣本」當成母體，從中有放回地重抽 <span class="math notranslate nohighlight">\(n\)</span> 筆，模擬「再做一次實驗」。重複 <span class="math notranslate nohighlight">\(B\)</span> 次，<span class="math notranslate nohighlight">\(\hat b^*\)</span> 的分布就近似 <span class="math notranslate nohighlight">\(\hat b\)</span> 的抽樣分布：</p>
+<div class="math notranslate nohighlight">
+\[\hat b^* - \hat b \;\approx\; \hat b - b \quad (\text{分布上近似})\]</div>
+<p><strong>3. 百分位數信賴區間</strong></p>
+<p>把 <span class="math notranslate nohighlight">\(B\)</span> 個 <span class="math notranslate nohighlight">\(\hat b^*\)</span> 排序，取第 2.5% 與 97.5% 的值當作區間端點（<code class="docutils literal notranslate"><span class="pre">np.percentile(b_boot,</span> <span class="pre">[2.5,</span> <span class="pre">97.5])</span></code>）。</p>
+</section>
+<section id="a">
+<h3>(a) 迴歸估計<a class="headerlink" href="#a" title="連結到這個標頭">#</a></h3>
+<p>亂數種子：<code class="docutils literal notranslate"><span class="pre">SEED</span> <span class="pre">=</span> <span class="pre">2026</span></code>。兩種情況使用<strong>同一組</strong> <span class="math notranslate nohighlight">\(x_i\)</span> 與 <span class="math notranslate nohighlight">\(\epsilon_i\)</span>，只有真實斜率 <span class="math notranslate nohighlight">\(b\)</span> 不同。</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>真實 <span class="math notranslate nohighlight">\(b\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\hat a\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\hat b\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\mathrm{SE}_{\mathrm{OLS}}(\hat b)\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(1.0178\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(-0.2116\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.1271\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(0.4\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(1.0178\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.1884\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.1271\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><img alt="OLS fit" src="../../_images/q1_fit.png" /></p>
+<ul class="simple">
+<li><p>因為誤差相同，兩個 <span class="math notranslate nohighlight">\(\hat b\)</span> 剛好差 <span class="math notranslate nohighlight">\(0.4\)</span>。這組誤差恰好讓斜率估計偏低約 <span class="math notranslate nohighlight">\(0.21\)</span>（約 <span class="math notranslate nohighlight">\(1.7\)</span> 個標準誤），屬於正常的隨機波動。</p></li>
+</ul>
+</section>
+<section id="b-bootstrap">
+<h3>(b) Bootstrap 重抽樣<a class="headerlink" href="#b-bootstrap" title="連結到這個標頭">#</a></h3>
+<p><img alt="bootstrap distribution" src="../../_images/q1_bootstrap.png" /></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>真實 <span class="math notranslate nohighlight">\(b\)</span></p></th>
+<th class="head"><p>bootstrap <span class="math notranslate nohighlight">\(\hat b^*\)</span> 平均</p></th>
+<th class="head"><p>bootstrap <span class="math notranslate nohighlight">\(\hat b^*\)</span> 標準差</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\mathrm{SE}_{\mathrm{OLS}}\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(-0.2115\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.1234\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.1271\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(0.4\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.1917\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.1283\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.1271\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>bootstrap 分布的中心在 <span class="math notranslate nohighlight">\(\hat b\)</span>（而不是真值 <span class="math notranslate nohighlight">\(b\)</span>），形狀接近常態，標準差與 <span class="math notranslate nohighlight">\(\mathrm{SE}_{\mathrm{OLS}}\)</span> 幾乎一樣。</p></li>
+</ul>
+</section>
+<section id="c">
+<h3>(c) 信賴區間<a class="headerlink" href="#c" title="連結到這個標頭">#</a></h3>
+<p><span class="math notranslate nohighlight">\(t_{0.975,\,198} = 1.9720\)</span></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>真實 <span class="math notranslate nohighlight">\(b\)</span></p></th>
+<th class="head"><p>95% bootstrap CI</p></th>
+<th class="head"><p>寬度</p></th>
+<th class="head"><p>95% OLS CI</p></th>
+<th class="head"><p>寬度</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\([-0.4572,\ 0.0292]\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.4863\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\([-0.4623,\ 0.0391]\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.5014\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(0.4\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\([-0.0600,\ 0.4356]\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.4956\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\([-0.0623,\ 0.4391]\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.5014\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>兩種區間非常接近。原因是本題資料完全符合 OLS 的假設（誤差獨立、同變異數、常態），此時 bootstrap 與理論公式應該給出相同的答案。bootstrap 略窄一點，來自有限 <span class="math notranslate nohighlight">\(B\)</span> 的蒙地卡羅誤差，以及 bootstrap 沒有做 <span class="math notranslate nohighlight">\(n-2\)</span> 與 <span class="math notranslate nohighlight">\(t\)</span> 分布的小樣本修正。</p></li>
+<li><p>若 OLS 假設不成立（例如誤差異質變異、非常態），pairs bootstrap 不依賴這些假設，會比公式更可靠。</p></li>
+<li><p><span class="math notranslate nohighlight">\(b = 0\)</span>：兩個區間都包含 0，不拒絕 <span class="math notranslate nohighlight">\(H_0\)</span>，結論正確。</p></li>
+<li><p><span class="math notranslate nohighlight">\(b = 0.4\)</span>：兩個區間都包含真值 <span class="math notranslate nohighlight">\(0.4\)</span>，但也包含 0，所以在 5% 水準下無法拒絕 <span class="math notranslate nohighlight">\(b = 0\)</span>。這是一次第二類錯誤（真的有斜率但沒偵測到）：這組誤差使 <span class="math notranslate nohighlight">\(\hat b\)</span> 偏低，而 <span class="math notranslate nohighlight">\(n = 200\)</span> 時 <span class="math notranslate nohighlight">\(0.4\)</span> 只有約 <span class="math notranslate nohighlight">\(3\)</span> 個標準誤大，偵測並非百分之百。</p></li>
+</ul>
+</section>
+<section id="d">
+<h3>(d) 解讀與重抽樣假設<a class="headerlink" href="#d" title="連結到這個標頭">#</a></h3>
+<p><strong>為什麼不能把 <span class="math notranslate nohighlight">\(x_i\)</span> 與 <span class="math notranslate nohighlight">\(y_i\)</span> 各自獨立地重抽？</strong></p>
+<ul class="simple">
+<li><p>我們要估計的斜率，正是 <span class="math notranslate nohighlight">\(x\)</span> 與 <span class="math notranslate nohighlight">\(y\)</span> 之間的關係，而這個關係只存在於「成對」的 <span class="math notranslate nohighlight">\((x_i, y_i)\)</span> 中。</p></li>
+<li><p>若 <span class="math notranslate nohighlight">\(x\)</span> 與 <span class="math notranslate nohighlight">\(y\)</span> 各自用不同的索引重抽，重抽後的 <span class="math notranslate nohighlight">\(x^*\)</span> 與 <span class="math notranslate nohighlight">\(y^*\)</span> 彼此獨立，原本的配對關係被打散，斜率會集中在 0 附近，不論真實的 <span class="math notranslate nohighlight">\(b\)</span> 是多少。</p></li>
+<li><p>這樣得到的分布描述的是「<span class="math notranslate nohighlight">\(x\)</span> 與 <span class="math notranslate nohighlight">\(y\)</span> 無關」時的斜率，而不是 <span class="math notranslate nohighlight">\(\hat b\)</span> 的抽樣不確定性，所以無法用來建構 <span class="math notranslate nohighlight">\(b\)</span> 的信賴區間。</p></li>
+</ul>
+<p><strong>一般的 bootstrap 斜率分布是否就是 <span class="math notranslate nohighlight">\(H_0: b=0\)</span> 的虛無分布？</strong></p>
+<ul class="simple">
+<li><p>不是。pairs bootstrap 保留了資料中的關係，所以分布的中心在 <span class="math notranslate nohighlight">\(\hat b\)</span>，描述的是「估計值 <span class="math notranslate nohighlight">\(\hat b\)</span> 會在真值附近變動多少」，也就是<strong>抽樣不確定性</strong>，用來建構信賴區間。</p></li>
+<li><p><strong>虛無分布</strong>是「假設 <span class="math notranslate nohighlight">\(H_0\)</span> 為真（<span class="math notranslate nohighlight">\(b = 0\)</span>）時，<span class="math notranslate nohighlight">\(\hat b\)</span> 會怎麼分布」，中心必須在 0，用來計算 p 值。建構時必須<strong>強制</strong> <span class="math notranslate nohighlight">\(H_0\)</span> 成立，例如：</p>
+<ul>
+<li><p>用 <span class="math notranslate nohighlight">\(H_0\)</span> 模型產生資料：<span class="math notranslate nohighlight">\(y^* = \hat a_0 + e^*\)</span>，其中 <span class="math notranslate nohighlight">\(e^*\)</span> 從 <span class="math notranslate nohighlight">\(H_0\)</span> 下的殘差重抽；</p></li>
+<li><p>或把 <span class="math notranslate nohighlight">\(y\)</span> 相對 <span class="math notranslate nohighlight">\(x\)</span> 隨機排列（permutation），刻意打散配對。上面那種「各自獨立重抽」其實就類似於在建構虛無分布。</p></li>
+<li><p>或把 bootstrap 分布平移：<span class="math notranslate nohighlight">\(\hat b^* - \hat b\)</span> 的分布近似 <span class="math notranslate nohighlight">\(H_0\)</span> 下 <span class="math notranslate nohighlight">\(\hat b\)</span> 的分布。</p></li>
+</ul>
+</li>
+<li><p>兩者的連結：信賴區間與檢定是對偶的。若 95% CI 不包含 0，就等價於在 5% 水準下拒絕 <span class="math notranslate nohighlight">\(H_0\)</span>；但不能直接把 bootstrap 分布中「<span class="math notranslate nohighlight">\(\hat b^* \le 0\)</span> 的比例」當成 p 值。</p></li>
+</ul>
+</section>
+</section>
+<section id="question-2-regression-significance-with-ar-1-errors">
+<h2>Question 2. Regression Significance with AR(1) Errors<a class="headerlink" href="#question-2-regression-significance-with-ar-1-errors" title="連結到這個標頭">#</a></h2>
+<p>Let <span class="math notranslate nohighlight">\(n = 200\)</span> and <span class="math notranslate nohighlight">\(x_t = -1 + 2(t-1)/(n-1)\)</span> for <span class="math notranslate nohighlight">\(t = 1, \dots, n\)</span>. Generate</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+y_t = 1 + 0.4 x_t + \epsilon_t, \\
+\epsilon_t = \phi \epsilon_{t-1} + u_t, \qquad u_t \sim \mathcal{N}(0, 1 - \phi^2), \qquad t = 2, \dots, n,
+\end{gather*}\end{split}\]</div>
+<p>with <span class="math notranslate nohighlight">\(\epsilon_1 \sim \mathcal{N}(0, 1)\)</span> independent of all innovations. Consider <span class="math notranslate nohighlight">\(\phi \in \{0, 0.5, 0.9\}\)</span>. The stationary residual variance is one for every <span class="math notranslate nohighlight">\(\phi\)</span>. Treat <span class="math notranslate nohighlight">\(\phi\)</span> and the noise variance as known. Test <span class="math notranslate nohighlight">\(H_0: b = 0\)</span> against <span class="math notranslate nohighlight">\(H_1: b \ne 0\)</span> at the 5% level.</p>
+<ul class="simple">
+<li><p>(a) <strong>Regression Estimation</strong></p>
+<ul>
+<li><p>Fit an OLS regression for each <span class="math notranslate nohighlight">\(\phi\)</span> and report the estimated slope and conventional OLS standard error.</p></li>
+</ul>
+</li>
+<li><p>(b) <strong>Significance Tests</strong></p>
+<ul>
+<li><p>Apply the conventional OLS <span class="math notranslate nohighlight">\(t\)</span>-test using <span class="math notranslate nohighlight">\(T = \hat b / \mathrm{SE}_{\mathrm{OLS}}(\hat b)\)</span> and a <span class="math notranslate nohighlight">\(t\)</span> distribution with <span class="math notranslate nohighlight">\(n - 2\)</span> degrees of freedom.</p></li>
+<li><p>For each <span class="math notranslate nohighlight">\(\phi\)</span>, generate <span class="math notranslate nohighlight">\(B = 2000\)</span> independent surrogate records under <span class="math notranslate nohighlight">\(H_0\)</span> by replacing 0.4 with zero and retaining the same <span class="math notranslate nohighlight">\(x_t\)</span>, AR(1) parameters, and stationary initialization. Please visualize the histogram of regression slope, and locate the regression slope obtained by original OLS method.</p></li>
+</ul>
+</li>
+</ul>
+<section id="id3">
+<h3>中文翻譯<a class="headerlink" href="#id3" title="連結到這個標頭">#</a></h3>
+<blockquote>
+<div><p><strong>問題 2：誤差為 AR(1) 時的迴歸顯著性</strong></p>
+<p>令 <span class="math notranslate nohighlight">\(n = 200\)</span>，且 <span class="math notranslate nohighlight">\(x_t = -1 + 2(t-1)/(n-1)\)</span>，<span class="math notranslate nohighlight">\(t = 1, \dots, n\)</span>。由下式產生資料：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+&gt; y_t = 1 + 0.4 x_t + \epsilon_t, \\
+&gt; \epsilon_t = \phi \epsilon_{t-1} + u_t, \qquad u_t \sim \mathcal{N}(0, 1 - \phi^2), \qquad t = 2, \dots, n,
+&gt; \end{gather*}\end{split}\]</div>
+<p>其中 <span class="math notranslate nohighlight">\(\epsilon_1 \sim \mathcal{N}(0, 1)\)</span>，且與所有新息（innovation）獨立。考慮 <span class="math notranslate nohighlight">\(\phi \in \{0, 0.5, 0.9\}\)</span>。對每個 <span class="math notranslate nohighlight">\(\phi\)</span>，穩態殘差變異數皆為 1。將 <span class="math notranslate nohighlight">\(\phi\)</span> 與雜訊變異數視為已知。在 5% 顯著水準下檢定 <span class="math notranslate nohighlight">\(H_0: b = 0\)</span> 對 <span class="math notranslate nohighlight">\(H_1: b \ne 0\)</span>。</p>
+<ul class="simple">
+<li><p>(a) <strong>迴歸估計</strong></p>
+<ul>
+<li><p>對每個 <span class="math notranslate nohighlight">\(\phi\)</span> 進行 OLS 迴歸，回報估計的斜率與傳統 OLS 標準誤。</p></li>
+</ul>
+</li>
+<li><p>(b) <strong>顯著性檢定</strong></p>
+<ul>
+<li><p>使用 <span class="math notranslate nohighlight">\(T = \hat b / \mathrm{SE}_{\mathrm{OLS}}(\hat b)\)</span> 與自由度 <span class="math notranslate nohighlight">\(n - 2\)</span> 的 <span class="math notranslate nohighlight">\(t\)</span> 分布，進行傳統 OLS <span class="math notranslate nohighlight">\(t\)</span> 檢定。</p></li>
+<li><p>對每個 <span class="math notranslate nohighlight">\(\phi\)</span>，將 0.4 換成 0，並保留相同的 <span class="math notranslate nohighlight">\(x_t\)</span>、AR(1) 參數與穩態初始化，在 <span class="math notranslate nohighlight">\(H_0\)</span> 下產生 <span class="math notranslate nohighlight">\(B = 2000\)</span> 筆獨立的替代資料（surrogate records）。畫出迴歸斜率的直方圖，並標出原始 OLS 方法所得到的迴歸斜率位置。</p></li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+<section id="answer-2">
+<h2>Answer 2.<a class="headerlink" href="#answer-2" title="連結到這個標頭">#</a></h2>
+<p>程式：<a class="reference download internal" download="" href="../../_downloads/c74cb2cc891ecfe41b486565fa068c2d/hw5_q2.py"><span class="xref download myst">hw5_q2.py</span></a>（執行：在 hw5 資料夾輸入 <code class="docutils literal notranslate"><span class="pre">py</span> <span class="pre">hw5_q2.py</span></code>）</p>
+<section id="id4">
+<h3>基本知識<a class="headerlink" href="#id4" title="連結到這個標頭">#</a></h3>
+<p><strong>1. AR(1) 誤差</strong></p>
+<p><span class="math notranslate nohighlight">\(\epsilon_t = \phi\epsilon_{t-1} + u_t\)</span>：今天的誤差會「記得」昨天的誤差。</p>
+<ul class="simple">
+<li><p>穩態變異數：<span class="math notranslate nohighlight">\(\mathrm{Var}(\epsilon) = \dfrac{\mathrm{Var}(u)}{1 - \phi^2} = \dfrac{1-\phi^2}{1-\phi^2} = 1\)</span>，所以題目讓三種 <span class="math notranslate nohighlight">\(\phi\)</span> 的雜訊大小相同，只有「記憶」不同。<span class="math notranslate nohighlight">\(\epsilon_1 \sim \mathcal N(0,1)\)</span> 就是從穩態開始。</p></li>
+<li><p>自相關：<span class="math notranslate nohighlight">\(\mathrm{Corr}(\epsilon_t, \epsilon_{t+k}) = \phi^k\)</span>。<span class="math notranslate nohighlight">\(\phi = 0.9\)</span> 時誤差變化很慢，看起來像緩慢的起伏或趨勢。</p></li>
+</ul>
+<p><strong>2. 傳統 OLS t 檢定的假設</strong></p>
+<p><span class="math notranslate nohighlight">\(\mathrm{SE}_{\mathrm{OLS}}\)</span> 的公式假設誤差彼此<strong>獨立</strong>。正相關的誤差使「有效樣本數」變小：</p>
+<div class="math notranslate nohighlight">
+\[n_{\text{eff}} \approx n\,\frac{1-\phi}{1+\phi}: \quad \phi = 0.5 \Rightarrow n_{\text{eff}} \approx 67, \qquad \phi = 0.9 \Rightarrow n_{\text{eff}} \approx 11\]</div>
+<p>但 OLS 仍然以為有 200 筆獨立資料，所以標準誤被<strong>低估</strong>，<span class="math notranslate nohighlight">\(T\)</span> 被高估，容易誤判為顯著。</p>
+<p><strong>3. 替代資料（surrogate）檢定</strong></p>
+<p>因為 <span class="math notranslate nohighlight">\(\phi\)</span> 與雜訊變異數已知，可以直接在 <span class="math notranslate nohighlight">\(H_0\)</span>（<span class="math notranslate nohighlight">\(b = 0\)</span>）下模擬很多組資料，得到 <span class="math notranslate nohighlight">\(\hat b\)</span> 的<strong>真實虛無分布</strong>，不需要依賴「誤差獨立」的假設：</p>
+<div class="math notranslate nohighlight">
+\[p_{\text{sur}} = \frac{\#\{\, |\hat b_0^{(j)}| \ge |\hat b| \,\}}{B}\]</div>
+</section>
+<section id="id5">
+<h3>(a) 迴歸估計<a class="headerlink" href="#id5" title="連結到這個標頭">#</a></h3>
+<p>亂數種子：<code class="docutils literal notranslate"><span class="pre">SEED</span> <span class="pre">=</span> <span class="pre">2026</span></code></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(\phi\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\hat b\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\mathrm{SE}_{\mathrm{OLS}}(\hat b)\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.4046\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.1337\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(0.5\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.0627\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.1223\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(0.9\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.0236\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.0886\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="b">
+<h3>(b) 顯著性檢定<a class="headerlink" href="#b" title="連結到這個標頭">#</a></h3>
+<p><span class="math notranslate nohighlight">\(t_{0.975,\,198} = 1.9720\)</span></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(\phi\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(T\)</span></p></th>
+<th class="head"><p>OLS p 值</p></th>
+<th class="head"><p>OLS 結論</p></th>
+<th class="head"><p>替代資料 p 值</p></th>
+<th class="head"><p>替代資料結論</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(3.027\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.0028\)</span></p></td>
+<td><p>拒絕 <span class="math notranslate nohighlight">\(H_0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.0020\)</span></p></td>
+<td><p>拒絕 <span class="math notranslate nohighlight">\(H_0\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(0.5\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.513\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.609\)</span></p></td>
+<td><p>不拒絕</p></td>
+<td><p><span class="math notranslate nohighlight">\(0.759\)</span></p></td>
+<td><p>不拒絕</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(0.9\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.266\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.790\)</span></p></td>
+<td><p>不拒絕</p></td>
+<td><p><span class="math notranslate nohighlight">\(0.958\)</span></p></td>
+<td><p>不拒絕</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><span class="math notranslate nohighlight">\(H_0\)</span> 下的斜率分布（替代資料）與 OLS 標準誤的比較：</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(\phi\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(H_0\)</span> 下 <span class="math notranslate nohighlight">\(\hat b\)</span> 的真實標準差</p></th>
+<th class="head"><p>與 <span class="math notranslate nohighlight">\(\mathrm{SE}_{\mathrm{OLS}}\)</span> 的比值</p></th>
+<th class="head"><p>替代資料 5% 臨界值 <span class="math notranslate nohighlight">\(\lvert b \rvert\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(H_0\)</span> 為真時 OLS t 檢定的誤拒絕率</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.1221\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.91\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.240\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(5.1\%\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(0.5\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.2074\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(1.70\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.397\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(25.8\%\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(0.9\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.4946\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(5.58\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.988\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(65.6\%\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><img alt="surrogate slope distributions" src="../../_images/q2_surrogate.png" /></p>
+<p>（灰色：<span class="math notranslate nohighlight">\(H_0\)</span> 下 2000 筆替代資料的斜率；紅線：原始資料的 OLS 斜率；藍虛線：替代資料的 5% 雙尾臨界值）</p>
+<p><strong>討論：</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\phi = 0\)</span>：誤差獨立，OLS 的假設成立。替代資料的標準差與 <span class="math notranslate nohighlight">\(\mathrm{SE}_{\mathrm{OLS}}\)</span> 相當，OLS 的誤拒絕率約為應有的 5%。兩種檢定都正確地拒絕 <span class="math notranslate nohighlight">\(H_0\)</span>（<span class="math notranslate nohighlight">\(\hat b = 0.405\)</span> 遠在臨界值 <span class="math notranslate nohighlight">\(0.240\)</span> 之外）。</p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi = 0.5, 0.9\)</span>：在這次實現中，雜訊碰巧使 <span class="math notranslate nohighlight">\(\hat b\)</span> 很小，兩種檢定都不拒絕。但重點在上面第二張表：</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(H_0\)</span> 下 <span class="math notranslate nohighlight">\(\hat b\)</span> 的真實分散程度是 <span class="math notranslate nohighlight">\(\mathrm{SE}_{\mathrm{OLS}}\)</span> 的 <span class="math notranslate nohighlight">\(1.7\)</span> 倍與 <span class="math notranslate nohighlight">\(5.6\)</span> 倍，OLS 嚴重<strong>低估</strong>了不確定性。</p></li>
+<li><p>結果是：若 <span class="math notranslate nohighlight">\(H_0\)</span> 真的成立，傳統 t 檢定仍會有 <span class="math notranslate nohighlight">\(26\%\)</span>（<span class="math notranslate nohighlight">\(\phi=0.5\)</span>）與 <span class="math notranslate nohighlight">\(66\%\)</span>（<span class="math notranslate nohighlight">\(\phi=0.9\)</span>）的機率宣稱「斜率顯著」，遠高於名目上的 5%。</p></li>
+<li><p>以 <span class="math notranslate nohighlight">\(\phi = 0.9\)</span> 為例，OLS 認為 <span class="math notranslate nohighlight">\(|\hat b| &gt; 1.972 \times 0.0886 = 0.175\)</span> 就顯著；但替代資料顯示，即使 <span class="math notranslate nohighlight">\(b = 0\)</span>，<span class="math notranslate nohighlight">\(|\hat b|\)</span> 也有 5% 的機會超過 <span class="math notranslate nohighlight">\(0.988\)</span>。真實的訊號 <span class="math notranslate nohighlight">\(b = 0.4\)</span> 甚至小於這個臨界值，幾乎無法被偵測。</p></li>
+</ul>
+</li>
+<li><p>原因：正相關的 AR(1) 雜訊變化緩慢，在有限長度的紀錄中很容易形成看起來像趨勢的起伏，所以斜率的變異很大；而 OLS 把 200 個點當成 200 筆獨立資訊（實際上只有約 11 筆），因此過度自信。<span class="math notranslate nohighlight">\(\phi=0.9\)</span> 時，殘差中緩慢的起伏有一部分被當成趨勢吸收掉，使 <span class="math notranslate nohighlight">\(\hat\sigma^2\)</span> 也偏小，<span class="math notranslate nohighlight">\(\mathrm{SE}_{\mathrm{OLS}}\)</span> 又更小了。</p></li>
+<li><p>結論：誤差有序列相關時，不能直接使用傳統 OLS t 檢定。應改用考慮自相關的方法，例如本題的替代資料（蒙地卡羅）檢定、用有效樣本數修正自由度，或廣義最小平方法（GLS）。</p></li>
+</ul>
+</section>
+</section>
+<section id="question-3-ar-1-versus-ar-2-for-an-oscillatory-signal">
+<h2>Question 3. AR(1) versus AR(2) for an Oscillatory Signal<a class="headerlink" href="#question-3-ar-1-versus-ar-2-for-an-oscillatory-signal" title="連結到這個標頭">#</a></h2>
+<p>Generate <span class="math notranslate nohighlight">\(n = 400\)</span> observations at integer times <span class="math notranslate nohighlight">\(t = 1, \dots, 400\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[z_t = \sin\left(\frac{2\pi t}{20}\right) + v_t, \qquad v_t \sim \mathcal{N}(0, \sigma_v^2)\]</div>
+<p>with independent measurement noise. Consider two noise levels, including <span class="math notranslate nohighlight">\(\sigma_v = 0\)</span> and <span class="math notranslate nohighlight">\(0.3\)</span>. Use the first 300 observations for training and reserve the rest for testing. Fit the models</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\text{AR(1)}: \quad z_t = c + \phi_1 z_{t-1} + e_t, \\
+\text{AR(2)}: \quad z_t = c + \phi_2 z_{t-2} + e_t.
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(a) <strong>The Noise-Free Signal</strong></p>
+<ul>
+<li><p>Derive a second-order recurrence satisfied by the noise-free sinusoid. Explain how it motivates an AR(2) model.</p></li>
+</ul>
+</li>
+<li><p>(b) <strong>Model Fitting</strong></p>
+<ul>
+<li><p>Fit both models by OLS with an intercept, using the same training response times <span class="math notranslate nohighlight">\(t = 3, \dots, 300\)</span>. Report the coefficients and training residual root-mean-square error (RMSE) for each noise level.</p></li>
+</ul>
+</li>
+<li><p>(c) <strong>Forecast Comparison</strong></p>
+<ul>
+<li><p>Produce a 40-step recursive forecast initialized at <span class="math notranslate nohighlight">\(t = 300\)</span>. Retain the training coefficients and use predicted values whenever subsequent lags extend beyond the training period. Plot both forecasts against the observations for <span class="math notranslate nohighlight">\(t = 301, \dots, 340\)</span> and report their RMSE over this interval.</p></li>
+<li><p>Which model better represents the oscillation for each noise level? Explain why training error alone is insufficient to select a model. Note that the noise-free sinusoid is a deterministic oscillation rather than a stationary AR(2) process driven by white-noise innovations.</p></li>
+</ul>
+</li>
+</ul>
+<section id="id6">
+<h3>中文翻譯<a class="headerlink" href="#id6" title="連結到這個標頭">#</a></h3>
+<blockquote>
+<div><p><strong>問題 3：振盪訊號的 AR(1) 與 AR(2) 比較</strong></p>
+<p>在整數時間 <span class="math notranslate nohighlight">\(t = 1, \dots, 400\)</span> 產生 <span class="math notranslate nohighlight">\(n = 400\)</span> 筆觀測：</p>
+<div class="math notranslate nohighlight">
+\[z_t = \sin\left(\frac{2\pi t}{20}\right) + v_t, \qquad v_t \sim \mathcal{N}(0, \sigma_v^2)\]</div>
+<p>其中量測雜訊彼此獨立。考慮兩種雜訊大小：<span class="math notranslate nohighlight">\(\sigma_v = 0\)</span> 與 <span class="math notranslate nohighlight">\(0.3\)</span>。前 300 筆觀測用於訓練，其餘保留作為測試。擬合以下模型：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+&gt; \text{AR(1)}: \quad z_t = c + \phi_1 z_{t-1} + e_t, \\
+&gt; \text{AR(2)}: \quad z_t = c + \phi_2 z_{t-2} + e_t.
+&gt; \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(a) <strong>無雜訊訊號</strong></p>
+<ul>
+<li><p>推導無雜訊正弦波所滿足的二階遞迴關係。說明它如何引出 AR(2) 模型。</p></li>
+</ul>
+</li>
+<li><p>(b) <strong>模型擬合</strong></p>
+<ul>
+<li><p>以含截距的 OLS 擬合兩個模型，兩者使用相同的訓練反應時間 <span class="math notranslate nohighlight">\(t = 3, \dots, 300\)</span>。對每種雜訊大小，回報係數與訓練殘差的均方根誤差（RMSE）。</p></li>
+</ul>
+</li>
+<li><p>(c) <strong>預報比較</strong></p>
+<ul>
+<li><p>從 <span class="math notranslate nohighlight">\(t = 300\)</span> 開始進行 40 步的遞迴預報。保留訓練所得的係數，當之後的落後項超出訓練期間時，改用預報值。將兩個模型的預報與 <span class="math notranslate nohighlight">\(t = 301, \dots, 340\)</span> 的觀測畫在一起，並回報此區間的 RMSE。</p></li>
+<li><p>在各雜訊大小下，哪一個模型較能表現振盪？解釋為什麼只看訓練誤差不足以選擇模型。注意：無雜訊的正弦波是確定性的振盪，而不是由白雜訊新息驅動的穩態 AR(2) 過程。</p></li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+<section id="answer-3">
+<h2>Answer 3.<a class="headerlink" href="#answer-3" title="連結到這個標頭">#</a></h2>
+<p>程式：<a class="reference download internal" download="" href="../../_downloads/e52a69b79f24ed15c8d2582182e87feb/hw5_q3.py"><span class="xref download myst">hw5_q3.py</span></a>（執行：在 hw5 資料夾輸入 <code class="docutils literal notranslate"><span class="pre">py</span> <span class="pre">hw5_q3.py</span></code>）</p>
+<blockquote>
+<div><p><strong>關於題目中的 AR(2) 式子：</strong> PDF 上寫的是 <span class="math notranslate nohighlight">\(z_t = c + \phi_2 z_{t-2} + e_t\)</span>（只有 <span class="math notranslate nohighlight">\(z_{t-2}\)</span> 一項）。但 (a) 要推導的二階遞迴同時需要 <span class="math notranslate nohighlight">\(z_{t-1}\)</span> 與 <span class="math notranslate nohighlight">\(z_{t-2}\)</span>，而且只用 <span class="math notranslate nohighlight">\(z_{t-2}\)</span> 的模型無法產生週期 20 的振盪，所以這裡判斷是漏打了 <span class="math notranslate nohighlight">\(\phi_1 z_{t-1}\)</span>，採用標準的 AR(2)：<span class="math notranslate nohighlight">\(z_t = c + \phi_1 z_{t-1} + \phi_2 z_{t-2} + e_t\)</span>。如果助教確實要求只用 <span class="math notranslate nohighlight">\(z_{t-2}\)</span>，需要另外改程式。</p>
+</div></blockquote>
+<section id="id7">
+<h3>(a) 無雜訊訊號<a class="headerlink" href="#id7" title="連結到這個標頭">#</a></h3>
+<p>令 <span class="math notranslate nohighlight">\(\omega = \dfrac{2\pi}{20} = \dfrac{\pi}{10}\)</span>，<span class="math notranslate nohighlight">\(s_t = \sin(\omega t)\)</span>。由和差化積公式</p>
+<div class="math notranslate nohighlight">
+\[\sin(\omega t + \omega) + \sin(\omega t - \omega) = 2\sin(\omega t)\cos\omega\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+s_{t+1} + s_{t-1} &amp;=&amp; 2\cos\omega \; s_t \\
+s_t &amp;=&amp; 2\cos\omega \; s_{t-1} - s_{t-2} \\
+&amp;=&amp; 1.9021\, s_{t-1} - 1.0000\, s_{t-2}
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>這正是 AR(2) 的形式：<span class="math notranslate nohighlight">\(c = 0\)</span>，<span class="math notranslate nohighlight">\(\phi_1 = 2\cos\omega = 2\cos(\pi/10) \approx 1.9021\)</span>，<span class="math notranslate nohighlight">\(\phi_2 = -1\)</span>，而且沒有誤差項。</p></li>
+<li><p>特徵方程 <span class="math notranslate nohighlight">\(r^2 - \phi_1 r - \phi_2 = r^2 - 2\cos\omega\, r + 1 = 0\)</span> 的根是 <span class="math notranslate nohighlight">\(r = e^{\pm i\omega}\)</span>：一對<strong>複數根</strong>，模為 1，角度 <span class="math notranslate nohighlight">\(\omega\)</span> 對應週期 <span class="math notranslate nohighlight">\(2\pi/\omega = 20\)</span>。複數根才會產生振盪，模為 1 表示振幅不衰減。</p></li>
+<li><p>AR(1) 只有一個實數根 <span class="math notranslate nohighlight">\(\phi_1\)</span>，只能單調衰減（<span class="math notranslate nohighlight">\(0&lt;\phi_1&lt;1\)</span>）或正負交替（<span class="math notranslate nohighlight">\(\phi_1&lt;0\)</span>，週期 2），<strong>不可能</strong>產生週期 20 的振盪。因此正弦波需要（至少）兩個落後項，也就是 AR(2)。</p></li>
+</ul>
+</section>
+<section id="id8">
+<h3>(b) 模型擬合<a class="headerlink" href="#id8" title="連結到這個標頭">#</a></h3>
+<p>亂數種子：<code class="docutils literal notranslate"><span class="pre">SEED</span> <span class="pre">=</span> <span class="pre">2026</span></code>。兩個模型都用 <span class="math notranslate nohighlight">\(t = 3, \dots, 300\)</span>（298 筆）當反應變數。</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(\sigma_v\)</span></p></th>
+<th class="head"><p>模型</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(c\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\phi_1\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\phi_2\)</span></p></th>
+<th class="head"><p>訓練 RMSE</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td><p>AR(1)</p></td>
+<td><p><span class="math notranslate nohighlight">\(-0.0020\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.9504\)</span></p></td>
+<td><p>—</p></td>
+<td><p><span class="math notranslate nohighlight">\(0.2178\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td><p>AR(2)</p></td>
+<td><p><span class="math notranslate nohighlight">\(0.0000\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(1.9021\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(-1.0000\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.0000\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(0.3\)</span></p></td>
+<td><p>AR(1)</p></td>
+<td><p><span class="math notranslate nohighlight">\(0.0026\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.8110\)</span></p></td>
+<td><p>—</p></td>
+<td><p><span class="math notranslate nohighlight">\(0.4582\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(0.3\)</span></p></td>
+<td><p>AR(2)</p></td>
+<td><p><span class="math notranslate nohighlight">\(0.0022\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.7417\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.0853\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.4566\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\sigma_v = 0\)</span>：AR(2) 完全找回 (a) 的理論係數，殘差為 0；特徵根 <span class="math notranslate nohighlight">\(0.9511 \pm 0.309i = e^{\pm i\pi/10}\)</span>，模為 1。AR(1) 的 <span class="math notranslate nohighlight">\(\phi_1 \approx \cos\omega = 0.951\)</span>（相鄰兩點的相關係數）。</p></li>
+<li><p><span class="math notranslate nohighlight">\(\sigma_v = 0.3\)</span>：AR(2) 的係數與理論值差很多，特徵根變成<strong>兩個實數根</strong> <span class="math notranslate nohighlight">\(0.843\)</span> 與 <span class="math notranslate nohighlight">\(-0.101\)</span>，已經不會振盪了，幾乎退化成 AR(1)。</p></li>
+</ul>
+</section>
+<section id="id9">
+<h3>(c) 預報比較<a class="headerlink" href="#id9" title="連結到這個標頭">#</a></h3>
+<p>從 <span class="math notranslate nohighlight">\(t = 300\)</span> 開始遞迴預報 40 步（<span class="math notranslate nohighlight">\(t = 301, \dots, 340\)</span>）：</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(\sigma_v\)</span></p></th>
+<th class="head"><p>AR(1) 預報 RMSE</p></th>
+<th class="head"><p>AR(2) 預報 RMSE</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.7037\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.0000\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(0.3\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.7917\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.7922\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><img alt="forecasts" src="../../_images/q3_forecast.png" /></p>
+<p><strong>哪個模型較能表現振盪？</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\sigma_v = 0\)</span>：AR(2) 完全勝出。它的預報與觀測完全重合（RMSE <span class="math notranslate nohighlight">\(= 0\)</span>），完美延續週期 20 的振盪。AR(1) 的預報從 <span class="math notranslate nohighlight">\(z_{300} = 0\)</span> 開始，平平地往平均值衰減，完全沒有振盪；RMSE <span class="math notranslate nohighlight">\(0.70 \approx 1/\sqrt2\)</span>，正好等於正弦波本身的 RMS，等於毫無預報能力。</p></li>
+<li><p><span class="math notranslate nohighlight">\(\sigma_v = 0.3\)</span>：在這次實現中，<strong>兩個模型都沒有表現出振盪</strong>。兩條預報都很快衰減到平均值，RMSE 幾乎相同（約 <span class="math notranslate nohighlight">\(0.79\)</span>），與單純預報 0 差不多。理想的模型（知道正弦波）預報誤差應該只剩量測雜訊約 <span class="math notranslate nohighlight">\(0.3\)</span>。</p>
+<ul>
+<li><p>原因是量測雜訊 <span class="math notranslate nohighlight">\(v_t\)</span> 也出現在右邊的落後項 <span class="math notranslate nohighlight">\(z_{t-1}\)</span>、<span class="math notranslate nohighlight">\(z_{t-2}\)</span> 中（解釋變數有誤差），OLS 係數因此被系統性地往 0 拉（regression dilution，迴歸稀釋）。帶雜訊的觀測 <span class="math notranslate nohighlight">\(z_t = s_t + v_t\)</span> 其實是 ARMA(2,2)，不是 AR(2)，所以用 AR(2) 擬合抓不到振盪結構。</p></li>
+<li><p>就模型結構而言，AR(2) 仍然是唯一<strong>有能力</strong>表示振盪的模型；但需要更多落後項、ARMA 模型，或直接擬合正弦函數，才能從雜訊中找回振盪。</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>為什麼只看訓練誤差不足以選擇模型？</strong></p>
+<ul class="simple">
+<li><p>訓練 RMSE 衡量的是「一步預報」，而且每一步都使用真實的落後觀測值；它沒有檢驗模型能否自己延續訊號的動力結構。<span class="math notranslate nohighlight">\(\sigma_v = 0\)</span> 時 AR(1) 的訓練 RMSE 只有 <span class="math notranslate nohighlight">\(0.22\)</span>，看起來還不錯，但 40 步預報完全失敗（<span class="math notranslate nohighlight">\(0.70\)</span>）。</p></li>
+<li><p>參數較多的模型（AR(2) 包含 AR(1)）的訓練誤差<strong>一定</strong>小於等於較簡單的模型，即使多出的參數只是在擬合雜訊（過度擬合）。<span class="math notranslate nohighlight">\(\sigma_v = 0.3\)</span> 時 AR(2) 的訓練 RMSE 只小了 <span class="math notranslate nohighlight">\(0.0016\)</span>，預報卻沒有比較好。</p></li>
+<li><p>所以必須用模型沒看過的測試資料（out-of-sample）、多步預報，或懲罰參數數量的準則（AIC、BIC）來選擇模型。</p></li>
+</ul>
+<p><strong>確定性振盪 vs. 穩態 AR(2)：</strong></p>
+<ul class="simple">
+<li><p>穩態 AR(2) 的特徵根必須在單位圓<strong>內</strong>（模 <span class="math notranslate nohighlight">\(&lt; 1\)</span>），由白雜訊新息持續驅動；沒有新息時，振盪會衰減到平均值。</p></li>
+<li><p>無雜訊的正弦波，特徵根剛好<strong>在</strong>單位圓上（模 <span class="math notranslate nohighlight">\(= 1\)</span>），而且沒有任何新息（殘差 <span class="math notranslate nohighlight">\(= 0\)</span>）。它是一個確定性的遞迴關係，不是穩態隨機過程；AR(2) 迴歸只是剛好能精確表示這個遞迴，所以預報誤差為 0。</p></li>
+<li><p>加入量測雜訊後，雜訊是加在觀測上，而不是像 AR 模型那樣作為新息驅動系統，這也是 AR(2) 在 <span class="math notranslate nohighlight">\(\sigma_v = 0.3\)</span> 時失效的原因。</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./homework\hw5"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../hw4/hw4.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">上一頁</p>
+        <p class="prev-next-title">Objective Analysis Week 04 Homework</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目錄
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-bootstrap-confidence-intervals-for-a-regression-slope">Question 1. Bootstrap Confidence Intervals for a Regression Slope</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">中文翻譯</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-1">Answer 1.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">基本知識</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a">(a) 迴歸估計</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-bootstrap">(b) Bootstrap 重抽樣</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c">(c) 信賴區間</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d">(d) 解讀與重抽樣假設</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-regression-significance-with-ar-1-errors">Question 2. Regression Significance with AR(1) Errors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">中文翻譯</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-2">Answer 2.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">基本知識</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">(a) 迴歸估計</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b">(b) 顯著性檢定</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-ar-1-versus-ar-2-for-an-oscillatory-signal">Question 3. AR(1) versus AR(2) for an Oscillatory Signal</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">中文翻譯</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#answer-3">Answer 3.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">(a) 無雜訊訊號</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">(b) 模型擬合</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">(c) 預報比較</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+作者： PC YE
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
