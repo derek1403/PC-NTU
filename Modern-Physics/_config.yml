@@ -31,3 +31,9 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
+
+# Keep the equivalent hw9 Markdown as a downloadable source, not a second page.
+exclude_patterns:
+  - _build
+  - "**/.ipynb_checkpoints"
+  - homework/hw9/hw9.md

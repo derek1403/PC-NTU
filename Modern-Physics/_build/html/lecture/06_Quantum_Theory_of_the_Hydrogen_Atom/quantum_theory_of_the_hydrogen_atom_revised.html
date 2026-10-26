@@ -1,0 +1,2178 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>近代物理學 - 氫原子的量子理論 (Modern Physics - Quantum Theory of the Hydrogen Atom) &#8212; Modern Physics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lecture/06_Quantum_Theory_of_the_Hydrogen_Atom/quantum_theory_of_the_hydrogen_atom_revised';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Modern Physics - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Modern Physics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    近代物理 (Modern Physics) 課程筆記
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lecture.html">lecture.md</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00_Introduction/introduction.html">Modern Physics - Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_Relativity/relativity.html">Modern Physics - Relativity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_Particle_Properties_of_Waves/particle_properties_of_waves.html">Modern Physics - Particle Properties of Waves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_Wave_Properties_of_Particles/wave_properties_of_particles.html">Modern Physics - Wave Properties of Particles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04_Atomic_Structure/atomic_structure.html">Modern Physics - Atomic Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05_Quantum_Mechanics/quantum_mechanics.html">Modern Physics - Quantum Mechanics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quantum_theory_of_the_hydrogen_atom.html">Modern Physics - Quantum Theory of the Hydrogen Atom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07_Many-Electron_Atoms/many_electron_atoms.html">Modern Physics - Many-Electron Atoms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08_Molecules/molecules.html">Modern Physics - Molecules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09_Statistical_Mechanics/statistical_mechanics.html">Modern Physics - Statistical Mechanics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_The_Solid_State/the_solid_state.html">Modern Physics - The Solid State</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../homework/homework.html">homework hardword</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../homework/hw1/hw1.html">Modern Physics Hw 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../homework/hw2/hw2.html">Modern Physics Hw 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../homework/hw3/hw3.html">Modern Physics Hw 3</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../homework/hw4/hw4.html">Modern Physics Hw 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../homework/hw6/hw6.html">Modern Physics Hw 6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../homework/hw7/hw7.html">Modern Physics Hw 7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../homework/hw8/hw8.html">Modern Physics Hw 8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../homework/hw9/hw9.html">Modern Physics Hw 9</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Exam/final/final_questions.html">Final Exam — 題目</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Exam/final/final_solutions.html">Final Exam — 題目與解答</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flecture/06_Quantum_Theory_of_the_Hydrogen_Atom/quantum_theory_of_the_hydrogen_atom_revised.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/lecture/06_Quantum_Theory_of_the_Hydrogen_Atom/quantum_theory_of_the_hydrogen_atom_revised.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>近代物理學 - 氫原子的量子理論 (Modern Physics - Quantum Theory of the Hydrogen Atom)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schrodingers-equation-for-the-hydrogen-atom">6.1 氫原子的薛丁格方程式 (Schrödinger’s Equation for the Hydrogen Atom)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">出發點的兩條式子</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">為什麼不能用卡氏座標硬解</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">推導</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separation-of-variables">6.2 變數分離 (Separation of Variables)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">推導：第一步 —— 拆成三個函數相乘</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phi">推導：第二步 —— 第一次分離（<span class="math notranslate nohighlight">\(\phi\)</span>）</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#theta-r">推導：第三步 —— 第二次分離（<span class="math notranslate nohighlight">\(\theta\)</span> 與 <span class="math notranslate nohighlight">\(r\)</span>）</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">三條全微分方程式</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-numbers">6.3 量子數 (Quantum Numbers)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-solve-to-m-l">(a) solve 方位角方程式 <span class="math notranslate nohighlight">\(\to\)</span> 磁量子數 <span class="math notranslate nohighlight">\(m_l\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-solve-to-l">(b) solve 天頂角方程式 <span class="math notranslate nohighlight">\(\to\)</span> 軌道量子數 <span class="math notranslate nohighlight">\(l\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-solve-to-n">(c) solve 徑向方程式 <span class="math notranslate nohighlight">\(\to\)</span> 主量子數 <span class="math notranslate nohighlight">\(n\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#n-1-2-3">表 6.1 氫原子的正規化波函數（<span class="math notranslate nohighlight">\(n = 1, 2, 3\)</span>）</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#s-a-0-e-1"><strong>例題 6.1：由 <span class="math notranslate nohighlight">\(1s\)</span> 徑向波函數反求 <span class="math notranslate nohighlight">\(a_0\)</span> 與 <span class="math notranslate nohighlight">\(E_1\)</span></strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principal-quantum-number">6.4 主量子數 (Principal Quantum Number)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">為什麼能量必須是負的</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#orbital-quantum-number">6.5 軌道量子數 (Orbital Quantum Number)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">推導：把總能量拆開代回 <span class="math notranslate nohighlight">\((6.14)\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">推導：軌道動能的量子化</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">表 6.2 原子的電子態</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#magnetic-quantum-number">6.6 磁量子數 (Magnetic Quantum Number)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">推導：空間量子化</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">空間量子化的圖像</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">測不準原理與空間量子化</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electron-probability-density">6.7 電子機率密度 (Electron Probability Density)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">推導：球殼機率</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#s-left-langle-1-r-right-rangle"><strong>例題 6.2：<span class="math notranslate nohighlight">\(1s\)</span> 電子的 <span class="math notranslate nohighlight">\(\left\langle 1/r \right\rangle\)</span></strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-0-a-0-2"><strong>例題 6.3：<span class="math notranslate nohighlight">\(a_0\)</span> 與 <span class="math notranslate nohighlight">\(a_0/2\)</span> 處的機率比</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#radiative-transitions">6.8 輻射躍遷 (Radiative Transitions)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">推導：單一定態不會輻射</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">推導：兩態疊加產生電偶極振盪</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">結論：為什麼會放光</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selection-rules">6.9 選擇規則 (Selection Rules)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#m-l">推導：<span class="math notranslate nohighlight">\(m_l\)</span> 的選擇規則</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#l">推導：<span class="math notranslate nohighlight">\(l\)</span> 的選擇規則</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">選擇規則的意義</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zeeman-effect">6.10 塞曼效應 (Zeeman Effect)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">推導：磁偶極在磁場中的位能</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">推導：軌道電子的磁矩</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id28">推導：磁能的量子化</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id29">推導：一條譜線分裂成三條</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id30"><strong>例題 6.4：塞曼分裂的大小</strong></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="modern-physics-quantum-theory-of-the-hydrogen-atom">
+<h1>近代物理學 - 氫原子的量子理論 (Modern Physics - Quantum Theory of the Hydrogen Atom)<a class="headerlink" href="#modern-physics-quantum-theory-of-the-hydrogen-atom" title="Link to this heading">#</a></h1>
+<p><strong>日期:</strong> 2026.04.21, 2026.04.28</p>
+<p><strong>閱讀與計算約定</strong></p>
+<ul class="simple">
+<li><p><strong>【假設】</strong> 說明模型及忽略的效應；<strong>【已知】</strong> 是前章結果、實驗資料或直接引用的定理；<strong>【定義】</strong> 固定本節的符號。各類編號在節內使用，跨節引用時附節號。</p></li>
+<li><p>推導保留「列式 → 代入 → 化簡 → 結果」的順序。等號表示在已列假設下成立的關係；近似、數值四捨五入與數量級估算以 <span class="math notranslate nohighlight">\(\approx\)</span> 或 <span class="math notranslate nohighlight">\(\sim\)</span> 區分。</p></li>
+<li><p>代入前統一單位：<span class="math notranslate nohighlight">\(1\ \mathrm{eV}=1.602176634\times10^{-19}\ \mathrm{J}\)</span>。指數、對數及三角函數的引數須為無因次；結果另檢查量綱、正負號及適用範圍。</p></li>
+</ul>
+<p><strong>本章模型與符號</strong></p>
+<p>以非相對論、單電子、真空庫侖位能為主，先固定原子核並忽略自旋與精細結構；核運動可在相對座標方程中以縮減質量修正。6.10 另加入弱外磁場及軌道磁矩。</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>符號</p></th>
+<th class="head"><p>意義與單位</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(m,e\)</span></p></td>
+<td><p>電子質量 <span class="math notranslate nohighlight">\([\mathrm{kg}]\)</span>、基本電荷大小 <span class="math notranslate nohighlight">\([\mathrm{C}]\)</span>；電子電荷為 <span class="math notranslate nohighlight">\(-e\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\Psi,\psi\)</span></p></td>
+<td><p>含時波函數、空間波函數；三維歸一化後單位為 <span class="math notranslate nohighlight">\([\mathrm{m}^{-3/2}]\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(R,\Theta,\Phi\)</span></p></td>
+<td><p>徑向、天頂角、方位角因子；<span class="math notranslate nohighlight">\(\Phi\)</span> 不等於含時波函數 <span class="math notranslate nohighlight">\(\Psi\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(n,l,m_l\)</span></p></td>
+<td><p>主、軌道、磁量子數，均無因次；<span class="math notranslate nohighlight">\(m_l\)</span> 與質量 <span class="math notranslate nohighlight">\(m\)</span> 不同</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(L,L_z\)</span></p></td>
+<td><p>角動量大小與選定軸的投影，單位 <span class="math notranslate nohighlight">\([\mathrm{J\,s}]\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(E,U\)</span></p></td>
+<td><p>能量、位能，採相同零點；本章束縛態取 <span class="math notranslate nohighlight">\(E&lt;0\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="schrodingers-equation-for-the-hydrogen-atom">
+<h2>6.1 氫原子的薛丁格方程式 (Schrödinger’s Equation for the Hydrogen Atom)<a class="headerlink" href="#schrodingers-equation-for-the-hydrogen-atom" title="Link to this heading">#</a></h2>
+<p>上半學期我們從普朗克、愛因斯坦、波耳一路鋪陳到 <a class="reference external" href="https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/05_Quantum_Mechanics/quantum_mechanics.html#schrodingers-equation-time-dependent-form">薛丁格方程式</a>，把它建立成量子力學的基本假設，其地位等同於古典力學中的牛頓運動定律。第五章舉的例子——無限深位能井、有限深位能井、諧振子、穿隧效應——全部都是<strong>人為 (artificial)</strong> 製造出來的位能，靠元件製程或磊晶才做得出來。</p>
+<p>那麼宇宙中<strong>最自然</strong>的位能是什麼？是庫侖作用力的位能。所有物質、所有基本組成單元，原子內部與原子之間，靠的都是庫侖作用力。因此本章開始，我們把量子力學的架構用在<strong>真實的物理世界</strong>上，而最簡單的真實系統就是<strong>氫原子</strong>：一個正電荷、一個負電荷。</p>
+<p>本章要做的事情用白話講只有一句：<strong>把薛丁格方程式的位能項換成庫侖位能，然後硬解這個微分方程式</strong>。解完之後你會發現，高中化學背過的主量子數、角動量量子數、磁量子數，以及 <span class="math notranslate nohighlight">\(1s\)</span>、<span class="math notranslate nohighlight">\(2s\)</span>、<span class="math notranslate nohighlight">\(2p\)</span> 這些軌域，全部都只是這條微分方程式的解。</p>
+<section id="id1">
+<h3>出發點的兩條式子<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p><strong>三維穩態薛丁格方程式（卡氏座標）：</strong></p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial^2 \Psi}{\partial x^2} + \frac{\partial^2 \Psi}{\partial y^2} + \frac{\partial^2 \Psi}{\partial z^2} + \frac{2m}{\hbar^2}\left( E - U \right)\Psi = 0 \tag{6.1}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\Psi\)</span> : 電子的定態波函數 (Steady-state wave function)，<span class="math notranslate nohighlight">\([\text{m}^{-3/2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> : 電子質量 (Electron mass)，<span class="math notranslate nohighlight">\([\text{kg}]\)</span>，<span class="math notranslate nohighlight">\(m \approx 9.11 \times 10^{-31} \ \text{kg}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(E\)</span> : 電子總能量 (Total energy)，<span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(U\)</span> : 位能 (Potential energy)，<span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hbar\)</span> : 約化普朗克常數 (Reduced Planck constant)，<span class="math notranslate nohighlight">\([\text{J}\cdot\text{s}]\)</span>，<span class="math notranslate nohighlight">\(\hbar \approx 1.054 \times 10^{-34} \ \text{J}\cdot\text{s}\)</span></p></li>
+</ul>
+<p><strong>氫原子的庫侖位能：</strong></p>
+<div class="math notranslate nohighlight">
+\[U = -\frac{e^2}{4\pi\varepsilon_0 r} \tag{6.2}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(e\)</span> : 基本電荷 (Elementary charge)，<span class="math notranslate nohighlight">\([\text{C}]\)</span>，<span class="math notranslate nohighlight">\(e \approx 1.602 \times 10^{-19} \ \text{C}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\varepsilon_0\)</span> : 真空電容率 (Vacuum permittivity)，<span class="math notranslate nohighlight">\([\text{F}\cdot\text{m}^{-1}]\)</span>，<span class="math notranslate nohighlight">\(\varepsilon_0 \approx 8.854 \times 10^{-12} \ \text{F}\cdot\text{m}^{-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(r\)</span> : 電子與原子核的距離 (Electron–nucleus separation)，<span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p>註：<span class="math notranslate nohighlight">\(\varepsilon_0\)</span> 只適用於<strong>真空</strong>。若把原子放進固體或水中，介電常數要改成介質的 <span class="math notranslate nohighlight">\(\varepsilon\)</span>。</p></li>
+</ul>
+<p><img alt="" src="../../_images/Spherical_Polar_Coordinates.png" /></p>
+</section>
+<section id="id2">
+<h3>為什麼不能用卡氏座標硬解<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>把 <span class="math notranslate nohighlight">\((6.2)\)</span> 直接代進 <span class="math notranslate nohighlight">\((6.1)\)</span>，首先要處理座標選擇：微分以 <span class="math notranslate nohighlight">\(x,y,z\)</span> 表示，位能卻只依賴兩電荷的距離。若把原子核置於原點，距離為</p>
+<div class="math notranslate nohighlight">
+\[r = \left( x^2 + y^2 + z^2 \right)^{1/2}\]</div>
+<p>於是位能項為 <span class="math notranslate nohighlight">\(-e^2/\!\left(4\pi\varepsilon_0\sqrt{x^2+y^2+z^2}\right)\)</span>。它不能直接寫成三個單一座標位能的和，因此不適合採用卡氏座標的簡單乘積分離；改用球座標可直接利用中心力的對稱性。</p>
+<p>卡氏座標雖然是<strong>數學上最容易拓展</strong>的座標系（從一維加上 <span class="math notranslate nohighlight">\(y\)</span>、<span class="math notranslate nohighlight">\(z\)</span> 就變三維），卻<strong>不是最自然的</strong>座標系。宇宙中絕大部分的東西——原子、星體——都是球狀對稱的，因為它們的交互作用都是<strong>點對點</strong>的：萬有引力如此，庫侖力也如此。既然位能只依賴一個變數 <span class="math notranslate nohighlight">\(r\)</span>，就應該換一組能讓 <span class="math notranslate nohighlight">\(r\)</span> 單獨現身的座標。</p>
+</section>
+<section id="assumptions-preliminaries">
+<h3>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#assumptions-preliminaries" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/05_Quantum_Mechanics/quantum_mechanics.html#schrodingers-equation-steady-state-form">薛丁格方程式：穩態型式 (Schrödinger’s Equation: Steady-State Form)</a>：</strong> 適用前提為位能不隨時間改變（定態）；下式是把 <span class="math notranslate nohighlight">\(-\dfrac{\hbar^2}{2m}\nabla^2\Psi + U\Psi = E\Psi\)</span> 整體乘上 <span class="math notranslate nohighlight">\(-\dfrac{2m}{\hbar^2}\)</span> 的結果，目的是讓微分項前面的係數變成 <span class="math notranslate nohighlight">\(1\)</span>，比較好解。</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial^2 \Psi}{\partial x^2} + \frac{\partial^2 \Psi}{\partial y^2} + \frac{\partial^2 \Psi}{\partial z^2} + \frac{2m}{\hbar^2}\left( E - U \right)\Psi = 0\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\Psi\)</span> : 定態波函數 (Steady-state wave function)，<span class="math notranslate nohighlight">\([\text{m}^{-3/2}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(E\)</span> : 總能量 (Total energy)，<span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(U\)</span> : 位能 (Potential energy)，<span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> : 電子質量 (Electron mass)，<span class="math notranslate nohighlight">\([\text{kg}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hbar\)</span> : 約化普朗克常數 (Reduced Planck constant)，<span class="math notranslate nohighlight">\([\text{J}\cdot\text{s}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 2】 庫侖位能 (Coulomb potential energy)：</strong> 電荷 <span class="math notranslate nohighlight">\(+e\)</span> 的原子核與電荷 <span class="math notranslate nohighlight">\(-e\)</span> 的電子之間的靜電位能。</p>
+<div class="math notranslate nohighlight">
+\[U = -\frac{e^2}{4\pi\varepsilon_0 r}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(U\)</span> : 位能 (Potential energy)，<span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(r\)</span> : 兩電荷間距 (Separation)，<span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p>負號代表束縛：把電子從 <span class="math notranslate nohighlight">\(r\)</span> 移到無窮遠需要外界作功。</p></li>
+</ul>
+</li>
+<li><p><strong>【已知 3】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Coordinate_System/Spherical_Coordinate_Scale_Factors_and_Laplacian.html#e-proof-laplacian-operator">球座標的拉普拉斯算子 (Laplacian in spherical coordinates)</a>：</strong> 適用於任意可微純量場，未假設任何對稱性；<span class="math notranslate nohighlight">\(r, \theta, \phi\)</span> 的定義如【定義 1】。</p>
+<div class="math notranslate nohighlight">
+\[\nabla^2 \Psi = \frac{1}{r^2}\frac{\partial}{\partial r}\left[ r^2 \frac{\partial \Psi}{\partial r} \right] + \frac{1}{r^2 \sin\theta}\frac{\partial}{\partial \theta}\left[ \sin\theta \frac{\partial \Psi}{\partial \theta} \right] + \frac{1}{r^2 \sin^2\theta}\frac{\partial^2 \Psi}{\partial \phi^2}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(r\)</span> : 到原點的距離 (Radial distance)，<span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\theta\)</span> : 天頂角 (Polar angle)，與 <span class="math notranslate nohighlight">\(z\)</span> 軸的夾角，<span class="math notranslate nohighlight">\([\text{rad}]\)</span>，<span class="math notranslate nohighlight">\(0 \le \theta \le \pi\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi\)</span> : 方位角 (Azimuthal angle)，在 <span class="math notranslate nohighlight">\(xy\)</span> 平面上與 <span class="math notranslate nohighlight">\(x\)</span> 軸的夾角，<span class="math notranslate nohighlight">\([\text{rad}]\)</span>，<span class="math notranslate nohighlight">\(0 \le \phi &lt; 2\pi\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 1】 球狀極座標 (Spherical polar coordinates)：</strong> 三維空間中任一點，改用「到原點的距離、與 <span class="math notranslate nohighlight">\(z\)</span> 軸的夾角、投影到 <span class="math notranslate nohighlight">\(xy\)</span> 平面後與 <span class="math notranslate nohighlight">\(x\)</span> 軸的夾角」來標定。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  x &amp;\overset{\text{def}}{=}&amp; r\sin\theta\cos\phi \\
+  y &amp;\overset{\text{def}}{=}&amp; r\sin\theta\sin\phi \\
+  z &amp;\overset{\text{def}}{=}&amp; r\cos\theta
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>註：只需要三個變數即可定義三維空間中的一點。定義了與 <span class="math notranslate nohighlight">\(z\)</span> 軸的夾角 <span class="math notranslate nohighlight">\(\theta\)</span> 與投影後與 <span class="math notranslate nohighlight">\(x\)</span> 軸的夾角 <span class="math notranslate nohighlight">\(\phi\)</span> 之後，與 <span class="math notranslate nohighlight">\(y\)</span> 軸的夾角就自動被決定了，不需要第四個變數。</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id3">
+<h3>推導<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>把【已知 1】的卡氏拉普拉斯算子換成【已知 3】的球座標形式：</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{r^2}\frac{\partial}{\partial r}\left[ r^2 \frac{\partial \Psi}{\partial r} \right] + \frac{1}{r^2 \sin\theta}\frac{\partial}{\partial \theta}\left[ \sin\theta \frac{\partial \Psi}{\partial \theta} \right] + \frac{1}{r^2 \sin^2\theta}\frac{\partial^2 \Psi}{\partial \phi^2} + \frac{2m}{\hbar^2}\left( E - U \right)\Psi = 0 \tag{6.3}\]</div>
+<p>接著代入【已知 2】的位能，並整體乘上 <span class="math notranslate nohighlight">\(r^2\sin^2\theta\)</span>。乘這一項的目的很單純：<strong>讓每一個微分項裡只留下自己的變數</strong>，<span class="math notranslate nohighlight">\(\theta\)</span> 的項最好只有 <span class="math notranslate nohighlight">\(\theta\)</span>、<span class="math notranslate nohighlight">\(\phi\)</span> 的項最好只有 <span class="math notranslate nohighlight">\(\phi\)</span>，為下一節的變數分離鋪路。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+0 &amp;\overset{\text{(6.3)}}{=}&amp; r^2\sin^2\theta\left\{ \frac{1}{r^2}\frac{\partial}{\partial r}\left[ r^2 \frac{\partial \Psi}{\partial r} \right] + \frac{1}{r^2 \sin\theta}\frac{\partial}{\partial \theta}\left[ \sin\theta \frac{\partial \Psi}{\partial \theta} \right] + \frac{1}{r^2 \sin^2\theta}\frac{\partial^2 \Psi}{\partial \phi^2} + \frac{2m}{\hbar^2}\left( E - U \right)\Psi \right\} \\
+0 &amp;\overset{\text{已知 2}}{=}&amp; \sin^2\theta\frac{\partial}{\partial r}\left[ r^2 \frac{\partial \Psi}{\partial r} \right] + \sin\theta\frac{\partial}{\partial \theta}\left[ \sin\theta \frac{\partial \Psi}{\partial \theta} \right] + \frac{\partial^2 \Psi}{\partial \phi^2} + \frac{2mr^2\sin^2\theta}{\hbar^2}\left( \frac{e^2}{4\pi\varepsilon_0 r} + E \right)\Psi
+\end{gather*}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\sin^2\theta\frac{\partial}{\partial r}\left[ r^2 \frac{\partial \Psi}{\partial r} \right] + \sin\theta\frac{\partial}{\partial \theta}\left[ \sin\theta \frac{\partial \Psi}{\partial \theta} \right] + \frac{\partial^2 \Psi}{\partial \phi^2} + \frac{2mr^2\sin^2\theta}{\hbar^2}\left( \frac{e^2}{4\pi\varepsilon_0 r} + E \right)\Psi = 0 \tag{6.4}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\Psi = \Psi(r, \theta, \phi)\)</span> : 氫原子中電子的定態波函數，<span class="math notranslate nohighlight">\([\text{m}^{-3/2}]\)</span></p></li>
+<li><p>觀察 <span class="math notranslate nohighlight">\((6.4)\)</span>：第三項<strong>只含 <span class="math notranslate nohighlight">\(\phi\)</span></strong>、第二項<strong>只含 <span class="math notranslate nohighlight">\(\theta\)</span></strong>、第一項與第四項含 <span class="math notranslate nohighlight">\(r\)</span> 但還帶著 <span class="math notranslate nohighlight">\(\sin^2\theta\)</span>。目標已經達成了一大半。</p></li>
+</ul>
+<p><strong>【物理知識回顧】</strong>
+換座標本身不會讓方程式變簡單——<span class="math notranslate nohighlight">\((6.3)\)</span> 看起來比 <span class="math notranslate nohighlight">\((6.1)\)</span> 醜多了。真正變簡單的是<strong>位能項</strong>：從 <span class="math notranslate nohighlight">\(\left( x^2+y^2+z^2 \right)^{-1/2}\)</span> 這個把三個變數綁死的東西，變成乾淨的 <span class="math notranslate nohighlight">\(1/r\)</span>。整章能不能解得下去，就靠這一步。這也解釋了為什麼「最容易處理的座標系」與「最自然的座標系」是兩回事：卡氏座標對<strong>數學拓展</strong>最方便，球座標對<strong>球狀對稱的物理</strong>最方便。</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="separation-of-variables">
+<h2>6.2 變數分離 (Separation of Variables)<a class="headerlink" href="#separation-of-variables" title="Link to this heading">#</a></h2>
+<p><span class="math notranslate nohighlight">\((6.4)\)</span> 是一條含三個變數的偏微分方程式。只要不是一維世界，物理問題幾乎都是偏微分方程式，而偏微分方程式若想用手（而不是電腦）解出解析解，基本上只有<strong>一招</strong>：<strong>變數分離法 (Separation of variables)</strong>。它的精神是：想辦法把一條含三個變數的偏微分方程式，拆成三條各自只含一個變數的<strong>全微分</strong>方程式。</p>
+<section id="id4">
+<h3>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><strong>【已知 1】 <span class="math notranslate nohighlight">\((6.4)\)</span> 式：</strong> 上一節的結果，此處直接引用。</p>
+<div class="math notranslate nohighlight">
+\[\sin^2\theta\frac{\partial}{\partial r}\left[ r^2 \frac{\partial \Psi}{\partial r} \right] + \sin\theta\frac{\partial}{\partial \theta}\left[ \sin\theta \frac{\partial \Psi}{\partial \theta} \right] + \frac{\partial^2 \Psi}{\partial \phi^2} + \frac{2mr^2\sin^2\theta}{\hbar^2}\left( \frac{e^2}{4\pi\varepsilon_0 r} + E \right)\Psi = 0\]</div>
+</li>
+<li><p><strong>【假設 1】 三個座標互相獨立 (Independence of the coordinates)：</strong> <span class="math notranslate nohighlight">\(r\)</span>、<span class="math notranslate nohighlight">\(\theta\)</span>、<span class="math notranslate nohighlight">\(\phi\)</span> 就像卡氏座標的 <span class="math notranslate nohighlight">\(x\)</span>、<span class="math notranslate nohighlight">\(y\)</span>、<span class="math notranslate nohighlight">\(z\)</span> 一樣是<strong>獨立變數</strong>：<span class="math notranslate nohighlight">\(r\)</span> 怎麼變動，跟 <span class="math notranslate nohighlight">\(\phi\)</span> 取在哪個角度完全沒有關係。既然座標本身互相獨立，就可以合理地假設波函數也能拆成三個各自獨立的函數相乘，中間不會出現 <span class="math notranslate nohighlight">\(r^\theta\)</span>、<span class="math notranslate nohighlight">\(\theta/\phi\)</span> 這類混合項。</p>
+<div class="math notranslate nohighlight">
+\[\Psi\left( r, \theta, \phi \right) \overset{\text{def}}{=} R\left( r \right)\Theta\left( \theta \right)\Phi\left( \phi \right) \tag{6.5}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(R(r)\)</span> : 徑向函數 (Radial function)，只依賴 <span class="math notranslate nohighlight">\(r\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Theta(\theta)\)</span> : 天頂角函數 (Polar function)，只依賴 <span class="math notranslate nohighlight">\(\theta\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Phi(\phi)\)</span> : 方位角函數 (Azimuthal function)，只依賴 <span class="math notranslate nohighlight">\(\phi\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【假設 2】 方程式對全空間逐點成立 (Pointwise validity over all space)：</strong> 解出來的波函數不是只在某一點成立，而是必須在空間中的<strong>每一點</strong><span class="math notranslate nohighlight">\(\left( r, \theta, \phi \right)\)</span>都滿足方程式。其可用的數學後果是：若一個只依賴 <span class="math notranslate nohighlight">\(A\)</span> 的函數恆等於一個只依賴 <span class="math notranslate nohighlight">\(B\)</span> 的函數，而 <span class="math notranslate nohighlight">\(A\)</span>、<span class="math notranslate nohighlight">\(B\)</span> 互相獨立，則兩者只能同時等於<strong>同一個常數</strong>。這是後面兩次「左右各等於常數」論證的唯一依據。</p>
+<div class="math notranslate nohighlight">
+\[f\left( A \right) = g\left( B \right) \ \ \text{對所有 } \left( A, B \right) \text{ 成立} \qquad \Longrightarrow \qquad f\left( A \right) = g\left( B \right) = C\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(A, B\)</span> : 兩組互相獨立的變數 (Two mutually independent sets of variables)</p></li>
+<li><p><span class="math notranslate nohighlight">\(f, g\)</span> : 分別只依賴 <span class="math notranslate nohighlight">\(A\)</span> 與只依賴 <span class="math notranslate nohighlight">\(B\)</span> 的函數 (Functions of <span class="math notranslate nohighlight">\(A\)</span> only and of <span class="math notranslate nohighlight">\(B\)</span> only)</p></li>
+<li><p><span class="math notranslate nohighlight">\(C\)</span> : 分離常數 (Separation constant)，<span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 1】 偏微分改寫為全微分 (Rewriting partial derivatives as total derivatives)：</strong> 由【假設 1】，對某一個變數微分時，另外兩個函數與該變數無關，可以直接提到微分之外；提出去之後括號內只剩單變數函數，其偏微分與全微分意義完全相同。</p>
+<ul class="simple">
+<li><p>(a) 對 <span class="math notranslate nohighlight">\(r\)</span>：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \frac{\partial \Psi}{\partial r} &amp;\overset{\text{假設 1}}{=}&amp; \frac{\partial}{\partial r}\left[ R\Theta\Phi \right] \\
+  &amp;\overset{\text{假設 1}}{=}&amp; \Theta\Phi\frac{\partial R}{\partial r} \\
+  &amp;=&amp; \Theta\Phi\frac{dR}{dr}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(b) 對 <span class="math notranslate nohighlight">\(\theta\)</span>：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \frac{\partial \Psi}{\partial \theta} &amp;\overset{\text{假設 1}}{=}&amp; \frac{\partial}{\partial \theta}\left[ R\Theta\Phi \right] \\
+  &amp;\overset{\text{假設 1}}{=}&amp; R\Phi\frac{\partial \Theta}{\partial \theta} \\
+  &amp;=&amp; R\Phi\frac{d\Theta}{d\theta}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(c) 對 <span class="math notranslate nohighlight">\(\phi\)</span>：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \frac{\partial^2 \Psi}{\partial \phi^2} &amp;\overset{\text{假設 1}}{=}&amp; \frac{\partial^2}{\partial \phi^2}\left[ R\Theta\Phi \right] \\
+  &amp;\overset{\text{假設 1}}{=}&amp; R\Theta\frac{\partial^2 \Phi}{\partial \phi^2} \\
+  &amp;=&amp; R\Theta\frac{d^2 \Phi}{d\phi^2}
+  \end{gather*}\end{split}\]</div>
+</li>
+</ul>
+<p><img alt="" src="../../_images/Separation_of_Variables_Roadmap.png" /></p>
+<p><strong>本節計算目標：</strong> 先把偏導數改寫為各自單變數函數的導數，再分離 <span class="math notranslate nohighlight">\(\phi\)</span>，最後分離 <span class="math notranslate nohighlight">\(\theta\)</span> 與 <span class="math notranslate nohighlight">\(r\)</span>。分離常數的允許值留到 6.3 用邊界條件決定；本節先不假設其整數性。</p>
+</section>
+<section id="id5">
+<h3>推導：第一步 —— 拆成三個函數相乘<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>把【推導 1】代進【已知 1】，再整體除以 <span class="math notranslate nohighlight">\(\Psi = R\Theta\Phi\)</span>。除的目的是把每一項的分母湊成「只剩自己那一個函數」：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+0 &amp;\overset{\text{已知 1,推導 1}}{=}&amp; \sin^2\theta\,\Theta\Phi\frac{d}{dr}\left[ r^2 \frac{dR}{dr} \right] + \sin\theta\,R\Phi\frac{d}{d\theta}\left[ \sin\theta \frac{d\Theta}{d\theta} \right] + R\Theta\frac{d^2 \Phi}{d\phi^2} + \frac{2mr^2\sin^2\theta}{\hbar^2}\left( \frac{e^2}{4\pi\varepsilon_0 r} + E \right)R\Theta\Phi \\
+0 &amp;=&amp; \frac{\sin^2\theta}{R}\frac{d}{dr}\left[ r^2 \frac{dR}{dr} \right] + \frac{\sin\theta}{\Theta}\frac{d}{d\theta}\left[ \sin\theta \frac{d\Theta}{d\theta} \right] + \frac{1}{\Phi}\frac{d^2 \Phi}{d\phi^2} + \frac{2mr^2\sin^2\theta}{\hbar^2}\left( \frac{e^2}{4\pi\varepsilon_0 r} + E \right)
+\end{gather*}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{\sin^2\theta}{R}\frac{d}{dr}\left[ r^2 \frac{dR}{dr} \right] + \frac{\sin\theta}{\Theta}\frac{d}{d\theta}\left[ \sin\theta \frac{d\Theta}{d\theta} \right] + \frac{1}{\Phi}\frac{d^2 \Phi}{d\phi^2} + \frac{2mr^2\sin^2\theta}{\hbar^2}\left( \frac{e^2}{4\pi\varepsilon_0 r} + E \right) = 0 \tag{6.6}\]</div>
+<p>至此第一件事情已經完成：<strong>原本的偏微分項全部變成了全微分項</strong>。做完變數分離不會改變階數——原本是二階，現在還是二階，只是偏微分變成了全微分。</p>
+</section>
+<section id="phi">
+<h3>推導：第二步 —— 第一次分離（<span class="math notranslate nohighlight">\(\phi\)</span>）<a class="headerlink" href="#phi" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\((6.6)\)</span> 中最容易獨立出來的是第三項，它<strong>只含 <span class="math notranslate nohighlight">\(\Phi\)</span> 與 <span class="math notranslate nohighlight">\(\phi\)</span></strong>。把它移到等號右邊：</p>
+<div class="math notranslate nohighlight">
+\[\frac{\sin^2\theta}{R}\frac{d}{dr}\left[ r^2 \frac{dR}{dr} \right] + \frac{\sin\theta}{\Theta}\frac{d}{d\theta}\left[ \sin\theta \frac{d\Theta}{d\theta} \right] + \frac{2mr^2\sin^2\theta}{\hbar^2}\left( \frac{e^2}{4\pi\varepsilon_0 r} + E \right) = -\frac{1}{\Phi}\frac{d^2 \Phi}{d\phi^2} \tag{6.7}\]</div>
+<p>現在等號左邊<strong>只是 <span class="math notranslate nohighlight">\(r\)</span> 與 <span class="math notranslate nohighlight">\(\theta\)</span> 的函數</strong>，等號右邊<strong>只是 <span class="math notranslate nohighlight">\(\phi\)</span> 的函數</strong>。由【假設 2】，這個等號必須在空間中的每一點都成立。若左邊真的隨 <span class="math notranslate nohighlight">\(r\)</span> 或 <span class="math notranslate nohighlight">\(\theta\)</span> 變動，我固定 <span class="math notranslate nohighlight">\(\phi\)</span> 只動 <span class="math notranslate nohighlight">\(r\)</span>，右邊紋風不動而左邊變了，等號立刻破裂；反之亦然。因此<strong>唯一的可能</strong>是：等號兩邊各自等於<strong>同一個常數</strong>。</p>
+<p>這個常數可以隨便取名叫 <span class="math notranslate nohighlight">\(C\)</span>，但因為我們預先知道它最後會是某個整數的平方，這裡直接把它寫成 <span class="math notranslate nohighlight">\(m_l^2\)</span>（此刻<strong>尚未</strong>主張 <span class="math notranslate nohighlight">\(m_l\)</span> 是整數，它只是一個待定常數）：</p>
+<div class="math notranslate nohighlight">
+\[-\frac{1}{\Phi}\frac{d^2 \Phi}{d\phi^2} = m_l^2 \tag{6.8}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(m_l\)</span> : 第一個分離常數 (First separation constant)，<span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，待定</p></li>
+</ul>
+</section>
+<section id="theta-r">
+<h3>推導：第三步 —— 第二次分離（<span class="math notranslate nohighlight">\(\theta\)</span> 與 <span class="math notranslate nohighlight">\(r\)</span>）<a class="headerlink" href="#theta-r" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\((6.7)\)</span> 的左邊同樣等於 <span class="math notranslate nohighlight">\(m_l^2\)</span>。現在對左邊再玩一次同樣的把戲：<strong>有 <span class="math notranslate nohighlight">\(\theta\)</span> 的搬一邊，有 <span class="math notranslate nohighlight">\(r\)</span> 的搬另一邊</strong>。觀察到第一項與第三項都帶著 <span class="math notranslate nohighlight">\(\sin^2\theta\)</span>，於是整體除以 <span class="math notranslate nohighlight">\(\sin^2\theta\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+m_l^2 &amp;\overset{\text{(6.7)(6.8)}}{=}&amp; \frac{\sin^2\theta}{R}\frac{d}{dr}\left[ r^2 \frac{dR}{dr} \right] + \frac{\sin\theta}{\Theta}\frac{d}{d\theta}\left[ \sin\theta \frac{d\Theta}{d\theta} \right] + \frac{2mr^2\sin^2\theta}{\hbar^2}\left( \frac{e^2}{4\pi\varepsilon_0 r} + E \right) \\
+\frac{m_l^2}{\sin^2\theta} &amp;=&amp; \frac{1}{R}\frac{d}{dr}\left[ r^2 \frac{dR}{dr} \right] + \frac{1}{\Theta\sin\theta}\frac{d}{d\theta}\left[ \sin\theta \frac{d\Theta}{d\theta} \right] + \frac{2mr^2}{\hbar^2}\left( \frac{e^2}{4\pi\varepsilon_0 r} + E \right)
+\end{gather*}\end{split}\]</div>
+<p>把含 <span class="math notranslate nohighlight">\(\theta\)</span> 的項全部移到右邊、含 <span class="math notranslate nohighlight">\(r\)</span> 的項全部留在左邊：</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{R}\frac{d}{dr}\left[ r^2 \frac{dR}{dr} \right] + \frac{2mr^2}{\hbar^2}\left( \frac{e^2}{4\pi\varepsilon_0 r} + E \right) = \frac{m_l^2}{\sin^2\theta} - \frac{1}{\Theta\sin\theta}\frac{d}{d\theta}\left[ \sin\theta \frac{d\Theta}{d\theta} \right] \tag{6.9}\]</div>
+<p>注意這裡<strong>位能項可以整批留在左邊</strong>，因為庫侖力是<strong>中心力 (central force)</strong>，位能只跟距離 <span class="math notranslate nohighlight">\(r\)</span> 有關、跟角度完全無關。</p>
+<p>同樣的論證再用一次：左邊只含 <span class="math notranslate nohighlight">\(r\)</span>、右邊只含 <span class="math notranslate nohighlight">\(\theta\)</span>，兩邊必須各自等於同一個常數。這個常數同樣可以取名叫 <span class="math notranslate nohighlight">\(C\)</span>，但我們預先把它寫成 <span class="math notranslate nohighlight">\(l\left( l+1 \right)\)</span>（此刻也<strong>尚未</strong>主張 <span class="math notranslate nohighlight">\(l\)</span> 是整數）：</p>
+<div class="math notranslate nohighlight">
+\[\frac{m_l^2}{\sin^2\theta} - \frac{1}{\Theta\sin\theta}\frac{d}{d\theta}\left[ \sin\theta \frac{d\Theta}{d\theta} \right] = l\left( l+1 \right) \tag{6.10}\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{1}{R}\frac{d}{dr}\left[ r^2 \frac{dR}{dr} \right] + \frac{2mr^2}{\hbar^2}\left( \frac{e^2}{4\pi\varepsilon_0 r} + E \right) = l\left( l+1 \right) \tag{6.11}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(l\)</span> : 第二個分離常數 (Second separation constant)，<span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，待定</p></li>
+</ul>
+</section>
+<section id="id6">
+<h3>三條全微分方程式<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<p>把 <span class="math notranslate nohighlight">\((6.8)\)</span>、<span class="math notranslate nohighlight">\((6.10)\)</span>、<span class="math notranslate nohighlight">\((6.11)\)</span> 各自整理成標準形式：</p>
+<p><strong><span class="math notranslate nohighlight">\(\Phi\)</span> 的方程式：</strong> 把 <span class="math notranslate nohighlight">\((6.8)\)</span> 兩邊乘上 <span class="math notranslate nohighlight">\(-\Phi\)</span>。</p>
+<div class="math notranslate nohighlight">
+\[\frac{d^2 \Phi}{d\phi^2} + m_l^2 \Phi = 0 \tag{6.12}\]</div>
+<p><strong><span class="math notranslate nohighlight">\(\Theta\)</span> 的方程式：</strong> 把 <span class="math notranslate nohighlight">\((6.10)\)</span> 兩邊乘上 <span class="math notranslate nohighlight">\(\Theta\)</span> 並移項。</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{\sin\theta}\frac{d}{d\theta}\left[ \sin\theta \frac{d\Theta}{d\theta} \right] + \left[ l\left( l+1 \right) - \frac{m_l^2}{\sin^2\theta} \right]\Theta = 0 \tag{6.13}\]</div>
+<p><strong><span class="math notranslate nohighlight">\(R\)</span> 的方程式：</strong> 把 <span class="math notranslate nohighlight">\((6.11)\)</span> 兩邊乘上 <span class="math notranslate nohighlight">\(\dfrac{R}{r^2}\)</span> 並移項。</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{r^2}\frac{d}{dr}\left[ r^2 \frac{dR}{dr} \right] + \left[ \frac{2m}{\hbar^2}\left( \frac{e^2}{4\pi\varepsilon_0 r} + E \right) - \frac{l\left( l+1 \right)}{r^2} \right]R = 0 \tag{6.14}\]</div>
+<p>一條三變數的偏微分方程式，就這樣被拆成三條各自只含一個變數的全微分方程式。看起來一條變三條，但這三條<strong>至少是可解的</strong>。</p>
+<p><strong>【物理知識回顧】</strong>
+兩次分離常數的論證，用的其實是同一句話：<strong>「一個只依賴 A 的東西恆等於一個只依賴 B 的東西，則兩者都只能是常數。」</strong> 這句話在整章會反覆出現——<span class="math notranslate nohighlight">\(6.3\)</span> 的例題 6.1、<span class="math notranslate nohighlight">\(6.5\)</span> 的角動量推導，都是它的變形。之所以能這樣講，關鍵在【假設 2】：解出來的波函數必須對<strong>全空間每一點</strong>都成立，而不是只在某一點碰巧相等。</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="quantum-numbers">
+<h2>6.3 量子數 (Quantum Numbers)<a class="headerlink" href="#quantum-numbers" title="Link to this heading">#</a></h2>
+<p>把 <span class="math notranslate nohighlight">\((6.12)\)</span>、<span class="math notranslate nohighlight">\((6.13)\)</span>、<span class="math notranslate nohighlight">\((6.14)\)</span> 排在一起看，會發現一件關鍵的事：<strong>這三條全部都是本徵方程式 (eigen equation)</strong>。</p>
+<p>以最容易看出來的 <span class="math notranslate nohighlight">\((6.12)\)</span> 為例，把它移項成</p>
+<div class="math notranslate nohighlight">
+\[\frac{d^2}{d\phi^2}\Phi = -m_l^2 \, \Phi\]</div>
+<p>左邊是一個算符作用在 <span class="math notranslate nohighlight">\(\Phi\)</span> 上，右邊是某個數字乘上原來的函數——這就是本徵方程式的定義。<span class="math notranslate nohighlight">\((6.13)\)</span> 把 <span class="math notranslate nohighlight">\(l(l+1)\Theta\)</span> 移到另一邊、<span class="math notranslate nohighlight">\((6.14)\)</span> 把含 <span class="math notranslate nohighlight">\(E\)</span> 的項移到另一邊，同樣都是「算符作用在函數上等於某個數字乘上該函數」的形式。</p>
+<p>在本章的束縛態問題中，本徵方程式還必須滿足單值性、原點附近的正則性與可歸一化條件。這些條件共同限制允許的本徵值，才得到離散的量子數與能階。<strong>本徵方程式本身不保證譜一定離散</strong>；游離態仍可具有連續的能量。</p>
+<p>對氫原子的中心力問題，球座標中的變數分離給出三條方程；配合各自的邊界條件，得到 <span class="math notranslate nohighlight">\(n,l,m_l\)</span> 三個量子數。這是<strong>本系統可分離結構與對稱性</strong>的結果，不是「空間幾維就一定有幾個量子數」的通則。電子自旋是額外的內部自由度，本章的純空間薛丁格方程式尚未納入。</p>
+<p><img alt="" src="../../_images/Three_Eigen_Equations_and_Quantum_Numbers.png" /></p>
+<section id="id7">
+<h3>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><strong>【已知 1】 <span class="math notranslate nohighlight">\((6.12)\)</span>、<span class="math notranslate nohighlight">\((6.13)\)</span>、<span class="math notranslate nohighlight">\((6.14)\)</span> 三條全微分方程式：</strong> 上一節變數分離的結果，此處直接引用。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \frac{d^2 \Phi}{d\phi^2} + m_l^2 \Phi &amp;=&amp; 0 \\
+  \frac{1}{\sin\theta}\frac{d}{d\theta}\left[ \sin\theta \frac{d\Theta}{d\theta} \right] + \left[ l\left( l+1 \right) - \frac{m_l^2}{\sin^2\theta} \right]\Theta &amp;=&amp; 0 \\
+  \frac{1}{r^2}\frac{d}{dr}\left[ r^2 \frac{dR}{dr} \right] + \left[ \frac{2m}{\hbar^2}\left( \frac{e^2}{4\pi\varepsilon_0 r} + E \right) - \frac{l\left( l+1 \right)}{r^2} \right]R &amp;=&amp; 0
+  \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>【假設 1】 波函數為單值函數 (Single-valued wave function)：</strong> 這是第五章對波函數的基本要求——在同一個位置，波函數只能有一個值。在極座標中，<span class="math notranslate nohighlight">\(\phi\)</span> 與 <span class="math notranslate nohighlight">\(\phi + 2\pi\)</span> 代表<strong>同一個位置</strong>，故</p>
+<div class="math notranslate nohighlight">
+\[\Phi\left( \phi \right) = \Phi\left( \phi + 2\pi \right)\]</div>
+</li>
+<li><p><strong>【假設 2】 束縛態 (Bound state)：</strong> 電子被原子核束縛住，故總能量為負，且波函數在無窮遠處必須趨近於零（可歸一化）。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  E &amp;&lt;&amp; 0 \\
+  \lim_{r \to \infty}R\left( r \right) &amp;=&amp; 0
+  \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>【已知 2】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Differential_Equations/Associated_Legendre_Equation_and_Quantization.html#d-proof-quantization-of-the-separation-constant-and-the-order">連帶勒讓德方程式的量子化條件 (Quantization of the associated Legendre equation)</a>：</strong> 適用前提為方程式具有下方 (a) 的形式、階數 <span class="math notranslate nohighlight">\(m\)</span> 為整數，且要求解在 <span class="math notranslate nohighlight">\(\theta = 0, \pi\)</span>（南北極）為有限值；此時分離常數與階數被鎖成下列整數關係。</p>
+<div class="math notranslate nohighlight">
+\[\lambda = l\left( l+1 \right), \qquad l \in \left\{ |m|, |m|+1, |m|+2, \dots \right\}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\lambda\)</span> : 分離常數 (Separation constant)，<span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> : 階數，須為整數 (Integer order)，<span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(l\)</span> : 量子化後的階數 (Quantized degree)，非負整數，<span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Theta(\theta)\)</span> : 天頂角方向的解 (Polar-angle solution)，<span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p>(a) 適用的方程式形式：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\frac{1}{\sin\theta}\frac{d}{d\theta}\left[ \sin\theta \frac{d\Theta}{d\theta} \right] + \left[ \lambda - \frac{m^2}{\sin^2\theta} \right]\Theta = 0\]</div>
+</li>
+<li><p><strong>【已知 3】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Differential_Equations/Associated_Laguerre_Equation_and_Polynomials.html#c-proof-truncation-condition-and-eigenvalue-quantization">連帶拉蓋爾方程式的截斷條件 (Truncation of the associated Laguerre equation)</a>：</strong> 適用前提為方程式具有下方 (a) 的形式、<span class="math notranslate nohighlight">\(p &gt; -1\)</span>，且要求完整解 <span class="math notranslate nohighlight">\(e^{-\rho/2}\rho^{\alpha}v\left( \rho \right)\)</span> 在 <span class="math notranslate nohighlight">\(\rho \to \infty\)</span> 趨近於零（可歸一化）；此時本徵值被鎖成非負整數。</p>
+<div class="math notranslate nohighlight">
+\[q = 0, 1, 2, \dots\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\rho\)</span> : 無因次徑向變數 (Dimensionless radial variable)，<span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p\)</span> : 階參數 (Order parameter)，<span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，<span class="math notranslate nohighlight">\(p &gt; -1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(q\)</span> : 本徵值，須為非負整數 (Non-negative integer eigenvalue)，<span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(v(\rho)\)</span> : 剝離兩端漸近行為後剩下的餘因子 (Residual factor)，<span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha\)</span> : 剝離原點附近奇異行為所得的冪次 (Exponent at the origin)，<span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，有限</p></li>
+<li><p>(a) 適用的方程式形式：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\rho\frac{d^2v}{d\rho^2} + \left( p + 1 - \rho \right)\frac{dv}{d\rho} + q\,v = 0\]</div>
+</li>
+<li><p><strong>【定義 2】 徑向方程式的無因次化參數 (Dimensionless parameters of the radial equation)：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \alpha &amp;\overset{\text{def}}{=}&amp; \left( -\frac{2mE}{\hbar^2} \right)^{1/2} \\
+  \rho &amp;\overset{\text{def}}{=}&amp; 2\alpha r \\
+  \lambda_n &amp;\overset{\text{def}}{=}&amp; \frac{me^2}{4\pi\varepsilon_0 \hbar^2 \alpha}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\alpha\)</span> : 束縛態的空間衰減率 (Decay rate)，<span class="math notranslate nohighlight">\([\text{m}^{-1}]\)</span>；由【假設 2】<span class="math notranslate nohighlight">\(E&lt;0\)</span> 保證根號內為正</p></li>
+<li><p><span class="math notranslate nohighlight">\(\rho\)</span> : 無因次徑向座標 (Dimensionless radial coordinate)，<span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda_n\)</span> : 無因次能量參數 (Dimensionless energy parameter)，<span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 1】 徑向方程式的無因次化 (Non-dimensionalization of the radial equation)：</strong> 把【定義 2】逐項代入【已知 1】的第三條式子。</p>
+<ul class="simple">
+<li><p>(a) 座標與微分算子的換算：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  r &amp;\overset{\text{定義 2}}{=}&amp; \frac{\rho}{2\alpha} \\
+  \frac{d}{dr} &amp;=&amp; 2\alpha\frac{d}{d\rho}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(b) 微分項：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  r^2 \frac{dR}{dr} &amp;\overset{\text{推導 1(a)}}{=}&amp; \frac{\rho^2}{4\alpha^2}\cdot 2\alpha\frac{dR}{d\rho} \\
+  &amp;=&amp; \frac{\rho^2}{2\alpha}\frac{dR}{d\rho}
+  \end{gather*}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \frac{1}{r^2}\frac{d}{dr}\left[ r^2 \frac{dR}{dr} \right] &amp;\overset{\text{推導 1(a)(b)}}{=}&amp; \frac{4\alpha^2}{\rho^2}\cdot 2\alpha\frac{d}{d\rho}\left[ \frac{\rho^2}{2\alpha}\frac{dR}{d\rho} \right] \\
+  &amp;=&amp; \frac{4\alpha^2}{\rho^2}\frac{d}{d\rho}\left[ \rho^2 \frac{dR}{d\rho} \right]
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(c) 能量項：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{gather*}
+  \frac{2mE}{\hbar^2} &amp;\overset{\text{定義 2}}{=}&amp; -\alpha^2
+  \end{gather*}\]</div>
+<ul class="simple">
+<li><p>(d) 位能項：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \frac{2m}{\hbar^2}\frac{e^2}{4\pi\varepsilon_0 r} &amp;\overset{\text{推導 1(a)}}{=}&amp; \frac{2me^2}{4\pi\varepsilon_0\hbar^2}\cdot\frac{2\alpha}{\rho} \\
+  &amp;=&amp; \frac{4\alpha^2}{\rho}\cdot\frac{me^2}{4\pi\varepsilon_0\hbar^2\alpha} \\
+  &amp;\overset{\text{定義 2}}{=}&amp; \frac{4\alpha^2 \lambda_n}{\rho}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(e) 離心項：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{gather*}
+  \frac{l\left( l+1 \right)}{r^2} &amp;\overset{\text{推導 1(a)}}{=}&amp; \frac{4\alpha^2 l\left( l+1 \right)}{\rho^2}
+  \end{gather*}\]</div>
+<ul class="simple">
+<li><p>(f) 把 (b)–(e) 代回並整體除以 <span class="math notranslate nohighlight">\(4\alpha^2\)</span>：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\frac{1}{\rho^2}\frac{d}{d\rho}\left[ \rho^2 \frac{dR}{d\rho} \right] + \left[ -\frac{1}{4} + \frac{\lambda_n}{\rho} - \frac{l\left( l+1 \right)}{\rho^2} \right]R = 0\]</div>
+</li>
+<li><p><strong>【推導 2】 剝離徑向解的漸近行為 (Peeling off the asymptotic behavior of the radial solution)：</strong> <span class="math notranslate nohighlight">\(\rho \to 0\)</span> 時離心項主導，解如 <span class="math notranslate nohighlight">\(\rho^{l}\)</span>；<span class="math notranslate nohighlight">\(\rho \to \infty\)</span> 時常數項 <span class="math notranslate nohighlight">\(-\frac14\)</span> 主導，解如 <span class="math notranslate nohighlight">\(e^{-\rho/2}\)</span>。先把這兩個因子提出來。</p>
+<ul class="simple">
+<li><p>(a) 設定：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[R\left( \rho \right) \overset{\text{def}}{=} \rho^{l}e^{-\rho/2}v\left( \rho \right) = f\left( \rho \right)v\left( \rho \right), \qquad f\left( \rho \right) \overset{\text{def}}{=} \rho^{l}e^{-\rho/2}\]</div>
+<ul class="simple">
+<li><p>(b) <span class="math notranslate nohighlight">\(f\)</span> 的對數導數：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \frac{f'}{f} &amp;\overset{\text{推導 2(a)}}{=}&amp; \frac{d}{d\rho}\left[ l\ln\rho - \frac{\rho}{2} \right] \\
+  &amp;=&amp; \frac{l}{\rho} - \frac{1}{2}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p>(c) <span class="math notranslate nohighlight">\(f\)</span> 的二階導數比：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \frac{f''}{f} &amp;=&amp; \left( \frac{f'}{f} \right)' + \left( \frac{f'}{f} \right)^2 \\
+  &amp;\overset{\text{推導 2(b)}}{=}&amp; -\frac{l}{\rho^2} + \frac{l^2}{\rho^2} - \frac{l}{\rho} + \frac{1}{4}
+  \end{gather*}\end{split}\]</div>
+</li>
+</ul>
+</section>
+<section id="a-solve-to-m-l">
+<h3>(a) solve 方位角方程式 <span class="math notranslate nohighlight">\(\to\)</span> 磁量子數 <span class="math notranslate nohighlight">\(m_l\)</span><a class="headerlink" href="#a-solve-to-m-l" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\((6.12)\)</span> 是三條裡最簡單的一條。它是二階常係數微分方程式，且 <span class="math notranslate nohighlight">\(\Phi\)</span> 與其二階導數差一個負號，解自然是指數形式（微分兩次拉下兩個 <span class="math notranslate nohighlight">\(i\)</span>，恰好給出負號）：</p>
+<div class="math notranslate nohighlight">
+\[\Phi\left( \phi \right) = A e^{i m_l \phi} \tag{6.15}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(A\)</span> : 歸一化常數 (Normalization constant)，<span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+<p>驗證：<span class="math notranslate nohighlight">\(\dfrac{d^2\Phi}{d\phi^2} = \left( im_l \right)^2 Ae^{im_l\phi} = -m_l^2\Phi\)</span>，代回 <span class="math notranslate nohighlight">\((6.12)\)</span> 確實為零。</p>
+<p>到目前為止 <span class="math notranslate nohighlight">\(m_l\)</span> 仍只是一個常數。它之所以必須是<strong>整數</strong>，來自【假設 1】的單值條件：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\Phi\left( \phi \right) &amp;\overset{\text{假設 1}}{=}&amp; \Phi\left( \phi + 2\pi \right) \\
+Ae^{im_l\phi} &amp;\overset{\text{(6.15)}}{=}&amp; Ae^{im_l\left( \phi + 2\pi \right)} \\
+1 &amp;=&amp; e^{i 2\pi m_l} \\
+2\pi m_l &amp;=&amp; 2\pi \times \text{整數} \\
+m_l &amp;\in&amp; \mathbb{Z}
+\end{gather*}\end{split}\]</div>
+<p>這就是<strong>第一個量子數</strong>——磁量子數 <span class="math notranslate nohighlight">\(m_l\)</span>，它可正可負，但必須是整數。</p>
+</section>
+<section id="b-solve-to-l">
+<h3>(b) solve 天頂角方程式 <span class="math notranslate nohighlight">\(\to\)</span> 軌道量子數 <span class="math notranslate nohighlight">\(l\)</span><a class="headerlink" href="#b-solve-to-l" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\((6.13)\)</span> 正是【已知 2】所處理的方程式，其中 <span class="math notranslate nohighlight">\(\lambda = l(l+1)\)</span>、<span class="math notranslate nohighlight">\(m = m_l\)</span>。由 (a) 已知 <span class="math notranslate nohighlight">\(m_l\)</span> 為整數，滿足【已知 2】的前提，故直接引用其結論：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+l &amp;\overset{\text{已知 2}}{\in}&amp; \left\{ |m_l|, |m_l|+1, |m_l|+2, \dots \right\} \\
+l &amp;\ge&amp; \left| m_l \right|
+\end{gather*}\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(l\)</span> 必為非負整數，且不得小於 <span class="math notranslate nohighlight">\(|m_l|\)</span>。把這個不等式反過來讀——對固定的 <span class="math notranslate nohighlight">\(l\)</span>，磁量子數只能取</p>
+<div class="math notranslate nohighlight">
+\[m_l = 0, \pm 1, \pm 2, \dots, \pm l \tag{6.17}\]</div>
+<p>這就是<strong>第二個量子數</strong>——軌道量子數 <span class="math notranslate nohighlight">\(l\)</span>。</p>
+</section>
+<section id="c-solve-to-n">
+<h3>(c) solve 徑向方程式 <span class="math notranslate nohighlight">\(\to\)</span> 主量子數 <span class="math notranslate nohighlight">\(n\)</span><a class="headerlink" href="#c-solve-to-n" title="Link to this heading">#</a></h3>
+<p>把【推導 2(a)】的 <span class="math notranslate nohighlight">\(R = fv\)</span> 代入【推導 1(f)】。先把該式展開成不含外層括號的形式：</p>
+<div class="math notranslate nohighlight">
+\[\frac{d^2R}{d\rho^2} + \frac{2}{\rho}\frac{dR}{d\rho} + \left[ -\frac{1}{4} + \frac{\lambda_n}{\rho} - \frac{l\left( l+1 \right)}{\rho^2} \right]R = 0\]</div>
+<p>代入 <span class="math notranslate nohighlight">\(R = fv\)</span> 並整體除以 <span class="math notranslate nohighlight">\(f\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[\begin{gather*}
+0 &amp;\overset{\text{推導 2(a)}}{=}&amp; \frac{d^2v}{d\rho^2} + \left( 2\frac{f'}{f} + \frac{2}{\rho} \right)\frac{dv}{d\rho} + \left( \frac{f''}{f} + \frac{2}{\rho}\frac{f'}{f} - \frac{1}{4} + \frac{\lambda_n}{\rho} - \frac{l\left( l+1 \right)}{\rho^2} \right)v
+\end{gather*}\]</div>
+<p>一階項的係數：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+2\frac{f'}{f} + \frac{2}{\rho} &amp;\overset{\text{推導 2(b)}}{=}&amp; \frac{2l}{\rho} - 1 + \frac{2}{\rho} \\
+&amp;=&amp; \frac{2l+2}{\rho} - 1
+\end{gather*}\end{split}\]</div>
+<p>零階項的係數：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{f''}{f} + \frac{2}{\rho}\frac{f'}{f} - \frac{1}{4} + \frac{\lambda_n}{\rho} - \frac{l\left( l+1 \right)}{\rho^2} &amp;\overset{\text{推導 2(b)(c)}}{=}&amp; \left( -\frac{l}{\rho^2} + \frac{l^2}{\rho^2} - \frac{l}{\rho} + \frac{1}{4} \right) + \left( \frac{2l}{\rho^2} - \frac{1}{\rho} \right) - \frac{1}{4} + \frac{\lambda_n}{\rho} - \frac{l^2 + l}{\rho^2} \\
+&amp;=&amp; \frac{l^2 - l + 2l - l^2 - l}{\rho^2} + \frac{-l - 1 + \lambda_n}{\rho} + \frac{1}{4} - \frac{1}{4} \\
+&amp;=&amp; \frac{\lambda_n - l - 1}{\rho}
+\end{gather*}\end{split}\]</div>
+<p>代回並整體乘上 <span class="math notranslate nohighlight">\(\rho\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[\rho\frac{d^2v}{d\rho^2} + \left( 2l + 2 - \rho \right)\frac{dv}{d\rho} + \left( \lambda_n - l - 1 \right)v = 0\]</div>
+<p>這正是【已知 3】的連帶拉蓋爾方程式，對應關係為 <span class="math notranslate nohighlight">\(p + 1 = 2l+2\)</span>（即 <span class="math notranslate nohighlight">\(p = 2l+1\)</span>）、<span class="math notranslate nohighlight">\(q = \lambda_n - l - 1\)</span>。由【假設 2】的可歸一化條件，直接引用【已知 3】：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+q &amp;\overset{\text{已知 3}}{=}&amp; \lambda_n - l - 1 \\
+\lambda_n - l - 1 &amp;\in&amp; \left\{ 0, 1, 2, \dots \right\}
+\end{gather*}\end{split}\]</div>
+<p>令</p>
+<div class="math notranslate nohighlight">
+\[n \overset{\text{def}}{=} \lambda_n = \left( \lambda_n - l - 1 \right) + l + 1\]</div>
+<p>則 <span class="math notranslate nohighlight">\(n\)</span> 必為<strong>正整數</strong>，且</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+n &amp;\ge&amp; l + 1 \\
+l &amp;\le&amp; n - 1
+\end{gather*}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[l = 0, 1, 2, \dots, \left( n-1 \right) \tag{6.18}\]</div>
+<p>最後把 <span class="math notranslate nohighlight">\(\lambda_n = n\)</span> 代回【定義 2】求出能量：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{me^2}{4\pi\varepsilon_0\hbar^2\alpha} &amp;\overset{\text{定義 2}}{=}&amp; n \\
+\alpha &amp;=&amp; \frac{me^2}{4\pi\varepsilon_0\hbar^2 n}
+\end{gather*}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+E &amp;\overset{\text{定義 2}}{=}&amp; -\frac{\hbar^2\alpha^2}{2m} \\
+&amp;\overset{\text{上式}}{=}&amp; -\frac{\hbar^2}{2m}\cdot\frac{m^2e^4}{16\pi^2\varepsilon_0^2\hbar^4 n^2} \\
+&amp;=&amp; -\frac{me^4}{32\pi^2\varepsilon_0^2\hbar^2}\frac{1}{n^2}
+\end{gather*}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[E_n = -\frac{me^4}{32\pi^2\varepsilon_0^2\hbar^2}\left( \frac{1}{n^2} \right) = \frac{E_1}{n^2}, \qquad n = 1, 2, 3, \dots \tag{6.16}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(E_n\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 能階的電子能量 (Energy of the <span class="math notranslate nohighlight">\(n\)</span>-th level)，<span class="math notranslate nohighlight">\([\text{J}]\)</span>，<span class="math notranslate nohighlight">\([\text{eV}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(E_1\)</span> : 基態能量 (Ground-state energy)，<span class="math notranslate nohighlight">\([\text{eV}]\)</span>，<span class="math notranslate nohighlight">\(E_1 \approx -13.6 \ \text{eV}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 主量子數 (Principal quantum number)，正整數，<span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+<p>這就是<strong>第三個量子數</strong>——主量子數 <span class="math notranslate nohighlight">\(n\)</span>。</p>
+</section>
+<section id="n-1-2-3">
+<h3>表 6.1 氫原子的正規化波函數（<span class="math notranslate nohighlight">\(n = 1, 2, 3\)</span>）<a class="headerlink" href="#n-1-2-3" title="Link to this heading">#</a></h3>
+<p>完整波函數為三個函數相乘：<span class="math notranslate nohighlight">\(\psi_{n l m_l} = R_{n l}\left( r \right)\Theta_{l m_l}\left( \theta \right)\Phi_{m_l}\left( \phi \right)\)</span>。下標不是亂寫的——<span class="math notranslate nohighlight">\(\Phi\)</span> 的方程式只含 <span class="math notranslate nohighlight">\(m_l\)</span>、<span class="math notranslate nohighlight">\(\Theta\)</span> 的方程式含 <span class="math notranslate nohighlight">\(l\)</span> 與 <span class="math notranslate nohighlight">\(m_l\)</span>、<span class="math notranslate nohighlight">\(R\)</span> 的方程式含 <span class="math notranslate nohighlight">\(n\)</span> 與 <span class="math notranslate nohighlight">\(l\)</span>。</p>
+<p><strong>徑向函數 <span class="math notranslate nohighlight">\(R_{nl}(r)\)</span>：</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(n\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(l\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(R_{nl}(r)\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{2}{a_0^{3/2}}e^{-r/a_0}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>0</p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{1}{\left( 2a_0 \right)^{3/2}}\left( 2 - \dfrac{r}{a_0} \right)e^{-r/2a_0}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>1</p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{1}{\sqrt{3}\left( 2a_0 \right)^{3/2}}\dfrac{r}{a_0}e^{-r/2a_0}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>0</p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{2}{\left( 3a_0 \right)^{3/2}}\left( 1 - \dfrac{2r}{3a_0} + \dfrac{2r^2}{27a_0^2} \right)e^{-r/3a_0}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>1</p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{4\sqrt{2}}{9\left( 3a_0 \right)^{3/2}}\dfrac{r}{a_0}\left( 1 - \dfrac{r}{6a_0} \right)e^{-r/3a_0}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>2</p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{2\sqrt{2}}{27\sqrt{5}\left( 3a_0 \right)^{3/2}}\dfrac{r^2}{a_0^2}e^{-r/3a_0}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>天頂角函數 <span class="math notranslate nohighlight">\(\Theta_{l m_l}(\theta)\)</span>：</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(l\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(m_l\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\Theta_{l m_l}(\theta)\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{1}{\sqrt{2}}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{\sqrt{6}}{2}\cos\theta\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p><span class="math notranslate nohighlight">\(\pm 1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{\sqrt{3}}{2}\sin\theta\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>0</p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{\sqrt{10}}{4}\left( 3\cos^2\theta - 1 \right)\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p><span class="math notranslate nohighlight">\(\pm 1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{\sqrt{15}}{2}\sin\theta\cos\theta\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p><span class="math notranslate nohighlight">\(\pm 2\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\dfrac{\sqrt{15}}{4}\sin^2\theta\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>方位角函數 <span class="math notranslate nohighlight">\(\Phi_{m_l}(\phi)\)</span>：</strong></p>
+<div class="math notranslate nohighlight">
+\[\Phi_{m_l}\left( \phi \right) = \frac{1}{\sqrt{2\pi}}e^{i m_l \phi}\]</div>
+<p><strong>完整波函數範例：</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\psi_{100} &amp;=&amp; \frac{1}{\sqrt{\pi}\,a_0^{3/2}}e^{-r/a_0} \\
+\psi_{200} &amp;=&amp; \frac{1}{4\sqrt{2\pi}\,a_0^{3/2}}\left( 2 - \frac{r}{a_0} \right)e^{-r/2a_0} \\
+\psi_{210} &amp;=&amp; \frac{1}{4\sqrt{2\pi}\,a_0^{3/2}}\frac{r}{a_0}e^{-r/2a_0}\cos\theta \\
+\psi_{21\pm1} &amp;=&amp; \frac{1}{8\sqrt{\pi}\,a_0^{3/2}}\frac{r}{a_0}e^{-r/2a_0}\sin\theta \, e^{\pm i\phi}
+\end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(a_0\)</span> : 波耳半徑 (Bohr radius)，<span class="math notranslate nohighlight">\([\text{m}]\)</span>，<span class="math notranslate nohighlight">\(a_0 \approx 5.292 \times 10^{-11} \ \text{m}\)</span></p></li>
+</ul>
+</section>
+<section id="s-a-0-e-1">
+<h3><strong>例題 6.1：由 <span class="math notranslate nohighlight">\(1s\)</span> 徑向波函數反求 <span class="math notranslate nohighlight">\(a_0\)</span> 與 <span class="math notranslate nohighlight">\(E_1\)</span></strong><a class="headerlink" href="#s-a-0-e-1" title="Link to this heading">#</a></h3>
+<p><strong>題目：</strong> 把對應到 <span class="math notranslate nohighlight">\(n = 1\)</span>、<span class="math notranslate nohighlight">\(l = 0\)</span> 的徑向波函數 <span class="math notranslate nohighlight">\(R\)</span> 代入式 <span class="math notranslate nohighlight">\((6.14)\)</span> 中，求出波耳半徑 <span class="math notranslate nohighlight">\(a_0\)</span> 與基態電子能量 <span class="math notranslate nohighlight">\(E_1\)</span>。</p>
+<p><strong>解答：</strong></p>
+<p>這一題把邏輯倒過來走：<strong>假設波函數已經查表查到了，不解微分方程式，直接代回去反求常數。</strong></p>
+<p>由表 6.1，<span class="math notranslate nohighlight">\(n=1\)</span>、<span class="math notranslate nohighlight">\(l=0\)</span> 的徑向波函數為</p>
+<div class="math notranslate nohighlight">
+\[R = \frac{2}{a_0^{3/2}}e^{-r/a_0}\]</div>
+<p>先算出 <span class="math notranslate nohighlight">\((6.14)\)</span> 需要的微分項：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{dR}{dr} &amp;\overset{\text{表 6.1}}{=}&amp; \frac{d}{dr}\left[ \frac{2}{a_0^{3/2}}e^{-r/a_0} \right] \\
+\frac{dR}{dr} &amp;=&amp; -\frac{2}{a_0^{5/2}}e^{-r/a_0} \\
+r^2\frac{dR}{dr} &amp;=&amp; -\frac{2r^2}{a_0^{5/2}}e^{-r/a_0} \\
+\frac{d}{dr}\left[ r^2\frac{dR}{dr} \right] &amp;=&amp; \frac{d}{dr}\left[ -\frac{2r^2}{a_0^{5/2}}e^{-r/a_0} \right] \\
+\frac{d}{dr}\left[ r^2\frac{dR}{dr} \right] &amp;=&amp; -\frac{4r}{a_0^{5/2}}e^{-r/a_0} + \frac{2r^2}{a_0^{7/2}}e^{-r/a_0} \\
+\frac{1}{r^2}\frac{d}{dr}\left[ r^2\frac{dR}{dr} \right] &amp;=&amp; \left( \frac{2}{a_0^{7/2}} - \frac{4}{a_0^{5/2}r} \right)e^{-r/a_0}
+\end{gather*}\end{split}\]</div>
+<p>代入 <span class="math notranslate nohighlight">\((6.14)\)</span>，令 <span class="math notranslate nohighlight">\(E = E_1\)</span>、<span class="math notranslate nohighlight">\(l = 0\)</span>（離心項消失），並整體除以 <span class="math notranslate nohighlight">\(e^{-r/a_0}\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+0 &amp;\overset{\text{(6.14)}}{=}&amp; \left( \frac{2}{a_0^{7/2}} - \frac{4}{a_0^{5/2}r} \right) + \frac{2m}{\hbar^2}\left( \frac{e^2}{4\pi\varepsilon_0 r} + E_1 \right)\frac{2}{a_0^{3/2}} \\
+0 &amp;=&amp; \left( \frac{2}{a_0^{7/2}} + \frac{4mE_1}{\hbar^2 a_0^{3/2}} \right) + \frac{1}{r}\left( \frac{me^2}{\pi\varepsilon_0\hbar^2 a_0^{3/2}} - \frac{4}{a_0^{5/2}} \right)
+\end{gather*}\end{split}\]</div>
+<p>這個式子必須對<strong>空間中的每一個 <span class="math notranslate nohighlight">\(r\)</span></strong> 都成立——不論 <span class="math notranslate nohighlight">\(r\)</span> 是 <span class="math notranslate nohighlight">\(0\)</span>、是 <span class="math notranslate nohighlight">\(1\)</span>、還是無窮遠。左邊第一個括號與 <span class="math notranslate nohighlight">\(r\)</span> 無關，第二個括號前面帶著 <span class="math notranslate nohighlight">\(1/r\)</span>，兩者要對所有 <span class="math notranslate nohighlight">\(r\)</span> 都相加為零，唯一的可能是<strong>兩個括號各自等於零</strong>。</p>
+<p>由第二個括號為零求 <span class="math notranslate nohighlight">\(a_0\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{me^2}{\pi\varepsilon_0\hbar^2 a_0^{3/2}} &amp;=&amp; \frac{4}{a_0^{5/2}} \\
+\frac{me^2}{\pi\varepsilon_0\hbar^2} &amp;=&amp; \frac{4}{a_0} \\
+a_0 &amp;=&amp; \frac{4\pi\varepsilon_0\hbar^2}{me^2} \\
+a_0 &amp;\approx&amp; 5.292 \times 10^{-11} \ \text{m}
+\end{gather*}\end{split}\]</div>
+<p>由第一個括號為零求 <span class="math notranslate nohighlight">\(E_1\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{2}{a_0^{7/2}} &amp;=&amp; -\frac{4mE_1}{\hbar^2 a_0^{3/2}} \\
+E_1 &amp;=&amp; -\frac{\hbar^2}{2m a_0^2} \\
+E_1 &amp;=&amp; -\frac{\hbar^2}{2m}\left( \frac{me^2}{4\pi\varepsilon_0\hbar^2} \right)^2 \\
+E_1 &amp;=&amp; -\frac{me^4}{32\pi^2\varepsilon_0^2\hbar^2} \\
+E_1 &amp;\approx&amp; -13.6 \ \text{eV}
+\end{gather*}\end{split}\]</div>
+<p>與 <span class="math notranslate nohighlight">\((6.16)\)</span> 在 <span class="math notranslate nohighlight">\(n = 1\)</span> 的結果完全一致。</p>
+<p><strong>【物理知識回顧】</strong>
+這裡求出來的 <span class="math notranslate nohighlight">\(a_0\)</span>，正是<a class="reference external" href="https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/04_Atomic_Structure/atomic_structure.html#the-bohr-atom">第四章波耳原子</a>裡那個<strong>用假設得到</strong>的波耳半徑。差別在於：波耳當年必須先假設「電子軌道上要形成駐波」才能推出量子化；而這裡在固定原子核、庫侖位能及可接受波函數等前提下，由薛丁格方程式求得 <span class="math notranslate nohighlight">\(a_0\)</span> 與 <span class="math notranslate nohighlight">\(E_1\)</span>，不需另加波耳的軌道量子化假設。與已知能階吻合，是這個模型的重要檢查。</p>
+<p>另外要注意這一題用到的技巧——「一個式子若要對所有 <span class="math notranslate nohighlight">\(r\)</span> 成立，各個 <span class="math notranslate nohighlight">\(r\)</span> 冪次的係數必須分別為零」——與 <span class="math notranslate nohighlight">\(6.2\)</span> 的分離常數論證是同一件事的變形。這個 trick 在本章會出現第三次（<span class="math notranslate nohighlight">\(6.5\)</span> 推導角動量時）。</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="principal-quantum-number">
+<h2>6.4 主量子數 (Principal Quantum Number)<a class="headerlink" href="#principal-quantum-number" title="Link to this heading">#</a></h2>
+<p>三個量子數之中，主量子數 <span class="math notranslate nohighlight">\(n\)</span> 的物理意義最直接：<strong>它直接對應電子的能量</strong>。</p>
+<div class="math notranslate nohighlight">
+\[E_n = \frac{E_1}{n^2}, \qquad E_1 = -\frac{me^4}{32\pi^2\varepsilon_0^2\hbar^2} \approx -13.6 \ \text{eV}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(E_n\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 能階的電子能量 (Energy of the <span class="math notranslate nohighlight">\(n\)</span>-th level)，<span class="math notranslate nohighlight">\([\text{eV}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> : 主量子數 (Principal quantum number)，<span class="math notranslate nohighlight">\(n = 1, 2, 3, \dots\)</span>，<span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+<p><img alt="" src="../../_images/Hydrogen_Energy_Levels.png" /></p>
+<section id="id8">
+<h3>為什麼能量必須是負的<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<p>古典上，總能量可以是任何值。但若把行星永遠捕陷在太陽系中，這個能量當然為負值——因為要把它移到無窮遠必須由外界作功。氫原子完全相同：電子能量若為正，對應的是<strong>游離態 (ionized state)</strong>，電子已經逃離原子核；只有<strong>負值</strong>的能量才對應到被束縛在原子內的電子。這就是【假設 2】中 <span class="math notranslate nohighlight">\(E &lt; 0\)</span> 的物理內容。</p>
+<p>於是氫原子中電子能量的量子化，可以完全用主量子數 <span class="math notranslate nohighlight">\(n\)</span> 來表示。<span class="math notranslate nohighlight">\(n = 1\)</span> 是基態 <span class="math notranslate nohighlight">\(-13.6 \ \text{eV}\)</span>，<span class="math notranslate nohighlight">\(n = 2\)</span> 是 <span class="math notranslate nohighlight">\(-3.4 \ \text{eV}\)</span>，<span class="math notranslate nohighlight">\(n \to \infty\)</span> 時 <span class="math notranslate nohighlight">\(E_n \to 0\)</span>，能階愈靠愈密，最後接到 <span class="math notranslate nohighlight">\(E &gt; 0\)</span> 的游離連續區。</p>
+<p><strong>【進階探討：這裡的量子化與波耳的量子化差在哪裡？】</strong></p>
+<p><a class="reference external" href="https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/04_Atomic_Structure/atomic_structure.html#the-bohr-atom">第四章</a>的波耳模型也得到 <span class="math notranslate nohighlight">\(E_n = E_1/n^2\)</span>，數值完全一樣。但兩者的<strong>知識論地位</strong>天差地遠：</p>
+<ul class="simple">
+<li><p><strong>波耳</strong>：先<strong>假設</strong>電子軌道上必須形成駐波（<span class="math notranslate nohighlight">\(2\pi r = n\lambda\)</span>），量子化是被人為塞進去的前提。</p></li>
+<li><p><strong>薛丁格</strong>：<strong>什麼都沒假設</strong>。只是把庫侖位能代進一條微分方程式，然後老老實實地解。量子化是「級數若不截斷，波函數就會在邊界發散」這個<strong>純數學</strong>要求的後果。</p></li>
+</ul>
+<p>因此，本章束縛態的量子化來自本徵方程式與物理邊界條件的共同限制。三條分離方程分別限制 <span class="math notranslate nohighlight">\(m_l\)</span>、<span class="math notranslate nohighlight">\(l\)</span>、<span class="math notranslate nohighlight">\(n\)</span>；只有同時滿足條件的組合才是可接受的氫原子束縛態。</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="orbital-quantum-number">
+<h2>6.5 軌道量子數 (Orbital Quantum Number)<a class="headerlink" href="#orbital-quantum-number" title="Link to this heading">#</a></h2>
+<p>第二個量子數 <span class="math notranslate nohighlight">\(l\)</span> 來自 <span class="math notranslate nohighlight">\(\Theta\)</span> 的方程式，直覺上應該跟「軌道」有關。但它同時也出現在 <span class="math notranslate nohighlight">\(R\)</span> 的方程式 <span class="math notranslate nohighlight">\((6.14)\)</span> 裡——<strong>這件事給了我們一個關鍵的線索</strong>。</p>
+<section id="id9">
+<h3>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><strong>【已知 1】 <span class="math notranslate nohighlight">\((6.14)\)</span> 徑向方程式：</strong> <span class="math notranslate nohighlight">\(6.2\)</span> 的結果，此處直接引用。</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{r^2}\frac{d}{dr}\left[ r^2 \frac{dR}{dr} \right] + \left[ \frac{2m}{\hbar^2}\left( \frac{e^2}{4\pi\varepsilon_0 r} + E \right) - \frac{l\left( l+1 \right)}{r^2} \right]R = 0\]</div>
+</li>
+<li><p><strong>【已知 2】 能量守恆 (Conservation of energy)：</strong> 總能量等於動能加位能。</p>
+<div class="math notranslate nohighlight">
+\[E = KE + U\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(KE\)</span> : 動能 (Kinetic energy)，<span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(U\)</span> : 位能 (Potential energy)，<span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 3】 <a class="reference external" href="https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/06_Quantum_Theory_of_the_Hydrogen_Atom/quantum_theory_of_the_hydrogen_atom.html#schrodingers-equation-for-the-hydrogen-atom">庫侖位能 (Coulomb potential energy)</a>：</strong> 即 <span class="math notranslate nohighlight">\((6.2)\)</span>。</p>
+<div class="math notranslate nohighlight">
+\[U = -\frac{e^2}{4\pi\varepsilon_0 r}\]</div>
+</li>
+<li><p><strong>【假設 1】 動能可分解為徑向與切向 (Decomposition of the kinetic energy)：</strong> 電子的運動可以分成沿半徑方向與沿軌道切線方向兩個互相垂直的分量，兩者的動能相加即為總動能。</p>
+<div class="math notranslate nohighlight">
+\[KE = KE_{\text{radial}} + KE_{\text{orbital}}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(KE_{\text{radial}}\)</span> : 徑向動能 (Radial kinetic energy)，<span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(KE_{\text{orbital}}\)</span> : 軌道（切向）動能 (Orbital kinetic energy)，<span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【假設 2】 徑向運動與軌道運動互相獨立 (Independence of radial and orbital motion)：</strong> 就像卡氏座標中 <span class="math notranslate nohighlight">\(x\)</span> 方向的運動與 <span class="math notranslate nohighlight">\(y\)</span>、<span class="math notranslate nohighlight">\(z\)</span> 無關一樣，徑向運動不受角度方向的影響，因此 <span class="math notranslate nohighlight">\(R\)</span> 的方程式<strong>只能跟 <span class="math notranslate nohighlight">\(r\)</span> 有關</strong>——凡是帶有非徑向資訊的項都必須互相抵消。</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial \left[ KE_{\text{radial}} \right]}{\partial \theta} = \frac{\partial \left[ KE_{\text{radial}} \right]}{\partial \phi} = 0\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(KE_{\text{radial}}\)</span> : 徑向動能 (Radial kinetic energy)，<span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\theta, \phi\)</span> : 兩個角度座標 (Angular coordinates)，<span class="math notranslate nohighlight">\([\text{rad}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 4】 古典角動量 (Classical angular momentum)：</strong> 只有切線方向的速度分量對角動量有貢獻，徑向速度不貢獻角動量。</p>
+<div class="math notranslate nohighlight">
+\[L = m v_{\text{orbital}} r\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(L\)</span> : 角動量大小 (Angular momentum magnitude)，<span class="math notranslate nohighlight">\([\text{J}\cdot\text{s}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(v_{\text{orbital}}\)</span> : 切線方向速度 (Tangential speed)，<span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(r\)</span> : 軌道半徑 (Orbital radius)，<span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 5】 古典動能 (Classical kinetic energy)：</strong></p>
+<div class="math notranslate nohighlight">
+\[KE_{\text{orbital}} = \frac{1}{2}m v_{\text{orbital}}^2\]</div>
+</li>
+</ul>
+<p><img alt="" src="../../_images/Orbital_Angular_Momentum_Quantization.png" /></p>
+</section>
+<section id="id10">
+<h3>推導：把總能量拆開代回 <span class="math notranslate nohighlight">\((6.14)\)</span><a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<p>把【已知 2】、【已知 3】、【假設 1】合起來：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+E &amp;\overset{\text{已知 2}}{=}&amp; KE + U \\
+E &amp;\overset{\text{假設 1}}{=}&amp; KE_{\text{radial}} + KE_{\text{orbital}} + U \\
+E &amp;\overset{\text{已知 3}}{=}&amp; KE_{\text{radial}} + KE_{\text{orbital}} - \frac{e^2}{4\pi\varepsilon_0 r} \\
+\frac{e^2}{4\pi\varepsilon_0 r} + E &amp;=&amp; KE_{\text{radial}} + KE_{\text{orbital}}
+\end{gather*}\end{split}\]</div>
+<p><strong>位能項恰好被消掉了。</strong> 把這個結果代回【已知 1】：</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{r^2}\frac{d}{dr}\left[ r^2 \frac{dR}{dr} \right] + \frac{2m}{\hbar^2}\left[ KE_{\text{radial}} + KE_{\text{orbital}} - \frac{l\left( l+1 \right)\hbar^2}{2mr^2} \right]R = 0 \tag{6.19}\]</div>
+</section>
+<section id="id11">
+<h3>推導：軌道動能的量子化<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\((6.19)\)</span> 是 <span class="math notranslate nohighlight">\(R\)</span> 的方程式，由【假設 2】它<strong>只能跟 <span class="math notranslate nohighlight">\(r\)</span> 有關</strong>。方括號裡的三項中，<span class="math notranslate nohighlight">\(KE_{\text{radial}}\)</span> 本來就只跟徑向運動有關；剩下的 <span class="math notranslate nohighlight">\(KE_{\text{orbital}}\)</span> 與離心項 <span class="math notranslate nohighlight">\(\dfrac{l(l+1)\hbar^2}{2mr^2}\)</span> 都牽涉到<strong>非徑向</strong>的資訊，它們不應該留在一條純徑向的方程式裡。<strong>唯一的可能是這兩項互相抵消：</strong></p>
+<div class="math notranslate nohighlight">
+\[KE_{\text{orbital}} = \frac{l\left( l+1 \right)\hbar^2}{2mr^2} \tag{6.20}\]</div>
+<p>再把古典關係代進來：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+KE_{\text{orbital}} &amp;\overset{\text{已知 5}}{=}&amp; \frac{1}{2}m v_{\text{orbital}}^2 \\
+&amp;=&amp; \frac{m^2 v_{\text{orbital}}^2 r^2}{2mr^2} \\
+&amp;\overset{\text{已知 4}}{=}&amp; \frac{L^2}{2mr^2}
+\end{gather*}\end{split}\]</div>
+<p>兩式相等，比較左右：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{L^2}{2mr^2} &amp;\overset{\text{(6.20)}}{=}&amp; \frac{l\left( l+1 \right)\hbar^2}{2mr^2} \\
+L^2 &amp;=&amp; l\left( l+1 \right)\hbar^2 \\
+L &amp;=&amp; \sqrt{l\left( l+1 \right)}\,\hbar
+\end{gather*}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[L = \sqrt{l\left( l+1 \right)}\,\hbar, \qquad l = 0, 1, 2, \dots, \left( n-1 \right) \tag{6.21}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(L\)</span> : 電子軌道角動量的大小 (Magnitude of the orbital angular momentum)，<span class="math notranslate nohighlight">\([\text{J}\cdot\text{s}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(l\)</span> : 軌道量子數／角動量量子數 (Orbital / angular-momentum quantum number)，<span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+<p><strong>角動量也被量子化了。</strong> 到這裡才有資格把 <span class="math notranslate nohighlight">\(l\)</span> 改口叫「角動量量子數」——在此之前我們只知道它跟軌道有關，並不知道角動量一定會量子化。</p>
+<p>值得注意的是，量子化的條件並不是波耳猜的 <span class="math notranslate nohighlight">\(L = n\hbar\)</span>，而是 <span class="math notranslate nohighlight">\(L = \sqrt{l(l+1)}\hbar\)</span>。特別是 <span class="math notranslate nohighlight">\(l = 0\)</span> 時 <span class="math notranslate nohighlight">\(L = 0\)</span>，這在波耳模型中是不可能出現的（電子不繞行怎麼會有軌道？），但在量子力學中完全合法——<span class="math notranslate nohighlight">\(s\)</span> 態的電子確實沒有軌道角動量。</p>
+</section>
+<section id="id12">
+<h3>表 6.2 原子的電子態<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
+<p>歷史上光譜學給不同的 <span class="math notranslate nohighlight">\(l\)</span> 取了字母代號，這套代號一路沿用到今天的化學：</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(l\)</span></p></th>
+<th class="head"><p>0</p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>3</p></th>
+<th class="head"><p>4</p></th>
+<th class="head"><p>5</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>代號</p></td>
+<td><p><span class="math notranslate nohighlight">\(s\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(p\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(d\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(f\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(g\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(h\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>配合 <span class="math notranslate nohighlight">\((6.18)\)</span> 的 <span class="math notranslate nohighlight">\(l \le n-1\)</span>，電子態的完整組合為：</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(n\)</span></p></th>
+<th class="head"><p>可能的 <span class="math notranslate nohighlight">\(l\)</span></p></th>
+<th class="head"><p>電子態</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p><span class="math notranslate nohighlight">\(1s\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>0, 1</p></td>
+<td><p><span class="math notranslate nohighlight">\(2s\)</span>、<span class="math notranslate nohighlight">\(2p\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>0, 1, 2</p></td>
+<td><p><span class="math notranslate nohighlight">\(3s\)</span>、<span class="math notranslate nohighlight">\(3p\)</span>、<span class="math notranslate nohighlight">\(3d\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>0, 1, 2, 3</p></td>
+<td><p><span class="math notranslate nohighlight">\(4s\)</span>、<span class="math notranslate nohighlight">\(4p\)</span>、<span class="math notranslate nohighlight">\(4d\)</span>、<span class="math notranslate nohighlight">\(4f\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>【物理知識回顧】</strong>
+高中化學背的 <span class="math notranslate nohighlight">\(1s\)</span>、<span class="math notranslate nohighlight">\(2s\)</span>、<span class="math notranslate nohighlight">\(2p\)</span>、<span class="math notranslate nohighlight">\(3d\)</span> 這些軌域，其實就是氫原子薛丁格方程式的解：<span class="math notranslate nohighlight">\(n\)</span> 是主量子數、字母是 <span class="math notranslate nohighlight">\(l\)</span> 的代號。化學課上這些是要背的規則，而在這裡它們是<strong>解微分方程式的必然後果</strong>——<span class="math notranslate nohighlight">\(l \le n-1\)</span> 不是規定，是連帶拉蓋爾多項式次數不能為負的改寫。</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="magnetic-quantum-number">
+<h2>6.6 磁量子數 (Magnetic Quantum Number)<a class="headerlink" href="#magnetic-quantum-number" title="Link to this heading">#</a></h2>
+<p>第三個量子數 <span class="math notranslate nohighlight">\(m_l\)</span> 的物理意義最微妙：<span class="math notranslate nohighlight">\(l\)</span> 決定了角動量的<strong>大小</strong>，而 <span class="math notranslate nohighlight">\(m_l\)</span> 決定了角動量的<strong>方向</strong>。</p>
+<section id="id13">
+<h3>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/05_Quantum_Mechanics/quantum_mechanics.html#operators">動量算符 (Momentum operator)</a>：</strong> 適用於任一直角座標方向；三維時三個分量各自成立。算符作用在波函數上，即可把該方向的動量從波函數中萃取出來。</p>
+<div class="math notranslate nohighlight">
+\[\hat{p}_x = -i\hbar\frac{\partial}{\partial x}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat{p}_x\)</span> : <span class="math notranslate nohighlight">\(x\)</span> 方向的動量算符 (Momentum operator)，<span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(i\)</span> : 虛數單位 (Imaginary unit)，滿足 <span class="math notranslate nohighlight">\(i^2 = -1\)</span>，<span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 2】 古典角動量的 <span class="math notranslate nohighlight">\(z\)</span> 分量 (Classical <span class="math notranslate nohighlight">\(z\)</span>-component of the angular momentum)：</strong></p>
+<div class="math notranslate nohighlight">
+\[L_z = \left( \vec{r}\times\vec{p} \right)_z = x p_y - y p_x\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(L_z\)</span> : 角動量在 <span class="math notranslate nohighlight">\(z\)</span> 軸上的分量 (z-component of the angular momentum)，<span class="math notranslate nohighlight">\([\text{J}\cdot\text{s}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 3】 <a class="reference external" href="https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/03_Wave_Properties_of_Particles/wave_properties_of_particles.html#uncertainty-principle">測不準原理 (Uncertainty principle)</a>：</strong> 適用於任一對共軛變數（位置與其<strong>同方向</strong>的動量分量）；等號只在高斯波包時取得，一般情形恆為大於。</p>
+<div class="math notranslate nohighlight">
+\[\Delta z \, \Delta p_z \ge \frac{\hbar}{2}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\Delta z\)</span> : 位置測不準度 (Position uncertainty)，<span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Delta p_z\)</span> : 動量測不準度 (Momentum uncertainty)，<span class="math notranslate nohighlight">\([\text{kg}\cdot\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【推導 1】 <span class="math notranslate nohighlight">\(\partial/\partial\phi\)</span> 的卡氏展開 (Cartesian expansion of the azimuthal derivative)：</strong> 由 <span class="math notranslate nohighlight">\(6.1\)</span>【定義 1】的座標變換直接套鏈鎖律；注意 <span class="math notranslate nohighlight">\(z = r\cos\theta\)</span> 完全不含 <span class="math notranslate nohighlight">\(\phi\)</span>。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \frac{\partial}{\partial \phi} &amp;=&amp; \frac{\partial x}{\partial \phi}\frac{\partial}{\partial x} + \frac{\partial y}{\partial \phi}\frac{\partial}{\partial y} + \frac{\partial z}{\partial \phi}\frac{\partial}{\partial z} \\
+  &amp;=&amp; -r\sin\theta\sin\phi\frac{\partial}{\partial x} + r\sin\theta\cos\phi\frac{\partial}{\partial y} + 0 \\
+  &amp;=&amp; -y\frac{\partial}{\partial x} + x\frac{\partial}{\partial y}
+  \end{gather*}\end{split}\]</div>
+</li>
+</ul>
+</section>
+<section id="id14">
+<h3>推導：空間量子化<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
+<p>把【已知 2】的古典角動量改寫成算符，代入【已知 1】：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\hat{L}_z &amp;\overset{\text{已知 2}}{=}&amp; x\hat{p}_y - y\hat{p}_x \\
+&amp;\overset{\text{已知 1}}{=}&amp; -i\hbar\left( x\frac{\partial}{\partial y} - y\frac{\partial}{\partial x} \right) \\
+&amp;\overset{\text{推導 1}}{=}&amp; -i\hbar\frac{\partial}{\partial \phi}
+\end{gather*}\end{split}\]</div>
+<p>把這個算符作用在完整波函數上，並用 <span class="math notranslate nohighlight">\((6.5)\)</span> 與 <span class="math notranslate nohighlight">\((6.15)\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\hat{L}_z \Psi &amp;=&amp; -i\hbar\frac{\partial \Psi}{\partial \phi} \\
+&amp;\overset{\text{(6.5)}}{=}&amp; -i\hbar\,R\Theta\frac{d\Phi}{d\phi} \\
+&amp;\overset{\text{(6.15)}}{=}&amp; -i\hbar\left( i m_l \right)R\Theta\Phi \\
+&amp;=&amp; m_l \hbar \, \Psi
+\end{gather*}\end{split}\]</div>
+<p>波函數本身就是 <span class="math notranslate nohighlight">\(\hat{L}_z\)</span> 的本徵函數，本徵值為</p>
+<div class="math notranslate nohighlight">
+\[L_z = m_l \hbar, \qquad m_l = 0, \pm 1, \pm 2, \dots, \pm l \tag{6.22}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(L_z\)</span> : 角動量在 <span class="math notranslate nohighlight">\(z\)</span> 軸上的投影 (Projection onto the z-axis)，<span class="math notranslate nohighlight">\([\text{J}\cdot\text{s}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m_l\)</span> : 磁量子數 (Magnetic quantum number)，<span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+<p><img alt="" src="../../_images/Space_Quantization_of_Angular_Momentum.png" /></p>
+</section>
+<section id="id15">
+<h3>空間量子化的圖像<a class="headerlink" href="#id15" title="Link to this heading">#</a></h3>
+<p>由 <span class="math notranslate nohighlight">\((6.21)\)</span>，角動量的<strong>大小</strong>是 <span class="math notranslate nohighlight">\(L = \sqrt{l(l+1)}\hbar\)</span>，這只決定了向量的長度；向量可以指向以 <span class="math notranslate nohighlight">\(z\)</span> 軸為中心的任何一個圓錐面。但由 <span class="math notranslate nohighlight">\((6.22)\)</span>，它在 <span class="math notranslate nohighlight">\(z\)</span> 軸上的<strong>投影</strong>必須是 <span class="math notranslate nohighlight">\(\hbar\)</span> 的整數倍——於是方向被鎖死在有限個離散的圓錐上。這就是<strong>空間量子化 (Space quantization)</strong>。</p>
+<p>以 <span class="math notranslate nohighlight">\(l = 2\)</span> 為例：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+L &amp;\overset{\text{(6.21)}}{=}&amp; \sqrt{2 \times 3}\,\hbar \\
+&amp;=&amp; \sqrt{6}\,\hbar \\
+&amp;\approx&amp; 2.449\,\hbar
+\end{gather*}\end{split}\]</div>
+<p>而 <span class="math notranslate nohighlight">\(m_l\)</span> 只能取 <span class="math notranslate nohighlight">\(0, \pm1, \pm2\)</span>，故 <span class="math notranslate nohighlight">\(L_z\)</span> 只能是 <span class="math notranslate nohighlight">\(0, \pm\hbar, \pm2\hbar\)</span>——總共<strong>五個</strong>允許的方向。</p>
+<p>因此角動量的量子化其實包含兩件事：<span class="math notranslate nohighlight">\(l\)</span> 定義它的<strong>大小</strong>，<span class="math notranslate nohighlight">\(m_l\)</span> 定義它的<strong>方向</strong>。</p>
+</section>
+<section id="id16">
+<h3>測不準原理與空間量子化<a class="headerlink" href="#id16" title="Link to this heading">#</a></h3>
+<p><strong>【已知】</strong> 在 <span class="math notranslate nohighlight">\(L^2,L_z\)</span> 的共同本徵態中，<span class="math notranslate nohighlight">\(L^2=l(l+1)\hbar^2\)</span>、<span class="math notranslate nohighlight">\(L_z=m_l\hbar\)</span>。對 <span class="math notranslate nohighlight">\(l\ge1\)</span>，有</p>
+<div class="math notranslate nohighlight">
+\[|L_z|_{\max}=l\hbar&lt;\sqrt{l(l+1)}\,\hbar.\]</div>
+<p>圓錐圖像可用來表示「大小」與「投影」的關係，但不代表電子沿某一古典圓軌道運動。更直接的計算是</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\langle L_x^2+L_y^2\rangle
+&amp;=\langle L^2-L_z^2\rangle\\
+&amp;=[l(l+1)-m_l^2]\hbar^2.
+\end{aligned}\end{split}\]</div>
+<p>即使 <span class="math notranslate nohighlight">\(|m_l|=l\)</span>，上式仍為 <span class="math notranslate nohighlight">\(l\hbar^2\)</span>，橫向分量的平方平均並不為零。在此共同本徵態中 <span class="math notranslate nohighlight">\(\langle L_x\rangle=\langle L_y\rangle=0\)</span>，但「平均為零」不等於「沒有不確定性」。這與角動量分量的非對易關係一致。<span class="math notranslate nohighlight">\(l=0\)</span> 時總角動量為零，不應再替零向量指定方向。</p>
+<p><strong>【進階探討：沒有磁場的時候，<span class="math notranslate nohighlight">\(m_l\)</span> 有物理意義嗎？】</strong></p>
+<p><strong>有，但必須先指定量子化軸。</strong> 沒有外場時空間沒有優先方向，我們仍可選擇一個 <span class="math notranslate nohighlight">\(z\)</span> 軸，以 <span class="math notranslate nohighlight">\(m_l\)</span> 標記 <span class="math notranslate nohighlight">\(L_z\)</span> 的本徵值；不同軸對應不同基底。能量對 <span class="math notranslate nohighlight">\(m_l\)</span> 簡併，不代表 <span class="math notranslate nohighlight">\(m_l\)</span> 沒有物理意義。</p>
+<p>也因此，<span class="math notranslate nohighlight">\((6.16)\)</span> 算出來的能量<strong>完全不含 <span class="math notranslate nohighlight">\(m_l\)</span></strong>：不同 <span class="math notranslate nohighlight">\(m_l\)</span> 的態能量完全相同（簡併）。</p>
+<p>加上磁場後，磁場方向提供自然的量子化軸，不同 <span class="math notranslate nohighlight">\(m_l\)</span> 態取得不同的磁能，原有簡併可被打破。這是 6.10 塞曼效應的出發點。</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="electron-probability-density">
+<h2>6.7 電子機率密度 (Electron Probability Density)<a class="headerlink" href="#electron-probability-density" title="Link to this heading">#</a></h2>
+<p>在波耳模型中，電子沿著半徑確定的圓形軌道繞行。在量子力學中，<strong>沒有明確的軌道</strong>——我們能講的只有「在某處找到電子的機率」。</p>
+<div class="math notranslate nohighlight">
+\[\left| \Psi \right|^2 = \left| R \right|^2 \left| \Theta \right|^2 \left| \Phi \right|^2 \tag{6.23}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\left| \Psi \right|^2\)</span> : 機率密度 (Probability density)，<span class="math notranslate nohighlight">\([\text{m}^{-3}]\)</span></p></li>
+</ul>
+<p>其中方位角部分的機率密度是常數：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\left| \Phi \right|^2 &amp;\overset{\text{(6.15)}}{=}&amp; \left( \frac{1}{\sqrt{2\pi}}e^{im_l\phi} \right)\left( \frac{1}{\sqrt{2\pi}}e^{-im_l\phi} \right) \\
+&amp;=&amp; \frac{1}{2\pi}
+\end{gather*}\end{split}\]</div>
+<p>與 <span class="math notranslate nohighlight">\(\phi\)</span> 完全無關，代表<strong>電子的機率分布必定對 <span class="math notranslate nohighlight">\(z\)</span> 軸旋轉對稱</strong>。</p>
+<section id="id17">
+<h3>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#id17" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Coordinate_System/Spherical_Coordinate_Scale_Factors_and_Laplacian.html#b-proof-volume-element">球座標的體積元素 (Volume element in spherical coordinates)</a>：</strong> 三個邊長分別為徑向的 <span class="math notranslate nohighlight">\(dr\)</span>、沿 <span class="math notranslate nohighlight">\(\theta\)</span> 圓弧的 <span class="math notranslate nohighlight">\(r\,d\theta\)</span>、沿 <span class="math notranslate nohighlight">\(\phi\)</span> 圓弧的 <span class="math notranslate nohighlight">\(r\sin\theta\,d\phi\)</span>——最後一項的半徑是<strong>投影到 <span class="math notranslate nohighlight">\(xy\)</span> 平面後的 <span class="math notranslate nohighlight">\(r\sin\theta\)</span>，不是 <span class="math notranslate nohighlight">\(r\)</span></strong>，這是最容易寫錯的地方。</p>
+<div class="math notranslate nohighlight">
+\[dV = \left( dr \right)\left( r \, d\theta \right)\left( r\sin\theta \, d\phi \right) = r^2 \sin\theta \, dr \, d\theta \, d\phi \tag{6.24}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(dV\)</span> : 體積元素 (Volume element)，<span class="math notranslate nohighlight">\([\text{m}^3]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(dr, d\theta, d\phi\)</span> : 三個座標各自的微小增量 (Coordinate increments)</p></li>
+</ul>
+</li>
+<li><p><strong>【已知 2】 <a class="reference external" href="https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/05_Quantum_Mechanics/quantum_mechanics.html#fundamental-rules-of-quantum-mechanics">機率密度與歸一化 (Probability density and normalization)</a>：</strong> 適用於已歸一化的波函數，積分範圍為<strong>全空間</strong>；其物理內容是「粒子必然存在於空間中的某處」，故總機率為 <span class="math notranslate nohighlight">\(100\%\)</span>。</p>
+<div class="math notranslate nohighlight">
+\[\int \left| \Psi \right|^2 dV = 1\]</div>
+</li>
+<li><p><strong>【假設 1】 角向部分已歸一化 (Normalized angular parts)：</strong> 表 6.1 給出的 <span class="math notranslate nohighlight">\(\Theta\)</span> 與 <span class="math notranslate nohighlight">\(\Phi\)</span> 皆已歸一化。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \int_{0}^{\pi}\left| \Theta \right|^2 \sin\theta \, d\theta &amp;=&amp; 1 \\
+  \int_{0}^{2\pi}\left| \Phi \right|^2 d\phi &amp;=&amp; 1
+  \end{gather*}\end{split}\]</div>
+</li>
+</ul>
+<p><img alt="" src="../../_images/Spherical_Volume_Element.png" /></p>
+</section>
+<section id="id18">
+<h3>推導：球殼機率<a class="headerlink" href="#id18" title="Link to this heading">#</a></h3>
+<p>我們最常問的問題是：<strong>在半徑 <span class="math notranslate nohighlight">\(r\)</span> 到 <span class="math notranslate nohighlight">\(r+dr\)</span> 的球殼中找到電子的機率是多少？</strong> 這需要把角度部分積掉：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+P\left( r \right)dr &amp;\overset{\text{已知 1,2}}{=}&amp; \int_{0}^{\pi}\int_{0}^{2\pi}\left| \Psi \right|^2 r^2 \sin\theta \, dr \, d\theta \, d\phi \\
+&amp;\overset{\text{(6.23)}}{=}&amp; r^2\left| R \right|^2 dr \int_{0}^{\pi}\left| \Theta \right|^2 \sin\theta \, d\theta \int_{0}^{2\pi}\left| \Phi \right|^2 d\phi \\
+&amp;\overset{\text{假設 1}}{=}&amp; r^2 \left| R \right|^2 dr
+\end{gather*}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[P\left( r \right)dr = r^2 \left| R \right|^2 dr \tag{6.25}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(P(r)\,dr\)</span> : 在 <span class="math notranslate nohighlight">\(r\)</span> 與 <span class="math notranslate nohighlight">\(r+dr\)</span> 之間的球殼中找到電子的機率 (Radial probability)，<span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+<p><img alt="" src="../../_images/Radial_Probability_Density.png" /></p>
+<p><strong>極座標積分的三個陷阱</strong>（考試最常錯的地方）：</p>
+<ol class="arabic simple">
+<li><p>積分元素<strong>不是</strong> <span class="math notranslate nohighlight">\(dr\,d\theta\,d\phi\)</span>，前面一定要帶 <span class="math notranslate nohighlight">\(r^2\sin\theta\)</span>。</p></li>
+<li><p>上下限不是都從 <span class="math notranslate nohighlight">\(0\)</span> 到 <span class="math notranslate nohighlight">\(\infty\)</span>：<span class="math notranslate nohighlight">\(r\)</span> 是 <span class="math notranslate nohighlight">\(0 \to \infty\)</span>、<span class="math notranslate nohighlight">\(\theta\)</span> 是 <span class="math notranslate nohighlight">\(0 \to \pi\)</span>、<span class="math notranslate nohighlight">\(\phi\)</span> 是 <span class="math notranslate nohighlight">\(0 \to 2\pi\)</span>。</p></li>
+<li><p><span class="math notranslate nohighlight">\((6.25)\)</span> 中的 <span class="math notranslate nohighlight">\(r^2\)</span> 是球殼面積帶來的，<strong>不能省略</strong>。省略了就會算出 <span class="math notranslate nohighlight">\(6.3\)</span> 例題那種錯誤答案。</p></li>
+</ol>
+</section>
+<section id="s-left-langle-1-r-right-rangle">
+<h3><strong>例題 6.2：<span class="math notranslate nohighlight">\(1s\)</span> 電子的 <span class="math notranslate nohighlight">\(\left\langle 1/r \right\rangle\)</span></strong><a class="headerlink" href="#s-left-langle-1-r-right-rangle" title="Link to this heading">#</a></h3>
+<p><strong>題目：</strong> 證明對氫原子的 <span class="math notranslate nohighlight">\(1s\)</span> 電子而言，<span class="math notranslate nohighlight">\(1/r\)</span> 的平均值為 <span class="math notranslate nohighlight">\(1/a_0\)</span>。</p>
+<p><strong>解答：</strong></p>
+<p>由表 6.1，<span class="math notranslate nohighlight">\(1s\)</span> 電子的完整波函數為</p>
+<div class="math notranslate nohighlight">
+\[\psi_{100} = \frac{1}{\sqrt{\pi}\,a_0^{3/2}}e^{-r/a_0}\]</div>
+<p>由【已知 1】的 <span class="math notranslate nohighlight">\(dV = r^2\sin\theta\,dr\,d\theta\,d\phi\)</span>，<span class="math notranslate nohighlight">\(1/r\)</span> 的期望值為</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\left\langle \frac{1}{r} \right\rangle &amp;=&amp; \int \frac{1}{r}\left| \psi_{100} \right|^2 dV \\
+&amp;=&amp; \frac{1}{\pi a_0^3}\int_{0}^{\infty}\int_{0}^{\pi}\int_{0}^{2\pi}\frac{1}{r}e^{-2r/a_0}\,r^2\sin\theta \, dr \, d\theta \, d\phi \\
+&amp;=&amp; \frac{1}{\pi a_0^3}\left[ \int_{0}^{\infty}r\,e^{-2r/a_0}dr \right]\left[ \int_{0}^{\pi}\sin\theta \, d\theta \right]\left[ \int_{0}^{2\pi}d\phi \right]
+\end{gather*}\end{split}\]</div>
+<p>（注意 <span class="math notranslate nohighlight">\(\dfrac{1}{r}\times r^2 = r\)</span>，只剩一次方。）三個積分分別計算：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\int_{0}^{\infty}r\,e^{-2r/a_0}dr &amp;=&amp; \left[ -\frac{a_0^2}{4}e^{-2r/a_0} - \frac{a_0 r}{2}e^{-2r/a_0} \right]_{0}^{\infty} \\
+&amp;=&amp; 0 - \left( -\frac{a_0^2}{4} \right) \\
+&amp;=&amp; \frac{a_0^2}{4}
+\end{gather*}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\int_{0}^{\pi}\sin\theta \, d\theta &amp;=&amp; \left[ -\cos\theta \right]_{0}^{\pi} \\
+&amp;=&amp; 2
+\end{gather*}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\int_{0}^{2\pi}d\phi &amp;=&amp; \left[ \phi \right]_{0}^{2\pi} \\
+&amp;=&amp; 2\pi
+\end{gather*}\end{split}\]</div>
+<p>三者相乘：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\left\langle \frac{1}{r} \right\rangle &amp;=&amp; \frac{1}{\pi a_0^3}\left( \frac{a_0^2}{4} \right)\left( 2 \right)\left( 2\pi \right) \\
+&amp;=&amp; \frac{1}{a_0}
+\end{gather*}\end{split}\]</div>
+<p><strong>【物理知識回顧】</strong>
+題目問的是 <span class="math notranslate nohighlight">\(\left\langle 1/r \right\rangle = 1/a_0\)</span>，<strong>不是</strong> <span class="math notranslate nohighlight">\(\left\langle r \right\rangle = a_0\)</span>。這兩件事並不等價（事實上 <span class="math notranslate nohighlight">\(1s\)</span> 態的 <span class="math notranslate nohighlight">\(\left\langle r \right\rangle = \dfrac{3}{2}a_0\)</span>）。這種「倒數的平均不等於平均的倒數」在量子力學中很常見，讀題時要特別小心。</p>
+</section>
+<section id="a-0-a-0-2">
+<h3><strong>例題 6.3：<span class="math notranslate nohighlight">\(a_0\)</span> 與 <span class="math notranslate nohighlight">\(a_0/2\)</span> 處的機率比</strong><a class="headerlink" href="#a-0-a-0-2" title="Link to this heading">#</a></h3>
+<p><strong>題目：</strong> 氫原子的 <span class="math notranslate nohighlight">\(1s\)</span> 電子距離原子核為 <span class="math notranslate nohighlight">\(a_0\)</span> 的機率，比距離為 <span class="math notranslate nohighlight">\(a_0/2\)</span> 的機率高幾倍？</p>
+<p><strong>解答：</strong></p>
+<p>由表 6.1，<span class="math notranslate nohighlight">\(1s\)</span> 電子的徑向波函數為</p>
+<div class="math notranslate nohighlight">
+\[R_{10} = \frac{2}{a_0^{3/2}}e^{-r/a_0}\]</div>
+<p>由 <span class="math notranslate nohighlight">\((6.25)\)</span>，機率密度<strong>正比於 <span class="math notranslate nohighlight">\(r^2\left| R \right|^2\)</span></strong>，故機率比為</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{P_1}{P_2} &amp;\overset{\text{(6.25)}}{=}&amp; \frac{r_1^2\left| R\left( r_1 \right) \right|^2}{r_2^2\left| R\left( r_2 \right) \right|^2} \\
+&amp;=&amp; \frac{r_1^2 e^{-2r_1/a_0}}{r_2^2 e^{-2r_2/a_0}}
+\end{gather*}\end{split}\]</div>
+<p>代入 <span class="math notranslate nohighlight">\(r_1 = a_0\)</span>、<span class="math notranslate nohighlight">\(r_2 = a_0/2\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{P\left( a_0 \right)}{P\left( a_0/2 \right)} &amp;=&amp; \frac{a_0^2 e^{-2}}{\left( a_0/2 \right)^2 e^{-1}} \\
+&amp;=&amp; \frac{a_0^2 e^{-2}}{\frac{a_0^2}{4}e^{-1}} \\
+&amp;=&amp; 4e^{-1} \\
+&amp;\approx&amp; 1.47
+\end{gather*}\end{split}\]</div>
+<p>距離原子核為 <span class="math notranslate nohighlight">\(a_0\)</span> 的電子出現機率，比 <span class="math notranslate nohighlight">\(a_0/2\)</span> 處高了約 <span class="math notranslate nohighlight">\(47\%\)</span>。</p>
+<p><strong>【物理知識回顧】</strong>
+這一題最常見的錯誤是<strong>只比較 <span class="math notranslate nohighlight">\(\left| R \right|^2\)</span> 而忘記帶 <span class="math notranslate nohighlight">\(r^2\)</span></strong>。若只比 <span class="math notranslate nohighlight">\(\left| R \right|^2\)</span>，會得到 <span class="math notranslate nohighlight">\(\dfrac{e^{-2}}{e^{-1}} = e^{-1} \approx 0.37\)</span>，也就是「<span class="math notranslate nohighlight">\(a_0\)</span> 處的機率反而比較低」——結論完全相反。</p>
+<p>原因是：<strong>機率跟球殼的面積有關，愈外層的球殼面積愈大</strong>，面積正比於 <span class="math notranslate nohighlight">\(r^2\)</span>。<span class="math notranslate nohighlight">\(\left| R \right|^2\)</span> 只是「單位體積的機率密度」，而我們要問的是「整層球殼的機率」，兩者差一個 <span class="math notranslate nohighlight">\(4\pi r^2\)</span>。<span class="math notranslate nohighlight">\(1s\)</span> 態的 <span class="math notranslate nohighlight">\(r^2\left| R \right|^2\)</span> 恰好在 <span class="math notranslate nohighlight">\(r = a_0\)</span> 處取到極大值——<strong>電子出現在波耳半徑上的機率是最大的</strong>，這正好呼應了波耳模型的圖像，只是量子力學說的是「機率最大」而非「軌道就在那裡」。</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="radiative-transitions">
+<h2>6.8 輻射躍遷 (Radiative Transitions)<a class="headerlink" href="#radiative-transitions" title="Link to this heading">#</a></h2>
+<p>到目前為止我們解出了能階，也知道能量是量子化的。但還有一件事沒有交代：<strong>電子從某個能階掉到另一個能階時，為什麼會放光？</strong> 能量有差是一回事，為什麼那個能量差會變成電磁輻射，是另一回事。</p>
+<p>答案藏在波函數的<strong>期望值</strong>裡。</p>
+<section id="id19">
+<h3>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#id19" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><strong>【已知 1】 <a class="reference external" href="https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/05_Quantum_Mechanics/quantum_mechanics.html#schrodingers-equation-steady-state-form">含時波函數的時間因子 (Time factor of the time-dependent wave function)</a>：</strong> 適用前提為該態具有確定能量 <span class="math notranslate nohighlight">\(E_n\)</span>（定態）。此時完整波函數等於與時間無關的空間部分，乘上一個<strong>純相位</strong>的時間因子——「純相位」意味著 <span class="math notranslate nohighlight">\(\left| \Psi_n \right|^2\)</span> 與時間無關。</p>
+<div class="math notranslate nohighlight">
+\[\Psi_n\left( x, t \right) = \psi_n\left( x \right)e^{-iE_n t/\hbar} \tag{6.26}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\Psi_n\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 態的完整波函數 (Full wave function)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\psi_n\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 態與時間無關的空間波函數 (Spatial wave function)</p></li>
+<li><p><span class="math notranslate nohighlight">\(E_n\)</span> : 第 <span class="math notranslate nohighlight">\(n\)</span> 態的本徵能量 (Eigen-energy)，<span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 2】 <a class="reference external" href="https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/05_Quantum_Mechanics/quantum_mechanics.html#expectation-value">期望值 (Expectation value)</a>：</strong> 適用於已歸一化的波函數。期望值是<strong>大量相同系統重複測量後的平均值</strong>，而非單次測量會得到的結果。</p>
+<div class="math notranslate nohighlight">
+\[\left\langle x \right\rangle = \int_{-\infty}^{\infty}\Psi^{*}\,x\,\Psi \, dx\]</div>
+</li>
+<li><p><strong>【已知 3】 尤拉公式的餘弦形式 (Cosine form of Euler’s formula)：</strong></p>
+<div class="math notranslate nohighlight">
+\[e^{i\beta} + e^{-i\beta} = 2\cos\beta\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\beta\)</span> : 任意實數相位 (Arbitrary real phase)，<span class="math notranslate nohighlight">\([\text{rad}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 4】 <a class="reference external" href="https://derek1403.github.io/PC-NTU/Modern-Physics/_build/html/lecture/02_Particle_Properties_of_Waves/particle_properties_of_waves.html#electromagnetic-waves">電偶極振盪輻射 (Electric dipole radiation)</a>：</strong> 古典電磁學結論，適用於任何做簡諧振盪的電偶極（不限於原子）：它輻射出的電磁波頻率<strong>恰等於</strong>偶極本身的振盪頻率。</p>
+<div class="math notranslate nohighlight">
+\[\nu_{\text{輻射}} = \nu_{\text{振盪}}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\nu_{\text{輻射}}\)</span> : 輻射出的電磁波頻率 (Frequency of the emitted wave)，<span class="math notranslate nohighlight">\([\text{Hz}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\nu_{\text{振盪}}\)</span> : 電偶極本身的振盪頻率 (Oscillation frequency of the dipole)，<span class="math notranslate nohighlight">\([\text{Hz}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【假設 1】 電子可存在於兩個態的疊加 (Two-state superposition)：</strong> 電子可以在能階 <span class="math notranslate nohighlight">\(n\)</span> 與 <span class="math notranslate nohighlight">\(m\)</span> 之間躍遷，故其波函數為兩者的線性組合。</p>
+<div class="math notranslate nohighlight">
+\[\Psi = a\Psi_n + b\Psi_m \tag{6.28}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(a, b\)</span> : 疊加係數 (Superposition coefficients)，<span class="math notranslate nohighlight">\([\text{無單位}]\)</span>，取為實數且滿足 <span class="math notranslate nohighlight">\(a^2 + b^2 = 1\)</span></p></li>
+<li><p>物理意義：電子有 <span class="math notranslate nohighlight">\(a^2\)</span> 的機率在 <span class="math notranslate nohighlight">\(n\)</span> 態、<span class="math notranslate nohighlight">\(b^2\)</span> 的機率在 <span class="math notranslate nohighlight">\(m\)</span> 態</p></li>
+</ul>
+</li>
+<li><p><strong>【假設 2】 空間波函數為實函數 (Real spatial wave functions)：</strong> 為了讓交叉項的結構看得清楚，取 <span class="math notranslate nohighlight">\(\psi_n\)</span>、<span class="math notranslate nohighlight">\(\psi_m\)</span> 為實函數（對氫原子的 <span class="math notranslate nohighlight">\(m_l = 0\)</span> 態成立；一般情形只是多帶一個常數相位，不影響結論）。</p>
+<div class="math notranslate nohighlight">
+\[\psi_n^{*} = \psi_n, \qquad \psi_m^{*} = \psi_m\]</div>
+</li>
+</ul>
+<p><img alt="" src="../../_images/Radiative_Transition_Dipole_Oscillation.png" /></p>
+</section>
+<section id="id20">
+<h3>推導：單一定態不會輻射<a class="headerlink" href="#id20" title="Link to this heading">#</a></h3>
+<p>先看電子<strong>只</strong>待在某一個特定能階 <span class="math notranslate nohighlight">\(n\)</span>、完全不在兩個能階之間跳動的情形：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\left\langle x \right\rangle &amp;\overset{\text{已知 2}}{=}&amp; \int_{-\infty}^{\infty}\Psi_n^{*}\,x\,\Psi_n \, dx \\
+&amp;\overset{\text{已知 1}}{=}&amp; \int_{-\infty}^{\infty}\psi_n^{*}e^{+iE_n t/\hbar}\,x\,\psi_n e^{-iE_n t/\hbar} \, dx \\
+&amp;=&amp; \int_{-\infty}^{\infty}\psi_n^{*}\,x\,\psi_n \, dx
+\end{gather*}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\left\langle x \right\rangle = \int_{-\infty}^{\infty}\psi_n^{*}\,x\,\psi_n \, dx \tag{6.27}\]</div>
+<p><strong>時間因子的正負指數恰好相消，期望值完全與時間無關。</strong> 電子的位置期望值固定不動，沒有振盪，也就沒有輻射。這解釋了為什麼原子的定態是<strong>穩定</strong>的——這正是波耳模型當年必須用假設硬塞進去的「定態不輻射」，在這裡自動成立。</p>
+</section>
+<section id="id21">
+<h3>推導：兩態疊加產生電偶極振盪<a class="headerlink" href="#id21" title="Link to this heading">#</a></h3>
+<p>現在改用【假設 1】的疊加態：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\left\langle x \right\rangle &amp;\overset{\text{已知 2,假設 1}}{=}&amp; \int_{-\infty}^{\infty}\left( a\Psi_n^{*} + b\Psi_m^{*} \right)x\left( a\Psi_n + b\Psi_m \right)dx \\
+&amp;=&amp; \int_{-\infty}^{\infty}\left[ a^2\Psi_n^{*}x\Psi_n + b^2\Psi_m^{*}x\Psi_m + ab\Psi_n^{*}x\Psi_m + ab\Psi_m^{*}x\Psi_n \right]dx
+\end{gather*}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\left\langle x \right\rangle = \int_{-\infty}^{\infty}\left[ a^2\Psi_n^{*}x\Psi_n + ab\Psi_n^{*}x\Psi_m + ab\Psi_m^{*}x\Psi_n + b^2\Psi_m^{*}x\Psi_m \right]dx \tag{6.30}\]</div>
+<p>四項之中，<strong>第一項與第四項</strong>跟前面的 <span class="math notranslate nohighlight">\((6.27)\)</span> 完全同型，時間因子相消，與時間無關——它們定義了電子的<strong>平衡位置</strong>（大約就是一個原子的尺度，<span class="math notranslate nohighlight">\(0.5 \ \text{nm}\)</span> 上下）。真正有意思的是<strong>中間兩項</strong>。把【已知 1】代進去：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+ab\int\left[ \Psi_n^{*}x\Psi_m + \Psi_m^{*}x\Psi_n \right]dx &amp;\overset{\text{已知 1}}{=}&amp; ab\int\left[ \psi_n^{*}x\psi_m e^{i\left( E_n - E_m \right)t/\hbar} + \psi_m^{*}x\psi_n e^{-i\left( E_n - E_m \right)t/\hbar} \right]dx \\
+&amp;\overset{\text{假設 2}}{=}&amp; ab\left[ \int \psi_n x\psi_m \, dx \right]\left[ e^{i\left( E_n - E_m \right)t/\hbar} + e^{-i\left( E_n - E_m \right)t/\hbar} \right] \\
+&amp;\overset{\text{已知 3}}{=}&amp; 2ab\left[ \int \psi_n x\psi_m \, dx \right]\cos\left[ \frac{\left( E_m - E_n \right)t}{\hbar} \right]
+\end{gather*}\end{split}\]</div>
+<p>（最後一步用到 <span class="math notranslate nohighlight">\(\cos\)</span> 是偶函數，故 <span class="math notranslate nohighlight">\(\cos\left[ \left( E_n-E_m \right)t/\hbar \right] = \cos\left[ \left( E_m-E_n \right)t/\hbar \right]\)</span>。）</p>
+<p>於是 <span class="math notranslate nohighlight">\((6.30)\)</span> 可以寫成</p>
+<div class="math notranslate nohighlight">
+\[\left\langle x \right\rangle = \underbrace{\int\left[ a^2 \psi_n x \psi_n + b^2 \psi_m x \psi_m \right]dx}_{\text{平衡位置，與時間無關}} + \underbrace{2ab\cos\left[ \frac{\left( E_m - E_n \right)t}{\hbar} \right]\int \psi_n x \psi_m \, dx}_{\text{隨時間做簡諧振盪}} \tag{6.31}\]</div>
+<p><strong>電子的位置期望值，在某個平衡位置附近做餘弦振盪。</strong> 把振盪項寫成標準形式 <span class="math notranslate nohighlight">\(\cos\left( 2\pi\nu t \right)\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+2\pi\nu &amp;\overset{\text{(6.31)}}{=}&amp; \frac{E_m - E_n}{\hbar} \\
+2\pi\nu &amp;=&amp; \frac{2\pi\left( E_m - E_n \right)}{h} \\
+\nu &amp;=&amp; \frac{E_m - E_n}{h}
+\end{gather*}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\nu = \frac{E_m - E_n}{h} \qquad \Longleftrightarrow \qquad h\nu = E_m - E_n \tag{6.33}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\nu\)</span> : 振盪頻率 (Oscillation frequency)，<span class="math notranslate nohighlight">\([\text{Hz}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(h\)</span> : 普朗克常數 (Planck constant)，<span class="math notranslate nohighlight">\([\text{J}\cdot\text{s}]\)</span>，<span class="math notranslate nohighlight">\(h \approx 6.626 \times 10^{-34} \ \text{J}\cdot\text{s}\)</span></p></li>
+</ul>
+</section>
+<section id="id22">
+<h3>結論：為什麼會放光<a class="headerlink" href="#id22" title="Link to this heading">#</a></h3>
+<p>一個電荷在空間中做簡諧振盪，在古典物理中就是一個<strong>振盪的電偶極 (oscillating electric dipole)</strong>。由【已知 4】，這樣的偶極會輻射出與振盪頻率相同的電磁波。</p>
+<p>因此：電子在 <span class="math notranslate nohighlight">\(n\)</span> 與 <span class="math notranslate nohighlight">\(m\)</span> 兩態之間躍遷 <span class="math notranslate nohighlight">\(\to\)</span> 位置期望值出現 <span class="math notranslate nohighlight">\(\cos\left( 2\pi\nu t \right)\)</span> 項 <span class="math notranslate nohighlight">\(\to\)</span> 形成電偶極振盪 <span class="math notranslate nohighlight">\(\to\)</span> 輻射出頻率為 <span class="math notranslate nohighlight">\(\nu\)</span> 的電磁波，而</p>
+<div class="math notranslate nohighlight">
+\[h\nu = E_m - E_n\]</div>
+<p><strong>這就是萊曼系、巴耳末系那些光譜線的來源。</strong> 第二章、第四章反覆使用的 <span class="math notranslate nohighlight">\(h\nu = E_i - E_f\)</span>，在這裡終於從波函數本身被推導出來，而不再是一條假設。</p>
+<p><strong>【物理知識回顧】</strong>
+本節採電偶極近似；振盪項前的躍遷矩陣元決定該分量的振幅。若整個向量矩陣元 <span class="math notranslate nohighlight">\(\langle n|\vec r|m\rangle\)</span> 為零，表示此躍遷的<strong>電偶極通道</strong>被禁止；僅一個 <span class="math notranslate nohighlight">\(x\)</span> 分量為零，尚不能排除其他偏振方向。</p>
+<p>躍遷也可能經碰撞等非輻射機制，或經較弱的磁偶極、電四極及多光子通道進行。因此不能將電偶極禁戒直接等同於「不會放光」。下一節討論電偶極矩陣元不為零的必要條件。</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="selection-rules">
+<h2>6.9 選擇規則 (Selection Rules)<a class="headerlink" href="#selection-rules" title="Link to this heading">#</a></h2>
+<p>上一節末尾留下的問題是：躍遷偶極積分</p>
+<div class="math notranslate nohighlight">
+\[\int \psi_{n'l'm_l'}^{*}\,\vec{r}\,\psi_{nlm_l}\,dV \tag{6.34}\]</div>
+<p>什麼時候不為零？</p>
+<p>出乎意料的是，<strong>大部分時候它都等於零</strong>——不等於零反而是例外。本節要找出這個例外的條件。</p>
+<section id="id23">
+<h3>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#id23" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><strong>【已知 1】 完整波函數的三因子形式：</strong> <span class="math notranslate nohighlight">\(6.3\)</span> 表 6.1 的結果，此處直接引用。</p>
+<div class="math notranslate nohighlight">
+\[\psi_{n l m_l}\left( r, \theta, \phi \right) = R_{nl}\left( r \right)\Theta_{l m_l}\left( \theta \right)\Phi_{m_l}\left( \phi \right), \qquad \Phi_{m_l} = \frac{1}{\sqrt{2\pi}}e^{im_l\phi}\]</div>
+</li>
+<li><p><strong>【已知 2】 偶極算符的球座標分量 (Spherical components of the dipole operator)：</strong> 由 <span class="math notranslate nohighlight">\(6.1\)</span>【定義 1】直接讀出。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  z &amp;=&amp; r\cos\theta \\
+  x &amp;=&amp; r\sin\theta\cos\phi \\
+  y &amp;=&amp; r\sin\theta\sin\phi
+  \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>【已知 3】 <a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Differential_Equations/Associated_Legendre_Equation_and_Quantization.html#f-proof-weighted-orthogonality-and-adjacent-order-coupling">連帶勒讓德函數的相鄰階耦合 (Adjacent-order coupling of associated Legendre functions)</a>：</strong> 適用前提為<strong>兩側必須是同一個 <span class="math notranslate nohighlight">\(m\)</span></strong> 的連帶勒讓德函數；其證明只用到三件事——<span class="math notranslate nohighlight">\(P_l^m\)</span> 的多項式次數結構、帶權正交性、以及宇稱，與量子力學無關。</p>
+<div class="math notranslate nohighlight">
+\[\int_{-1}^{1}P_{l'}^{m}\left( x \right)\,x\,P_{l}^{m}\left( x \right)\,dx \ne 0 \quad \Longrightarrow \quad l' = l \pm 1\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(P_l^m\)</span> : 連帶勒讓德函數 (Associated Legendre function)，即 <span class="math notranslate nohighlight">\(\Theta_{l m_l}\)</span> 的未歸一化形式，<span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(l, l'\)</span> : 兩側函數各自的階數 (Degrees of the two functions)，非負整數，<span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x\)</span> : 積分變數，<span class="math notranslate nohighlight">\(x = \cos\theta\)</span> (Integration variable)，<span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【假設 1】 空間等向性 (Isotropy of space)：</strong> 在沒有外加磁場時，位能只依賴 <span class="math notranslate nohighlight">\(r\)</span>、與角度完全無關，故空間中沒有任何一個方向是特別的，<span class="math notranslate nohighlight">\(z\)</span> 軸的選擇完全任意。<span class="math notranslate nohighlight">\(\vec{r}\)</span> 的三個分量之間只差一個座標軸的轉向，而 <span class="math notranslate nohighlight">\(l\)</span> 是<strong>旋轉不變</strong>的量子數（角動量的大小不因座標軸選擇而改變）——因此對 <span class="math notranslate nohighlight">\(z\)</span> 分量成立的 <span class="math notranslate nohighlight">\(l\)</span> 限制，對 <span class="math notranslate nohighlight">\(x\)</span>、<span class="math notranslate nohighlight">\(y\)</span> 分量必定同樣成立。</p>
+<div class="math notranslate nohighlight">
+\[U\left( r, \theta, \phi \right) = U\left( r \right) = -\frac{e^2}{4\pi\varepsilon_0 r}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(U\)</span> : 庫侖位能 (Coulomb potential energy)，<span class="math notranslate nohighlight">\([\text{J}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(r, \theta, \phi\)</span> : 球座標三個變數 (Spherical coordinates)</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="../../_images/Selection_Rules_Energy_Level_Diagram.png" /></p>
+</section>
+<section id="m-l">
+<h3>推導：<span class="math notranslate nohighlight">\(m_l\)</span> 的選擇規則<a class="headerlink" href="#m-l" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\((6.34)\)</span> 的三重積分中，<span class="math notranslate nohighlight">\(\phi\)</span> 的部分可以先單獨拆出來。由【已知 1】與【已知 2】，三個分量的 <span class="math notranslate nohighlight">\(\phi\)</span> 積分分別為</p>
+<ul class="simple">
+<li><p>(a) <span class="math notranslate nohighlight">\(z\)</span> 分量（<span class="math notranslate nohighlight">\(z = r\cos\theta\)</span>，完全不含 <span class="math notranslate nohighlight">\(\phi\)</span>）：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{gather*}
+\int_{0}^{2\pi}\Phi_{m_l'}^{*}\Phi_{m_l}\,d\phi &amp;\overset{\text{已知 1}}{=}&amp; \frac{1}{2\pi}\int_{0}^{2\pi}e^{i\left( m_l - m_l' \right)\phi}\,d\phi
+\end{gather*}\]</div>
+<p>此積分只在 <span class="math notranslate nohighlight">\(m_l - m_l' = 0\)</span> 時不為零（否則被積函數是完整週期的複數指數，積分恆為零），故</p>
+<div class="math notranslate nohighlight">
+\[\Delta m_l \overset{\text{def}}{=} m_l' - m_l = 0\]</div>
+<ul class="simple">
+<li><p>(b) <span class="math notranslate nohighlight">\(x\)</span>、<span class="math notranslate nohighlight">\(y\)</span> 分量（含 <span class="math notranslate nohighlight">\(\cos\phi\)</span> 或 <span class="math notranslate nohighlight">\(\sin\phi\)</span>）：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\cos\phi &amp;=&amp; \frac{e^{i\phi} + e^{-i\phi}}{2} \\
+\sin\phi &amp;=&amp; \frac{e^{i\phi} - e^{-i\phi}}{2i}
+\end{gather*}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{gather*}
+\int_{0}^{2\pi}\Phi_{m_l'}^{*}\cos\phi\,\Phi_{m_l}\,d\phi &amp;\overset{\text{已知 1}}{=}&amp; \frac{1}{4\pi}\int_{0}^{2\pi}\left[ e^{i\left( m_l - m_l' + 1 \right)\phi} + e^{i\left( m_l - m_l' - 1 \right)\phi} \right]d\phi
+\end{gather*}\]</div>
+<p>只在 <span class="math notranslate nohighlight">\(m_l - m_l' \pm 1 = 0\)</span> 時不為零，故</p>
+<div class="math notranslate nohighlight">
+\[\Delta m_l = \pm 1\]</div>
+<p>合併 (a)(b)：</p>
+<div class="math notranslate nohighlight">
+\[\Delta m_l = 0, \pm 1 \tag{6.37}\]</div>
+</section>
+<section id="l">
+<h3>推導：<span class="math notranslate nohighlight">\(l\)</span> 的選擇規則<a class="headerlink" href="#l" title="Link to this heading">#</a></h3>
+<p>取 <span class="math notranslate nohighlight">\(z\)</span> 分量為代表。<span class="math notranslate nohighlight">\((6.34)\)</span> 的 <span class="math notranslate nohighlight">\(\theta\)</span> 部分為</p>
+<div class="math notranslate nohighlight">
+\[\int_{0}^{\pi}\Theta_{l'm_l}\left( \theta \right)\cos\theta\,\Theta_{l m_l}\left( \theta \right)\sin\theta\,d\theta\]</div>
+<p>（其中的 <span class="math notranslate nohighlight">\(\sin\theta\)</span> 來自體積元素 <span class="math notranslate nohighlight">\((6.24)\)</span>。）換元 <span class="math notranslate nohighlight">\(x = \cos\theta\)</span>，則 <span class="math notranslate nohighlight">\(dx = -\sin\theta\,d\theta\)</span>，積分變成</p>
+<div class="math notranslate nohighlight">
+\[\begin{gather*}
+\int_{0}^{\pi}\Theta_{l'm_l}\cos\theta\,\Theta_{l m_l}\sin\theta\,d\theta &amp;\overset{\text{let } x = \cos\theta}{=}&amp; \int_{-1}^{1}P_{l'}^{m_l}\left( x \right)\,x\,P_{l}^{m_l}\left( x \right)dx
+\end{gather*}\]</div>
+<p>這正是【已知 3】的積分。直接引用其結論：</p>
+<div class="math notranslate nohighlight">
+\[\Delta l \overset{\text{def}}{=} l' - l = \pm 1\]</div>
+<p>至於 <span class="math notranslate nohighlight">\(x\)</span>、<span class="math notranslate nohighlight">\(y\)</span> 兩個分量，由【假設 1】的空間等向性：<span class="math notranslate nohighlight">\(\vec{r}\)</span> 的三個分量只差一個座標軸的轉向，而 <span class="math notranslate nohighlight">\(l\)</span> 是<strong>旋轉不變</strong>的量子數（角動量的大小不因座標軸選擇而改變）。因此對 <span class="math notranslate nohighlight">\(z\)</span> 分量成立的限制，對 <span class="math notranslate nohighlight">\(x\)</span>、<span class="math notranslate nohighlight">\(y\)</span> 分量必定同樣成立。故對整個偶極算符 <span class="math notranslate nohighlight">\(\vec{r}\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[\Delta l = \pm 1 \tag{6.36}\]</div>
+</section>
+<section id="id24">
+<h3>選擇規則的意義<a class="headerlink" href="#id24" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\boxed{\Delta l = \pm 1, \qquad \Delta m_l = 0, \pm 1}\]</div>
+<ul class="simple">
+<li><p>這兩條必須<strong>同時</strong>滿足，<span class="math notranslate nohighlight">\((6.34)\)</span> 的積分才不為零，躍遷才會放光。</p></li>
+<li><p>選擇規則<strong>完全不限制 <span class="math notranslate nohighlight">\(n\)</span></strong>。因此 <span class="math notranslate nohighlight">\(n\)</span> 可以從任何一個值跳到任何一個值。</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Delta l = 0\)</span> 是<strong>不允許</strong>的：<span class="math notranslate nohighlight">\(l = 0\)</span>（<span class="math notranslate nohighlight">\(s\)</span> 態）只能跳到 <span class="math notranslate nohighlight">\(l = 1\)</span>（<span class="math notranslate nohighlight">\(p\)</span> 態），不能跳到另一個 <span class="math notranslate nohighlight">\(s\)</span> 態；<span class="math notranslate nohighlight">\(l = 1\)</span> 可以跳到 <span class="math notranslate nohighlight">\(l = 0\)</span> 或 <span class="math notranslate nohighlight">\(l = 2\)</span>，但不能跳到 <span class="math notranslate nohighlight">\(l = 1\)</span> 或 <span class="math notranslate nohighlight">\(l = 3\)</span>。</p></li>
+</ul>
+<p><strong>【物理知識回顧】</strong>
+為什麼「大部分積分都是零」？因為薛丁格方程式在數學上屬於 <strong>Sturm–Liouville 方程式</strong>，其本徵函數天生<a class="reference external" href="https://derek1403.github.io/Theory_Playground/_build/html/01_Derivations/Differential_Equations/Sturm_Liouville_Orthogonality.html">彼此正交</a>：若<strong>沒有</strong>中間那個 <span class="math notranslate nohighlight">\(\vec{r}\)</span>，<span class="math notranslate nohighlight">\(\displaystyle\int\psi_{n'}^{*}\psi_n\,dV\)</span> 對 <span class="math notranslate nohighlight">\(n' \ne n\)</span> <strong>一定</strong>等於零。</p>
+<p>插進一個 <span class="math notranslate nohighlight">\(\vec{r}\)</span> 之後，對稱性被輕微破壞，於是少數幾組 <span class="math notranslate nohighlight">\(\left( l, l' \right)\)</span> 的組合逃過一劫不再為零——但也只有 <span class="math notranslate nohighlight">\(\Delta l = \pm 1\)</span> 這幾組。所以選擇規則不是什麼「剛好那麼巧」的規定，而是<strong>正交性被一個奇函數擾動後的殘留</strong>。</p>
+<p>這裡的選擇規則只限制<strong>電偶極躍遷</strong>。不滿足時，此近似下的矩陣元為零；較高階輻射或碰撞等非輻射機制仍可能造成躍遷。滿足選擇規則也不保證所有徑向積分都非零。</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="zeeman-effect">
+<h2>6.10 塞曼效應 (Zeeman Effect)<a class="headerlink" href="#zeeman-effect" title="Link to this heading">#</a></h2>
+<p><span class="math notranslate nohighlight">\(6.6\)</span> 埋下的伏筆終於要收回來了：<strong><span class="math notranslate nohighlight">\(m_l\)</span> 什麼時候才會現身？加了磁場的時候。</strong></p>
+<section id="id25">
+<h3>假設與已知 (Assumptions &amp; Preliminaries)<a class="headerlink" href="#id25" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><strong>【已知 1】 磁偶極在磁場中的力矩 (Torque on a magnetic dipole)：</strong> 古典電磁學結論。</p>
+<div class="math notranslate nohighlight">
+\[\tau = \mu B \sin\theta\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\tau\)</span> : 力矩 (Torque)，<span class="math notranslate nohighlight">\([\text{N}\cdot\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mu\)</span> : 磁偶極矩大小 (Magnetic dipole moment)，<span class="math notranslate nohighlight">\([\text{A}\cdot\text{m}^{2}]\)</span>，<span class="math notranslate nohighlight">\([\text{J}\cdot\text{T}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(B\)</span> : 磁場強度 (Magnetic flux density)，<span class="math notranslate nohighlight">\([\text{T}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\theta\)</span> : 磁矩與磁場的夾角 (Angle between <span class="math notranslate nohighlight">\(\vec{\mu}\)</span> and <span class="math notranslate nohighlight">\(\vec{B}\)</span>)，<span class="math notranslate nohighlight">\([\text{rad}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 2】 電流迴路的磁矩 (Magnetic moment of a current loop)：</strong> 古典電磁學結論。</p>
+<div class="math notranslate nohighlight">
+\[\mu = I A\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(I\)</span> : 迴路電流 (Loop current)，<span class="math notranslate nohighlight">\([\text{A}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(A\)</span> : 迴路所圍面積 (Enclosed area)，<span class="math notranslate nohighlight">\([\text{m}^{2}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 3】 電流的定義 (Definition of electric current)：</strong> 每秒通過某一點的電荷量。對於一個電荷 <span class="math notranslate nohighlight">\(-e\)</span>、每秒繞行 <span class="math notranslate nohighlight">\(f\)</span> 次的電子：</p>
+<div class="math notranslate nohighlight">
+\[I = -e f\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f\)</span> : 繞行頻率 (Orbital frequency)，<span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+<li><p>負號來自電子帶負電，故電流方向與電子運動方向相反</p></li>
+</ul>
+</li>
+<li><p><strong>【已知 4】 圓周運動的古典力學量 (Classical quantities of circular motion)：</strong></p>
+<ul class="simple">
+<li><p>(a) 角動量：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[L = m v r\]</div>
+<ul class="simple">
+<li><p>(b) 線速度：</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[v = 2\pi f r\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(L\)</span> : 角動量大小 (Angular momentum magnitude)，<span class="math notranslate nohighlight">\([\text{J}\cdot\text{s}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> : 電子質量 (Electron mass)，<span class="math notranslate nohighlight">\([\text{kg}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(v\)</span> : 切線方向速度 (Tangential speed)，<span class="math notranslate nohighlight">\([\text{m}\cdot\text{s}^{-1}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(r\)</span> : 軌道半徑 (Orbital radius)，<span class="math notranslate nohighlight">\([\text{m}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f\)</span> : 繞行頻率 (Orbital frequency)，<span class="math notranslate nohighlight">\([\text{s}^{-1}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【已知 5】 <span class="math notranslate nohighlight">\((6.21)\)</span> 與 <span class="math notranslate nohighlight">\((6.22)\)</span>：</strong> <span class="math notranslate nohighlight">\(6.5\)</span> 與 <span class="math notranslate nohighlight">\(6.6\)</span> 的結果，此處直接引用。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  L &amp;=&amp; \sqrt{l\left( l+1 \right)}\,\hbar \\
+  L_z &amp;=&amp; L\cos\theta = m_l \hbar
+  \end{gather*}\end{split}\]</div>
+</li>
+<li><p><strong>【已知 6】 選擇規則：</strong> <span class="math notranslate nohighlight">\(6.9\)</span> 的結果，此處直接引用。</p>
+<div class="math notranslate nohighlight">
+\[\Delta l = \pm 1, \qquad \Delta m_l = 0, \pm 1\]</div>
+</li>
+<li><p><strong>【假設 1】 磁場方向定義 <span class="math notranslate nohighlight">\(z\)</span> 軸 (The field defines the z-axis)：</strong> 加了磁場之後空間不再等向，<span class="math notranslate nohighlight">\(z\)</span> 軸自然被定義為磁場的方向。這一步是 <span class="math notranslate nohighlight">\(m_l\)</span> 從「沒有物理意義的標號」變成「可觀測量」的關鍵。</p>
+<div class="math notranslate nohighlight">
+\[\vec{B} = B\,\hat{z}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\vec{B}\)</span> : 外加磁場 (Applied magnetic field)，<span class="math notranslate nohighlight">\([\text{T}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(B\)</span> : 磁場大小 (Field magnitude)，<span class="math notranslate nohighlight">\([\text{T}]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{z}\)</span> : <span class="math notranslate nohighlight">\(z\)</span> 軸單位向量 (Unit vector along <span class="math notranslate nohighlight">\(z\)</span>)，<span class="math notranslate nohighlight">\([\text{無單位}]\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>【定義 1】 波耳磁子 (Bohr magneton)：</strong> 把 <span class="math notranslate nohighlight">\((6.41)\)</span> 中的一串常數整包命名。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+  \mu_B &amp;\overset{\text{def}}{=}&amp; \frac{e\hbar}{2m} \\
+  &amp;\approx&amp; 9.274 \times 10^{-24} \ \text{J}\cdot\text{T}^{-1} \\
+  &amp;\approx&amp; 5.788 \times 10^{-5} \ \text{eV}\cdot\text{T}^{-1}
+  \end{gather*}\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mu_B\)</span> : 波耳磁子 (Bohr magneton)，<span class="math notranslate nohighlight">\([\text{J}\cdot\text{T}^{-1}]\)</span></p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="../../_images/Magnetic_Moment_of_Orbital_Electron.png" /></p>
+</section>
+<section id="id26">
+<h3>推導：磁偶極在磁場中的位能<a class="headerlink" href="#id26" title="Link to this heading">#</a></h3>
+<p>把磁矩從與磁場垂直（<span class="math notranslate nohighlight">\(\theta = \pi/2\)</span>）轉到夾角 <span class="math notranslate nohighlight">\(\theta\)</span>，外界所需作的功即為磁能：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+U_m &amp;\overset{\text{已知 1}}{=}&amp; \int_{\pi/2}^{\theta}\tau\,d\theta' \\
+&amp;=&amp; \int_{\pi/2}^{\theta}\mu B \sin\theta' \, d\theta' \\
+&amp;=&amp; \mu B\left[ -\cos\theta' \right]_{\pi/2}^{\theta} \\
+&amp;=&amp; -\mu B\cos\theta
+\end{gather*}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[U_m = -\mu B\cos\theta = -\vec{\mu}\cdot\vec{B} \tag{6.38}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(U_m\)</span> : 磁能 (Magnetic energy)，<span class="math notranslate nohighlight">\([\text{J}]\)</span>，<span class="math notranslate nohighlight">\([\text{eV}]\)</span></p></li>
+</ul>
+</section>
+<section id="id27">
+<h3>推導：軌道電子的磁矩<a class="headerlink" href="#id27" title="Link to this heading">#</a></h3>
+<p>電子在軌道上繞行，等效於一個電流迴路：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\mu &amp;\overset{\text{已知 2}}{=}&amp; I A \\
+&amp;\overset{\text{已知 3}}{=}&amp; \left( -ef \right)\left( \pi r^2 \right) \\
+&amp;=&amp; -e f \pi r^2
+\end{gather*}\end{split}\]</div>
+<p>同一個繞行運動的角動量為：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+L &amp;\overset{\text{已知 4(a)}}{=}&amp; m v r \\
+&amp;\overset{\text{已知 4(b)}}{=}&amp; m\left( 2\pi f r \right)r \\
+&amp;=&amp; 2\pi m f r^2
+\end{gather*}\end{split}\]</div>
+<p>兩式相除，<span class="math notranslate nohighlight">\(f\)</span> 與 <span class="math notranslate nohighlight">\(r^2\)</span> 全部消掉：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\frac{\mu}{L} &amp;\overset{\text{上兩式}}{=}&amp; \frac{-e f \pi r^2}{2\pi m f r^2} \\
+&amp;=&amp; -\frac{e}{2m}
+\end{gather*}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\vec{\mu} = -\left( \frac{e}{2m} \right)\vec{L} \tag{6.39}\]</div>
+<ul class="simple">
+<li><p>負號代表<strong>磁矩與角動量方向相反</strong>（因為電子帶負電）</p></li>
+<li><p>比值 <span class="math notranslate nohighlight">\(\dfrac{e}{2m}\)</span> 稱為<strong>旋磁比 (gyromagnetic ratio)</strong>，是一個只跟電子本身有關的普適常數</p></li>
+</ul>
+</section>
+<section id="id28">
+<h3>推導：磁能的量子化<a class="headerlink" href="#id28" title="Link to this heading">#</a></h3>
+<p>把 <span class="math notranslate nohighlight">\((6.39)\)</span> 代入 <span class="math notranslate nohighlight">\((6.38)\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+U_m &amp;\overset{\text{(6.38)}}{=}&amp; -\mu B\cos\theta \\
+&amp;\overset{\text{(6.39)}}{=}&amp; \left( \frac{e}{2m} \right)L B\cos\theta
+\end{gather*}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[U_m = \left( \frac{e}{2m} \right)L B\cos\theta \tag{6.40}\]</div>
+<p>由【假設 1】，<span class="math notranslate nohighlight">\(z\)</span> 軸就是磁場方向，故 <span class="math notranslate nohighlight">\(L\cos\theta\)</span> 正是角動量在磁場方向的投影 <span class="math notranslate nohighlight">\(L_z\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+U_m &amp;\overset{\text{(6.40)}}{=}&amp; \left( \frac{e}{2m} \right)B \cdot L\cos\theta \\
+&amp;\overset{\text{已知 5}}{=}&amp; \left( \frac{e}{2m} \right)B \cdot m_l\hbar \\
+&amp;=&amp; m_l \left( \frac{e\hbar}{2m} \right)B \\
+&amp;\overset{\text{定義 1}}{=}&amp; m_l \mu_B B
+\end{gather*}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[U_m = m_l\left( \frac{e\hbar}{2m} \right)B = m_l\,\mu_B B \tag{6.41}\]</div>
+<p>（若要用夾角的形式表達，由【已知 5】可得 <span class="math notranslate nohighlight">\(\cos\theta = \dfrac{L_z}{L} = \dfrac{m_l}{\sqrt{l(l+1)}}\)</span>，代入 <span class="math notranslate nohighlight">\((6.40)\)</span> 得到完全相同的結果。）</p>
+<p><strong>這就是關鍵結論：</strong> 沒有磁場時能量與 <span class="math notranslate nohighlight">\(m_l\)</span> 無關（簡併）；加了磁場之後，不同的 <span class="math notranslate nohighlight">\(m_l\)</span> 得到<strong>不同的</strong>磁能，簡併被打破。而且注意 <span class="math notranslate nohighlight">\(m_l\)</span> 可正可負，故磁能可能是增加、也可能是減少。</p>
+<p><img alt="" src="../../_images/Normal_Zeeman_Effect.png" /></p>
+</section>
+<section id="id29">
+<h3>推導：一條譜線分裂成三條<a class="headerlink" href="#id29" title="Link to this heading">#</a></h3>
+<p>考慮 <span class="math notranslate nohighlight">\(l = 2 \to l = 1\)</span> 的躍遷（滿足【已知 6】的 <span class="math notranslate nohighlight">\(\Delta l = -1\)</span>）。加磁場前，<span class="math notranslate nohighlight">\(l = 2\)</span> 與 <span class="math notranslate nohighlight">\(l = 1\)</span> 各自只有一個能量，躍遷只給出一條譜線 <span class="math notranslate nohighlight">\(h\nu_0\)</span>。</p>
+<p>加磁場後：</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(l = 2\)</span> 的能階依 <span class="math notranslate nohighlight">\(m_l = -2, -1, 0, 1, 2\)</span> <strong>分裂成五條</strong></p></li>
+<li><p><span class="math notranslate nohighlight">\(l = 1\)</span> 的能階依 <span class="math notranslate nohighlight">\(m_l = -1, 0, 1\)</span> <strong>分裂成三條</strong></p></li>
+</ul>
+<p>理論上有 <span class="math notranslate nohighlight">\(5 \times 3 = 15\)</span> 種躍遷組合，但【已知 6】限制 <span class="math notranslate nohighlight">\(\Delta m_l = 0, \pm 1\)</span>，且由 <span class="math notranslate nohighlight">\((6.41)\)</span> 躍遷放出的能量只取決於 <span class="math notranslate nohighlight">\(\Delta m_l\)</span>：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+h\nu &amp;=&amp; h\nu_0 + \Delta U_m \\
+h\nu &amp;\overset{\text{(6.41)}}{=}&amp; h\nu_0 - \Delta m_l \,\mu_B B \\
+\nu &amp;=&amp; \nu_0 - \frac{\Delta m_l \, \mu_B B}{h} \\
+\nu &amp;\overset{\text{定義 1}}{=}&amp; \nu_0 - \Delta m_l \frac{eB}{4\pi m}
+\end{gather*}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\nu = \nu_0 - \Delta m_l\left( \frac{eB}{4\pi m} \right), \qquad \Delta m_l = 0, \pm 1 \tag{6.43}\]</div>
+<p>因此<strong>不論 15 種組合怎麼配，最後只會出現三種頻率</strong>：</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(\Delta m_l\)</span></p></th>
+<th class="head"><p>頻率</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(+1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\nu_0 - \dfrac{eB}{4\pi m}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\nu_0\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(-1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\nu_0 + \dfrac{eB}{4\pi m}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>一條譜線分裂成三條——這就是<strong>正常塞曼效應 (Normal Zeeman effect)</strong>。</p>
+</section>
+<section id="id30">
+<h3><strong>例題 6.4：塞曼分裂的大小</strong><a class="headerlink" href="#id30" title="Link to this heading">#</a></h3>
+<p><strong>題目：</strong> 某元素的樣本放置於 <span class="math notranslate nohighlight">\(0.300 \ \text{T}\)</span>（特斯拉，<span class="math notranslate nohighlight">\(1 \ \text{T} = 10{,}000 \ \text{Gauss}\)</span>）的磁場中而被適當地激發，此元素 <span class="math notranslate nohighlight">\(450 \ \text{nm}\)</span> 光譜線的塞曼成份距離多遠？</p>
+<p><strong>解答：</strong></p>
+<p>由 <span class="math notranslate nohighlight">\((6.43)\)</span>，相鄰塞曼成份的頻率間隔為</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\Delta\nu &amp;\overset{\text{(6.43)}}{=}&amp; \frac{eB}{4\pi m} \\
+&amp;=&amp; \frac{\left( 1.602 \times 10^{-19} \ \text{C} \right)\left( 0.300 \ \text{T} \right)}{4\pi\left( 9.11 \times 10^{-31} \ \text{kg} \right)} \\
+&amp;\approx&amp; 4.20 \times 10^{9} \ \text{Hz}
+\end{gather*}\end{split}\]</div>
+<p>再把頻率間隔換算成波長間隔。由 <span class="math notranslate nohighlight">\(\nu = c/\lambda\)</span> 微分：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\nu &amp;=&amp; \frac{c}{\lambda} \\
+d\nu &amp;=&amp; -\frac{c\,d\lambda}{\lambda^2} \\
+\left| \Delta\lambda \right| &amp;=&amp; \frac{\lambda^2 \Delta\nu}{c}
+\end{gather*}\end{split}\]</div>
+<p>代入數值：</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gather*}
+\Delta\lambda &amp;=&amp; \frac{\left( 450 \times 10^{-9} \ \text{m} \right)^2\left( 4.20 \times 10^{9} \ \text{s}^{-1} \right)}{3.00 \times 10^{8} \ \text{m}\cdot\text{s}^{-1}} \\
+&amp;\approx&amp; 2.83 \times 10^{-12} \ \text{m} \\
+&amp;\approx&amp; 0.00283 \ \text{nm}
+\end{gather*}\end{split}\]</div>
+<p><strong>【物理知識回顧】</strong>
+這個數字非常小：<span class="math notranslate nohighlight">\(450 \ \text{nm}\)</span> 的譜線分裂成 <span class="math notranslate nohighlight">\(450.00283 \ \text{nm}\)</span> 與 <span class="math notranslate nohighlight">\(449.99717 \ \text{nm}\)</span>，相對變化量不到萬分之一。</p>
+<p>這也回答了一個歷史問題：<strong>為什麼萊曼、巴耳末當年沒有發現塞曼效應？</strong> 因為當時光譜儀的解析度根本看不到這麼細微的分裂。這裡是外加磁場造成的塞曼分裂；下一章的<strong>精細結構 (fine structure)</strong> 則涉及相對論與自旋相關修正，兩者不應只因分裂很小就混為一談。</p>
+<p>順帶一提，本節講的是「正常」塞曼效應——之所以叫正常，是因為它只用到軌道角動量。真實原子還有電子自旋，會產生更複雜的「異常塞曼效應」，那要等到考慮自旋之後才能處理。</p>
+<hr class="docutils" />
+<p><strong>本章總結</strong></p>
+<p>我們從一條薛丁格方程式出發，換到球座標、做兩次變數分離、解三條本徵方程式，得到三個量子數 <span class="math notranslate nohighlight">\(n\)</span>、<span class="math notranslate nohighlight">\(l\)</span>、<span class="math notranslate nohighlight">\(m_l\)</span>，然後：</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(n\)</span> 給出能量量子化 <span class="math notranslate nohighlight">\(E_n = E_1/n^2\)</span>，重現了波耳的結果，但<strong>不需要任何假設</strong></p></li>
+<li><p><span class="math notranslate nohighlight">\(l\)</span> 給出角動量量子化 <span class="math notranslate nohighlight">\(L = \sqrt{l(l+1)}\hbar\)</span>，並解釋了化學裡的 <span class="math notranslate nohighlight">\(s, p, d, f\)</span> 軌域</p></li>
+<li><p><span class="math notranslate nohighlight">\(m_l\)</span> 給出角動量的空間量子化 <span class="math notranslate nohighlight">\(L_z = m_l\hbar\)</span>，並在磁場中造成塞曼分裂</p></li>
+<li><p>波函數的位置期望值解釋了<strong>為什麼躍遷會放光</strong>，以及<strong>什麼時候不會放光</strong>（選擇規則）</p></li>
+</ul>
+<p>換句話說，你以前在化學課背的原子軌域，其實就是解這條微分方程式的結果。</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lecture\06_Quantum_Theory_of_the_Hydrogen_Atom"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schrodingers-equation-for-the-hydrogen-atom">6.1 氫原子的薛丁格方程式 (Schrödinger’s Equation for the Hydrogen Atom)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">出發點的兩條式子</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">為什麼不能用卡氏座標硬解</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-preliminaries">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">推導</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separation-of-variables">6.2 變數分離 (Separation of Variables)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">推導：第一步 —— 拆成三個函數相乘</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phi">推導：第二步 —— 第一次分離（<span class="math notranslate nohighlight">\(\phi\)</span>）</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#theta-r">推導：第三步 —— 第二次分離（<span class="math notranslate nohighlight">\(\theta\)</span> 與 <span class="math notranslate nohighlight">\(r\)</span>）</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">三條全微分方程式</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-numbers">6.3 量子數 (Quantum Numbers)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-solve-to-m-l">(a) solve 方位角方程式 <span class="math notranslate nohighlight">\(\to\)</span> 磁量子數 <span class="math notranslate nohighlight">\(m_l\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-solve-to-l">(b) solve 天頂角方程式 <span class="math notranslate nohighlight">\(\to\)</span> 軌道量子數 <span class="math notranslate nohighlight">\(l\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-solve-to-n">(c) solve 徑向方程式 <span class="math notranslate nohighlight">\(\to\)</span> 主量子數 <span class="math notranslate nohighlight">\(n\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#n-1-2-3">表 6.1 氫原子的正規化波函數（<span class="math notranslate nohighlight">\(n = 1, 2, 3\)</span>）</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#s-a-0-e-1"><strong>例題 6.1：由 <span class="math notranslate nohighlight">\(1s\)</span> 徑向波函數反求 <span class="math notranslate nohighlight">\(a_0\)</span> 與 <span class="math notranslate nohighlight">\(E_1\)</span></strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principal-quantum-number">6.4 主量子數 (Principal Quantum Number)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">為什麼能量必須是負的</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#orbital-quantum-number">6.5 軌道量子數 (Orbital Quantum Number)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">推導：把總能量拆開代回 <span class="math notranslate nohighlight">\((6.14)\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">推導：軌道動能的量子化</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">表 6.2 原子的電子態</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#magnetic-quantum-number">6.6 磁量子數 (Magnetic Quantum Number)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">推導：空間量子化</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">空間量子化的圖像</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">測不準原理與空間量子化</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electron-probability-density">6.7 電子機率密度 (Electron Probability Density)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">推導：球殼機率</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#s-left-langle-1-r-right-rangle"><strong>例題 6.2：<span class="math notranslate nohighlight">\(1s\)</span> 電子的 <span class="math notranslate nohighlight">\(\left\langle 1/r \right\rangle\)</span></strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-0-a-0-2"><strong>例題 6.3：<span class="math notranslate nohighlight">\(a_0\)</span> 與 <span class="math notranslate nohighlight">\(a_0/2\)</span> 處的機率比</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#radiative-transitions">6.8 輻射躍遷 (Radiative Transitions)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">推導：單一定態不會輻射</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">推導：兩態疊加產生電偶極振盪</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">結論：為什麼會放光</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selection-rules">6.9 選擇規則 (Selection Rules)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#m-l">推導：<span class="math notranslate nohighlight">\(m_l\)</span> 的選擇規則</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#l">推導：<span class="math notranslate nohighlight">\(l\)</span> 的選擇規則</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">選擇規則的意義</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zeeman-effect">6.10 塞曼效應 (Zeeman Effect)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">假設與已知 (Assumptions &amp; Preliminaries)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">推導：磁偶極在磁場中的位能</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">推導：軌道電子的磁矩</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id28">推導：磁能的量子化</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id29">推導：一條譜線分裂成三條</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id30"><strong>例題 6.4：塞曼分裂的大小</strong></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC YE
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

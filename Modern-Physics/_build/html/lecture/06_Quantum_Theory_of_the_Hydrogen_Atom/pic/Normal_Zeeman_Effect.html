@@ -1,0 +1,785 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Normal_Zeeman_Effect.png &#8212; Modern Physics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lecture/06_Quantum_Theory_of_the_Hydrogen_Atom/pic/Normal_Zeeman_Effect';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Orbital_Angular_Momentum_Quantization.png" href="Orbital_Angular_Momentum_Quantization.html" />
+    <link rel="prev" title="Magnetic_Moment_of_Orbital_Electron.png" href="Magnetic_Moment_of_Orbital_Electron.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/logo.png" class="logo__image only-light" alt="Modern Physics - Home"/>
+    <script>document.write(`<img src="../../../_static/logo.png" class="logo__image only-dark" alt="Modern Physics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../intro.html">
+                    近代物理 (Modern Physics) 課程筆記
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lecture.html">lecture.md</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../00_Introduction/introduction.html">Modern Physics - Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_Relativity/relativity.html">Modern Physics - Relativity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Particle_Properties_of_Waves/particle_properties_of_waves.html">Modern Physics - Particle Properties of Waves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_Wave_Properties_of_Particles/wave_properties_of_particles.html">Modern Physics - Wave Properties of Particles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../04_Atomic_Structure/atomic_structure.html">Modern Physics - Atomic Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../05_Quantum_Mechanics/quantum_mechanics.html">Modern Physics - Quantum Mechanics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quantum_theory_of_the_hydrogen_atom.html">Modern Physics - Quantum Theory of the Hydrogen Atom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../07_Many-Electron_Atoms/many_electron_atoms.html">Modern Physics - Many-Electron Atoms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../08_Molecules/molecules.html">Modern Physics - Molecules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_Statistical_Mechanics/statistical_mechanics.html">Modern Physics - Statistical Mechanics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../10_The_Solid_State/the_solid_state.html">Modern Physics - The Solid State</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../homework/homework.html">homework hardword</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../homework/hw1/hw1.html">Modern Physics Hw 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../homework/hw2/hw2.html">Modern Physics Hw 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../homework/hw3/hw3.html">Modern Physics Hw 3</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../../homework/hw4/hw4.html">Modern Physics Hw 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../homework/hw5/hw5.html">Modern Physics Hw 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../homework/hw6/hw6.html">Modern Physics Hw 6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../homework/hw7/hw7.html">Modern Physics Hw 7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../homework/hw8/hw8.html">Modern Physics Hw 8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../homework/hw9/hw9.html">Modern Physics Hw 9</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../Exam/final/final_questions.html">Final Exam — 題目</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../Exam/final/final_solutions.html">Final Exam — 題目與解答</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../../supporting_documents.html">附錄 — 原未收錄文件與來源清單</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="00_STYLE_GUIDE.html">00 共用視覺規範 (Shared Visual Style Guide)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GENERATION_NOTES.html">圖片生成紀錄</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Hydrogen_Energy_Levels.html">Hydrogen_Energy_Levels.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Magnetic_Moment_of_Orbital_Electron.html">Magnetic_Moment_of_Orbital_Electron.png</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Normal_Zeeman_Effect.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Orbital_Angular_Momentum_Quantization.html">Orbital_Angular_Momentum_Quantization.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html">第六章圖片清單 (Chapter 6 Figure Checklist)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Radial_Probability_Density.html">Radial_Probability_Density.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Radiative_Transition_Dipole_Oscillation.html">Radiative_Transition_Dipole_Oscillation.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Selection_Rules_Energy_Level_Diagram.html">Selection_Rules_Energy_Level_Diagram.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Separation_of_Variables_Roadmap.html">Separation_of_Variables_Roadmap.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Space_Quantization_of_Angular_Momentum.html">Space_Quantization_of_Angular_Momentum.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Spherical_Polar_Coordinates.html">Spherical_Polar_Coordinates.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Spherical_Volume_Element.html">Spherical_Volume_Element.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Three_Eigen_Equations_and_Quantum_Numbers.html">Three_Eigen_Equations_and_Quantum_Numbers.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../07_Many-Electron_Atoms/pic/00_STYLE_GUIDE.html">00 共用視覺規範 (Shared Visual Style Guide)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../07_Many-Electron_Atoms/pic/Exchange_Symmetry_and_Pauli.html">Exchange_Symmetry_and_Pauli.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../07_Many-Electron_Atoms/pic/Fine_Structure_and_Anomalous_Zeeman.html">Fine_Structure_and_Anomalous_Zeeman.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../07_Many-Electron_Atoms/pic/GENERATION_NOTES.html">產圖紀錄</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../07_Many-Electron_Atoms/pic/Hunds_Rule.html">Hunds_Rule.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../07_Many-Electron_Atoms/pic/LS_Coupling_and_Precession.html">LS_Coupling_and_Precession.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../07_Many-Electron_Atoms/pic/Many_Electron_Atoms_Roadmap.html">Many_Electron_Atoms_Roadmap.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../07_Many-Electron_Atoms/pic/Periodic_Table_Blocks_and_Trends.html">Periodic_Table_Blocks_and_Trends.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../07_Many-Electron_Atoms/pic/README.html">第七章圖片清單 (Chapter 7 Figure Checklist)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../07_Many-Electron_Atoms/pic/Shells_and_Subshell_Capacity.html">Shells_and_Subshell_Capacity.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../07_Many-Electron_Atoms/pic/Shielding_and_Ionization_Energy.html">Shielding_and_Ionization_Energy.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../07_Many-Electron_Atoms/pic/Spin_Orbit_Coupling.html">Spin_Orbit_Coupling.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../07_Many-Electron_Atoms/pic/Stern_Gerlach_and_Spin_Quantization.html">Stern_Gerlach_and_Spin_Quantization.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../07_Many-Electron_Atoms/pic/Subshell_Filling_Order.html">Subshell_Filling_Order.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../07_Many-Electron_Atoms/pic/Term_Symbol_Anatomy.html">Term_Symbol_Anatomy.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../07_Many-Electron_Atoms/pic/Total_Angular_Momentum_Vector_Addition.html">Total_Angular_Momentum_Vector_Addition.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../07_Many-Electron_Atoms/pic/Xray_Spectra_and_Auger_Effect.html">Xray_Spectra_and_Auger_Effect.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../08_Molecules/pic/00_STYLE_GUIDE.html">00 共用視覺規範 (Shared Visual Style Guide)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../08_Molecules/pic/Double_Well_Electron_Sharing.html">Double_Well_Electron_Sharing.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../08_Molecules/pic/Fluorescence_and_Phosphorescence.html">Fluorescence_and_Phosphorescence.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../08_Molecules/pic/GENERATION_REPORT_20261026.html">第八章圖片生成紀錄</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../08_Molecules/pic/H2_Spin_Energy_Curves.html">H2_Spin_Energy_Curves.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../08_Molecules/pic/H2plus_Energy_Curves.html">H2plus_Energy_Curves.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../08_Molecules/pic/Hybrid_Orbitals_sp3_sp2.html">Hybrid_Orbitals_sp3_sp2.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../08_Molecules/pic/Molecular_Bond_Types.html">Molecular_Bond_Types.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../08_Molecules/pic/Molecular_Energy_Scales.html">Molecular_Energy_Scales.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../08_Molecules/pic/Parabolic_Approximation_Two_Body_Oscillator.html">Parabolic_Approximation_Two_Body_Oscillator.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../08_Molecules/pic/Polyatomic_Vibration_Modes_Greenhouse.html">Polyatomic_Vibration_Modes_Greenhouse.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../08_Molecules/pic/README.html">第八章圖片清單 (Chapter 8 Figure Checklist)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../08_Molecules/pic/Rigid_Rotor_Levels_and_Spectrum.html">Rigid_Rotor_Levels_and_Spectrum.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../08_Molecules/pic/Sigma_Pi_Bonds.html">Sigma_Pi_Bonds.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../08_Molecules/pic/Symmetric_Antisymmetric_Wavefunctions.html">Symmetric_Antisymmetric_Wavefunctions.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../08_Molecules/pic/Vibration_Rotation_Levels.html">Vibration_Rotation_Levels.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../08_Molecules/pic/p_Orbitals_Linear_Combination.html">p_Orbitals_Linear_Combination.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_Statistical_Mechanics/pic/00_STYLE_GUIDE.html">00 共用視覺規範 (Shared Visual Style Guide)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_Statistical_Mechanics/pic/Cavity_Standing_Waves_j_Space.html">Cavity_Standing_Waves_j_Space.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_Statistical_Mechanics/pic/Earth_Energy_Budget_Greenhouse.html">Earth_Energy_Budget_Greenhouse.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_Statistical_Mechanics/pic/Einstein_Coefficients_Three_Transitions.html">Einstein_Coefficients_Three_Transitions.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_Statistical_Mechanics/pic/Electron_Energy_Distribution_in_Metal.html">Electron_Energy_Distribution_in_Metal.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_Statistical_Mechanics/pic/Equipartition_Degrees_of_Freedom.html">Equipartition_Degrees_of_Freedom.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_Statistical_Mechanics/pic/Fermi_Dirac_Distribution_Temperature.html">Fermi_Dirac_Distribution_Temperature.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_Statistical_Mechanics/pic/Free_Electron_Density_of_States.html">Free_Electron_Density_of_States.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_Statistical_Mechanics/pic/Maxwell_Speed_Distribution.html">Maxwell_Speed_Distribution.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_Statistical_Mechanics/pic/Momentum_Space_and_Energy_Distribution.html">Momentum_Space_and_Energy_Distribution.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_Statistical_Mechanics/pic/README.html">第九章圖片清單 (Chapter 9 Figure Checklist)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_Statistical_Mechanics/pic/Rayleigh_Jeans_vs_Planck.html">Rayleigh_Jeans_vs_Planck.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_Statistical_Mechanics/pic/Specific_Heat_Dulong_Petit_vs_Einstein.html">Specific_Heat_Dulong_Petit_vs_Einstein.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_Statistical_Mechanics/pic/Statistical_Distribution_Overview.html">Statistical_Distribution_Overview.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_Statistical_Mechanics/pic/Three_Quantum_Statistics_Comparison.html">Three_Quantum_Statistics_Comparison.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../10_The_Solid_State/pic/00_STYLE_GUIDE.html">00 共用視覺規範 (Shared Visual Style Guide)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../10_The_Solid_State/pic/Bragg_Reflection_and_Band_Gap.html">Bragg_Reflection_and_Band_Gap.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../10_The_Solid_State/pic/Conductor_Insulator_Semiconductor_Bands.html">Conductor_Insulator_Semiconductor_Bands.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../10_The_Solid_State/pic/Covalent_Carbon_Structures.html">Covalent_Carbon_Structures.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../10_The_Solid_State/pic/Crystal_Defects.html">Crystal_Defects.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../10_The_Solid_State/pic/Crystalline_vs_Amorphous_Order.html">Crystalline_vs_Amorphous_Order.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../10_The_Solid_State/pic/Diode_Variants_LED_Tunnel_Zener.html">Diode_Variants_LED_Tunnel_Zener.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../10_The_Solid_State/pic/Doping_Donor_Acceptor_Levels.html">Doping_Donor_Acceptor_Levels.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../10_The_Solid_State/pic/Drift_Velocity_and_Resistivity.html">Drift_Velocity_and_Resistivity.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../10_The_Solid_State/pic/Energy_Levels_to_Energy_Bands.html">Energy_Levels_to_Energy_Bands.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../10_The_Solid_State/pic/Ionic_Crystal_Potential_Energy.html">Ionic_Crystal_Potential_Energy.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../10_The_Solid_State/pic/Junction_Transistor_and_FET.html">Junction_Transistor_and_FET.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../10_The_Solid_State/pic/NaCl_CsCl_Lattice_and_Madelung_Sum.html">NaCl_CsCl_Lattice_and_Madelung_Sum.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../10_The_Solid_State/pic/PN_Junction_Bias_Band_Diagrams.html">PN_Junction_Bias_Band_Diagrams.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../10_The_Solid_State/pic/README.html">第十章圖片清單 (Chapter 10 Figure Checklist)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../10_The_Solid_State/pic/Van_der_Waals_Dipole_Interactions.html">Van_der_Waals_Dipole_Interactions.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch6_ch10_revision_notes_20261025.html">ch6–ch10 修訂說明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pic_revision_notes_20261025.html">Ch7–Ch10 圖片描述修訂紀錄（2026-10-25）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../04_Atomic_Structure/pic/Four_Level_He_Ne_Laser.html">He–Ne 四能階雷射替換圖</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flecture/06_Quantum_Theory_of_the_Hydrogen_Atom/pic/Normal_Zeeman_Effect.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/lecture/06_Quantum_Theory_of_the_Hydrogen_Atom/pic/Normal_Zeeman_Effect.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Normal_Zeeman_Effect.png</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">中文提示詞</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#english-prompt">English Prompt</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="normal-zeeman-effect-png">
+<h1>Normal_Zeeman_Effect.png<a class="headerlink" href="#normal-zeeman-effect-png" title="Link to this heading">#</a></h1>
+<p><strong>對應章節：</strong> 6.10 塞曼效應
+<strong>插入位置：</strong> <span class="math notranslate nohighlight">\((6.41)\)</span> <span class="math notranslate nohighlight">\(U_m = m_l\mu_B B\)</span> 之後、「推導：一條譜線分裂成三條」之前
+<strong>課本對應：</strong> 圖 6.17</p>
+<blockquote>
+<div><p>產圖前請先貼上 <code class="docutils literal notranslate"><span class="pre">00_STYLE_GUIDE.md</span></code> 的風格區塊。</p>
+</div></blockquote>
+<hr class="docutils" />
+<section id="id1">
+<h2>中文提示詞<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>請畫一張教學用資訊圖表，主題是「正常塞曼效應：一條譜線為什麼分裂成三條」。
+
+標題列文字：6.10  正常塞曼效應 (The Normal Zeeman Effect)
+
+導言框文字：
+沒有磁場時能量與 m_l 無關（簡併）；加了磁場之後，
+不同的 m_l 得到不同的磁能 U_m = m_l μ_B B，簡併被打破。
+但選擇規則 Δm_l = 0, ±1 把所有可能的躍遷壓縮成只有三種頻率。
+
+主體左半（約 65% 寬）｜pill 標籤：l = 2 → l = 1 的能階分裂與躍遷
+畫一張左右對照的能階圖：
+
+左半邊（標「B = 0，無磁場」）：
+  上方一條藍色水平能階線標「l = 2」，下方一條藍色水平能階線標「l = 1」，
+  兩者之間畫一支垂直向下的黑色箭頭，標「hν₀」，旁邊小字「只有一條譜線」。
+
+右半邊（標「B ≠ 0，加磁場」）：
+  上方把 l = 2 畫成**五條**等間距的水平線，由上而下標 m_l = +2, +1, 0, −1, −2，
+    間距標為 μ_B B（用大括號標出一格間距）。
+  下方把 l = 1 畫成**三條**等間距的水平線，由上而下標 m_l = +1, 0, −1，
+    間距同樣為 μ_B B。
+  用箭頭畫出所有滿足 Δm_l = 0, ±1 的躍遷（共九條），並依 Δm_l 上色：
+    Δm_l = −1：紅色（#C62828）
+    Δm_l = 0 ：綠色（#2E7D32）
+    Δm_l = +1：藍色（#1565C0）
+  在圖旁標註：理論上有 5×3 = 15 種組合，但選擇規則只允許其中九條。
+
+主體左半下方｜pill 標籤：光譜的結果
+畫一條水平的頻率軸 ν，在軸上畫三條垂直譜線：
+  左邊紅線標 ν₀ − eB/(4πm)
+  中間綠線標 ν₀
+  右邊藍線標 ν₀ + eB/(4πm)
+三條線等間距，間距用雙箭頭標為 μ_B B / h = eB/(4πm)。
+軸下方加一行字：九條躍遷只給出三種頻率——因為能量差只取決於 Δm_l。
+再加一條對照：在軸的上方用灰色畫出「B = 0 時只有 ν₀ 一條線」。
+
+主體右半（約 35% 寬）：兩個上下堆疊的說明卡。
+
+卡 1｜pill 標籤：磁能公式
+  U_m = −μ·B = (e/2m) L B cosθ = m_l (eħ/2m) B = m_l μ_B B　(6.41)
+  逐條符號說明：
+    U_m：磁能，單位 eV
+    m_l：磁量子數，可正可負 → 磁能可增可減
+    μ_B：波耳磁子 = eħ/2m ≈ 5.788×10⁻⁵ eV/T
+    B：磁場強度，單位 T
+
+卡 2｜pill 標籤：例題 6.4 — 分裂有多小
+  條列：
+    B = 0.300 T（1 T = 10,000 Gauss）
+    Δν = eB/(4πm) ≈ 4.20×10⁹ Hz
+    λ = 450 nm
+    Δλ = λ²Δν/c ≈ 2.83×10⁻¹² m = 0.00283 nm
+  結論（紅色框）：450 nm 分裂成 450.00283 nm 與 449.99717 nm，
+  相對變化不到萬分之一——這就是為什麼萊曼、巴耳末當年看不到塞曼效應。
+  小字：這類需要高解析度才看得見的結構稱為精細結構 (fine structure)。
+
+右上角「圖例」方框：
+  紅色 — Δm_l = −1（頻率變低）
+  綠色 — Δm_l = 0（頻率不變）
+  藍色 — Δm_l = +1（頻率變高）
+  灰色 — 無磁場時的原始譜線 ν₀
+
+最下方一排粉彩公式盒（三個）：
+1. 淺藍盒：U_m = m_l μ_B B，說明「不同 m_l 得到不同磁能，簡併被打破」
+2. 淺綠盒：ν = ν₀ − Δm_l · eB/(4πm)，說明「(6.43)，只有三種頻率」
+3. 淺紅盒：本節只算軌道角動量，說明「真實原子還有自旋，會產生更複雜的異常塞曼效應」
+</pre></div>
+</div>
+</section>
+<section id="english-prompt">
+<h2>English Prompt<a class="headerlink" href="#english-prompt" title="Link to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Draw an educational infographic titled &quot;The normal Zeeman effect: why one spectral
+line splits into three&quot;. ALL labels in TRADITIONAL CHINESE.
+
+Title bar: 6.10  正常塞曼效應 (The Normal Zeeman Effect)
+
+Intro box (Traditional Chinese):
+沒有磁場時能量與 m_l 無關（簡併）；加了磁場之後，
+不同的 m_l 得到不同的磁能 U_m = m_l μ_B B，簡併被打破。
+但選擇規則 Δm_l = 0, ±1 把所有可能的躍遷壓縮成只有三種頻率。
+
+LEFT ~65%, pill label l = 2 → l = 1 的能階分裂與躍遷:
+A before/after level diagram.
+
+Left side (labelled B = 0，無磁場):
+  A blue horizontal level labelled l = 2 above, another labelled l = 1 below,
+  with a single vertical black arrow between them labelled hν₀ and the note
+  只有一條譜線.
+
+Right side (labelled B ≠ 0，加磁場):
+  Split l = 2 into FIVE equally spaced horizontal lines, labelled top to bottom
+    m_l = +2, +1, 0, −1, −2, the spacing marked μ_B B with a brace on one gap.
+  Split l = 1 into THREE equally spaced lines, labelled top to bottom
+    m_l = +1, 0, −1, same spacing μ_B B.
+  Draw every transition obeying Δm_l = 0, ±1 (nine of them), coloured by Δm_l:
+    Δm_l = −1: red (#C62828)
+    Δm_l = 0 : green (#2E7D32)
+    Δm_l = +1: blue (#1565C0)
+  Annotate: 理論上有 5×3 = 15 種組合，但選擇規則只允許其中九條。
+
+Below that, pill label 光譜的結果:
+A horizontal frequency axis ν carrying three vertical spectral lines:
+  left, red: ν₀ − eB/(4πm)
+  centre, green: ν₀
+  right, blue: ν₀ + eB/(4πm)
+Equally spaced; mark the spacing with a double arrow labelled μ_B B / h = eB/(4πm).
+Caption below the axis: 九條躍遷只給出三種頻率——因為能量差只取決於 Δm_l。
+Above the axis, in grey, show the reference case B = 0 時只有 ν₀ 一條線.
+
+RIGHT ~35%: two stacked cards.
+
+Card 1 pill: 磁能公式
+  U_m = −μ·B = (e/2m) L B cosθ = m_l (eħ/2m) B = m_l μ_B B  (6.41)
+  symbol list:
+    U_m：磁能，單位 eV
+    m_l：磁量子數，可正可負 → 磁能可增可減
+    μ_B：波耳磁子 = eħ/2m ≈ 5.788×10⁻⁵ eV/T
+    B：磁場強度，單位 T
+
+Card 2 pill: 例題 6.4 — 分裂有多小
+  bullet list:
+    B = 0.300 T（1 T = 10,000 Gauss）
+    Δν = eB/(4πm) ≈ 4.20×10⁹ Hz
+    λ = 450 nm
+    Δλ = λ²Δν/c ≈ 2.83×10⁻¹² m = 0.00283 nm
+  conclusion in a red box: 450 nm 分裂成 450.00283 nm 與 449.99717 nm，
+  相對變化不到萬分之一——這就是為什麼萊曼、巴耳末當年看不到塞曼效應。
+  small: 這類需要高解析度才看得見的結構稱為精細結構 (fine structure)。
+
+Top-right legend &quot;圖例&quot;:
+  紅色 — Δm_l = −1（頻率變低）
+  綠色 — Δm_l = 0（頻率不變）
+  藍色 — Δm_l = +1（頻率變高）
+  灰色 — 無磁場時的原始譜線 ν₀
+
+Bottom pastel boxes (three):
+1. light blue: U_m = m_l μ_B B — 不同 m_l 得到不同磁能，簡併被打破
+2. light green: ν = ν₀ − Δm_l · eB/(4πm) — (6.43)，只有三種頻率
+3. light red: 本節只算軌道角動量 — 真實原子還有自旋，會產生更複雜的異常塞曼效應
+</pre></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lecture\06_Quantum_Theory_of_the_Hydrogen_Atom\pic"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Magnetic_Moment_of_Orbital_Electron.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Magnetic_Moment_of_Orbital_Electron.png</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Orbital_Angular_Momentum_Quantization.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Orbital_Angular_Momentum_Quantization.png</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">中文提示詞</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#english-prompt">English Prompt</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC YE
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

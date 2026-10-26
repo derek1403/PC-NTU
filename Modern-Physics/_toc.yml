@@ -16,15 +16,117 @@ chapters:
       title: Modern Physics - Atomic Structure
     - file: lecture/05_Quantum_Mechanics/quantum_mechanics.ipynb
       title: Modern Physics - Quantum Mechanics
-    - file: lecture/06_Quantum_Theory_of_the_Hydrogen_Atom/quantum_theory_of_the_hydrogen_atom.ipynb
+    - file: lecture/06_Quantum_Theory_of_the_Hydrogen_Atom/quantum_theory_of_the_hydrogen_atom.md
       title: Modern Physics - Quantum Theory of the Hydrogen Atom
+    - file: lecture/07_Many-Electron_Atoms/many_electron_atoms.md
+      title: Modern Physics - Many-Electron Atoms
+    - file: lecture/08_Molecules/molecules.md
+      title: Modern Physics - Molecules
+    - file: lecture/09_Statistical_Mechanics/statistical_mechanics.md
+      title: Modern Physics - Statistical Mechanics
+    - file: lecture/10_The_Solid_State/the_solid_state.md
+      title: Modern Physics - The Solid State
 - file: homework/homework.md
   sections:
     - file: homework/hw1/hw1.ipynb
     - file: homework/hw2/hw2.ipynb
     - file: homework/hw3/hw3.ipynb
     - file: homework/hw4/hw4.ipynb
+    - file: homework/hw5/hw5.ipynb
     - file: homework/hw6/hw6.ipynb
     - file: homework/hw7/hw7.ipynb
     - file: homework/hw8/hw8.ipynb
     - file: homework/hw9/hw9.ipynb
+- file: Exam/final/final_questions.md
+  title: Final Exam — 題目
+  sections:
+    - file: Exam/final/final_solutions.md
+      title: Final Exam — 題目與解答
+
+
+- file: supporting_documents.md
+  title: 附錄 — 原未收錄文件與來源清單
+  sections:
+    - file: lecture/06_Quantum_Theory_of_the_Hydrogen_Atom/pic/00_STYLE_GUIDE.md
+    - file: lecture/06_Quantum_Theory_of_the_Hydrogen_Atom/pic/GENERATION_NOTES.md
+    - file: lecture/06_Quantum_Theory_of_the_Hydrogen_Atom/pic/Hydrogen_Energy_Levels.md
+    - file: lecture/06_Quantum_Theory_of_the_Hydrogen_Atom/pic/Magnetic_Moment_of_Orbital_Electron.md
+    - file: lecture/06_Quantum_Theory_of_the_Hydrogen_Atom/pic/Normal_Zeeman_Effect.md
+    - file: lecture/06_Quantum_Theory_of_the_Hydrogen_Atom/pic/Orbital_Angular_Momentum_Quantization.md
+    - file: lecture/06_Quantum_Theory_of_the_Hydrogen_Atom/pic/README.md
+    - file: lecture/06_Quantum_Theory_of_the_Hydrogen_Atom/pic/Radial_Probability_Density.md
+    - file: lecture/06_Quantum_Theory_of_the_Hydrogen_Atom/pic/Radiative_Transition_Dipole_Oscillation.md
+    - file: lecture/06_Quantum_Theory_of_the_Hydrogen_Atom/pic/Selection_Rules_Energy_Level_Diagram.md
+    - file: lecture/06_Quantum_Theory_of_the_Hydrogen_Atom/pic/Separation_of_Variables_Roadmap.md
+    - file: lecture/06_Quantum_Theory_of_the_Hydrogen_Atom/pic/Space_Quantization_of_Angular_Momentum.md
+    - file: lecture/06_Quantum_Theory_of_the_Hydrogen_Atom/pic/Spherical_Polar_Coordinates.md
+    - file: lecture/06_Quantum_Theory_of_the_Hydrogen_Atom/pic/Spherical_Volume_Element.md
+    - file: lecture/06_Quantum_Theory_of_the_Hydrogen_Atom/pic/Three_Eigen_Equations_and_Quantum_Numbers.md
+    - file: lecture/07_Many-Electron_Atoms/pic/00_STYLE_GUIDE.md
+    - file: lecture/07_Many-Electron_Atoms/pic/Exchange_Symmetry_and_Pauli.md
+    - file: lecture/07_Many-Electron_Atoms/pic/Fine_Structure_and_Anomalous_Zeeman.md
+    - file: lecture/07_Many-Electron_Atoms/pic/GENERATION_NOTES.md
+    - file: lecture/07_Many-Electron_Atoms/pic/Hunds_Rule.md
+    - file: lecture/07_Many-Electron_Atoms/pic/LS_Coupling_and_Precession.md
+    - file: lecture/07_Many-Electron_Atoms/pic/Many_Electron_Atoms_Roadmap.md
+    - file: lecture/07_Many-Electron_Atoms/pic/Periodic_Table_Blocks_and_Trends.md
+    - file: lecture/07_Many-Electron_Atoms/pic/README.md
+    - file: lecture/07_Many-Electron_Atoms/pic/Shells_and_Subshell_Capacity.md
+    - file: lecture/07_Many-Electron_Atoms/pic/Shielding_and_Ionization_Energy.md
+    - file: lecture/07_Many-Electron_Atoms/pic/Spin_Orbit_Coupling.md
+    - file: lecture/07_Many-Electron_Atoms/pic/Stern_Gerlach_and_Spin_Quantization.md
+    - file: lecture/07_Many-Electron_Atoms/pic/Subshell_Filling_Order.md
+    - file: lecture/07_Many-Electron_Atoms/pic/Term_Symbol_Anatomy.md
+    - file: lecture/07_Many-Electron_Atoms/pic/Total_Angular_Momentum_Vector_Addition.md
+    - file: lecture/07_Many-Electron_Atoms/pic/Xray_Spectra_and_Auger_Effect.md
+    - file: lecture/08_Molecules/pic/00_STYLE_GUIDE.md
+    - file: lecture/08_Molecules/pic/Double_Well_Electron_Sharing.md
+    - file: lecture/08_Molecules/pic/Fluorescence_and_Phosphorescence.md
+    - file: lecture/08_Molecules/pic/GENERATION_REPORT_20261026.md
+    - file: lecture/08_Molecules/pic/H2_Spin_Energy_Curves.md
+    - file: lecture/08_Molecules/pic/H2plus_Energy_Curves.md
+    - file: lecture/08_Molecules/pic/Hybrid_Orbitals_sp3_sp2.md
+    - file: lecture/08_Molecules/pic/Molecular_Bond_Types.md
+    - file: lecture/08_Molecules/pic/Molecular_Energy_Scales.md
+    - file: lecture/08_Molecules/pic/Parabolic_Approximation_Two_Body_Oscillator.md
+    - file: lecture/08_Molecules/pic/Polyatomic_Vibration_Modes_Greenhouse.md
+    - file: lecture/08_Molecules/pic/README.md
+    - file: lecture/08_Molecules/pic/Rigid_Rotor_Levels_and_Spectrum.md
+    - file: lecture/08_Molecules/pic/Sigma_Pi_Bonds.md
+    - file: lecture/08_Molecules/pic/Symmetric_Antisymmetric_Wavefunctions.md
+    - file: lecture/08_Molecules/pic/Vibration_Rotation_Levels.md
+    - file: lecture/08_Molecules/pic/p_Orbitals_Linear_Combination.md
+    - file: lecture/09_Statistical_Mechanics/pic/00_STYLE_GUIDE.md
+    - file: lecture/09_Statistical_Mechanics/pic/Cavity_Standing_Waves_j_Space.md
+    - file: lecture/09_Statistical_Mechanics/pic/Earth_Energy_Budget_Greenhouse.md
+    - file: lecture/09_Statistical_Mechanics/pic/Einstein_Coefficients_Three_Transitions.md
+    - file: lecture/09_Statistical_Mechanics/pic/Electron_Energy_Distribution_in_Metal.md
+    - file: lecture/09_Statistical_Mechanics/pic/Equipartition_Degrees_of_Freedom.md
+    - file: lecture/09_Statistical_Mechanics/pic/Fermi_Dirac_Distribution_Temperature.md
+    - file: lecture/09_Statistical_Mechanics/pic/Free_Electron_Density_of_States.md
+    - file: lecture/09_Statistical_Mechanics/pic/Maxwell_Speed_Distribution.md
+    - file: lecture/09_Statistical_Mechanics/pic/Momentum_Space_and_Energy_Distribution.md
+    - file: lecture/09_Statistical_Mechanics/pic/README.md
+    - file: lecture/09_Statistical_Mechanics/pic/Rayleigh_Jeans_vs_Planck.md
+    - file: lecture/09_Statistical_Mechanics/pic/Specific_Heat_Dulong_Petit_vs_Einstein.md
+    - file: lecture/09_Statistical_Mechanics/pic/Statistical_Distribution_Overview.md
+    - file: lecture/09_Statistical_Mechanics/pic/Three_Quantum_Statistics_Comparison.md
+    - file: lecture/10_The_Solid_State/pic/00_STYLE_GUIDE.md
+    - file: lecture/10_The_Solid_State/pic/Bragg_Reflection_and_Band_Gap.md
+    - file: lecture/10_The_Solid_State/pic/Conductor_Insulator_Semiconductor_Bands.md
+    - file: lecture/10_The_Solid_State/pic/Covalent_Carbon_Structures.md
+    - file: lecture/10_The_Solid_State/pic/Crystal_Defects.md
+    - file: lecture/10_The_Solid_State/pic/Crystalline_vs_Amorphous_Order.md
+    - file: lecture/10_The_Solid_State/pic/Diode_Variants_LED_Tunnel_Zener.md
+    - file: lecture/10_The_Solid_State/pic/Doping_Donor_Acceptor_Levels.md
+    - file: lecture/10_The_Solid_State/pic/Drift_Velocity_and_Resistivity.md
+    - file: lecture/10_The_Solid_State/pic/Energy_Levels_to_Energy_Bands.md
+    - file: lecture/10_The_Solid_State/pic/Ionic_Crystal_Potential_Energy.md
+    - file: lecture/10_The_Solid_State/pic/Junction_Transistor_and_FET.md
+    - file: lecture/10_The_Solid_State/pic/NaCl_CsCl_Lattice_and_Madelung_Sum.md
+    - file: lecture/10_The_Solid_State/pic/PN_Junction_Bias_Band_Diagrams.md
+    - file: lecture/10_The_Solid_State/pic/README.md
+    - file: lecture/10_The_Solid_State/pic/Van_der_Waals_Dipole_Interactions.md
+    - file: lecture/ch6_ch10_revision_notes_20261025.md
+    - file: lecture/pic_revision_notes_20261025.md
+    - file: lecture/04_Atomic_Structure/pic/Four_Level_He_Ne_Laser.md

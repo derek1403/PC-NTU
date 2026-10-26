@@ -1,0 +1,1969 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>第八章圖片生成紀錄 &#8212; Modern Physics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lecture/08_Molecules/pic/GENERATION_REPORT_20261026';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="H2_Spin_Energy_Curves.png" href="H2_Spin_Energy_Curves.html" />
+    <link rel="prev" title="Fluorescence_and_Phosphorescence.png" href="Fluorescence_and_Phosphorescence.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/logo.png" class="logo__image only-light" alt="Modern Physics - Home"/>
+    <script>document.write(`<img src="../../../_static/logo.png" class="logo__image only-dark" alt="Modern Physics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../intro.html">
+                    近代物理 (Modern Physics) 課程筆記
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lecture.html">lecture.md</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../00_Introduction/introduction.html">Modern Physics - Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_Relativity/relativity.html">Modern Physics - Relativity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_Particle_Properties_of_Waves/particle_properties_of_waves.html">Modern Physics - Particle Properties of Waves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_Wave_Properties_of_Particles/wave_properties_of_particles.html">Modern Physics - Wave Properties of Particles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../04_Atomic_Structure/atomic_structure.html">Modern Physics - Atomic Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../05_Quantum_Mechanics/quantum_mechanics.html">Modern Physics - Quantum Mechanics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_Quantum_Theory_of_the_Hydrogen_Atom/quantum_theory_of_the_hydrogen_atom.html">Modern Physics - Quantum Theory of the Hydrogen Atom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../07_Many-Electron_Atoms/many_electron_atoms.html">Modern Physics - Many-Electron Atoms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../molecules.html">Modern Physics - Molecules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_Statistical_Mechanics/statistical_mechanics.html">Modern Physics - Statistical Mechanics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../10_The_Solid_State/the_solid_state.html">Modern Physics - The Solid State</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../homework/homework.html">homework hardword</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../homework/hw1/hw1.html">Modern Physics Hw 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../homework/hw2/hw2.html">Modern Physics Hw 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../homework/hw3/hw3.html">Modern Physics Hw 3</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../../homework/hw4/hw4.html">Modern Physics Hw 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../homework/hw5/hw5.html">Modern Physics Hw 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../homework/hw6/hw6.html">Modern Physics Hw 6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../homework/hw7/hw7.html">Modern Physics Hw 7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../homework/hw8/hw8.html">Modern Physics Hw 8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../homework/hw9/hw9.html">Modern Physics Hw 9</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../Exam/final/final_questions.html">Final Exam — 題目</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../Exam/final/final_solutions.html">Final Exam — 題目與解答</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../../supporting_documents.html">附錄 — 原未收錄文件與來源清單</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../06_Quantum_Theory_of_the_Hydrogen_Atom/pic/00_STYLE_GUIDE.html">00 共用視覺規範 (Shared Visual Style Guide)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_Quantum_Theory_of_the_Hydrogen_Atom/pic/GENERATION_NOTES.html">圖片生成紀錄</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_Quantum_Theory_of_the_Hydrogen_Atom/pic/Hydrogen_Energy_Levels.html">Hydrogen_Energy_Levels.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_Quantum_Theory_of_the_Hydrogen_Atom/pic/Magnetic_Moment_of_Orbital_Electron.html">Magnetic_Moment_of_Orbital_Electron.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_Quantum_Theory_of_the_Hydrogen_Atom/pic/Normal_Zeeman_Effect.html">Normal_Zeeman_Effect.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_Quantum_Theory_of_the_Hydrogen_Atom/pic/Orbital_Angular_Momentum_Quantization.html">Orbital_Angular_Momentum_Quantization.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_Quantum_Theory_of_the_Hydrogen_Atom/pic/README.html">第六章圖片清單 (Chapter 6 Figure Checklist)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_Quantum_Theory_of_the_Hydrogen_Atom/pic/Radial_Probability_Density.html">Radial_Probability_Density.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_Quantum_Theory_of_the_Hydrogen_Atom/pic/Radiative_Transition_Dipole_Oscillation.html">Radiative_Transition_Dipole_Oscillation.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_Quantum_Theory_of_the_Hydrogen_Atom/pic/Selection_Rules_Energy_Level_Diagram.html">Selection_Rules_Energy_Level_Diagram.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_Quantum_Theory_of_the_Hydrogen_Atom/pic/Separation_of_Variables_Roadmap.html">Separation_of_Variables_Roadmap.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_Quantum_Theory_of_the_Hydrogen_Atom/pic/Space_Quantization_of_Angular_Momentum.html">Space_Quantization_of_Angular_Momentum.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_Quantum_Theory_of_the_Hydrogen_Atom/pic/Spherical_Polar_Coordinates.html">Spherical_Polar_Coordinates.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_Quantum_Theory_of_the_Hydrogen_Atom/pic/Spherical_Volume_Element.html">Spherical_Volume_Element.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_Quantum_Theory_of_the_Hydrogen_Atom/pic/Three_Eigen_Equations_and_Quantum_Numbers.html">Three_Eigen_Equations_and_Quantum_Numbers.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../07_Many-Electron_Atoms/pic/00_STYLE_GUIDE.html">00 共用視覺規範 (Shared Visual Style Guide)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../07_Many-Electron_Atoms/pic/Exchange_Symmetry_and_Pauli.html">Exchange_Symmetry_and_Pauli.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../07_Many-Electron_Atoms/pic/Fine_Structure_and_Anomalous_Zeeman.html">Fine_Structure_and_Anomalous_Zeeman.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../07_Many-Electron_Atoms/pic/GENERATION_NOTES.html">產圖紀錄</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../07_Many-Electron_Atoms/pic/Hunds_Rule.html">Hunds_Rule.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../07_Many-Electron_Atoms/pic/LS_Coupling_and_Precession.html">LS_Coupling_and_Precession.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../07_Many-Electron_Atoms/pic/Many_Electron_Atoms_Roadmap.html">Many_Electron_Atoms_Roadmap.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../07_Many-Electron_Atoms/pic/Periodic_Table_Blocks_and_Trends.html">Periodic_Table_Blocks_and_Trends.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../07_Many-Electron_Atoms/pic/README.html">第七章圖片清單 (Chapter 7 Figure Checklist)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../07_Many-Electron_Atoms/pic/Shells_and_Subshell_Capacity.html">Shells_and_Subshell_Capacity.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../07_Many-Electron_Atoms/pic/Shielding_and_Ionization_Energy.html">Shielding_and_Ionization_Energy.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../07_Many-Electron_Atoms/pic/Spin_Orbit_Coupling.html">Spin_Orbit_Coupling.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../07_Many-Electron_Atoms/pic/Stern_Gerlach_and_Spin_Quantization.html">Stern_Gerlach_and_Spin_Quantization.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../07_Many-Electron_Atoms/pic/Subshell_Filling_Order.html">Subshell_Filling_Order.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../07_Many-Electron_Atoms/pic/Term_Symbol_Anatomy.html">Term_Symbol_Anatomy.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../07_Many-Electron_Atoms/pic/Total_Angular_Momentum_Vector_Addition.html">Total_Angular_Momentum_Vector_Addition.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../07_Many-Electron_Atoms/pic/Xray_Spectra_and_Auger_Effect.html">Xray_Spectra_and_Auger_Effect.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00_STYLE_GUIDE.html">00 共用視覺規範 (Shared Visual Style Guide)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Double_Well_Electron_Sharing.html">Double_Well_Electron_Sharing.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Fluorescence_and_Phosphorescence.html">Fluorescence_and_Phosphorescence.png</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">第八章圖片生成紀錄</a></li>
+<li class="toctree-l2"><a class="reference internal" href="H2_Spin_Energy_Curves.html">H2_Spin_Energy_Curves.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="H2plus_Energy_Curves.html">H2plus_Energy_Curves.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Hybrid_Orbitals_sp3_sp2.html">Hybrid_Orbitals_sp3_sp2.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Molecular_Bond_Types.html">Molecular_Bond_Types.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Molecular_Energy_Scales.html">Molecular_Energy_Scales.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Parabolic_Approximation_Two_Body_Oscillator.html">Parabolic_Approximation_Two_Body_Oscillator.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Polyatomic_Vibration_Modes_Greenhouse.html">Polyatomic_Vibration_Modes_Greenhouse.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html">第八章圖片清單 (Chapter 8 Figure Checklist)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Rigid_Rotor_Levels_and_Spectrum.html">Rigid_Rotor_Levels_and_Spectrum.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Sigma_Pi_Bonds.html">Sigma_Pi_Bonds.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Symmetric_Antisymmetric_Wavefunctions.html">Symmetric_Antisymmetric_Wavefunctions.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Vibration_Rotation_Levels.html">Vibration_Rotation_Levels.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p_Orbitals_Linear_Combination.html">p_Orbitals_Linear_Combination.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_Statistical_Mechanics/pic/00_STYLE_GUIDE.html">00 共用視覺規範 (Shared Visual Style Guide)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_Statistical_Mechanics/pic/Cavity_Standing_Waves_j_Space.html">Cavity_Standing_Waves_j_Space.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_Statistical_Mechanics/pic/Earth_Energy_Budget_Greenhouse.html">Earth_Energy_Budget_Greenhouse.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_Statistical_Mechanics/pic/Einstein_Coefficients_Three_Transitions.html">Einstein_Coefficients_Three_Transitions.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_Statistical_Mechanics/pic/Electron_Energy_Distribution_in_Metal.html">Electron_Energy_Distribution_in_Metal.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_Statistical_Mechanics/pic/Equipartition_Degrees_of_Freedom.html">Equipartition_Degrees_of_Freedom.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_Statistical_Mechanics/pic/Fermi_Dirac_Distribution_Temperature.html">Fermi_Dirac_Distribution_Temperature.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_Statistical_Mechanics/pic/Free_Electron_Density_of_States.html">Free_Electron_Density_of_States.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_Statistical_Mechanics/pic/Maxwell_Speed_Distribution.html">Maxwell_Speed_Distribution.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_Statistical_Mechanics/pic/Momentum_Space_and_Energy_Distribution.html">Momentum_Space_and_Energy_Distribution.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_Statistical_Mechanics/pic/README.html">第九章圖片清單 (Chapter 9 Figure Checklist)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_Statistical_Mechanics/pic/Rayleigh_Jeans_vs_Planck.html">Rayleigh_Jeans_vs_Planck.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_Statistical_Mechanics/pic/Specific_Heat_Dulong_Petit_vs_Einstein.html">Specific_Heat_Dulong_Petit_vs_Einstein.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_Statistical_Mechanics/pic/Statistical_Distribution_Overview.html">Statistical_Distribution_Overview.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_Statistical_Mechanics/pic/Three_Quantum_Statistics_Comparison.html">Three_Quantum_Statistics_Comparison.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../10_The_Solid_State/pic/00_STYLE_GUIDE.html">00 共用視覺規範 (Shared Visual Style Guide)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../10_The_Solid_State/pic/Bragg_Reflection_and_Band_Gap.html">Bragg_Reflection_and_Band_Gap.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../10_The_Solid_State/pic/Conductor_Insulator_Semiconductor_Bands.html">Conductor_Insulator_Semiconductor_Bands.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../10_The_Solid_State/pic/Covalent_Carbon_Structures.html">Covalent_Carbon_Structures.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../10_The_Solid_State/pic/Crystal_Defects.html">Crystal_Defects.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../10_The_Solid_State/pic/Crystalline_vs_Amorphous_Order.html">Crystalline_vs_Amorphous_Order.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../10_The_Solid_State/pic/Diode_Variants_LED_Tunnel_Zener.html">Diode_Variants_LED_Tunnel_Zener.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../10_The_Solid_State/pic/Doping_Donor_Acceptor_Levels.html">Doping_Donor_Acceptor_Levels.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../10_The_Solid_State/pic/Drift_Velocity_and_Resistivity.html">Drift_Velocity_and_Resistivity.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../10_The_Solid_State/pic/Energy_Levels_to_Energy_Bands.html">Energy_Levels_to_Energy_Bands.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../10_The_Solid_State/pic/Ionic_Crystal_Potential_Energy.html">Ionic_Crystal_Potential_Energy.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../10_The_Solid_State/pic/Junction_Transistor_and_FET.html">Junction_Transistor_and_FET.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../10_The_Solid_State/pic/NaCl_CsCl_Lattice_and_Madelung_Sum.html">NaCl_CsCl_Lattice_and_Madelung_Sum.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../10_The_Solid_State/pic/PN_Junction_Bias_Band_Diagrams.html">PN_Junction_Bias_Band_Diagrams.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../10_The_Solid_State/pic/README.html">第十章圖片清單 (Chapter 10 Figure Checklist)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../10_The_Solid_State/pic/Van_der_Waals_Dipole_Interactions.html">Van_der_Waals_Dipole_Interactions.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch6_ch10_revision_notes_20261025.html">ch6–ch10 修訂說明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pic_revision_notes_20261025.html">Ch7–Ch10 圖片描述修訂紀錄（2026-10-25）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../04_Atomic_Structure/pic/Four_Level_He_Ne_Laser.html">He–Ne 四能階雷射替換圖</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flecture/08_Molecules/pic/GENERATION_REPORT_20261026.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/lecture/08_Molecules/pic/GENERATION_REPORT_20261026.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>第八章圖片生成紀錄</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">目視檢查待修訂項目</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">實際生成提示詞</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#molecular-bond-types">Molecular_Bond_Types</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#double-well-electron-sharing">Double_Well_Electron_Sharing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#symmetric-antisymmetric-wavefunctions">Symmetric_Antisymmetric_Wavefunctions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#h2plus-energy-curves">H2plus_Energy_Curves</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#h2-spin-energy-curves">H2_Spin_Energy_Curves</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#p-orbitals-linear-combination">p_Orbitals_Linear_Combination</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sigma-pi-bonds">Sigma_Pi_Bonds</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hybrid-orbitals-sp3-sp2">Hybrid_Orbitals_sp3_sp2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#molecular-energy-scales">Molecular_Energy_Scales</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rigid-rotor-levels-and-spectrum">Rigid_Rotor_Levels_and_Spectrum</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parabolic-approximation-two-body-oscillator">Parabolic_Approximation_Two_Body_Oscillator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vibration-rotation-levels">Vibration_Rotation_Levels</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#polyatomic-vibration-modes-greenhouse">Polyatomic_Vibration_Modes_Greenhouse</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fluorescence-and-phosphorescence">Fluorescence_and_Phosphorescence</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>第八章圖片生成紀錄<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<p>日期：2026-10-26
+方式：內建 image_gen。14 張已生成，尚未通過完整科學校閱。</p>
+<section id="id2">
+<h2>目視檢查待修訂項目<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Molecular_Bond_Types：井深符號應統一 D_e；殼層電子點數需核對。</p></li>
+<li><p>Double_Well_Electron_Sharing：庫侖井應在核位置發散，圖中有限深曲線及核距尺度需修訂。</p></li>
+<li><p>Symmetric_Antisymmetric_Wavefunctions：較小 R 對稱振幅與右側密度的中點峰不符合指定 1s 函數，需重算。</p></li>
+<li><p>H2plus_Energy_Curves：電子能與總能曲線相加關係及漸近線需修訂；遠距應是氫原子加質子。</p></li>
+<li><p>H2_Spin_Energy_Curves：D₀ 箭頭應從振動基態至解離極限；反平行乘積態不等同單重態。</p></li>
+<li><p>p_Orbitals_Linear_Combination：p_y 誤沿 z 軸，須改沿 y 軸；實軌域相位約定需一致。</p></li>
+<li><p>Molecular_Energy_Scales：轉動階梯應按 J(J+1) 排列；能量零點需一致。</p></li>
+<li><p>Rigid_Rotor_Levels_and_Spectrum：能階高度與譜線間距需精確排版。</p></li>
+<li><p>Vibration_Rotation_Levels：P/R 支箭頭端點須符合 J→J−1 / J+1；限定 CO 的 Σ↔Σ 躍遷。</p></li>
+<li><p>Polyatomic_Vibration_Modes_Greenhouse：CO₂ 非對稱伸縮缺左側 O 位移箭頭；4.26 μm 吸收帶位置與刻度不符。</p></li>
+<li><p>Fluorescence_and_Phosphorescence：受激態右移不明顯；磷光箭頭應連到基態能階。</p></li>
+<li><p>全組細小中文字、希臘字母、分數尚需逐字校閱；部分光影與原平塗規範不同。</p></li>
+</ul>
+</section>
+<section id="id3">
+<h2>實際生成提示詞<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<section id="molecular-bond-types">
+<h3>Molecular_Bond_Types<a class="headerlink" href="#molecular-bond-types" title="Link to this heading">#</a></h3>
+<p>【全域風格規範 — 請嚴格遵守】</p>
+<p>輸出形式：一張橫幅資訊圖表（教學用），純白背景，寬高比約 4:3 到 5:4，
+建議輸出 1600×1200 像素以上，線條與文字必須銳利可讀。</p>
+<p>版面骨架（由上到下）：</p>
+<ol class="arabic simple">
+<li><p>左上角：深藍色（#1F3864）圓角矩形標題列，白色粗體字，格式為
+「8.x  中文標題 (English Title)」，中英文之間空兩格。</p></li>
+<li><p>標題列下方：淺藍色（#EAF1FB）圓角矩形導言框，深藍細框線，
+內含 2–4 行中文導言，說明這張圖要回答什麼問題。</p></li>
+<li><p>右上角（若該圖有多種顏色編碼）：白底細框「圖例」方框，
+逐條列出色塊／線型對應的意義。</p></li>
+<li><p>主體區：物理示意圖、分子結構圖、能階圖或座標圖，佔畫面最大面積。</p></li>
+<li><p>各個小節上方：深藍色圓角 pill 標籤（白色字，例如「能量曲線」
+「σ 與 π 的比較」），用來切分主體區的不同段落。</p></li>
+<li><p>最下方：一排粉彩色圓角方框（淺綠 #E8F5E9、淺紫 #F3E5F5、淺藍 #E3F2FD、
+淺紅 #FFEBEE、淺黃 #FFF8E1），每個框內放一條公式與一句中文說明。</p></li>
+</ol>
+<p>配色規則：</p>
+<ul class="simple">
+<li><p>主色：深藍 #1F3864（標題列、pill 標籤、座標軸標記）</p></li>
+<li><p>分區／分類色：綠 #2E7D32、橘 #EF6C00、紫 #7B1FA2、紅 #C62828、藍 #1565C0</p></li>
+<li><p>同一個物理量在整張圖中必須用同一個顏色，不可換色。</p></li>
+<li><p>波函數的正負瓣：正瓣一律橘色、負瓣一律藍色（除非該圖另有指定）。</p></li>
+<li><p>背景一律純白，不要漸層、不要陰影、不要 3D 效果
+（分子軌域的立體形狀可用簡潔的平塗與輪廓線表現，不要寫實光影）。</p></li>
+</ul>
+<p>字體與文字：</p>
+<ul class="simple">
+<li><p>所有標示文字一律使用「繁體中文」，不可出現簡體字。</p></li>
+<li><p>中文用黑體（思源黑體 / Noto Sans TC 一類），英文與數學符號用
+襯線體並呈 LaTeX 排版風格（斜體變數、正體函數名、正確的上下標與分數）。</p></li>
+<li><p>數學式必須排版正確：分數要有橫線，根號要罩住整個被開方式，
+上下標位置正確，希臘字母正確（ψ 波函數、ħ 約化普朗克常數、ε₀ 真空電容率、
+σ/π 鍵的名稱、θ 天頂角、φ 方位角）。</p></li>
+<li><p>特別注意兩個長得很像的希臘字母：ν（nu）是頻率，υ（upsilon）是振動量子數，
+不可混用；分子式的下標（H₂O、CO₂、C₆H₆）與離子的上標（H₂⁺、Na⁺、Cl⁻）必須正確。</p></li>
+<li><p>文字大小分三級：標題列最大、pill 標籤與軸標籤次之、說明文字最小，
+但最小的字也必須清楚可讀。</p></li>
+</ul>
+<p>嚴禁事項：</p>
+<ul class="simple">
+<li><p>不要出現任何浮水印、簽名、Logo、頁碼。</p></li>
+<li><p>不要出現拼錯或亂碼的中文字；寧可少寫字，也不要寫錯字。</p></li>
+<li><p>不要把公式畫成圖片式的手寫體，必須是印刷排版品質。</p></li>
+<li><p>不要用深色背景。</p></li>
+</ul>
+<p>【模型與符號】位能曲線的井深標 D_e；自振動基態解離的能量為 D₀=D_e−E_vib,0，兩者不混用。</p>
+<p>請畫一張教學用資訊圖表，主題是「兩顆原子靠近時的三種結果，以及唯一的判準：能量」。</p>
+<p>標題列文字：8.1  分子鍵的三種結果 (Covalent Bond, Ionic Bond, or No Bond)</p>
+<p>導言框文字：
+兩顆原子靠近時，電子與電子、電子與另一顆原子核、原子核與原子核之間都有庫侖作用。
+結果只有三種：共價鍵（共享電子）、離子鍵（轉移電子）、不鍵結。
+會出現哪一種，完全取決於靠近後的總能量有沒有比分開到無窮遠時更低。</p>
+<p>主體上半：三欄並排，每欄上方掛深藍 pill 標籤。</p>
+<p>欄 1｜pill 標籤：共價鍵 — 共享電子（以 H₂ 為例）
+上方小圖（標「(a) 軌道模型」）：兩個紅色質子（標 +）左右相距 R，
+兩顆藍色電子沿著一條同時繞過兩個質子的「8 字形」虛線軌道運動，
+並在兩質子之間的區域畫得較密。
+下方小圖（標「(b) 量子力學模型」）：同樣兩個質子，外面包一團藍色電子雲，
+雲在兩質子之間最濃（深藍），兩端較淡（淺藍）。
+兩質子之間加一個小標籤：「電子 = 膠水」。
+底下小字：電子在兩核之間停留較久，用負電把兩個互相排斥的正電荷拉在一起。</p>
+<p>欄 2｜pill 標籤：離子鍵 — 轉移電子（以 NaCl 為例）
+畫鈉原子（殼層示意 2, 8, 1，最外層一顆電子用橘色標出）與氯原子（2, 8, 7）。
+一支橘色彎箭頭把鈉最外層的那顆電子送到氯的最外層。
+箭頭右邊畫結果：Na⁺（2, 8，標「+」）與 Cl⁻（2, 8, 8，標「−」），
+兩者之間用紅色雙向箭頭標「庫侖吸引」。
+右下角小插圖：NaCl 晶體的立方格子（小球 Na⁺、大球 Cl⁻ 交錯排列），標「圖 8.3 NaCl 晶體」。
+底下小字：通常發生在第一族與第七族（或第二族與第六族）之間。</p>
+<p>欄 3｜pill 標籤：不鍵結
+兩顆灰色原子，中間畫兩支向外的灰色箭頭，標「能量沒有比分開時低 → 各走各的」。</p>
+<p>主體下半｜pill 標籤：唯一的判準 — 能量比較
+一張座標圖：橫軸「原子核間距 R」，縱軸「系統總能量 E(R)」。
+一條水平灰色虛線標「E(∞)：兩原子分開到無窮遠」。
+綠色曲線（#2E7D32）：R 很小時急遽上升、在 R₀ 處有一個低於 E(∞) 的谷、R 大時趨近 E(∞)；
+谷底標「R₀ 平衡間距」，谷底到虛線之間用雙箭頭標「E_b 鍵結能」；曲線旁標「會鍵結」。
+紅色曲線（#C62828）：從左上單調下降、由上方趨近 E(∞)，沒有任何一點低於虛線；
+曲線旁標「不會鍵結」。</p>
+<p>右上角「圖例」方框：
+藍色雲 — 共享的電子
+橘色箭頭 — 被轉移的電子
+綠色曲線 — 有極小值低於 E(∞)：形成鍵結
+紅色曲線 — 處處高於 E(∞)：不鍵結</p>
+<p>最下方一排粉彩公式盒（三個）：</p>
+<ol class="arabic simple">
+<li><p>淺綠盒：min E(R) &lt; E(∞) ⇔ 形成鍵結，說明「8.1【假設 1】：系統停在能量最低的組態」</p></li>
+<li><p>淺黃盒：E(R) − E(∞) = 5.14 − 3.61 − 1.44/R(nm)  (eV)，說明「NaCl 的能量帳：R &lt; 0.94 nm 就划算」</p></li>
+<li><p>淺藍盒：e²/(4πε₀) ≈ 1.44 eV·nm，說明「本章最常用的數字」</p></li>
+</ol>
+<p>以模型與符號框為優先：位能井深標 D_e，不能標為 D₀。歷史軌道模型只是示意，不是真實電子軌跡。Use case: scientific-educational.</p>
+</section>
+<section id="double-well-electron-sharing">
+<h3>Double_Well_Electron_Sharing<a class="headerlink" href="#double-well-electron-sharing" title="Link to this heading">#</a></h3>
+<p>【全域風格規範 — 請嚴格遵守】</p>
+<p>輸出形式：一張橫幅資訊圖表（教學用），純白背景，寬高比約 4:3 到 5:4，
+建議輸出 1600×1200 像素以上，線條與文字必須銳利可讀。</p>
+<p>版面骨架（由上到下）：</p>
+<ol class="arabic simple">
+<li><p>左上角：深藍色（#1F3864）圓角矩形標題列，白色粗體字，格式為
+「8.x  中文標題 (English Title)」，中英文之間空兩格。</p></li>
+<li><p>標題列下方：淺藍色（#EAF1FB）圓角矩形導言框，深藍細框線，
+內含 2–4 行中文導言，說明這張圖要回答什麼問題。</p></li>
+<li><p>右上角（若該圖有多種顏色編碼）：白底細框「圖例」方框，
+逐條列出色塊／線型對應的意義。</p></li>
+<li><p>主體區：物理示意圖、分子結構圖、能階圖或座標圖，佔畫面最大面積。</p></li>
+<li><p>各個小節上方：深藍色圓角 pill 標籤（白色字，例如「能量曲線」
+「σ 與 π 的比較」），用來切分主體區的不同段落。</p></li>
+<li><p>最下方：一排粉彩色圓角方框（淺綠 #E8F5E9、淺紫 #F3E5F5、淺藍 #E3F2FD、
+淺紅 #FFEBEE、淺黃 #FFF8E1），每個框內放一條公式與一句中文說明。</p></li>
+</ol>
+<p>配色規則：</p>
+<ul class="simple">
+<li><p>主色：深藍 #1F3864（標題列、pill 標籤、座標軸標記）</p></li>
+<li><p>分區／分類色：綠 #2E7D32、橘 #EF6C00、紫 #7B1FA2、紅 #C62828、藍 #1565C0</p></li>
+<li><p>同一個物理量在整張圖中必須用同一個顏色，不可換色。</p></li>
+<li><p>波函數的正負瓣：正瓣一律橘色、負瓣一律藍色（除非該圖另有指定）。</p></li>
+<li><p>背景一律純白，不要漸層、不要陰影、不要 3D 效果
+（分子軌域的立體形狀可用簡潔的平塗與輪廓線表現，不要寫實光影）。</p></li>
+</ul>
+<p>字體與文字：</p>
+<ul class="simple">
+<li><p>所有標示文字一律使用「繁體中文」，不可出現簡體字。</p></li>
+<li><p>中文用黑體（思源黑體 / Noto Sans TC 一類），英文與數學符號用
+襯線體並呈 LaTeX 排版風格（斜體變數、正體函數名、正確的上下標與分數）。</p></li>
+<li><p>數學式必須排版正確：分數要有橫線，根號要罩住整個被開方式，
+上下標位置正確，希臘字母正確（ψ 波函數、ħ 約化普朗克常數、ε₀ 真空電容率、
+σ/π 鍵的名稱、θ 天頂角、φ 方位角）。</p></li>
+<li><p>特別注意兩個長得很像的希臘字母：ν（nu）是頻率，υ（upsilon）是振動量子數，
+不可混用；分子式的下標（H₂O、CO₂、C₆H₆）與離子的上標（H₂⁺、Na⁺、Cl⁻）必須正確。</p></li>
+<li><p>文字大小分三級：標題列最大、pill 標籤與軸標籤次之、說明文字最小，
+但最小的字也必須清楚可讀。</p></li>
+</ul>
+<p>嚴禁事項：</p>
+<ul class="simple">
+<li><p>不要出現任何浮水印、簽名、Logo、頁碼。</p></li>
+<li><p>不要出現拼錯或亂碼的中文字；寧可少寫字，也不要寫錯字。</p></li>
+<li><p>不要把公式畫成圖片式的手寫體，必須是印刷排版品質。</p></li>
+<li><p>不要用深色背景。</p></li>
+</ul>
+<p>請畫一張教學用資訊圖表，主題是「H₂⁺ 中的電子：兩個位能井、一道障壁，何時才算共享」。</p>
+<p>標題列文字：8.2  雙位能井與電子共享 (Double Well and Electron Sharing)</p>
+<p>導言框文字：
+H₂⁺ 的電子同時受兩個質子吸引，沿兩質子連線看是兩個庫侖位能井夾著一道障壁。
+量子力學上這相當於一對被障壁隔開的箱子：質子離得遠時電子只能靠穿隧往返，
+離得近時障壁形同消失，電子才真正被兩個質子共享。</p>
+<p>主體左半（約 60% 寬）：兩張上下堆疊的位能圖，橫軸皆為沿兩質子連線的位置，縱軸為位能 U_e（eV）。</p>
+<p>上圖｜pill 標籤：情況 A — R 大（R ≳ 0.42 nm）
+兩個紅色質子標「質子 a」「質子 b」，中間雙箭頭標 R。
+畫兩個深而尖的 1/r 型位能井（藍色曲線 #1565C0），兩井之間的障壁頂端<strong>高於</strong>
+一條水平綠色虛線（#2E7D32，標「電子能量 ≈ −13.6 eV」）。
+綠線只畫在左井內；從左井到右井畫一支穿過障壁的橘色（#EF6C00）虛線箭頭，標「穿隧（很罕見）」。
+旁邊小字：障壁又寬又高 → 電子實際上只屬於一個質子（氫原子 + 裸質子）。</p>
+<p>下圖｜pill 標籤：情況 B — R 小（R ~ 0.1 nm）
+同樣的兩個井，但距離較近，兩井之間的障壁頂端很低（標「障壁頂 ≈ −54 eV」），
+而綠色電子能量虛線（標「電子能量 ≈ −30 eV」）<strong>橫跨兩個井、高於障壁頂</strong>，連成一整條。
+旁邊小字：障壁形同消失 → 電子在兩核之間自由來去 = 共享。</p>
+<p>主體右半（約 40% 寬）：</p>
+<p>卡 1｜pill 標籤：量子力學的圖像（圖 8.4b）
+畫一塊灰色立體方塊，上面挖了兩個漏斗狀的凹洞（代表兩個位能井），
+其中一個漏斗裡有一顆藍色小球標「電子」，兩漏斗之間的方塊表面標「障壁」。
+底下文字：一對被障壁隔開的箱子。</p>
+<p>卡 2｜pill 標籤：障壁有多高？
+U_e(中點) = −2 · e²/[4πε₀(R/2)] = −4 × 1.44 eV·nm / R
+令它等於 −13.6 eV → R ≈ 0.42 nm
+條列：
+R &gt; 0.42 nm：障壁高於電子能量 → 只能穿隧
+R &lt; 0.42 nm：障壁低於電子能量 → 電子自由往返</p>
+<p>右上角「圖例」方框：
+紅色圓點 — 質子
+藍色曲線 — 電子位能 U_e
+綠色虛線 — 電子能量
+橘色虛線箭頭 — 穿隧</p>
+<p>最下方一排粉彩公式盒（三個）：</p>
+<ol class="arabic simple">
+<li><p>淺藍盒：U_e = −e²/(4πε₀|r − r_a|) − e²/(4πε₀|r − r_b|)，說明「電子感受到的兩個庫侖井」</p></li>
+<li><p>淺黃盒：穿隧機率對障壁寬度呈指數敏感，說明「R 越大，電子越難跑到另一邊（第五章 5.7 穿隧效應）」</p></li>
+<li><p>淺綠盒：R ~ 0.1 nm 時電子每秒往返約 10¹⁵ 次，說明「詳見 8.3 進階探討」</p></li>
+</ol>
+<p>Use case: scientific-educational. 優先遵守開頭的模型與符號，文字須清晰繁體中文。
+0.42 nm是以−13.6 eV粗估的障壁判準而非嚴格共享臨界；即使核距很大，對稱定態仍可非定域。用『局域波包的穿隧很慢』代替『電子只能屬於一個質子』。</p>
+</section>
+<section id="symmetric-antisymmetric-wavefunctions">
+<h3>Symmetric_Antisymmetric_Wavefunctions<a class="headerlink" href="#symmetric-antisymmetric-wavefunctions" title="Link to this heading">#</a></h3>
+<p>【全域風格規範 — 請嚴格遵守】</p>
+<p>輸出形式：一張橫幅資訊圖表（教學用），純白背景，寬高比約 4:3 到 5:4，
+建議輸出 1600×1200 像素以上，線條與文字必須銳利可讀。</p>
+<p>版面骨架（由上到下）：</p>
+<ol class="arabic simple">
+<li><p>左上角：深藍色（#1F3864）圓角矩形標題列，白色粗體字，格式為
+「8.x  中文標題 (English Title)」，中英文之間空兩格。</p></li>
+<li><p>標題列下方：淺藍色（#EAF1FB）圓角矩形導言框，深藍細框線，
+內含 2–4 行中文導言，說明這張圖要回答什麼問題。</p></li>
+<li><p>右上角（若該圖有多種顏色編碼）：白底細框「圖例」方框，
+逐條列出色塊／線型對應的意義。</p></li>
+<li><p>主體區：物理示意圖、分子結構圖、能階圖或座標圖，佔畫面最大面積。</p></li>
+<li><p>各個小節上方：深藍色圓角 pill 標籤（白色字，例如「能量曲線」
+「σ 與 π 的比較」），用來切分主體區的不同段落。</p></li>
+<li><p>最下方：一排粉彩色圓角方框（淺綠 #E8F5E9、淺紫 #F3E5F5、淺藍 #E3F2FD、
+淺紅 #FFEBEE、淺黃 #FFF8E1），每個框內放一條公式與一句中文說明。</p></li>
+</ol>
+<p>配色規則：</p>
+<ul class="simple">
+<li><p>主色：深藍 #1F3864（標題列、pill 標籤、座標軸標記）</p></li>
+<li><p>分區／分類色：綠 #2E7D32、橘 #EF6C00、紫 #7B1FA2、紅 #C62828、藍 #1565C0</p></li>
+<li><p>同一個物理量在整張圖中必須用同一個顏色，不可換色。</p></li>
+<li><p>波函數的正負瓣：正瓣一律橘色、負瓣一律藍色（除非該圖另有指定）。</p></li>
+<li><p>背景一律純白，不要漸層、不要陰影、不要 3D 效果
+（分子軌域的立體形狀可用簡潔的平塗與輪廓線表現，不要寫實光影）。</p></li>
+</ul>
+<p>字體與文字：</p>
+<ul class="simple">
+<li><p>所有標示文字一律使用「繁體中文」，不可出現簡體字。</p></li>
+<li><p>中文用黑體（思源黑體 / Noto Sans TC 一類），英文與數學符號用
+襯線體並呈 LaTeX 排版風格（斜體變數、正體函數名、正確的上下標與分數）。</p></li>
+<li><p>數學式必須排版正確：分數要有橫線，根號要罩住整個被開方式，
+上下標位置正確，希臘字母正確（ψ 波函數、ħ 約化普朗克常數、ε₀ 真空電容率、
+σ/π 鍵的名稱、θ 天頂角、φ 方位角）。</p></li>
+<li><p>特別注意兩個長得很像的希臘字母：ν（nu）是頻率，υ（upsilon）是振動量子數，
+不可混用；分子式的下標（H₂O、CO₂、C₆H₆）與離子的上標（H₂⁺、Na⁺、Cl⁻）必須正確。</p></li>
+<li><p>文字大小分三級：標題列最大、pill 標籤與軸標籤次之、說明文字最小，
+但最小的字也必須清楚可讀。</p></li>
+</ul>
+<p>嚴禁事項：</p>
+<ul class="simple">
+<li><p>不要出現任何浮水印、簽名、Logo、頁碼。</p></li>
+<li><p>不要出現拼錯或亂碼的中文字；寧可少寫字，也不要寫錯字。</p></li>
+<li><p>不要把公式畫成圖片式的手寫體，必須是印刷排版品質。</p></li>
+<li><p>不要用深色背景。</p></li>
+</ul>
+<p>依共用風格畫上下兩列與右側比較欄，保留綠色對稱、紅色反對稱。
+標題：8.2  對稱與反對稱的分子軌域 (Symmetric and Antisymmetric Molecular Orbitals)
+導言：固定兩個相同質子於對稱位置、無破壞對稱性的外場；選取鏡射算符與
+哈密頓量的共同本徵態，P²=1 給出鏡射奇偶性 ±1。
+以兩個實數、已歸一化的氫1s軌域作 LCAO 近似；不是分子哈密頓量的精確解。</p>
+<p>符號框：
+ψ_S=ψ_a+ψ_b、ψ_A=ψ_a−ψ_b 為未歸一化組合；
+S_ab=∫ψ_aψ_b dV，φ_S,A=(ψ_a±ψ_b)/√[2(1±S_ab)] 為歸一化組合。
+與正文的 ψ̃_S,A 相同，此圖以 φ 簡寫，避免過密標記。</p>
+<p>上列五格：ψ_a、ψ_b、較大R的ψ_S、較小R的ψ_S、合核角向示意。
+下列五格：ψ_a、−ψ_b、較大R的ψ_A、較小R的ψ_A、合核角向示意。
+橫軸取核間連線座標 z，兩核在 ±R/2，不能把帶正負值的軸標成距離r。
+前四格縱軸為未歸一化振幅ψ；曲線按指定1s函數相加減，
+不可強制畫中點為最大值或兩峰間的平台。反對稱組合在中點為零。
+第五格另加虛線框「合核角向示意，不是固定基底的精確徑向解」：
+上格s型，下格p_z型；標精確電子態可連到He⁺ 1s/2p，
+但固定氫1s基底不會直接變成精確He⁺波函數。
+反對稱未歸一化組合在R=0為零；只畫R→0重新歸一化後的形狀，不把零函數畫成非零。</p>
+<p>右欄｜歸一化後才比較機率密度
+取固定R=2a₀；重疊S_ab=e^(−R/a₀)[1+R/a₀+R²/(3a₀²)]。
+沿z畫灰虛線ρ_ref=(ψ_a²+ψ_b²)/2，
+綠線|φ_S|²=(ψ_a²+ψ_b²+2ψ_aψ_b)/[2(1+S_ab)]，
+紅線|φ_A|²=(ψ_a²+ψ_b²−2ψ_aψ_b)/[2(1−S_ab)]。
+在中點註|φ_A|²=0，|φ_S|²=2ψ_a²/(1+S_ab)。
+不要標「機率必定兩倍」或任意指定中點是最高峰。
+振幅正負以±標出；機率密度無負值，核電荷+號另列圖例。</p>
+<p>底部三盒：
+Pφ_S=+φ_S；Pφ_A=−φ_A；
+是否鍵結須比較電子動能、庫侖作用與核間排斥的總能量。
+對稱/反對稱在此是鏡射奇偶性，不是交換兩個電子。</p>
+<p>Use case: scientific-educational. 優先遵守開頭的模型與符號，文字須清晰繁體中文。</p>
+</section>
+<section id="h2plus-energy-curves">
+<h3>H2plus_Energy_Curves<a class="headerlink" href="#h2plus-energy-curves" title="Link to this heading">#</a></h3>
+<p>【全域風格規範 — 請嚴格遵守】</p>
+<p>輸出形式：一張橫幅資訊圖表（教學用），純白背景，寬高比約 4:3 到 5:4，
+建議輸出 1600×1200 像素以上，線條與文字必須銳利可讀。</p>
+<p>版面骨架（由上到下）：</p>
+<ol class="arabic simple">
+<li><p>左上角：深藍色（#1F3864）圓角矩形標題列，白色粗體字，格式為
+「8.x  中文標題 (English Title)」，中英文之間空兩格。</p></li>
+<li><p>標題列下方：淺藍色（#EAF1FB）圓角矩形導言框，深藍細框線，
+內含 2–4 行中文導言，說明這張圖要回答什麼問題。</p></li>
+<li><p>右上角（若該圖有多種顏色編碼）：白底細框「圖例」方框，
+逐條列出色塊／線型對應的意義。</p></li>
+<li><p>主體區：物理示意圖、分子結構圖、能階圖或座標圖，佔畫面最大面積。</p></li>
+<li><p>各個小節上方：深藍色圓角 pill 標籤（白色字，例如「能量曲線」
+「σ 與 π 的比較」），用來切分主體區的不同段落。</p></li>
+<li><p>最下方：一排粉彩色圓角方框（淺綠 #E8F5E9、淺紫 #F3E5F5、淺藍 #E3F2FD、
+淺紅 #FFEBEE、淺黃 #FFF8E1），每個框內放一條公式與一句中文說明。</p></li>
+</ol>
+<p>配色規則：</p>
+<ul class="simple">
+<li><p>主色：深藍 #1F3864（標題列、pill 標籤、座標軸標記）</p></li>
+<li><p>分區／分類色：綠 #2E7D32、橘 #EF6C00、紫 #7B1FA2、紅 #C62828、藍 #1565C0</p></li>
+<li><p>同一個物理量在整張圖中必須用同一個顏色，不可換色。</p></li>
+<li><p>波函數的正負瓣：正瓣一律橘色、負瓣一律藍色（除非該圖另有指定）。</p></li>
+<li><p>背景一律純白，不要漸層、不要陰影、不要 3D 效果
+（分子軌域的立體形狀可用簡潔的平塗與輪廓線表現，不要寫實光影）。</p></li>
+</ul>
+<p>字體與文字：</p>
+<ul class="simple">
+<li><p>所有標示文字一律使用「繁體中文」，不可出現簡體字。</p></li>
+<li><p>中文用黑體（思源黑體 / Noto Sans TC 一類），英文與數學符號用
+襯線體並呈 LaTeX 排版風格（斜體變數、正體函數名、正確的上下標與分數）。</p></li>
+<li><p>數學式必須排版正確：分數要有橫線，根號要罩住整個被開方式，
+上下標位置正確，希臘字母正確（ψ 波函數、ħ 約化普朗克常數、ε₀ 真空電容率、
+σ/π 鍵的名稱、θ 天頂角、φ 方位角）。</p></li>
+<li><p>特別注意兩個長得很像的希臘字母：ν（nu）是頻率，υ（upsilon）是振動量子數，
+不可混用；分子式的下標（H₂O、CO₂、C₆H₆）與離子的上標（H₂⁺、Na⁺、Cl⁻）必須正確。</p></li>
+<li><p>文字大小分三級：標題列最大、pill 標籤與軸標籤次之、說明文字最小，
+但最小的字也必須清楚可讀。</p></li>
+</ul>
+<p>嚴禁事項：</p>
+<ul class="simple">
+<li><p>不要出現任何浮水印、簽名、Logo、頁碼。</p></li>
+<li><p>不要出現拼錯或亂碼的中文字；寧可少寫字，也不要寫錯字。</p></li>
+<li><p>不要把公式畫成圖片式的手寫體，必須是印刷排版品質。</p></li>
+<li><p>不要用深色背景。</p></li>
+</ul>
+<p>【模型與符號】採 Born–Oppenheimer 近似固定兩核，R 為核間距；電子能與包含核間斥力的總能分開標示，基態能量曲線井深不含振動零點修正。</p>
+<p>請畫一張教學用資訊圖表，主題是「H₂⁺ 的能量曲線：對稱態有谷、反對稱態沒有」。</p>
+<p>標題列文字：8.3  H₂⁺ 的能量曲線 (Energy Curves of the H₂⁺ Molecular Ion)</p>
+<p>導言框文字：
+總能量 = 電子能量 + 質子位能。兩端由極限決定：R → ∞ 時都是 −13.6 eV（一顆氫原子），
+R → 0 時對稱態變成 He⁺ 的 1s（−54.4 eV）、反對稱態變成 He⁺ 的 2p（−13.6 eV）。
+只有對稱態的總能量在 0.106 nm 處低於 −13.6 eV，形成 2.65 eV 的鍵。</p>
+<p>主體左半（約 65% 寬）：能量曲線圖（重繪圖 8.7）
+橫軸：原子核間距 R（nm），刻度 0、0.1、0.2、0.3、0.4。
+縱軸：能量（eV），範圍約 −55 到 +30，刻度每 10 eV 一格，並特別標出 −13.6 與 −16.3。
+五條曲線（同一物理量全圖同色）：</p>
+<ol class="arabic simple">
+<li><p>U_p 質子位能（黑色粗線）：U_p = 1.44/R(nm) eV，R → 0 時衝向 +∞；
+參考點：R = 0.1 nm 約 14 eV、R = 0.2 nm 約 7 eV、R = 0.4 nm 約 3.6 eV。</p></li>
+<li><p>E_S 對稱態電子能量（綠色 #2E7D32 細線）：R = 0 時 −54.4 eV，單調上升，
+R = 0.106 nm 時約 −30 eV，R 大時趨近 −13.6 eV。</p></li>
+<li><p>E_A 反對稱態電子能量（紅色 #C62828 細線）：R = 0 時 −13.6 eV，往右先下降，
+在約 0.1–0.2 nm 有一個約 −19 到 −20 eV 的淺谷，之後緩慢回升趨近 −13.6 eV。</p></li>
+<li><p>E_S^total 對稱態總能量（綠色粗線）：R 小時很高，向右下降，在 R = 0.106 nm 有極小值
+−16.3 eV，之後緩慢上升趨近 −13.6 eV。參考點：0.05 nm 約 −12 eV、0.08 nm 約 −16 eV、
+0.15 nm 約 −15.8 eV、0.2 nm 約 −15 eV、0.3 nm 約 −14 eV。</p></li>
+<li><p>E_A^total 反對稱態總能量（紅色粗線）：從左上方單調下降，由上方趨近 −13.6 eV，
+<strong>沒有任何極小值、處處高於 −13.6 eV</strong>。
+兩條水平虛線：−13.6 eV（標「孤立氫原子的總能量」）與 −16.3 eV。
+一條垂直虛線：R = 1.06 × 10⁻¹⁰ m（標在曲線谷底上方）。
+在兩條水平虛線之間畫一支雙箭頭，標「鍵結能 = 2.65 eV」。
+左端 R = 0 處標兩個點：E_S 的 −54.4 eV（標「He⁺ 1s」）與 E_A 的 −13.6 eV（標「He⁺ 2p」）。</p></li>
+</ol>
+<p>主體右半（約 35% 寬）：三個上下堆疊的說明卡。</p>
+<p>卡 1｜pill 標籤：兩個極限
+R → ∞：E_e → −13.6 eV，U_p → 0
+R → 0：E_S → Z²E₁ = 4 × (−13.6) = −54.4 eV
+E_A → Z²E₁/2² = −13.6 eV
+U_p → +∞</p>
+<p>卡 2｜pill 標籤：數字檢查（R₀ = 0.106 nm）
+U_p(R₀) = 1.44/0.106 ≈ 13.6 eV
+E_S(R₀) = −16.3 − 13.6 ≈ −29.9 eV
+結論：共享讓電子能量降了約 16 eV，質子互斥吃掉 13.6 eV，淨賺 2.65 eV。</p>
+<p>卡 3｜pill 標籤：鍵結能不是 16.3 eV
+鍵結能 = E(∞) − E(R₀) = (−13.6) − (−16.3) ≈ 2.65 eV
+是兩條虛線的差，不是谷底的絕對值。</p>
+<p>右上角「圖例」方框：
+黑色粗線 — U_p 質子位能
+綠色細線 — E_S 電子能量（對稱態）
+綠色粗線 — E_S^total = E_S + U_p
+紅色細線 — E_A 電子能量（反對稱態）
+紅色粗線 — E_A^total = E_A + U_p</p>
+<p>最下方一排粉彩公式盒（三個）：</p>
+<ol class="arabic simple">
+<li><p>淺藍盒：U_p = e²/(4πε₀R)　(8.1)，說明「兩質子的庫侖排斥」</p></li>
+<li><p>淺綠盒：E^total(R) = E_e(R) + U_p(R)，說明「原子核固定近似：先固定 R 解電子」</p></li>
+<li><p>淺紅盒：E_A^total &gt; −13.6 eV 處處成立，說明「反對稱態不會形成鍵結」</p></li>
+</ol>
+<p>Use case: scientific-educational. 優先遵守開頭的模型與符號，文字須清晰繁體中文。
+修正：精確Born–Oppenheimer井底約−16.39 eV、D_e≈2.79 eV；D₀≈2.65 eV含振動零點修正。分開標示，不能把2.65 eV標作井深。合核電子能是精確極限參考，不是固定氫1s基底結果。</p>
+</section>
+<section id="h2-spin-energy-curves">
+<h3>H2_Spin_Energy_Curves<a class="headerlink" href="#h2-spin-energy-curves" title="Link to this heading">#</a></h3>
+<p>【全域風格規範 — 請嚴格遵守】</p>
+<p>輸出形式：一張橫幅資訊圖表（教學用），純白背景，寬高比約 4:3 到 5:4，
+建議輸出 1600×1200 像素以上，線條與文字必須銳利可讀。</p>
+<p>版面骨架（由上到下）：</p>
+<ol class="arabic simple">
+<li><p>左上角：深藍色（#1F3864）圓角矩形標題列，白色粗體字，格式為
+「8.x  中文標題 (English Title)」，中英文之間空兩格。</p></li>
+<li><p>標題列下方：淺藍色（#EAF1FB）圓角矩形導言框，深藍細框線，
+內含 2–4 行中文導言，說明這張圖要回答什麼問題。</p></li>
+<li><p>右上角（若該圖有多種顏色編碼）：白底細框「圖例」方框，
+逐條列出色塊／線型對應的意義。</p></li>
+<li><p>主體區：物理示意圖、分子結構圖、能階圖或座標圖，佔畫面最大面積。</p></li>
+<li><p>各個小節上方：深藍色圓角 pill 標籤（白色字，例如「能量曲線」
+「σ 與 π 的比較」），用來切分主體區的不同段落。</p></li>
+<li><p>最下方：一排粉彩色圓角方框（淺綠 #E8F5E9、淺紫 #F3E5F5、淺藍 #E3F2FD、
+淺紅 #FFEBEE、淺黃 #FFF8E1），每個框內放一條公式與一句中文說明。</p></li>
+</ol>
+<p>配色規則：</p>
+<ul class="simple">
+<li><p>主色：深藍 #1F3864（標題列、pill 標籤、座標軸標記）</p></li>
+<li><p>分區／分類色：綠 #2E7D32、橘 #EF6C00、紫 #7B1FA2、紅 #C62828、藍 #1565C0</p></li>
+<li><p>同一個物理量在整張圖中必須用同一個顏色，不可換色。</p></li>
+<li><p>波函數的正負瓣：正瓣一律橘色、負瓣一律藍色（除非該圖另有指定）。</p></li>
+<li><p>背景一律純白，不要漸層、不要陰影、不要 3D 效果
+（分子軌域的立體形狀可用簡潔的平塗與輪廓線表現，不要寫實光影）。</p></li>
+</ul>
+<p>字體與文字：</p>
+<ul class="simple">
+<li><p>所有標示文字一律使用「繁體中文」，不可出現簡體字。</p></li>
+<li><p>中文用黑體（思源黑體 / Noto Sans TC 一類），英文與數學符號用
+襯線體並呈 LaTeX 排版風格（斜體變數、正體函數名、正確的上下標與分數）。</p></li>
+<li><p>數學式必須排版正確：分數要有橫線，根號要罩住整個被開方式，
+上下標位置正確，希臘字母正確（ψ 波函數、ħ 約化普朗克常數、ε₀ 真空電容率、
+σ/π 鍵的名稱、θ 天頂角、φ 方位角）。</p></li>
+<li><p>特別注意兩個長得很像的希臘字母：ν（nu）是頻率，υ（upsilon）是振動量子數，
+不可混用；分子式的下標（H₂O、CO₂、C₆H₆）與離子的上標（H₂⁺、Na⁺、Cl⁻）必須正確。</p></li>
+<li><p>文字大小分三級：標題列最大、pill 標籤與軸標籤次之、說明文字最小，
+但最小的字也必須清楚可讀。</p></li>
+</ul>
+<p>嚴禁事項：</p>
+<ul class="simple">
+<li><p>不要出現任何浮水印、簽名、Logo、頁碼。</p></li>
+<li><p>不要出現拼錯或亂碼的中文字；寧可少寫字，也不要寫錯字。</p></li>
+<li><p>不要把公式畫成圖片式的手寫體，必須是印刷排版品質。</p></li>
+<li><p>不要用深色背景。</p></li>
+</ul>
+<p>【模型與符號】空間與自旋部分相乘才是電子總態，總態必須反對稱；束縛與否須比較包含電子及核間作用的總能量。</p>
+<p>請畫一張教學用資訊圖表，主題是「H₂：自旋決定軌道，軌道決定鍵結」。</p>
+<p>標題列文字：8.4  氫分子與自旋 (The Hydrogen Molecule and Electron Spin)</p>
+<p>導言框文字：
+兩個電子的總波函數必須反對稱（包立不相容原理）。
+自旋反平行（單重態）→ 軌道必須對稱 → 電子堆在兩核之間 → 鍵結；
+自旋平行（三重態）→ 軌道必須反對稱 → 中間有節面 → 互相推開。</p>
+<p>主體左半（約 60% 寬）｜pill 標籤：H + H 的能量曲線（圖 8.8）
+橫軸：原子核間距 R（nm），刻度 0、0.1、0.2、0.3、0.4。
+縱軸：能量（eV），範圍 −6 到 +8，零點標「兩顆分開的氫原子」。
+綠色曲線（#2E7D32）E_S：R 很小時陡升，在 R₀ = 0.074 nm 處有極小值約 −4.5 eV
+（谷底深度約 4.5 至 4.7 eV），之後平滑上升趨近 0；
+曲線旁標「H + H 自旋反平行」，並畫一對小箭頭 ↑↓。
+紅色曲線（#C62828）E_A：從左上方約 +8 eV 處單調下降，由上方趨近 0，沒有極小值；
+曲線旁標「H + H 自旋平行」，並畫一對小箭頭 ↑↑。
+谷底畫垂直虛線標 R₀ = 0.074 nm，谷底到零點之間的雙箭頭標「鍵結能 4.5 eV」。</p>
+<p>主體右半（約 40% 寬）：兩個上下堆疊的說明卡。</p>
+<p>卡 1｜pill 標籤：只有兩種組合被允許
+畫一個 2×2 的表格：列為「軌道對稱 ψ_S／軌道反對稱 ψ_A」，欄為「自旋反對稱 s_A（S=0）／自旋對稱 s_S（S=1）」。
+ψ_S s_A：綠色打勾，標「單重態，鍵結」
+ψ_A s_S：綠色打勾，標「三重態，不鍵結」
+ψ_S s_S：灰色打叉，標「總波函數對稱，不允許」
+ψ_A s_A：灰色打叉，標「總波函數對稱，不允許」
+表格下方一行：Ψ(2,1) = −Ψ(1,2)</p>
+<p>卡 2｜pill 標籤：H₂⁺ 與 H₂ 對照
+兩欄小表：
+電子數：1 ／ 2
+鍵長 R₀：0.106 nm ／ 0.074 nm
+鍵結能：2.65 eV ／ 4.5 eV
+下方紅字：4.5 eV &lt; 2 × 2.65 = 5.3 eV，因為兩個電子之間互相排斥。
+再下方小字：兩個電子當膠水黏得更緊 → 鍵長變短。</p>
+<p>右下角小插圖｜pill 標籤：為什麼沒有 H₃？
+一個鍵結軌道方框裡放兩支反平行箭頭 ↑↓（已滿），
+第三支箭頭被擋在外面、被迫進入上方標「反鍵結軌道」的方框，旁註「削弱鍵結」。</p>
+<p>右上角「圖例」方框：
+綠色 — 自旋反平行（單重態）：鍵結
+紅色 — 自旋平行（三重態）：不鍵結
+↑↓ — 兩個電子的自旋方向</p>
+<p>最下方一排粉彩公式盒（三個）：</p>
+<ol class="arabic simple">
+<li><p>淺綠盒：Ψ(1,2) = ψ_S s_A，說明「自旋反平行：鍵結」</p></li>
+<li><p>淺紅盒：Ψ(1,2) = ψ_A s_S，說明「自旋平行：不鍵結」</p></li>
+<li><p>淺紫盒：s_A = (1/√2)[↑↓ − ↓↑]，說明「自旋本身能量很小，它靠對稱性規則決定電子在空間的分佈」</p></li>
+</ol>
+<p>Use case: scientific-educational. 優先遵守開頭的模型與符號，文字須清晰繁體中文。
+修正說明：單重態是(↑↓−↓↑)/√2，不是任意↑↓乘積態；三重態也有m_S=0。H₂井深D_e≈4.75 eV，D₀≈4.48 eV；H₂⁺井深D_e≈2.79 eV、D₀≈2.65 eV。能量圖的井深與含零點能的解離能分開標示。</p>
+</section>
+<section id="p-orbitals-linear-combination">
+<h3>p_Orbitals_Linear_Combination<a class="headerlink" href="#p-orbitals-linear-combination" title="Link to this heading">#</a></h3>
+<p>【全域風格規範 — 請嚴格遵守】</p>
+<p>輸出形式：一張橫幅資訊圖表（教學用），純白背景，寬高比約 4:3 到 5:4，
+建議輸出 1600×1200 像素以上，線條與文字必須銳利可讀。</p>
+<p>版面骨架（由上到下）：</p>
+<ol class="arabic simple">
+<li><p>左上角：深藍色（#1F3864）圓角矩形標題列，白色粗體字，格式為
+「8.x  中文標題 (English Title)」，中英文之間空兩格。</p></li>
+<li><p>標題列下方：淺藍色（#EAF1FB）圓角矩形導言框，深藍細框線，
+內含 2–4 行中文導言，說明這張圖要回答什麼問題。</p></li>
+<li><p>右上角（若該圖有多種顏色編碼）：白底細框「圖例」方框，
+逐條列出色塊／線型對應的意義。</p></li>
+<li><p>主體區：物理示意圖、分子結構圖、能階圖或座標圖，佔畫面最大面積。</p></li>
+<li><p>各個小節上方：深藍色圓角 pill 標籤（白色字，例如「能量曲線」
+「σ 與 π 的比較」），用來切分主體區的不同段落。</p></li>
+<li><p>最下方：一排粉彩色圓角方框（淺綠 #E8F5E9、淺紫 #F3E5F5、淺藍 #E3F2FD、
+淺紅 #FFEBEE、淺黃 #FFF8E1），每個框內放一條公式與一句中文說明。</p></li>
+</ol>
+<p>配色規則：</p>
+<ul class="simple">
+<li><p>主色：深藍 #1F3864（標題列、pill 標籤、座標軸標記）</p></li>
+<li><p>分區／分類色：綠 #2E7D32、橘 #EF6C00、紫 #7B1FA2、紅 #C62828、藍 #1565C0</p></li>
+<li><p>同一個物理量在整張圖中必須用同一個顏色，不可換色。</p></li>
+<li><p>波函數的正負瓣：正瓣一律橘色、負瓣一律藍色（除非該圖另有指定）。</p></li>
+<li><p>背景一律純白，不要漸層、不要陰影、不要 3D 效果
+（分子軌域的立體形狀可用簡潔的平塗與輪廓線表現，不要寫實光影）。</p></li>
+</ul>
+<p>字體與文字：</p>
+<ul class="simple">
+<li><p>所有標示文字一律使用「繁體中文」，不可出現簡體字。</p></li>
+<li><p>中文用黑體（思源黑體 / Noto Sans TC 一類），英文與數學符號用
+襯線體並呈 LaTeX 排版風格（斜體變數、正體函數名、正確的上下標與分數）。</p></li>
+<li><p>數學式必須排版正確：分數要有橫線，根號要罩住整個被開方式，
+上下標位置正確，希臘字母正確（ψ 波函數、ħ 約化普朗克常數、ε₀ 真空電容率、
+σ/π 鍵的名稱、θ 天頂角、φ 方位角）。</p></li>
+<li><p>特別注意兩個長得很像的希臘字母：ν（nu）是頻率，υ（upsilon）是振動量子數，
+不可混用；分子式的下標（H₂O、CO₂、C₆H₆）與離子的上標（H₂⁺、Na⁺、Cl⁻）必須正確。</p></li>
+<li><p>文字大小分三級：標題列最大、pill 標籤與軸標籤次之、說明文字最小，
+但最小的字也必須清楚可讀。</p></li>
+</ul>
+<p>嚴禁事項：</p>
+<ul class="simple">
+<li><p>不要出現任何浮水印、簽名、Logo、頁碼。</p></li>
+<li><p>不要出現拼錯或亂碼的中文字；寧可少寫字，也不要寫錯字。</p></li>
+<li><p>不要把公式畫成圖片式的手寫體，必須是印刷排版品質。</p></li>
+<li><p>不要用深色背景。</p></li>
+</ul>
+<p>請畫一張教學用資訊圖表，主題是「化學的 p_x、p_y 軌域其實是 m_l = ±1 的線性組合」。</p>
+<p>標題列文字：8.5  p 軌域的線性組合 (p Orbitals as Linear Combinations)</p>
+<p>導言框文字：
+m_l = ±1 的波函數 ψ_±1 繞著 z 軸成甜甜圈狀，不偏向 x 也不偏向 y。
+因為 ψ_+1、ψ_−1、ψ_0 能量相同（簡併），它們的任何線性組合仍是同能量的解；
+取和與差，就得到沿 x、y 軸的啞鈴 p_x、p_y——與 p_z 形狀完全相同。</p>
+<p>主體分成左、中、右三區，以兩支深藍色粗箭頭由左向右連接。</p>
+<p>左區｜pill 標籤：薛丁格方程式直接給的解
+上：ψ_+1 的機率分佈 |ψ_+1|² ∝ sin²θ —— 一個繞 z 軸的甜甜圈（環面），
+畫出 x、y、z 三軸，z 軸穿過甜甜圈中心，標「與 φ 無關」。
+下：ψ_−1 —— 同樣形狀的甜甜圈，標「|ψ_−1|² 與 |ψ_+1|² 相同」。
+旁註小字：m_l = ±1 的態有確定的 L_z = ±ħ，但在空間中不指向任何特定方向。</p>
+<p>中間箭頭上方文字：線性組合 (8.2)
+ψ_px = (1/√2)(ψ_+1 + ψ_−1)
+ψ_py = (1/√2)(ψ_+1 − ψ_−1)</p>
+<p>中區｜pill 標籤：代入後得到的形狀
+三個一樣大小的啞鈴，各自配上公式：
+p_x：沿 x 軸的啞鈴，公式 ψ_px = [1/(4√(2π) a₀^(3/2))] (x/a₀) e^(−r/2a₀)
+p_y：沿 y 軸的啞鈴，公式 ψ_py = i · [1/(4√(2π) a₀^(3/2))] (y/a₀) e^(−r/2a₀)
+p_z：沿 z 軸的啞鈴，公式 ψ_pz = ψ_0 = [1/(4√(2π) a₀^(3/2))] (z/a₀) e^(−r/2a₀)
+每個啞鈴兩瓣分別標 + 與 −（正瓣用橘色 #EF6C00，負瓣用藍色 #1565C0）。
+下方一行深藍粗體：三者是同一個函數，只是 x、y、z 互換。</p>
+<p>右區｜pill 標籤：圖 8.9 邊界曲面總覽
+四個小圖排成一排：s（球形，單一正號）、p_x、p_y、p_z（啞鈴，標 + −），
+各自畫在小座標軸上；說明「每個軌道最多容納兩個電子；灰暗區是找到電子機率高的區域」。</p>
+<p>右上角「圖例」方框：
+橘色 — 波函數為正的瓣
+藍色 — 波函數為負的瓣
+甜甜圈 — |ψ_±1|²（對 z 軸旋轉對稱）</p>
+<p>最下方一排粉彩公式盒（三個）：</p>
+<ol class="arabic simple">
+<li><p>淺藍盒：Ĥ(c₁ψ₁ + c₂ψ₂) = E(c₁ψ₁ + c₂ψ₂)，說明「簡併本徵函數的組合仍是同能量的本徵函數」</p></li>
+<li><p>淺綠盒：e^(iφ) + e^(−iφ) = 2cosφ，r sinθ cosφ = x，說明「代入後 sinθ cosφ 變成 x/r」</p></li>
+<li><p>淺紫盒：a_x p_x + a_y p_y + a_z p_z ∝ (a·r) e^(−r/2a₀)，說明「p 軌域的組合 = 指向 a 方向的 p 軌域，混成軌域的基礎」</p></li>
+</ol>
+<p>Use case: scientific-educational. 優先遵守開頭的模型與符號，文字須清晰繁體中文。</p>
+</section>
+<section id="sigma-pi-bonds">
+<h3>Sigma_Pi_Bonds<a class="headerlink" href="#sigma-pi-bonds" title="Link to this heading">#</a></h3>
+<p>【全域風格規範 — 請嚴格遵守】</p>
+<p>輸出形式：一張橫幅資訊圖表（教學用），純白背景，寬高比約 4:3 到 5:4，
+建議輸出 1600×1200 像素以上，線條與文字必須銳利可讀。</p>
+<p>版面骨架（由上到下）：</p>
+<ol class="arabic simple">
+<li><p>左上角：深藍色（#1F3864）圓角矩形標題列，白色粗體字，格式為
+「8.x  中文標題 (English Title)」，中英文之間空兩格。</p></li>
+<li><p>標題列下方：淺藍色（#EAF1FB）圓角矩形導言框，深藍細框線，
+內含 2–4 行中文導言，說明這張圖要回答什麼問題。</p></li>
+<li><p>右上角（若該圖有多種顏色編碼）：白底細框「圖例」方框，
+逐條列出色塊／線型對應的意義。</p></li>
+<li><p>主體區：物理示意圖、分子結構圖、能階圖或座標圖，佔畫面最大面積。</p></li>
+<li><p>各個小節上方：深藍色圓角 pill 標籤（白色字，例如「能量曲線」
+「σ 與 π 的比較」），用來切分主體區的不同段落。</p></li>
+<li><p>最下方：一排粉彩色圓角方框（淺綠 #E8F5E9、淺紫 #F3E5F5、淺藍 #E3F2FD、
+淺紅 #FFEBEE、淺黃 #FFF8E1），每個框內放一條公式與一句中文說明。</p></li>
+</ol>
+<p>配色規則：</p>
+<ul class="simple">
+<li><p>主色：深藍 #1F3864（標題列、pill 標籤、座標軸標記）</p></li>
+<li><p>分區／分類色：綠 #2E7D32、橘 #EF6C00、紫 #7B1FA2、紅 #C62828、藍 #1565C0</p></li>
+<li><p>同一個物理量在整張圖中必須用同一個顏色，不可換色。</p></li>
+<li><p>波函數的正負瓣：正瓣一律橘色、負瓣一律藍色（除非該圖另有指定）。</p></li>
+<li><p>背景一律純白，不要漸層、不要陰影、不要 3D 效果
+（分子軌域的立體形狀可用簡潔的平塗與輪廓線表現，不要寫實光影）。</p></li>
+</ul>
+<p>字體與文字：</p>
+<ul class="simple">
+<li><p>所有標示文字一律使用「繁體中文」，不可出現簡體字。</p></li>
+<li><p>中文用黑體（思源黑體 / Noto Sans TC 一類），英文與數學符號用
+襯線體並呈 LaTeX 排版風格（斜體變數、正體函數名、正確的上下標與分數）。</p></li>
+<li><p>數學式必須排版正確：分數要有橫線，根號要罩住整個被開方式，
+上下標位置正確，希臘字母正確（ψ 波函數、ħ 約化普朗克常數、ε₀ 真空電容率、
+σ/π 鍵的名稱、θ 天頂角、φ 方位角）。</p></li>
+<li><p>特別注意兩個長得很像的希臘字母：ν（nu）是頻率，υ（upsilon）是振動量子數，
+不可混用；分子式的下標（H₂O、CO₂、C₆H₆）與離子的上標（H₂⁺、Na⁺、Cl⁻）必須正確。</p></li>
+<li><p>文字大小分三級：標題列最大、pill 標籤與軸標籤次之、說明文字最小，
+但最小的字也必須清楚可讀。</p></li>
+</ul>
+<p>嚴禁事項：</p>
+<ul class="simple">
+<li><p>不要出現任何浮水印、簽名、Logo、頁碼。</p></li>
+<li><p>不要出現拼錯或亂碼的中文字；寧可少寫字，也不要寫錯字。</p></li>
+<li><p>不要把公式畫成圖片式的手寫體，必須是印刷排版品質。</p></li>
+<li><p>不要用深色背景。</p></li>
+</ul>
+<p>請畫一張教學用資訊圖表，主題是「σ 鍵與 π 鍵：兩個原子軌域怎麼重疊」。</p>
+<p>標題列文字：8.5  σ 鍵與 π 鍵 (Sigma and Pi Bonds)</p>
+<p>導言框文字：
+鍵結要讓兩原子之間的電子重疊越多越好。取兩原子連線為 z 軸：
+頭對頭重疊形成 σ 鍵（電子集中在兩核連線上），肩並肩重疊形成 π 鍵（電子在連線上下兩側）。
+σ 鍵的重疊比 π 鍵多，所以比較強。</p>
+<p>主體為三列，每列由左到右：「原子軌域 A」＋「原子軌域 B」→（粗箭頭）→「分子軌域」。
+每列最左邊掛一個深藍 pill 標籤。全圖用一條水平細虛線表示鍵軸 z，兩個原子核用黑點標出。</p>
+<p>第 1 列｜pill 標籤：ss σ
+兩個球形 s 軌域（橘色 #EF6C00，標 +）左右並排；
+→ 一個把兩核包在一起的橢球形電子雲，兩核之間最濃。</p>
+<p>第 2 列｜pill 標籤：pp σ
+兩個沿 z 軸（即鍵軸）方向的 p_z 啞鈴，左邊的右瓣與右邊的左瓣<strong>同號</strong>（都標 +，橘色）並互相面對，
+外側兩瓣標 −（藍色 #1565C0）；
+→ 中間兩瓣融合成一個大的正瓣、包住兩核連線中段，兩端各留一個小的負瓣。</p>
+<p>第 3 列｜pill 標籤：pp π
+兩個<strong>垂直於鍵軸</strong>的 p_x 啞鈴並排（上瓣標 +、下瓣標 −）；
+→ 連線上方融合成一條香腸狀的正瓣、下方融合成一條負瓣，
+鍵軸本身畫一個淡灰色平面，標「節面（包含鍵軸）」。</p>
+<p>右側窄欄｜pill 標籤：σ 與 π 的比較
+兩欄小表：
+重疊位置：兩核連線上 ／ 連線上下兩側
+對鍵軸：旋轉對稱 ／ 有一個包含鍵軸的節面
+重疊多寡：多 ／ 少
+強度：較強 ／ 較弱
+下方小字：若軌域方向不整齊（例如直接用 ψ_+1 的甜甜圈去重疊），重疊少得多。</p>
+<p>右上角「圖例」方框：
+橘色 — 波函數為正
+藍色 — 波函數為負
+黑點 — 原子核
+灰色平面 — π 鍵的節面</p>
+<p>最下方一排粉彩公式盒（三個）：</p>
+<ol class="arabic simple">
+<li><p>淺綠盒：σ 鍵 = 頭對頭 (head-to-head)，說明「ss σ、pp σ；單鍵都是 σ 鍵」</p></li>
+<li><p>淺藍盒：π 鍵 = 肩並肩 (side-by-side)，說明「雙鍵 = σ + π，三鍵 = σ + 2π」</p></li>
+<li><p>淺黃盒：重疊越多 → 能量越低，說明「最大重疊原則，8.5【假設 1】」</p></li>
+</ol>
+<p>Use case: scientific-educational. 優先遵守開頭的模型與符號，文字須清晰繁體中文。</p>
+</section>
+<section id="hybrid-orbitals-sp3-sp2">
+<h3>Hybrid_Orbitals_sp3_sp2<a class="headerlink" href="#hybrid-orbitals-sp3-sp2" title="Link to this heading">#</a></h3>
+<p>【全域風格規範 — 請嚴格遵守】</p>
+<p>輸出形式：一張橫幅資訊圖表（教學用），純白背景，寬高比約 4:3 到 5:4，
+建議輸出 1600×1200 像素以上，線條與文字必須銳利可讀。</p>
+<p>版面骨架（由上到下）：</p>
+<ol class="arabic simple">
+<li><p>左上角：深藍色（#1F3864）圓角矩形標題列，白色粗體字，格式為
+「8.x  中文標題 (English Title)」，中英文之間空兩格。</p></li>
+<li><p>標題列下方：淺藍色（#EAF1FB）圓角矩形導言框，深藍細框線，
+內含 2–4 行中文導言，說明這張圖要回答什麼問題。</p></li>
+<li><p>右上角（若該圖有多種顏色編碼）：白底細框「圖例」方框，
+逐條列出色塊／線型對應的意義。</p></li>
+<li><p>主體區：物理示意圖、分子結構圖、能階圖或座標圖，佔畫面最大面積。</p></li>
+<li><p>各個小節上方：深藍色圓角 pill 標籤（白色字，例如「能量曲線」
+「σ 與 π 的比較」），用來切分主體區的不同段落。</p></li>
+<li><p>最下方：一排粉彩色圓角方框（淺綠 #E8F5E9、淺紫 #F3E5F5、淺藍 #E3F2FD、
+淺紅 #FFEBEE、淺黃 #FFF8E1），每個框內放一條公式與一句中文說明。</p></li>
+</ol>
+<p>配色規則：</p>
+<ul class="simple">
+<li><p>主色：深藍 #1F3864（標題列、pill 標籤、座標軸標記）</p></li>
+<li><p>分區／分類色：綠 #2E7D32、橘 #EF6C00、紫 #7B1FA2、紅 #C62828、藍 #1565C0</p></li>
+<li><p>同一個物理量在整張圖中必須用同一個顏色，不可換色。</p></li>
+<li><p>波函數的正負瓣：正瓣一律橘色、負瓣一律藍色（除非該圖另有指定）。</p></li>
+<li><p>背景一律純白，不要漸層、不要陰影、不要 3D 效果
+（分子軌域的立體形狀可用簡潔的平塗與輪廓線表現，不要寫實光影）。</p></li>
+</ul>
+<p>字體與文字：</p>
+<ul class="simple">
+<li><p>所有標示文字一律使用「繁體中文」，不可出現簡體字。</p></li>
+<li><p>中文用黑體（思源黑體 / Noto Sans TC 一類），英文與數學符號用
+襯線體並呈 LaTeX 排版風格（斜體變數、正體函數名、正確的上下標與分數）。</p></li>
+<li><p>數學式必須排版正確：分數要有橫線，根號要罩住整個被開方式，
+上下標位置正確，希臘字母正確（ψ 波函數、ħ 約化普朗克常數、ε₀ 真空電容率、
+σ/π 鍵的名稱、θ 天頂角、φ 方位角）。</p></li>
+<li><p>特別注意兩個長得很像的希臘字母：ν（nu）是頻率，υ（upsilon）是振動量子數，
+不可混用；分子式的下標（H₂O、CO₂、C₆H₆）與離子的上標（H₂⁺、Na⁺、Cl⁻）必須正確。</p></li>
+<li><p>文字大小分三級：標題列最大、pill 標籤與軸標籤次之、說明文字最小，
+但最小的字也必須清楚可讀。</p></li>
+</ul>
+<p>嚴禁事項：</p>
+<ul class="simple">
+<li><p>不要出現任何浮水印、簽名、Logo、頁碼。</p></li>
+<li><p>不要出現拼錯或亂碼的中文字；寧可少寫字，也不要寫錯字。</p></li>
+<li><p>不要把公式畫成圖片式的手寫體，必須是印刷排版品質。</p></li>
+<li><p>不要用深色背景。</p></li>
+</ul>
+<p>請畫一張教學用資訊圖表，主題是「混成軌域：sp³ 給四面體，sp² 給平面三角形加一個 π 鍵」。</p>
+<p>標題列文字：8.5  混成軌域與分子形狀 (Hybrid Orbitals and Molecular Shape)</p>
+<p>導言框文字：
+同一個原子的 s 與 p 軌域也可以做線性組合。一個 s 加三個 p 得到四個 sp³ 軌域，
+指向正四面體頂點、兩兩夾 109.5°；一個 s 加兩個 p 得到三個 sp² 軌域，
+在平面上兩兩夾 120°，剩下的 p_z 垂直於平面，用來形成 π 鍵。</p>
+<p>主體分左右兩大區，中間用一條細灰色直線分隔。</p>
+<p>【左區｜pill 標籤：sp³ 混成（圖 8.12、8.13、8.11）】—— 主色綠色 #2E7D32
+上：「一個 s（球）＋ p_x ＋ p_y ＋ p_z（三個啞鈴）」→ 粗箭頭 →「四個 sp³ 軌域」：
+每個 sp³ 是一大一小兩瓣的不對稱啞鈴，大瓣分別指向正四面體的四個頂點，
+任兩瓣之間標角度 109.5°；在旁邊畫一個淡色正四面體線框輔助。
+中：甲烷 CH₄（圖 8.13）：碳在中心，四個 sp³ 大瓣各接一顆氫（白色小球），標「四個等價 σ 鍵，109.5°」。
+下：水 H₂O（圖 8.11）：氧在中心，兩個 sp³ 瓣接氫、標鍵角 104.5°；
+另外兩個 sp³ 瓣畫成較胖的半透明瓣，各放兩個點「‥」，標「孤對電子 (lone pair)」；
+旁註：純 p 軌域預期 90°，純 sp³ 預期 109.5°，實測 104.5° 介於兩者之間。</p>
+<p>【右區｜pill 標籤：sp² 混成（圖 8.14、8.15）】—— 主色橘色 #EF6C00
+上：「一個 s ＋ p_x ＋ p_y」→ 粗箭頭 →「三個 sp² 軌域」在同一平面上兩兩夾 120°（標角度），
+另外一個未參與混成的 p_z 啞鈴（紫色 #7B1FA2）垂直穿過平面。
+中：乙烯 C₂H₄（圖 8.14）：
+(b) 上視圖：兩個碳以 sp² 頭對頭形成 C–C σ 鍵，每個碳另接兩顆氫，六個原子在同一平面；
+(c) 側視圖：兩個碳的紫色 p_z 肩並肩，在平面上方與下方各融合成一條瓣，標「π 鍵」；
+旁註：C=C 雙鍵 = σ + π。
+下：苯 C₆H₆（圖 8.15）：
+(a) 六個碳排成正六邊形，相鄰碳以 sp² 形成 σ 鍵，每個碳外接一顆氫；
+(b) 每個碳上一個紫色 p_z 啞鈴，各帶一個電子；
+(c) 六個 p_z 融合成兩個甜甜圈形的連續電子雲，一個在環平面上方、一個在下方，
+標「六個非定域 π 電子（共軛鍵）」；
+旁註：六根 C–C 鍵長都是 0.140 nm（單鍵 0.154 nm、雙鍵 0.134 nm）。</p>
+<p>右上角「圖例」方框：
+綠色瓣 — sp³ 混成軌域
+橘色瓣 — sp² 混成軌域
+紫色啞鈴 — 未參與混成的 p_z（形成 π 鍵）
+白色小球 — 氫原子
+‥ — 孤對電子</p>
+<p>最下方一排粉彩公式盒（三個）：</p>
+<ol class="arabic simple">
+<li><p>淺綠盒：h₁ = ½(s + p_x + p_y + p_z)，cos α = −1/3 → α = 109.5°，說明「sp³：正四面體」</p></li>
+<li><p>淺黃盒：h₁ = (1/√3)s + √(2/3) p_x，cos β = −1/2 → β = 120°，說明「sp²：平面三角形」</p></li>
+<li><p>淺紫盒：苯的基態 = 兩種單雙鍵排法的線性組合，說明「不是雙鍵在跳，而是同時處於疊加 → 六根鍵等價」</p></li>
+</ol>
+<p>Use case: scientific-educational. 優先遵守開頭的模型與符號，文字須清晰繁體中文。</p>
+</section>
+<section id="molecular-energy-scales">
+<h3>Molecular_Energy_Scales<a class="headerlink" href="#molecular-energy-scales" title="Link to this heading">#</a></h3>
+<p>【全域風格規範 — 請嚴格遵守】</p>
+<p>輸出形式：一張橫幅資訊圖表（教學用），純白背景，寬高比約 4:3 到 5:4，
+建議輸出 1600×1200 像素以上，線條與文字必須銳利可讀。</p>
+<p>版面骨架（由上到下）：</p>
+<ol class="arabic simple">
+<li><p>左上角：深藍色（#1F3864）圓角矩形標題列，白色粗體字，格式為
+「8.x  中文標題 (English Title)」，中英文之間空兩格。</p></li>
+<li><p>標題列下方：淺藍色（#EAF1FB）圓角矩形導言框，深藍細框線，
+內含 2–4 行中文導言，說明這張圖要回答什麼問題。</p></li>
+<li><p>右上角（若該圖有多種顏色編碼）：白底細框「圖例」方框，
+逐條列出色塊／線型對應的意義。</p></li>
+<li><p>主體區：物理示意圖、分子結構圖、能階圖或座標圖，佔畫面最大面積。</p></li>
+<li><p>各個小節上方：深藍色圓角 pill 標籤（白色字，例如「能量曲線」
+「σ 與 π 的比較」），用來切分主體區的不同段落。</p></li>
+<li><p>最下方：一排粉彩色圓角方框（淺綠 #E8F5E9、淺紫 #F3E5F5、淺藍 #E3F2FD、
+淺紅 #FFEBEE、淺黃 #FFF8E1），每個框內放一條公式與一句中文說明。</p></li>
+</ol>
+<p>配色規則：</p>
+<ul class="simple">
+<li><p>主色：深藍 #1F3864（標題列、pill 標籤、座標軸標記）</p></li>
+<li><p>分區／分類色：綠 #2E7D32、橘 #EF6C00、紫 #7B1FA2、紅 #C62828、藍 #1565C0</p></li>
+<li><p>同一個物理量在整張圖中必須用同一個顏色，不可換色。</p></li>
+<li><p>波函數的正負瓣：正瓣一律橘色、負瓣一律藍色（除非該圖另有指定）。</p></li>
+<li><p>背景一律純白，不要漸層、不要陰影、不要 3D 效果
+（分子軌域的立體形狀可用簡潔的平塗與輪廓線表現，不要寫實光影）。</p></li>
+</ul>
+<p>字體與文字：</p>
+<ul class="simple">
+<li><p>所有標示文字一律使用「繁體中文」，不可出現簡體字。</p></li>
+<li><p>中文用黑體（思源黑體 / Noto Sans TC 一類），英文與數學符號用
+襯線體並呈 LaTeX 排版風格（斜體變數、正體函數名、正確的上下標與分數）。</p></li>
+<li><p>數學式必須排版正確：分數要有橫線，根號要罩住整個被開方式，
+上下標位置正確，希臘字母正確（ψ 波函數、ħ 約化普朗克常數、ε₀ 真空電容率、
+σ/π 鍵的名稱、θ 天頂角、φ 方位角）。</p></li>
+<li><p>特別注意兩個長得很像的希臘字母：ν（nu）是頻率，υ（upsilon）是振動量子數，
+不可混用；分子式的下標（H₂O、CO₂、C₆H₆）與離子的上標（H₂⁺、Na⁺、Cl⁻）必須正確。</p></li>
+<li><p>文字大小分三級：標題列最大、pill 標籤與軸標籤次之、說明文字最小，
+但最小的字也必須清楚可讀。</p></li>
+</ul>
+<p>嚴禁事項：</p>
+<ul class="simple">
+<li><p>不要出現任何浮水印、簽名、Logo、頁碼。</p></li>
+<li><p>不要出現拼錯或亂碼的中文字；寧可少寫字，也不要寫錯字。</p></li>
+<li><p>不要把公式畫成圖片式的手寫體，必須是印刷排版品質。</p></li>
+<li><p>不要用深色背景。</p></li>
+</ul>
+<p>請畫一張教學用資訊圖表，主題是「分子的三種能階：電子、振動、轉動，差了好幾個數量級」。</p>
+<p>標題列文字：8.6  分子能階的三個尺度 (Three Energy Scales of a Molecule)</p>
+<p>導言框文字：
+分子比原子多了振動與轉動兩種自由度。三種能態的能量差了約兩個數量級，
+光譜剛好落在可見／紫外、紅外、微波三個波段。
+拿來比較的基準是室溫熱能 kT ≈ 0.026 eV：比它小很多的能階室溫下大多被激發，比它大的大多待在基態。</p>
+<p>主體左半（約 55% 寬）｜pill 標籤：層層嵌套的能階圖
+畫一個三層放大的能階圖（用放大鏡或虛線框連接各層）：
+第一層（最左，縱軸跨約 5 eV）：兩條藍色（#1565C0）粗水平線，標「電子基態」「電子受激態」，
+中間雙箭頭標「~ 數 eV」。
+第二層（中間，放大電子基態附近，縱軸跨約 1 eV）：等間距的綠色（#2E7D32）水平線，
+標 υ = 0, 1, 2, 3，間距雙箭頭標「~ 0.1 eV」。
+第三層（最右，放大 υ = 0 附近，縱軸跨約 0.01 eV）：橘色（#EF6C00）細線，
+標 J = 0, 1, 2, 3, 4，間距由下往上逐漸變寬，間距雙箭頭標「~ 10⁻³ eV」。
+在三層旁邊各畫一條紅色（#C62828）水平虛線代表 kT = 0.026 eV 的高度
+（在第一、二層中它很低；在第三層中它遠高於所有畫出的轉動能階，直接衝出圖框，標「kT 在這裡之上」）。</p>
+<p>主體右半（約 45% 寬）：上下兩部分。</p>
+<p>上｜pill 標籤：對應的電磁波段
+一條水平的電磁波譜色帶，由左（長波長）到右（短波長）：
+微波（標 0.1 mm ~ 1 cm，橘色框起來，對應「轉動」）
+紅外線（標 1 μm ~ 0.1 mm，綠色框起來，對應「振動」）
+可見光／紫外線（標 0.1 μm ~ 1 μm，藍色框起來，對應「電子」）
+可見光段畫出彩虹色。</p>
+<p>下｜pill 標籤：CO 的實際數字
+三列小表：
+轉動 J = 0→1：4.75 × 10⁻⁴ eV（波長 2.6 mm）→ ≪ kT → 室溫下大多在受激態
+振動 υ = 0→1：0.266 eV（波長 4.7 μm）→ ≈ 10 kT → 室溫下幾乎都在 υ = 0
+電子：數 eV → ≫ kT → 室溫下都在基態</p>
+<p>右上角「圖例」方框：
+藍色 — 電子能態
+綠色 — 振動能態
+橘色 — 轉動能態
+紅色虛線 — 室溫熱能 kT ≈ 0.026 eV</p>
+<p>最下方一排粉彩公式盒（三個）：</p>
+<ol class="arabic simple">
+<li><p>淺紅盒：kT(300 K) ≈ 2.6 × 10⁻² eV ≈ 26 meV，說明「請背起來：所有能量差都拿來跟它比」</p></li>
+<li><p>淺黃盒：E_J = J(J+1)ħ²/2I，說明「轉動，8.6」</p></li>
+<li><p>淺綠盒：E_υ = (υ + ½)hν₀，說明「振動，8.7」</p></li>
+</ol>
+<p>Use case: scientific-educational. 優先遵守開頭的模型與符號，文字須清晰繁體中文。</p>
+</section>
+<section id="rigid-rotor-levels-and-spectrum">
+<h3>Rigid_Rotor_Levels_and_Spectrum<a class="headerlink" href="#rigid-rotor-levels-and-spectrum" title="Link to this heading">#</a></h3>
+<p>【全域風格規範 — 請嚴格遵守】</p>
+<p>輸出形式：一張橫幅資訊圖表（教學用），純白背景，寬高比約 4:3 到 5:4，
+建議輸出 1600×1200 像素以上，線條與文字必須銳利可讀。</p>
+<p>版面骨架（由上到下）：</p>
+<ol class="arabic simple">
+<li><p>左上角：深藍色（#1F3864）圓角矩形標題列，白色粗體字，格式為
+「8.x  中文標題 (English Title)」，中英文之間空兩格。</p></li>
+<li><p>標題列下方：淺藍色（#EAF1FB）圓角矩形導言框，深藍細框線，
+內含 2–4 行中文導言，說明這張圖要回答什麼問題。</p></li>
+<li><p>右上角（若該圖有多種顏色編碼）：白底細框「圖例」方框，
+逐條列出色塊／線型對應的意義。</p></li>
+<li><p>主體區：物理示意圖、分子結構圖、能階圖或座標圖，佔畫面最大面積。</p></li>
+<li><p>各個小節上方：深藍色圓角 pill 標籤（白色字，例如「能量曲線」
+「σ 與 π 的比較」），用來切分主體區的不同段落。</p></li>
+<li><p>最下方：一排粉彩色圓角方框（淺綠 #E8F5E9、淺紫 #F3E5F5、淺藍 #E3F2FD、
+淺紅 #FFEBEE、淺黃 #FFF8E1），每個框內放一條公式與一句中文說明。</p></li>
+</ol>
+<p>配色規則：</p>
+<ul class="simple">
+<li><p>主色：深藍 #1F3864（標題列、pill 標籤、座標軸標記）</p></li>
+<li><p>分區／分類色：綠 #2E7D32、橘 #EF6C00、紫 #7B1FA2、紅 #C62828、藍 #1565C0</p></li>
+<li><p>同一個物理量在整張圖中必須用同一個顏色，不可換色。</p></li>
+<li><p>波函數的正負瓣：正瓣一律橘色、負瓣一律藍色（除非該圖另有指定）。</p></li>
+<li><p>背景一律純白，不要漸層、不要陰影、不要 3D 效果
+（分子軌域的立體形狀可用簡潔的平塗與輪廓線表現，不要寫實光影）。</p></li>
+</ul>
+<p>字體與文字：</p>
+<ul class="simple">
+<li><p>所有標示文字一律使用「繁體中文」，不可出現簡體字。</p></li>
+<li><p>中文用黑體（思源黑體 / Noto Sans TC 一類），英文與數學符號用
+襯線體並呈 LaTeX 排版風格（斜體變數、正體函數名、正確的上下標與分數）。</p></li>
+<li><p>數學式必須排版正確：分數要有橫線，根號要罩住整個被開方式，
+上下標位置正確，希臘字母正確（ψ 波函數、ħ 約化普朗克常數、ε₀ 真空電容率、
+σ/π 鍵的名稱、θ 天頂角、φ 方位角）。</p></li>
+<li><p>特別注意兩個長得很像的希臘字母：ν（nu）是頻率，υ（upsilon）是振動量子數，
+不可混用；分子式的下標（H₂O、CO₂、C₆H₆）與離子的上標（H₂⁺、Na⁺、Cl⁻）必須正確。</p></li>
+<li><p>文字大小分三級：標題列最大、pill 標籤與軸標籤次之、說明文字最小，
+但最小的字也必須清楚可讀。</p></li>
+</ul>
+<p>嚴禁事項：</p>
+<ul class="simple">
+<li><p>不要出現任何浮水印、簽名、Logo、頁碼。</p></li>
+<li><p>不要出現拼錯或亂碼的中文字；寧可少寫字，也不要寫錯字。</p></li>
+<li><p>不要把公式畫成圖片式的手寫體，必須是印刷排版品質。</p></li>
+<li><p>不要用深色背景。</p></li>
+</ul>
+<p>【模型與符號】剛性雙原子轉子，固定 R、I=μR²；μ=m₁m₂/(m₁+m₂)，若原圖寫 m′，即同一約化質量。純轉動電偶極光譜須有永久偶極，ΔJ=±1；高 J 離心伸長不在本圖。</p>
+<p>請畫一張教學用資訊圖表，主題是「剛性轉子：能階越往上越寬，光譜線卻等間距」。</p>
+<p>標題列文字：8.6  轉動能階與轉動光譜 (Rotational Levels and Spectrum)</p>
+<p>導言框文字：
+雙原子分子繞質心轉動，等效於一顆質量為縮減質量 m′ 的質點在半徑 R 的圓上轉。
+角動量照樣量子化 L = √(J(J+1)) ħ，於是 E_J = J(J+1)ħ²/2I；
+選擇規則 ΔJ = ±1 讓吸收線的頻率 ν = ħ(J+1)/(2πI) 等間距排開。</p>
+<p>主體分成左、中、右三區。</p>
+<p>左區｜pill 標籤：剛性轉子 = 縮減質量
+上：兩顆球（左小灰球標 m₁，右大紅球標 m₂）用一根剛性細桿連接，總長標 R；
+桿上標出質心 CM（黑色叉號），CM 到 m₁ 標 r₁、到 m₂ 標 r₂（r₁ &gt; r₂，因為 m₁ 較輕）；
+通過 CM、垂直於桿畫一條虛線轉軸，旁邊一支彎箭頭標 ω。
+中間一個大等號「＝」。
+下：一顆質量 m′ 的球在半徑 R 的圓上轉動，圓心為軸，標「m′ = m₁m₂/(m₁+m₂)」。
+小字：I = m₁r₁² + m₂r₂² = m′R²　(8.5)</p>
+<p>中區｜pill 標籤：能階與光譜（圖 8.17）
+縱軸 E_J，單位 ħ²/2I。畫五條水平線，高度<strong>必須按比例</strong>：
+J = 0：0
+J = 1：2
+J = 2：6
+J = 3：12
+J = 4：20
+每條線右側標 J 值與能量（0, 2, 6, 12, 20）× ħ²/2I。
+用四支灰色向上箭頭畫出 J=0→1、1→2、2→3、3→4 的吸收，箭頭長度分別是 2、4、6、8 單位，
+依序向右錯開排列。
+下方畫一條水平頻率軸 ν，上面四條等間距的短垂直線，對應四支箭頭，
+標 ν = 1, 2, 3, 4 × ħ/(2πI)，相鄰間距用雙箭頭標「ħ/(2πI)，等間距」。</p>
+<p>右區｜pill 標籤：CO 的數字（例題 8.1、8.2）
+條列：
+m′ = 1.14 × 10⁻²⁶ kg
+R = 0.113 nm → I = 1.46 × 10⁻⁴⁶ kg·m²
+E(J=1) = ħ²/I = 4.75 × 10⁻⁴ eV
+ω(J=1) = 1.02 × 10¹² rad/s（每秒約 1.6 × 10¹¹ 圈）
+ν(0→1) = 1.15 × 10¹¹ Hz，λ ≈ 2.6 mm（微波）
+紅色框：反過來用——量到 ν(0→1) 就能反推鍵長 R，化學鍵長多半是這樣量來的。</p>
+<p>右上角「圖例」方框：
+黑色水平線 — 轉動能階 E_J
+灰色箭頭 — ΔJ = +1 的吸收躍遷
+短垂直線 — 轉動光譜線</p>
+<p>最下方一排粉彩公式盒（三個）：</p>
+<ol class="arabic simple">
+<li><p>淺藍盒：E_J = L²/2I = J(J+1)ħ²/2I　(8.9)，說明「J = 0 時 E = 0：轉動沒有零點能量」</p></li>
+<li><p>淺綠盒：ΔJ = ±1　(8.10)，說明「與第六章 Δl = ±1 同源；只有極性分子有純轉動光譜」</p></li>
+<li><p>淺黃盒：ν_{J→J+1} = ħ(J+1)/(2πI)　(8.11)，說明「能階間距越來越寬，譜線卻等間距」</p></li>
+</ol>
+<p>Use case: scientific-educational. 優先遵守開頭的模型與符號，文字須清晰繁體中文。</p>
+</section>
+<section id="parabolic-approximation-two-body-oscillator">
+<h3>Parabolic_Approximation_Two_Body_Oscillator<a class="headerlink" href="#parabolic-approximation-two-body-oscillator" title="Link to this heading">#</a></h3>
+<p>【全域風格規範 — 請嚴格遵守】</p>
+<p>輸出形式：一張橫幅資訊圖表（教學用），純白背景，寬高比約 4:3 到 5:4，
+建議輸出 1600×1200 像素以上，線條與文字必須銳利可讀。</p>
+<p>版面骨架（由上到下）：</p>
+<ol class="arabic simple">
+<li><p>左上角：深藍色（#1F3864）圓角矩形標題列，白色粗體字，格式為
+「8.x  中文標題 (English Title)」，中英文之間空兩格。</p></li>
+<li><p>標題列下方：淺藍色（#EAF1FB）圓角矩形導言框，深藍細框線，
+內含 2–4 行中文導言，說明這張圖要回答什麼問題。</p></li>
+<li><p>右上角（若該圖有多種顏色編碼）：白底細框「圖例」方框，
+逐條列出色塊／線型對應的意義。</p></li>
+<li><p>主體區：物理示意圖、分子結構圖、能階圖或座標圖，佔畫面最大面積。</p></li>
+<li><p>各個小節上方：深藍色圓角 pill 標籤（白色字，例如「能量曲線」
+「σ 與 π 的比較」），用來切分主體區的不同段落。</p></li>
+<li><p>最下方：一排粉彩色圓角方框（淺綠 #E8F5E9、淺紫 #F3E5F5、淺藍 #E3F2FD、
+淺紅 #FFEBEE、淺黃 #FFF8E1），每個框內放一條公式與一句中文說明。</p></li>
+</ol>
+<p>配色規則：</p>
+<ul class="simple">
+<li><p>主色：深藍 #1F3864（標題列、pill 標籤、座標軸標記）</p></li>
+<li><p>分區／分類色：綠 #2E7D32、橘 #EF6C00、紫 #7B1FA2、紅 #C62828、藍 #1565C0</p></li>
+<li><p>同一個物理量在整張圖中必須用同一個顏色，不可換色。</p></li>
+<li><p>波函數的正負瓣：正瓣一律橘色、負瓣一律藍色（除非該圖另有指定）。</p></li>
+<li><p>背景一律純白，不要漸層、不要陰影、不要 3D 效果
+（分子軌域的立體形狀可用簡潔的平塗與輪廓線表現，不要寫實光影）。</p></li>
+</ul>
+<p>字體與文字：</p>
+<ul class="simple">
+<li><p>所有標示文字一律使用「繁體中文」，不可出現簡體字。</p></li>
+<li><p>中文用黑體（思源黑體 / Noto Sans TC 一類），英文與數學符號用
+襯線體並呈 LaTeX 排版風格（斜體變數、正體函數名、正確的上下標與分數）。</p></li>
+<li><p>數學式必須排版正確：分數要有橫線，根號要罩住整個被開方式，
+上下標位置正確，希臘字母正確（ψ 波函數、ħ 約化普朗克常數、ε₀ 真空電容率、
+σ/π 鍵的名稱、θ 天頂角、φ 方位角）。</p></li>
+<li><p>特別注意兩個長得很像的希臘字母：ν（nu）是頻率，υ（upsilon）是振動量子數，
+不可混用；分子式的下標（H₂O、CO₂、C₆H₆）與離子的上標（H₂⁺、Na⁺、Cl⁻）必須正確。</p></li>
+<li><p>文字大小分三級：標題列最大、pill 標籤與軸標籤次之、說明文字最小，
+但最小的字也必須清楚可讀。</p></li>
+</ul>
+<p>嚴禁事項：</p>
+<ul class="simple">
+<li><p>不要出現任何浮水印、簽名、Logo、頁碼。</p></li>
+<li><p>不要出現拼錯或亂碼的中文字；寧可少寫字，也不要寫錯字。</p></li>
+<li><p>不要把公式畫成圖片式的手寫體，必須是印刷排版品質。</p></li>
+<li><p>不要用深色背景。</p></li>
+</ul>
+<p>【模型與符號】只在平衡距離附近作諧振近似，μ=m₁m₂/(m₁+m₂)（原 m′）；圖中位能零點、井深 D_e 與零點振動能須分開。</p>
+<p>請畫一張教學用資訊圖表，主題是「任何位能井的谷底都像拋物線，兩顆原子的振動等效於一顆縮減質量」。</p>
+<p>標題列文字：8.7  拋物線近似與二體振盪器 (Parabolic Approximation and the Two-Body Oscillator)</p>
+<p>導言框文字：
+在平衡位置 R₀ 做泰勒展開：一次項因為平衡而為零，三次以上的項在小振幅下可忽略，
+剩下的就是 U ≈ U₀ + ½k(R − R₀)²——虎克定律。
+兩顆原子同時振動時，只要把質量換成縮減質量 m′，就和一端固定在牆上的彈簧一樣。</p>
+<p>主體左半（約 55% 寬）｜pill 標籤：拋物線近似（圖 8.18）
+座標圖：橫軸 R，縱軸 U。
+灰色粗曲線（真實位能）：R 很小時陡升，在 R₀ 有谷底 U₀，R 大時緩慢上升、趨近水平（解離極限）。
+黑色細曲線（拋物線 ½k(R − R₀)² + U₀）：與灰色曲線在谷底幾乎重合，離開谷底後明顯分開
+（左邊比真實曲線緩、右邊比真實曲線陡）。
+在谷底附近畫一個淡綠色（#E8F5E9）方框，標「小振幅區：兩者幾乎重合」。
+R₀ 與 U₀ 分別在軸上標出。
+圖下方用一條展開式，把每一項畫成小方塊並上色：
+U(R) = U(R₀)【綠框，標「常數 U₀」】
++ U′(R₀)(R−R₀)【灰框打紅叉，標「平衡 → U′ = 0」】
++ ½U″(R₀)(R−R₀)²【橘框，標「= ½k(R−R₀)²」】
++ ⅙U‴(R₀)(R−R₀)³ + …【灰框打紅叉，標「小振幅 → 忽略」】</p>
+<p>主體右半（約 45% 寬）：上下兩部分。</p>
+<p>上｜pill 標籤：二體振盪器（圖 8.19）
+左：兩顆球 m₁（小，灰）與 m₂（大，灰）之間接一根彈簧（標「力常數 k」），兩顆球上方各有一支雙向箭頭表示都在振動。
+中間一個大等號「＝」。
+右：一顆球 m′ 接一根相同的彈簧（同樣標「力常數 k」），彈簧另一端固定在一面垂直牆上，球上方一支雙向箭頭。
+下方標：m′ = m₁m₂/(m₁ + m₂)。</p>
+<p>下｜pill 標籤：量子化後的振動能階
+在一個小拋物線位能井中畫四條<strong>等間距</strong>的水平線，標 υ = 0, 1, 2, 3 與 E = ½hν₀、³⁄₂hν₀、⁵⁄₂hν₀、⁷⁄₂hν₀；
+最下面那條（υ = 0）與谷底之間用紅色（#C62828）雙箭頭標「零點能量 ½hν₀ ≠ 0」；
+相鄰兩條之間用雙箭頭標「間距恆為 hν₀」。
+小字提醒：υ（upsilon，振動量子數）≠ ν（nu，頻率）。</p>
+<p>右上角「圖例」方框：
+灰色粗線 — 真實的分子位能
+黑色細線 — 拋物線近似
+紅叉 — 被消去或忽略的項</p>
+<p>最下方一排粉彩公式盒（三個）：</p>
+<ol class="arabic simple">
+<li><p>淺綠盒：U = U₀ + ½k(R − R₀)²　(8.12)、F = −k(R − R₀)　(8.13)，說明「谷底附近永遠是虎克定律」</p></li>
+<li><p>淺藍盒：ν₀ = (1/2π)√(k/m′)　(8.15)，說明「二體問題：m 換成 m′ 就好」</p></li>
+<li><p>淺黃盒：E_υ = (υ + ½)ħ√(k/m′)　(8.17)，說明「第五章的諧振子，等間距、有零點能量」</p></li>
+</ol>
+<p>Use case: scientific-educational. 優先遵守開頭的模型與符號，文字須清晰繁體中文。</p>
+</section>
+<section id="vibration-rotation-levels">
+<h3>Vibration_Rotation_Levels<a class="headerlink" href="#vibration-rotation-levels" title="Link to this heading">#</a></h3>
+<p>【全域風格規範 — 請嚴格遵守】</p>
+<p>輸出形式：一張橫幅資訊圖表（教學用），純白背景，寬高比約 4:3 到 5:4，
+建議輸出 1600×1200 像素以上，線條與文字必須銳利可讀。</p>
+<p>版面骨架（由上到下）：</p>
+<ol class="arabic simple">
+<li><p>左上角：深藍色（#1F3864）圓角矩形標題列，白色粗體字，格式為
+「8.x  中文標題 (English Title)」，中英文之間空兩格。</p></li>
+<li><p>標題列下方：淺藍色（#EAF1FB）圓角矩形導言框，深藍細框線，
+內含 2–4 行中文導言，說明這張圖要回答什麼問題。</p></li>
+<li><p>右上角（若該圖有多種顏色編碼）：白底細框「圖例」方框，
+逐條列出色塊／線型對應的意義。</p></li>
+<li><p>主體區：物理示意圖、分子結構圖、能階圖或座標圖，佔畫面最大面積。</p></li>
+<li><p>各個小節上方：深藍色圓角 pill 標籤（白色字，例如「能量曲線」
+「σ 與 π 的比較」），用來切分主體區的不同段落。</p></li>
+<li><p>最下方：一排粉彩色圓角方框（淺綠 #E8F5E9、淺紫 #F3E5F5、淺藍 #E3F2FD、
+淺紅 #FFEBEE、淺黃 #FFF8E1），每個框內放一條公式與一句中文說明。</p></li>
+</ol>
+<p>配色規則：</p>
+<ul class="simple">
+<li><p>主色：深藍 #1F3864（標題列、pill 標籤、座標軸標記）</p></li>
+<li><p>分區／分類色：綠 #2E7D32、橘 #EF6C00、紫 #7B1FA2、紅 #C62828、藍 #1565C0</p></li>
+<li><p>同一個物理量在整張圖中必須用同一個顏色，不可換色。</p></li>
+<li><p>波函數的正負瓣：正瓣一律橘色、負瓣一律藍色（除非該圖另有指定）。</p></li>
+<li><p>背景一律純白，不要漸層、不要陰影、不要 3D 效果
+（分子軌域的立體形狀可用簡潔的平塗與輪廓線表現，不要寫實光影）。</p></li>
+</ul>
+<p>字體與文字：</p>
+<ul class="simple">
+<li><p>所有標示文字一律使用「繁體中文」，不可出現簡體字。</p></li>
+<li><p>中文用黑體（思源黑體 / Noto Sans TC 一類），英文與數學符號用
+襯線體並呈 LaTeX 排版風格（斜體變數、正體函數名、正確的上下標與分數）。</p></li>
+<li><p>數學式必須排版正確：分數要有橫線，根號要罩住整個被開方式，
+上下標位置正確，希臘字母正確（ψ 波函數、ħ 約化普朗克常數、ε₀ 真空電容率、
+σ/π 鍵的名稱、θ 天頂角、φ 方位角）。</p></li>
+<li><p>特別注意兩個長得很像的希臘字母：ν（nu）是頻率，υ（upsilon）是振動量子數，
+不可混用；分子式的下標（H₂O、CO₂、C₆H₆）與離子的上標（H₂⁺、Na⁺、Cl⁻）必須正確。</p></li>
+<li><p>文字大小分三級：標題列最大、pill 標籤與軸標籤次之、說明文字最小，
+但最小的字也必須清楚可讀。</p></li>
+</ul>
+<p>嚴禁事項：</p>
+<ul class="simple">
+<li><p>不要出現任何浮水印、簽名、Logo、頁碼。</p></li>
+<li><p>不要出現拼錯或亂碼的中文字；寧可少寫字，也不要寫錯字。</p></li>
+<li><p>不要把公式畫成圖片式的手寫體，必須是印刷排版品質。</p></li>
+<li><p>不要用深色背景。</p></li>
+</ul>
+<p>【模型與符號】採諧振子與剛性轉子近似；Δv=±1 限線性偶極近似。P、R 支圖以 CO 的 Σ↔Σ 振轉躍遷為例，不宣稱所有分子都無 Q 支。</p>
+<p>請畫一張教學用資訊圖表，主題是「振動能階上疊著轉動能階：振動–轉動光譜的 P 支與 R 支」。</p>
+<p>標題列文字：8.7  振動–轉動能階與光譜 (Vibration–Rotation Levels and Spectrum)</p>
+<p>導言框文字：
+振動能階的間距（~0.1 eV）比轉動能階（~10⁻³ eV）大約兩個數量級，
+所以每個振動能階上都疊著一整排緊密的轉動能階。
+吸收紅外光時 Δυ = +1 與 ΔJ = ±1 必須同時成立，光譜線在 ν₀ 兩側等間距排開，正中央反而沒有線。</p>
+<p>主體左半（約 45% 寬）｜pill 標籤：位能井中的能階（圖 8.20）
+座標圖：縱軸 U，橫軸 R。
+一條灰色粗的真實分子位能曲線（左陡、右緩、右端趨於水平）。
+井內畫約 12 條綠色（#2E7D32）水平振動能階線，每條線只畫在曲線左右兩壁之間；
+<strong>越往上間距越小</strong>，最上面幾條擠在一起、逼近右端水平線（解離極限）。
+在下方三條振動能階上，各畫一小簇很密的橘色（#EF6C00）短線，代表轉動能階，
+用放大框拉出來並標「轉動能階」；另外用指引線標「振動能階」。</p>
+<p>主體右半（約 55% 寬）｜pill 標籤：υ = 0 → 1 的吸收與 P、R 支
+上方：兩組能階梯。
+下組標 υ = 0，內含 J = 0, 1, 2, 3, 4 五條橘色細線（間距由下往上逐漸變寬）。
+上組標 υ = 1，同樣內含 J = 0, 1, 2, 3, 4 五條細線。
+兩組之間的大間距用綠色雙箭頭標 hν₀。
+畫出向上的吸收箭頭：
+藍色（#1565C0）箭頭：ΔJ = +1，即 J → J+1（0→1、1→2、2→3、3→4），標「R 支」；
+紅色（#C62828）箭頭：ΔJ = −1，即 J → J−1（1→0、2→1、3→2、4→3），標「P 支」。
+J → J（ΔJ = 0）的位置畫一支灰色虛線箭頭並打叉，標「禁止」。
+下方：一條水平頻率軸 ν，中心標 ν₀（畫一條灰色虛線但<strong>不畫譜線</strong>，標「沒有線：ΔJ = 0 禁止」）。
+ν₀ 右側四條藍色等間距譜線，標 ν₀ + 1, 2, 3, 4 × ħ/(2πI)（R 支）；
+ν₀ 左側四條紅色等間距譜線，標 ν₀ − 1, 2, 3, 4 × ħ/(2πI)（P 支）。
+中央的空隙寬度是相鄰間距的兩倍，用雙箭頭標「2ħ/(2πI)」。</p>
+<p>右下角小卡｜pill 標籤：CO 的數字
+ν₀ = 6.42 × 10¹³ Hz（λ ≈ 4.7 μm）
+ħ/(2πI) = 1.15 × 10¹¹ Hz，只有 ν₀ 的約 1/560
+→ 低解析度下像一條線，高解析度下才展開成一排細線。</p>
+<p>右上角「圖例」方框：
+綠色 — 振動能階
+橘色 — 轉動能階
+藍色 — R 支（ΔJ = +1）
+紅色 — P 支（ΔJ = −1）</p>
+<p>最下方一排粉彩公式盒（三個）：</p>
+<ol class="arabic simple">
+<li><p>淺綠盒：E_{υ,J} = (υ + ½)ħ√(k/m′) + J(J+1)ħ²/2I　(8.19)，說明「振動 + 轉動」</p></li>
+<li><p>淺藍盒：ν = ν₀ ± n ħ/(2πI)，n = 1, 2, 3, …　(8.20)，說明「P 支與 R 支，ν₀ 處沒有線」</p></li>
+<li><p>淺黃盒：越往上振動能階越密，說明「真實位能比拋物線平緩，拋物線近似只在谷底成立」</p></li>
+</ol>
+<p>Use case: scientific-educational. 優先遵守開頭的模型與符號，文字須清晰繁體中文。</p>
+</section>
+<section id="polyatomic-vibration-modes-greenhouse">
+<h3>Polyatomic_Vibration_Modes_Greenhouse<a class="headerlink" href="#polyatomic-vibration-modes-greenhouse" title="Link to this heading">#</a></h3>
+<p>【全域風格規範 — 請嚴格遵守】</p>
+<p>輸出形式：一張橫幅資訊圖表（教學用），純白背景，寬高比約 4:3 到 5:4，
+建議輸出 1600×1200 像素以上，線條與文字必須銳利可讀。</p>
+<p>版面骨架（由上到下）：</p>
+<ol class="arabic simple">
+<li><p>左上角：深藍色（#1F3864）圓角矩形標題列，白色粗體字，格式為
+「8.x  中文標題 (English Title)」，中英文之間空兩格。</p></li>
+<li><p>標題列下方：淺藍色（#EAF1FB）圓角矩形導言框，深藍細框線，
+內含 2–4 行中文導言，說明這張圖要回答什麼問題。</p></li>
+<li><p>右上角（若該圖有多種顏色編碼）：白底細框「圖例」方框，
+逐條列出色塊／線型對應的意義。</p></li>
+<li><p>主體區：物理示意圖、分子結構圖、能階圖或座標圖，佔畫面最大面積。</p></li>
+<li><p>各個小節上方：深藍色圓角 pill 標籤（白色字，例如「能量曲線」
+「σ 與 π 的比較」），用來切分主體區的不同段落。</p></li>
+<li><p>最下方：一排粉彩色圓角方框（淺綠 #E8F5E9、淺紫 #F3E5F5、淺藍 #E3F2FD、
+淺紅 #FFEBEE、淺黃 #FFF8E1），每個框內放一條公式與一句中文說明。</p></li>
+</ol>
+<p>配色規則：</p>
+<ul class="simple">
+<li><p>主色：深藍 #1F3864（標題列、pill 標籤、座標軸標記）</p></li>
+<li><p>分區／分類色：綠 #2E7D32、橘 #EF6C00、紫 #7B1FA2、紅 #C62828、藍 #1565C0</p></li>
+<li><p>同一個物理量在整張圖中必須用同一個顏色，不可換色。</p></li>
+<li><p>波函數的正負瓣：正瓣一律橘色、負瓣一律藍色（除非該圖另有指定）。</p></li>
+<li><p>背景一律純白，不要漸層、不要陰影、不要 3D 效果
+（分子軌域的立體形狀可用簡潔的平塗與輪廓線表現，不要寫實光影）。</p></li>
+</ul>
+<p>字體與文字：</p>
+<ul class="simple">
+<li><p>所有標示文字一律使用「繁體中文」，不可出現簡體字。</p></li>
+<li><p>中文用黑體（思源黑體 / Noto Sans TC 一類），英文與數學符號用
+襯線體並呈 LaTeX 排版風格（斜體變數、正體函數名、正確的上下標與分數）。</p></li>
+<li><p>數學式必須排版正確：分數要有橫線，根號要罩住整個被開方式，
+上下標位置正確，希臘字母正確（ψ 波函數、ħ 約化普朗克常數、ε₀ 真空電容率、
+σ/π 鍵的名稱、θ 天頂角、φ 方位角）。</p></li>
+<li><p>特別注意兩個長得很像的希臘字母：ν（nu）是頻率，υ（upsilon）是振動量子數，
+不可混用；分子式的下標（H₂O、CO₂、C₆H₆）與離子的上標（H₂⁺、Na⁺、Cl⁻）必須正確。</p></li>
+<li><p>文字大小分三級：標題列最大、pill 標籤與軸標籤次之、說明文字最小，
+但最小的字也必須清楚可讀。</p></li>
+</ul>
+<p>嚴禁事項：</p>
+<ul class="simple">
+<li><p>不要出現任何浮水印、簽名、Logo、頁碼。</p></li>
+<li><p>不要出現拼錯或亂碼的中文字；寧可少寫字，也不要寫錯字。</p></li>
+<li><p>不要把公式畫成圖片式的手寫體，必須是印刷排版品質。</p></li>
+<li><p>不要用深色背景。</p></li>
+</ul>
+<p>請畫一張教學用資訊圖表，主題是「多原子分子的振動模式：哪些會吸收紅外線，為什麼 CO₂ 是溫室氣體」。</p>
+<p>標題列文字：8.7  振動模式與溫室效應 (Normal Modes and the Greenhouse Effect)</p>
+<p>導言框文字：
+三個原子以上的分子有好幾種正常振動模式，各有各的等間距能階，能量都在 0.1 eV 等級。
+一個模式能不能吸收紅外線，取決於振動時偶極矩有沒有改變（dp/dR ≠ 0）。
+N₂、O₂ 怎麼振動都對稱，不吸收；CO₂ 的彎曲與非對稱拉伸會吸收地表發出的紅外線。</p>
+<p>主體上半：兩列分子振動模式圖，每個模式上方畫一個小能階梯（等間距短橫線，最下方間距用大括號標能量），
+下方畫分子與位移箭頭，再下方寫模式名稱。</p>
+<p>第 1 列｜pill 標籤：H₂O 的三個模式（圖 8.21）
+彎折形分子：O（大球，上方中央）、兩個 H（小球，左下與右下）。
+(1) 對稱彎曲：O 向下、兩個 H 向外上方斜移；能階間距 0.1915 eV（6.47 μm）。
+(2) 對稱拉伸：O 向上、兩個 H 沿鍵向外斜下；能階間距 0.4527 eV（2.74 μm）。
+(3) 非對稱拉伸：O 向左、一個 H 沿鍵靠近、另一個 H 沿鍵遠離；能階間距 0.4656 eV（2.66 μm）。
+三個模式下方都標綠色 ✓「紅外活性」。
+列尾小字：拉伸比彎曲需要更多能量（能階梯越來越疏）。</p>
+<p>第 2 列｜pill 標籤：CO₂ 的三個模式（圖 8.22）
+直線形分子 O–C–O，C 標小「+」、O 標小「−」。
+(1) 對稱彎曲：C 向上、兩個 O 向下（並在旁邊用虛線箭頭示意也可以在垂直紙面的平面中彎曲）；
+能階間距 0.0827 eV（15.00 μm）；綠色 ✓「紅外活性」。
+(2) 對稱拉伸：C 不動、兩個 O 同時向外；能階間距 0.1649 eV（7.52 μm）；
+紅色 ✗「不吸收：電荷中心始終重合，偶極矩不變」。
+(3) 非對稱拉伸：兩個 O 向右、C 向左；能階間距 0.2912 eV（4.26 μm）；綠色 ✓「紅外活性」。</p>
+<p>主體下半（左右兩格）：</p>
+<p>左格｜pill 標籤：溫室效應
+畫一個簡化的地球表面（綠色地面）與上方大氣層（淡藍帶）。
+黃色箭頭：太陽光（主要是可見光）照到地面，標「陽光（可見光）」。
+紅色波浪箭頭：地面向上發出的紅外熱輻射，標「地表熱輻射，峰值約 10 μm」。
+大氣中畫幾個 CO₂ 小分子，紅色箭頭碰到它們後被吸收並向四面八方（包括向下）重新輻射，標「CO₂ 吸收」。
+另有幾個 N₂、O₂ 小分子，紅色箭頭直接穿過，標「N₂、O₂：不吸收」。</p>
+<p>右格｜pill 標籤：地表輻射與 CO₂ 吸收帶
+座標圖：橫軸波長 λ（μm），刻度 1、2、5、10、15、20、30（對數軸）；縱軸「輻射強度（相對）」。
+一條平滑的黑體曲線（約 288 K），峰值在約 10 μm，標「地表 ≈ 288 K」。
+在 15 μm 與 4.26 μm 處各畫一條紅色半透明直帶，標「CO₂ 彎曲 15 μm」「CO₂ 非對稱拉伸 4.26 μm」。
+小字：15 μm 帶恰好落在地表輻射最強的區段。</p>
+<p>右上角「圖例」方框：
+綠色 ✓ — 振動時偶極矩改變：紅外活性
+紅色 ✗ — 振動時偶極矩不變：不吸收紅外線
+紅色波浪 — 紅外熱輻射
+黃色箭頭 — 陽光</p>
+<p>最下方一排粉彩公式盒（三個）：</p>
+<ol class="arabic simple">
+<li><p>淺藍盒：∫ψ_υ′ p ψ_υ dx ∝ (dp/dR) · δ_{υ′,υ±1}，說明「要吸收紅外線，偶極矩必須隨振動改變」</p></li>
+<li><p>淺紅盒：N₂、O₂（約佔大氣 99%）p 恆為 0，說明「同核雙原子分子對紅外線透明」</p></li>
+<li><p>淺綠盒：λ_max ≈ 2898 μm·K / 288 K ≈ 10 μm，說明「地表熱輻射落在紅外，CO₂、H₂O、CH₄ 都會吸收」</p></li>
+</ol>
+<p>Use case: scientific-educational. 優先遵守開頭的模型與符號，文字須清晰繁體中文。</p>
+</section>
+<section id="fluorescence-and-phosphorescence">
+<h3>Fluorescence_and_Phosphorescence<a class="headerlink" href="#fluorescence-and-phosphorescence" title="Link to this heading">#</a></h3>
+<p>【全域風格規範 — 請嚴格遵守】</p>
+<p>輸出形式：一張橫幅資訊圖表（教學用），純白背景，寬高比約 4:3 到 5:4，
+建議輸出 1600×1200 像素以上，線條與文字必須銳利可讀。</p>
+<p>版面骨架（由上到下）：</p>
+<ol class="arabic simple">
+<li><p>左上角：深藍色（#1F3864）圓角矩形標題列，白色粗體字，格式為
+「8.x  中文標題 (English Title)」，中英文之間空兩格。</p></li>
+<li><p>標題列下方：淺藍色（#EAF1FB）圓角矩形導言框，深藍細框線，
+內含 2–4 行中文導言，說明這張圖要回答什麼問題。</p></li>
+<li><p>右上角（若該圖有多種顏色編碼）：白底細框「圖例」方框，
+逐條列出色塊／線型對應的意義。</p></li>
+<li><p>主體區：物理示意圖、分子結構圖、能階圖或座標圖，佔畫面最大面積。</p></li>
+<li><p>各個小節上方：深藍色圓角 pill 標籤（白色字，例如「能量曲線」
+「σ 與 π 的比較」），用來切分主體區的不同段落。</p></li>
+<li><p>最下方：一排粉彩色圓角方框（淺綠 #E8F5E9、淺紫 #F3E5F5、淺藍 #E3F2FD、
+淺紅 #FFEBEE、淺黃 #FFF8E1），每個框內放一條公式與一句中文說明。</p></li>
+</ol>
+<p>配色規則：</p>
+<ul class="simple">
+<li><p>主色：深藍 #1F3864（標題列、pill 標籤、座標軸標記）</p></li>
+<li><p>分區／分類色：綠 #2E7D32、橘 #EF6C00、紫 #7B1FA2、紅 #C62828、藍 #1565C0</p></li>
+<li><p>同一個物理量在整張圖中必須用同一個顏色，不可換色。</p></li>
+<li><p>波函數的正負瓣：正瓣一律橘色、負瓣一律藍色（除非該圖另有指定）。</p></li>
+<li><p>背景一律純白，不要漸層、不要陰影、不要 3D 效果
+（分子軌域的立體形狀可用簡潔的平塗與輪廓線表現，不要寫實光影）。</p></li>
+</ul>
+<p>字體與文字：</p>
+<ul class="simple">
+<li><p>所有標示文字一律使用「繁體中文」，不可出現簡體字。</p></li>
+<li><p>中文用黑體（思源黑體 / Noto Sans TC 一類），英文與數學符號用
+襯線體並呈 LaTeX 排版風格（斜體變數、正體函數名、正確的上下標與分數）。</p></li>
+<li><p>數學式必須排版正確：分數要有橫線，根號要罩住整個被開方式，
+上下標位置正確，希臘字母正確（ψ 波函數、ħ 約化普朗克常數、ε₀ 真空電容率、
+σ/π 鍵的名稱、θ 天頂角、φ 方位角）。</p></li>
+<li><p>特別注意兩個長得很像的希臘字母：ν（nu）是頻率，υ（upsilon）是振動量子數，
+不可混用；分子式的下標（H₂O、CO₂、C₆H₆）與離子的上標（H₂⁺、Na⁺、Cl⁻）必須正確。</p></li>
+<li><p>文字大小分三級：標題列最大、pill 標籤與軸標籤次之、說明文字最小，
+但最小的字也必須清楚可讀。</p></li>
+</ul>
+<p>嚴禁事項：</p>
+<ul class="simple">
+<li><p>不要出現任何浮水印、簽名、Logo、頁碼。</p></li>
+<li><p>不要出現拼錯或亂碼的中文字；寧可少寫字，也不要寫錯字。</p></li>
+<li><p>不要把公式畫成圖片式的手寫體，必須是印刷排版品質。</p></li>
+<li><p>不要用深色背景。</p></li>
+</ul>
+<p>請畫一張教學用資訊圖表，主題是「螢光與磷光：同樣是分子放光，差在自旋」。</p>
+<p>標題列文字：8.8  螢光與磷光 (Fluorescence and Phosphorescence)</p>
+<p>導言框文字：
+螢光：吸光 → 碰撞把振動能量帶走、掉到受激態谷底 → 放光；顏色與入射光無關，頻率比吸收低。
+磷光：分子途中跨進三重態（S = 1），但電子躍遷要求 ΔS = 0，
+掉回單重基態是「禁止」的——不是不可能，而是機率極小，所以延遲很久才發光。</p>
+<p>主體分左右兩大區，各自是一張「能量 對 象徵座標」的位能曲線圖（縱軸「能量」、橫軸「象徵座標」）。</p>
+<p>【左區｜pill 標籤：螢光（圖 8.24）】
+下方一條灰色粗位能曲線標「基態」，井內畫 5 條水平振動能階。
+上方一條灰色粗位能曲線標「受激態」，<strong>整條往右偏移</strong>（平衡鍵長較長），井內畫 5 條振動能階。</p>
+<ol class="arabic simple">
+<li><p>藍色（#1565C0）直線向上箭頭：從基態 υ = 0 垂直往上，打到受激態一條較高的振動能階，標「吸收」。</p></li>
+<li><p>一串短的橘色（#EF6C00）波浪向下小箭頭：沿著受激態的振動能階一階一階往下，標「振動躍遷（碰撞，不放光）」。</p></li>
+<li><p>綠色（#2E7D32）直線向下箭頭：從受激態谷底垂直往下，落到基態一條較高的振動能階，標「螢光」。
+旁註：綠色箭頭比藍色箭頭短 → 放射頻率比吸收頻率低（史托克位移）。
+旁註：箭頭是垂直的——電子躍遷（~10⁻¹⁵ s）比原子核振動（~10⁻¹⁴ s）快，躍遷瞬間核間距不變。
+左區下方小框：螢光筆照藍光、綠光、紫外光都發同一種顏色，因為都先掉到谷底再放光。</p></li>
+</ol>
+<p>【右區｜pill 標籤：磷光（圖 8.25）】
+下方灰色粗曲線標「單一基態（S = 0）」，井內畫振動能階。
+上方兩條曲線：
+左上一條標「單一受激態（S = 0）」；
+右側略低、再往右偏移的一條標「三重受激態（S = 1）」，兩條曲線在某處交叉。</p>
+<ol class="arabic simple">
+<li><p>藍色直線向上箭頭：單一基態 → 單一受激態，標「吸收（ΔS = 0，允許）」。</p></li>
+<li><p>橘色波浪小箭頭：在單一受激態內往下，到達與三重態交會處，再跨入三重受激態，繼續往下到谷底，
+交會處標「系統間跨越」，三重態谷底標「被困住」。</p></li>
+<li><p>紫色（#7B1FA2）<strong>虛線</strong>向下箭頭：從三重態谷底到單一基態，標「禁止躍遷（ΔS = 1）→ 延遲放光 = 磷光」。
+曲線旁畫兩個小自旋示意：單一態畫 ↑↓（標「S = 0，1 種」），三重態畫 ↑↑（標「S = 1，3 種」）。</p></li>
+</ol>
+<p>主體下方一條橫向比較表（兩欄）：
+｜螢光｜磷光｜
+放光的態：單一受激態 → 單一基態 ／ 三重受激態 → 單一基態
+自旋：ΔS = 0（允許）／ ΔS = 1（禁止）
+壽命：約 10⁻⁹ ~ 10⁻⁸ s ／ 毫秒到數小時
+例子：螢光筆、交通標誌 ／ 夜光貼紙、夜光錶面、緊急出口標示</p>
+<p>右上角「圖例」方框：
+藍色實線箭頭 — 吸收
+橘色波浪箭頭 — 振動躍遷（碰撞，不放光）
+綠色實線箭頭 — 螢光（允許）
+紫色虛線箭頭 — 磷光（禁止，延遲）</p>
+<p>最下方一排粉彩公式盒（三個）：</p>
+<ol class="arabic simple">
+<li><p>淺藍盒：∫Ψ_f* r Ψ_i dτ = [∫ψ_f* r ψ_i dV]·⟨s_f|s_i⟩，說明「偶極算符碰不到自旋 → 自旋部分必須相同」</p></li>
+<li><p>淺紫盒：ΔS = 0，說明「單重態與三重態互相正交 → 之間的輻射躍遷被禁止」</p></li>
+<li><p>淺黃盒：電注入：單重 : 三重 = 1 : 3，說明「螢光 OLED 最多 25%；加入 Ir 等重金屬增強自旋–軌道耦合，磷光 OLED 可近 100%」</p></li>
+</ol>
+<p>Use case: scientific-educational. 優先遵守開頭的模型與符號，文字須清晰繁體中文。
+單重態自旋是(↑↓−↓↑)/√2；避免宣稱任意激發光都可吸收，標明『能被吸收的激發光』。</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lecture\08_Molecules\pic"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Fluorescence_and_Phosphorescence.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Fluorescence_and_Phosphorescence.png</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="H2_Spin_Energy_Curves.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">H2_Spin_Energy_Curves.png</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">目視檢查待修訂項目</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">實際生成提示詞</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#molecular-bond-types">Molecular_Bond_Types</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#double-well-electron-sharing">Double_Well_Electron_Sharing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#symmetric-antisymmetric-wavefunctions">Symmetric_Antisymmetric_Wavefunctions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#h2plus-energy-curves">H2plus_Energy_Curves</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#h2-spin-energy-curves">H2_Spin_Energy_Curves</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#p-orbitals-linear-combination">p_Orbitals_Linear_Combination</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sigma-pi-bonds">Sigma_Pi_Bonds</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hybrid-orbitals-sp3-sp2">Hybrid_Orbitals_sp3_sp2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#molecular-energy-scales">Molecular_Energy_Scales</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rigid-rotor-levels-and-spectrum">Rigid_Rotor_Levels_and_Spectrum</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parabolic-approximation-two-body-oscillator">Parabolic_Approximation_Two_Body_Oscillator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vibration-rotation-levels">Vibration_Rotation_Levels</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#polyatomic-vibration-modes-greenhouse">Polyatomic_Vibration_Modes_Greenhouse</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fluorescence-and-phosphorescence">Fluorescence_and_Phosphorescence</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PC YE
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
