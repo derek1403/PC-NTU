@@ -1,0 +1,41 @@
+M = 3881, (lat, lon) = (120, 320), N = 38400, units = m
+max |column mean| = 2.246553e-05
+
+前 5 個解釋變異比例 (%): [17.56 12.1   9.34  8.13  5.91]
+EOF 正交性 E^T E =
+ [[1. 0.]
+ [0. 1.]]
+var(z_j) = [86445111.88636975 59593258.93679974]  lam_j = [86445111.88636968 59593258.93679978]
+wrote q1c_eof.png
+
+k = 2: |S_i| = [2115, 1766], 頻率 (%) = [54.5, 45.5]
+wrote q1c_kmeans_k2.png
+
+k = 4: |S_i| = [1184, 928, 918, 851], 頻率 (%) = [30.5, 23.9, 23.7, 21.9]
+wrote q1c_kmeans_k4.png
+
+===== 比較 (a) k = 2 =====
+r(d1, mu1) = -0.990,  r(d1, mu2) = 0.990
+r(d2, mu1) = 0.132,  r(d2, mu2) = -0.132
+label 與 sign(z~1) 的時間一致率 = 95.8%
+RMS: |mu1| = 45.1 m, |mu2| = 54.0 m, |mu1+mu2| = 8.9 m
+max |mu1+mu2| = 23.1 m
+檢查 |S1|mu1+|S2|mu2 = 0: max = 2.37e-01 m
+pcorr(mu1, -mu2) = 1.0000  (應為 1)
+wrote q1c_k2_asymmetry.png
+
+===== 比較 (b) k = 4 =====
+cluster 1: 投影係數 (e1, e2) = ( -9776.8,   -350.1), RMS mu =  65.3 m, RMS resid =  14.5 m, 2-EOF 解釋  95.1%, r(mu, mu_hat) = 0.976
+cluster 2: 投影係數 (e1, e2) = (  1722.5,  -8215.1), RMS mu =  59.7 m, RMS resid =  24.1 m, 2-EOF 解釋  83.8%, r(mu, mu_hat) = 0.920
+cluster 3: 投影係數 (e1, e2) = (   383.5,   8268.5), RMS mu =  58.3 m, RMS resid =  22.2 m, 2-EOF 解釋  85.5%, r(mu, mu_hat) = 0.926
+cluster 4: 投影係數 (e1, e2) = ( 11310.3,    526.1), RMS mu =  79.5 m, RMS resid =  29.6 m, 2-EOF 解釋  86.1%, r(mu, mu_hat) = 0.932
+
+4x4 pattern correlation r(mu_i, mu_j):
+          mu1      mu2      mu3      mu4    
+  mu1     1.000  -0.213  -0.153  -0.837
+  mu2    -0.213   1.000  -0.698  -0.012
+  mu3    -0.153  -0.698   1.000  -0.057
+  mu4    -0.837  -0.012  -0.057   1.000
+wrote q1c_k4_residual.png
+
+cartopy: True
